@@ -1,1 +1,25 @@
+html {
+  font-size: 62.5%;
+  background-color: var(--color-semi-white);
+}
 
+html,
+body,
+h1,
+a,
+nav,
+section {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* color */
+  --color-black: #434a54;
+  --color-red: #da4453;
+  --color-yellow: #ffce54;
+  --color-green: #a0d468;
+  --color-semi-white: #e6e9ed;
+  --color-white: #fff;
+}

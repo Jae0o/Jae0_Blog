@@ -1,5 +1,6 @@
 import React from "react";
-import NavProfileCard from "./NavProfileCard";
+import "../../CSS/Navbar/Navbar.css";
+import NavProfileCard from "./ProfileCard/NavProfileCard";
 
 const Navbar: React.FC = () => {
   return (

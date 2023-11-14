@@ -1,4 +1,5 @@
 import React from "react";
+import "../CSS/Root.css";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar/Navbar";
 
