@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
-import EditTitleInput from "./Inputs/EditTitleInput";
+import EditTextInput from "./Inputs/EditTextInput";
 import { PostData, setPostType } from "../../Types/EditorTypes";
+import EditMD from "./Inputs/EditMD";
 
 const EditPage: React.FC = () => {
-  const [postData, setPostData] = useState<PostData>();
+  const [postData, setPostData] = useState<PostData>({
+    title: "제목 없음",
+    subtitle: "부제목 없음",
+    main: "본문 없음",
+  });
 
   useEffect(() => {
     console.log(postData);
@@ -20,8 +25,16 @@ const EditPage: React.FC = () => {
 
   return (
     <section>
-      <EditTitleInput typeName="title" onTyping={setPostHandler} />
-      <EditTitleInput typeName="subtitle" onTyping={setPostHandler} />
+      {/* private */}
+      {/* title */}
+      <EditTextInput typeName="title" onTyping={setPostHandler} state={postData.title} />
+      {/* subtitle */}
+      <EditTextInput typeName="subtitle" onTyping={setPostHandler} state={postData.subtitle} />
+      {/* tag */}
+
+      {/* category */}
+      {/* body */}
+      <EditMD onTyping={setPostHandler} state={postData.main} />
     </section>
   );
 };

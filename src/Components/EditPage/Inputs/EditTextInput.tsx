@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { EditInputProps } from "../../../Types/EditorTypes";
+import { EditTextInputProps } from "../../../Types/EditorTypes";
 import { OnChangeType } from "../../../Types/EventTypes";
 
-const EditTitleInput: React.FC<EditInputProps> = ({ typeName, onTyping }) => {
-  const [textValue, setTextValue] = useState<string>("");
+const EditTextInput: React.FC<EditTextInputProps> = ({ typeName, onTyping, state }) => {
+  const [textValue, setTextValue] = useState<string>(state);
 
   useEffect(() => {
     onTyping(typeName, textValue);
@@ -23,4 +23,4 @@ const EditTitleInput: React.FC<EditInputProps> = ({ typeName, onTyping }) => {
   );
 };
 
-export default EditTitleInput;
+export default EditTextInput;

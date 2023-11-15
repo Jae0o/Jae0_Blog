@@ -1,12 +1,19 @@
-export interface EditInputProps {
+export type OnTypingType = (key: string, text: string) => void;
+export interface EditTextInputProps {
   typeName: string;
-  onTyping(key: string, text: string): void;
+  onTyping: OnTypingType;
+  state: string;
+}
+
+export interface EditMDProps {
+  onTyping: OnTypingType;
+  state: string;
 }
 
 export interface PostData {
-  title?: string;
-  subtitle?: string;
-  main?: string;
+  title: string;
+  subtitle: string;
+  main: string;
 }
 
 export type setPostType = (key: string, value: string) => void;
