@@ -13,9 +13,9 @@ const NavProfileCard: React.FC = () => {
           <img className="profile__photo-img" src={profileImageURL} alt="sampleImage" />
         </div>
         <div className="profile__menu">
-          <ProfileMenuButton emoji="search" />
-          <ProfileMenuButton emoji="write" />
-          <ProfileMenuButton emoji="home" />
+          <ProfileMenuButton emoji="search" path="/" />
+          <ProfileMenuButton emoji="write" path="/editor" />
+          <ProfileMenuButton emoji="home" path="/" />
         </div>
       </div>
       <div className="profile__title-box">
