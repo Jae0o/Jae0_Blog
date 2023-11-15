@@ -8,20 +8,19 @@ const NavProfileCard: React.FC = () => {
 
   return (
     <div className="nav__profile">
-      <div className="profile__left">
+      <div className="profile__top">
         <div className="profile__photo-box">
           <img className="profile__photo-img" src={profileImageURL} alt="sampleImage" />
         </div>
-        <div className="profile__title-box">
-          <h1 className="profile__title-text">Jae0's Blog</h1>
+        <div className="profile__menu">
+          <ProfileMenuButton emoji="search" />
+          <ProfileMenuButton emoji="write" />
+          <ProfileMenuButton emoji="home" />
         </div>
       </div>
-      <div className="profile__menu">
-        <ProfileMenuButton emoji="search" />
-        <ProfileMenuButton emoji="write" />
-        <ProfileMenuButton emoji="home" />
+      <div className="profile__title-box">
+        <h1 className="profile__title-text">Jae0's Blog</h1>
       </div>
-      ;
     </div>
   );
 };

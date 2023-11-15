@@ -1,18 +1,18 @@
 import React from "react";
 import "../../../CSS/Navbar/ProfileCard/ProfileMenuButton.css";
 import { FaHome } from "react-icons/fa";
-import { LuSearchCheck } from "react-icons/lu";
+import { FaSearch } from "react-icons/fa";
 import { MenuButtonProps } from "../../../Types/NavbarType";
-import { TfiWrite } from "react-icons/tfi";
+import { MdEditDocument } from "react-icons/md";
 
 const ProfileMenuButton: React.FC<MenuButtonProps> = ({ emoji }) => {
   let icon: JSX.Element;
   if (emoji === "home") {
     icon = <FaHome className="profile__btn-emoji home-btn" />;
   } else if (emoji === "search") {
-    icon = <LuSearchCheck className="profile__btn-emoji search-btn" />;
+    icon = <FaSearch className="profile__btn-emoji search-btn" />;
   } else {
-    icon = <TfiWrite className="profile__btn-emoji write-btn" />;
+    icon = <MdEditDocument className="profile__btn-emoji write-btn" />;
   }
 
   return (

@@ -22,4 +22,7 @@ section {
   --color-green: #a0d468;
   --color-semi-white: #e6e9ed;
   --color-white: #fff;
+
+  /* shdow */
+  --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
 }
