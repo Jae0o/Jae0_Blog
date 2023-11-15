@@ -17,3 +17,5 @@ export interface PostData {
 }
 
 export type setPostType = (key: string, value: string) => void;
+
+export type OnChangeMDType = (value: string) => void;

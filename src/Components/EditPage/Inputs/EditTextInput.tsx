@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { EditTextInputProps } from "../../../Types/EditorTypes";
 import { OnChangeType } from "../../../Types/EventTypes";
 
 const EditTextInput: React.FC<EditTextInputProps> = ({ typeName, onTyping, state }) => {
   const [textValue, setTextValue] = useState<string>(state);
-
-  useEffect(() => {
-    onTyping(typeName, textValue);
-  }, [textValue]);
 
   const onChangeData: OnChangeType = (e) => {
     e.preventDefault();

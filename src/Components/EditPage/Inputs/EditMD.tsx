@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
-import { OnChangeType } from "../../../Types/EventTypes";
-import { EditMDProps } from "../../../Types/EditorTypes";
+import { EditMDProps, OnChangeMDType } from "../../../Types/EditorTypes";
 
 const EditMD: React.FC<EditMDProps> = ({ onTyping, state }) => {
   const [value, setValue] = useState<string>(state);
 
-  useEffect(() => {
+  const onChangeMD: OnChangeMDType = (value) => {
+    setValue(value);
     onTyping("main", value);
-  }, [value]);
+  };
 
   return (
     <div className="editor__MD-outbox">
       <div className="editor__MD-box" data-color-mode="light">
-        <MDEditor className="editor-MD-input" value={value} onChange={(newValue) => setValue(newValue as string)} />
+        <MDEditor className="editor-MD-input" value={value} onChange={(newValue) => onChangeMD(newValue as string)} />
       </div>
     </div>
   );
