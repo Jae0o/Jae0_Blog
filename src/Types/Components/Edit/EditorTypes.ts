@@ -4,12 +4,15 @@ export interface PostDataType {
   subtitle: string;
   main: string;
   category: string;
+  tag: string[];
 }
 // EditPage
 export interface EditorProps {
   post: PostDataType;
   categoryList: string[];
+  tagList: string[];
 }
+
 export type EditorSetPostFunc = (key: string, value: string | boolean) => void;
 
 // Edit Input
@@ -40,4 +43,11 @@ export interface EditorCategoryProps {
   categoryList: string[];
   state: string;
   onSelecting: EditorOnSelectingFunc;
+}
+
+//Editor Tag
+
+export interface EditorTagsProps {
+  tags: string[];
+  state: string[];
 }

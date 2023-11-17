@@ -12,6 +12,7 @@ const newPost: PostDataType = {
   main: "## 본문 없음",
   isPublic: true,
   category: "",
+  tag: [],
 };
 const Edit: React.FC = () => {
   const [categoryList, setCategoryList] = useState<string[]>([]);
@@ -20,12 +21,13 @@ const Edit: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const category: string[] = await getList("category");
-      setCategoryList(category);
       const tag: string[] = await getList("tag");
+      setCategoryList(category);
       setTagList(tag);
     };
     fetchData();
   }, []);
+  console.log(categoryList);
 
   const onUpdateLists: onUpdateFunc = (name, value) => {
     if (name === "category") {
@@ -41,7 +43,7 @@ const Edit: React.FC = () => {
 
   return (
     <section className="outlet__edit">
-      <EditPage post={newPost} categoryList={categoryList} />
+      <EditPage post={newPost} categoryList={categoryList} tagList={tagList} />
       <EditSubPage onUpdate={onUpdateLists} />
     </section>
   );

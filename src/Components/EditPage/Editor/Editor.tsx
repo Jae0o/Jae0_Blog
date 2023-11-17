@@ -5,8 +5,9 @@ import EditorPublicToggle from "./Features/EditorPublicToggle";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";
 import EditorCategory from "./Features/EditorCategory";
+import EditorTags from "./Features/EditorTags";
 
-const Editor: React.FC<EditorProps> = ({ post, categoryList }) => {
+const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
   const [postData, setPostData] = useState<PostDataType>(post);
 
   const setPostHandler: EditorSetPostFunc = (key, value) => {
@@ -27,7 +28,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList }) => {
       {/* subtitle */}
       <EditorTextInput typeName="subtitle" onTyping={setPostHandler} state={postData.subtitle} />
       {/* tag */}
-
+      <EditorTags state={postData.tag} tags={tagList} />
       {/* category */}
       <EditorCategory categoryList={categoryList} onSelecting={setPostHandler} state={postData.category} />
       {/* body */}
