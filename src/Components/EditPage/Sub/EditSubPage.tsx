@@ -1,12 +1,13 @@
 import React from "react";
 import "../../../CSS/EditPage/EditSubPage/EditSubPage.css";
-import EditCategoryList from "./Features/EditCategoryList";
+import EditLists from "./Features/EditLists";
 import { EditSubPageProps } from "../../../Types/Components/Edit/EditSubTypes";
 
 const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
   return (
     <aside className="editsubpage">
-      <EditCategoryList onUpdate={onUpdate} />
+      <EditLists onUpdate={onUpdate} listType="category" />
+      <EditLists onUpdate={onUpdate} listType="label" />
     </aside>
   );
 };
