@@ -6,6 +6,8 @@ import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";
 import EditorCategory from "./Features/EditorCategory";
 import EditorTags from "./Features/EditorTags";
+import { OnClickEventType } from "../../../Types/EventTypes";
+import { setPost } from "../../../API/FirebaseDB";
 
 const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
   const [postData, setPostData] = useState<PostDataType>(post);
@@ -18,7 +20,15 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
 
     setPostData(newPostData);
   };
-  console.log(postData);
+
+  const onPost: OnClickEventType = (e) => {
+    e.preventDefault();
+    if (!postData.category) {
+      alert("카테고리를 꼭 설정해주세요");
+      return;
+    }
+    setPost(postData);
+  };
 
   return (
     <article className="editor">
@@ -34,6 +44,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
       <EditorCategory categoryList={categoryList} onSelecting={setPostHandler} state={postData.category} />
       {/* body */}
       <EditorMD onTyping={setPostHandler} state={postData.main} />
+      <button onClick={onPost}>제출</button>
     </article>
   );
 };

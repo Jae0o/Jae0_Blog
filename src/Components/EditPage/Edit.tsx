@@ -7,6 +7,9 @@ import { getList } from "../../API/FirebaseDB";
 import { onUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
 
 const newPost: PostDataType = {
+  id: "newPost",
+  createAt: "newPost",
+  updateAt: "newPost",
   title: "제목 없음",
   subtitle: "부제목 없음",
   main: "## 본문 없음",
@@ -27,7 +30,6 @@ const Edit: React.FC = () => {
     };
     fetchData();
   }, []);
-  console.log(categoryList);
 
   const onUpdateLists: onUpdateFunc = (name, value) => {
     if (name === "category") {
