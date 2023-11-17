@@ -4,6 +4,7 @@ import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
 import { PostDataType } from "../../Types/Components/Edit/EditorTypes";
 import { getCategory } from "../../API/FirebaseDB";
+import { onUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
 
 const newPost: PostDataType = {
   title: "제목 없음",
@@ -23,10 +24,17 @@ const Edit: React.FC = () => {
     fetchData();
   }, []);
 
+  const onUpdateLists: onUpdateFunc = (name, value) => {
+    if (name === "category") {
+      setCategoryList([...categoryList, value]);
+      return;
+    }
+  };
+
   return (
     <section className="outlet__edit">
       <EditPage post={newPost} categoryList={categoryList} />
-      <EditSubPage />
+      <EditSubPage onUpdate={onUpdateLists} />
     </section>
   );
 };

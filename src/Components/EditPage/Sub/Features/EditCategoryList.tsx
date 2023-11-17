@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { OnClickEventType } from "../../../../Types/EventTypes";
 import { getCategory, setCategory } from "../../../../API/FirebaseDB";
+import { EditCategoryListProps } from "../../../../Types/Components/Edit/EditSubTypes";
 
-const EditCategory: React.FC = () => {
+const EditCategoryList: React.FC<EditCategoryListProps> = ({ onUpdate }) => {
   const [newCategory, setNewCategory] = useState<string>("");
 
   useEffect(() => {
     if (!newCategory) return;
-
-    const isAgree: boolean = window.confirm(`${newCategory} 라는 값을 추가하실건가요?`);
-    if (isAgree) {
-      setCategory(newCategory);
-      setNewCategory("");
-    }
+    setCategory(newCategory);
+    setNewCategory("");
   }, [newCategory]);
 
   /* SetCategory */
@@ -20,7 +17,11 @@ const EditCategory: React.FC = () => {
     const value: string | null = prompt("새로 추가할 카테고리의 이름을 넣어주세요");
     if (!value) return;
 
-    setNewCategory(value);
+    const isAgree: boolean = window.confirm(`${value} 라는 값을 추가하실건가요?`);
+    if (isAgree) {
+      setNewCategory(value);
+      onUpdate("category", value);
+    }
   };
 
   /* getCategory 삭제 예정 */
@@ -37,4 +38,4 @@ const EditCategory: React.FC = () => {
   );
 };
 
-export default EditCategory;
+export default EditCategoryList;
