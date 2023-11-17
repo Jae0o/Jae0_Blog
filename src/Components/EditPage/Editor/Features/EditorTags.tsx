@@ -2,19 +2,22 @@ import React, { useState } from "react";
 import { EditorTagsProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEventType } from "../../../../Types/EventTypes";
 
-const EditorTags: React.FC<EditorTagsProps> = ({ tags, state }) => {
+const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => {
   const [selected, setSelected] = useState<string[]>(state);
 
   const toggleTagHandler: OnChangeEventType = (e) => {
     const element: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const target: string = element.value;
 
+    let newSelected: string[];
     if (selected.includes(target)) {
-      const newSelected = selected.filter((item) => item !== target);
-      setSelected(newSelected);
-      return;
+      newSelected = selected.filter((item) => item !== target);
+    } else {
+      newSelected = [...selected, target];
     }
-    setSelected([...selected, target]);
+
+    setSelected(newSelected);
+    onSelecting("tag", newSelected);
   };
 
   return (

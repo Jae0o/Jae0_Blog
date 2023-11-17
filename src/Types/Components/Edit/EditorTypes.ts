@@ -13,7 +13,7 @@ export interface EditorProps {
   tagList: string[];
 }
 
-export type EditorSetPostFunc = (key: string, value: string | boolean) => void;
+export type EditorSetPostFunc = (key: string, value: string | boolean | string[]) => void;
 
 // Edit Input
 export type EditorOnTypingFunc = (key: string, text: string) => void;
@@ -38,16 +38,17 @@ export interface EditPublicToggleProps {
 }
 
 // Editor Categpry
-export type EditorOnSelectingFunc = (key: string, state: string) => void;
+export type EditorCategorySelectingFunc = (key: string, state: string) => void;
 export interface EditorCategoryProps {
   categoryList: string[];
   state: string;
-  onSelecting: EditorOnSelectingFunc;
+  onSelecting: EditorCategorySelectingFunc;
 }
 
 //Editor Tag
-
+export type EditorTagSelectingFunc = (key: string, tag: string[]) => void;
 export interface EditorTagsProps {
   tags: string[];
   state: string[];
+  onSelecting: EditorTagSelectingFunc;
 }
