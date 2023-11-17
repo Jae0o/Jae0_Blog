@@ -1,10 +1,14 @@
-export interface PostData {
+export interface PostDataType {
   isPublic: boolean;
   title: string;
   subtitle: string;
   main: string;
 }
 // EditPage
+export interface EditorProps {
+  post: PostDataType;
+  categoryList: string[];
+}
 export type setPostType = (key: string, value: string | boolean) => void;
 
 // Edit Input
@@ -27,4 +31,9 @@ export type OnToggleType = (key: string, state: boolean) => void;
 export interface EditPublicToggleProps {
   state: boolean;
   onToggle: OnToggleType;
+}
+
+// Editor Categpry
+export interface EditorCategoryProps {
+  categoryList: string[];
 }

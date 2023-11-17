@@ -1,26 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../../../CSS/EditPage/Editor/Editor.css";
-import { PostData, setPostType } from "../../../Types/Components/Edit/EditorTypes";
+import { EditorProps, PostDataType, setPostType } from "../../../Types/Components/Edit/EditorTypes";
 import EditorPublicToggle from "./Features/EditorPublicToggle";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";
+import EditorCategory from "./Features/EditorCategory";
 
-const newPost: PostData = {
-  title: "제목 없음",
-  subtitle: "부제목 없음",
-  main: "본문 없음",
-  isPublic: true,
-};
-
-const Editor: React.FC = () => {
-  const [postData, setPostData] = useState<PostData>(newPost);
-
-  useEffect(() => {
-    console.log(postData);
-  }, [postData]);
+const Editor: React.FC<EditorProps> = ({ post, categoryList }) => {
+  const [postData, setPostData] = useState<PostDataType>(post);
 
   const setPostHandler: setPostType = (key, value) => {
-    const newPostData: PostData = {
+    const newPostData: PostDataType = {
       ...postData,
       [key]: value,
     };
@@ -39,6 +29,7 @@ const Editor: React.FC = () => {
       {/* tag */}
 
       {/* category */}
+      <EditorCategory categoryList={categoryList} />
       {/* body */}
       <EditorMD onTyping={setPostHandler} state={postData.main} />
     </article>
