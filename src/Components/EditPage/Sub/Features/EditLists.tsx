@@ -1,6 +1,6 @@
 import React from "react";
 import { OnClickEventType } from "../../../../Types/EventTypes";
-import { setCategory, setLabel } from "../../../../API/FirebaseDB";
+import { setAddLists } from "../../../../API/FirebaseDB";
 import { EditListsProps } from "../../../../Types/Components/Edit/EditSubTypes";
 
 const EditLists: React.FC<EditListsProps> = ({ onUpdate, listType }) => {
@@ -12,14 +12,8 @@ const EditLists: React.FC<EditListsProps> = ({ onUpdate, listType }) => {
     const isAgree: boolean = window.confirm(`${listType}에 ${value} 라는 새로운 값을 추가하실건가요?`);
     if (!isAgree) return;
 
-    if (listType === "category") {
-      setCategory(value);
-      onUpdate("category", value);
-      return;
-    }
-
-    setLabel(value);
-    onUpdate("label", value);
+    setAddLists(listType, value);
+    onUpdate(listType, value);
     return;
   };
 

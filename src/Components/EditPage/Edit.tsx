@@ -3,7 +3,7 @@ import "../../CSS/EditPage/Edit.css";
 import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
 import { PostDataType } from "../../Types/Components/Edit/EditorTypes";
-import { getCategory } from "../../API/FirebaseDB";
+import { getList } from "../../API/FirebaseDB";
 import { onUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
 
 const newPost: PostDataType = {
@@ -18,8 +18,8 @@ const Edit: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await getCategory();
-      setCategoryList(res);
+      const category: string[] = await getList("category");
+      setCategoryList(category);
     };
     fetchData();
   }, []);

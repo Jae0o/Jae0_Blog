@@ -1,7 +1,3 @@
-export type setCategoryFunc = (category: string) => Promise<void>;
+export type setAddListsFunc = (listType: string, value: string) => Promise<void>;
 
-export type getCategoryFunc = () => Promise<string[]>;
-
-export type setLabelFunc = (label: string) => Promise<void>;
-
-export type getLabelFunc = () => Promise<string[]>;
+export type getListFunc = (listType: string) => Promise<string[]>;
