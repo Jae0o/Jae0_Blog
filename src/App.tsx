@@ -2,7 +2,7 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
 import Home from "./Components/Home/Home";
-import EditPage from "./Components/EditPage/EditPage";
+import Edit from "./Components/EditPage/Edit";
 
 const router = createBrowserRouter([
   {
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     errorElement: <h1>임시 에러창</h1>,
     children: [
       { index: true, element: <Home /> },
-      { path: "/editor", element: <EditPage /> },
+      { path: "/editor", element: <Edit /> },
     ],
   },
 ]);

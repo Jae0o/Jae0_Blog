@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
-import { EditMDProps, OnChangeMDType } from "../../../Types/EditorTypes";
+import { EditorMDProps, OnChangeMDType } from "../../../../Types/EditorTypes";
 
-const EditMD: React.FC<EditMDProps> = ({ onTyping, state }) => {
+const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
   const [value, setValue] = useState<string>(state);
 
   const onChangeMD: OnChangeMDType = (value) => {
@@ -19,4 +19,4 @@ const EditMD: React.FC<EditMDProps> = ({ onTyping, state }) => {
   );
 };
 
-export default EditMD;
+export default EditorMD;

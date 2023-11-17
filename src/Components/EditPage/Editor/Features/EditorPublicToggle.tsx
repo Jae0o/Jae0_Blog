@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { EditPublicToggleProps } from "../../../Types/EditorTypes";
-import { OnChangeType } from "../../../Types/EventTypes";
 
-const EditPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }) => {
+import { OnChangeType } from "../../../../Types/EventTypes";
+import { EditPublicToggleProps } from "../../../../Types/EditorTypes";
+
+const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }) => {
   const [isPublic, setIsPublic] = useState<boolean>(state);
 
   const onChangeToggle: OnChangeType = (e) => {
@@ -19,11 +20,9 @@ const EditPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }) 
         checked={isPublic}
         onChange={onChangeToggle}
       />
-      <label htmlFor="publicToggleBox" className="Editor__public-label">
-        dd
-      </label>
+      <label htmlFor="publicToggleBox" className="Editor__public-label"></label>
     </div>
   );
 };
 
-export default EditPublicToggle;
+export default EditorPublicToggle;
