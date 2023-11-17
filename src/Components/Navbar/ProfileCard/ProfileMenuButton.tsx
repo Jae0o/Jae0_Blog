@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../CSS/Navbar/ProfileCard/ProfileMenuButton.css";
 import { MenuButtonProps } from "../../../Types/Components/Nav/NavbarType";
-import { OnClickType } from "../../../Types/EventTypes";
+import { OnClickEventType } from "../../../Types/EventTypes";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
@@ -19,7 +19,7 @@ const ProfileMenuButton: React.FC<MenuButtonProps> = ({ emoji, path }) => {
 
   const navigate: NavigateFunction = useNavigate();
 
-  const onClickHandle: OnClickType = (e) => {
+  const onClickHandle: OnClickEventType = (e) => {
     e.preventDefault();
     navigate(path);
   };

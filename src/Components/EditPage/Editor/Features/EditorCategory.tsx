@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { EditorCategoryProps } from "../../../../Types/Components/Edit/EditorTypes";
-import { OnChangeType } from "../../../../Types/EventTypes";
+import { OnChangeEventType } from "../../../../Types/EventTypes";
 
 const EditorCategory: React.FC<EditorCategoryProps> = ({ categoryList, onSelecting, state }) => {
   const [selected, setSelected] = useState<string>(state);
 
-  const selectedHandler: OnChangeType = (e) => {
+  const selectedHandler: OnChangeEventType = (e) => {
     const target = e.currentTarget as HTMLInputElement;
     setSelected(target.value);
     onSelecting("category", target.value);

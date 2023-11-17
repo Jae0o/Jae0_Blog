@@ -10,34 +10,34 @@ export interface EditorProps {
   post: PostDataType;
   categoryList: string[];
 }
-export type setPostType = (key: string, value: string | boolean) => void;
+export type EditorSetPostFunc = (key: string, value: string | boolean) => void;
 
 // Edit Input
-export type OnTypingType = (key: string, text: string) => void;
+export type EditorOnTypingFunc = (key: string, text: string) => void;
 export interface EditorTextInputProps {
   typeName: string;
-  onTyping: OnTypingType;
+  onTyping: EditorOnTypingFunc;
   state: string;
 }
 
 // Edit MD
-export type OnChangeMDType = (value: string) => void;
+export type EditorMDOnChangeFunc = (value: string) => void;
 export interface EditorMDProps {
-  onTyping: OnTypingType;
+  onTyping: EditorOnTypingFunc;
   state: string;
 }
 
 // Edit Public
-export type OnToggleType = (key: string, state: boolean) => void;
+export type EditorOnToggleFunc = (key: string, state: boolean) => void;
 export interface EditPublicToggleProps {
   state: boolean;
-  onToggle: OnToggleType;
+  onToggle: EditorOnToggleFunc;
 }
 
 // Editor Categpry
-export type OnSelectingFunc = (key: string, state: string) => void;
+export type EditorOnSelectingFunc = (key: string, state: string) => void;
 export interface EditorCategoryProps {
   categoryList: string[];
   state: string;
-  onSelecting: OnSelectingFunc;
+  onSelecting: EditorOnSelectingFunc;
 }

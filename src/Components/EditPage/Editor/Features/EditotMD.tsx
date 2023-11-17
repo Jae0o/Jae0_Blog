@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import MDEditor from "@uiw/react-md-editor";
-import { EditorMDProps, OnChangeMDType } from "../../../../Types/Components/Edit/EditorTypes";
+import { EditorMDProps, EditorMDOnChangeFunc } from "../../../../Types/Components/Edit/EditorTypes";
 
 const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
   const [value, setValue] = useState<string>(state);
 
-  const onChangeMD: OnChangeMDType = (value) => {
+  const onChangeMD: EditorMDOnChangeFunc = (value) => {
     setValue(value);
     onTyping("main", value);
   };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../../CSS/EditPage/Editor/Editor.css";
-import { EditorProps, PostDataType, setPostType } from "../../../Types/Components/Edit/EditorTypes";
+import { EditorProps, PostDataType, EditorSetPostFunc } from "../../../Types/Components/Edit/EditorTypes";
 import EditorPublicToggle from "./Features/EditorPublicToggle";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";
@@ -9,7 +9,7 @@ import EditorCategory from "./Features/EditorCategory";
 const Editor: React.FC<EditorProps> = ({ post, categoryList }) => {
   const [postData, setPostData] = useState<PostDataType>(post);
 
-  const setPostHandler: setPostType = (key, value) => {
+  const setPostHandler: EditorSetPostFunc = (key, value) => {
     const newPostData: PostDataType = {
       ...postData,
       [key]: value,

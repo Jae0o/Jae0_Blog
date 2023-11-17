@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { OnClickType } from "../../../../Types/EventTypes";
+import { OnClickEventType } from "../../../../Types/EventTypes";
 import { getCategory, setCategory } from "../../../../API/FirebaseDB";
 
 const EditCategory: React.FC = () => {
@@ -16,7 +16,7 @@ const EditCategory: React.FC = () => {
   }, [newCategory]);
 
   /* SetCategory */
-  const categoryHandler: OnClickType = () => {
+  const categoryHandler: OnClickEventType = () => {
     const value: string | null = prompt("새로 추가할 카테고리의 이름을 넣어주세요");
     if (!value) return;
 
@@ -24,7 +24,7 @@ const EditCategory: React.FC = () => {
   };
 
   /* getCategory 삭제 예정 */
-  const getCate: OnClickType = () => {
+  const getCate: OnClickEventType = () => {
     getCategory().then((res) => console.log(res));
   };
 
