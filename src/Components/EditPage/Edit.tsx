@@ -10,6 +10,7 @@ const newPost: PostDataType = {
   subtitle: "부제목 없음",
   main: "## 본문 없음",
   isPublic: true,
+  category: "",
 };
 const Edit: React.FC = () => {
   const [categoryList, setCategoryList] = useState<string[]>([]);

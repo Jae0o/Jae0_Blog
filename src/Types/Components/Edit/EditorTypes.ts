@@ -3,6 +3,7 @@ export interface PostDataType {
   title: string;
   subtitle: string;
   main: string;
+  category: string;
 }
 // EditPage
 export interface EditorProps {
@@ -34,6 +35,9 @@ export interface EditPublicToggleProps {
 }
 
 // Editor Categpry
+export type OnSelectingFunc = (key: string, state: string) => void;
 export interface EditorCategoryProps {
   categoryList: string[];
+  state: string;
+  onSelecting: OnSelectingFunc;
 }

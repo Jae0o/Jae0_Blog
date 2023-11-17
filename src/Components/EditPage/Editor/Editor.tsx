@@ -17,6 +17,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList }) => {
 
     setPostData(newPostData);
   };
+  console.log(postData);
 
   return (
     <article className="editor">
@@ -29,7 +30,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList }) => {
       {/* tag */}
 
       {/* category */}
-      <EditorCategory categoryList={categoryList} />
+      <EditorCategory categoryList={categoryList} onSelecting={setPostHandler} state={postData.category} />
       {/* body */}
       <EditorMD onTyping={setPostHandler} state={postData.main} />
     </article>
