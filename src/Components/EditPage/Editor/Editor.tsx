@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../../../CSS/EditPage/Editor/Editor.css";
-import { PostData, setPostType } from "../../../Types/EditorTypes";
+import { PostData, setPostType } from "../../../Types/Components/Edit/EditorTypes";
 import EditorPublicToggle from "./Features/EditorPublicToggle";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";

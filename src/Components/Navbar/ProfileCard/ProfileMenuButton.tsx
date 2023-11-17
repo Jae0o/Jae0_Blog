@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../CSS/Navbar/ProfileCard/ProfileMenuButton.css";
-import { MenuButtonProps } from "../../../Types/NavbarType";
+import { MenuButtonProps } from "../../../Types/Components/Nav/NavbarType";
 import { OnClickType } from "../../../Types/EventTypes";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import { FaHome } from "react-icons/fa";

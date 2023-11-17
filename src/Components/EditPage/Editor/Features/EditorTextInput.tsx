@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { EditorTextInputProps } from "../../../../Types/EditorTypes";
+import { EditorTextInputProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeType } from "../../../../Types/EventTypes";
 
 const EditorTextInput: React.FC<EditorTextInputProps> = ({ typeName, onTyping, state }) => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { OnChangeType } from "../../../../Types/EventTypes";
-import { EditPublicToggleProps } from "../../../../Types/EditorTypes";
+import { EditPublicToggleProps } from "../../../../Types/Components/Edit/EditorTypes";
 
 const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }) => {
   const [isPublic, setIsPublic] = useState<boolean>(state);
