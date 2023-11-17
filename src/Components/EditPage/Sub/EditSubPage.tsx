@@ -7,7 +7,7 @@ const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
   return (
     <aside className="editsubpage">
       <EditLists onUpdate={onUpdate} listType="category" />
-      <EditLists onUpdate={onUpdate} listType="label" />
+      <EditLists onUpdate={onUpdate} listType="tag" />
     </aside>
   );
 };

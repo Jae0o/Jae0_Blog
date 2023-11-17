@@ -17,7 +17,6 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList }) => {
 
     setPostData(newPostData);
   };
-  console.log(postData);
 
   return (
     <article className="editor">

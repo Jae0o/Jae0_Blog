@@ -15,11 +15,14 @@ const newPost: PostDataType = {
 };
 const Edit: React.FC = () => {
   const [categoryList, setCategoryList] = useState<string[]>([]);
+  const [tagList, setTagList] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const category: string[] = await getList("category");
       setCategoryList(category);
+      const tag: string[] = await getList("tag");
+      setTagList(tag);
     };
     fetchData();
   }, []);
@@ -27,6 +30,11 @@ const Edit: React.FC = () => {
   const onUpdateLists: onUpdateFunc = (name, value) => {
     if (name === "category") {
       setCategoryList([...categoryList, value]);
+      return;
+    }
+
+    if (name === "tag") {
+      setTagList([...tagList, value]);
       return;
     }
   };
