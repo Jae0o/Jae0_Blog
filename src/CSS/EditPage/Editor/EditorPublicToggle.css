@@ -1,5 +1,5 @@
 .Editor__public-box {
-  font-size: 1.6rem;
+  font-size: var(--fontsize-semi-large);
   display: flex;
   align-items: center;
   margin-bottom: 1rem;

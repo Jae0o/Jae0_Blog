@@ -23,23 +23,27 @@ const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => 
 
   return (
     <ul className="Editor__tag-box">
-      <h6 className="tags__title">태그</h6>
+      <h6 className="tags__title">태그 :</h6>
       {tags &&
-        tags.map((item, idx) => (
-          <li key={idx} className="tags__item">
-            <input
-              id={`tagsCheckbox-${idx}`}
-              className="tags__input"
-              type="checkbox"
-              value={item}
-              checked={selected.includes(item)}
-              onChange={toggleTagHandler}
-            ></input>
-            <label className="tags__label" htmlFor={`tagsCheckbox-${idx}`}>
-              {item}
-            </label>
-          </li>
-        ))}
+        tags.map((item, idx) => {
+          const isChecked: boolean = selected.includes(item);
+
+          return (
+            <li key={idx} className={`tags__item${isChecked ? "-checked" : ""}`}>
+              <input
+                id={`tagsCheckbox-${idx}`}
+                className="tags__input"
+                type="checkbox"
+                value={item}
+                checked={isChecked}
+                onChange={toggleTagHandler}
+              ></input>
+              <label className="tags__label" htmlFor={`tagsCheckbox-${idx}`}>
+                {item}
+              </label>
+            </li>
+          );
+        })}
     </ul>
   );
 };

@@ -53,4 +53,10 @@ section {
 
   /* radius */
   --radius-medium: 12px;
+
+  /* font - size */
+  --fontsize-big: 2.4rem;
+  --fontsize-large: 2rem;
+  --fontsize-semi-large: 1.6rem;
+  --fontsize-medium: 1.4rem;
 }

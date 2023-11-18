@@ -6,7 +6,7 @@
 }
 
 .title__text {
-  font-size: 3.2rem;
+  font-size: var(--fontsize-big);
   margin-left: 0.4rem;
   width: 99%;
 
@@ -22,7 +22,7 @@
   background-color: var(--color-semi-grey);
 }
 .subtitle__text {
-  font-size: 2rem;
+  font-size: var(--fontsize-semi-large);
   margin-left: 0.4rem;
   width: 99%;
   text-overflow: ellipsis;
