@@ -35,6 +35,7 @@ export interface EditorMDProps {
 
 // Edit Public
 export type EditorOnToggleFunc = (key: string, state: boolean) => void;
+export type EditorToggleChangeTextFunc = (isPublic: boolean) => string;
 export interface EditPublicToggleProps {
   state: boolean;
   onToggle: EditorOnToggleFunc;
