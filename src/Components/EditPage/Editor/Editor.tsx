@@ -46,10 +46,10 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
       <EditorTextInput typeName="title" onTyping={setPostHandler} state={postData.title} />
       {/* subtitle */}
       <EditorTextInput typeName="subtitle" onTyping={setPostHandler} state={postData.subtitle} />
-      {/* tag */}
-      <EditorTags onSelecting={setPostHandler} state={postData.tag} tags={tagList} />
       {/* category */}
       <EditorCategory categoryList={categoryList} onSelecting={setPostHandler} state={postData.category} />
+      {/* tag */}
+      <EditorTags onSelecting={setPostHandler} state={postData.tag} tags={tagList} />
       {/* body */}
       <EditorMD onTyping={setPostHandler} state={postData.main} />
     </article>
