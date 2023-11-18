@@ -2,26 +2,15 @@ import React, { useEffect, useState } from "react";
 import "../../CSS/EditPage/Edit.css";
 import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
-import { PostDataType, UploadPostFunc } from "../../Types/Components/Edit/EditorTypes";
+import { UploadPostFunc } from "../../Types/Components/Edit/EditorTypes";
 import { getList, setPost } from "../../API/FirebaseDB";
 import { OnOptionUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
-import { useNavigate, useParams } from "react-router-dom";
-
-const newPost: PostDataType = {
-  id: "newPost",
-  createAt: "newPost",
-  updateAt: "newPost",
-  title: "제목 없음",
-  subtitle: "부제목 없음",
-  main: "## 본문 없음",
-  isPublic: true,
-  category: "",
-  tag: [],
-};
+import { useNavigate /*  useParams */ } from "react-router-dom";
+import { newPost } from "../../constants/PostInitialValue";
+import UploadPage from "../UploadPage";
 
 const Edit: React.FC = () => {
-  const pathId = useParams();
-  console.log(pathId);
+  // const { ID: pathId } = useParams();
 
   const [categoryList, setCategoryList] = useState<string[]>([]);
   const [tagList, setTagList] = useState<string[]>([]);
@@ -54,12 +43,16 @@ const Edit: React.FC = () => {
     setIsLoading(true);
 
     await setPost(post) //
-      .then(() => navigate("/"))
+      .then(() => {
+        alert("업로드에 성공하였습니다! 👍");
+        navigate("/");
+      })
       .catch(() => {
         alert("업로드에 실패했습니다.");
         setIsLoading(false);
       });
   };
+  if (isLoading) return <UploadPage />;
 
   return (
     <section className="outlet__edit">
