@@ -1,4 +1,5 @@
 import React from "react";
+import "../../../../CSS/EditPage/EditSubPage/EditOptionLists.css";
 import { OnClickEventType } from "../../../../Types/EventTypes";
 import { setAddLists } from "../../../../API/FirebaseDB";
 import { EditOptionListsProps } from "../../../../Types/Components/Edit/EditSubTypes";

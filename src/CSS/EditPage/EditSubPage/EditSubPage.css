@@ -1,7 +1,5 @@
 .edit__subpage {
-  border: 1px solid green;
-  width: 30rem;
-  height: 30rem;
+  width: fit-content;
 
   position: absolute;
   bottom: 5rem;
@@ -14,7 +12,10 @@
 }
 
 .subpage__optionbox {
-  border: 1px solid blue;
+  background-color: var(--color-semi-grey);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  user-select: none;
 }
 .subpage__togglebutton {
   width: 8rem;
@@ -31,4 +32,10 @@
   font-size: var(--fontsize-medium);
   font-weight: 1000;
   border: 1px solid red;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.subpage__togglebutton:hover {
+  background-color: var(--color-red);
 }

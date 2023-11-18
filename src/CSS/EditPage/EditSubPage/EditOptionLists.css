@@ -1,0 +1,25 @@
+.subpage__optionlists {
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.optionlists__title {
+  font-size: var(--fontsize-semi-large);
+  font-weight: 1000;
+  margin-bottom: 1rem;
+}
+
+.optionlists__button {
+  padding: 0.4rem 0;
+  background-color: var(--color-yellow);
+  border-radius: 8px;
+  font-size: var(--fontsize-semi-large);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.optionlists__button:hover {
+  background-color: var(--color-green);
+}
