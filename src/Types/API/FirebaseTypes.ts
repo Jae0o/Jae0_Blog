@@ -5,3 +5,5 @@ export type SetAddListsFunc = (listType: string, value: string) => Promise<void>
 export type GetListFunc = (listType: string) => Promise<string[]>;
 
 export type SetPost = (post: PostDataType) => Promise<void>;
+
+export type GetPostFunc = (category?: string) => Promise<PostDataType[]>;

@@ -1,6 +1,6 @@
 import { database } from "./Firebase";
 import { get, set, ref } from "firebase/database";
-import { SetPost, GetListFunc, SetAddListsFunc } from "../Types/API/FirebaseTypes";
+import { SetPost, GetListFunc, SetAddListsFunc, GetPostFunc } from "../Types/API/FirebaseTypes";
 import { v4 } from "uuid";
 import { removeLocalStorage } from "./LocalStorage";
 
@@ -43,4 +43,13 @@ export const setPost: SetPost = async (post) => {
   } catch (e) {
     throw Error("Post를 업로드 하는중 실패했습니다.");
   }
+};
+
+export const getPost: GetPostFunc = async (category = "") => {
+  return await get(ref(database, `Posts${category ? "/" + category : ""}`)).then((res) => {
+    if (res.exists()) {
+      return Object.values(res.val());
+    }
+    return [];
+  });
 };
