@@ -8,9 +8,13 @@ const EditorTextInput: React.FC<EditorTextInputProps> = ({ typeName, onTyping, s
 
   const onChangeData: OnChangeEventType = (e) => {
     e.preventDefault();
-    const target = e.currentTarget as HTMLInputElement;
-    setTextValue(target.value);
-    onTyping(typeName, target.value);
+
+    if (e.currentTarget instanceof HTMLInputElement) {
+      const target: HTMLInputElement = e.currentTarget;
+
+      setTextValue(target.value);
+      onTyping(typeName, target.value);
+    }
   };
 
   return (
