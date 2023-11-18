@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../../../CSS/EditPage/Editor/EditorTags.css";
 import { EditorTagsProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEventType } from "../../../../Types/EventTypes";
 
@@ -24,16 +25,16 @@ const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => 
     <ul className="Editor__tag-box">
       {tags &&
         tags.map((item, idx) => (
-          <li key={idx} className="Editor__tag-item">
+          <li key={idx} className="tags__item">
             <input
               id={`tagsCheckbox-${idx}`}
-              className="Editor__tag-input"
+              className="tags__input"
               type="checkbox"
               value={item}
               checked={selected.includes(item)}
               onChange={toggleTagHandler}
             ></input>
-            <label className="Editor__tag-label" htmlFor={`tagsCheckbox-${idx}`}>
+            <label className="tags__label" htmlFor={`tagsCheckbox-${idx}`}>
               {item}
             </label>
           </li>
