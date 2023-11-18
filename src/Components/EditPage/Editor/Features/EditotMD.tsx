@@ -13,7 +13,7 @@ const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
   return (
     <div className="editor__MD-outbox">
       <div className="editor__MD-box" data-color-mode="light">
-        <MDEditor className="editor-MD-input" value={value} onChange={(newValue) => onChangeMD(newValue as string)} />
+        <MDEditor className="editor__MD-input" value={value} onChange={(newValue) => onChangeMD(newValue as string)} />
       </div>
     </div>
   );

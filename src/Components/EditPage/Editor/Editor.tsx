@@ -18,8 +18,8 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
       ...postData,
       [key]: value,
     };
-    setLocalStorage(newPostData);
     setPostData(newPostData);
+    setLocalStorage(newPostData);
   };
 
   const onPost: OnClickEventType = (e) => {

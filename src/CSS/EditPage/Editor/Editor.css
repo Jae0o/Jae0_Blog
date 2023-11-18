@@ -1,10 +1,11 @@
 .editor {
   border: 1px solid red;
-
-  width: 70vw;
+  width: 90%;
+  height: 90%;
+  padding: 1rem;
 
   /* margin: 6rem 0 0 4rem; */
   position: relative;
-  top: 6rem;
-  left: 5rem;
+  top: 4rem;
+  left: 4rem;
 }
