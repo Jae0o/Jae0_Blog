@@ -3,6 +3,7 @@
   margin-bottom: 1rem;
   border-radius: var(--radius-medium);
   background-color: var(--color-semi-grey);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 .title__text {
@@ -20,6 +21,7 @@
   margin-bottom: 2rem;
   border-radius: var(--radius-medium);
   background-color: var(--color-semi-grey);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 }
 .subtitle__text {
   font-size: var(--fontsize-semi-large);

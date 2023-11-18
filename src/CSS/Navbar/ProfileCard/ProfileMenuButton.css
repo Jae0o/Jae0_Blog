@@ -1,31 +1,36 @@
 .profile__btn__outbox {
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 8px;
-  /* background-color: #ffffff; */
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: var(--radius-medium);
+  transition: all 0.3s;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 .profile__btn-box {
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 8px;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: var(--radius-medium);
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #ffffff; */
 }
 
 .profile__btn-emoji {
-  width: 3.2rem;
-  height: 3.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  color: black;
 }
 
 .search-btn {
-  color: var(--color-red);
+  background-color: var(--color-light-red);
 }
+
 .write-btn {
-  color: var(--color-yellow);
+  background-color: var(--color-yellow);
 }
 .home-btn {
-  color: var(--color-green);
+  background-color: var(--color-green);
+}
+.profile__btn__outbox:hover {
+  transform: scale(1.2);
 }

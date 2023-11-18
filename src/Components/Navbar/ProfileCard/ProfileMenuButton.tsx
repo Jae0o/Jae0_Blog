@@ -10,11 +10,11 @@ import { MdEditDocument } from "react-icons/md";
 const ProfileMenuButton: React.FC<MenuButtonProps> = ({ emoji, path }) => {
   let icon: JSX.Element;
   if (emoji === "home") {
-    icon = <FaHome className="profile__btn-emoji home-btn" />;
+    icon = <FaHome className="profile__btn-emoji" />;
   } else if (emoji === "search") {
-    icon = <FaSearch className="profile__btn-emoji search-btn" />;
+    icon = <FaSearch className="profile__btn-emoji" />;
   } else {
-    icon = <MdEditDocument className="profile__btn-emoji write-btn" />;
+    icon = <MdEditDocument className="profile__btn-emoji" />;
   }
 
   const navigate: NavigateFunction = useNavigate();
@@ -25,7 +25,7 @@ const ProfileMenuButton: React.FC<MenuButtonProps> = ({ emoji, path }) => {
   };
 
   return (
-    <div className="profile__btn__outbox">
+    <div className={`profile__btn__outbox ${emoji}-btn`}>
       <a className="profile__btn-box" href={path} onClick={onClickHandle}>
         {icon}
       </a>

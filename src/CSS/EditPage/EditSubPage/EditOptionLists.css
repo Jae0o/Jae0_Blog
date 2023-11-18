@@ -14,12 +14,14 @@
 .optionlists__button {
   padding: 0.4rem 0;
   background-color: var(--color-yellow);
-  border-radius: 8px;
+  border-radius: var(--radius-medium);
   font-size: var(--fontsize-semi-large);
   transition: all 0.3s;
   cursor: pointer;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
 .optionlists__button:hover {
   background-color: var(--color-green);
+  transform: scale(1.1);
 }
