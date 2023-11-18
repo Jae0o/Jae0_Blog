@@ -14,7 +14,7 @@ const EditorTextInput: React.FC<EditorTextInputProps> = ({ typeName, onTyping, s
 
   return (
     <div className={`Editor__${typeName}-box`}>
-      <input className={`Editor__${typeName}-input`} type="text" value={textValue} onChange={onChangeData} />
+      <input className={`${typeName}__text`} type="text" value={textValue} onChange={onChangeData} />
     </div>
   );
 };
