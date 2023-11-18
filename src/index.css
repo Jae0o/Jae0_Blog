@@ -46,6 +46,7 @@ section {
   --color-light-red: #ed5565;
   --color-yellow: #ffce54;
   --color-green: #a0d468;
+  --color-dark-green: #8cc152;
   --color-semi-white: #e6e9ed;
   --color-white: #fff;
   --color-semi-grey: #ccd1d9;
@@ -55,8 +56,9 @@ section {
   --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
 
   /* radius */
-  --radius-medium: 12px;
-  --radius-semi-medium:8px
+  --radius-semi-large: 12px;
+  --radius-medium: 8px;
+  --radius-small: 4px;
 
   /* font - size */
   --fontsize-big: 2.4rem;

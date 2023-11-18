@@ -2,6 +2,7 @@
   font-size: var(--fontsize-semi-large);
   display: flex;
   align-items: center;
+  user-select: none;
 }
 
 .public__checkbox {
@@ -19,6 +20,7 @@
   flex-direction: column;
   transition: all 0.3s;
   margin-right: 0.4rem;
+  cursor: pointer;
 }
 
 .public__action-item,
@@ -43,4 +45,5 @@
 
 .public__text {
   font-weight: 100;
+  cursor: pointer;
 }

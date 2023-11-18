@@ -1,6 +1,7 @@
 .editor__MD-box {
   width: 100%;
   height: 100%;
+  overflow: scroll;
 }
 
 .MD__outbox {

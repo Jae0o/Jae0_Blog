@@ -3,7 +3,7 @@
   height: 90%;
   background-color: var(--color-white);
   padding: 1rem;
-  border-radius: var(--radius-medium);
+  border-radius: var(--radius-semi-large);
 
   display: flex;
   flex-direction: column;
@@ -12,6 +12,7 @@
   top: 4rem;
   left: 4rem;
 }
+
 .editor__top {
   display: flex;
   justify-content: space-between;
@@ -27,11 +28,15 @@
   display: flex;
   align-items: center;
 
-  border-radius: 12px;
-
+  border-radius: var(--radius-medium);
   font-size: var(--fontsize-semi-large);
-
   background-color: var(--color-green);
 
   cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+}
+
+.editor__submitbutton:hover {
+  background-color: var(--color-dark-green);
 }
