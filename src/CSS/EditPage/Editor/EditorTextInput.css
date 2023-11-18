@@ -1,0 +1,31 @@
+.Editor__title-box {
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-medium);
+  background-color: var(--color-semi-grey);
+}
+
+.title__text {
+  font-size: 3.2rem;
+  margin-left: 0.4rem;
+  width: 99%;
+
+  text-overflow: ellipsis;
+  overflow: scroll;
+  background-color: var(--color-semi-grey);
+}
+
+.Editor__subtitle-box {
+  padding: 0.6rem;
+  margin-bottom: 2rem;
+  border-radius: var(--radius-medium);
+  background-color: var(--color-semi-grey);
+}
+.subtitle__text {
+  font-size: 2rem;
+  margin-left: 0.4rem;
+  width: 99%;
+  text-overflow: ellipsis;
+  overflow: scroll;
+  background-color: var(--color-semi-grey);
+}
