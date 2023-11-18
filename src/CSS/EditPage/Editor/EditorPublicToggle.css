@@ -2,7 +2,6 @@
   font-size: var(--fontsize-semi-large);
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
 }
 
 .public__checkbox {

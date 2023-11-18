@@ -7,10 +7,9 @@ import EditorMD from "./Features/EditotMD";
 import EditorCategory from "./Features/EditorCategory";
 import EditorTags from "./Features/EditorTags";
 import { OnClickEventType } from "../../../Types/EventTypes";
-import { setPost } from "../../../API/FirebaseDB";
-import { getLocalStorage, setLocalStorage } from "../../../API/LocalStorage";
+import { setLocalStorage } from "../../../API/LocalStorage";
 
-const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
+const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }) => {
   const [postData, setPostData] = useState<PostDataType>(post);
 
   const setPostHandler: EditorSetPostFunc = (key, value) => {
@@ -22,23 +21,26 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
     setLocalStorage(newPostData);
   };
 
+  /* validation 업로드에 대한 */
   const onPost: OnClickEventType = (e) => {
     e.preventDefault();
     if (!postData.category) {
       alert("카테고리를 꼭 설정해주세요");
       return;
     }
-    setPost(postData);
+    onSubmit(postData);
   };
 
-  const getget = () => {
-    const data = getLocalStorage(postData.id);
-    console.log(data);
-  };
   return (
     <article className="editor">
-      {/* private */}
-      <EditorPublicToggle state={postData.isPublic} onToggle={setPostHandler} />
+      <div className="editor__top">
+        {/* private */}
+        <EditorPublicToggle state={postData.isPublic} onToggle={setPostHandler} />
+        {/* submit 버튼 */}
+        <button className="editor__submitbutton" onClick={onPost}>
+          Upload
+        </button>
+      </div>
       {/* title */}
       <EditorTextInput typeName="title" onTyping={setPostHandler} state={postData.title} />
       {/* subtitle */}
@@ -49,8 +51,6 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList }) => {
       <EditorCategory categoryList={categoryList} onSelecting={setPostHandler} state={postData.category} />
       {/* body */}
       <EditorMD onTyping={setPostHandler} state={postData.main} />
-      <button onClick={onPost}>제출</button>
-      <button onClick={getget}></button>
     </article>
   );
 };

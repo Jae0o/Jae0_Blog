@@ -10,6 +10,9 @@ input[type="text"] {
   outline: none;
   border: none;
 }
+button {
+  border: none;
+}
 
 html,
 body,

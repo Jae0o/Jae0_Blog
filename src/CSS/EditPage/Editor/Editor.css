@@ -8,8 +8,30 @@
   display: flex;
   flex-direction: column;
 
-  /* margin: 6rem 0 0 4rem; */
   position: relative;
   top: 4rem;
   left: 4rem;
+}
+.editor__top {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+
+.editor__submitbutton {
+  height: 3.2rem;
+
+  padding: 0 1.2rem;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 12px;
+
+  font-size: var(--fontsize-semi-large);
+
+  background-color: var(--color-green);
+
+  cursor: pointer;
 }

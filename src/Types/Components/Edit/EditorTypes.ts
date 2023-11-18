@@ -10,10 +10,12 @@ export interface PostDataType {
   tag: string[];
 }
 // EditPage
+export type UploadPostFunc = (post: PostDataType) => void;
 export interface EditorProps {
   post: PostDataType;
   categoryList: string[];
   tagList: string[];
+  onSubmit: UploadPostFunc;
 }
 
 export type EditorSetPostFunc = (key: string, value: string | boolean | string[]) => void;
