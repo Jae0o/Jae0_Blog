@@ -20,8 +20,8 @@ const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }
         checked={isPublic}
         onChange={onChangeToggle}
       />
-      <label htmlFor="publicToggleBox" className="public__action-bar">
-        <div className="public__action-item">dd</div>
+      <label htmlFor="publicToggleBox" className={`public__action-bar${isPublic ? "-onToggled" : ""}`}>
+        <div className={`public__action-item${isPublic ? "-onToggled" : ""}`}></div>
       </label>
       <label htmlFor="publicToggleBox" className="public__text">
         {toggleChangeText(isPublic)}

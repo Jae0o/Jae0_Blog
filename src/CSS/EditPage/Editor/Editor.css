@@ -1,8 +1,12 @@
 .editor {
-  border: 1px solid red;
   width: 90%;
   height: 90%;
+  background-color: var(--color-white);
   padding: 1rem;
+  border-radius: var(--radius-medium);
+
+  display: flex;
+  flex-direction: column;
 
   /* margin: 6rem 0 0 4rem; */
   position: relative;

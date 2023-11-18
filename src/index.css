@@ -1,11 +1,14 @@
 html {
   font-size: 62.5%;
   background-color: var(--color-semi-white);
-  font-family: "Skybori";
 }
 
 li {
   list-style: none;
+}
+input[type="text"] {
+  outline: none;
+  border: none;
 }
 
 html,
@@ -13,6 +16,9 @@ body,
 h1,
 a,
 nav,
+input,
+label,
+button,
 h1,
 h2,
 h3,
@@ -21,21 +27,30 @@ h5,
 h6,
 ul,
 li,
+span,
+p,
 section {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: "Skybori";
 }
 
 :root {
   /* color */
   --color-black: #434a54;
   --color-red: #da4453;
+  --color-light-red: #ed5565;
   --color-yellow: #ffce54;
   --color-green: #a0d468;
   --color-semi-white: #e6e9ed;
   --color-white: #fff;
+  --color-semi-grey: #ccd1d9;
+  --color-dark-grey: #656d78;
 
   /* shdow */
   --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+
+  /* radius */
+  --radius-medium: 12px;
 }

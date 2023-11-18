@@ -1,0 +1,47 @@
+.Editor__public-box {
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.public__checkbox {
+  display: none;
+}
+
+.public__action-bar,
+.public__action-bar-onToggled {
+  width: 4.2rem;
+  height: 2rem;
+  border-radius: 50px;
+  background-color: var(--color-light-red);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.3s;
+  margin-right: 0.4rem;
+}
+
+.public__action-item,
+.public__action-item-onToggled {
+  position: relative;
+  left: 1px;
+  width: 1.9rem;
+  height: 1.9rem;
+  background-color: var(--color-dark-grey);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.public__action-bar-onToggled {
+  background-color: var(--color-green);
+}
+
+.public__action-item-onToggled {
+  left: 2.2rem;
+  left: none;
+}
+
+.public__text {
+  font-weight: 100;
+}
