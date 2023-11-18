@@ -13,7 +13,7 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({ categoryList, onSelecti
   };
 
   return (
-    <form className="Editor__category-form">
+    <form className="Editor__category-box">
       <h6 className="category__title">카테고리 :</h6>
       <ul className="category__itembox">
         {categoryList &&
