@@ -8,6 +8,7 @@ import EditorCategory from "./Features/EditorCategory";
 import EditorTags from "./Features/EditorTags";
 import { OnClickEventType } from "../../../Types/EventTypes";
 import { setLocalStorage } from "../../../API/LocalStorage";
+import { postUploadValidate } from "../../../Util/Validate";
 
 const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }) => {
   const [postData, setPostData] = useState<PostDataType>(post);
@@ -17,6 +18,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
       ...postData,
       [key]: value,
     };
+
     setPostData(newPostData);
     setLocalStorage(newPostData);
   };
@@ -24,11 +26,10 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
   /* validation 업로드에 대한 */
   const onPost: OnClickEventType = (e) => {
     e.preventDefault();
-    if (!postData.category) {
-      alert("카테고리를 꼭 설정해주세요");
-      return;
+
+    if (postUploadValidate(postData)) {
+      onSubmit(postData);
     }
-    onSubmit(postData);
   };
 
   return (
