@@ -11,11 +11,13 @@
   align-items: flex-end;
 }
 
-.subpage__optionbox {
+.subpage__optionbox,
+.subpage__optionbox-toggle {
   background-color: var(--color-semi-grey);
   border-radius: 8px;
   margin-bottom: 1rem;
   user-select: none;
+  display: none;
 }
 .subpage__togglebutton {
   width: 8rem;
@@ -38,4 +40,8 @@
 
 .subpage__togglebutton:hover {
   background-color: var(--color-red);
+}
+
+.subpage__optionbox-toggle {
+  display: block;
 }
