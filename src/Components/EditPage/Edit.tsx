@@ -5,6 +5,7 @@ import EditSubPage from "./Sub/EditSubPage";
 import { PostDataType } from "../../Types/Components/Edit/EditorTypes";
 import { getList } from "../../API/FirebaseDB";
 import { onUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
+import { useParams } from "react-router-dom";
 
 const newPost: PostDataType = {
   id: "newPost",
@@ -17,7 +18,11 @@ const newPost: PostDataType = {
   category: "",
   tag: [],
 };
+
 const Edit: React.FC = () => {
+  const pathId = useParams();
+  console.log(pathId);
+
   const [categoryList, setCategoryList] = useState<string[]>([]);
   const [tagList, setTagList] = useState<string[]>([]);
 
@@ -36,7 +41,6 @@ const Edit: React.FC = () => {
       setCategoryList([...categoryList, value]);
       return;
     }
-
     if (name === "tag") {
       setTagList([...tagList, value]);
       return;

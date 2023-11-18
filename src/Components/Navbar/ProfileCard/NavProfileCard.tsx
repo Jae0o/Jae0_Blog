@@ -14,7 +14,7 @@ const NavProfileCard: React.FC = () => {
         </div>
         <div className="profile__menu">
           <ProfileMenuButton emoji="search" path="/" />
-          <ProfileMenuButton emoji="write" path="/editor" />
+          <ProfileMenuButton emoji="write" path="/editor/newPost" />
           <ProfileMenuButton emoji="home" path="/" />
         </div>
       </div>

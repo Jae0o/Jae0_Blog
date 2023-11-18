@@ -2,6 +2,7 @@ import { database } from "./Firebase";
 import { get, set, ref } from "firebase/database";
 import { SetPost, GetListFunc, SetAddListsFunc } from "../Types/API/FirebaseTypes";
 import { v4 } from "uuid";
+import { removeLocalStorage } from "./LocalStorage";
 
 /* ============== Lists ============== */
 
@@ -34,7 +35,8 @@ export const setPost: SetPost = async (post) => {
     }
     post.updateAt = time;
 
-    await set(ref(database, `Posts/${post.category}/${post.id}`), post);
+    await set(ref(database, `Posts/${post.category}/${post.id}`), post) //
+      .then((res) => removeLocalStorage(post.id));
     return;
   } catch (e) {
     throw Error("Post를 업로드 하는중 실패했습니다.");
