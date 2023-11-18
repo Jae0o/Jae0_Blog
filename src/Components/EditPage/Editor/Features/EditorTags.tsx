@@ -23,6 +23,7 @@ const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => 
 
   return (
     <ul className="Editor__tag-box">
+      <h6 className="tags__title">태그</h6>
       {tags &&
         tags.map((item, idx) => (
           <li key={idx} className="tags__item">
