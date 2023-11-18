@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../../../../CSS/EditPage/Editor/EditorCategory.css";
 import { EditorCategoryProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEventType } from "../../../../Types/EventTypes";
 
@@ -13,12 +14,13 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({ categoryList, onSelecti
 
   return (
     <form className="Editor__category-form">
-      <ul className="Editor__category-box">
+      <h6 className="category__title">카테고리 :</h6>
+      <ul className="category__itembox">
         {categoryList &&
           categoryList.map((item, idx) => (
-            <li key={idx} className="Editor__category-item">
+            <li key={idx} className="category__item">
               <input
-                className="Editor__category-input"
+                className="category__item-radio"
                 id={`categoryList-${idx}`}
                 value={item}
                 name="category"
@@ -26,7 +28,7 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({ categoryList, onSelecti
                 onChange={selectedHandler}
                 checked={selected === item}
               />
-              <label className="Editor__category-label" htmlFor={`categoryList-${idx}`}>
+              <label className="category__label" htmlFor={`categoryList-${idx}`}>
                 {item}
               </label>
             </li>
