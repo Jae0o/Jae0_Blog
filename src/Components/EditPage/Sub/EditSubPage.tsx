@@ -1,14 +1,14 @@
 import React from "react";
 import "../../../CSS/EditPage/EditSubPage/EditSubPage.css";
-import EditLists from "./Features/EditLists";
+import EditOptionLists from "./Features/EditOptionLists";
 import { EditSubPageProps } from "../../../Types/Components/Edit/EditSubTypes";
 
 const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
   return (
     <aside className="edit__subpage">
       <div className="subpage__optionbox">
-        <EditLists onUpdate={onUpdate} listType="category" />
-        <EditLists onUpdate={onUpdate} listType="tag" />
+        <EditOptionLists onUpdate={onUpdate} listType="category" />
+        <EditOptionLists onUpdate={onUpdate} listType="tag" />
       </div>
       <button className="subpage__togglebutton">
         <span>Option's</span>

@@ -4,7 +4,7 @@ export interface EditSubPageProps {
   onUpdate: OnOptionUpdateFunc;
 }
 
-export interface EditListsProps {
+export interface EditOptionListsProps {
   onUpdate: OnOptionUpdateFunc;
   listType: string;
 }
