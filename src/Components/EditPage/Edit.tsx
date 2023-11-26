@@ -11,10 +11,12 @@ import UploadPage from "../UploadPage";
 import { ContextCategoryList } from "../../Context/ContextCategory";
 import { ContextTagList } from "../../Context/ContextTagList";
 import { ALERT_EDIT_UPLOAD_SUCCESS } from "../../constants/AlertMessage";
+import { ContextPostList } from "../../Context/ContextPostList";
 
 const Edit: React.FC = () => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
+  const { updatePostList } = useContext(ContextPostList);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [postData, setPostData] = useState<PostDataType>(newPost);
 
@@ -43,6 +45,7 @@ const Edit: React.FC = () => {
     await setPost(post) //
       .then(() => {
         alert(ALERT_EDIT_UPLOAD_SUCCESS);
+        updatePostList();
         navigate("/");
       })
       .catch(() => {
