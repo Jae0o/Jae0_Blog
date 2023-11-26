@@ -1,0 +1,8 @@
+.nav__menubar {
+  width: 100%;
+  height: calc(100% - 24.4rem);
+  padding-right: 1.4rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}

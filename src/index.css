@@ -16,6 +16,7 @@ button {
 
 html,
 body,
+main,
 h1,
 a,
 nav,
@@ -31,6 +32,9 @@ h6,
 ul,
 li,
 span,
+svg,
+img,
+div,
 p,
 section {
   padding: 0;
