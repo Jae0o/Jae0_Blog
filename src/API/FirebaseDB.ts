@@ -3,6 +3,12 @@ import { get, set, ref } from "firebase/database";
 import { SetPost, GetListFunc, SetAddListsFunc, GetPostFunc } from "../Types/API/FirebaseTypes";
 import { v4 } from "uuid";
 import { removeLocalStorage } from "./LocalStorage";
+import {
+  ERROR_MESSAGE_GET_OPTION_LIST,
+  ERROR_MESSAGE_GET_POST,
+  ERROR_MESSAGE_SET_OPTION_LIST,
+  ERROR_MESSAGE_SET_POST,
+} from "../constants/AlertMessage";
 
 /* ============== Lists ============== */
 
@@ -10,16 +16,21 @@ export const setAddLists: SetAddListsFunc = async (listType, value) => {
   try {
     await set(ref(database, `${listType}/${value}`), value);
   } catch (e) {
-    throw Error(`${listType}을 추가하는 과정에서 Error가 발생`);
+    throw Error(`${listType}${ERROR_MESSAGE_SET_OPTION_LIST}`);
   }
 };
 
 export const getList: GetListFunc = async (listType) => {
   try {
     return await get(ref(database, listType)) //
-      .then((res) => (res.exists() ? Object.values(res.val()) : []));
+      .then((res) => {
+        if (res.exists()) {
+          return Object.values(res.val());
+        }
+        return [];
+      });
   } catch (e) {
-    throw Error(`${listType}을 불러오는 과정에서 Error가 발생`);
+    throw Error(`${listType}${ERROR_MESSAGE_GET_OPTION_LIST}`);
   }
 };
 
@@ -41,15 +52,20 @@ export const setPost: SetPost = async (post) => {
       .then((res) => removeLocalStorage(post.id));
     return;
   } catch (e) {
-    throw Error("Post를 업로드 하는중 실패했습니다.");
+    throw Error(ERROR_MESSAGE_SET_POST);
   }
 };
 
-export const getPost: GetPostFunc = async (category = "") => {
-  return await get(ref(database, `Posts${category ? "/" + category : ""}`)).then((res) => {
-    if (res.exists()) {
-      return Object.values(res.val());
-    }
-    return [];
-  });
+export const getPost: GetPostFunc = async () => {
+  try {
+    return await get(ref(database, `Posts`)) //
+      .then((res) => {
+        if (res.exists()) {
+          return res.val();
+        }
+        return [];
+      });
+  } catch (e) {
+    throw new Error(ERROR_MESSAGE_GET_POST);
+  }
 };
