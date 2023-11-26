@@ -3,16 +3,17 @@ import "../../CSS/EditPage/Edit.css";
 import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
 import { PostDataType, UploadPostFunc } from "../../Types/Components/Edit/EditorTypes";
-import { getList, setPost } from "../../API/FirebaseDB";
+import { setPost } from "../../API/FirebaseDB";
 import { OnOptionUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
 import { newPost } from "../../constants/PostInitialValue";
 import UploadPage from "../UploadPage";
-import { ContextCategory } from "../../Context/ContextCategory";
+import { ContextCategoryList } from "../../Context/ContextCategory";
+import { ContextTagList } from "../../Context/ContextTagList";
 
 const Edit: React.FC = () => {
-  const { categoryList, updateCategoryList } = useContext(ContextCategory);
-  const [tagList, setTagList] = useState<string[]>([]);
+  const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
+  const { tagList, updateTagList } = useContext(ContextTagList);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [postData, setPostData] = useState<PostDataType>(newPost);
 
@@ -24,22 +25,13 @@ const Edit: React.FC = () => {
     setPostData(newPost);
   }, [pathId]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const tag: string[] = await getList("tag");
-      updateCategoryList();
-      setTagList(tag);
-    };
-    fetchData();
-  }, [updateCategoryList]);
-
   const onOptionUpdate: OnOptionUpdateFunc = (name, value) => {
     if (name === "category") {
       updateCategoryList();
       return;
     }
     if (name === "tag") {
-      setTagList([...tagList, value]);
+      updateTagList();
       return;
     }
   };
@@ -62,7 +54,12 @@ const Edit: React.FC = () => {
 
   return (
     <section className="outlet__edit">
-      <EditPage post={postData} categoryList={categoryList} tagList={tagList} onSubmit={onPostUpload} />
+      <EditPage
+        post={postData}
+        categoryList={categoryList}
+        tagList={tagList}
+        onSubmit={onPostUpload}
+      />
       <EditSubPage onUpdate={onOptionUpdate} />
     </section>
   );

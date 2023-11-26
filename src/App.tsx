@@ -3,7 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
 import Home from "./Components/Home/Home";
 import Edit from "./Components/EditPage/Edit";
-import { ContextCategoryProvider } from "./Context/ContextCategory";
+import { ContextCategoryListProvider } from "./Context/ContextCategory";
+import { ContextTagListProvider } from "./Context/ContextTagList";
 
 const router = createBrowserRouter([
   {
@@ -19,9 +20,11 @@ const router = createBrowserRouter([
 
 const App: React.FC = () => {
   return (
-    <ContextCategoryProvider>
-      <RouterProvider router={router} />;
-    </ContextCategoryProvider>
+    <ContextTagListProvider>
+      <ContextCategoryListProvider>
+        <RouterProvider router={router} />;
+      </ContextCategoryListProvider>
+    </ContextTagListProvider>
   );
 };
 
