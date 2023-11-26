@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "../../../CSS/EditPage/Editor/Editor.css";
-import { EditorProps, PostDataType, EditorSetPostFunc } from "../../../Types/Components/Edit/EditorTypes";
+import {
+  EditorProps,
+  PostDataType,
+  EditorSetPostFunc,
+} from "../../../Types/Components/Edit/EditorTypes";
 import EditorPublicToggle from "./Features/EditorPublicToggle";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";
@@ -47,7 +51,11 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
       {/* subtitle */}
       <EditorTextInput typeName="subtitle" onTyping={setPostHandler} state={postData.subtitle} />
       {/* category */}
-      <EditorCategory categoryList={categoryList} onSelecting={setPostHandler} state={postData.category} />
+      <EditorCategory
+        categoryList={categoryList}
+        onSelecting={setPostHandler}
+        state={postData.category}
+      />
       {/* tag */}
       <EditorTags onSelecting={setPostHandler} state={postData.tag} tags={tagList} />
       {/* body */}

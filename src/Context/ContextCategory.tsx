@@ -1,21 +1,26 @@
 import { useState, createContext, useEffect } from "react";
 import { getList } from "../API/FirebaseDB";
-import { ContextCategoryProps, ContextCategoryType, UpdateCatogoryFunc } from "../Types/Context/ContextCategoryTypes";
+import {
+  ContextProps,
+  ContextCategoryListType,
+  UpdateContextFunc,
+} from "../Types/Context/ContextTypes";
+import { ALERT_CONTEXT_CATEGORY } from "../constants/AlertMessage";
 
-export const ContextCategory = createContext<ContextCategoryType>({
+export const ContextCategoryList = createContext<ContextCategoryListType>({
   categoryList: [],
   updateCategoryList: () => {},
 });
 
-export const ContextCategoryProvider: React.FC<ContextCategoryProps> = ({ children }) => {
+export const ContextCategoryListProvider: React.FC<ContextProps> = ({ children }) => {
   const [categoryList, setCategoryList] = useState<string[]>([]);
 
-  const updateCategoryList: UpdateCatogoryFunc = () => {
+  const updateCategoryList: UpdateContextFunc = () => {
     getList("category") //
       .then((res) => setCategoryList(res))
       .catch((e) => {
-        alert("Category List 업데이트중 실패");
-        throw new Error("Category List 업데이트중 실패 ", e);
+        alert(ALERT_CONTEXT_CATEGORY);
+        throw new Error(ALERT_CONTEXT_CATEGORY, e);
       });
   };
 
@@ -23,5 +28,9 @@ export const ContextCategoryProvider: React.FC<ContextCategoryProps> = ({ childr
     updateCategoryList();
   }, []);
 
-  return <ContextCategory.Provider value={{ categoryList, updateCategoryList }}>{children}</ContextCategory.Provider>;
+  return (
+    <ContextCategoryList.Provider value={{ categoryList, updateCategoryList }}>
+      {children}
+    </ContextCategoryList.Provider>
+  );
 };

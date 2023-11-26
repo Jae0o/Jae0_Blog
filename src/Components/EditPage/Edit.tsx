@@ -10,6 +10,7 @@ import { newPost } from "../../constants/PostInitialValue";
 import UploadPage from "../UploadPage";
 import { ContextCategoryList } from "../../Context/ContextCategory";
 import { ContextTagList } from "../../Context/ContextTagList";
+import { ALERT_EDIT_UPLOAD_SUCCESS } from "../../constants/AlertMessage";
 
 const Edit: React.FC = () => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
@@ -41,11 +42,11 @@ const Edit: React.FC = () => {
 
     await setPost(post) //
       .then(() => {
-        alert("업로드에 성공하였습니다! 👍");
+        alert(ALERT_EDIT_UPLOAD_SUCCESS);
         navigate("/");
       })
       .catch(() => {
-        alert("업로드에 실패했습니다.");
+        alert(ALERT_EDIT_UPLOAD_SUCCESS);
         setIsLoading(false);
       });
   };
