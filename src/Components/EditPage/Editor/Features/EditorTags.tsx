@@ -36,8 +36,7 @@ const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => 
                 type="checkbox"
                 value={item}
                 checked={isChecked}
-                onChange={toggleTagHandler}
-              ></input>
+                onChange={toggleTagHandler}></input>
               <label className="tags__label" htmlFor={`tagsCheckbox-${idx}`}>
                 {item}
               </label>

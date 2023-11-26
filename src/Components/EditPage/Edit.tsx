@@ -4,7 +4,7 @@ import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
 import { PostDataType, UploadPostFunc } from "../../Types/Components/Edit/EditorTypes";
 import { setPost } from "../../API/FirebaseDB";
-import { OnOptionUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
+import { OnUpdateOptionFunc } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
 import { newPost } from "../../constants/PostInitialValue";
 import UploadPage from "../UploadPage";
@@ -26,7 +26,7 @@ const Edit: React.FC = () => {
     setPostData(newPost);
   }, [pathId]);
 
-  const onOptionUpdate: OnOptionUpdateFunc = (name) => {
+  const onUpdateOption: OnUpdateOptionFunc = (name) => {
     if (name === "category") {
       updateCategoryList();
       return;
@@ -37,7 +37,7 @@ const Edit: React.FC = () => {
     }
   };
 
-  const onPostUpload: UploadPostFunc = async (post) => {
+  const onUploadPost: UploadPostFunc = async (post) => {
     setIsLoading(true);
 
     await setPost(post) //
@@ -59,9 +59,9 @@ const Edit: React.FC = () => {
         post={postData}
         categoryList={categoryList}
         tagList={tagList}
-        onSubmit={onPostUpload}
+        onSubmit={onUploadPost}
       />
-      <EditSubPage onUpdate={onOptionUpdate} />
+      <EditSubPage onUpdate={onUpdateOption} />
     </section>
   );
 };

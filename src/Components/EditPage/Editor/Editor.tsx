@@ -3,7 +3,7 @@ import "../../../CSS/EditPage/Editor/Editor.css";
 import {
   EditorProps,
   PostDataType,
-  EditorSetPostFunc,
+  SetEditorPostFunc,
 } from "../../../Types/Components/Edit/EditorTypes";
 import EditorPublicToggle from "./Features/EditorPublicToggle";
 import EditorTextInput from "./Features/EditorTextInput";
@@ -17,7 +17,7 @@ import { postUploadValidate } from "../../../Util/Validate";
 const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }) => {
   const [postData, setPostData] = useState<PostDataType>(post);
 
-  const setPostHandler: EditorSetPostFunc = (key, value) => {
+  const setPostHandler: SetEditorPostFunc = (key, value) => {
     const newPostData: PostDataType = {
       ...postData,
       [key]: value,
@@ -28,7 +28,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
   };
 
   /* validation 업로드에 대한 */
-  const onPost: OnClickEventType = (e) => {
+  const onSubmitPost: OnClickEventType = (e) => {
     e.preventDefault();
 
     if (postUploadValidate(postData)) {
@@ -42,7 +42,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
         {/* private */}
         <EditorPublicToggle state={postData.isPublic} onToggle={setPostHandler} />
         {/* submit 버튼 */}
-        <button className="editor__submitbutton" onClick={onPost}>
+        <button className="editor__submitbutton" onClick={onSubmitPost}>
           Upload
         </button>
       </div>

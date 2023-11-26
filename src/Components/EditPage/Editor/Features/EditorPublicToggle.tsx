@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "../../../../CSS/EditPage/Editor/EditorPublicToggle.css";
 import { OnChangeEventType } from "../../../../Types/EventTypes";
-import { EditPublicToggleProps, EditorToggleChangeTextFunc } from "../../../../Types/Components/Edit/EditorTypes";
+import {
+  EditPublicToggleProps,
+  ChangToggleEditorTextFunc,
+} from "../../../../Types/Components/Edit/EditorTypes";
 
 const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }) => {
   const [isPublic, setIsPublic] = useState<boolean>(state);
@@ -20,11 +23,13 @@ const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }
         checked={isPublic}
         onChange={onChangeToggle}
       />
-      <label htmlFor="publicToggleBox" className={`public__action-bar${isPublic ? "-onToggled" : ""}`}>
+      <label
+        htmlFor="publicToggleBox"
+        className={`public__action-bar${isPublic ? "-onToggled" : ""}`}>
         <div className={`public__action-item${isPublic ? "-onToggled" : ""}`}></div>
       </label>
       <label htmlFor="publicToggleBox" className="public__text">
-        {toggleChangeText(isPublic)}
+        {changeToggleText(isPublic)}
       </label>
     </div>
   );
@@ -32,7 +37,7 @@ const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({ state, onToggle }
 
 export default EditorPublicToggle;
 
-const toggleChangeText: EditorToggleChangeTextFunc = (isPublic) => {
+const changeToggleText: ChangToggleEditorTextFunc = (isPublic) => {
   if (isPublic) {
     return "공개 상태";
   }

@@ -18,37 +18,37 @@ export interface EditorProps {
   onSubmit: UploadPostFunc;
 }
 
-export type EditorSetPostFunc = (key: string, value: string | boolean | string[]) => void;
+export type SetEditorPostFunc = (key: string, value: string | boolean | string[]) => void;
 
 // Edit Input
-export type EditorOnTypingFunc = (key: string, text: string) => void;
+export type OnTypingEditorFunc = (key: string, text: string) => void;
 export interface EditorTextInputProps {
   typeName: string;
-  onTyping: EditorOnTypingFunc;
+  onTyping: OnTypingEditorFunc;
   state: string;
 }
 
 // Edit MD
-export type EditorMDOnChangeFunc = (value: string) => void;
+export type OnChangeEditorMDFunc = (value: string) => void;
 export interface EditorMDProps {
-  onTyping: EditorOnTypingFunc;
+  onTyping: OnTypingEditorFunc;
   state: string;
 }
 
 // Edit Public
-export type EditorOnToggleFunc = (key: string, state: boolean) => void;
-export type EditorToggleChangeTextFunc = (isPublic: boolean) => string;
+export type OnToggleEditorFunc = (key: string, state: boolean) => void;
+export type ChangToggleEditorTextFunc = (isPublic: boolean) => string;
 export interface EditPublicToggleProps {
   state: boolean;
-  onToggle: EditorOnToggleFunc;
+  onToggle: OnToggleEditorFunc;
 }
 
 // Editor Categpry
-export type EditorCategorySelectingFunc = (key: string, state: string) => void;
+export type SelectingEditorCategoryFunc = (key: string, state: string) => void;
 export interface EditorCategoryProps {
   categoryList: string[];
   state: string;
-  onSelecting: EditorCategorySelectingFunc;
+  onSelecting: SelectingEditorCategoryFunc;
 }
 
 //Editor Tag

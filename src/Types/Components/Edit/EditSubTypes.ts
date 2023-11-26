@@ -1,10 +1,10 @@
-export type OnOptionUpdateFunc = (name: string) => void;
+export type OnUpdateOptionFunc = (name: string) => void;
 
 export interface EditSubPageProps {
-  onUpdate: OnOptionUpdateFunc;
+  onUpdate: OnUpdateOptionFunc;
 }
 
 export interface EditOptionListsProps {
-  onUpdate: OnOptionUpdateFunc;
+  onUpdate: OnUpdateOptionFunc;
   listType: string;
 }
