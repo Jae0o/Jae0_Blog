@@ -11,8 +11,8 @@ export const ContextTagList = createContext<ContextTagListTyps>({
 export const ContextTagListProvider: React.FC<ContextProps> = ({ children }) => {
   const [tagList, setTagList] = useState<string[]>([]);
 
-  const updateTagList: UpdateContextFunc = () => {
-    getList("tag") //
+  const updateTagList: UpdateContextFunc = async () => {
+    await getList("tag") //
       .then((res) => setTagList(res))
       .catch((e) => {
         alert(ALERT_CONTEXT_TAG);

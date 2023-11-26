@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { PostDataType } from "../Components/Edit/EditorTypes";
 
 export type UpdateContextFunc = () => void;
 
@@ -14,4 +15,12 @@ export interface ContextCategoryListType {
 export interface ContextTagListTyps {
   tagList: string[];
   updateTagList: UpdateContextFunc;
+}
+
+export interface PostListStateType {
+  [key: string]: { [key: string]: PostDataType };
+}
+export interface ContextPostListType {
+  postList: PostListStateType;
+  updatePostList: UpdateContextFunc;
 }

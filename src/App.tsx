@@ -5,6 +5,7 @@ import Home from "./Components/Home/Home";
 import Edit from "./Components/EditPage/Edit";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
+import { ContextPostListProvider } from "./Context/ContextPostList";
 
 const router = createBrowserRouter([
   {
@@ -20,11 +21,13 @@ const router = createBrowserRouter([
 
 const App: React.FC = () => {
   return (
-    <ContextTagListProvider>
-      <ContextCategoryListProvider>
-        <RouterProvider router={router} />;
-      </ContextCategoryListProvider>
-    </ContextTagListProvider>
+    <ContextPostListProvider>
+      <ContextTagListProvider>
+        <ContextCategoryListProvider>
+          <RouterProvider router={router} />;
+        </ContextCategoryListProvider>
+      </ContextTagListProvider>
+    </ContextPostListProvider>
   );
 };
 
