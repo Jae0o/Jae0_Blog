@@ -24,7 +24,7 @@ const App: React.FC = () => {
     <ContextPostListProvider>
       <ContextTagListProvider>
         <ContextCategoryListProvider>
-          <RouterProvider router={router} />;
+          <RouterProvider router={router} />
         </ContextCategoryListProvider>
       </ContextTagListProvider>
     </ContextPostListProvider>
