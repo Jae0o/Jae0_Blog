@@ -3,15 +3,20 @@
   height: 23rem;
   margin-top: 1.4rem;
   padding: 1rem;
+
+  position: absolute;
+  top: 0;
+
   border-radius: var(--radius-medium);
   background-color: var(--color-black);
   background: linear-gradient(135deg, #aab2bd 24%, var(--color-black));
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--shadow-all);
 
+  box-shadow: var(--shadow-all);
   user-select: none;
 }
 

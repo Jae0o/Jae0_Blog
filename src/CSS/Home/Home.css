@@ -1,5 +1,5 @@
 .home {
-  width: 100%;
+  width: calc(100% - 22rem);
   height: 100%;
-  border: 5px green solid;
+  border: 1px solid green;
 }
