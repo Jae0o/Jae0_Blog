@@ -26,7 +26,7 @@ const Edit: React.FC = () => {
     setPostData(newPost);
   }, [pathId]);
 
-  const onOptionUpdate: OnOptionUpdateFunc = (name, value) => {
+  const onOptionUpdate: OnOptionUpdateFunc = (name) => {
     if (name === "category") {
       updateCategoryList();
       return;
