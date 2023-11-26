@@ -20,7 +20,10 @@ export interface ContextTagListTyps {
 export interface PostListStateType {
   [key: string]: { [key: string]: PostDataType };
 }
+
 export interface ContextPostListType {
   postList: PostListStateType;
+  htmlList: PostDataType[];
+  workList: PostDataType[];
   updatePostList: UpdateContextFunc;
 }
