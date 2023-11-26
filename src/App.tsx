@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
 import Home from "./Components/Home/Home";
 import Edit from "./Components/EditPage/Edit";
+import { ContextCategoryProvider } from "./Context/ContextCategory";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
 ]);
 
 const App: React.FC = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <ContextCategoryProvider>
+      <RouterProvider router={router} />;
+    </ContextCategoryProvider>
+  );
 };
 
 export default App;

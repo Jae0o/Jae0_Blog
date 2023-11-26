@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../../CSS/EditPage/Edit.css";
 import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
@@ -8,9 +8,10 @@ import { OnOptionUpdateFunc } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
 import { newPost } from "../../constants/PostInitialValue";
 import UploadPage from "../UploadPage";
+import { ContextCategory } from "../../Context/ContextCategory";
 
 const Edit: React.FC = () => {
-  const [categoryList, setCategoryList] = useState<string[]>([]);
+  const { categoryList, updateCategoryList } = useContext(ContextCategory);
   const [tagList, setTagList] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [postData, setPostData] = useState<PostDataType>(newPost);
@@ -25,17 +26,16 @@ const Edit: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const category: string[] = await getList("category");
       const tag: string[] = await getList("tag");
-      setCategoryList(category);
+      updateCategoryList();
       setTagList(tag);
     };
     fetchData();
-  }, []);
+  }, [updateCategoryList]);
 
   const onOptionUpdate: OnOptionUpdateFunc = (name, value) => {
     if (name === "category") {
-      setCategoryList([...categoryList, value]);
+      updateCategoryList();
       return;
     }
     if (name === "tag") {
