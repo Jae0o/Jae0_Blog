@@ -21,7 +21,8 @@ export const ContextPostListProvider: React.FC<ContextProps> = ({ children }) =>
   const [htmlList, setHtmlList] = useState<PostDataType[]>([]);
 
   const updatePostList: UpdateContextFunc = async () => {
-    await getPost() //
+    // await or then
+    await getPost()
       .then((res) => {
         setPostList(res);
         return res;
@@ -29,14 +30,13 @@ export const ContextPostListProvider: React.FC<ContextProps> = ({ children }) =>
       .then((res) => {
         setHtmlList(Object.values(res["HTML"]));
         setWorkList(Object.values(res["WORK"]) ?? []);
-      }); //
+      });
   };
-
-  console.log(workList);
 
   useEffect(() => {
     updatePostList();
   }, []);
+
   return (
     <ContextPostList.Provider value={{ postList, htmlList, workList, updatePostList }}>
       {children}
