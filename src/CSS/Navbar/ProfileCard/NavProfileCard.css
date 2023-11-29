@@ -65,7 +65,7 @@
 
 .profile__menu {
   height: 14rem;
-  width: 100%;
+  flex-grow: 1;
 
   display: flex;
   flex-direction: column;
