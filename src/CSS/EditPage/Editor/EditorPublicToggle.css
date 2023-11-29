@@ -2,6 +2,7 @@
   font-size: var(--fontsize-semi-large);
   display: flex;
   align-items: center;
+  flex-shrink: 0;
   user-select: none;
 }
 
@@ -13,15 +14,17 @@
 .public__action-bar-onToggled {
   width: 4.2rem;
   height: 2rem;
+
   border-radius: 50px;
   background-color: var(--color-light-red);
   display: flex;
   justify-content: center;
   flex-direction: column;
+
   transition: all 0.3s;
   margin-right: 0.6rem;
   cursor: pointer;
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.25);
 }
 
 .public__action-bar:hover,
@@ -32,9 +35,9 @@
 .public__action-item,
 .public__action-item-onToggled {
   position: relative;
-  left: 1px;
-  width: 1.9rem;
-  height: 1.9rem;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
   background-color: var(--color-dark-grey);
   border-radius: 50%;
   transition: all 0.3s;

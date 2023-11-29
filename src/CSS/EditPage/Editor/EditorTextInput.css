@@ -1,15 +1,19 @@
 .Editor__title-box {
+  flex-shrink: 0;
   padding: 0.6rem;
   margin-bottom: 1rem;
   border-radius: var(--radius-medium);
+
+  display: flex;
+  align-items: center;
   background-color: var(--color-semi-grey);
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.25);
 }
 
 .title__text {
   font-size: var(--fontsize-big);
   margin-left: 0.4rem;
-  width: 99%;
+  flex-grow: 1;
 
   text-overflow: ellipsis;
   overflow: scroll;
@@ -17,8 +21,13 @@
 }
 
 .Editor__subtitle-box {
+  flex-shrink: 0;
   padding: 0.6rem;
   margin-bottom: 2rem;
+
+  display: flex;
+  align-items: center;
+
   border-radius: var(--radius-medium);
   background-color: var(--color-semi-grey);
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
@@ -26,7 +35,7 @@
 .subtitle__text {
   font-size: var(--fontsize-semi-large);
   margin-left: 0.4rem;
-  width: 99%;
+  flex-grow: 1;
   text-overflow: ellipsis;
   overflow: scroll;
   background-color: var(--color-semi-grey);

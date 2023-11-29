@@ -1,5 +1,6 @@
 .Editor__tag-box {
-  width: 100%;
+  flex-grow: 1;
+  flex-shrink: 0;
   height: 2.8rem;
 
   display: flex;
@@ -11,6 +12,7 @@
 }
 
 .tags__title {
+  flex-shrink: 0;
   height: 100%;
 
   display: flex;
@@ -26,6 +28,7 @@
 
 .tags__item,
 .tags__item-checked {
+  flex-shrink: 0;
   height: 100%;
 
   display: flex;
@@ -46,6 +49,8 @@
 }
 
 .tags__label {
+  flex-shrink: 0;
+  flex-grow: 1;
   height: 100%;
 
   display: flex;
