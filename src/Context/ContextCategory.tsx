@@ -5,22 +5,24 @@ import {
   ContextCategoryListType,
   UpdateContextFunc,
 } from "../Types/Context/ContextTypes";
-import { ALERT_CONTEXT_CATEGORY } from "../constants/AlertMessage";
+import { ALERT_CONTEXT } from "../constants/AlertMessage";
 
 export const ContextCategoryList = createContext<ContextCategoryListType>({
   categoryList: [],
   updateCategoryList: () => {},
 });
 
-export const ContextCategoryListProvider: React.FC<ContextProps> = ({ children }) => {
+export const ContextCategoryListProvider: React.FC<ContextProps> = ({
+  children,
+}) => {
   const [categoryList, setCategoryList] = useState<string[]>([]);
 
   const updateCategoryList: UpdateContextFunc = () => {
     getList("category") //
-      .then((res) => setCategoryList(res))
+      .then(res => setCategoryList(res))
       .catch(() => {
-        alert(ALERT_CONTEXT_CATEGORY);
-        throw new Error(ALERT_CONTEXT_CATEGORY);
+        alert(ALERT_CONTEXT.CATEGORY);
+        throw new Error(ALERT_CONTEXT.CATEGORY);
       });
   };
 
