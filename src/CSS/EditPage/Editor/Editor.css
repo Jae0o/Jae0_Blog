@@ -1,45 +1,46 @@
 .editor {
   width: 90%;
   height: 90%;
-  background-color: var(--color-white);
   padding: 1rem;
-  border-radius: var(--radius-semi-large);
-
-  display: flex;
-  flex-direction: column;
 
   position: relative;
   top: 4rem;
   left: 4rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-white);
+  border-radius: var(--radius-semi-large);
 }
 
-.editor__top {
+.editor__header {
   flex-grow: 1;
+  margin-bottom: 1rem;
+
   display: flex;
   justify-content: space-between;
-
-  margin-bottom: 1rem;
 }
 
-.editor__submitbutton {
+.editor__button {
+  flex-shrink: 0;
   height: 3.2rem;
   padding: 0 1.2rem;
-  flex-shrink: 0;
 
   display: flex;
   align-items: center;
 
   border-radius: var(--radius-medium);
-  font-size: var(--fontsize-semi-large);
   background-color: var(--color-green);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 
+  font-size: var(--fontsize-semi-large);
   cursor: pointer;
   transition: all 0.3s;
   user-select: none;
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
-.editor__submitbutton:hover {
+.editor__button:hover {
   transform: scale(1.1);
   background-color: var(--color-dark-green);
 }
