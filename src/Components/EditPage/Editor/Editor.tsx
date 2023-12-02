@@ -5,7 +5,7 @@ import {
   PostDataType,
   SetEditorPostFunc,
 } from "../../../Types/Components/Edit/EditorTypes";
-import EditorPublicToggle from "./Features/EditorPublicToggle";
+import EditorPublicToggle from "./Features/EditorPublic";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";
 import EditorCategory from "./Features/EditorCategory";
