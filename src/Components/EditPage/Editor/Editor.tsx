@@ -27,12 +27,10 @@ const Editor: React.FC<EditorProps> = ({
       ...postData,
       [key]: value,
     };
-
     setPostData(newPostData);
     setLocalStorage(newPostData);
   };
 
-  /* validation 업로드에 대한 */
   const onSubmitPost: OnClickEventType = e => {
     e.preventDefault();
 
@@ -43,44 +41,37 @@ const Editor: React.FC<EditorProps> = ({
 
   return (
     <article className="editor">
-      <div className="editor__top">
-        {/* private */}
+      <div className="editor__header">
         <EditorPublicToggle
           state={postData.isPublic}
           onToggle={setPostHandler}
         />
-        {/* submit 버튼 */}
         <button
-          className="editor__submitbutton"
+          className="editor__button"
           onClick={onSubmitPost}>
           Upload
         </button>
       </div>
-      {/* title */}
       <EditorTextInput
         typeName="title"
         onTyping={setPostHandler}
         state={postData.title}
       />
-      {/* subtitle */}
       <EditorTextInput
         typeName="subtitle"
         onTyping={setPostHandler}
         state={postData.subtitle}
       />
-      {/* category */}
       <EditorCategory
         categoryList={categoryList}
         onSelecting={setPostHandler}
         state={postData.category}
       />
-      {/* tag */}
       <EditorTags
         onSelecting={setPostHandler}
         state={postData.tag}
         tags={tagList}
       />
-      {/* body */}
       <EditorMD
         onTyping={setPostHandler}
         state={postData.main}

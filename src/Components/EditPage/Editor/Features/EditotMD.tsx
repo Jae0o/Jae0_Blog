@@ -15,9 +15,9 @@ const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
   };
 
   return (
-    <div className="editor__MD-box">
+    <div className="editor__MD">
       <div
-        className="MD__outbox"
+        className="MD"
         data-color-mode="light">
         <MDEditor
           height={"100%"}
