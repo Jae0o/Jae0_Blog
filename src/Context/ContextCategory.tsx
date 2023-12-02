@@ -18,9 +18,9 @@ export const ContextCategoryListProvider: React.FC<ContextProps> = ({ children }
   const updateCategoryList: UpdateContextFunc = () => {
     getList("category") //
       .then((res) => setCategoryList(res))
-      .catch((e) => {
+      .catch(() => {
         alert(ALERT_CONTEXT_CATEGORY);
-        throw new Error(ALERT_CONTEXT_CATEGORY, e);
+        throw new Error(ALERT_CONTEXT_CATEGORY);
       });
   };
 

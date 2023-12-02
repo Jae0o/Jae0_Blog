@@ -30,7 +30,8 @@ const NavProfileCard: React.FC = () => {
         </div>
       </div>
       <div className="profile__title-container">
-        <h1 className="profile__title">Jae0's Blog</h1>
+        Jae0's Blog
+        {/* <h1 className="profile__title">Jae0's Blog</h1> */}
       </div>
     </div>
   );

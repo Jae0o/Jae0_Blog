@@ -22,10 +22,6 @@ const router = createBrowserRouter([
 ]);
 
 const App: React.FC = () => {
-
-
-
-
   return (
     <ContextPostListProvider>
       <ContextTagListProvider>

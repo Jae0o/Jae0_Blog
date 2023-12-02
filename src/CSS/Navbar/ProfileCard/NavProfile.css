@@ -59,6 +59,17 @@
 
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 0.9;
+
+  background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .profile__title {
@@ -66,13 +77,12 @@
 
   display: flex;
   align-items: center;
-
-  background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red));
+  color: #fff;
+  /* background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red)); */
   background-clip: text;
 
   text-align: center;
   font-size: 3.2rem;
   font-weight: 900;
   line-height: 0.9;
-  -webkit-text-fill-color: transparent;
 }

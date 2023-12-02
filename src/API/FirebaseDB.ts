@@ -49,7 +49,7 @@ export const setPost: SetPost = async (post) => {
     post.updateAt = time;
 
     await set(ref(database, `Posts/${post.category}/${post.id}`), post) //
-      .then((res) => removeLocalStorage(post.id));
+      .then(() => removeLocalStorage(post.id));
     return;
   } catch (e) {
     throw Error(ERROR_MESSAGE_SET_POST);

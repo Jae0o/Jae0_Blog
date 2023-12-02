@@ -3,9 +3,11 @@ import { CategoryListItemProps } from "../../Types/Components/CategoryPage/Categ
 
 const CategoryListItem: React.FC<CategoryListItemProps> = ({ list }) => {
   return (
-    <li className="categorypage__categorylistitem">
+    <li
+      className="categorypage__categorylistitem"
+      key={list.id}>
       <div className="categorylistitem__tagbox">
-        {list.tag && list.tag.map((tag) => <p>{tag}</p>)}
+        {list.tag && list.tag.map((tag, index) => <p key={index}>{tag}</p>)}
       </div>
       <div className="categorylistitem__text">
         <h4 className="categorylistitem__title">{list.title}</h4>
