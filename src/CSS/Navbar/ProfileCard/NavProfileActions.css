@@ -2,8 +2,10 @@
   width: 3.4rem;
   height: 3.4rem;
   border-radius: var(--radius-medium);
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  will-change: transform;
 }
 
 .profile__btn-box {
@@ -19,6 +21,7 @@
   width: 2.4rem;
   height: 2.4rem;
   color: black;
+  /* transition: all 0.3s; */
 }
 
 .search-btn {
@@ -28,9 +31,15 @@
 .write-btn {
   background-color: var(--color-yellow);
 }
+
 .home-btn {
   background-color: var(--color-green);
 }
+
 .profile__btn__outbox:hover {
   transform: scale(1.2);
 }
+
+/* .profile__btn-emoji:hover {
+  transform: scale(1.2);
+} */
