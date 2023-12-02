@@ -1,4 +1,4 @@
-.Editor__title-box {
+.Editor__title {
   flex-shrink: 0;
   padding: 0.6rem;
   margin-bottom: 1rem;
@@ -20,7 +20,7 @@
   background-color: var(--color-semi-grey);
 }
 
-.Editor__subtitle-box {
+.Editor__subtitle {
   flex-shrink: 0;
   padding: 0.6rem;
   margin-bottom: 2rem;
