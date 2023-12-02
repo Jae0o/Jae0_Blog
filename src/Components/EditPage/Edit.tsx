@@ -11,16 +11,17 @@ import { OnUpdateOptionFunc } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
 import { newPost } from "../../constants/PostInitialValue";
 import UploadPage from "../UploadPage";
+import { ALERT_EDIT } from "../../constants/AlertMessage";
 import { ContextCategoryList } from "../../Context/ContextCategory";
 import { ContextTagList } from "../../Context/ContextTagList";
-import { ALERT_EDIT } from "../../constants/AlertMessage";
 import { ContextPostList } from "../../Context/ContextPostList";
+import { ContextIsLoading } from "../../Context/ContextIsLoading";
 
 const Edit: React.FC = () => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
   const { updatePostList } = useContext(ContextPostList);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
   const [postData, setPostData] = useState<PostDataType>(newPost);
 
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const Edit: React.FC = () => {
   };
 
   const onUploadPost: UploadPostFunc = async post => {
-    setIsLoading(true);
+    updateIsLoading(true);
 
     await setPost(post)
       .then(() => {
@@ -53,8 +54,8 @@ const Edit: React.FC = () => {
       })
       .catch(() => {
         alert(ALERT_EDIT.UPLOAD_SUCCESS);
-        setIsLoading(false);
-      });
+      })
+      .finally(() => updateIsLoading(false));
   };
 
   if (isLoading) return <UploadPage />;
