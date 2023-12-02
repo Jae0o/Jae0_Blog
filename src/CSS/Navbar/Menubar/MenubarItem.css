@@ -9,6 +9,7 @@
   border-radius: var(--radius-small);
 
   transition: all 0.3s;
+  will-change: transform;
   cursor: pointer;
   user-select: none;
 }
