@@ -39,6 +39,7 @@
   font-size: var(--fontsize-medium);
   user-select: none;
   transition: all 0.3s;
+  will-change: transform;
 }
 
 .tags__item:hover,
