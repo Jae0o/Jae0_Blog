@@ -4,7 +4,7 @@ export interface EditSubPageProps {
   onUpdate: OnUpdateOptionFunc;
 }
 
-export interface EditOptionListsProps {
+export interface InsertOptionButtonProps {
   onUpdate: OnUpdateOptionFunc;
   listType: string;
 }
