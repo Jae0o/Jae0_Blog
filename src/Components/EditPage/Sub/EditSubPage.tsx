@@ -11,10 +11,11 @@ const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
     e.preventDefault();
     setToggled(!toggled);
   };
+  const isToggled: string = toggled ? "-toggle" : "";
 
   return (
     <aside className="edit__subpage">
-      <div className={`subpage__optionbox${toggled ? "-toggle" : ""}`}>
+      <div className={`subpage__actions${isToggled}`}>
         <EditOptionLists
           onUpdate={onUpdate}
           listType="category"
@@ -25,7 +26,7 @@ const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
         />
       </div>
       <button
-        className="subpage__togglebutton"
+        className="subpage__button"
         onClick={toggleHandler}>
         <span>Option's</span>
         <span>Toggle</span>
