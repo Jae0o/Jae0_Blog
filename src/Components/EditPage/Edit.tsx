@@ -45,7 +45,7 @@ const Edit: React.FC = () => {
   const onUploadPost: UploadPostFunc = async post => {
     setIsLoading(true);
 
-    await setPost(post) //
+    await setPost(post)
       .then(() => {
         alert(ALERT_EDIT.UPLOAD_SUCCESS);
         updatePostList();
