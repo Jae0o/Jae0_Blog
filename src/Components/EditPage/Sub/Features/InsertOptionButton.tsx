@@ -1,14 +1,13 @@
 import React from "react";
-import "../../../../CSS/EditPage/EditSubPage/EditOptionLists.css";
+import "../../../../CSS/EditPage/EditSubPage/InsertOptionButton.css";
 import { OnClickEventType } from "../../../../Types/EventTypes";
 import { setAddLists } from "../../../../API/FirebaseDB";
-import { EditOptionListsProps } from "../../../../Types/Components/Edit/EditSubTypes";
+import { InsertOptionButtonProps } from "../../../../Types/Components/Edit/EditSubTypes";
 
-const EditOptionLists: React.FC<EditOptionListsProps> = ({
+const InsertOptionButton: React.FC<InsertOptionButtonProps> = ({
   onUpdate,
   listType,
 }) => {
-  /* SetItem */
   const addListHandler: OnClickEventType = () => {
     const value: string | null = prompt(
       `새로 추가할 ${listType}의 이름을 넣어주세요`,
@@ -26,15 +25,15 @@ const EditOptionLists: React.FC<EditOptionListsProps> = ({
   };
 
   return (
-    <div className="subpage__optionlists">
-      <h6 className="optionlists__title">{listType} 추가</h6>
+    <div className="subpage__insert">
+      <h6 className="insert__title">{listType} 추가</h6>
       <button
         onClick={addListHandler}
-        className="optionlists__button">
+        className="insert__button">
         {listType} 추가
       </button>
     </div>
   );
 };
 
-export default EditOptionLists;
+export default InsertOptionButton;

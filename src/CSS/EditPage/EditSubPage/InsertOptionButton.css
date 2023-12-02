@@ -1,27 +1,32 @@
-.subpage__optionlists {
+.subpage__insert {
   width: 12rem;
+  padding: 1rem;
+
   display: flex;
   flex-direction: column;
-  padding: 1rem;
 }
 
-.optionlists__title {
+.insert__title {
+  margin-bottom: 1rem;
+
   font-size: var(--fontsize-semi-large);
   font-weight: 1000;
-  margin-bottom: 1rem;
 }
 
-.optionlists__button {
+.insert__button {
   padding: 0.4rem 0;
+
   background-color: var(--color-yellow);
   border-radius: var(--radius-medium);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+
   font-size: var(--fontsize-semi-large);
   transition: all 0.3s;
+  will-change: transform;
   cursor: pointer;
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
-.optionlists__button:hover {
+.insert__button:hover {
   background-color: var(--color-green);
   transform: scale(1.1);
 }

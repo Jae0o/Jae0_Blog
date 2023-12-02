@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../../CSS/EditPage/EditSubPage/EditSubPage.css";
-import EditOptionLists from "./Features/EditOptionLists";
+import EditOptionLists from "./Features/InsertOptionButton";
 import { EditSubPageProps } from "../../../Types/Components/Edit/EditSubTypes";
 import { OnClickEventType } from "../../../Types/EventTypes";
 
