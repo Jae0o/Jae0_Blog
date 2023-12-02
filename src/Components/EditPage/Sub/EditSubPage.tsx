@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../../CSS/EditPage/EditSubPage/EditSubPage.css";
-import EditOptionLists from "./Features/InsertOptionButton";
+import InsertOptionButton from "./Features/InsertOptionButton";
 import { EditSubPageProps } from "../../../Types/Components/Edit/EditSubTypes";
 import { OnClickEventType } from "../../../Types/EventTypes";
 
@@ -16,11 +16,11 @@ const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
   return (
     <aside className="edit__subpage">
       <div className={`subpage__actions${isToggled}`}>
-        <EditOptionLists
+        <InsertOptionButton
           onUpdate={onUpdate}
           listType="category"
         />
-        <EditOptionLists
+        <InsertOptionButton
           onUpdate={onUpdate}
           listType="tag"
         />
