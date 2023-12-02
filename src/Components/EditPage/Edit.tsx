@@ -9,7 +9,7 @@ import {
 import { setPost } from "../../API/FirebaseDB";
 import { OnUpdateOptionFunc } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
-import { newPost } from "../../constants/PostInitialValue";
+import { newPost } from "../../constants/variables";
 import UploadPage from "../UploadPage";
 import { ALERT_EDIT } from "../../constants/AlertMessage";
 import { ContextCategoryList } from "../../Context/ContextCategory";

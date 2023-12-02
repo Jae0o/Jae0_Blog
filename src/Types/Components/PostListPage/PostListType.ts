@@ -1,6 +1,6 @@
 import { PostDataType } from "../Edit/EditorTypes";
 
-export interface CategoryLocationType {
+export interface PostListLocationType {
   state: {
     list: PostDataType[];
   };
