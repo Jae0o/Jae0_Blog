@@ -27,3 +27,10 @@ export interface ContextPostListType {
   workList: PostDataType[];
   updatePostList: UpdateContextFunc;
 }
+
+export type UpdateIsLoadingFunc = (state: boolean) => void;
+
+export interface ContextIsLoadingType {
+  isLoading: boolean;
+  updateIsLoading: UpdateIsLoadingFunc;
+}

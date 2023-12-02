@@ -3,10 +3,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
 import Home from "./Components/Home/Home";
 import Edit from "./Components/EditPage/Edit";
+import CategoryPage from "./Components/CategoryPage/CategoryPage";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 import { ContextPostListProvider } from "./Context/ContextPostList";
-import CategoryPage from "./Components/CategoryPage/CategoryPage";
+import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 
 const router = createBrowserRouter([
   {
@@ -23,13 +24,15 @@ const router = createBrowserRouter([
 
 const App: React.FC = () => {
   return (
-    <ContextPostListProvider>
-      <ContextTagListProvider>
-        <ContextCategoryListProvider>
-          <RouterProvider router={router} />
-        </ContextCategoryListProvider>
-      </ContextTagListProvider>
-    </ContextPostListProvider>
+    <ContextIsLoadingProvider>
+      <ContextPostListProvider>
+        <ContextTagListProvider>
+          <ContextCategoryListProvider>
+            <RouterProvider router={router} />
+          </ContextCategoryListProvider>
+        </ContextTagListProvider>
+      </ContextPostListProvider>
+    </ContextIsLoadingProvider>
   );
 };
 
