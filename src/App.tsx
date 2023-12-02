@@ -6,6 +6,7 @@ import Edit from "./Components/EditPage/Edit";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 import { ContextPostListProvider } from "./Context/ContextPostList";
+import CategoryPage from "./Components/CategoryPage/CategoryPage";
 
 const router = createBrowserRouter([
   {
@@ -15,11 +16,16 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/editor/:ID", element: <Edit /> },
+      { path: "/category/:Catehory", element: <CategoryPage /> },
     ],
   },
 ]);
 
 const App: React.FC = () => {
+
+
+
+
   return (
     <ContextPostListProvider>
       <ContextTagListProvider>
