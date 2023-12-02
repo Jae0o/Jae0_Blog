@@ -7,26 +7,27 @@
   position: absolute;
   top: 0;
 
-  border-radius: var(--radius-medium);
-  background-color: var(--color-black);
-  background: linear-gradient(135deg, #aab2bd 24%, var(--color-black));
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
+  border-radius: var(--radius-medium);
+  background-color: var(--color-black);
+  background: linear-gradient(135deg, #aab2bd 24%, var(--color-black));
+
   box-shadow: var(--shadow-all);
   user-select: none;
 }
 
-.profile__top {
+.profile__header {
   width: 100%;
   height: 100%;
+
   display: flex;
 }
 
-.profile__photo-box {
+.profile__thumbnail-container {
   width: 14rem;
   height: 14rem;
 
@@ -34,41 +35,44 @@
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
-.profile__photo-img {
+.profile__thumbnail {
   width: 14rem;
   height: 14rem;
-  object-fit: contain;
+
   border-radius: var(--radius-medium);
+  object-fit: contain;
 }
 
-.profile__title-box {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.profile__title-text {
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-
-  text-align: center;
-  font-size: 3.2rem;
-  font-weight: 900;
-  line-height: 0.9;
-  background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red));
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.profile__menu {
+.profile__actions {
   height: 14rem;
-  flex-grow: 1;
+  width: 100%;
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.profile__title-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.profile__title {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red));
+  background-clip: text;
+
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 0.9;
+  -webkit-text-fill-color: transparent;
 }
