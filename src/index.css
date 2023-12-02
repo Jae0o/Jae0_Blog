@@ -40,12 +40,14 @@ section {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Skybori";
+  /* font-family: "Skybori"; */
+  font-family: "Sunflower", sans-serif;
 }
 
 :root {
   /* color */
-  --color-black: #434a54;
+  --color-black: #323133;
+  --color-semi-black: #434a54;
   --color-red: #da4453;
   --color-light-red: #ed5565;
   --color-yellow: #ffce54;
