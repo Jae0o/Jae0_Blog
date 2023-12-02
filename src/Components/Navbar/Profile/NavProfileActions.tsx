@@ -1,22 +1,10 @@
 import React from "react";
 import "../../../CSS/Navbar/ProfileCard/NavProfileActions.css";
-import { MenuButtonProps } from "../../../Types/Components/Nav/NavbarType";
+import { NavProfileActionsProps } from "../../../Types/Components/Nav/NavbarType";
 import { OnClickEventType } from "../../../Types/EventTypes";
 import { useNavigate, NavigateFunction } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { MdEditDocument } from "react-icons/md";
 
-const ProfileMenuButton: React.FC<MenuButtonProps> = ({ emoji, path }) => {
-  let icon: JSX.Element;
-  if (emoji === "home") {
-    icon = <FaHome className="profile__btn-emoji" />;
-  } else if (emoji === "search") {
-    icon = <FaSearch className="profile__btn-emoji" />;
-  } else {
-    icon = <MdEditDocument className="profile__btn-emoji" />;
-  }
-
+const NavProfileActions: React.FC<NavProfileActionsProps> = ({ action, path, icon }) => {
   const navigate: NavigateFunction = useNavigate();
 
   const onClickHandle: OnClickEventType = (e) => {
@@ -25,15 +13,15 @@ const ProfileMenuButton: React.FC<MenuButtonProps> = ({ emoji, path }) => {
   };
 
   return (
-    <div className={`profile__btn__outbox ${emoji}-btn`}>
+    <div className={`profile__action-container ${action}-action`}>
       <a
-        className="profile__btn-box"
+        className={`profile__action ${action}`}
         href={path}
         onClick={onClickHandle}>
-        {icon}
+        <span className={"material-symbols-outlined"}>{icon}</span>
       </a>
     </div>
   );
 };
 
-export default ProfileMenuButton;
+export default NavProfileActions;

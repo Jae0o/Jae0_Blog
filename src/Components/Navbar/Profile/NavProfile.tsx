@@ -2,8 +2,15 @@ import React from "react";
 import "../../../CSS/Navbar/ProfileCard/NavProfile.css";
 import NavProfileActions from "./NavProfileActions";
 import { PROFILE } from "../../../constants/URL";
+import { useNavigate } from "react-router-dom";
+import { OnClickEventType } from "../../../Types/EventTypes";
 
-const NavProfileCard: React.FC = () => {
+const NavProfile: React.FC = () => {
+  const navigate = useNavigate();
+
+  const onClickHandler: OnClickEventType = () => {
+    navigate("/");
+  };
   return (
     <div className="nav__profile">
       <div className="profile__header">
@@ -16,25 +23,29 @@ const NavProfileCard: React.FC = () => {
         </div>
         <div className="profile__actions">
           <NavProfileActions
-            emoji="search"
+            action="search"
+            icon="pageview"
             path="/"
           />
           <NavProfileActions
-            emoji="write"
+            action="write"
+            icon="lock"
             path="/editor/newPost"
           />
           <NavProfileActions
-            emoji="home"
+            action="home"
+            icon="Cottage"
             path="/"
           />
         </div>
       </div>
-      <div className="profile__title-container">
-        Jae0's Blog
-        {/* <h1 className="profile__title">Jae0's Blog</h1> */}
+      <div
+        className="profile__title-container"
+        onClick={onClickHandler}>
+        <h1 className="profile__title">Jae0's Blog</h1>
       </div>
     </div>
   );
 };
 
-export default NavProfileCard;
+export default NavProfile;

@@ -14,7 +14,7 @@
 
   border-radius: var(--radius-medium);
   background-color: var(--color-black);
-  background: linear-gradient(135deg, #aab2bd 24%, var(--color-black));
+  background: linear-gradient(135deg, #aab2bd 24%, var(--color-semi-black));
 
   box-shadow: var(--shadow-all);
   user-select: none;
@@ -59,30 +59,26 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+}
 
-  text-align: center;
-  font-size: 3.2rem;
-  font-weight: 900;
-  line-height: 0.9;
+.profile__title {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
 
   background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red));
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.profile__title {
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  color: #fff;
-  /* background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red)); */
-  background-clip: text;
 
   text-align: center;
   font-size: 3.2rem;
   font-weight: 900;
   line-height: 0.9;
+  transition: all 0.3s;
+}
+
+.profile__title:hover {
+  transform: scale(1.1);
 }

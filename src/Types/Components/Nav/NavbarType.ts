@@ -1,4 +1,5 @@
-export interface MenuButtonProps {
-  emoji: "home" | "search" | "write";
+export interface NavProfileActionsProps {
+  action: "home" | "search" | "write";
+  icon: string;
   path: string;
 }

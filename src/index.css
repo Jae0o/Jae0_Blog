@@ -13,6 +13,10 @@ input[type="text"] {
 button {
   border: none;
 }
+a {
+  outline: none;
+  text-decoration: none;
+}
 
 html,
 body,
