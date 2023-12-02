@@ -18,7 +18,7 @@ export const ContextCategoryListProvider: React.FC<ContextProps> = ({
   const [categoryList, setCategoryList] = useState<string[]>([]);
 
   const updateCategoryList: UpdateContextFunc = () => {
-    getList("category") //
+    getList("category")
       .then(res => setCategoryList(res))
       .catch(() => {
         alert(ALERT_CONTEXT.CATEGORY);
