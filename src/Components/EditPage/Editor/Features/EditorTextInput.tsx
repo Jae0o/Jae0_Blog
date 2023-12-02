@@ -22,7 +22,7 @@ const EditorTextInput: React.FC<EditorTextInputProps> = ({
   };
 
   return (
-    <div className={`Editor__${typeName}-box`}>
+    <div className={`Editor__${typeName}`}>
       <input
         className={`${typeName}__text`}
         type="text"
