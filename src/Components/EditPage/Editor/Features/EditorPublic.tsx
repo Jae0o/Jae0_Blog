@@ -1,15 +1,12 @@
 import React, { useCallback, useState } from "react";
-import "../../../../CSS/EditPage/Editor/EditorPublicToggle.css";
+import "../../../../CSS/EditPage/Editor/EditorPublic.css";
 import { OnChangeEventType } from "../../../../Types/EventTypes";
 import {
-  EditPublicToggleProps,
+  EditPublicProps,
   ChangePublicTextFunc,
 } from "../../../../Types/Components/Edit/EditorTypes";
 
-const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({
-  state,
-  onToggle,
-}) => {
+const EditorPublic: React.FC<EditPublicProps> = ({ state, onToggle }) => {
   const [isPublic, setIsPublic] = useState<boolean>(state);
 
   const onChangeToggle: OnChangeEventType = () => {
@@ -49,4 +46,4 @@ const EditorPublicToggle: React.FC<EditPublicToggleProps> = ({
   );
 };
 
-export default EditorPublicToggle;
+export default EditorPublic;
