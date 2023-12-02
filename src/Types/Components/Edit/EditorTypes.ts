@@ -18,7 +18,10 @@ export interface EditorProps {
   onSubmit: UploadPostFunc;
 }
 
-export type SetEditorPostFunc = (key: string, value: string | boolean | string[]) => void;
+export type SetEditorPostFunc = (
+  key: string,
+  value: string | boolean | string[],
+) => void;
 
 // Edit Input
 export type OnTypingEditorFunc = (key: string, text: string) => void;
@@ -37,7 +40,7 @@ export interface EditorMDProps {
 
 // Edit Public
 export type OnToggleEditorFunc = (key: string, state: boolean) => void;
-export type ChangToggleEditorTextFunc = (isPublic: boolean) => string;
+export type ChangePublicTextFunc = (isPublic: boolean) => string;
 export interface EditPublicToggleProps {
   state: boolean;
   onToggle: OnToggleEditorFunc;
