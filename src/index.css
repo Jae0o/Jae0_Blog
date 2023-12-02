@@ -40,8 +40,7 @@ section {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* font-family: "Skybori"; */
-  font-family: "Sunflower", sans-serif;
+  font-family: "skybori", sans-serif;
 }
 
 :root {
