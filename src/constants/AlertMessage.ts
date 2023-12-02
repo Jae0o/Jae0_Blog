@@ -7,6 +7,7 @@ import {
 export const ALERT_CONTEXT: AlertContextType = {
   TAG: "Tag List 불러오기 과정중 문제가 발생했습니다. 🥹",
   CATEGORY: "Category List 불러오기 과정중 문제가 발생했습니다. 🥹",
+  POST: "Post List 불러오기 과정중 문제가 발생했습니다. 🥹",
 };
 
 export const ALERT_EDIT: AlertEditType = {
