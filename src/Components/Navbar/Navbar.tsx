@@ -1,13 +1,13 @@
 import React from "react";
 import "../../CSS/Navbar/Navbar.css";
 import NavProfile from "./Profile/NavProfile";
-import Menubar from "./Menubar/Menubar";
+import NavMenubar from "./Menubar/NavMenubar";
 
 const Navbar: React.FC = () => {
   return (
     <nav className="nav">
       <NavProfile />
-      <Menubar />
+      <NavMenubar />
     </nav>
   );
 };
