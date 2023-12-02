@@ -7,7 +7,7 @@ import { OnClickEventType } from "../../../Types/EventTypes";
 const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
   const [toggled, setToggled] = useState<boolean>(false);
 
-  const toggleHandler: OnClickEventType = (e) => {
+  const toggleHandler: OnClickEventType = e => {
     e.preventDefault();
     setToggled(!toggled);
   };
@@ -15,10 +15,18 @@ const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
   return (
     <aside className="edit__subpage">
       <div className={`subpage__optionbox${toggled ? "-toggle" : ""}`}>
-        <EditOptionLists onUpdate={onUpdate} listType="category" />
-        <EditOptionLists onUpdate={onUpdate} listType="tag" />
+        <EditOptionLists
+          onUpdate={onUpdate}
+          listType="category"
+        />
+        <EditOptionLists
+          onUpdate={onUpdate}
+          listType="tag"
+        />
       </div>
-      <button className="subpage__togglebutton" onClick={toggleHandler}>
+      <button
+        className="subpage__togglebutton"
+        onClick={toggleHandler}>
         <span>Option's</span>
         <span>Toggle</span>
       </button>

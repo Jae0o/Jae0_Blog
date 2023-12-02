@@ -3,10 +3,14 @@ import "../../../../CSS/EditPage/Editor/EditorCategory.css";
 import { EditorCategoryProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEventType } from "../../../../Types/EventTypes";
 
-const EditorCategory: React.FC<EditorCategoryProps> = ({ categoryList, onSelecting, state }) => {
+const EditorCategory: React.FC<EditorCategoryProps> = ({
+  categoryList,
+  onSelecting,
+  state,
+}) => {
   const [selected, setSelected] = useState<string>(state);
 
-  const selectedHandler: OnChangeEventType = (e) => {
+  const selectedHandler: OnChangeEventType = e => {
     const target = e.currentTarget as HTMLInputElement;
     setSelected(target.value);
     onSelecting("category", target.value);
@@ -21,7 +25,9 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({ categoryList, onSelecti
             const isChecked: boolean = selected === item;
 
             return (
-              <li key={idx} className={`category__item${isChecked ? "-checked" : ""}`}>
+              <li
+                key={idx}
+                className={`category__item${isChecked ? "-checked" : ""}`}>
                 <input
                   className="category__item-radio"
                   id={`categoryList-${idx}`}
@@ -31,7 +37,9 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({ categoryList, onSelecti
                   onChange={selectedHandler}
                   checked={isChecked}
                 />
-                <label className="category__label" htmlFor={`categoryList-${idx}`}>
+                <label
+                  className="category__label"
+                  htmlFor={`categoryList-${idx}`}>
                   {item}
                 </label>
               </li>

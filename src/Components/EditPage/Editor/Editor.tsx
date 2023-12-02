@@ -14,7 +14,12 @@ import { OnClickEventType } from "../../../Types/EventTypes";
 import { setLocalStorage } from "../../../API/LocalStorage";
 import { postUploadValidate } from "../../../Util/Validate";
 
-const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }) => {
+const Editor: React.FC<EditorProps> = ({
+  post,
+  categoryList,
+  tagList,
+  onSubmit,
+}) => {
   const [postData, setPostData] = useState<PostDataType>(post);
 
   const setPostHandler: SetEditorPostFunc = (key, value) => {
@@ -28,7 +33,7 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
   };
 
   /* validation 업로드에 대한 */
-  const onSubmitPost: OnClickEventType = (e) => {
+  const onSubmitPost: OnClickEventType = e => {
     e.preventDefault();
 
     if (postUploadValidate(postData)) {
@@ -40,16 +45,29 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
     <article className="editor">
       <div className="editor__top">
         {/* private */}
-        <EditorPublicToggle state={postData.isPublic} onToggle={setPostHandler} />
+        <EditorPublicToggle
+          state={postData.isPublic}
+          onToggle={setPostHandler}
+        />
         {/* submit 버튼 */}
-        <button className="editor__submitbutton" onClick={onSubmitPost}>
+        <button
+          className="editor__submitbutton"
+          onClick={onSubmitPost}>
           Upload
         </button>
       </div>
       {/* title */}
-      <EditorTextInput typeName="title" onTyping={setPostHandler} state={postData.title} />
+      <EditorTextInput
+        typeName="title"
+        onTyping={setPostHandler}
+        state={postData.title}
+      />
       {/* subtitle */}
-      <EditorTextInput typeName="subtitle" onTyping={setPostHandler} state={postData.subtitle} />
+      <EditorTextInput
+        typeName="subtitle"
+        onTyping={setPostHandler}
+        state={postData.subtitle}
+      />
       {/* category */}
       <EditorCategory
         categoryList={categoryList}
@@ -57,9 +75,16 @@ const Editor: React.FC<EditorProps> = ({ post, categoryList, tagList, onSubmit }
         state={postData.category}
       />
       {/* tag */}
-      <EditorTags onSelecting={setPostHandler} state={postData.tag} tags={tagList} />
+      <EditorTags
+        onSelecting={setPostHandler}
+        state={postData.tag}
+        tags={tagList}
+      />
       {/* body */}
-      <EditorMD onTyping={setPostHandler} state={postData.main} />
+      <EditorMD
+        onTyping={setPostHandler}
+        state={postData.main}
+      />
     </article>
   );
 };

@@ -67,7 +67,12 @@
   display: flex;
   align-items: center;
 
-  background: linear-gradient(to right, var(--color-green), var(--color-yellow), var(--color-red));
+  background: linear-gradient(
+    to right,
+    var(--color-green),
+    var(--color-yellow),
+    var(--color-red)
+  );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
