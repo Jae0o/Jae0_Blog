@@ -3,16 +3,20 @@ import "../../../../CSS/EditPage/Editor/EditorTags.css";
 import { EditorTagsProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEventType } from "../../../../Types/EventTypes";
 
-const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => {
+const EditorTags: React.FC<EditorTagsProps> = ({
+  tags,
+  state,
+  onSelecting,
+}) => {
   const [selected, setSelected] = useState<string[]>(state);
 
-  const toggleTagHandler: OnChangeEventType = (e) => {
+  const toggleTagHandler: OnChangeEventType = e => {
     const element: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const target: string = element.value;
 
     let newSelected: string[];
     if (selected.includes(target)) {
-      newSelected = selected.filter((item) => item !== target);
+      newSelected = selected.filter(item => item !== target);
     } else {
       newSelected = [...selected, target];
     }
@@ -29,7 +33,9 @@ const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => 
           const isChecked: boolean = selected.includes(item);
 
           return (
-            <li key={idx} className={`tags__item${isChecked ? "-checked" : ""}`}>
+            <li
+              key={idx}
+              className={`tags__item${isChecked ? "-checked" : ""}`}>
               <input
                 id={`tagsCheckbox-${idx}`}
                 className="tags__input"
@@ -37,7 +43,9 @@ const EditorTags: React.FC<EditorTagsProps> = ({ tags, state, onSelecting }) => 
                 value={item}
                 checked={isChecked}
                 onChange={toggleTagHandler}></input>
-              <label className="tags__label" htmlFor={`tagsCheckbox-${idx}`}>
+              <label
+                className="tags__label"
+                htmlFor={`tagsCheckbox-${idx}`}>
                 {item}
               </label>
             </li>

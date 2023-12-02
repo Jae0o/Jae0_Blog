@@ -20,7 +20,7 @@ const CategoryPage: React.FC = () => {
         </div>
         <ul className="categorypage__listbox">
           {list &&
-            list.map((item) => (
+            list.map(item => (
               <CategoryListItem
                 list={item}
                 key={item.id}

@@ -4,10 +4,14 @@ import { NavProfileActionsProps } from "../../../Types/Components/Nav/NavbarType
 import { OnClickEventType } from "../../../Types/EventTypes";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 
-const NavProfileActions: React.FC<NavProfileActionsProps> = ({ action, path, icon }) => {
+const NavProfileActions: React.FC<NavProfileActionsProps> = ({
+  action,
+  path,
+  icon,
+}) => {
   const navigate: NavigateFunction = useNavigate();
 
-  const onClickHandle: OnClickEventType = (e) => {
+  const onClickHandle: OnClickEventType = e => {
     e.preventDefault();
     navigate(path);
   };
