@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
 import Home from "./Components/Home/Home";
 import Edit from "./Components/EditPage/Edit";
-import CategoryPage from "./Components/CategoryPage/CategoryPage";
+import PostList from "./Components/PostListPage/PostList";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 import { ContextPostListProvider } from "./Context/ContextPostList";
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "/editor/:ID", element: <Edit /> },
-      { path: "/category/:Catehory", element: <CategoryPage /> },
+      { path: "/postlist/:Category", element: <PostList /> },
     ],
   },
 ]);

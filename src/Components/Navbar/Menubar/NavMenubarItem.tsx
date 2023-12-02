@@ -12,7 +12,7 @@ const NavMenubarItem: React.FC<NavMenubarItemProps> = ({
   const navigate: NavigateFunction = useNavigate();
 
   const onNavigate = () => {
-    navigate(`/category/${category}`, { state: { list } });
+    navigate(`/postlist/${category}`, { state: { list } });
   };
 
   return (
