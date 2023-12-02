@@ -17,25 +17,25 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({
   };
 
   return (
-    <form className="Editor__category-box">
+    <form className="Editor__category">
       <h6 className="category__title">카테고리 :</h6>
-      <ul className="category__itembox">
+      <ul className="category__item-container">
         {categoryList &&
           categoryList.map((item, idx) => {
-            const isChecked: boolean = selected === item;
+            const isSelected: boolean = selected === item;
 
             return (
               <li
                 key={idx}
-                className={`category__item${isChecked ? "-checked" : ""}`}>
+                className={`category__item${isSelected ? "-checked" : ""}`}>
                 <input
-                  className="category__item-radio"
+                  className="category__radio"
                   id={`categoryList-${idx}`}
                   value={item}
                   name="category"
                   type="radio"
                   onChange={selectedHandler}
-                  checked={isChecked}
+                  checked={isSelected}
                 />
                 <label
                   className="category__label"
