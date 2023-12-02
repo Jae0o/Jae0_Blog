@@ -20,13 +20,12 @@ const EditorTags: React.FC<EditorTagsProps> = ({
     } else {
       newSelected = [...selected, target];
     }
-
     setSelected(newSelected);
     onSelecting("tag", newSelected);
   };
 
   return (
-    <ul className="Editor__tag-box">
+    <ul className="Editor__tags">
       <h6 className="tags__title">태그 :</h6>
       {tags &&
         tags.map((item, idx) => {
