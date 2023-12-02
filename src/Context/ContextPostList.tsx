@@ -7,6 +7,7 @@ import {
 } from "../Types/Context/ContextTypes";
 import { getPost } from "../API/FirebaseDB";
 import { PostDataType } from "../Types/Components/Edit/EditorTypes";
+import { ALERT_CONTEXT } from "../constants/AlertMessage";
 
 export const ContextPostList = createContext<ContextPostListType>({
   postList: {},
@@ -15,21 +16,26 @@ export const ContextPostList = createContext<ContextPostListType>({
   updatePostList: () => {},
 });
 
-export const ContextPostListProvider: React.FC<ContextProps> = ({ children }) => {
+export const ContextPostListProvider: React.FC<ContextProps> = ({
+  children,
+}) => {
   const [postList, setPostList] = useState<PostListStateType>({});
   const [workList, setWorkList] = useState<PostDataType[]>([]);
   const [htmlList, setHtmlList] = useState<PostDataType[]>([]);
 
   const updatePostList: UpdateContextFunc = async () => {
-    // await or then
     await getPost()
-      .then((res) => {
+      .then(res => {
         setPostList(res);
         return res;
       })
-      .then((res) => {
+      .then(res => {
         setHtmlList(Object.values(res["HTML"]));
         setWorkList(Object.values(res["WORK"]) ?? []);
+      })
+      .catch(() => {
+        alert(ALERT_CONTEXT.POST);
+        throw new Error(ALERT_CONTEXT.POST);
       });
   };
 
@@ -38,7 +44,8 @@ export const ContextPostListProvider: React.FC<ContextProps> = ({ children }) =>
   }, []);
 
   return (
-    <ContextPostList.Provider value={{ postList, htmlList, workList, updatePostList }}>
+    <ContextPostList.Provider
+      value={{ postList, htmlList, workList, updatePostList }}>
       {children}
     </ContextPostList.Provider>
   );
