@@ -9,7 +9,7 @@ import {
 import { setPost } from "../../API/FirebaseDB";
 import { OnUpdateOptionFunc } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
-import { newPost } from "../../constants/variables";
+import { NEW_POST } from "../../constants/variables";
 import UploadPage from "../UploadPage";
 import { ALERT_EDIT } from "../../constants/AlertMessage";
 import { ContextCategoryList } from "../../Context/ContextCategory";
@@ -22,14 +22,14 @@ const Edit: React.FC = () => {
   const { tagList, updateTagList } = useContext(ContextTagList);
   const { updatePostList } = useContext(ContextPostList);
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
-  const [postData, setPostData] = useState<PostDataType>(newPost);
+  const [postData, setPostData] = useState<PostDataType>(NEW_POST);
 
   const navigate = useNavigate();
   const { ID: pathId } = useParams();
 
   useEffect(() => {
     if (pathId === "newPost") return;
-    setPostData(newPost);
+    setPostData(NEW_POST);
   }, [pathId]);
 
   const onUpdateOption: OnUpdateOptionFunc = name => {

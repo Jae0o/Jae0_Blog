@@ -1,7 +1,7 @@
 import { PostDataType } from "../Types/Components/Edit/EditorTypes";
 import { AdviceListType, AdviceType } from "../Types/Constants/VariablesType";
 
-export const newPost: PostDataType = {
+export const NEW_POST: PostDataType = {
   id: "newPost",
   createAt: "newPost",
   updateAt: "newPost",
@@ -13,12 +13,12 @@ export const newPost: PostDataType = {
   tag: [],
 };
 
-export const defaultAdvice: AdviceType = {
+export const ADVICE_DEFAULT: AdviceType = {
   advice: "Software, like entropy, tends to increase over time.",
   author: "Boyle's Law of Software Evolution",
 };
 
-export const adviceList: AdviceListType = [
+export const ADVICE_LIST: AdviceListType = [
   {
     advice: "Hello, World!",
     author: "Brian Kernighan",
