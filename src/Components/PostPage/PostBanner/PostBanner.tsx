@@ -4,6 +4,7 @@ import PostBannerDecotation from "./PostBannerDecoration";
 import { AdviceType } from "../../../Types/Constants/VariablesType";
 import { adviceList, defaultAdvice } from "../../../constants/variables";
 import { useParams } from "react-router-dom";
+import { POST_BANNER_THUMBNAILS } from "../../../constants/URL";
 
 const PostBanner: React.FC = () => {
   const [advice, setAdvice] = useState<AdviceType>(defaultAdvice);
@@ -14,7 +15,7 @@ const PostBanner: React.FC = () => {
     const randomNum: number = Math.random() * 10;
     const randomIndex: number = Math.floor(randomNum);
     setAdvice(adviceList[randomIndex]);
-    setThumbnail("");
+    setThumbnail(POST_BANNER_THUMBNAILS[randomIndex]);
   }, []);
 
   return (
