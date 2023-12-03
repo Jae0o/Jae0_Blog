@@ -18,49 +18,39 @@
   color: var(--color-semi-white);
 }
 
-.ptbanner__info {
+.ptbanner__advice-container {
   width: 80%;
   height: 70%;
   min-width: 40rem;
-  padding: 0 3rem;
+  padding: 4rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   font-size: var(--fontsize-semi-large);
 
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: var(--radius-semi-large);
 }
 
-.ptbanner__title {
-  width: 100%;
-  margin-bottom: 1rem;
-
-  font-size: 4rem;
-}
-
-.ptbanner__advice-container {
-  width: 80%;
-  flex-grow: 1;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .ptbanner__advice {
+  flex-grow: 1;
   width: 100%;
   margin-bottom: 2rem;
   font-size: var(--fontsize-larg);
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   font-family: "Nova Square", sans-serif;
-  text-align: center;
 }
 
 .ptbanner__author {
   width: 100%;
+  height: 30%;
 
   text-align: end;
   font-size: var(--fontsize-semi-large);
