@@ -1,0 +1,48 @@
+.ptbanner__decoration {
+  height: 2.8rem;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--color-semi-grey);
+  border-top-right-radius: var(--radius-semi-large);
+  border-top-left-radius: var(--radius-semi-large);
+}
+
+.ptdecoration__button {
+  background-color: #fff;
+  width: 1.4rem;
+  height: 1.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: 0.6rem;
+  border-radius: 50%;
+
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+}
+
+.ptdecoration__button .material-symbols-outlined {
+  opacity: 0;
+  font-size: 1rem;
+  transition: opacity 0.3s;
+}
+
+.ptbanner__decoration:hover .material-symbols-outlined {
+  opacity: 1;
+}
+
+.pt-close {
+  background-color: var(--color-light-red);
+}
+
+.pt-minimize {
+  background-color: var(--color-yellow);
+}
+
+.pt-maximize {
+  background-color: var(--color-green);
+  transform: rotate(90deg);
+}
