@@ -21,7 +21,7 @@
   border-radius: var(--radius-small);
 
   font-size: var(--fontsize-semi-large);
-  font-weight: 1000;
+  font-weight: var(--fontweight-semi-bold);
 }
 
 .tags__item,
@@ -37,6 +37,8 @@
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 
   font-size: var(--fontsize-medium);
+  font-weight: var(--fontweight-medium);
+
   user-select: none;
   transition: all 0.3s;
   will-change: transform;

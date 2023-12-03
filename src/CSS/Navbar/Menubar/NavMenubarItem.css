@@ -63,6 +63,7 @@
   align-items: center;
 
   font-size: var(--fontsize-large);
+  font-weight: var(--fontweight-medium);
 }
 
 .menubar__title {
