@@ -1,3 +1,68 @@
 .post__banner {
   width: 100%;
+
+  user-select: none;
+}
+
+.ptbanner__container {
+  width: 100%;
+  height: 28rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-semi-white);
+}
+
+.ptbanner__info {
+  width: 80%;
+  height: 70%;
+  min-width: 40rem;
+  padding: 0 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-size: var(--fontsize-semi-large);
+
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-semi-large);
+}
+
+.ptbanner__title {
+  width: 100%;
+  margin-bottom: 1rem;
+
+  font-size: 4rem;
+}
+
+.ptbanner__advice-container {
+  width: 80%;
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ptbanner__advice {
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: var(--fontsize-larg);
+
+  font-family: "Nova Square", sans-serif;
+  text-align: center;
+}
+
+.ptbanner__author {
+  width: 100%;
+
+  text-align: end;
+  font-size: var(--fontsize-semi-large);
+  font-family: "Nova Square", sans-serif;
 }
