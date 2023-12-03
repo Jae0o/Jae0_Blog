@@ -44,7 +44,10 @@ section {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "skybori", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI",
+    "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    sans-serif;
 }
 
 :root {
@@ -74,4 +77,11 @@ section {
   --fontsize-large: 2rem;
   --fontsize-semi-large: 1.6rem;
   --fontsize-medium: 1.4rem;
+
+  /* font - weight */
+  --fontweight-border: 900;
+  --fontweight-semi-bolder: 800;
+  --fontweight-bold: 700;
+  --fontweight-semi-bold: 600;
+  --fontweight-medium: 400;
 }

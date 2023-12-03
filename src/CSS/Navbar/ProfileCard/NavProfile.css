@@ -73,13 +73,14 @@
     var(--color-yellow),
     var(--color-red)
   );
+
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   text-align: center;
   font-size: 3.2rem;
-  font-weight: 900;
+  font-weight: var(--fontweight-semi-bold);
   line-height: 0.9;
   transition: all 0.3s;
 }

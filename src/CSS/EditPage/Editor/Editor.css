@@ -35,6 +35,7 @@
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 
   font-size: var(--fontsize-semi-large);
+  font-weight: var(--fontweight-semi-bold);
   cursor: pointer;
   transition: all 0.3s;
   user-select: none;

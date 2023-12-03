@@ -58,7 +58,7 @@
 }
 
 .public__text {
-  font-weight: 100;
+  font-weight: var(--fontweight-semi-bold);
   cursor: pointer;
   transition: all 0.3s;
 }
