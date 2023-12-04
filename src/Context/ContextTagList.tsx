@@ -18,10 +18,9 @@ export const ContextTagListProvider: React.FC<ContextProps> = ({
   const [tagList, setTagList] = useState<string[]>([]);
 
   const updateTagList: UpdateContextFunc = async () => {
-    await getList("tag") //
+    await getList("tag")
       .then(res => setTagList(res))
       .catch(() => {
-        alert(ALERT_CONTEXT.TAG);
         throw new Error(ALERT_CONTEXT.TAG);
       });
   };

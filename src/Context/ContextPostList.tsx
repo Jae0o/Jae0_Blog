@@ -32,20 +32,21 @@ export const ContextPostListProvider: React.FC<ContextProps> = ({
     await getPost()
       .then(res => {
         const newTotalPosts: TotalPostsStateType = {};
-        for (const key in res) {
-          newTotalPosts[key] = {
-            thumbnail: POST_LIST_THUMBNAIL[key],
-            postList: Object.values(res[key]),
+        for (const category in res) {
+          newTotalPosts[category] = {
+            thumbnail: POST_LIST_THUMBNAIL[category] ?? "",
+            postList: Object.values(res[category]) ?? [],
           };
         }
         setTotalPosts(newTotalPosts);
         return newTotalPosts;
       })
       .then(res => {
-        setWorkPosts(res["WORK"]);
+        if (res["WORK"]) {
+          setWorkPosts(res["WORK"]);
+        }
       })
       .catch(() => {
-        alert(ALERT_CONTEXT.POST);
         throw new Error(ALERT_CONTEXT.POST);
       });
   };
