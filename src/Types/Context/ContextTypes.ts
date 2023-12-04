@@ -17,14 +17,17 @@ export interface ContextTagListTyps {
   updateTagList: UpdateContextFunc;
 }
 
-export interface PostListStateType {
-  [key: string]: { [key: string]: PostDataType };
+export interface PostsStateType {
+  thumbnail: string;
+  postList: PostDataType[];
+}
+export interface TotalPostsStateType {
+  [key: string]: PostsStateType;
 }
 
 export interface ContextPostListType {
-  postList: PostListStateType;
-  htmlList: PostDataType[];
-  workList: PostDataType[];
+  totalPosts: TotalPostsStateType;
+  workPosts: PostsStateType;
   updatePostList: UpdateContextFunc;
 }
 

@@ -5,15 +5,15 @@ import NavMenubarItem from "./NavMenubarItem";
 import { SiHtml5 } from "react-icons/si";
 
 const NavMenubar: React.FC = () => {
-  const { htmlList } = useContext(ContextPostList);
+  const { workPosts } = useContext(ContextPostList);
 
   return (
     <ul className="nav__menubar">
       <NavMenubarItem
         icon={SiHtml5}
-        title={"HTML"}
-        category={"HTML"}
-        list={htmlList}
+        title={"회고 기록"}
+        category={"WORK"}
+        posts={workPosts}
       />
     </ul>
   );

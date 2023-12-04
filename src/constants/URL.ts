@@ -1,6 +1,11 @@
-interface ProfileConstansType {
-  THUMBNAIL: string;
-}
+import {
+  PostsThumbnailType,
+  ProfileConstansType,
+} from "../Types/Constants/URLTypes";
+
+export const POST_LIST_THUMBNAIL: PostsThumbnailType = {
+  WORK: "/Thumbnail/PostListThumbnail-work.jpeg",
+};
 
 export const PROFILE: ProfileConstansType = {
   THUMBNAIL:
