@@ -39,7 +39,7 @@
   flex-grow: 1;
   width: 100%;
   margin-bottom: 2rem;
-  font-size: var(--fontsize-larg);
+  font-size: var(--fontsize-large);
 
   display: flex;
   align-items: center;

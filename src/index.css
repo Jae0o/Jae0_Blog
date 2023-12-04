@@ -17,6 +17,9 @@ a {
   outline: none;
   text-decoration: none;
 }
+a:visited {
+  border: none;
+}
 
 html,
 body,

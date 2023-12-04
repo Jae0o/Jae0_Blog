@@ -64,6 +64,7 @@
 
   font-size: var(--fontsize-large);
   font-weight: var(--fontweight-medium);
+  color: var(--color-black);
 }
 
 .menubar__title {
