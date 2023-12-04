@@ -1,8 +1,9 @@
+import { PostsStateType } from "../../Context/ContextTypes";
 import { PostDataType } from "../Edit/EditorTypes";
 
 export interface PostListLocationType {
   state: {
-    list: PostDataType[];
+    posts: PostsStateType;
   };
 }
 

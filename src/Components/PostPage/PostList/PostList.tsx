@@ -7,13 +7,18 @@ import PostListItem from "./PostListItem";
 
 const PostList: React.FC = () => {
   const {
-    state: { list },
+    state: { posts },
   }: PostListLocationType = useLocation();
-  console.log(list);
 
   return (
     <ul className="outlet__postlist">
-      {list && list.map(post => <PostListItem post={post} />)}
+      {posts.postList &&
+        posts.postList.map(post => (
+          <PostListItem
+            post={post}
+            key={post.id}
+          />
+        ))}
     </ul>
   );
 };

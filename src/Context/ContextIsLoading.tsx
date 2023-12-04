@@ -17,7 +17,6 @@ export const ContextIsLoadingProvider: React.FC<ContextProps> = ({
 
   const updateIsLoading: UpdateIsLoadingFunc = state => {
     setIsLoading(state);
-    console.log(state);
   };
 
   return (

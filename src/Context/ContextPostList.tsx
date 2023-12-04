@@ -2,36 +2,47 @@ import { createContext, useEffect, useState } from "react";
 import {
   ContextPostListType,
   ContextProps,
-  PostListStateType,
+  PostsStateType,
+  TotalPostsStateType,
   UpdateContextFunc,
 } from "../Types/Context/ContextTypes";
 import { getPost } from "../API/FirebaseDB";
-import { PostDataType } from "../Types/Components/Edit/EditorTypes";
 import { ALERT_CONTEXT } from "../constants/AlertMessage";
+import { POST_LIST_THUMBNAIL } from "../constants/URL";
 
 export const ContextPostList = createContext<ContextPostListType>({
-  postList: {},
-  htmlList: [],
-  workList: [],
+  totalPosts: {},
+  workPosts: {
+    thumbnail: "",
+    postList: [],
+  },
   updatePostList: () => {},
 });
 
 export const ContextPostListProvider: React.FC<ContextProps> = ({
   children,
 }) => {
-  const [postList, setPostList] = useState<PostListStateType>({});
-  const [workList, setWorkList] = useState<PostDataType[]>([]);
-  const [htmlList, setHtmlList] = useState<PostDataType[]>([]);
+  const [totalPosts, setTotalPosts] = useState<TotalPostsStateType>({});
+  const [workPosts, setWorkPosts] = useState<PostsStateType>({
+    thumbnail: "",
+    postList: [],
+  });
 
   const updatePostList: UpdateContextFunc = async () => {
     await getPost()
       .then(res => {
-        setPostList(res);
-        return res;
+        const newTotalPosts: TotalPostsStateType = {};
+        for (const key in res) {
+          newTotalPosts[key] = {
+            thumbnail: POST_LIST_THUMBNAIL[key],
+            postList: Object.values(res[key]),
+          };
+        }
+        setTotalPosts(newTotalPosts);
+        return newTotalPosts;
       })
       .then(res => {
-        setHtmlList(Object.values(res["HTML"]));
-        setWorkList(Object.values(res["WORK"]) ?? []);
+        setWorkPosts(res["WORK"]);
       })
       .catch(() => {
         alert(ALERT_CONTEXT.POST);
@@ -44,8 +55,7 @@ export const ContextPostListProvider: React.FC<ContextProps> = ({
   }, []);
 
   return (
-    <ContextPostList.Provider
-      value={{ postList, htmlList, workList, updatePostList }}>
+    <ContextPostList.Provider value={{ totalPosts, workPosts, updatePostList }}>
       {children}
     </ContextPostList.Provider>
   );
