@@ -2,12 +2,22 @@ import React from "react";
 import "../../../CSS/PostPage/PostList/PostListItem.css";
 import { PostListItemProps } from "../../../Types/Components/PostPage/PostListTypes";
 import { convertDateFormat } from "../../../Util/UtilFunctions";
+import { useNavigate } from "react-router-dom";
+import { OnClickEventType } from "../../../Types/EventTypes";
 
 const PostListItem: React.FC<PostListItemProps> = ({ post, thumbnail }) => {
   const formatedDate: string = convertDateFormat(JSON.parse(post.createAt));
 
+  const navigate = useNavigate();
+  9;
+  const onNavigate: OnClickEventType = () => {
+    navigate(`/post/detail/${post.id}`, { state: { post } });
+  };
+
   return (
-    <li className="ptlist__ptitem">
+    <li
+      className="ptlist__ptitem"
+      onClick={onNavigate}>
       <div className="ptitem__header">
         <img
           className="ptitem__thumbnail"
