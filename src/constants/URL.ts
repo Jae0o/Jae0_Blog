@@ -13,14 +13,14 @@ export const PROFILE: ProfileConstansType = {
 };
 
 export const POST_BANNER_THUMBNAILS: string[] = [
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585785/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-1_ms41wb.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585784/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-2_udfi4d.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585786/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-3_vbfhe4.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585782/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-4_bk6rs7.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585784/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-5_hqjmgy.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585782/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-6_npr3hw.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585783/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-7_dm12k8.png",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585783/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-8_oo0cp8.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585782/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-9_mzplgq.jpg",
-  "https://res.cloudinary.com/dalxgxu2o/image/upload/v1701585783/Blog%20Assets/Post%20Banner%20Thumbnail/banner-thumbnail-10_yfnw9l.jpg",
+  "/Thumbnail/banner-thumbnail-1.jpeg",
+  "/Thumbnail/banner-thumbnail-2.jpeg",
+  "/Thumbnail/banner-thumbnail-3.jpeg",
+  "/Thumbnail/banner-thumbnail-4.jpg",
+  "/Thumbnail/banner-thumbnail-5.jpeg",
+  "/Thumbnail/banner-thumbnail-6.jpg",
+  "/Thumbnail/banner-thumbnail-7.jpeg",
+  "/Thumbnail/banner-thumbnail-8.jpeg",
+  "/Thumbnail/banner-thumbnail-9.jpg",
+  "/Thumbnail/banner-thumbnail-10.jpg",
 ];
