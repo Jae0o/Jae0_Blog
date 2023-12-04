@@ -9,4 +9,5 @@ export interface PostListLocationType {
 
 export interface PostListItemProps {
   post: PostDataType;
+  thumbnail: string;
 }
