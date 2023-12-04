@@ -80,6 +80,8 @@ section {
   --fontsize-large: 2rem;
   --fontsize-semi-large: 1.6rem;
   --fontsize-medium: 1.4rem;
+  --fontsize-semi-small: 1.2rem;
+  --fontsize-samll: 1rem;
 
   /* font - weight */
   --fontweight-border: 900;

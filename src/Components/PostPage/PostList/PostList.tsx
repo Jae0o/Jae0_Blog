@@ -11,11 +11,12 @@ const PostList: React.FC = () => {
   }: PostListLocationType = useLocation();
 
   return (
-    <ul className="outlet__postlist">
+    <ul className="outlet__ptlist">
       {posts.postList &&
         posts.postList.map(post => (
           <PostListItem
             post={post}
+            thumbnail={posts.thumbnail}
             key={post.id}
           />
         ))}

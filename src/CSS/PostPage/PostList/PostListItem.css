@@ -1,3 +1,128 @@
-.post__banner {
-  border: 1px solid red;
+.ptlist__ptitem {
+  width: 28rem;
+  height: 32rem;
+  padding: 1rem;
+  margin-bottom: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: var(--color-semi-white);
+  border-radius: var(--radius-semi-large);
+  box-shadow: var(--shadow-all);
+
+  transition: transform 0.3s;
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+}
+
+.ptlist__ptitem:hover {
+  transform: scale(1.03);
+}
+
+.ptitem__header {
+  flex-shrink: 0;
+  width: 24rem;
+  margin: 1rem 0;
+
+  position: relative;
+
+  border-radius: var(--radius-semi-large);
+}
+
+.ptitem__thumbnail {
+  width: 100%;
+
+  border-radius: var(--radius-semi-large);
+
+  object-fit: cover;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+.ptitem__createtime {
+  width: 8rem;
+  height: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 1rem;
+  right: -1rem;
+
+  background-color: var(--color-white);
+  border-radius: 12px;
+
+  font-size: var(--fontsize-small);
+  font-weight: var(--fontweight-bold);
+
+  box-shadow: var(--shadow-all);
+}
+
+.ptitme__title-container {
+  flex-shrink: 0;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.ptitem__title,
+.ptitem__subtitle {
+  text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ptitem__title {
+  margin-bottom: 1rem;
+  font-size: var(--fontsize-semi-large);
+  font-weight: var(--fontweight-bold);
+  line-height: 1.2;
+}
+
+.ptitem__subtitle {
+  font-size: var(--fontsize-semi-small);
+  font-weight: var(--fontweight-semi-bold);
+  line-height: 1.4;
+}
+
+.ptitem__tags {
+  flex-shrink: 0;
+  width: 100%;
+  height: 3.2rem;
+  padding: 0.2rem;
+
+  display: flex;
+  align-items: center;
+
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ptitem__tags::-webkit-scrollbar {
+  display: none;
+}
+
+.ptitem__tag-item {
+  height: 2rem;
+  padding: 0 1rem;
+  margin-right: 0.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+
+  font-size: var(--fontsize-small);
+  font-weight: var(--fontweight-bold);
+  white-space: nowrap;
 }
