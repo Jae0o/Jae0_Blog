@@ -3,8 +3,8 @@ import { AdviceListType, AdviceType } from "../Types/Constants/VariablesType";
 
 export const NEW_POST: PostDataType = {
   id: "newPost",
-  createAt: "newPost",
-  updateAt: "newPost",
+  createAt: new Date(),
+  updateAt: new Date(),
   title: "",
   subtitle: "",
   main: "## 본문 없음",

@@ -38,7 +38,7 @@ export const getList: GetListFunc = async listType => {
 
 export const setPost: SetPost = async post => {
   try {
-    const time = JSON.stringify(new Date());
+    const time = new Date();
 
     if (post.id === "newPost") {
       const newId = v4();

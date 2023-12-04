@@ -1,7 +1,7 @@
 export interface PostDataType {
   id: string;
-  createAt: string;
-  updateAt: string;
+  createAt: Date;
+  updateAt: Date;
   isPublic: boolean;
   title: string;
   subtitle: string;
