@@ -13,8 +13,7 @@
   align-items: center;
 
   border-radius: var(--radius-medium);
-  background-color: var(--color-black);
-  background: linear-gradient(135deg, #aab2bd 24%, var(--color-semi-black));
+  background-color: var(--color-semi-grey);
 
   box-shadow: var(--shadow-all);
   user-select: none;
@@ -67,21 +66,12 @@
   display: flex;
   align-items: center;
 
-  background: linear-gradient(
-    to right,
-    var(--color-green),
-    var(--color-yellow),
-    var(--color-red)
-  );
-
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
+  color: var(--color-black);
   text-align: center;
   font-size: 3.2rem;
   font-weight: var(--fontweight-semi-bold);
   line-height: 0.9;
+
   transition: all 0.3s;
 }
 

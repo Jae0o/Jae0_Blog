@@ -19,7 +19,7 @@ const NavProfileActions: React.FC<NavProfileActionsProps> = ({
   return (
     <div className={`profile__action-container ${action}-action`}>
       <a
-        className={`profile__action ${action}`}
+        className={`profile__action ${action}-profile-btn`}
         href={path}
         onClick={onClickHandle}>
         <span className={"material-symbols-outlined"}>{icon}</span>
