@@ -6,10 +6,14 @@ import {
   SetOptionsFunc,
   GetPostFunc,
   GetPostsList,
+  GetAllPostsList,
+  PostDataType,
+  ResponcePostsListType,
 } from "../Types/API/FirebaseTypes";
 import { v4 } from "uuid";
 import { removeLocalStorage } from "./LocalStorage";
 import { ERROR_MESSAGE } from "../constants/AlertMessage";
+import { POST_LIST_THUMBNAIL } from "../constants/URL";
 
 /* ============== Lists ============== */
 
@@ -46,6 +50,7 @@ export const setPost: SetPost = async post => {
       post.createAt = time;
     }
 
+    post.thumbnail = POST_LIST_THUMBNAIL[post.category];
     post.updateAt = time;
 
     await set(ref(database, `Posts/${post.category}/${post.id}`), post) //
@@ -56,13 +61,36 @@ export const setPost: SetPost = async post => {
   }
 };
 
-export const getPostsList: GetPostsList = async (category = "") => {
+export const getPostsList: GetPostsList = async category => {
   try {
-    return await get(ref(database, `Posts/${category}`)).then(res => {
-      if (res.exists()) {
-        return res.val();
-      }
-    });
+    return await get(ref(database, `Posts/${category}`)) //
+      .then(res => {
+        if (res.exists()) {
+          return Object.values(res.val());
+        }
+        return [];
+      });
+  } catch (e) {
+    throw new Error();
+  }
+};
+
+export const getAllPostsList: GetAllPostsList = async () => {
+  try {
+    const snapshot: ResponcePostsListType = await get(ref(database, `Posts/`)) //
+      .then(res => {
+        if (res.exists()) {
+          return res.val();
+        }
+      });
+    const postsList: PostDataType[] = [];
+
+    for (const key in snapshot) {
+      const convetedList: PostDataType[] = Object.values(snapshot[key]);
+      postsList.push(...convetedList);
+    }
+
+    return postsList;
   } catch (e) {
     throw new Error();
   }

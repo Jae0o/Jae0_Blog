@@ -8,7 +8,6 @@ import PostDetail from "./Components/PostPage/PostDetail/PostDetail";
 import PostList from "./Components/PostPage/PostList/PostList";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
-import { ContextPostListProvider } from "./Context/ContextPostList";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 
 const router = createBrowserRouter([
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
         element: <Post />,
         children: [
           { path: "/post/list/:category", element: <PostList /> },
-          { path: "/post/detail/:id", element: <PostDetail /> },
+          { path: "/post/detail/:category/:id", element: <PostDetail /> },
         ],
       },
     ],
@@ -34,13 +33,11 @@ const router = createBrowserRouter([
 const App: React.FC = () => {
   return (
     <ContextIsLoadingProvider>
-      <ContextPostListProvider>
-        <ContextTagListProvider>
-          <ContextCategoryListProvider>
-            <RouterProvider router={router} />
-          </ContextCategoryListProvider>
-        </ContextTagListProvider>
-      </ContextPostListProvider>
+      <ContextTagListProvider>
+        <ContextCategoryListProvider>
+          <RouterProvider router={router} />
+        </ContextCategoryListProvider>
+      </ContextTagListProvider>
     </ContextIsLoadingProvider>
   );
 };

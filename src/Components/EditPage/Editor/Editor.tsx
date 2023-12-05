@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "../../../CSS/EditPage/Editor/Editor.css";
 import {
   EditorProps,
-  PostDataType,
   SetEditorPostFunc,
 } from "../../../Types/Components/Edit/EditorTypes";
+import { PostDataType } from "../../../Types/API/FirebaseTypes";
 import EditorPublicToggle from "./Features/EditorPublic";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMD from "./Features/EditotMD";

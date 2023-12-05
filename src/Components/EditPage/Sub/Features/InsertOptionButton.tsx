@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../../CSS/EditPage/EditSubPage/InsertOptionButton.css";
 import { OnClickEventType } from "../../../../Types/EventTypes";
-import { setAddLists } from "../../../../API/FirebaseDB";
+import { setOptions } from "../../../../API/FirebaseDB";
 import { InsertOptionButtonProps } from "../../../../Types/Components/Edit/EditSubTypes";
 
 const InsertOptionButton: React.FC<InsertOptionButtonProps> = ({
@@ -19,7 +19,7 @@ const InsertOptionButton: React.FC<InsertOptionButtonProps> = ({
     );
     if (!isAgree) return;
 
-    setAddLists(listType, value);
+    setOptions(listType, value);
     onUpdate(listType);
     return;
   };

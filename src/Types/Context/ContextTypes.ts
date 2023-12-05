@@ -1,5 +1,4 @@
 import { ReactNode } from "react";
-import { PostDataType } from "../Components/Edit/EditorTypes";
 
 export type UpdateContextFunc = () => void;
 
@@ -15,20 +14,6 @@ export interface ContextCategoryListType {
 export interface ContextTagListTyps {
   tagList: string[];
   updateTagList: UpdateContextFunc;
-}
-
-export interface PostsStateType {
-  thumbnail: string;
-  postList: PostDataType[];
-}
-export interface TotalPostsStateType {
-  [key: string]: PostsStateType;
-}
-
-export interface ContextPostListType {
-  allPosts: PostDataType[];
-  workPosts: PostsStateType;
-  updatePostList: UpdateContextFunc;
 }
 
 export type UpdateIsLoadingFunc = (state: boolean) => void;

@@ -1,13 +1,7 @@
-import { PostsStateType } from "../../Context/ContextTypes";
-import { PostDataType } from "../Edit/EditorTypes";
-
-export interface PostListLocationType {
-  state: {
-    posts: PostsStateType;
-  };
-}
+import { PostDataType } from "../../API/FirebaseTypes";
 
 export interface PostListItemProps {
   post: PostDataType;
-  thumbnail: string;
 }
+
+export type FetchPostsListFunc = () => Promise<void>;

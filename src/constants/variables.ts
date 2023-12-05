@@ -1,4 +1,4 @@
-import { PostDataType } from "../Types/Components/Edit/EditorTypes";
+import { PostDataType } from "../Types/API/FirebaseTypes";
 import { AdviceListType, AdviceType } from "../Types/Constants/VariablesType";
 
 export const NEW_POST: PostDataType = {
