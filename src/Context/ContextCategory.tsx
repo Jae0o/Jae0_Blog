@@ -1,5 +1,5 @@
 import { useState, createContext, useEffect } from "react";
-import { getList } from "../API/FirebaseDB";
+import { getOptions } from "../API/FirebaseDB";
 import {
   ContextProps,
   ContextCategoryListType,
@@ -18,7 +18,7 @@ export const ContextCategoryListProvider: React.FC<ContextProps> = ({
   const [categoryList, setCategoryList] = useState<string[]>([]);
 
   const updateCategoryList: UpdateContextFunc = () => {
-    getList("category")
+    getOptions("category")
       .then(res => setCategoryList(res))
       .catch(() => {
         throw new Error(ALERT_CONTEXT.CATEGORY);

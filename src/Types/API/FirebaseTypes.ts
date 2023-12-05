@@ -1,14 +1,21 @@
 import { PostDataType } from "../Components/Edit/EditorTypes";
 
-export type SetAddListsFunc = (
-  listType: string,
+export type SetOptionsFunc = (
+  optionsType: string,
   value: string,
 ) => Promise<void>;
 
-export type GetListFunc = (listType: string) => Promise<string[]>;
+export type GetOptionsFunc = (optionsType: string) => Promise<string[]>;
 
 export type SetPost = (post: PostDataType) => Promise<void>;
 
-export type GetPostFunc = () => Promise<{
+export type GetPostsList = (category?: string) => Promise<{
+  [key: string]: { [key: string]: PostDataType };
+}>;
+
+export type GetPostFunc = (
+  category: string,
+  postId: string,
+) => Promise<{
   [key: string]: { [key: string]: PostDataType };
 }>;

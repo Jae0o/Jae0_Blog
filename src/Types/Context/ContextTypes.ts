@@ -26,7 +26,7 @@ export interface TotalPostsStateType {
 }
 
 export interface ContextPostListType {
-  totalPosts: TotalPostsStateType;
+  allPosts: PostDataType[];
   workPosts: PostsStateType;
   updatePostList: UpdateContextFunc;
 }
