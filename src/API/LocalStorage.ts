@@ -1,9 +1,9 @@
+import { PostDataType } from "../Types/API/FirebaseTypes";
 import {
   GetLocalFunc,
   RemoveLocalFunc,
   SetLocalFunc,
 } from "../Types/API/LocalStorageTypes";
-import { PostDataType } from "../Types/Components/Edit/EditorTypes";
 
 export const setLocalStorage: SetLocalFunc = post => {
   const time = JSON.stringify(new Date());

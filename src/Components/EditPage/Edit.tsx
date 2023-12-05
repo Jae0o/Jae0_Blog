@@ -2,10 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../CSS/EditPage/Edit.css";
 import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
-import {
-  PostDataType,
-  UploadPostFunc,
-} from "../../Types/Components/Edit/EditorTypes";
+import { UploadPostFunc } from "../../Types/Components/Edit/EditorTypes";
+import { PostDataType } from "../../Types/API/FirebaseTypes";
 import { setPost } from "../../API/FirebaseDB";
 import { OnUpdateOptionFunc } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
@@ -14,13 +12,12 @@ import UploadPage from "../UploadPage";
 import { ALERT_EDIT } from "../../constants/AlertMessage";
 import { ContextCategoryList } from "../../Context/ContextCategory";
 import { ContextTagList } from "../../Context/ContextTagList";
-import { ContextPostList } from "../../Context/ContextPostList";
+
 import { ContextIsLoading } from "../../Context/ContextIsLoading";
 
 const Edit: React.FC = () => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
-  const { updatePostList } = useContext(ContextPostList);
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
   const [postData, setPostData] = useState<PostDataType>(NEW_POST);
 
@@ -29,6 +26,7 @@ const Edit: React.FC = () => {
 
   useEffect(() => {
     if (pathId === "newPost") return;
+
     setPostData(NEW_POST);
   }, [pathId]);
 
@@ -49,7 +47,7 @@ const Edit: React.FC = () => {
     await setPost(post)
       .then(() => {
         alert(ALERT_EDIT.UPLOAD_SUCCESS);
-        updatePostList();
+
         navigate("/");
       })
       .catch(() => {

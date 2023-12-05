@@ -1,4 +1,15 @@
-import { PostDataType } from "../Components/Edit/EditorTypes";
+export interface PostDataType {
+  id: string;
+  createAt: string;
+  updateAt: string;
+  isPublic: boolean;
+  title: string;
+  subtitle: string;
+  main: string;
+  category: string;
+  tag: string[];
+  thumbnail: string;
+}
 
 export type SetOptionsFunc = (
   optionsType: string,
@@ -9,13 +20,15 @@ export type GetOptionsFunc = (optionsType: string) => Promise<string[]>;
 
 export type SetPost = (post: PostDataType) => Promise<void>;
 
-export type GetPostsList = (category?: string) => Promise<{
-  [key: string]: { [key: string]: PostDataType };
-}>;
+export type GetPostsList = (category: string) => Promise<PostDataType[]>;
+
+export type GetAllPostsList = () => Promise<PostDataType[]>;
 
 export type GetPostFunc = (
   category: string,
   postId: string,
-) => Promise<{
+) => Promise<PostDataType>;
+
+export interface ResponcePostsListType {
   [key: string]: { [key: string]: PostDataType };
-}>;
+}

@@ -1,4 +1,4 @@
-import { PostDataType } from "../Components/Edit/EditorTypes";
+import { PostDataType } from "./FirebaseTypes";
 
 export type SetLocalFunc = (post: PostDataType) => void;
 

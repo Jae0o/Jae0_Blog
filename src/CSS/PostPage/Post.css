@@ -2,6 +2,10 @@
   flex-grow: 1;
   height: 100%;
   padding: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .post__container {

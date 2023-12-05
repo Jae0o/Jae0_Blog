@@ -7,12 +7,11 @@ const NavMenubarItem: React.FC<NavMenubarItemProps> = ({
   icon: ICON,
   title,
   category,
-  posts,
 }) => {
   const navigate: NavigateFunction = useNavigate();
 
   const onNavigate = () => {
-    navigate(`/post/list/${category}`, { state: { posts } });
+    navigate(`/post/list/${category}`);
   };
 
   return (
@@ -22,7 +21,7 @@ const NavMenubarItem: React.FC<NavMenubarItemProps> = ({
       onClick={onNavigate}>
       <div className="menubar__icon-container">
         <ICON className="menubar__icon" />
-        <p className="menubaritem__listCount">{posts.postList.length}</p>
+        <p className="menubaritem__listCount">{10}</p>
       </div>
 
       <div className="menubar__title-container">

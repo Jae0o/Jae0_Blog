@@ -1,22 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../../../CSS/PostPage/PostList/PostList.css";
-
-import { useLocation } from "react-router-dom";
-import { PostListLocationType } from "../../../Types/Components/PostPage/PostListTypes";
+import { useParams } from "react-router-dom";
 import PostListItem from "./PostListItem";
+import { getAllPostsList, getPostsList } from "../../../API/FirebaseDB";
+import { FetchPostsListFunc } from "../../../Types/Components/PostPage/PostListTypes";
+import { PostDataType } from "../../../Types/API/FirebaseTypes";
 
 const PostList: React.FC = () => {
-  const {
-    state: { posts },
-  }: PostListLocationType = useLocation();
+  const [postsList, setPostsList] = useState<PostDataType[]>([]);
+
+  const { category = "ALL" } = useParams();
+
+  useEffect(() => {
+    const fetchPostsList: FetchPostsListFunc = async () => {
+      if (category === "ALL") {
+        const resAllPostsList: PostDataType[] = await getAllPostsList();
+        setPostsList(resAllPostsList);
+        return;
+      }
+
+      const resPostsList: PostDataType[] = await getPostsList(category);
+      setPostsList(resPostsList);
+    };
+    fetchPostsList();
+  }, [category]);
 
   return (
     <ul className="outlet__ptlist">
-      {posts.postList &&
-        posts.postList.map(post => (
+      {postsList &&
+        postsList.map(post => (
           <PostListItem
             post={post}
-            thumbnail={posts.thumbnail}
             key={post.id}
           />
         ))}

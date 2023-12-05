@@ -1,14 +1,5 @@
-export interface PostDataType {
-  id: string;
-  createAt: string;
-  updateAt: string;
-  isPublic: boolean;
-  title: string;
-  subtitle: string;
-  main: string;
-  category: string;
-  tag: string[];
-}
+import { PostDataType } from "../../API/FirebaseTypes";
+
 // EditPage
 export type UploadPostFunc = (post: PostDataType) => void;
 export interface EditorProps {
