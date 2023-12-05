@@ -2,9 +2,10 @@ import { database } from "./Firebase";
 import { get, set, ref } from "firebase/database";
 import {
   SetPost,
-  GetListFunc,
-  SetAddListsFunc,
+  GetOptionsFunc,
+  SetOptionsFunc,
   GetPostFunc,
+  GetPostsList,
 } from "../Types/API/FirebaseTypes";
 import { v4 } from "uuid";
 import { removeLocalStorage } from "./LocalStorage";
@@ -12,25 +13,24 @@ import { ERROR_MESSAGE } from "../constants/AlertMessage";
 
 /* ============== Lists ============== */
 
-export const setAddLists: SetAddListsFunc = async (listType, value) => {
+export const setOptions: SetOptionsFunc = async (optionsType, value) => {
   try {
-    await set(ref(database, `${listType}/${value}`), value);
+    await set(ref(database, `${optionsType}/${value}`), value);
   } catch (e) {
-    throw Error(`${listType}${ERROR_MESSAGE.SET_OPTION_LIST}`);
+    throw Error(`${optionsType}${ERROR_MESSAGE.SET_OPTION_LIST}`);
   }
 };
 
-export const getList: GetListFunc = async listType => {
+export const getOptions: GetOptionsFunc = async optionsType => {
   try {
-    return await get(ref(database, listType)) //
-      .then(res => {
-        if (res.exists()) {
-          return Object.values(res.val());
-        }
-        return [];
-      });
+    return await get(ref(database, optionsType)).then(res => {
+      if (res.exists()) {
+        return Object.values(res.val());
+      }
+      return [];
+    });
   } catch (e) {
-    throw Error(`${listType}${ERROR_MESSAGE.GET_OPTION_LIST}`);
+    throw Error(`${optionsType}${ERROR_MESSAGE.GET_OPTION_LIST}`);
   }
 };
 
@@ -56,9 +56,21 @@ export const setPost: SetPost = async post => {
   }
 };
 
-export const getPost: GetPostFunc = async () => {
+export const getPostsList: GetPostsList = async (category = "") => {
   try {
-    return await get(ref(database, `Posts`)) //
+    return await get(ref(database, `Posts/${category}`)).then(res => {
+      if (res.exists()) {
+        return res.val();
+      }
+    });
+  } catch (e) {
+    throw new Error();
+  }
+};
+
+export const getPost: GetPostFunc = async (category, postId) => {
+  try {
+    return await get(ref(database, `Posts/${category}/${postId}`)) //
       .then(res => {
         if (res.exists()) {
           return res.val();
