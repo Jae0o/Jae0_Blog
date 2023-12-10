@@ -1,54 +1,54 @@
-import { PostDataType } from "../../API/FirebaseTypes";
+import { PostData } from "../../API/FirebaseTypes";
 
 // EditPage
-export type UploadPostFunc = (post: PostDataType) => void;
+export type UploadPost = (post: PostData) => void;
 export interface EditorProps {
-  post: PostDataType;
+  post: PostData;
   categoryList: string[];
   tagList: string[];
-  onSubmit: UploadPostFunc;
+  onSubmit: UploadPost;
 }
 
-export type SetEditorPostFunc = (
+export type SetEditorPost = (
   key: string,
   value: string | boolean | string[],
 ) => void;
 
 // Edit Input
-export type OnTypingEditorFunc = (key: string, text: string) => void;
+export type OnTypingEditor = (key: string, text: string) => void;
 export interface EditorTextInputProps {
   typeName: string;
-  onTyping: OnTypingEditorFunc;
+  onTyping: OnTypingEditor;
   state: string;
 }
 
 // Edit MD
-export type OnChangeEditorMDFunc = (value: string) => void;
+export type OnChangeEditorMD = (value: string) => void;
 export interface EditorMDProps {
-  onTyping: OnTypingEditorFunc;
+  onTyping: OnTypingEditor;
   state: string;
 }
 
 // Edit Public
-export type OnToggleEditorFunc = (key: string, state: boolean) => void;
-export type ChangePublicTextFunc = (isPublic: boolean) => string;
+export type OnToggleEditor = (key: string, state: boolean) => void;
+export type ChangePublicText = (isPublic: boolean) => string;
 export interface EditPublicProps {
   state: boolean;
-  onToggle: OnToggleEditorFunc;
+  onToggle: OnToggleEditor;
 }
 
 // Editor Categpry
-export type SelectingEditorCategoryFunc = (key: string, state: string) => void;
+export type SelectingEditorCategory = (key: string, state: string) => void;
 export interface EditorCategoryProps {
   categoryList: string[];
   state: string;
-  onSelecting: SelectingEditorCategoryFunc;
+  onSelecting: SelectingEditorCategory;
 }
 
 //Editor Tag
-export type EditorTagSelectingFunc = (key: string, tag: string[]) => void;
+export type EditorTagSelecting = (key: string, tag: string[]) => void;
 export interface EditorTagsProps {
   tags: string[];
   state: string[];
-  onSelecting: EditorTagSelectingFunc;
+  onSelecting: EditorTagSelecting;
 }

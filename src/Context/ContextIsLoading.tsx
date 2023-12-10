@@ -1,11 +1,11 @@
 import React, { createContext, useState } from "react";
 import {
-  ContextIsLoadingType,
+  IsLoadingContext,
   ContextProps,
-  UpdateIsLoadingFunc,
+  UpdateIsLoading,
 } from "../Types/Context/ContextTypes";
 
-export const ContextIsLoading = createContext<ContextIsLoadingType>({
+export const ContextIsLoading = createContext<IsLoadingContext>({
   isLoading: false,
   updateIsLoading: () => {},
 });
@@ -15,7 +15,7 @@ export const ContextIsLoadingProvider: React.FC<ContextProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const updateIsLoading: UpdateIsLoadingFunc = state => {
+  const updateIsLoading: UpdateIsLoading = state => {
     setIsLoading(state);
   };
 

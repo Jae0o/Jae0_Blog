@@ -3,14 +3,14 @@ import "../../../CSS/PostPage/PostList/PostListItem.css";
 import { PostListItemProps } from "../../../Types/Components/PostPage/PostListTypes";
 import { convertDateFormat } from "../../../Util/UtilFunctions";
 import { useNavigate } from "react-router-dom";
-import { OnClickEventType } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/EventTypes";
 
 const PostListItem: React.FC<PostListItemProps> = ({ post }) => {
   const formatedDate: string = convertDateFormat(JSON.parse(post.createAt));
 
   const navigate = useNavigate();
   9;
-  const onNavigate: OnClickEventType = () => {
+  const onNavigate: OnClickEvent = () => {
     navigate(`/post/detail/${post.category}/${post.id}`);
   };
 

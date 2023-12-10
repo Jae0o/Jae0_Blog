@@ -1,4 +1,4 @@
-export interface PostDataType {
+export interface PostData {
   id: string;
   createAt: string;
   updateAt: string;
@@ -11,24 +11,18 @@ export interface PostDataType {
   thumbnail: string;
 }
 
-export type SetOptionsFunc = (
-  optionsType: string,
-  value: string,
-) => Promise<void>;
+export type SetOptions = (optionsType: string, value: string) => Promise<void>;
 
-export type GetOptionsFunc = (optionsType: string) => Promise<string[]>;
+export type GetOptions = (optionsType: string) => Promise<string[]>;
 
-export type SetPost = (post: PostDataType) => Promise<void>;
+export type SetPost = (post: PostData) => Promise<void>;
 
-export type GetPostsList = (category: string) => Promise<PostDataType[]>;
+export type GetPostsList = (category: string) => Promise<PostData[]>;
 
-export type GetAllPostsList = () => Promise<PostDataType[]>;
+export type GetAllPostsList = () => Promise<PostData[]>;
 
-export type GetPostFunc = (
-  category: string,
-  postId: string,
-) => Promise<PostDataType>;
+export type GetPost = (category: string, postId: string) => Promise<PostData>;
 
-export interface ResponcePostsListType {
-  [key: string]: { [key: string]: PostDataType };
+export interface ResponcePostsList {
+  [key: string]: { [key: string]: PostData };
 }

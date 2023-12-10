@@ -1,6 +1,6 @@
-export interface AdviceType {
+export interface Advice {
   advice: string;
   author: string;
 }
 
-export type AdviceListType = AdviceType[];
+export type AdviceList = Advice[];

@@ -1,7 +1,7 @@
-import { PostDataType } from "./FirebaseTypes";
+import { PostData } from "./FirebaseTypes";
 
-export type SetLocalFunc = (post: PostDataType) => void;
+export type SetLocal = (post: PostData) => void;
 
-export type RemoveLocalFunc = (id: string) => void;
+export type RemoveLocal = (id: string) => void;
 
-export type GetLocalFunc = (id: string) => PostDataType | boolean;
+export type GetLocal = (id: string) => PostData | boolean;

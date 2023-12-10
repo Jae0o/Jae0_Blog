@@ -3,12 +3,12 @@ import "../../../CSS/Navbar/ProfileCard/NavProfile.css";
 import NavProfileActions from "./NavProfileActions";
 import { PROFILE } from "../../../constants/URL";
 import { useNavigate } from "react-router-dom";
-import { OnClickEventType } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/EventTypes";
 
 const NavProfile: React.FC = () => {
   const navigate = useNavigate();
 
-  const onClickHandler: OnClickEventType = () => {
+  const onClickHandler: OnClickEvent = () => {
     navigate("/");
   };
   return (

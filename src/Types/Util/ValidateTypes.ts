@@ -1,3 +1,3 @@
-import { PostDataType } from "../Components/Edit/EditorTypes";
+import { PostData } from "../API/FirebaseTypes";
 
-export type PostUploadValidateFunc = (post: PostDataType) => boolean;
+export type PostUploadValidate = (post: PostData) => boolean;

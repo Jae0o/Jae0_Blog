@@ -2,13 +2,13 @@ import { database } from "./Firebase";
 import { get, set, ref } from "firebase/database";
 import {
   SetPost,
-  GetOptionsFunc,
-  SetOptionsFunc,
-  GetPostFunc,
+  GetOptions,
+  SetOptions,
+  GetPost,
   GetPostsList,
   GetAllPostsList,
-  PostDataType,
-  ResponcePostsListType,
+  PostData,
+  ResponcePostsList,
 } from "../Types/API/FirebaseTypes";
 import { v4 } from "uuid";
 import { removeLocalStorage } from "./LocalStorage";
@@ -17,7 +17,7 @@ import { POST_LIST_THUMBNAIL } from "../constants/URL";
 
 /* ============== Lists ============== */
 
-export const setOptions: SetOptionsFunc = async (optionsType, value) => {
+export const setOptions: SetOptions = async (optionsType, value) => {
   try {
     await set(ref(database, `${optionsType}/${value}`), value);
   } catch (e) {
@@ -25,7 +25,7 @@ export const setOptions: SetOptionsFunc = async (optionsType, value) => {
   }
 };
 
-export const getOptions: GetOptionsFunc = async optionsType => {
+export const getOptions: GetOptions = async optionsType => {
   try {
     return await get(ref(database, optionsType)).then(res => {
       if (res.exists()) {
@@ -76,7 +76,7 @@ export const getPostsList: GetPostsList = async category => {
 };
 
 export const getAllPostsList: GetAllPostsList = async () => {
-  const snapshot: ResponcePostsListType = await get(ref(database, `Posts/`))
+  const snapshot: ResponcePostsList = await get(ref(database, `Posts/`))
     .then(res => {
       if (res.exists()) {
         return res.val();
@@ -86,17 +86,17 @@ export const getAllPostsList: GetAllPostsList = async () => {
       throw new Error(ERROR_MESSAGE.GET_ALL_POSTS_LIST);
     });
 
-  const postsList: PostDataType[] = [];
+  const postsList: PostData[] = [];
 
   for (const key in snapshot) {
-    const convetedList: PostDataType[] = Object.values(snapshot[key]);
+    const convetedList: PostData[] = Object.values(snapshot[key]);
     postsList.push(...convetedList);
   }
 
   return postsList;
 };
 
-export const getPost: GetPostFunc = async (category, postId) => {
+export const getPost: GetPost = async (category, postId) => {
   return await get(ref(database, `Posts/${category}/${postId}`))
     .then(res => {
       if (res.exists()) {

@@ -1,7 +1,7 @@
-import { PostDataType } from "../Types/API/FirebaseTypes";
-import { AdviceListType, AdviceType } from "../Types/Constants/VariablesType";
+import { PostData } from "../Types/API/FirebaseTypes";
+import { AdviceList, Advice } from "../Types/Constants/VariablesType";
 
-export const NEW_POST: PostDataType = {
+export const NEW_POST: PostData = {
   id: "newPost",
   createAt: "",
   updateAt: "",
@@ -11,14 +11,15 @@ export const NEW_POST: PostDataType = {
   isPublic: true,
   category: "",
   tag: [],
+  thumbnail: "",
 };
 
-export const ADVICE_DEFAULT: AdviceType = {
+export const ADVICE_DEFAULT: Advice = {
   advice: "Software, like entropy, tends to increase over time.",
   author: "Boyle's Law of Software Evolution",
 };
 
-export const ADVICE_LIST: AdviceListType = [
+export const ADVICE_LIST: AdviceList = [
   {
     advice: "Hello, World!",
     author: "Brian Kernighan",

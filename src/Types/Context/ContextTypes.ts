@@ -1,24 +1,24 @@
 import { ReactNode } from "react";
 
-export type UpdateContextFunc = () => void;
+export type UpdateContext = () => void;
 
 export interface ContextProps {
   children: ReactNode;
 }
 
-export interface ContextCategoryListType {
+export interface CategoryListContext {
   categoryList: string[];
-  updateCategoryList: UpdateContextFunc;
+  updateCategoryList: UpdateContext;
 }
 
-export interface ContextTagListTyps {
+export interface TagListContext {
   tagList: string[];
-  updateTagList: UpdateContextFunc;
+  updateTagList: UpdateContext;
 }
 
-export type UpdateIsLoadingFunc = (state: boolean) => void;
+export type UpdateIsLoading = (state: boolean) => void;
 
-export interface ContextIsLoadingType {
+export interface IsLoadingContext {
   isLoading: boolean;
-  updateIsLoading: UpdateIsLoadingFunc;
+  updateIsLoading: UpdateIsLoading;
 }
