@@ -71,41 +71,40 @@ export const getPostsList: GetPostsList = async category => {
         return [];
       });
   } catch (e) {
-    throw new Error();
+    throw new Error(ERROR_MESSAGE.GET_POSTS_LIST);
   }
 };
 
 export const getAllPostsList: GetAllPostsList = async () => {
-  try {
-    const snapshot: ResponcePostsListType = await get(ref(database, `Posts/`)) //
-      .then(res => {
-        if (res.exists()) {
-          return res.val();
-        }
-      });
-    const postsList: PostDataType[] = [];
+  const snapshot: ResponcePostsListType = await get(ref(database, `Posts/`))
+    .then(res => {
+      if (res.exists()) {
+        return res.val();
+      }
+    })
+    .catch(() => {
+      throw new Error(ERROR_MESSAGE.GET_ALL_POSTS_LIST);
+    });
 
-    for (const key in snapshot) {
-      const convetedList: PostDataType[] = Object.values(snapshot[key]);
-      postsList.push(...convetedList);
-    }
+  const postsList: PostDataType[] = [];
 
-    return postsList;
-  } catch (e) {
-    throw new Error();
+  for (const key in snapshot) {
+    const convetedList: PostDataType[] = Object.values(snapshot[key]);
+    postsList.push(...convetedList);
   }
+
+  return postsList;
 };
 
 export const getPost: GetPostFunc = async (category, postId) => {
-  try {
-    return await get(ref(database, `Posts/${category}/${postId}`)) //
-      .then(res => {
-        if (res.exists()) {
-          return res.val();
-        }
-        return [];
-      });
-  } catch (e) {
-    throw new Error(ERROR_MESSAGE.GET_POST);
-  }
+  return await get(ref(database, `Posts/${category}/${postId}`))
+    .then(res => {
+      if (res.exists()) {
+        return res.val();
+      }
+      return [];
+    })
+    .catch(() => {
+      throw Error(ERROR_MESSAGE.GET_POST);
+    });
 };
