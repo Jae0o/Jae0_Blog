@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     errorElement: <h1>임시 에러창</h1>,
     children: [
       { index: true, element: <Home /> },
-      { path: "/editor/:ID", element: <Edit /> },
+      { path: "/editor/:category/:id", element: <Edit /> },
       {
         path: "/post",
         element: <Post />,

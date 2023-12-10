@@ -30,7 +30,7 @@ const NavProfile: React.FC = () => {
           <NavProfileActions
             action="write"
             icon="lock"
-            path="/editor/newPost"
+            path="/editor/newPost/newPost"
           />
           <NavProfileActions
             action="home"
