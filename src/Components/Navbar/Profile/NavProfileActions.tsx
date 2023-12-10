@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../CSS/Navbar/ProfileCard/NavProfileActions.css";
 import { NavProfileActionsProps } from "../../../Types/Components/Nav/NavbarType";
-import { OnClickEventType } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/EventTypes";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 
 const NavProfileActions: React.FC<NavProfileActionsProps> = ({
@@ -11,7 +11,7 @@ const NavProfileActions: React.FC<NavProfileActionsProps> = ({
 }) => {
   const navigate: NavigateFunction = useNavigate();
 
-  const onClickHandle: OnClickEventType = e => {
+  const onClickHandle: OnClickEvent = e => {
     e.preventDefault();
     navigate(path);
   };

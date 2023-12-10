@@ -1,4 +1,4 @@
-export interface PostBannerParamsType {
+export interface PostBanner {
   id?: string;
   category?: string;
 }

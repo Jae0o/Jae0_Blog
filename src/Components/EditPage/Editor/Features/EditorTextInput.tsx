@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { EditorTextInputProps } from "../../../../Types/Components/Edit/EditorTypes";
-import { OnChangeEventType } from "../../../../Types/EventTypes";
+import { OnChangeEvent } from "../../../../Types/EventTypes";
 import "../../../../CSS/EditPage/Editor/EditorTextInput.css";
 
 const EditorTextInput: React.FC<EditorTextInputProps> = ({
@@ -10,7 +10,7 @@ const EditorTextInput: React.FC<EditorTextInputProps> = ({
 }) => {
   const [textValue, setTextValue] = useState<string>(state);
 
-  const onChangeData: OnChangeEventType = e => {
+  const onChangeData: OnChangeEvent = e => {
     e.preventDefault();
 
     if (e.currentTarget instanceof HTMLInputElement) {

@@ -1,6 +1,6 @@
-import { convertDateFormatFunc } from "../Types/Util/UtilFunctionsType";
+import { ConvertDateFormat } from "../Types/Util/UtilFunctionsType";
 
-export const convertDateFormat: convertDateFormatFunc = date => {
+export const convertDateFormat: ConvertDateFormat = date => {
   const dateType = new Date(date);
 
   const year: number = dateType.getUTCFullYear();

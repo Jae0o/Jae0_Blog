@@ -1,7 +1,7 @@
-export interface ProfileConstansType {
+export interface ProfileConstans {
   THUMBNAIL: string;
 }
 
-export interface PostsThumbnailType {
+export interface PostsThumbnail {
   [key: string]: string;
 }

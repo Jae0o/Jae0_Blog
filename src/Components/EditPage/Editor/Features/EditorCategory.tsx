@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../../../CSS/EditPage/Editor/EditorCategory.css";
 import { EditorCategoryProps } from "../../../../Types/Components/Edit/EditorTypes";
-import { OnChangeEventType } from "../../../../Types/EventTypes";
+import { OnChangeEvent } from "../../../../Types/EventTypes";
 
 const EditorCategory: React.FC<EditorCategoryProps> = ({
   categoryList,
@@ -10,7 +10,7 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({
 }) => {
   const [selected, setSelected] = useState<string>(state);
 
-  const selectedHandler: OnChangeEventType = e => {
+  const selectedHandler: OnChangeEvent = e => {
     const target = e.currentTarget as HTMLInputElement;
     setSelected(target.value);
     onSelecting("category", target.value);

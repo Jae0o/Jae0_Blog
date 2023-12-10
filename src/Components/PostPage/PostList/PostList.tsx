@@ -3,23 +3,23 @@ import "../../../CSS/PostPage/PostList/PostList.css";
 import { useParams } from "react-router-dom";
 import PostListItem from "./PostListItem";
 import { getAllPostsList, getPostsList } from "../../../API/FirebaseDB";
-import { FetchPostsListFunc } from "../../../Types/Components/PostPage/PostListTypes";
-import { PostDataType } from "../../../Types/API/FirebaseTypes";
+import { FetchPostsList } from "../../../Types/Components/PostPage/PostListTypes";
+import { PostData } from "../../../Types/API/FirebaseTypes";
 
 const PostList: React.FC = () => {
-  const [postsList, setPostsList] = useState<PostDataType[]>([]);
+  const [postsList, setPostsList] = useState<PostData[]>([]);
 
   const { category = "ALL" } = useParams();
 
   useEffect(() => {
-    const fetchPostsList: FetchPostsListFunc = async () => {
+    const fetchPostsList: FetchPostsList = async () => {
       if (category === "ALL") {
-        const resAllPostsList: PostDataType[] = await getAllPostsList();
+        const resAllPostsList: PostData[] = await getAllPostsList();
         setPostsList(resAllPostsList);
         return;
       }
 
-      const resPostsList: PostDataType[] = await getPostsList(category);
+      const resPostsList: PostData[] = await getPostsList(category);
       setPostsList(resPostsList);
     };
     fetchPostsList();

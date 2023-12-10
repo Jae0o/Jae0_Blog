@@ -1,7 +1,7 @@
-import { PostDataType } from "../../API/FirebaseTypes";
+import { PostData } from "../../API/FirebaseTypes";
 
 export interface PostListItemProps {
-  post: PostDataType;
+  post: PostData;
 }
 
-export type FetchPostsListFunc = () => Promise<void>;
+export type FetchPostsList = () => Promise<void>;

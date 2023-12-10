@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../../../CSS/PostPage/PostBanner/PostBanner.css";
 import PostBannerDecotation from "./PostBannerDecoration";
-import { AdviceType } from "../../../Types/Constants/VariablesType";
+import { Advice } from "../../../Types/Constants/VariablesType";
 import { ADVICE_DEFAULT, ADVICE_LIST } from "../../../constants/variables";
 import { POST_BANNER_THUMBNAILS } from "../../../constants/URL";
 
 const PostBanner: React.FC = () => {
-  const [advice, setAdvice] = useState<AdviceType>(ADVICE_DEFAULT);
+  const [advice, setAdvice] = useState<Advice>(ADVICE_DEFAULT);
   const [thumbnail, setThumbnail] = useState<string>("");
 
   useEffect(function makeRandomBanner() {

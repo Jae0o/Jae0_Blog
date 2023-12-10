@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../CSS/EditPage/Edit.css";
 import EditPage from "./Editor/Editor";
 import EditSubPage from "./Sub/EditSubPage";
-import { UploadPostFunc } from "../../Types/Components/Edit/EditorTypes";
-import { PostDataType } from "../../Types/API/FirebaseTypes";
+import { UploadPost } from "../../Types/Components/Edit/EditorTypes";
+import { PostData } from "../../Types/API/FirebaseTypes";
 import { setPost } from "../../API/FirebaseDB";
-import { OnUpdateOptionFunc } from "../../Types/Components/Edit/EditSubTypes";
+import { OnUpdateOption } from "../../Types/Components/Edit/EditSubTypes";
 import { useNavigate, useParams } from "react-router-dom";
 import { NEW_POST } from "../../constants/variables";
 import UploadPage from "../UploadPage";
@@ -19,7 +19,7 @@ const Edit: React.FC = () => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
-  const [postData, setPostData] = useState<PostDataType>(NEW_POST);
+  const [postData, setPostData] = useState<PostData>(NEW_POST);
 
   const navigate = useNavigate();
   const { ID: pathId } = useParams();
@@ -30,7 +30,7 @@ const Edit: React.FC = () => {
     setPostData(NEW_POST);
   }, [pathId]);
 
-  const onUpdateOption: OnUpdateOptionFunc = name => {
+  const onUpdateOption: OnUpdateOption = name => {
     if (name === "category") {
       updateCategoryList();
       return;
@@ -41,7 +41,7 @@ const Edit: React.FC = () => {
     }
   };
 
-  const onUploadPost: UploadPostFunc = async post => {
+  const onUploadPost: UploadPost = async post => {
     updateIsLoading(true);
 
     await setPost(post)

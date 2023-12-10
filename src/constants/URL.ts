@@ -1,13 +1,10 @@
-import {
-  PostsThumbnailType,
-  ProfileConstansType,
-} from "../Types/Constants/URLTypes";
+import { PostsThumbnail, ProfileConstans } from "../Types/Constants/URLTypes";
 
-export const POST_LIST_THUMBNAIL: PostsThumbnailType = {
+export const POST_LIST_THUMBNAIL: PostsThumbnail = {
   WORK: "/Thumbnail/PostListThumbnail-work.jpeg",
 };
 
-export const PROFILE: ProfileConstansType = {
+export const PROFILE: ProfileConstans = {
   THUMBNAIL:
     "https://res.cloudinary.com/dalxgxu2o/image/upload/c_scale,h_120,q_100,w_120/v1699980818/IMG_0508_mke9kp.gif",
 };

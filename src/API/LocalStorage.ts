@@ -1,22 +1,22 @@
-import { PostDataType } from "../Types/API/FirebaseTypes";
+import { PostData } from "../Types/API/FirebaseTypes";
 import {
-  GetLocalFunc,
-  RemoveLocalFunc,
-  SetLocalFunc,
+  GetLocal,
+  RemoveLocal,
+  SetLocal,
 } from "../Types/API/LocalStorageTypes";
 
-export const setLocalStorage: SetLocalFunc = post => {
+export const setLocalStorage: SetLocal = post => {
   const time = JSON.stringify(new Date());
   post.updateAt = time;
   localStorage.setItem(post.id, JSON.stringify(post));
 };
 
-export const removeLocalStorage: RemoveLocalFunc = id => {
+export const removeLocalStorage: RemoveLocal = id => {
   localStorage.removeItem(id);
 };
 
-export const getLocalStorage: GetLocalFunc = id => {
+export const getLocalStorage: GetLocal = id => {
   const get: string = localStorage.getItem(id) || "";
-  const data: PostDataType = JSON.parse(get);
+  const data: PostData = JSON.parse(get);
   return data ? data : false;
 };

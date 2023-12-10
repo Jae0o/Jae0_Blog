@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import "../../../CSS/EditPage/Editor/Editor.css";
 import {
   EditorProps,
-  SetEditorPostFunc,
+  SetEditorPost,
 } from "../../../Types/Components/Edit/EditorTypes";
-import { PostDataType } from "../../../Types/API/FirebaseTypes";
+import { PostData } from "../../../Types/API/FirebaseTypes";
 import EditorPublicToggle from "./Features/EditorPublic";
 import EditorTextInput from "./Features/EditorTextInput";
-import EditorMD from "./Features/EditotMD";
+import EditorMDInput from "./Features/EditotMD";
 import EditorCategory from "./Features/EditorCategory";
 import EditorTags from "./Features/EditorTags";
-import { OnClickEventType } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/EventTypes";
 import { setLocalStorage } from "../../../API/LocalStorage";
 import { postUploadValidate } from "../../../Util/Validate";
 
@@ -20,10 +20,10 @@ const Editor: React.FC<EditorProps> = ({
   tagList,
   onSubmit,
 }) => {
-  const [postData, setPostData] = useState<PostDataType>(post);
+  const [postData, setPostData] = useState<PostData>(post);
 
-  const setPostHandler: SetEditorPostFunc = (key, value) => {
-    const newPostData: PostDataType = {
+  const setPostHandler: SetEditorPost = (key, value) => {
+    const newPostData: PostData = {
       ...postData,
       [key]: value,
     };
@@ -31,7 +31,7 @@ const Editor: React.FC<EditorProps> = ({
     setLocalStorage(newPostData);
   };
 
-  const onSubmitPost: OnClickEventType = e => {
+  const onSubmitPost: OnClickEvent = e => {
     e.preventDefault();
 
     if (postUploadValidate(postData)) {
@@ -72,7 +72,7 @@ const Editor: React.FC<EditorProps> = ({
         state={postData.tag}
         tags={tagList}
       />
-      <EditorMD
+      <EditorMDInput
         onTyping={setPostHandler}
         state={postData.main}
       />

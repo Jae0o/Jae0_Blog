@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../../../CSS/EditPage/Editor/EditorTags.css";
 import { EditorTagsProps } from "../../../../Types/Components/Edit/EditorTypes";
-import { OnChangeEventType } from "../../../../Types/EventTypes";
+import { OnChangeEvent } from "../../../../Types/EventTypes";
 
 const EditorTags: React.FC<EditorTagsProps> = ({
   tags,
@@ -10,7 +10,7 @@ const EditorTags: React.FC<EditorTagsProps> = ({
 }) => {
   const [selected, setSelected] = useState<string[]>(state);
 
-  const toggleTagHandler: OnChangeEventType = e => {
+  const toggleTagHandler: OnChangeEvent = e => {
     const element: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const target: string = element.value;
 

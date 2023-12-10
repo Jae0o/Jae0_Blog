@@ -1,7 +1,6 @@
 export interface AlertContext {
   TAG: string;
   CATEGORY: string;
-  POST: string;
 }
 
 export interface AlertEdit {

@@ -3,13 +3,13 @@ import "../../../../CSS/EditPage/Editor/EditorMD.css";
 import MDEditor from "@uiw/react-md-editor";
 import {
   EditorMDProps,
-  OnChangeEditorMDFunc,
+  OnChangeEditorMD,
 } from "../../../../Types/Components/Edit/EditorTypes";
 
 const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
   const [value, setValue] = useState<string>(state);
 
-  const onChangeMD: OnChangeEditorMDFunc = value => {
+  const onChangeMD: OnChangeEditorMD = value => {
     setValue(value);
     onTyping("main", value);
   };

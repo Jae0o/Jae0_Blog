@@ -1,1 +1,1 @@
-export type convertDateFormatFunc = (date: string) => string;
+export type ConvertDateFormat = (date: string) => string;

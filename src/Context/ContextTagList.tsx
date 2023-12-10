@@ -2,12 +2,12 @@ import { useState, createContext, useEffect } from "react";
 import { getOptions } from "../API/FirebaseDB";
 import {
   ContextProps,
-  ContextTagListTyps,
-  UpdateContextFunc,
+  TagListContext,
+  UpdateContext,
 } from "../Types/Context/ContextTypes";
 import { ALERT_CONTEXT } from "../constants/AlertMessage";
 
-export const ContextTagList = createContext<ContextTagListTyps>({
+export const ContextTagList = createContext<TagListContext>({
   tagList: [],
   updateTagList: () => {},
 });
@@ -17,7 +17,7 @@ export const ContextTagListProvider: React.FC<ContextProps> = ({
 }) => {
   const [tagList, setTagList] = useState<string[]>([]);
 
-  const updateTagList: UpdateContextFunc = async () => {
+  const updateTagList: UpdateContext = async () => {
     await getOptions("tag")
       .then(res => setTagList(res))
       .catch(() => {
