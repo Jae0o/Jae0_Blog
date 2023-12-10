@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback } from "react";
 import "../../../../CSS/EditPage/Editor/EditorPublic.css";
 import { OnChangeEvent } from "../../../../Types/EventTypes";
 import {
@@ -7,11 +7,8 @@ import {
 } from "../../../../Types/Components/Edit/EditorTypes";
 
 const EditorPublic: React.FC<EditPublicProps> = ({ state, onToggle }) => {
-  const [isPublic, setIsPublic] = useState<boolean>(state);
-
   const onChangeToggle: OnChangeEvent = () => {
-    setIsPublic(!isPublic);
-    onToggle("isPublic", !isPublic);
+    onToggle("isPublic", !state);
   };
 
   const changePublicText = useCallback<ChangePublicText>(isPublic => {
@@ -21,7 +18,7 @@ const EditorPublic: React.FC<EditPublicProps> = ({ state, onToggle }) => {
     return "비공개 상태";
   }, []);
 
-  const onToggleClassName: string = isPublic ? "-onToggled" : "";
+  const onToggleClassName: string = state ? "-onToggled" : "";
 
   return (
     <div className="Editor__public">
@@ -29,7 +26,7 @@ const EditorPublic: React.FC<EditPublicProps> = ({ state, onToggle }) => {
         className="public__checkbox"
         id="publicToggleBox"
         type="checkbox"
-        checked={isPublic}
+        checked={state}
         onChange={onChangeToggle}
       />
       <label
@@ -40,7 +37,7 @@ const EditorPublic: React.FC<EditPublicProps> = ({ state, onToggle }) => {
       <label
         htmlFor="publicToggleBox"
         className="public__text">
-        {changePublicText(isPublic)}
+        {changePublicText(state)}
       </label>
     </div>
   );

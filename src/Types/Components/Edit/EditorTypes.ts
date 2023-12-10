@@ -3,7 +3,8 @@ import { PostData } from "../../API/FirebaseTypes";
 // EditPage
 export type UploadPost = (post: PostData) => void;
 export interface EditorProps {
-  post: PostData;
+  category: string;
+  id: string;
   categoryList: string[];
   tagList: string[];
   onSubmit: UploadPost;

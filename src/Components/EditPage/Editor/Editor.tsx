@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../../CSS/EditPage/Editor/Editor.css";
 import {
   EditorProps,
@@ -13,14 +13,32 @@ import EditorTags from "./Features/EditorTags";
 import { OnClickEvent } from "../../../Types/EventTypes";
 import { setLocalStorage } from "../../../API/LocalStorage";
 import { postUploadValidate } from "../../../Util/Validate";
+import { NEW_POST } from "../../../constants/variables";
+import { FetchPostFunc } from "../../../Types/Components/PostPage/PostPageType";
+import { getPost } from "../../../API/FirebaseDB";
 
 const Editor: React.FC<EditorProps> = ({
-  post,
+  id,
+  category,
   categoryList,
   tagList,
   onSubmit,
 }) => {
-  const [postData, setPostData] = useState<PostData>(post);
+  const [postData, setPostData] = useState<PostData>(NEW_POST);
+
+  useEffect(() => {
+    if (id === "newPost") {
+      setPostData(NEW_POST);
+      return;
+    }
+
+    const fetchPost: FetchPostFunc = async (category, pathId) => {
+      const resPost: PostData = await getPost(category, pathId);
+      setPostData(resPost);
+    };
+
+    fetchPost(category, id);
+  }, [id, category]);
 
   const setPostHandler: SetEditorPost = (key, value) => {
     const newPostData: PostData = {

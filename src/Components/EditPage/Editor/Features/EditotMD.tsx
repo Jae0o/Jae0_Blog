@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../../CSS/EditPage/Editor/EditorMD.css";
 import MDEditor from "@uiw/react-md-editor";
 import {
@@ -7,10 +7,7 @@ import {
 } from "../../../../Types/Components/Edit/EditorTypes";
 
 const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
-  const [value, setValue] = useState<string>(state);
-
   const onChangeMD: OnChangeEditorMD = value => {
-    setValue(value);
     onTyping("main", value);
   };
 
@@ -21,7 +18,7 @@ const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
         data-color-mode="light">
         <MDEditor
           height={"100%"}
-          value={value}
+          value={state}
           onChange={newValue => onChangeMD(newValue as string)}
         />
       </div>
