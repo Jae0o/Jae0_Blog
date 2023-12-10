@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../../CSS/EditPage/Editor/EditorTags.css";
 import { EditorTagsProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEvent } from "../../../../Types/EventTypes";
@@ -8,19 +8,17 @@ const EditorTags: React.FC<EditorTagsProps> = ({
   state,
   onSelecting,
 }) => {
-  const [selected, setSelected] = useState<string[]>(state);
-
   const toggleTagHandler: OnChangeEvent = e => {
     const element: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const target: string = element.value;
 
     let newSelected: string[];
-    if (selected.includes(target)) {
-      newSelected = selected.filter(item => item !== target);
+    if (state.includes(target)) {
+      newSelected = state.filter(item => item !== target);
     } else {
-      newSelected = [...selected, target];
+      newSelected = [...state, target];
     }
-    setSelected(newSelected);
+
     onSelecting("tag", newSelected);
   };
 
@@ -29,7 +27,7 @@ const EditorTags: React.FC<EditorTagsProps> = ({
       <h6 className="tags__title">태그 :</h6>
       {tags &&
         tags.map((item, idx) => {
-          const isChecked: boolean = selected.includes(item);
+          const isChecked: boolean = state.includes(item);
 
           return (
             <li

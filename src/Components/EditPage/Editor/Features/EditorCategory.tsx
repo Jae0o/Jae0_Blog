@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../../CSS/EditPage/Editor/EditorCategory.css";
 import { EditorCategoryProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEvent } from "../../../../Types/EventTypes";
@@ -8,11 +8,9 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({
   onSelecting,
   state,
 }) => {
-  const [selected, setSelected] = useState<string>(state);
-
   const selectedHandler: OnChangeEvent = e => {
-    const target = e.currentTarget as HTMLInputElement;
-    setSelected(target.value);
+    if (!(e.currentTarget instanceof HTMLInputElement)) return;
+    const target = e.currentTarget;
     onSelecting("category", target.value);
   };
 
@@ -22,7 +20,7 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({
       <ul className="category__item-container">
         {categoryList &&
           categoryList.map((item, idx) => {
-            const isSelected: boolean = selected === item;
+            const isSelected: boolean = state === item;
 
             return (
               <li

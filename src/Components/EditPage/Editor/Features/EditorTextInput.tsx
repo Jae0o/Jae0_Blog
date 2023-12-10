@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { EditorTextInputProps } from "../../../../Types/Components/Edit/EditorTypes";
 import { OnChangeEvent } from "../../../../Types/EventTypes";
 import "../../../../CSS/EditPage/Editor/EditorTextInput.css";
@@ -8,15 +8,12 @@ const EditorTextInput: React.FC<EditorTextInputProps> = ({
   onTyping,
   state,
 }) => {
-  const [textValue, setTextValue] = useState<string>(state);
-
   const onChangeData: OnChangeEvent = e => {
     e.preventDefault();
 
     if (e.currentTarget instanceof HTMLInputElement) {
       const target: HTMLInputElement = e.currentTarget;
 
-      setTextValue(target.value);
       onTyping(typeName, target.value);
     }
   };
@@ -26,7 +23,7 @@ const EditorTextInput: React.FC<EditorTextInputProps> = ({
       <input
         className={`${typeName}__text`}
         type="text"
-        value={textValue}
+        value={state}
         onChange={onChangeData}
         placeholder="Text none"
       />
