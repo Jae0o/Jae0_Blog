@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "../../../CSS/PostPage/PostBanner/PostBannerDecotation.css";
 import { useNavigate } from "react-router-dom";
 
 const PostBannerDecotation: React.FC = () => {
   const navigate = useNavigate();
 
-  const toPrevPageHandler = () => {
+  const toPrevPageHandler = useCallback(() => {
     navigate(-1);
-  };
+  }, [navigate]);
 
   return (
     <div className="ptbanner__decoration">
