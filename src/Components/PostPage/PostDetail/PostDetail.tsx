@@ -5,6 +5,7 @@ import { getPost } from "../../../API/FirebaseDB";
 import { PostData } from "../../../Types/API/FirebaseTypes";
 import { FetchPostFunc } from "../../../Types/Components/PostPage/PostPageType";
 import { OnClickEvent } from "../../../Types/EventTypes";
+import MDEditor from "@uiw/react-md-editor";
 
 const PostDetail: React.FC = () => {
   const [post, setPost] = useState<PostData>();
@@ -29,9 +30,20 @@ const PostDetail: React.FC = () => {
 
   console.log(post);
   return (
-    <>
+    <div data-color-mode="light">
       <button onClick={toEditPage}>수정 하기</button>
-    </>
+      <h2>{post?.title}</h2>
+      <h4>{post?.subtitle}</h4>
+      <p>{post?.createAt}</p>
+      <p>{post?.updateAt}</p>
+      <p>{post?.category}</p>
+      <p>{post?.tag}</p>
+
+      <MDEditor.Markdown
+        className="test"
+        source={post?.main}
+      />
+    </div>
   );
 };
 
