@@ -1,10 +1,10 @@
 .outlet__ptlist {
-  width: 100%;
+  width: 100rem;
   padding-top: 4rem;
 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   justify-items: center;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
