@@ -4,4 +4,5 @@ export interface NavMenubarItemProps {
   icon: IconType;
   title: string;
   category: string;
+  postCount: number;
 }

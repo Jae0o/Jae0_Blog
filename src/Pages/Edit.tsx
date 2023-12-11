@@ -11,11 +11,13 @@ import { ALERT_EDIT } from "../constants/AlertMessage";
 import { ContextCategoryList } from "../Context/ContextCategory";
 import { ContextTagList } from "../Context/ContextTagList";
 import { ContextIsLoading } from "../Context/ContextIsLoading";
+import { ContextPosts } from "../Context/ContextPosts";
 
 const Edit: React.FC = () => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
+  const { updatePosts } = useContext(ContextPosts);
 
   const navigate = useNavigate();
   const { category = "", id: pathId = "" } = useParams();
@@ -37,7 +39,7 @@ const Edit: React.FC = () => {
     await setPost(post)
       .then(() => {
         alert(ALERT_EDIT.UPLOAD_SUCCESS);
-
+        updatePosts();
         navigate("/");
       })
       .catch(() => {
