@@ -9,6 +9,7 @@ import PostList from "./Components/PostPage/PostList/PostList";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
+import { ContextPostsProvider } from "./Context/ContextPosts";
 
 const router = createBrowserRouter([
   {
@@ -33,11 +34,13 @@ const router = createBrowserRouter([
 const App: React.FC = () => {
   return (
     <ContextIsLoadingProvider>
-      <ContextTagListProvider>
-        <ContextCategoryListProvider>
-          <RouterProvider router={router} />
-        </ContextCategoryListProvider>
-      </ContextTagListProvider>
+      <ContextPostsProvider>
+        <ContextTagListProvider>
+          <ContextCategoryListProvider>
+            <RouterProvider router={router} />
+          </ContextCategoryListProvider>
+        </ContextTagListProvider>
+      </ContextPostsProvider>
     </ContextIsLoadingProvider>
   );
 };

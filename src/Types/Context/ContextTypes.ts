@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { PostData } from "../API/FirebaseTypes";
 
 export type UpdateContext = () => void;
 
@@ -21,4 +22,12 @@ export type UpdateIsLoading = (state: boolean) => void;
 export interface IsLoadingContext {
   isLoading: boolean;
   updateIsLoading: UpdateIsLoading;
+}
+
+export interface Posts {
+  [key: string]: PostData[];
+}
+export interface PostsContext {
+  posts: Posts;
+  updatePosts: UpdateContext;
 }
