@@ -1,4 +1,4 @@
-export interface ProfileConstans {
+export interface ProfileConstants {
   THUMBNAIL: string;
 }
 

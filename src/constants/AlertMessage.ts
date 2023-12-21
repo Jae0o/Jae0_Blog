@@ -1,8 +1,4 @@
-import {
-  AlertContext,
-  AlertEdit,
-  ErrorMessage,
-} from "../Types/Constants/AlertMessageType";
+import { AlertContext, AlertEdit, ErrorMessage } from "./AlertMessage.Types";
 
 export const ALERT_CONTEXT: AlertContext = {
   TAG: "Tag List 불러오기 과정중 문제가 발생했습니다. 🥹",
@@ -20,5 +16,5 @@ export const ERROR_MESSAGE: ErrorMessage = {
   SET_POST: "Post를 업로드하는 중 ERROR 발생.",
   GET_POSTS_LIST: "Posts를 불러오는 중 ERROR 발생.",
   GET_ALL_POSTS_LIST: "모든 Posts를 불러오는 중 ERROR 발생.",
-  GET_POST: "Post를 불러오는 중 ERROE 발생.",
+  GET_POST: "Post를 불러오는 중 ERROR 발생.",
 };
