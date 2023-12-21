@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
 import "./Edit.Style.css";
-import EditPage from "../Components/EditPage/Editor/Editor";
-import EditSubPage from "../Components/EditPage/EditorSub/EditorSub";
-import { UploadPost } from "../Components/EditPage/Editor/Editor.Types";
-import { setPost } from "../API/FirebaseDB";
-import { OnUpdateOption } from "../Components/EditPage/EditorSub/EditorSub.Types";
+import EditPage from "../../Components/EditPage/Editor/Editor";
+import EditSubPage from "../../Components/EditPage/EditorSub/EditorSub";
+import { UploadPost } from "../../Components/EditPage/Editor/Editor.Types";
+import { setPost } from "../../API/FirebaseDB";
+import { OnUpdateOption } from "../../Components/EditPage/EditorSub/EditorSub.Types";
 import { useNavigate, useParams } from "react-router-dom";
-import UploadPage from "../Components/UploadPage";
-import { ALERT_EDIT } from "../constants/AlertMessage";
-import { ContextCategoryList } from "../Context/ContextCategory";
-import { ContextTagList } from "../Context/ContextTagList";
-import { ContextIsLoading } from "../Context/ContextIsLoading";
-import { ContextPosts } from "../Context/ContextPosts";
+import UploadPage from "../../Components/UploadPage";
+import { ALERT_EDIT } from "../../constants/AlertMessage";
+import { ContextCategoryList } from "../../Context/ContextCategory";
+import { ContextTagList } from "../../Context/ContextTagList";
+import { ContextIsLoading } from "../../Context/ContextIsLoading";
+import { ContextPosts } from "../../Context/ContextPosts";
 
 const Edit: React.FC = () => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);

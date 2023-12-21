@@ -1,9 +1,9 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
-import Home from "./Pages/Home";
-import Edit from "./Pages/Edit";
-import Post from "./Pages/Post";
+import Home from "./Pages/Home/Home";
+import Edit from "./Pages/Edit/Edit";
+import Post from "./Pages/Post/Post";
 import PostDetail from "./Components/PostPage/PostDetail/PostDetail";
 import PostList from "./Components/PostPage/PostList/PostList";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
