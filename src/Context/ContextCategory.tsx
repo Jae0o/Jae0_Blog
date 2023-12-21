@@ -4,7 +4,7 @@ import {
   ContextProps,
   CategoryListContext,
   UpdateContext,
-} from "../Types/Context/ContextTypes";
+} from "./Context.Types";
 import { ALERT_CONTEXT } from "../constants/AlertMessage";
 
 export const ContextCategoryList = createContext<CategoryListContext>({

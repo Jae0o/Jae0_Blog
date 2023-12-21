@@ -1,10 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { getAllPostsList } from "../API/FirebaseDB";
-import {
-  ContextProps,
-  Posts,
-  PostsContext,
-} from "../Types/Context/ContextTypes";
+import { ContextProps, Posts, PostsContext } from "./Context.Types";
 
 export const ContextPosts = createContext<PostsContext>({
   posts: {},
