@@ -1,6 +1,6 @@
 export type OnUpdateOption = (name: string) => void;
 
-export interface EditSubPageProps {
+export interface EditorSubPageProps {
   onUpdate: OnUpdateOption;
 }
 

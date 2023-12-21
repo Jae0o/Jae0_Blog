@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../../../CSS/EditPage/EditSubPage/EditSubPage.css";
-import InsertOptionButton from "./Features/InsertOptionButton";
-import { EditSubPageProps } from "../../../Types/Components/Edit/EditSubTypes";
-import { OnClickEvent } from "../../../Types/Components/EventTypes";
+import "./EditorSub.Style.css";
+import InsertOptionButton from "./Components/InsertOptionButton";
+import { EditorSubPageProps } from "./EditorSub.Types";
+import { OnClickEvent } from "../../../Types/EventTypes";
 
-const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
+const EditSubPage: React.FC<EditorSubPageProps> = ({ onUpdate }) => {
   const [toggled, setToggled] = useState<boolean>(false);
 
   const toggleHandler: OnClickEvent = e => {
@@ -14,8 +14,8 @@ const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
   const isToggled: string = toggled ? "-toggle" : "";
 
   return (
-    <aside className="edit__subpage">
-      <div className={`subpage__actions${isToggled}`}>
+    <aside className="edit__sub">
+      <div className={`sub__actions${isToggled}`}>
         <InsertOptionButton
           onUpdate={onUpdate}
           listType="category"
@@ -26,7 +26,7 @@ const EditSubPage: React.FC<EditSubPageProps> = ({ onUpdate }) => {
         />
       </div>
       <button
-        className="subpage__button"
+        className="sub__button"
         onClick={toggleHandler}>
         <span>Option's</span>
         <span>Toggle</span>

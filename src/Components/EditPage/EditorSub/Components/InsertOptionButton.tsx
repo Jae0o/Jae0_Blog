@@ -1,8 +1,8 @@
 import React from "react";
-import "../../../../CSS/EditPage/EditSubPage/InsertOptionButton.css";
-import { OnClickEvent } from "../../../../Types/Components/EventTypes";
+import "./InsertOptionButton.css";
+import { OnClickEvent } from "../../../../Types/EventTypes";
 import { setOptions } from "../../../../API/FirebaseDB";
-import { InsertOptionButtonProps } from "../../../../Types/Components/Edit/EditSubTypes";
+import { InsertOptionButtonProps } from "../EditorSub.Types";
 
 const InsertOptionButton: React.FC<InsertOptionButtonProps> = ({
   onUpdate,
@@ -25,7 +25,7 @@ const InsertOptionButton: React.FC<InsertOptionButtonProps> = ({
   };
 
   return (
-    <div className="subpage__insert">
+    <div className="sub__insert">
       <h6 className="insert__title">{listType} 추가</h6>
       <button
         onClick={addListHandler}
