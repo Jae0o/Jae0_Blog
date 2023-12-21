@@ -23,6 +23,6 @@ export type GetAllPostsList = () => Promise<PostData[]>;
 
 export type GetPost = (category: string, postId: string) => Promise<PostData>;
 
-export interface ResponcePostsList {
+export interface ResponsePostsList {
   [key: string]: { [key: string]: PostData };
 }

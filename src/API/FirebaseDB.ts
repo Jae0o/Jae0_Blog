@@ -8,7 +8,7 @@ import {
   GetPostsList,
   GetAllPostsList,
   PostData,
-  ResponcePostsList,
+  ResponsePostsList,
 } from "./Firebase.Types";
 import { v4 } from "uuid";
 import { ERROR_MESSAGE } from "../constants/AlertMessage";
@@ -74,7 +74,7 @@ export const getPostsList: GetPostsList = async category => {
 };
 
 export const getAllPostsList: GetAllPostsList = async () => {
-  const snapshot: ResponcePostsList = await get(ref(database, `Posts/`))
+  const snapshot: ResponsePostsList = await get(ref(database, `Posts/`))
     .then(res => {
       if (res.exists()) {
         return res.val();
@@ -87,8 +87,8 @@ export const getAllPostsList: GetAllPostsList = async () => {
   const postsList: PostData[] = [];
 
   for (const key in snapshot) {
-    const convetedList: PostData[] = Object.values(snapshot[key]);
-    postsList.push(...convetedList);
+    const convertedList: PostData[] = Object.values(snapshot[key]);
+    postsList.push(...convertedList);
   }
 
   return postsList;
