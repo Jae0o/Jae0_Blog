@@ -1,9 +1,9 @@
 import React from "react";
-import "../../../CSS/Navbar/ProfileCard/NavProfile.css";
-import NavProfileActions from "./NavProfileActions";
+import "./NavProfile.Style.css";
+import NavProfileActions from "./Components/NavProfileActions";
 import { PROFILE } from "../../../constants/URL";
 import { useNavigate } from "react-router-dom";
-import { OnClickEvent } from "../../../Types/Components/EventTypes";
+import { OnClickEvent } from "../../../Types/EventTypes";
 
 const NavProfile: React.FC = () => {
   const navigate = useNavigate();

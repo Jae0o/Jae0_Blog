@@ -1,5 +1,5 @@
 import React from "react";
-import "../../CSS/Navbar/Navbar.css";
+import "./Navbar.Style.css";
 import NavProfile from "./Profile/NavProfile";
 import NavMenubar from "./Menubar/NavMenubar";
 

@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import "../../../CSS/Navbar/Menubar/NavMenubar.css";
-
-import NavMenubarItem from "./NavMenubarItem";
+import "./NavMenubar.Style.css";
+import NavMenubarItem from "./Components/NavMenubarItem";
 import { SiHtml5 } from "react-icons/si";
 import { ContextPosts } from "../../../Context/ContextPosts";
 
