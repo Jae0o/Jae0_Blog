@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import PostListItem from "./PostListItem";
 import { getAllPostsList, getPostsList } from "../../../API/FirebaseDB";
 import { FetchPostsList } from "../../../Types/Components/PostPage/PostListTypes";
-import { PostData } from "../../../Types/API/FirebaseTypes";
+import { PostData } from "../../../API/Firebase.Types";
 
 const PostList: React.FC = () => {
   const [postsList, setPostsList] = useState<PostData[]>([]);

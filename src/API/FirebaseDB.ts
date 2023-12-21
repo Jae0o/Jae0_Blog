@@ -9,7 +9,7 @@ import {
   GetAllPostsList,
   PostData,
   ResponcePostsList,
-} from "../Types/API/FirebaseTypes";
+} from "./Firebase.Types";
 import { v4 } from "uuid";
 import { ERROR_MESSAGE } from "../constants/AlertMessage";
 import { POST_LIST_THUMBNAIL } from "../constants/URL";

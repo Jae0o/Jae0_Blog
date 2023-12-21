@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "../../../CSS/PostPage/PostDetail/PostDetail.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPost } from "../../../API/FirebaseDB";
-import { PostData } from "../../../Types/API/FirebaseTypes";
+import { PostData } from "../../../API/Firebase.Types";
 import { FetchPostFunc } from "../../../Types/Components/PostPage/PostPageType";
 import { OnClickEvent } from "../../../Types/EventTypes";
 import MDEditor from "@uiw/react-md-editor";

@@ -4,7 +4,7 @@ import {
   EditorProps,
   SetEditorPost,
 } from "../../../Types/Components/Edit/EditorTypes";
-import { PostData } from "../../../Types/API/FirebaseTypes";
+import { PostData } from "../../../API/Firebase.Types";
 import EditorPublicToggle from "./Features/EditorPublic";
 import EditorTextInput from "./Features/EditorTextInput";
 import EditorMDInput from "./Features/EditotMD";

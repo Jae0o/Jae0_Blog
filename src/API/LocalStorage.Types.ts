@@ -1,4 +1,4 @@
-import { PostData } from "./FirebaseTypes";
+import { PostData } from "./Firebase.Types";
 
 export type SetLocal = (post: PostData) => void;
 
