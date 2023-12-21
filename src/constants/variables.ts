@@ -1,4 +1,4 @@
-import { PostData } from "../Types/API/FirebaseTypes";
+import { PostData } from "../API/Firebase.Types";
 import { AdviceList, Advice } from "../Types/Constants/VariablesType";
 
 export const NEW_POST: PostData = {
