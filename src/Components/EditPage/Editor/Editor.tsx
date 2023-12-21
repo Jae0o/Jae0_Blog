@@ -10,9 +10,9 @@ import EditorTags from "./Components/EditorTags/EditorTags";
 import { setLocalStorage } from "../../../API/LocalStorage";
 import { postUploadValidate } from "../../../Util/Validate";
 import { NEW_POST } from "../../../constants/variables";
-import { FetchPostFunc } from "../../../Types/Components/PostPage/PostPageType";
+import { FetchPostFunc } from "../../PostPage/PostPageType";
 import { getPost } from "../../../API/FirebaseDB";
-import { OnClickEvent } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/Event.Types";
 
 const Editor: React.FC<EditorProps> = ({
   id,

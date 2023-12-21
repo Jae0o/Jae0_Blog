@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./EditorSub.Style.css";
 import InsertOptionButton from "./Components/InsertOptionButton";
 import { EditorSubPageProps } from "./EditorSub.Types";
-import { OnClickEvent } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/Event.Types";
 
 const EditSubPage: React.FC<EditorSubPageProps> = ({ onUpdate }) => {
   const [toggled, setToggled] = useState<boolean>(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import "./InsertOptionButton.css";
-import { OnClickEvent } from "../../../../Types/EventTypes";
+import { OnClickEvent } from "../../../../Types/Event.Types";
 import { setOptions } from "../../../../API/FirebaseDB";
 import { InsertOptionButtonProps } from "../EditorSub.Types";
 

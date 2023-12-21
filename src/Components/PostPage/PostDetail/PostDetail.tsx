@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
-import "../../../CSS/PostPage/PostDetail/PostDetail.css";
+import "./PostDetail.Style.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPost } from "../../../API/FirebaseDB";
 import { PostData } from "../../../API/Firebase.Types";
-import { FetchPostFunc } from "../../../Types/Components/PostPage/PostPageType";
-import { OnClickEvent } from "../../../Types/Components/EventTypes";
+import { FetchPostFunc } from "../PostPageType";
+
 import MDEditor from "@uiw/react-md-editor";
+import { OnClickEvent } from "../../../Types/Event.Types";
 
 const PostDetail: React.FC = () => {
   const [post, setPost] = useState<PostData>();
   const { category = "", id = "" } = useParams();
 
   useEffect(
-    function inintialPost() {
+    function initialPost() {
       const fetchPost: FetchPostFunc = async (category, pathId) => {
         const resPost: PostData = await getPost(category, pathId);
         setPost(resPost);

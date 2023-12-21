@@ -1,12 +1,12 @@
 import React from "react";
-import "../../../CSS/PostPage/PostList/PostListItem.css";
-import { PostListItemProps } from "../../../Types/Components/PostPage/PostListTypes";
-import { convertDateFormat } from "../../../Util/UtilFunctions";
+import "./PostListItem.Style.css";
+import { PostListItemProps } from "../PostList.Types";
+import { convertDateFormat } from "../../../../Util/UtilFunctions";
 import { useNavigate } from "react-router-dom";
-import { OnClickEvent } from "../../../Types/Components/EventTypes";
+import { OnClickEvent } from "../../../../Types/Event.Types";
 
 const PostListItem: React.FC<PostListItemProps> = ({ post }) => {
-  const formatedDate: string = convertDateFormat(JSON.parse(post.createAt));
+  const formattedDate: string = convertDateFormat(JSON.parse(post.createAt));
 
   const navigate = useNavigate();
   9;
@@ -24,7 +24,7 @@ const PostListItem: React.FC<PostListItemProps> = ({ post }) => {
           src={post.thumbnail}
           alt="post-item-Thumbnail"
         />
-        <p className="ptitem__createtime">{formatedDate}</p>
+        <p className="ptitem__createtime">{formattedDate}</p>
       </div>
       <ul className="ptitem__tags">
         {post.tag &&
