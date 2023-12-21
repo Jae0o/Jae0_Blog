@@ -1,6 +1,6 @@
 import React from "react";
 import { EditorTextInputProps } from "../../../../Types/Components/Edit/EditorTypes";
-import { OnChangeEvent } from "../../../../Types/EventTypes";
+import { OnChangeEvent } from "../../../../Types/Components/EventTypes";
 import "../../../../CSS/EditPage/Editor/EditorTextInput.css";
 
 const EditorTextInput: React.FC<EditorTextInputProps> = ({

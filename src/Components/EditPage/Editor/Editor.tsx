@@ -10,7 +10,7 @@ import EditorTextInput from "./Features/EditorTextInput";
 import EditorMDInput from "./Features/EditotMD";
 import EditorCategory from "./Features/EditorCategory";
 import EditorTags from "./Features/EditorTags";
-import { OnClickEvent } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/Components/EventTypes";
 import { setLocalStorage } from "../../../API/LocalStorage";
 import { postUploadValidate } from "../../../Util/Validate";
 import { NEW_POST } from "../../../constants/variables";

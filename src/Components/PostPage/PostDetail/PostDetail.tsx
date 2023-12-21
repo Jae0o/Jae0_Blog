@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getPost } from "../../../API/FirebaseDB";
 import { PostData } from "../../../API/Firebase.Types";
 import { FetchPostFunc } from "../../../Types/Components/PostPage/PostPageType";
-import { OnClickEvent } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/Components/EventTypes";
 import MDEditor from "@uiw/react-md-editor";
 
 const PostDetail: React.FC = () => {
