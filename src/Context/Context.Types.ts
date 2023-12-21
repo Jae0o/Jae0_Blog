@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { PostData } from "../../API/Firebase.Types";
+import { PostData } from "../API/Firebase.Types";
 
 export type UpdateContext = () => void;
 

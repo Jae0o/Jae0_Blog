@@ -3,7 +3,7 @@ import {
   IsLoadingContext,
   ContextProps,
   UpdateIsLoading,
-} from "../Types/Context/ContextTypes";
+} from "./Context.Types";
 
 export const ContextIsLoading = createContext<IsLoadingContext>({
   isLoading: false,

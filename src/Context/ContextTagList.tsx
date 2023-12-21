@@ -1,10 +1,6 @@
 import { useState, createContext, useEffect } from "react";
 import { getOptions } from "../API/FirebaseDB";
-import {
-  ContextProps,
-  TagListContext,
-  UpdateContext,
-} from "../Types/Context/ContextTypes";
+import { ContextProps, TagListContext, UpdateContext } from "./Context.Types";
 import { ALERT_CONTEXT } from "../constants/AlertMessage";
 
 export const ContextTagList = createContext<TagListContext>({
