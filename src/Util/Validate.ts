@@ -1,4 +1,4 @@
-import { PostUploadValidate } from "../Types/Util/ValidateTypes";
+import { PostUploadValidate } from "./Validate.Types";
 
 export const postUploadValidate: PostUploadValidate = post => {
   if (!post.category) {

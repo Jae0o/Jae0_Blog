@@ -1,3 +1,3 @@
-import { PostData } from "../../API/Firebase.Types";
+import { PostData } from "../API/Firebase.Types";
 
 export type PostUploadValidate = (post: PostData) => boolean;

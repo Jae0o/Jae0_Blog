@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import "../../../../CSS/EditPage/Editor/EditorPublic.css";
-import { OnChangeEvent } from "../../../../Types/EventTypes";
+import { OnChangeEvent } from "../../../../Types/Components/EventTypes";
 import {
   EditPublicProps,
   ChangePublicText,

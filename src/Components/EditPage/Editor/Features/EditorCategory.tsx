@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../../CSS/EditPage/Editor/EditorCategory.css";
 import { EditorCategoryProps } from "../../../../Types/Components/Edit/EditorTypes";
-import { OnChangeEvent } from "../../../../Types/EventTypes";
+import { OnChangeEvent } from "../../../../Types/Components/EventTypes";
 
 const EditorCategory: React.FC<EditorCategoryProps> = ({
   categoryList,

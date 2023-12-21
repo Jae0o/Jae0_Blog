@@ -1,7 +1,7 @@
 import React from "react";
 import "../../../CSS/Navbar/ProfileCard/NavProfileActions.css";
 import { NavProfileActionsProps } from "../../../Types/Components/Nav/NavbarType";
-import { OnClickEvent } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/Components/EventTypes";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 
 const NavProfileActions: React.FC<NavProfileActionsProps> = ({
