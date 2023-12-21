@@ -1,6 +1,6 @@
 import React from "react";
-import "../CSS/PostPage/Post.css";
-import PostBanner from "../Components/PostPage/PostBanner/PostBanner";
+import "./Post.Style.css";
+import PostBanner from "../../Components/PostPage/PostBanner/PostBanner";
 import { Outlet } from "react-router-dom";
 
 const Post: React.FC = () => {
