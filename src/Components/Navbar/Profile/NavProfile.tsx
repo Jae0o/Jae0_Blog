@@ -3,7 +3,7 @@ import "./NavProfile.Style.css";
 import NavProfileActions from "./Components/NavProfileActions";
 import { PROFILE } from "../../../constants/URL";
 import { useNavigate } from "react-router-dom";
-import { OnClickEvent } from "../../../Types/EventTypes";
+import { OnClickEvent } from "../../../Types/Event.Types";
 
 const NavProfile: React.FC = () => {
   const navigate = useNavigate();

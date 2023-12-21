@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../../../CSS/PostPage/PostBanner/PostBanner.css";
-import PostBannerDecotation from "./PostBannerDecoration";
+import "./PostBanner.Style.css";
+import PostBannerDecoration from "./Components/PostBannerDecoration";
 import { ADVICE_DEFAULT, ADVICE_LIST } from "../../../constants/variables";
 import { POST_BANNER_THUMBNAILS } from "../../../constants/URL";
-import { BannerInfo } from "../../../Types/Components/PostPage/PostPageType";
+import { BannerInfo } from "../PostPageType";
 
 const PostBanner: React.FC = () => {
   const [bannerInfo, setBannerInfo] = useState<BannerInfo>({
@@ -22,7 +22,7 @@ const PostBanner: React.FC = () => {
 
   return (
     <div className="post__banner">
-      <PostBannerDecotation />
+      <PostBannerDecoration />
       <div
         className="ptbanner__container"
         style={{ backgroundImage: `url(${bannerInfo.thumbnail})` }}>

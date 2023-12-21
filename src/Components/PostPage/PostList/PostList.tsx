@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import "../../../CSS/PostPage/PostList/PostList.css";
+import "./PostList.Style.css";
 import { useParams } from "react-router-dom";
-import PostListItem from "./PostListItem";
+import PostListItem from "./Components/PostListItem";
 import { getAllPostsList, getPostsList } from "../../../API/FirebaseDB";
-import { FetchPostsList } from "../../../Types/Components/PostPage/PostListTypes";
+import { FetchPostsList } from "./PostList.Types";
 import { PostData } from "../../../API/Firebase.Types";
 
 const PostList: React.FC = () => {

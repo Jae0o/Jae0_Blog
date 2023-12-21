@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
-import "../../../CSS/PostPage/PostBanner/PostBannerDecotation.css";
+import "./PostBannerDecoration.Style.css";
 import { useNavigate } from "react-router-dom";
 
-const PostBannerDecotation: React.FC = () => {
+const PostBannerDecoration: React.FC = () => {
   const navigate = useNavigate();
 
   const toPrevPageHandler = useCallback(() => {
@@ -26,4 +26,4 @@ const PostBannerDecotation: React.FC = () => {
   );
 };
 
-export default PostBannerDecotation;
+export default PostBannerDecoration;

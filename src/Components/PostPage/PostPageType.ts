@@ -1,4 +1,4 @@
-import { Advice } from "../../../constants/VariablesType";
+import { Advice } from "../../constants/VariablesType";
 
 export interface PostBanner {
   id?: string;
