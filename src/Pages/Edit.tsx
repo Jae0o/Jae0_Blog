@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import "../CSS/EditPage/Edit.css";
+import "./Edit.Style.css";
 import EditPage from "../Components/EditPage/Editor/Editor";
-import EditSubPage from "../Components/EditPage/Sub/EditSubPage";
-import { UploadPost } from "../Types/Components/Edit/EditorTypes";
+import EditSubPage from "../Components/EditPage/EditorSub/EditorSub";
+import { UploadPost } from "../Components/EditPage/Editor/Editor.Types";
 import { setPost } from "../API/FirebaseDB";
-import { OnUpdateOption } from "../Types/Components/Edit/EditSubTypes";
+import { OnUpdateOption } from "../Components/EditPage/EditorSub/EditorSub.Types";
 import { useNavigate, useParams } from "react-router-dom";
 import UploadPage from "../Components/UploadPage";
 import { ALERT_EDIT } from "../constants/AlertMessage";

@@ -1,4 +1,4 @@
-.edit__subpage {
+.edit__sub {
   width: fit-content;
 
   position: absolute;
@@ -11,8 +11,8 @@
   align-items: flex-end;
 }
 
-.subpage__actions,
-.subpage__actions-toggle {
+.sub__actions,
+.sub__actions-toggle {
   margin-bottom: 1rem;
 
   display: none;
@@ -23,7 +23,7 @@
 
   user-select: none;
 }
-.subpage__button {
+.sub__button {
   width: 8rem;
   height: 6rem;
 
@@ -42,10 +42,10 @@
   transition: all 0.3s;
 }
 
-.subpage__button:hover {
+.sub__button:hover {
   transform: scale(1.1);
 }
 
-.subpage__actions-toggle {
+.sub__actions-toggle {
   display: block;
 }

@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "../../../CSS/EditPage/Editor/Editor.css";
-import {
-  EditorProps,
-  SetEditorPost,
-} from "../../../Types/Components/Edit/EditorTypes";
+import "./Editor.Style.css";
+import { EditorProps, SetEditorPost } from "./Editor.Types";
 import { PostData } from "../../../API/Firebase.Types";
-import EditorPublicToggle from "./Features/EditorPublic";
-import EditorTextInput from "./Features/EditorTextInput";
-import EditorMDInput from "./Features/EditotMD";
-import EditorCategory from "./Features/EditorCategory";
-import EditorTags from "./Features/EditorTags";
-import { OnClickEvent } from "../../../Types/Components/EventTypes";
+import EditorPublicToggle from "./Components/EditorPublic/EditorPublic";
+import EditorTextInput from "./Components/EditorTextInput/EditorTextInput";
+import EditorMDInput from "./Components/EditorMD/EditorMD";
+import EditorCategory from "./Components/EditorCategory/EditorCategory";
+import EditorTags from "./Components/EditorTags/EditorTags";
 import { setLocalStorage } from "../../../API/LocalStorage";
 import { postUploadValidate } from "../../../Util/Validate";
 import { NEW_POST } from "../../../constants/variables";
 import { FetchPostFunc } from "../../../Types/Components/PostPage/PostPageType";
 import { getPost } from "../../../API/FirebaseDB";
+import { OnClickEvent } from "../../../Types/EventTypes";
 
 const Editor: React.FC<EditorProps> = ({
   id,

@@ -1,10 +1,7 @@
 import React, { useCallback } from "react";
-import "../../../../CSS/EditPage/Editor/EditorPublic.css";
-import { OnChangeEvent } from "../../../../Types/Components/EventTypes";
-import {
-  EditPublicProps,
-  ChangePublicText,
-} from "../../../../Types/Components/Edit/EditorTypes";
+import "./EditorPublic.Style.css";
+import { EditPublicProps, ChangePublicText } from "../../Editor.Types";
+import { OnChangeEvent } from "../../../../../Types/EventTypes";
 
 const EditorPublic: React.FC<EditPublicProps> = ({ state, onToggle }) => {
   const onChangeToggle: OnChangeEvent = () => {

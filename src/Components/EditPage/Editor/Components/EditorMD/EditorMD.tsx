@@ -1,10 +1,7 @@
 import React from "react";
-import "../../../../CSS/EditPage/Editor/EditorMD.css";
+import "./EditorMD.Style.css";
 import MDEditor from "@uiw/react-md-editor";
-import {
-  EditorMDProps,
-  OnChangeEditorMD,
-} from "../../../../Types/Components/Edit/EditorTypes";
+import { EditorMDProps, OnChangeEditorMD } from "../../Editor.Types";
 
 const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
   const onChangeMD: OnChangeEditorMD = value => {
