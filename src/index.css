@@ -67,7 +67,7 @@ section {
   --color-semi-grey: #ccd1d9;
   --color-dark-grey: #656d78;
 
-  /* shdow */
+  /* shadow */
   --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
 
   /* radius */
@@ -81,7 +81,7 @@ section {
   --fontsize-semi-large: 1.6rem;
   --fontsize-medium: 1.4rem;
   --fontsize-semi-small: 1.2rem;
-  --fontsize-samll: 1rem;
+  --fontsize-small: 1rem;
 
   /* font - weight */
   --fontweight-border: 900;
