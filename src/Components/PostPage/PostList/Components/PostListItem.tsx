@@ -18,26 +18,28 @@ const PostListItem: React.FC<PostListItemProps> = ({ post }) => {
     <li
       className="ptlist__ptitem"
       onClick={onNavigate}>
-      <div className="ptitem__header">
+      <div className="ptitem__thumbnail-container">
         <img
           className="ptitem__thumbnail"
           src={post.thumbnail}
           alt="post-item-Thumbnail"
         />
-        <p className="ptitem__createtime">{formattedDate}</p>
+        <p className="ptitem__create">{formattedDate}</p>
       </div>
-      <ul className="ptitem__tags">
-        {post.tag &&
-          post.tag.map((tag, i) => (
-            <li
-              key={post.id + i}
-              className="ptitem__tag-item">
-              {tag}
-            </li>
-          ))}
-      </ul>
-      <div className="ptitme__title-container">
+
+      <div className="ptitem__info-container">
         <h3 className="ptitem__title"> {post.title}</h3>
+        <div className="ptitem__category">{post.category}</div>
+        <ul className="ptitem__tags">
+          {post.tag &&
+            post.tag.map(tag => (
+              <li
+                key={tag}
+                className="ptitem__tag-item">
+                {tag}
+              </li>
+            ))}
+        </ul>
       </div>
     </li>
   );
