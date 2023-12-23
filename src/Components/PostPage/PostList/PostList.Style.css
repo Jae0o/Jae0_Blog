@@ -16,6 +16,8 @@
   padding-top: 4rem;
 
   overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .ptlist__content::-webkit-scrollbar {
