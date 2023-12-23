@@ -2,23 +2,24 @@
   padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
-
-  font-size: var(--fontsize-medium);
 }
 
 .ptdetail__category-title {
   padding-bottom: 0.6rem;
 
-  font-size: var(--fontsize-medium);
+  font-size: var(--fontsize-semi-large);
 }
 
 .ptdetail__category {
-  height: 2rem;
+  height: 3rem;
   padding: 0 1rem;
 
   display: flex;
   align-items: center;
 
   background-color: var(--color-yellow);
-  border-radius: var(--radius-semi-large);
+  border-radius: 20rem;
+
+  font-size: var(--fontsize-medium);
+  font-weight: var(--fontweight-semi-bold);
 }

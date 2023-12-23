@@ -2,20 +2,20 @@
   padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
-
-  font-size: var(--fontsize-medium);
-  border: 1px solid;
 }
 
 .ptdetail__time-title {
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.6rem;
 
-  font-size: var(--fontsize-medium);
+  font-size: var(--fontsize-semi-large);
 }
 
 .ptdetail__time {
-  height: 2rem;
+  height: 3rem;
 
   display: flex;
   align-items: center;
+
+  font-size: var(--fontsize-semi-large);
+  font-weight: var(--fontweight-semi-bold);
 }
