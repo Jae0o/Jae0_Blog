@@ -7,6 +7,9 @@ import { FetchPostFunc } from "../PostPageType";
 
 import MDEditor from "@uiw/react-md-editor";
 import { OnClickEvent } from "../../../Types/Event.Types";
+import PostBanner from "../PostBanner/PostBanner";
+import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
+import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
 
 const PostDetail: React.FC = () => {
   const [post, setPost] = useState<PostData>();
@@ -29,21 +32,41 @@ const PostDetail: React.FC = () => {
     navigate(`/editor/${category}/${id}`);
   };
 
-  console.log(post);
+  if (!post) {
+    // Todo - 로딩에대한 처리를 추가해야함
+    return;
+  }
   return (
-    <div data-color-mode="light">
-      <button onClick={toEditPage}>수정 하기</button>
-      <h2>{post && post.title}</h2>
-      <p>{post && post.createAt}</p>
-      <p>{post && post.updateAt}</p>
-      <p>{post && post.category}</p>
-      <p>{post && post.tag}</p>
+    <>
+      <div className="ptdetail__banner">
+        <PostBanner
+          thumbnail={post.thumbnail}
+          mainText={post.title}
+        />
+      </div>
+      <div
+        className="ptdetail__content"
+        data-color-mode="light">
+        <div className="ptdetail__info">
+          <PostDetailTime
+            title={"생성 일시"}
+            time={post.createAt}
+          />
+          <PostDetailTime
+            title={"변경 일시"}
+            time={post.updateAt}
+          />
+          <PostDetailCategory category={post.category} />
+        </div>
+        <p>{post.tag}</p>
 
-      <MDEditor.Markdown
-        className="test"
-        source={post && post.main}
-      />
-    </div>
+        <MDEditor.Markdown
+          className="test"
+          source={post.main}
+        />
+        <button onClick={toEditPage}>수정 하기</button>
+      </div>
+    </>
   );
 };
 
