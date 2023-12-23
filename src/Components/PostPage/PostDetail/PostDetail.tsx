@@ -53,14 +53,17 @@ const PostDetail: React.FC = () => {
             title={"생성 일시"}
             time={post.createAt}
           />
+          <span className="ptdetail__info-divider" />
           <PostDetailTime
             title={"변경 일시"}
             time={post.updateAt}
           />
+          <span className="ptdetail__info-divider" />
           <PostDetailCategory category={post.category} />
+          <span className="ptdetail__info-divider" />
           <PostDetailTags tags={post.tag} />
         </div>
-
+        <span className="ptdetail__content-divider" />
         <MDEditor.Markdown
           className="test"
           source={post.main}
