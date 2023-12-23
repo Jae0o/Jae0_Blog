@@ -1,0 +1,32 @@
+.ptdetail__tags-container {
+  padding: 0rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ptdetail__tags-title {
+  padding-bottom: 0.6rem;
+
+  font-size: var(--fontsize-semi-large);
+}
+
+.ptdetail__tags-list {
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+  font-size: var(--fontsize-medium);
+  font-weight: var(--fontweight-semi-bold);
+}
+
+.ptdetail__tag {
+  height: 100%;
+  padding: 0 1rem;
+  margin-right: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--color-green);
+  border-radius: 20rem;
+}

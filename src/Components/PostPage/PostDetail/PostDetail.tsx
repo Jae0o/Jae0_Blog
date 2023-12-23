@@ -10,6 +10,7 @@ import { OnClickEvent } from "../../../Types/Event.Types";
 import PostBanner from "../PostBanner/PostBanner";
 import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
 import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
+import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 
 const PostDetail: React.FC = () => {
   const [post, setPost] = useState<PostData>();
@@ -57,8 +58,8 @@ const PostDetail: React.FC = () => {
             time={post.updateAt}
           />
           <PostDetailCategory category={post.category} />
+          <PostDetailTags tags={post.tag} />
         </div>
-        <p>{post.tag}</p>
 
         <MDEditor.Markdown
           className="test"
