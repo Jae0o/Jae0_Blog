@@ -1,7 +1,7 @@
 .Editor__title {
   flex-shrink: 0;
   padding: 0.6rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 
   display: flex;
   align-items: center;
@@ -18,31 +18,6 @@
   background-color: var(--color-semi-grey);
 
   font-size: var(--fontsize-large);
-  font-weight: var(--fontweight-semi-bold);
-  text-overflow: ellipsis;
-
-  overflow: scroll;
-}
-
-.Editor__subtitle {
-  flex-shrink: 0;
-  padding: 0.6rem;
-  margin-bottom: 2rem;
-
-  display: flex;
-  align-items: center;
-
-  border-radius: var(--radius-medium);
-  background-color: var(--color-semi-grey);
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
-}
-.subtitle__text {
-  flex-grow: 1;
-  margin-left: 0.4rem;
-
-  background-color: var(--color-semi-grey);
-
-  font-size: var(--fontsize-semi-large);
   font-weight: var(--fontweight-semi-bold);
   text-overflow: ellipsis;
 

@@ -13,13 +13,13 @@ const NavMenubar: React.FC = () => {
         icon={SiHtml5}
         title={"회고 기록"}
         category={"WORK"}
-        postCount={posts.WORK?.length}
+        postCount={posts.WORK && posts.WORK.length}
       />
       <NavMenubarItem
         icon={SiHtml5}
         title={"WIL MIL"}
         category={"DIARY"}
-        postCount={posts.DIARY?.length}
+        postCount={posts.DIARY && posts.DIARY.length}
       />
     </ul>
   );

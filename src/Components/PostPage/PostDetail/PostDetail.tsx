@@ -33,15 +33,15 @@ const PostDetail: React.FC = () => {
   return (
     <div data-color-mode="light">
       <button onClick={toEditPage}>수정 하기</button>
-      <h2>{post?.title}</h2>
-      <p>{post?.createAt}</p>
-      <p>{post?.updateAt}</p>
-      <p>{post?.category}</p>
-      <p>{post?.tag}</p>
+      <h2>{post && post.title}</h2>
+      <p>{post && post.createAt}</p>
+      <p>{post && post.updateAt}</p>
+      <p>{post && post.category}</p>
+      <p>{post && post.tag}</p>
 
       <MDEditor.Markdown
         className="test"
-        source={post?.main}
+        source={post && post.main}
       />
     </div>
   );

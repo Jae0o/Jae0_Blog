@@ -24,7 +24,7 @@ const EditorCategory: React.FC<EditorCategoryProps> = ({
 
             return (
               <li
-                key={idx}
+                key={item}
                 className={`category__item${isSelected ? "-checked" : ""}`}>
                 <input
                   className="category__radio"

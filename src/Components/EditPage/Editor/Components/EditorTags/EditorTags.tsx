@@ -31,7 +31,7 @@ const EditorTags: React.FC<EditorTagsProps> = ({
 
           return (
             <li
-              key={idx}
+              key={item}
               className={`tags__item${isChecked ? "-checked" : ""}`}>
               <input
                 id={`tagsCheckbox-${idx}`}

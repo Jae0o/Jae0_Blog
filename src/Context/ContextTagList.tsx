@@ -17,7 +17,8 @@ export const ContextTagListProvider: React.FC<ContextProps> = ({
     await getOptions("tag")
       .then(res => setTagList(res))
       .catch(() => {
-        throw new Error(ALERT_CONTEXT.TAG);
+        console.error(ALERT_CONTEXT.TAG);
+        return [];
       });
   };
 
