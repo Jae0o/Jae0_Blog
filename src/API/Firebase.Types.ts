@@ -4,7 +4,6 @@ export interface PostData {
   updateAt: string;
   isPublic: boolean;
   title: string;
-  subtitle: string;
   main: string;
   category: string;
   tag: string[];

@@ -38,7 +38,7 @@ export interface EditPublicProps {
   onToggle: OnToggleEditor;
 }
 
-// Editor Categpry
+// Editor Category
 export type SelectingEditorCategory = (key: string, state: string) => void;
 export interface EditorCategoryProps {
   categoryList: string[];

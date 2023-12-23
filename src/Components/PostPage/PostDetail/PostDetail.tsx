@@ -34,7 +34,6 @@ const PostDetail: React.FC = () => {
     <div data-color-mode="light">
       <button onClick={toEditPage}>수정 하기</button>
       <h2>{post?.title}</h2>
-      <h4>{post?.subtitle}</h4>
       <p>{post?.createAt}</p>
       <p>{post?.updateAt}</p>
       <p>{post?.category}</p>

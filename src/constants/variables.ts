@@ -6,7 +6,6 @@ export const NEW_POST: PostData = {
   createAt: "",
   updateAt: "",
   title: "",
-  subtitle: "",
   main: "## 본문 없음",
   isPublic: true,
   category: "",
