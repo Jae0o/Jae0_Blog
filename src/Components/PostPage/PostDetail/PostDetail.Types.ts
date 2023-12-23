@@ -6,3 +6,7 @@ export interface PostDetailTimeProps {
 export interface PostDetailCategoryProps {
   category: string;
 }
+
+export interface PostDetailTagsProps {
+  tags: string[];
+}
