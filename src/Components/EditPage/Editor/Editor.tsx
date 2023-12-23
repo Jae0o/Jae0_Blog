@@ -72,11 +72,6 @@ const Editor: React.FC<EditorProps> = ({
         onTyping={setPostHandler}
         state={postData.title}
       />
-      <EditorTextInput
-        typeName="subtitle"
-        onTyping={setPostHandler}
-        state={postData.subtitle}
-      />
       <EditorCategory
         categoryList={categoryList}
         onSelecting={setPostHandler}
