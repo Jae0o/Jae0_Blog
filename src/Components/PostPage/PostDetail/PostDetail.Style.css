@@ -1,5 +1,20 @@
-.test {
-  padding: 1rem;
+.ptdetail__content {
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 2rem;
 
-  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ptdetail__content::-webkit-scrollbar {
+  display: none;
+}
+
+.ptdetail__info {
+  display: flex;
 }
