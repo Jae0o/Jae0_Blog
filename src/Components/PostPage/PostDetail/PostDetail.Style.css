@@ -1,7 +1,8 @@
 .ptdetail__content {
   width: 100%;
   flex-grow: 1;
-  padding-top: 2rem;
+  padding: 4rem;
+  padding-top: 4rem;
 
   display: flex;
   flex-direction: column;
@@ -9,6 +10,8 @@
   overflow: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+
+  user-select: none;
 }
 
 .ptdetail__content::-webkit-scrollbar {
@@ -17,4 +20,19 @@
 
 .ptdetail__info {
   display: flex;
+  align-items: center;
+}
+
+.ptdetail__info-divider {
+  height: 60%;
+
+  margin: 0 2rem;
+
+  border: 1px solid var(--color-semi-grey);
+}
+
+.ptdetail__content-divider {
+  margin: 4rem 0rem;
+
+  border: 1px solid var(--color-semi-grey);
 }
