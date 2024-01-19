@@ -67,6 +67,13 @@ section {
   --color-semi-grey: #ccd1d9;
   --color-dark-grey: #656d78;
 
+  --color-main: #2d3250;
+  --color-sub: #424769;
+  --color-sub-alt: #676f9d;
+
+  --color-point: #f9b17a;
+  --color-point-alt: #ff7f50;
+
   /* shadow */
   --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
 
