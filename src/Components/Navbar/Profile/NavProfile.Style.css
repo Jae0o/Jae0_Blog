@@ -13,7 +13,7 @@
   align-items: center;
 
   border-radius: var(--radius-medium);
-  background-color: var(--color-semi-grey);
+  background-color: var(--color-sub-alt);
 
   box-shadow: var(--shadow-all);
   user-select: none;
@@ -66,7 +66,7 @@
   display: flex;
   align-items: center;
 
-  color: var(--color-black);
+  color: var(--color-white);
   text-align: center;
   font-size: 3.2rem;
   font-weight: var(--fontweight-semi-bold);
