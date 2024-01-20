@@ -5,8 +5,10 @@
 
   display: flex;
   align-items: center;
+
   box-shadow: var(--shadow-all);
   border-radius: var(--radius-small);
+  background-color: var(--color-sub-alt);
 
   transition: all 0.3s;
   will-change: transform;
@@ -27,7 +29,7 @@
   justify-content: center;
   align-items: center;
 
-  background-color: var(--color-semi-white);
+  background-color: var(--color-white);
   border-radius: var(--radius-small);
   box-shadow: var(--shadow-all);
 }
@@ -64,7 +66,7 @@
 
   font-size: var(--fontsize-large);
   font-weight: var(--fontweight-medium);
-  color: var(--color-black);
+  color: var(--color-white);
 }
 
 .menubar__title {
