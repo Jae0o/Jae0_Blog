@@ -4,13 +4,12 @@
   display: flex;
   align-items: center;
 
-  background-color: var(--color-semi-grey);
+  background-color: var(--color-sub-alt);
   border-top-right-radius: var(--radius-semi-large);
   border-top-left-radius: var(--radius-semi-large);
 }
 
 .ptdecoration__button {
-  background-color: #fff;
   width: 1.4rem;
   height: 1.4rem;
   margin-left: 0.6rem;

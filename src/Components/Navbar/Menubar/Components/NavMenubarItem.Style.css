@@ -64,9 +64,9 @@
   display: flex;
   align-items: center;
 
-  font-size: var(--fontsize-large);
+  font-size: var(--fontsize-semi-large);
   font-weight: var(--fontweight-medium);
-  color: var(--color-point);
+  color: black;
 }
 
 .menubar__title {
