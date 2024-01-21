@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./PostDetail.Style.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { getPost } from "../../../API/FirebaseDB";
-import { PostData } from "../../../API/Firebase.Types";
+import { getPost } from "../../../../API/FirebaseDB";
+import { PostData } from "../../../../API/Firebase.Types";
 import { FetchPostFunc } from "../PostPageType";
 
 import MDEditor from "@uiw/react-md-editor";
-import { OnClickEvent } from "../../../Types/Event.Types";
-import PostBanner from "../PostBanner/PostBanner";
+import { OnClickEvent } from "../../../../Types/Event.Types";
+import PostBanner from "../../../../Components/PostBanner/PostBanner";
 import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
 import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
 import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
-import PostBannerDecoration from "../PostBanner/Components/PostBannerDecoration";
+import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
 
 const PostDetail: React.FC = () => {
   const [post, setPost] = useState<PostData>();
