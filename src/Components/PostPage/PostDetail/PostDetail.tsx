@@ -11,6 +11,7 @@ import PostBanner from "../PostBanner/PostBanner";
 import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
 import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
 import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
+import PostBannerDecoration from "../PostBanner/Components/PostBannerDecoration";
 
 const PostDetail: React.FC = () => {
   const [post, setPost] = useState<PostData>();
@@ -40,6 +41,7 @@ const PostDetail: React.FC = () => {
   return (
     <>
       <div className="ptdetail__banner">
+        <PostBannerDecoration />
         <PostBanner
           thumbnail={post.thumbnail}
           mainText={post.title}

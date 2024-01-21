@@ -1,5 +1,4 @@
 import "./PostBanner.Style.css";
-import PostBannerDecoration from "./Components/PostBannerDecoration";
 import { PostBannerProps } from "./PostBanner.Types";
 
 const PostBanner = ({
@@ -9,7 +8,6 @@ const PostBanner = ({
 }: PostBannerProps): JSX.Element => {
   return (
     <div className="post__banner">
-      <PostBannerDecoration />
       <div
         className="ptbanner__container"
         style={{ backgroundImage: `url(${thumbnail})` }}>
