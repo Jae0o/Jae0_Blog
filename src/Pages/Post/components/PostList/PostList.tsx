@@ -9,6 +9,7 @@ import { ADVICE_DEFAULT, ADVICE_LIST } from "../../../../constants/variables";
 import { BannerInfo } from "../PostPageType";
 import { POST_BANNER_THUMBNAILS } from "../../../../constants/URL";
 import PostBanner from "../../../../Components/PostBanner/PostBanner";
+import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
 
 const PostList = (): JSX.Element => {
   const [postsList, setPostsList] = useState<PostData[]>([]);
@@ -46,8 +47,9 @@ const PostList = (): JSX.Element => {
   );
 
   return (
-    <>
+    <div className="outlet__ptlist">
       <div className="ptlist__banner">
+        <PostBannerDecoration />
         <PostBanner
           thumbnail={bannerInfo.thumbnail}
           mainText={bannerInfo.advice.advice}
@@ -65,7 +67,7 @@ const PostList = (): JSX.Element => {
             ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 

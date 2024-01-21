@@ -4,6 +4,9 @@
 
   display: flex;
   flex-direction: column;
+
+  background-color: var(--color-sub-alt);
+  border-radius: var(--radius-semi-large);
 }
 
 .ptlist__banner {
@@ -13,7 +16,9 @@
 .ptlist__content {
   width: 100%;
   flex-grow: 1;
-  padding-top: 4rem;
+
+  border-bottom-left-radius: var(--radius-semi-large);
+  border-bottom-right-radius: var(--radius-semi-large);
 
   overflow: scroll;
   -ms-overflow-style: none;
@@ -26,8 +31,10 @@
 
 .ptlist__list-container {
   width: 100%;
+  padding-top: 4rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4rem;
 }
