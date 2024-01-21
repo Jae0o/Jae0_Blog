@@ -4,13 +4,11 @@
   padding: 1rem;
 
   position: relative;
-  top: 4rem;
-  left: 4rem;
 
   display: flex;
   flex-direction: column;
 
-  background-color: var(--color-white);
+  background-color: var(--color-sub);
   border-radius: var(--radius-semi-large);
 }
 
@@ -31,7 +29,7 @@
   align-items: center;
 
   border-radius: var(--radius-medium);
-  background-color: var(--color-green);
+  background-color: var(--color-point);
   box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
 
   font-size: var(--fontsize-semi-large);
@@ -43,5 +41,5 @@
 
 .editor__button:hover {
   transform: scale(1.1);
-  background-color: var(--color-dark-green);
+  background-color: var(--color-point-alt);
 }

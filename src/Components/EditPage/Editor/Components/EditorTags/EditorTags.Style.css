@@ -22,6 +22,7 @@
 
   font-size: var(--fontsize-semi-large);
   font-weight: var(--fontweight-semi-bold);
+  color: var(--color-white);
 }
 
 .tags__item,
@@ -64,7 +65,7 @@
 }
 
 .tags__item-checked {
-  background-color: var(--color-green);
+  background-color: var(--color-yellow);
 }
 
 .tags__input {

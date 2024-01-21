@@ -1,4 +1,8 @@
 .outlet__edit {
   flex-grow: 1;
   height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
