@@ -1,4 +1,4 @@
-import { PostData } from "../../../API/Firebase.Types";
+import { PostData } from "../../../../API/Firebase.Types";
 
 // EditPage
 export type UploadPost = (post: PostData) => void;

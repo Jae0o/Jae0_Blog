@@ -1,5 +1,5 @@
 import "./PostDetailTime.Style.css";
-import { convertDateFormat } from "../../../../../Util/UtilFunctions";
+import { convertDateFormat } from "../../../../../../Util/UtilFunctions";
 import { PostDetailTimeProps } from "../../PostDetail.Types";
 
 const PostDetailTime = ({ title, time }: PostDetailTimeProps): JSX.Element => {

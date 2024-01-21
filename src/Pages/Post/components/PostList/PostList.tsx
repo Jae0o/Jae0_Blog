@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import "./PostList.Style.css";
 import { useParams } from "react-router-dom";
 import PostListItem from "./Components/PostListItem";
-import { getAllPostsList, getPostsList } from "../../../API/FirebaseDB";
+import { getAllPostsList, getPostsList } from "../../../../API/FirebaseDB";
 import { FetchPostsList } from "./PostList.Types";
-import { PostData } from "../../../API/Firebase.Types";
-import { ADVICE_DEFAULT, ADVICE_LIST } from "../../../constants/variables";
+import { PostData } from "../../../../API/Firebase.Types";
+import { ADVICE_DEFAULT, ADVICE_LIST } from "../../../../constants/variables";
 import { BannerInfo } from "../PostPageType";
-import { POST_BANNER_THUMBNAILS } from "../../../constants/URL";
-import PostBanner from "../PostBanner/PostBanner";
+import { POST_BANNER_THUMBNAILS } from "../../../../constants/URL";
+import PostBanner from "../../../../Components/PostBanner/PostBanner";
 
 const PostList = (): JSX.Element => {
   const [postsList, setPostsList] = useState<PostData[]>([]);

@@ -1,7 +1,7 @@
 import React from "react";
 import "./EditorTags.Style.css";
 import { EditorTagsProps } from "../../Editor.Types";
-import { OnChangeEvent } from "../../../../../Types/Event.Types";
+import { OnChangeEvent } from "../../../../../../Types/Event.Types";
 
 const EditorTags: React.FC<EditorTagsProps> = ({
   tags,

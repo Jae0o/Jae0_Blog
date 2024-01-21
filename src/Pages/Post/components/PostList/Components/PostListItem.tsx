@@ -1,9 +1,9 @@
 import React from "react";
 import "./PostListItem.Style.css";
 import { PostListItemProps } from "../PostList.Types";
-import { convertDateFormat } from "../../../../Util/UtilFunctions";
+import { convertDateFormat } from "../../../../../Util/UtilFunctions";
 import { useNavigate } from "react-router-dom";
-import { OnClickEvent } from "../../../../Types/Event.Types";
+import { OnClickEvent } from "../../../../../Types/Event.Types";
 
 const PostListItem: React.FC<PostListItemProps> = ({ post }) => {
   const formattedDate: string = convertDateFormat(JSON.parse(post.createAt));
