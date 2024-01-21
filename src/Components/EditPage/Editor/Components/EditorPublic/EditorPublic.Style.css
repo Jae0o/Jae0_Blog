@@ -43,7 +43,7 @@
   position: relative;
   left: 0;
 
-  background-color: var(--color-dark-grey);
+  background-color: var(--color-sub-alt);
   border-radius: 50%;
 
   transition: all 0.3s;
@@ -59,6 +59,8 @@
 
 .public__text {
   font-weight: var(--fontweight-semi-bold);
+  color: var(--color-white);
+
   cursor: pointer;
   transition: all 0.3s;
 }
