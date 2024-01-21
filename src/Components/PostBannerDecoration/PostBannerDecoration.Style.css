@@ -1,5 +1,6 @@
 .ptbanner__decoration {
   height: 2.8rem;
+  min-height: 2.8rem;
 
   display: flex;
   align-items: center;

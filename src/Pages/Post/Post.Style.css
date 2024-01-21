@@ -18,4 +18,5 @@
 
   background-color: var(--color-white);
   border-radius: var(--radius-semi-large);
+  box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.5);
 }
