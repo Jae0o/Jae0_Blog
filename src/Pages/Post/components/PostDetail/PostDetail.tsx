@@ -39,40 +39,40 @@ const PostDetail: React.FC = () => {
     return;
   }
   return (
-    <>
-      <div className="ptdetail__banner">
-        <PostBannerDecoration />
+    <section className="ptdetail__layout">
+      <PostBannerDecoration />
+      <div className="ptdetail__container">
         <PostBanner
           thumbnail={post.thumbnail}
           mainText={post.title}
         />
-      </div>
-      <div
-        className="ptdetail__content"
-        data-color-mode="light">
-        <div className="ptdetail__info">
-          <PostDetailTime
-            title={"생성 일시"}
-            time={post.createAt}
+        <div
+          className="ptdetail__content"
+          data-color-mode="light">
+          <div className="ptdetail__info">
+            <PostDetailTime
+              title={"생성 일시"}
+              time={post.createAt}
+            />
+            <span className="ptdetail__info-divider" />
+            <PostDetailTime
+              title={"변경 일시"}
+              time={post.updateAt}
+            />
+            <span className="ptdetail__info-divider" />
+            <PostDetailCategory category={post.category} />
+            <span className="ptdetail__info-divider" />
+            <PostDetailTags tags={post.tag} />
+          </div>
+          <span className="ptdetail__content-divider" />
+          <MDEditor.Markdown
+            className="test"
+            source={post.main}
           />
-          <span className="ptdetail__info-divider" />
-          <PostDetailTime
-            title={"변경 일시"}
-            time={post.updateAt}
-          />
-          <span className="ptdetail__info-divider" />
-          <PostDetailCategory category={post.category} />
-          <span className="ptdetail__info-divider" />
-          <PostDetailTags tags={post.tag} />
+          <button onClick={toEditPage}>수정 하기</button>
         </div>
-        <span className="ptdetail__content-divider" />
-        <MDEditor.Markdown
-          className="test"
-          source={post.main}
-        />
-        <button onClick={toEditPage}>수정 하기</button>
       </div>
-    </>
+    </section>
   );
 };
 

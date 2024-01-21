@@ -1,8 +1,29 @@
-.ptdetail__content {
+.ptdetail__layout {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: var(--radius-semi-large);
+}
+
+.ptdetail__container {
   width: 100%;
   flex-grow: 1;
+
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.ptdetail__container::-webkit-scrollbar {
+  display: none;
+}
+
+.ptdetail__content {
+  width: 100%;
   padding: 4rem;
-  padding-top: 4rem;
 
   display: flex;
   flex-direction: column;
@@ -12,10 +33,6 @@
   scrollbar-width: none;
 
   user-select: none;
-}
-
-.ptdetail__content::-webkit-scrollbar {
-  display: none;
 }
 
 .ptdetail__info {
