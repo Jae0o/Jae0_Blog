@@ -7,7 +7,7 @@ export const ContextIsAdmin = createContext<IsAdminContext>({
   login: () => {},
 });
 
-export const ContextIsAdminUser = ({ children }: ContextProps) => {
+export const ContextIsAdminUserProvider = ({ children }: ContextProps) => {
   const [isAdminUser, setIsAdminUser] = useState(false);
 
   const Login = ({ email, password }: Login) => {
