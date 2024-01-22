@@ -31,3 +31,13 @@ export interface PostsContext {
   posts: Posts;
   updatePosts: UpdateContext;
 }
+
+export interface IsAdminContext {
+  isAdminUser: boolean;
+  login: (data: Login) => void;
+}
+
+export interface Login {
+  email: string;
+  password: string;
+}
