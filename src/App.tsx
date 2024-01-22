@@ -9,7 +9,7 @@ import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
-import { login } from "./API/FirebaseAuth";
+import { ContextIsAdminUserProvider } from "./Context/ContextIsAdmin";
 
 const router = createBrowserRouter([
   {
@@ -32,18 +32,18 @@ const router = createBrowserRouter([
 ]);
 
 const App: React.FC = () => {
-  login("leey153@naver.com", "dlwodud2954");
-
   return (
-    <ContextIsLoadingProvider>
-      <ContextPostsProvider>
-        <ContextTagListProvider>
-          <ContextCategoryListProvider>
-            <RouterProvider router={router} />
-          </ContextCategoryListProvider>
-        </ContextTagListProvider>
-      </ContextPostsProvider>
-    </ContextIsLoadingProvider>
+    <ContextIsAdminUserProvider>
+      <ContextIsLoadingProvider>
+        <ContextPostsProvider>
+          <ContextTagListProvider>
+            <ContextCategoryListProvider>
+              <RouterProvider router={router} />
+            </ContextCategoryListProvider>
+          </ContextTagListProvider>
+        </ContextPostsProvider>
+      </ContextIsLoadingProvider>
+    </ContextIsAdminUserProvider>
   );
 };
 
