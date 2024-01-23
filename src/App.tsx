@@ -9,7 +9,7 @@ import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
-import { ContextIsAdminUserProvider } from "./Context/ContextIsAdmin";
+import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
 
 const router = createBrowserRouter([
   {
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
 
 const App: React.FC = () => {
   return (
-    <ContextIsAdminUserProvider>
+    <ContextAuthUserProvider>
       <ContextIsLoadingProvider>
         <ContextPostsProvider>
           <ContextTagListProvider>
@@ -43,7 +43,7 @@ const App: React.FC = () => {
           </ContextTagListProvider>
         </ContextPostsProvider>
       </ContextIsLoadingProvider>
-    </ContextIsAdminUserProvider>
+    </ContextAuthUserProvider>
   );
 };
 

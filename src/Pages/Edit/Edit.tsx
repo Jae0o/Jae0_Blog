@@ -12,10 +12,10 @@ import { ContextCategoryList } from "../../Context/ContextCategory";
 import { ContextTagList } from "../../Context/ContextTagList";
 import { ContextIsLoading } from "../../Context/ContextIsLoading";
 import { ContextPosts } from "../../Context/ContextPosts";
-import { ContextIsAdmin } from "../../Context/ContextIsAdmin";
+import { ContextAuthUser } from "../../Context/ContextAuthUser";
 
 const Edit: React.FC = () => {
-  const { login } = useContext(ContextIsAdmin);
+  const { login } = useContext(ContextAuthUser);
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
