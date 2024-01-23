@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavMenubarItem.Style.css";
-import { NavMenubarItemProps } from "../../NavMenubar.Types";
+import { NavMenubarItemProps } from "../NavMenubar.Types";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
 const NavMenubarItem = ({
