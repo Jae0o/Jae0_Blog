@@ -8,9 +8,9 @@ export const ContextTagList = createContext<TagListContext>({
   updateTagList: () => {},
 });
 
-export const ContextTagListProvider: React.FC<ContextProps> = ({
+export const ContextTagListProvider = ({
   children,
-}) => {
+}: ContextProps): React.ReactNode => {
   const [tagList, setTagList] = useState<string[]>([]);
 
   const updateTagList: UpdateContext = async () => {

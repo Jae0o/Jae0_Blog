@@ -10,9 +10,9 @@ export const ContextIsLoading = createContext<IsLoadingContext>({
   updateIsLoading: () => {},
 });
 
-export const ContextIsLoadingProvider: React.FC<ContextProps> = ({
+export const ContextIsLoadingProvider = ({
   children,
-}) => {
+}: ContextProps): React.ReactNode => {
   const [isLoading, setIsLoading] = useState(false);
 
   const updateIsLoading: UpdateIsLoading = state => {

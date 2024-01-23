@@ -7,7 +7,9 @@ export const ContextPosts = createContext<PostsContext>({
   updatePosts: () => {},
 });
 
-export const ContextPostsProvider: React.FC<ContextProps> = ({ children }) => {
+export const ContextPostsProvider = ({
+  children,
+}: ContextProps): React.ReactNode => {
   const [posts, setPosts] = useState<Posts>({});
   const updatePosts = async () => {
     const posts = await getAllPostsList();
