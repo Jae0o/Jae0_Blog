@@ -12,9 +12,9 @@ export const ContextCategoryList = createContext<CategoryListContext>({
   updateCategoryList: () => {},
 });
 
-export const ContextCategoryListProvider: React.FC<ContextProps> = ({
+export const ContextCategoryListProvider = ({
   children,
-}) => {
+}: ContextProps): React.ReactNode => {
   const [categoryList, setCategoryList] = useState<string[]>([]);
 
   const updateCategoryList: UpdateContext = () => {
