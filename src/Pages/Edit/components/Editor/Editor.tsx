@@ -14,13 +14,13 @@ import { FetchPostFunc } from "../../../Post/components/PostPageType";
 import { getPost } from "../../../../API/FirebaseDB";
 import { OnClickEvent } from "../../../../Types/Event.Types";
 
-const Editor: React.FC<EditorProps> = ({
+const Editor = ({
   id,
   category,
   categoryList,
   tagList,
   onSubmit,
-}) => {
+}: EditorProps): React.ReactNode => {
   const [postData, setPostData] = useState<PostData>(NEW_POST);
 
   useEffect(() => {

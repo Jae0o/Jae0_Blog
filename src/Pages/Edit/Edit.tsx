@@ -13,7 +13,7 @@ import { ContextTagList } from "../../Context/ContextTagList";
 import { ContextIsLoading } from "../../Context/ContextIsLoading";
 import { ContextPosts } from "../../Context/ContextPosts";
 
-const Edit: React.FC = () => {
+const Edit = (): React.ReactNode => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);

@@ -3,7 +3,10 @@ import "./EditorPublic.Style.css";
 import { EditPublicProps, ChangePublicText } from "../../Editor.Types";
 import { OnChangeEvent } from "../../../../../../Types/Event.Types";
 
-const EditorPublic: React.FC<EditPublicProps> = ({ state, onToggle }) => {
+const EditorPublic = ({
+  state,
+  onToggle,
+}: EditPublicProps): React.ReactNode => {
   const onChangeToggle: OnChangeEvent = () => {
     onToggle("isPublic", !state);
   };

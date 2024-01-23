@@ -3,11 +3,11 @@ import "./EditorTextInput.Style.css";
 import { EditorTextInputProps } from "../../Editor.Types";
 import { OnChangeEvent } from "../../../../../../Types/Event.Types";
 
-const EditorTextInput: React.FC<EditorTextInputProps> = ({
+const EditorTextInput = ({
   typeName,
   onTyping,
   state,
-}) => {
+}: EditorTextInputProps): React.ReactNode => {
   const onChangeData: OnChangeEvent = e => {
     e.preventDefault();
 

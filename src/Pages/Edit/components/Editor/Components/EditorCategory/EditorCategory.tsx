@@ -3,11 +3,11 @@ import "./EditorCategory.Style.css";
 import { EditorCategoryProps } from "../../Editor.Types";
 import { OnChangeEvent } from "../../../../../../Types/Event.Types";
 
-const EditorCategory: React.FC<EditorCategoryProps> = ({
+const EditorCategory = ({
   categoryList,
   onSelecting,
   state,
-}) => {
+}: EditorCategoryProps): React.ReactNode => {
   const selectedHandler: OnChangeEvent = e => {
     if (!(e.currentTarget instanceof HTMLInputElement)) return;
     const target = e.currentTarget;

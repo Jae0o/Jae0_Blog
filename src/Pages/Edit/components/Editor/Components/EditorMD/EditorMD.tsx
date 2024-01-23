@@ -3,7 +3,7 @@ import "./EditorMD.Style.css";
 import MDEditor from "@uiw/react-md-editor";
 import { EditorMDProps, OnChangeEditorMD } from "../../Editor.Types";
 
-const EditorMD: React.FC<EditorMDProps> = ({ onTyping, state }) => {
+const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
   const onChangeMD: OnChangeEditorMD = value => {
     onTyping("main", value);
   };

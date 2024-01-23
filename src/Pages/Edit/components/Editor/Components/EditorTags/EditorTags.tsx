@@ -3,11 +3,11 @@ import "./EditorTags.Style.css";
 import { EditorTagsProps } from "../../Editor.Types";
 import { OnChangeEvent } from "../../../../../../Types/Event.Types";
 
-const EditorTags: React.FC<EditorTagsProps> = ({
+const EditorTags = ({
   tags,
   state,
   onSelecting,
-}) => {
+}: EditorTagsProps): React.ReactNode => {
   const toggleTagHandler: OnChangeEvent = e => {
     const element: HTMLInputElement = e.currentTarget as HTMLInputElement;
     const target: string = element.value;
