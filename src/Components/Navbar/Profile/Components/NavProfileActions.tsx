@@ -4,11 +4,11 @@ import { NavProfileActionsProps } from "../../Navbar.Types";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import { OnClickEvent } from "../../../../Types/Event.Types";
 
-const NavProfileActions: React.FC<NavProfileActionsProps> = ({
+const NavProfileActions = ({
   action,
   path,
   icon,
-}) => {
+}: NavProfileActionsProps): React.ReactNode => {
   const navigate: NavigateFunction = useNavigate();
 
   const onClickHandle: OnClickEvent = e => {
