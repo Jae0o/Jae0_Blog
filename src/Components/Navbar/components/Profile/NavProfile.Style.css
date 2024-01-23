@@ -1,11 +1,11 @@
 .nav__profile {
   width: 22rem;
   height: 22rem;
-  margin-top: 1.4rem;
   padding: 1rem;
 
   position: absolute;
-  top: 0;
+  top: 2rem;
+  left: 2rem;
 
   display: flex;
   flex-direction: column;

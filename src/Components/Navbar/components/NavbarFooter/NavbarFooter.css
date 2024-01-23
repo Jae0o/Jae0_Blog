@@ -1,7 +1,6 @@
-.menubar__footer {
+.navbar__footer {
   width: 20rem;
+  height: 8rem;
 
-  height: 6rem;
-
-  border: 1px solid red;
+  display: flex;
 }
