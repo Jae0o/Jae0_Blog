@@ -5,7 +5,7 @@ const PostBanner = ({
   thumbnail,
   mainText,
   subText,
-}: PostBannerProps): JSX.Element => {
+}: PostBannerProps): React.ReactNode => {
   return (
     <div className="post__banner">
       <div

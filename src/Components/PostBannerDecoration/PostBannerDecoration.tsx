@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import "./PostBannerDecoration.Style.css";
 import { useNavigate } from "react-router-dom";
 
-const PostBannerDecoration: React.FC = () => {
+const PostBannerDecoration = (): React.ReactNode => {
   const navigate = useNavigate();
 
   const toPrevPageHandler = useCallback(() => {
