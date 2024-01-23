@@ -4,7 +4,7 @@ import InsertOptionButton from "./Components/InsertOptionButton";
 import { EditorSubPageProps } from "./EditorSub.Types";
 import { OnClickEvent } from "../../../../Types/Event.Types";
 
-const EditSubPage: React.FC<EditorSubPageProps> = ({ onUpdate }) => {
+const EditSubPage = ({ onUpdate }: EditorSubPageProps): React.ReactNode => {
   const [toggled, setToggled] = useState<boolean>(false);
 
   const toggleHandler: OnClickEvent = e => {

@@ -4,10 +4,10 @@ import { OnClickEvent } from "../../../../../Types/Event.Types";
 import { setOptions } from "../../../../../API/FirebaseDB";
 import { InsertOptionButtonProps } from "../EditorSub.Types";
 
-const InsertOptionButton: React.FC<InsertOptionButtonProps> = ({
+const InsertOptionButton = ({
   onUpdate,
   listType,
-}) => {
+}: InsertOptionButtonProps): React.ReactNode => {
   const addListHandler: OnClickEvent = () => {
     const value: string | null = prompt(
       `새로 추가할 ${listType}의 이름을 넣어주세요`,
