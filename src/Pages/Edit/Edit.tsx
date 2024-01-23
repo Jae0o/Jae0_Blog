@@ -12,12 +12,19 @@ import { ContextCategoryList } from "../../Context/ContextCategory";
 import { ContextTagList } from "../../Context/ContextTagList";
 import { ContextIsLoading } from "../../Context/ContextIsLoading";
 import { ContextPosts } from "../../Context/ContextPosts";
+import { ContextIsAdmin } from "../../Context/ContextIsAdmin";
 
 const Edit: React.FC = () => {
+  const { login } = useContext(ContextIsAdmin);
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
   const { tagList, updateTagList } = useContext(ContextTagList);
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
   const { updatePosts } = useContext(ContextPosts);
+
+  login({
+    email: "leey153@naver.com",
+    password: "dlwodud2954",
+  });
 
   const navigate = useNavigate();
   const { category = "", id: pathId = "" } = useParams();

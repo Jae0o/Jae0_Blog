@@ -21,7 +21,6 @@ export const ContextPostsProvider: React.FC<ContextProps> = ({ children }) => {
     });
   };
 
-  console.log(posts);
   useEffect(() => {
     updatePosts();
   }, []);

@@ -1,3 +1,5 @@
+import { UserCredential } from "firebase/auth";
+
 export interface PostData {
   id: string;
   createAt: string;
@@ -31,4 +33,7 @@ export interface ResponsePostsList {
 
 export type SignUp = (email: string, password: string) => void;
 
-export type Login = (email: string, password: string) => void;
+export type Login = (
+  email: string,
+  password: string,
+) => Promise<UserCredential>;
