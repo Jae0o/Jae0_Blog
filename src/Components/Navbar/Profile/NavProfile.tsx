@@ -5,7 +5,7 @@ import { PROFILE } from "../../../constants/URL";
 import { useNavigate } from "react-router-dom";
 import { OnClickEvent } from "../../../Types/Event.Types";
 
-const NavProfile: React.FC = () => {
+const NavProfile = (): React.ReactNode => {
   const navigate = useNavigate();
 
   const onClickHandler: OnClickEvent = () => {

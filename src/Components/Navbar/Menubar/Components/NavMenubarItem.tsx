@@ -3,12 +3,12 @@ import "./NavMenubarItem.Style.css";
 import { NavMenubarItemProps } from "../NavMenubar.Types";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
-const NavMenubarItem: React.FC<NavMenubarItemProps> = ({
+const NavMenubarItem = ({
   icon: ICON,
   title,
   category,
   postCount = 0,
-}) => {
+}: NavMenubarItemProps): React.ReactNode => {
   const navigate: NavigateFunction = useNavigate();
 
   const onNavigate = () => {

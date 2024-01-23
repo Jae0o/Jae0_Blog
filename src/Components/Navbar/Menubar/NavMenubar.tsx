@@ -4,7 +4,7 @@ import NavMenubarItem from "./Components/NavMenubarItem";
 import { SiHtml5 } from "react-icons/si";
 import { ContextPosts } from "../../../Context/ContextPosts";
 
-const NavMenubar: React.FC = () => {
+const NavMenubar = (): React.ReactNode => {
   const { posts } = useContext(ContextPosts);
 
   return (
