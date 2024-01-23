@@ -34,6 +34,7 @@ export interface PostsContext {
 
 export interface IsAdminContext {
   isAdminUser: boolean;
+  authUserId: string;
   login: (data: Login) => void;
 }
 
