@@ -8,11 +8,11 @@ const CheckAdminProvider = ({ children }: CheckAdminProviderProps) => {
   const { VITE_FIREBASE_ADMIN_USER_ID } = import.meta.env;
 
   if (!isLoggedIn) {
-    return;
+    return null;
   }
 
   if (VITE_FIREBASE_ADMIN_USER_ID !== authUserId) {
-    return;
+    return null;
   }
 
   return <>{children}</>;
