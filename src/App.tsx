@@ -11,6 +11,7 @@ import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
 import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
 import CheckAdminProvider from "./Components/CheckAdminProvider/CheckAdminProvider";
+import React from "react";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App: React.FC = () => {
+const App = (): React.ReactNode => {
   return (
     <ContextAuthUserProvider>
       <ContextIsLoadingProvider>

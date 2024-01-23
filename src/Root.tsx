@@ -3,7 +3,7 @@ import "./Root.Style.css";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
 
-const Root: React.FC = () => {
+const Root = (): React.ReactNode => {
   return (
     <main className="Root">
       <Navbar />

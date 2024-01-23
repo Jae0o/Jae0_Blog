@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./PostList.Style.css";
 import { useParams } from "react-router-dom";
 import PostListItem from "./Components/PostListItem";
@@ -11,7 +11,7 @@ import { POST_BANNER_THUMBNAILS } from "../../../../constants/URL";
 import PostBanner from "../../../../Components/PostBanner/PostBanner";
 import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
 
-const PostList = (): JSX.Element => {
+const PostList = (): React.ReactNode => {
   const [postsList, setPostsList] = useState<PostData[]>([]);
   const [bannerInfo, setBannerInfo] = useState<BannerInfo>({
     advice: ADVICE_DEFAULT,
