@@ -10,6 +10,7 @@ import { ContextTagListProvider } from "./Context/ContextTagList";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
 import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
+import CheckAdminProvider from "./Components/CheckAdminProvider/CheckAdminProvider";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,14 @@ const router = createBrowserRouter([
     errorElement: <h1>임시 에러창</h1>,
     children: [
       { index: true, element: <Home /> },
-      { path: "/editor/:category/:id", element: <Edit /> },
+      {
+        path: "/editor/:category/:id",
+        element: (
+          <CheckAdminProvider>
+            <Edit />
+          </CheckAdminProvider>
+        ),
+      },
       {
         path: "/post",
         element: <Post />,

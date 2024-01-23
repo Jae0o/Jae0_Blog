@@ -13,6 +13,10 @@ export const ContextAuthUserProvider = ({ children }: ContextProps) => {
   const [authUserId, setAuthUserId] = useState<string>("");
 
   const login = ({ email, password }: LoginInfo) => {
+    if (isLoggedIn) {
+      return;
+    }
+
     firebaseLogin(email, password)
       .then(res => {
         setIsLoggedIn(true);
@@ -23,8 +27,6 @@ export const ContextAuthUserProvider = ({ children }: ContextProps) => {
         setIsLoggedIn(false);
       });
   };
-
-  console.log(authUserId);
 
   return (
     <ContextAuthUser.Provider value={{ isLoggedIn, login, authUserId }}>
