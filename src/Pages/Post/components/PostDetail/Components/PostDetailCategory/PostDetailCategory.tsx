@@ -1,9 +1,10 @@
 import "./PostDetailCategory.Style.css";
 import { PostDetailCategoryProps } from "../../PostDetail.Types";
+import React from "react";
 
 const PostDetailCategory = ({
   category,
-}: PostDetailCategoryProps): JSX.Element => {
+}: PostDetailCategoryProps): React.ReactNode => {
   return (
     <div className="ptdetail__category-container">
       <h6 className="ptdetail__category-title">카테고리</h6>

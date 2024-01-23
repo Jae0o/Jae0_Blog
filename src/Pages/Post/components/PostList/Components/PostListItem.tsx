@@ -5,7 +5,7 @@ import { convertDateFormat } from "../../../../../Util/UtilFunctions";
 import { useNavigate } from "react-router-dom";
 import { OnClickEvent } from "../../../../../Types/Event.Types";
 
-const PostListItem: React.FC<PostListItemProps> = ({ post }) => {
+const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
   const formattedDate: string = convertDateFormat(JSON.parse(post.createAt));
 
   const navigate = useNavigate();

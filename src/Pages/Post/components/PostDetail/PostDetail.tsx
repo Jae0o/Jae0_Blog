@@ -13,7 +13,7 @@ import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCatego
 import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
 
-const PostDetail: React.FC = () => {
+const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
   const { category = "", id = "" } = useParams();
 

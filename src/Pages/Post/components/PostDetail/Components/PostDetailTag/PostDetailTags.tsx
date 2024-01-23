@@ -1,7 +1,8 @@
+import React from "react";
 import { PostDetailTagsProps } from "../../PostDetail.Types";
 import "./PostDetailTags.Style.css";
 
-const PostDetailTags = ({ tags }: PostDetailTagsProps): JSX.Element => {
+const PostDetailTags = ({ tags }: PostDetailTagsProps): React.ReactNode => {
   return (
     <div className="ptdetail__tags-container">
       <h6 className="ptdetail__tags-title">태그</h6>
