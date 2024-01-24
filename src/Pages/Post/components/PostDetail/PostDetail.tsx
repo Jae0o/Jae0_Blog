@@ -23,6 +23,7 @@ const PostDetail = (): React.ReactNode => {
         const resPost = await getPost(category, pathId);
 
         if (!resPost) {
+          // 이후 실패 알림 모달
           navigation("/");
           return;
         }
