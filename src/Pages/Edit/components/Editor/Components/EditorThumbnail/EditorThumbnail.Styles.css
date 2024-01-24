@@ -1,0 +1,20 @@
+.Editor__thumbnail {
+  flex-grow: 1;
+  flex-shrink: 0;
+  height: 2.8rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+
+  user-select: none;
+}
+
+.thumbnail__title {
+  padding: 0 1rem;
+  margin-right: 1rem;
+
+  font-size: var(--fontsize-semi-large);
+  font-weight: var(--fontweight-semi-bold);
+  color: var(--color-white);
+}
