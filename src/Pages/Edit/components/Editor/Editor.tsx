@@ -7,7 +7,6 @@ import EditorTextInput from "./Components/EditorTextInput/EditorTextInput";
 import EditorMDInput from "./Components/EditorMD/EditorMD";
 import EditorCategory from "./Components/EditorCategory/EditorCategory";
 import EditorTags from "./Components/EditorTags/EditorTags";
-import { setLocalStorage } from "../../../../API/LocalStorage";
 import { postUploadValidate } from "../../../../Util/Validate";
 import { NEW_POST } from "../../../../constants/variables";
 import { FetchPostFunc } from "../../../Post/components/PostPageType";
@@ -38,19 +37,21 @@ const Editor = ({
   }, [id, category]);
 
   const setPostHandler: SetEditorPost = (key, value) => {
-    const newPostData: PostData = {
-      ...postData,
+    setPostData(prevPostData => ({
+      ...prevPostData,
       [key]: value,
-    };
-    setPostData(newPostData);
-    setLocalStorage(newPostData);
+    }));
   };
 
   const onSubmitPost: OnClickEvent = e => {
     e.preventDefault();
 
-    if (postUploadValidate(postData)) {
-      onSubmit(postData);
+    const newPost: PostData = {
+      ...postData,
+    };
+
+    if (postUploadValidate(newPost)) {
+      onSubmit(newPost);
     }
   };
 
@@ -67,21 +68,25 @@ const Editor = ({
           Upload
         </button>
       </div>
+
       <EditorTextInput
         typeName="title"
         onTyping={setPostHandler}
         state={postData.title}
       />
+
       <EditorCategory
         categoryList={categoryList}
         onSelecting={setPostHandler}
         state={postData.category}
       />
+
       <EditorTags
         onSelecting={setPostHandler}
         state={postData.tag}
         tags={tagList}
       />
+
       <EditorMDInput
         onTyping={setPostHandler}
         state={postData.main}
