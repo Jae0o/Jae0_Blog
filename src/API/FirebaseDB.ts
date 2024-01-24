@@ -12,7 +12,6 @@ import {
 } from "./Firebase.Types";
 import { v4 } from "uuid";
 import { ERROR_MESSAGE } from "../constants/AlertMessage";
-import { POST_LIST_THUMBNAIL } from "../constants/URL";
 
 /* ============== Lists ============== */
 
@@ -49,7 +48,6 @@ export const setPost: SetPost = async post => {
       post.createAt = time;
     }
 
-    post.thumbnail = POST_LIST_THUMBNAIL[post.category];
     post.updateAt = time;
 
     await set(ref(database, `Posts/${post.category}/${post.id}`), post);
