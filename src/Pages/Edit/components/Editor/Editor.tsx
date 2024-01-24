@@ -21,7 +21,6 @@ const Editor = ({
   onSubmit,
 }: EditorProps): React.ReactNode => {
   const [postData, setPostData] = useState<PostData>(NEW_POST);
-  console.log(postData);
 
   useEffect(() => {
     if (id === "newPost") {
