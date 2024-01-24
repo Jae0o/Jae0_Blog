@@ -10,3 +10,7 @@ export interface PostDetailCategoryProps {
 export interface PostDetailTagsProps {
   tags: string[];
 }
+
+export interface PostDetailViewerProps {
+  content: string;
+}
