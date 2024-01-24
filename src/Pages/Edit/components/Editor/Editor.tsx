@@ -12,6 +12,7 @@ import { NEW_POST } from "../../../../constants/variables";
 import { FetchPostFunc } from "../../../Post/components/PostPageType";
 import { getPost } from "../../../../API/FirebaseDB";
 import { OnClickEvent } from "../../../../Types/Event.Types";
+import EditorThumbnail from "./Components/EditorThumbnail/EditorThumbnail";
 
 const Editor = ({
   id,
@@ -86,6 +87,8 @@ const Editor = ({
         state={postData.tag}
         tags={tagList}
       />
+
+      <EditorThumbnail />
 
       <EditorMDInput
         onTyping={setPostHandler}
