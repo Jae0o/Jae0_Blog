@@ -15,7 +15,7 @@ export interface PostData {
 
 export type SetOptions = (optionsType: string, value: string) => Promise<void>;
 
-export type GetOptions = (optionsType: string) => Promise<string[]>;
+export type GetOptions = (optionsType: string) => Promise<string[] | false>;
 
 export type SetPost = (post: PostData) => Promise<void>;
 
