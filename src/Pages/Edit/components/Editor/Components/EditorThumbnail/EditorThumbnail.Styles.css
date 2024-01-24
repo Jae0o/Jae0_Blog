@@ -18,3 +18,12 @@
   font-weight: var(--fontweight-semi-bold);
   color: var(--color-white);
 }
+
+.thumbnail__input {
+  outline: none;
+  background-color: white;
+}
+
+.thumbnail__input button {
+  border: none;
+}
