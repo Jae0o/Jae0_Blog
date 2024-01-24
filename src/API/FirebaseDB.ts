@@ -10,7 +10,6 @@ import {
   PostData,
   ResponsePostsList,
 } from "./Firebase.Types";
-import { v4 } from "uuid";
 import { ERROR_MESSAGE } from "../constants/AlertMessage";
 
 /* ============== Lists ============== */
@@ -42,9 +41,7 @@ export const setPost: SetPost = async post => {
   try {
     const time = JSON.stringify(new Date());
 
-    if (post.id === "newPost") {
-      const newId = v4();
-      post.id = newId;
+    if (!post.createAt) {
       post.createAt = time;
     }
 

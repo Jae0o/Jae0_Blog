@@ -10,7 +10,13 @@ export interface EditorProps {
   onSubmit: UploadPost;
 }
 
-export type EditValue = "main" | "category" | "isPublic" | "tag" | "title";
+export type EditValue =
+  | "main"
+  | "category"
+  | "isPublic"
+  | "tag"
+  | "title"
+  | "thumbnail";
 
 export type SetEditorPost = (
   key: EditValue,
