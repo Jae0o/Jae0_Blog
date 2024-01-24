@@ -14,6 +14,7 @@ import { getPost } from "../../../../API/FirebaseDB";
 import { OnClickEvent } from "../../../../Types/Event.Types";
 import EditorThumbnail from "./Components/EditorThumbnail/EditorThumbnail";
 import { v4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 
 const Editor = ({
   id,
@@ -23,7 +24,7 @@ const Editor = ({
   onSubmit,
 }: EditorProps): React.ReactNode => {
   const [postData, setPostData] = useState<PostData>(NEW_POST);
-  console.log(postData);
+  const navigation = useNavigate();
 
   useEffect(() => {
     if (id === "newPost") {
@@ -31,16 +32,24 @@ const Editor = ({
         ...state,
         id: v4(),
       }));
+
       return;
     }
 
     const fetchPost: FetchPostFunc = async (category, pathId) => {
-      const resPost: PostData = await getPost(category, pathId);
+      const resPost = await getPost(category, pathId);
+
+      if (!resPost) {
+        // 이후 실패 알림 모달
+        navigation("/");
+        return;
+      }
+
       setPostData(resPost);
     };
 
     fetchPost(category, id);
-  }, [id, category]);
+  }, [id, category, navigation]);
 
   const setPostHandler: SetEditorPost = (key, value) => {
     setPostData(prevPostData => ({
@@ -52,12 +61,8 @@ const Editor = ({
   const onSubmitPost: OnClickEvent = e => {
     e.preventDefault();
 
-    const newPost: PostData = {
-      ...postData,
-    };
-
-    if (postUploadValidate(newPost)) {
-      onSubmit(newPost);
+    if (postUploadValidate(postData)) {
+      onSubmit(postData);
     }
   };
 

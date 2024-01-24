@@ -15,17 +15,24 @@ import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
   const { category = "", id = "" } = useParams();
+  const navigation = useNavigate();
 
   useEffect(
     function initialPost() {
       const fetchPost: FetchPostFunc = async (category, pathId) => {
-        const resPost: PostData = await getPost(category, pathId);
+        const resPost = await getPost(category, pathId);
+
+        if (!resPost) {
+          navigation("/");
+          return;
+        }
+
         setPost(resPost);
       };
 
       fetchPost(category, id);
     },
-    [category, id],
+    [category, id, navigation],
   );
 
   const navigate = useNavigate();
