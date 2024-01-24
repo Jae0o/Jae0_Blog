@@ -4,8 +4,8 @@ import { EditorMDProps, OnChangeEditorMD } from "../../Editor.Types";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { ImageResize } from "quill-image-resize-module-ts";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { firebaseStorage } from "../../../../../../API/Firebase";
+
+import { setImageStorage } from "../../../../../../API/FirebaseStore";
 
 // 리사이징을 위한 등록
 Quill.register("modules/imageResize", ImageResize);
@@ -32,19 +32,14 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
       const file = imageInput.files[0];
       const range = editor.getSelection(true);
 
-      const storageRef = ref(firebaseStorage, `image/${Date.now()}`);
-
-      const responseImage = await uploadBytes(storageRef, file)
-        .then(image => image)
-        .catch(e => {
-          console.log(e);
-          console.log("uploadByte 에러");
-        });
-
-      if (!responseImage) return;
-      await getDownloadURL(responseImage.ref).then(imageUrl => {
-        editor.insertEmbed(range.index, "image", imageUrl);
+      const newImageUrl = await setImageStorage({
+        file,
+        path: `postImage/${Date.now()}`,
       });
+
+      if (!newImageUrl) return;
+
+      editor.insertEmbed(range.index, "image", newImageUrl);
     });
   };
 
