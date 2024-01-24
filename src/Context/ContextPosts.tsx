@@ -14,6 +14,11 @@ export const ContextPostsProvider = ({
   const updatePosts = async () => {
     const posts = await getAllPostsList();
 
+    if (!posts) {
+      // 경고 모달
+      return;
+    }
+
     const WORK_posts = posts.filter(item => item.category === "WORK");
     const DIARY_posts = posts.filter(item => item.category === "DIARY");
     setPosts({

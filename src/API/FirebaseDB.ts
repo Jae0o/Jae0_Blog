@@ -41,19 +41,15 @@ export const getOptions: GetOptions = async optionsType => {
 /* =============== POST =============== */
 
 export const setPost: SetPost = async post => {
-  try {
-    const time = JSON.stringify(new Date());
+  const time = JSON.stringify(new Date());
 
-    if (!post.createAt) {
-      post.createAt = time;
-    }
-
-    post.updateAt = time;
-
-    await set(ref(database, `Posts/${post.category}/${post.id}`), post);
-  } catch (e) {
-    throw Error(ERROR_MESSAGE.SET_POST);
+  if (!post.createAt) {
+    post.createAt = time;
   }
+
+  post.updateAt = time;
+
+  await set(ref(database, `Posts/${post.category}/${post.id}`), post);
 };
 
 export const getPostsList: GetPostsList = async category => {
@@ -72,20 +68,29 @@ export const getPostsList: GetPostsList = async category => {
 };
 
 export const getAllPostsList: GetAllPostsList = async () => {
-  const snapshot: ResponsePostsList = await get(ref(database, `Posts/`))
+  const fetchedPostList: ResponsePostsList | false = await get(
+    ref(database, `Posts/`),
+  )
     .then(res => {
       if (res.exists()) {
-        return res.val();
+        const fetchedList: ResponsePostsList = res.val();
+        return fetchedList;
       }
+      return false;
     })
     .catch(() => {
-      throw new Error(ERROR_MESSAGE.GET_ALL_POSTS_LIST);
+      console.error(ERROR_MESSAGE.GET_ALL_POSTS_LIST);
+      return false;
     });
+
+  if (!fetchedPostList) {
+    return false;
+  }
 
   const postsList: PostData[] = [];
 
-  for (const key in snapshot) {
-    const convertedList: PostData[] = Object.values(snapshot[key]);
+  for (const key in fetchedPostList) {
+    const convertedList: PostData[] = Object.values(fetchedPostList[key]);
     postsList.push(...convertedList);
   }
 
