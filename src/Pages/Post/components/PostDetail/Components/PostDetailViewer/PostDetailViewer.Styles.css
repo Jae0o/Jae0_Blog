@@ -1,4 +1,6 @@
 .ptdetail__viewer-layout {
   width: 100%;
   flex-grow: 1;
+
+  font-size: 16px;
 }
