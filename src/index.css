@@ -17,8 +17,15 @@ a {
   outline: none;
   text-decoration: none;
 }
+a:link {
+  text-decoration: none;
+}
 a:visited {
   border: none;
+  color: black;
+}
+a:active {
+  color: black;
 }
 
 html,

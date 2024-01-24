@@ -1,0 +1,23 @@
+.navbar__footer-link {
+  width: 6rem;
+  height: 6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-sub-alt);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.5);
+
+  transition: opacity 0.3s;
+}
+
+.navbar__footer-link:hover {
+  opacity: 0.5;
+}
+
+.navbar__footer-link svg {
+  font-size: 3.6rem;
+  color: var(--color-point);
+}
