@@ -7,8 +7,10 @@ import NavbarFooter from "./components/NavbarFooter/NavbarFooter";
 const Navbar = (): React.ReactNode => {
   return (
     <nav className="nav">
-      <NavProfile />
-      <NavMenubar />
+      <div className="nav_layout">
+        <NavProfile />
+        <NavMenubar />
+      </div>
       <NavbarFooter />
     </nav>
   );

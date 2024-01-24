@@ -1,6 +1,8 @@
 .navbar__footer {
-  width: 20rem;
+  width: 24rem;
   height: 8rem;
 
   display: flex;
+
+  border: 1px solid red;
 }
