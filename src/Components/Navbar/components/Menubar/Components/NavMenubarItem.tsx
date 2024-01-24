@@ -2,6 +2,7 @@ import React from "react";
 import "./NavMenubarItem.Style.css";
 import { NavMenubarItemProps } from "../NavMenubar.Types";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import useHover from "../../../../../Hooks/useHover";
 
 const NavMenubarItem = ({
   icon: ICON,
@@ -10,6 +11,7 @@ const NavMenubarItem = ({
   postCount = 0,
 }: NavMenubarItemProps): React.ReactNode => {
   const navigate: NavigateFunction = useNavigate();
+  const { isHover, hoverRef } = useHover();
 
   const onNavigate = () => {
     navigate(`/post/list/${category}`);
@@ -17,17 +19,25 @@ const NavMenubarItem = ({
 
   return (
     <li
-      className="menubar__item"
+      className="menubar__item-layout"
       value={category}
       onClick={onNavigate}>
-      <div className="menubar__icon-container">
-        <ICON className="menubar__icon" />
-        <p className="menubar__listCount">{postCount}</p>
-      </div>
+      <div
+        className="menubar__item-container"
+        ref={hoverRef}>
+        <div className="menubar__icon-container">
+          <ICON className="menubar__icon" />
+          <p className="menubar__listCount">{postCount}</p>
+        </div>
 
-      <div className="menubar__title-container">
-        <h4 className="menubar__title">{title}</h4>
+        <div className="menubar__title-container">
+          <h4 className="menubar__title">{title}</h4>
+        </div>
       </div>
+      <div
+        className="menubar__decoration-line"
+        style={{ width: isHover ? "100%" : "0%" }}
+      />
     </li>
   );
 };
