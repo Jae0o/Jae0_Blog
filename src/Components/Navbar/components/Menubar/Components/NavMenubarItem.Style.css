@@ -1,7 +1,25 @@
-.menubar__item {
+.menubar__item-layout {
+  width: 22rem;
+  height: 5rem;
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s;
+  will-change: transform;
+  cursor: pointer;
+  user-select: none;
+}
+.menubar__item-layout:hover {
+  /* transform: scale(1.1); */
+}
+
+.menubar__item-container {
   width: 22rem;
   height: 4rem;
-  margin-top: 1rem;
 
   display: flex;
   align-items: center;
@@ -9,14 +27,16 @@
   box-shadow: var(--shadow-all);
   border-radius: var(--radius-small);
   background-color: var(--color-sub-alt);
+}
+
+.menubar__decoration-line {
+  height: 0.5rem;
+  margin-top: 0.2rem;
+
+  border-radius: 2px;
+  background-color: var(--color-point);
 
   transition: all 0.3s;
-  will-change: transform;
-  cursor: pointer;
-  user-select: none;
-}
-.menubar__item:hover {
-  transform: scale(1.1);
 }
 
 .menubar__icon-container {
