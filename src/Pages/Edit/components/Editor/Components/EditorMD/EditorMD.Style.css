@@ -3,13 +3,16 @@
   height: 100%;
 
   border-radius: 12px;
-
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .editor__quill {
   width: 100%;
-  flex-grow: 1;
+  height: 100%;
 
   background-color: var(--color-white);
+
+  overflow-y: scroll;
+
+  border: 1px solid red;
 }
