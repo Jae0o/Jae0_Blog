@@ -17,4 +17,5 @@ export const ERROR_MESSAGE: ErrorMessage = {
   GET_POSTS_LIST: "Posts를 불러오는 중 ERROR 발생.",
   GET_ALL_POSTS_LIST: "모든 Posts를 불러오는 중 ERROR 발생.",
   GET_POST: "Post를 불러오는 중 ERROR 발생.",
+  UPLOAD_STORAGE_IMAGE: "Storage에 이미지를 넣는 과정에 ERROR 발생",
 };
