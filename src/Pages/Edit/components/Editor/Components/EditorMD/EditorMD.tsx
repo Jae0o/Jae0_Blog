@@ -29,6 +29,7 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
     <div className="editor__layout">
       <ReactQuill
         className="editor__quill"
+        theme="snow"
         value={state}
         onChange={onChangeMD}
         modules={editorModules}
