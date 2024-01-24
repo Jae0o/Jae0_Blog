@@ -29,6 +29,7 @@ const EditorThumbnail = ({
       path: `thumbnail/${postId}`,
     }).then(newImageUrl => {
       if (!newImageUrl) {
+        // 추후 모달로 대체
         console.log("업로드 후 새로운 URL 받아오기 실패");
         return;
       }
@@ -40,10 +41,12 @@ const EditorThumbnail = ({
       <label
         className="thumbnail__title"
         htmlFor="thumbnail__input-id">
-        {"썸네일 : "}
+        {"썸네일 추가"}
       </label>
 
-      <p> {thumbnail}</p>
+      <p className="thumbnail__info">
+        {thumbnail ? thumbnail : "썸네일을 넣어주세요!"}
+      </p>
 
       <input
         className="thumbnail__input"

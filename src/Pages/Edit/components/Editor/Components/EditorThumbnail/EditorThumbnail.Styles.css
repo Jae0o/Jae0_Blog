@@ -1,7 +1,7 @@
 .Editor__thumbnail {
   flex-grow: 1;
   flex-shrink: 0;
-  height: 2.8rem;
+
   margin-bottom: 1rem;
 
   display: flex;
@@ -11,19 +11,46 @@
 }
 
 .thumbnail__title {
-  padding: 0 1rem;
-  margin-right: 1rem;
+  padding: 0.6rem 1rem;
+  margin: 0rem 1rem;
+
+  background-color: var(--color-point);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+
+  font-size: var(--fontsize-semi-large);
+  font-weight: var(--fontweight-semi-bold);
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.thumbnail__title:hover {
+  transform: scale(1.1);
+}
+
+.thumbnail__info {
+  width: 40rem;
+  height: 100%;
+  padding: 0rem 1rem;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--color-sub-alt);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
 
   font-size: var(--fontsize-semi-large);
   font-weight: var(--fontweight-semi-bold);
   color: var(--color-white);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .thumbnail__input {
-  outline: none;
-  background-color: white;
-}
-
-.thumbnail__input button {
-  border: none;
+  display: none;
 }
