@@ -1,8 +1,4 @@
-import { PostsThumbnail, ProfileConstants } from "./URL.Types";
-
-export const POST_LIST_THUMBNAIL: PostsThumbnail = {
-  WORK: "/Thumbnail/PostListThumbnail-work.jpeg",
-};
+import { ProfileConstants } from "./URL.Types";
 
 export const PROFILE: ProfileConstants = {
   THUMBNAIL:
