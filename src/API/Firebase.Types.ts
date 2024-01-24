@@ -21,7 +21,7 @@ export type SetPost = (post: PostData) => Promise<void>;
 
 export type GetPostsList = (category: string) => Promise<PostData[] | false>;
 
-export type GetAllPostsList = () => Promise<PostData[]>;
+export type GetAllPostsList = () => Promise<PostData[] | false>;
 
 export type GetPost = (
   category: string,

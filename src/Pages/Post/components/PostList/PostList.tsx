@@ -24,8 +24,9 @@ const PostList = (): React.ReactNode => {
   useEffect(() => {
     const fetchPostsList: FetchPostsList = async () => {
       if (category === "ALL") {
-        const resAllPostsList: PostData[] = await getAllPostsList();
-        setPostsList(resAllPostsList);
+        const resAllPostsList = await getAllPostsList();
+
+        resAllPostsList ? setPostsList(resAllPostsList) : navigation("/");
         return;
       }
 
