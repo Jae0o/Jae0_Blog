@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./PostList.Style.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import PostListItem from "./Components/PostListItem";
 import { getAllPostsList, getPostsList } from "../../../../API/FirebaseDB";
 import { FetchPostsList } from "./PostList.Types";
@@ -19,6 +19,7 @@ const PostList = (): React.ReactNode => {
   });
 
   const { category = "ALL" } = useParams();
+  const navigation = useNavigate();
 
   useEffect(() => {
     const fetchPostsList: FetchPostsList = async () => {
@@ -28,11 +29,17 @@ const PostList = (): React.ReactNode => {
         return;
       }
 
-      const resPostsList: PostData[] = await getPostsList(category);
+      const resPostsList = await getPostsList(category);
+
+      if (!resPostsList) {
+        // 실패 모달 예정
+        navigation("/");
+        return;
+      }
       setPostsList(resPostsList);
     };
     fetchPostsList();
-  }, [category]);
+  }, [category, navigation]);
 
   useEffect(
     function makeRandomBanner() {
