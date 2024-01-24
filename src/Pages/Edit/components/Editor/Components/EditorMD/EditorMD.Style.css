@@ -1,7 +1,7 @@
 .editor__layout {
   flex-grow: 1;
   height: 100%;
-  margin: 1rem;
+  margin: 0rem 1rem;
 
   border-radius: var(--radius-semi-large);
   overflow-y: scroll;
