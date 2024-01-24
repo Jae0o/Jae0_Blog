@@ -10,6 +10,7 @@ import {
   PostData,
   ResponsePostsList,
 } from "./Firebase.Types";
+
 import { ERROR_MESSAGE } from "../constants/AlertMessage";
 
 /* ============== Lists ============== */
@@ -94,9 +95,9 @@ export const getPost: GetPost = async (category, postId) => {
       if (res.exists()) {
         return res.val();
       }
-      return [];
+      return false;
     })
     .catch(() => {
-      throw Error(ERROR_MESSAGE.GET_POST);
+      return false;
     });
 };
