@@ -19,7 +19,7 @@ export type GetOptions = (optionsType: string) => Promise<string[]>;
 
 export type SetPost = (post: PostData) => Promise<void>;
 
-export type GetPostsList = (category: string) => Promise<PostData[]>;
+export type GetPostsList = (category: string) => Promise<PostData[] | false>;
 
 export type GetAllPostsList = () => Promise<PostData[]>;
 

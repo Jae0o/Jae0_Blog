@@ -55,17 +55,18 @@ export const setPost: SetPost = async post => {
 };
 
 export const getPostsList: GetPostsList = async category => {
-  try {
-    return await get(ref(database, `Posts/${category}`)) //
-      .then(res => {
-        if (res.exists()) {
-          return Object.values(res.val());
-        }
-        return [];
-      });
-  } catch (e) {
-    throw new Error(ERROR_MESSAGE.GET_POSTS_LIST);
-  }
+  return await get(ref(database, `Posts/${category}`))
+    .then(res => {
+      if (res.exists()) {
+        const fetchedList: PostData[] = Object.values(res.val());
+        return fetchedList;
+      }
+      return false;
+    })
+    .catch(error => {
+      console.error(error);
+      return false;
+    });
 };
 
 export const getAllPostsList: GetAllPostsList = async () => {
