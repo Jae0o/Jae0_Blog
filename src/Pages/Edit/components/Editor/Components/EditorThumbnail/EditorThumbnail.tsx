@@ -1,7 +1,19 @@
+import { setImageStorage } from "../../../../../../API/FirebaseStore";
+import { EditValue } from "../../Editor.Types";
 import "./EditorThumbnail.Styles.css";
 import React, { useRef } from "react";
 
-const EditorThumbnail = () => {
+interface EditorThumbnailProps {
+  onSelect: (key: EditValue, value: string) => void;
+  thumbnail: string;
+  postId: string;
+}
+
+const EditorThumbnail = ({
+  onSelect,
+  thumbnail,
+  postId,
+}: EditorThumbnailProps): React.ReactNode => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onThumbnailUpload = ({
@@ -11,12 +23,31 @@ const EditorThumbnail = () => {
     const { files } = target;
 
     const newFile = files[0];
-    console.log(newFile);
+
+    setImageStorage({
+      file: newFile,
+      path: `thumbnail/${postId}`,
+    }).then(newImageUrl => {
+      if (!newImageUrl) {
+        console.log("업로드 후 새로운 URL 받아오기 실패");
+        return;
+      }
+      onSelect("thumbnail", newImageUrl);
+    });
   };
   return (
     <div className="Editor__thumbnail">
-      <label className="thumbnail__title">{"썸네일 : "}</label>
+      <label
+        className="thumbnail__title"
+        htmlFor="thumbnail__input-id">
+        {"썸네일 : "}
+      </label>
+
+      <p> {thumbnail}</p>
+
       <input
+        className="thumbnail__input"
+        id="thumbnail__input-id"
         type="file"
         accept="image/*"
         ref={inputRef}
