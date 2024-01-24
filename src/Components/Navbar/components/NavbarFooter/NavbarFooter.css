@@ -3,6 +3,6 @@
   height: 8rem;
 
   display: flex;
-
-  border: 1px solid red;
+  justify-content: center;
+  gap: 1rem;
 }
