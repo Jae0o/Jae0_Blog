@@ -4,12 +4,48 @@ import { EditorMDProps, OnChangeEditorMD } from "../../Editor.Types";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { ImageResize } from "quill-image-resize-module-ts";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { firebaseStorage } from "../../../../../../API/Firebase";
 
+// 리사이징을 위한 등록
 Quill.register("modules/imageResize", ImageResize);
+
 const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
   const quillRef = useRef<ReactQuill>(null);
   const onChangeMD: OnChangeEditorMD = newValue => {
     onTyping("main", newValue);
+  };
+
+  // firebase 와의 연결
+  const handleImage = () => {
+    const imageInput = document.createElement("input");
+    imageInput.setAttribute("type", "file");
+    imageInput.setAttribute("accept", "image/*");
+    imageInput.click();
+
+    imageInput.addEventListener("change", async () => {
+      const { current } = quillRef;
+      if (!current || !(current instanceof ReactQuill)) return;
+      if (!imageInput.files) return;
+
+      const editor = current.getEditor();
+      const file = imageInput.files[0];
+      const range = editor.getSelection(true);
+
+      const storageRef = ref(firebaseStorage, `image/${Date.now()}`);
+
+      const responseImage = await uploadBytes(storageRef, file)
+        .then(image => image)
+        .catch(e => {
+          console.log(e);
+          console.log("uploadByte 에러");
+        });
+
+      if (!responseImage) return;
+      await getDownloadURL(responseImage.ref).then(imageUrl => {
+        editor.insertEmbed(range.index, "image", imageUrl);
+      });
+    });
   };
 
   const editorModules = useMemo(
@@ -23,6 +59,9 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
           [{ color: [] }, { background: [] }],
           [{ align: [] }, "link", "image"],
         ],
+        handlers: {
+          image: handleImage,
+        },
       },
       imageResize: {
         parchment: Quill.import("parchment"),
@@ -31,8 +70,6 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
     }),
     [],
   );
-
-  const handleImage = () => {};
 
   return (
     <div className="editor__layout">
