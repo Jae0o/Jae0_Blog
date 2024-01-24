@@ -5,7 +5,6 @@ import {
   CategoryListContext,
   UpdateContext,
 } from "./Context.Types";
-import { ALERT_CONTEXT } from "../constants/AlertMessage";
 
 export const ContextCategoryList = createContext<CategoryListContext>({
   categoryList: [],
@@ -17,12 +16,14 @@ export const ContextCategoryListProvider = ({
 }: ContextProps): React.ReactNode => {
   const [categoryList, setCategoryList] = useState<string[]>([]);
 
-  const updateCategoryList: UpdateContext = () => {
-    getOptions("category")
-      .then(res => setCategoryList(res))
-      .catch(() => {
-        throw new Error(ALERT_CONTEXT.CATEGORY);
-      });
+  const updateCategoryList: UpdateContext = async () => {
+    const newOptions = await getOptions("category");
+
+    if (!newOptions) {
+      // 옵션 실패에 대한 알림
+      return;
+    }
+    setCategoryList(newOptions);
   };
 
   useEffect(() => {

@@ -24,16 +24,18 @@ export const setOptions: SetOptions = async (optionsType, value) => {
 };
 
 export const getOptions: GetOptions = async optionsType => {
-  try {
-    return await get(ref(database, optionsType)).then(res => {
+  return await get(ref(database, optionsType))
+    .then(res => {
       if (res.exists()) {
-        return Object.values(res.val());
+        const fetchedOptions: string[] = Object.values(res.val());
+        return fetchedOptions;
       }
-      return [];
+      return false;
+    })
+    .catch(() => {
+      console.error(`${optionsType}${ERROR_MESSAGE.GET_OPTION_LIST}`);
+      return false;
     });
-  } catch (e) {
-    throw Error(`${optionsType}${ERROR_MESSAGE.GET_OPTION_LIST}`);
-  }
 };
 
 /* =============== POST =============== */

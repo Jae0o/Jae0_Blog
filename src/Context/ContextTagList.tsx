@@ -1,7 +1,6 @@
 import { useState, createContext, useEffect } from "react";
 import { getOptions } from "../API/FirebaseDB";
 import { ContextProps, TagListContext, UpdateContext } from "./Context.Types";
-import { ALERT_CONTEXT } from "../constants/AlertMessage";
 
 export const ContextTagList = createContext<TagListContext>({
   tagList: [],
@@ -14,12 +13,14 @@ export const ContextTagListProvider = ({
   const [tagList, setTagList] = useState<string[]>([]);
 
   const updateTagList: UpdateContext = async () => {
-    await getOptions("tag")
-      .then(res => setTagList(res))
-      .catch(() => {
-        console.error(ALERT_CONTEXT.TAG);
-        return [];
-      });
+    const newOptions = await getOptions("tag");
+
+    if (!newOptions) {
+      // 실패에 대한 알림
+      return;
+    }
+
+    setTagList(newOptions);
   };
 
   useEffect(() => {
