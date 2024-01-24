@@ -10,15 +10,17 @@ export interface EditorProps {
   onSubmit: UploadPost;
 }
 
+export type EditValue = "main" | "category" | "isPublic" | "tag" | "title";
+
 export type SetEditorPost = (
-  key: string,
+  key: EditValue,
   value: string | boolean | string[],
 ) => void;
 
 // Edit Input
-export type OnTypingEditor = (key: string, text: string) => void;
+export type OnTypingEditor = (key: EditValue, text: string) => void;
 export interface EditorTextInputProps {
-  typeName: string;
+  typeName: EditValue;
   onTyping: OnTypingEditor;
   state: string;
 }
@@ -31,7 +33,7 @@ export interface EditorMDProps {
 }
 
 // Edit Public
-export type OnToggleEditor = (key: string, state: boolean) => void;
+export type OnToggleEditor = (key: EditValue, state: boolean) => void;
 export type ChangePublicText = (isPublic: boolean) => string;
 export interface EditPublicProps {
   state: boolean;
@@ -39,7 +41,7 @@ export interface EditPublicProps {
 }
 
 // Editor Category
-export type SelectingEditorCategory = (key: string, state: string) => void;
+export type SelectingEditorCategory = (key: EditValue, state: string) => void;
 export interface EditorCategoryProps {
   categoryList: string[];
   state: string;
@@ -47,7 +49,7 @@ export interface EditorCategoryProps {
 }
 
 //Editor Tag
-export type EditorTagSelecting = (key: string, tag: string[]) => void;
+export type EditorTagSelecting = (key: EditValue, tag: string[]) => void;
 export interface EditorTagsProps {
   tags: string[];
   state: string[];

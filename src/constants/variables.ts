@@ -6,11 +6,11 @@ export const NEW_POST: PostData = {
   createAt: "",
   updateAt: "",
   title: "",
-  main: "## 본문 없음",
   isPublic: true,
   category: "",
   tag: [],
   thumbnail: "",
+  main: "",
 };
 
 export const ADVICE_DEFAULT: Advice = {
