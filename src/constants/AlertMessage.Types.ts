@@ -15,4 +15,5 @@ export interface ErrorMessage {
   GET_POSTS_LIST: string;
   GET_ALL_POSTS_LIST: string;
   GET_POST: string;
+  UPLOAD_STORAGE_IMAGE: string;
 }
