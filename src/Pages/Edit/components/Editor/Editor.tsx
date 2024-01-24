@@ -13,6 +13,7 @@ import { FetchPostFunc } from "../../../Post/components/PostPageType";
 import { getPost } from "../../../../API/FirebaseDB";
 import { OnClickEvent } from "../../../../Types/Event.Types";
 import EditorThumbnail from "./Components/EditorThumbnail/EditorThumbnail";
+import { v4 } from "uuid";
 
 const Editor = ({
   id,
@@ -22,10 +23,14 @@ const Editor = ({
   onSubmit,
 }: EditorProps): React.ReactNode => {
   const [postData, setPostData] = useState<PostData>(NEW_POST);
+  console.log(postData);
 
   useEffect(() => {
     if (id === "newPost") {
-      setPostData(NEW_POST);
+      setPostData(state => ({
+        ...state,
+        id: v4(),
+      }));
       return;
     }
 
@@ -88,7 +93,11 @@ const Editor = ({
         tags={tagList}
       />
 
-      <EditorThumbnail />
+      <EditorThumbnail
+        onSelect={setPostHandler}
+        thumbnail={postData.thumbnail}
+        postId={postData.id}
+      />
 
       <EditorMDInput
         onTyping={setPostHandler}
