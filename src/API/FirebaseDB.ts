@@ -42,7 +42,7 @@ export const getOptions: GetOptions = async optionsType => {
 export const setPost: SetPost = async post => {
   try {
     const time = JSON.stringify(new Date());
-    console.log(post);
+
     if (post.id === "newPost") {
       const newId = v4();
       post.id = newId;
@@ -52,7 +52,6 @@ export const setPost: SetPost = async post => {
     post.thumbnail = POST_LIST_THUMBNAIL[post.category];
     post.updateAt = time;
 
-    console.log(`Posts/${post.category}/${post.id}`);
     await set(ref(database, `Posts/${post.category}/${post.id}`), post);
   } catch (e) {
     throw Error(ERROR_MESSAGE.SET_POST);
