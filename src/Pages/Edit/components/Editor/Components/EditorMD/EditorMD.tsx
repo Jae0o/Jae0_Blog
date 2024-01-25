@@ -4,7 +4,6 @@ import { EditorMDProps, OnChangeEditorMD } from "../../Editor.Types";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { ImageResize } from "quill-image-resize-module-ts";
-
 import { setImageStorage } from "../../../../../../API/FirebaseStore";
 
 // 리사이징을 위한 등록
@@ -62,6 +61,9 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
           image: handleImage,
         },
       },
+      // syntax: {
+      //   highlight: (text: string) => hljs.highlightAuto(text).value,
+      // },
       imageResize: {
         parchment: Quill.import("parchment"),
         modules: ["Resize", "DisplaySize"],
