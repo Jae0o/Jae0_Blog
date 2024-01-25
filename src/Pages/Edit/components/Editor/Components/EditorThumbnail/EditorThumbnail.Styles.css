@@ -50,7 +50,3 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
-.thumbnail__input {
-  display: none;
-}
