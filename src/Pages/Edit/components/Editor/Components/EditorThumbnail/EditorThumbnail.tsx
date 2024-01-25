@@ -1,4 +1,4 @@
-import { setImageStorage } from "../../../../../../API/FirebaseStore";
+import InputImage from "../../../../../../Components/InputImage/InputImage";
 import { EditValue } from "../../Editor.Types";
 import "./EditorThumbnail.Styles.css";
 import React, { useRef } from "react";
@@ -16,31 +16,23 @@ const EditorThumbnail = ({
 }: EditorThumbnailProps): React.ReactNode => {
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const onThumbnailUpload = ({
-    target,
-  }: React.ChangeEvent<HTMLInputElement>) => {
-    if (!target.files) return;
-    const { files } = target;
+  const changeImageInput = () => {
+    const { current } = inputRef;
+    if (!current) return;
 
-    const newFile = files[0];
-
-    setImageStorage({
-      file: newFile,
-      path: `thumbnail/${postId}`,
-    }).then(newImageUrl => {
-      if (!newImageUrl) {
-        // 추후 모달로 대체
-        console.log("업로드 후 새로운 URL 받아오기 실패");
-        return;
-      }
-      onSelect("thumbnail", newImageUrl);
-    });
+    current.click();
   };
+
+  const successChangeThumbnail = (url: string) => {
+    onSelect("thumbnail", url);
+  };
+
   return (
     <div className="Editor__thumbnail">
       <label
         className="thumbnail__title"
-        htmlFor="thumbnail__input-id">
+        htmlFor="thumbnail__input-id"
+        onClick={changeImageInput}>
         {"썸네일 추가"}
       </label>
 
@@ -48,13 +40,10 @@ const EditorThumbnail = ({
         {thumbnail ? thumbnail : "썸네일을 넣어주세요!"}
       </p>
 
-      <input
-        className="thumbnail__input"
-        id="thumbnail__input-id"
-        type="file"
-        accept="image/*"
-        ref={inputRef}
-        onChange={onThumbnailUpload}
+      <InputImage
+        inputRef={inputRef}
+        storagePath={`thumbnail/${postId}`}
+        onSuccess={successChangeThumbnail}
       />
     </div>
   );
