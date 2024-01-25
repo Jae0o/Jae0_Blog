@@ -1,8 +1,11 @@
 .ptdetail__viewer-layout {
   width: 100%;
   flex-grow: 1;
+  padding: 10rem 0rem;
 
   font-size: 16px;
+
+  border: 1px solid red;
 }
 
 .ptdetail__viewer-layout img {
