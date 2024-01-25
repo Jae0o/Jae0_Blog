@@ -37,6 +37,7 @@ const PostDetail = (): React.ReactNode => {
   );
 
   const navigate = useNavigate();
+
   const toEditPage: OnClickEvent = () => {
     navigate(`/editor/${category}/${id}`);
   };
@@ -45,6 +46,7 @@ const PostDetail = (): React.ReactNode => {
     // Todo - 로딩에대한 처리를 추가해야함
     return;
   }
+
   return (
     <section className="ptdetail__layout">
       <PostBannerDecoration />

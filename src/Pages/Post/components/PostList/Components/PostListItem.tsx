@@ -9,7 +9,7 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
   const formattedDate: string = convertDateFormat(JSON.parse(post.createAt));
 
   const navigate = useNavigate();
-  9;
+
   const onNavigate: OnClickEvent = () => {
     navigate(`/post/detail/${post.category}/${post.id}`);
   };

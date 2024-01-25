@@ -8,7 +8,7 @@ const PostDetailViewer = ({ content }: PostDetailViewerProps) => {
 
   return (
     <div
-      className="ptdetail__viewer-layout view ql-editor"
+      className="ptdetail__viewer-layout ql-editor"
       dangerouslySetInnerHTML={{ __html: checkXSS }}
     />
   );
