@@ -4,42 +4,35 @@ import { EditorMDProps, OnChangeEditorMD } from "../../Editor.Types";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { ImageResize } from "quill-image-resize-module-ts";
-import { setImageStorage } from "../../../../../../API/FirebaseStore";
+import InputImage from "../../../../../../Components/InputImage/InputImage";
+import { editor_formats } from "./EditorMD.Constants";
 
 // 리사이징을 위한 등록
 Quill.register("modules/imageResize", ImageResize);
 
 const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
   const quillRef = useRef<ReactQuill>(null);
+  const imageInputRef = useRef<HTMLInputElement>(null);
   const onChangeMD: OnChangeEditorMD = newValue => {
     onTyping("main", newValue);
   };
 
-  // firebase 와의 연결
-  const handleImage = () => {
-    const imageInput = document.createElement("input");
-    imageInput.setAttribute("type", "file");
-    imageInput.setAttribute("accept", "image/*");
-    imageInput.click();
+  const clickImageLabel = () => {
+    const { current } = imageInputRef;
+    console.log(current);
+    if (!current) return;
 
-    imageInput.addEventListener("change", async () => {
-      const { current } = quillRef;
-      if (!current || !(current instanceof ReactQuill)) return;
-      if (!imageInput.files) return;
+    current.click();
+  };
 
-      const editor = current.getEditor();
-      const file = imageInput.files[0];
-      const range = editor.getSelection(true);
+  const successImageChange = (url: string) => {
+    const { current } = quillRef;
+    if (!current || !(current instanceof ReactQuill)) return;
 
-      const newImageUrl = await setImageStorage({
-        file,
-        path: `postImage/${Date.now()}`,
-      });
+    const editor = current.getEditor();
+    const range = editor.getSelection(true);
 
-      if (!newImageUrl) return;
-
-      editor.insertEmbed(range.index, "image", newImageUrl);
-    });
+    editor.insertEmbed(range.index, "image", url);
   };
 
   const editorModules = useMemo(
@@ -58,7 +51,7 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
           [{ align: [] }, "link", "image", "code-block"],
         ],
         handlers: {
-          image: handleImage,
+          image: clickImageLabel,
         },
       },
       // syntax: {
@@ -73,45 +66,26 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
   );
 
   return (
-    <div className="editor__layout">
-      <ReactQuill
-        className="editor__quill"
-        ref={quillRef}
-        formats={formats}
-        theme="snow"
-        value={state}
-        onChange={onChangeMD}
-        modules={editorModules}
-      />
-    </div>
+    <>
+      <div className="editor__layout">
+        <ReactQuill
+          className="editor__quill"
+          ref={quillRef}
+          formats={editor_formats}
+          theme="snow"
+          value={state}
+          onChange={onChangeMD}
+          modules={editorModules}
+        />
+
+        <InputImage
+          inputRef={imageInputRef}
+          onSuccess={successImageChange}
+          storagePath={`postImage/${Date.now()}`}
+        />
+      </div>
+    </>
   );
 };
 
 export default EditorMD;
-
-const formats = [
-  "background",
-  "bold",
-  "color",
-  "font",
-  "code",
-  "italic",
-  "link",
-  "size",
-  "strike",
-  "script",
-  "underline",
-
-  "blockquote",
-  "header",
-  "indent",
-  "list",
-  "align",
-  "direction",
-  "code-block",
-
-  "bullet",
-  "image",
-  "video",
-  "formula",
-];
