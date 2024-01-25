@@ -48,11 +48,15 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
       toolbar: {
         container: [
           [{ header: [1, 2, 3, false] }],
-          ["bold", "italic", "underline", "strike"],
-          ["blockquote"],
-          [{ list: "ordered" }, { list: "bullet" }],
+          ["bold", "italic", "underline", "strike", "blockquote"],
+          [
+            { list: "ordered" },
+            { list: "bullet" },
+            { indent: "-1" },
+            { indent: "+1" },
+          ],
           [{ color: [] }, { background: [] }],
-          [{ align: [] }, "link", "image"],
+          [{ align: [] }, "link", "image", "code-block"],
         ],
         handlers: {
           image: handleImage,
@@ -71,6 +75,7 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
       <ReactQuill
         className="editor__quill"
         ref={quillRef}
+        formats={formats}
         theme="snow"
         value={state}
         onChange={onChangeMD}
@@ -81,3 +86,30 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
 };
 
 export default EditorMD;
+
+const formats = [
+  "background",
+  "bold",
+  "color",
+  "font",
+  "code",
+  "italic",
+  "link",
+  "size",
+  "strike",
+  "script",
+  "underline",
+
+  "blockquote",
+  "header",
+  "indent",
+  "list",
+  "align",
+  "direction",
+  "code-block",
+
+  "bullet",
+  "image",
+  "video",
+  "formula",
+];
