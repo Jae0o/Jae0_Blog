@@ -1,6 +1,6 @@
 import React from "react";
 import { ContactMeButtonProps } from "./ContactMeButton.Types";
-import "./ContactMeButton.styles.css";
+import "./ContactMeButton.Styles.css";
 
 const ContactMeButton = ({
   url,
