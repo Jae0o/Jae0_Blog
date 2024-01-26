@@ -4,5 +4,16 @@
 
   display: flex;
   justify-content: center;
-  gap: 1rem;
+
+  gap: 1.6rem;
+}
+
+@media (max-height: 650px) {
+  .navbar__footer {
+    display: none;
+  }
+
+  .nav_layout {
+    height: 100%;
+  }
 }
