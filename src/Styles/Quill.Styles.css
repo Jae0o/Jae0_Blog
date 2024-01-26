@@ -1,0 +1,75 @@
+.ql-editor {
+  width: 100%;
+  max-width: 80rem;
+  padding: 4em 0em !important;
+
+  background-color: var(--color-semi-white);
+  word-break: keep-all;
+
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+}
+
+.ql-editor h1 {
+  font-size: 2em !important;
+}
+
+.ql-editor h2 {
+  font-size: 1.6em !important;
+}
+
+.ql-editor h3 {
+  font-size: 1.4em !important;
+}
+
+/* ol 숫자 리스트 */
+
+.ql-editor > ol {
+  padding-left: 1rem !important;
+}
+
+.ql-editor > ul {
+  padding-left: 1rem !important;
+}
+
+.ql-editor > ul > li::before {
+  content: "▪︎" !important;
+  font-size: 1em !important;
+}
+
+.ql-editor .ql-indent-1:not(.ql-direction-rtl) {
+  padding-left: 2em !important;
+}
+
+.ql-editor .ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 4em !important;
+}
+
+.ql-editor .ql-indent-3:not(.ql-direction-rtl) {
+  padding-left: 8em !important;
+}
+
+.ql-editor .ql-indent-4:not(.ql-direction-rtl) {
+  padding-left: 10em !important;
+}
+
+.ql-editor .ql-indent-5:not(.ql-direction-rtl) {
+  padding-left: 12em !important;
+}
+
+.ql-editor blockquote {
+  border-left: 4px solid #ccc !important;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+  padding-left: 16px !important;
+}
+
+.ql-editor blockquote strong {
+  margin-left: 8px !important;
+}
+
+.ql-editor li a,
+.ql-editor p a,
+.ql-editor blockquote a {
+  color: var(--color-dark-green) !important;
+}
