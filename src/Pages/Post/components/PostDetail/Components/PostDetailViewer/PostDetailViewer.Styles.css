@@ -1,11 +1,8 @@
 .ptdetail__viewer-layout {
   width: 100%;
   flex-grow: 1;
-  padding: 10rem 0rem;
 
-  font-size: 16px;
-}
-
-.ptdetail__viewer-layout img {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
