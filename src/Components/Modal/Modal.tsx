@@ -1,4 +1,4 @@
-import "./Modal.Styles";
+import "./Modal.Styles.css";
 
 interface ModalProps {
   width: number;
