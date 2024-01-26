@@ -59,6 +59,12 @@ section {
     sans-serif;
 }
 
+#modal {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
 :root {
   /* color */
   --color-black: #323133;
@@ -102,4 +108,7 @@ section {
   --fontweight-bold: 700;
   --fontweight-semi-bold: 600;
   --fontweight-medium: 400;
+
+  /* z-index */
+  --z-index-modal: 20;
 }

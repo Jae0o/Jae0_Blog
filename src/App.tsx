@@ -48,6 +48,7 @@ const App = (): React.ReactNode => {
           <ContextTagListProvider>
             <ContextCategoryListProvider>
               <RouterProvider router={router} />
+              <div id="modal" />
             </ContextCategoryListProvider>
           </ContextTagListProvider>
         </ContextPostsProvider>
