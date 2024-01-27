@@ -50,7 +50,11 @@ const App = (): React.ReactNode => {
             <ContextCategoryListProvider>
               <RouterProvider router={router} />
               <div id="modal">
-                <Modal width={40} />
+                <Modal
+                  width={40}
+                  height={40}>
+                  <div></div>
+                </Modal>
               </div>
             </ContextCategoryListProvider>
           </ContextTagListProvider>
