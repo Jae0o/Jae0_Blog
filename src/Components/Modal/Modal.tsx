@@ -1,33 +1,35 @@
 import React from "react";
 import "./Modal.Styles.css";
+import ModalPortal from "./Components/ModalPortal";
 
 interface ModalProps {
+  isShow: boolean;
   children: React.ReactNode;
   width: number;
   height: number;
 }
 
-const Modal = ({ children, width, height }: ModalProps) => {
-  console.log(width);
-
+const Modal = ({ children, isShow, width, height }: ModalProps) => {
   return (
-    <section className="modal__background">
-      <article
-        className="modal__layout-outline"
-        style={{
-          width: `${width + 4}rem`,
-          height: `${height + 4}rem`,
-        }}>
-        <div
-          className="modal__layout"
+    <ModalPortal isShow={isShow}>
+      <section className="modal__background">
+        <article
+          className="modal__layout-outline"
           style={{
-            width: `${width}rem`,
-            height: `${height}rem`,
+            width: `${width + 4}rem`,
+            height: `${height + 4}rem`,
           }}>
-          {children}
-        </div>
-      </article>
-    </section>
+          <div
+            className="modal__layout"
+            style={{
+              width: `${width}rem`,
+              height: `${height}rem`,
+            }}>
+            {children}
+          </div>
+        </article>
+      </section>
+    </ModalPortal>
   );
 };
 

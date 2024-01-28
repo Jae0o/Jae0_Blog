@@ -12,7 +12,6 @@ import { ContextPostsProvider } from "./Context/ContextPosts";
 import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
 import CheckAdminProvider from "./Components/CheckAdminProvider/CheckAdminProvider";
 import React from "react";
-import Modal from "./Components/Modal/Modal";
 
 const router = createBrowserRouter([
   {
@@ -49,13 +48,7 @@ const App = (): React.ReactNode => {
           <ContextTagListProvider>
             <ContextCategoryListProvider>
               <RouterProvider router={router} />
-              <div id="modal">
-                <Modal
-                  width={40}
-                  height={40}>
-                  <div></div>
-                </Modal>
-              </div>
+              <div id="modal" />
             </ContextCategoryListProvider>
           </ContextTagListProvider>
         </ContextPostsProvider>
