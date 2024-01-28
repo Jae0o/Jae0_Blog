@@ -2,6 +2,10 @@
   width: 100vw;
   height: 100vh;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -9,4 +13,24 @@
   background-color: rgba(0, 0, 0, 0.5);
 
   z-index: var(--z-index-modal);
+}
+
+.modal__layout-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-sub);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+.modal__layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-sub-alt);
+  border-radius: var(--radius-medium);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
 }
