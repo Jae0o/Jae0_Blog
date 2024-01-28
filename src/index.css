@@ -12,6 +12,9 @@ input[type="text"] {
 }
 button {
   border: none;
+  background-color: transparent;
+
+  cursor: pointer;
 }
 a {
   outline: none;
