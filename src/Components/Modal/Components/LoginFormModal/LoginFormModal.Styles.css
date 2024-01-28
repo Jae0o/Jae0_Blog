@@ -9,6 +9,37 @@
   font-size: var(--fontsize-big);
 
   user-select: none;
+}
 
-  border: 1px solid red;
+.login__form {
+  width: 100%;
+}
+
+.login__action-container {
+  width: 100%;
+  height: 6rem;
+  margin-bottom: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__action-button {
+  width: 10rem;
+  height: 3.2rem;
+
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+  border-radius: var(--radius-medium);
+  background-color: var(--color-point);
+
+  font-size: var(--fontsize-semi-large);
+  font-weight: var(--fontweight-semi-bolder);
+  letter-spacing: 2px;
+
+  transition: opacity 0.3s;
+}
+
+.login__action-button:hover {
+  opacity: 0.5;
 }
