@@ -3,19 +3,23 @@ import "./AlertModal.Styles.css";
 
 interface AlertModalProps {
   isShow: boolean;
+  message: string;
   onClose: () => void;
 }
 
-const AlertModal = ({ isShow, onClose }: AlertModalProps) => {
+const AlertModal = ({ isShow, message, onClose }: AlertModalProps) => {
   return (
     <Modal
       width={32}
-      height={20}
+      height={18}
       isShow={isShow}
       onClose={onClose}
       clickAwayEnable={true}
       closeButtonEnable={true}>
-      <div></div>
+      <h4 className="alert__message">{message}</h4>
+      <div className="alert__action">
+        <button className="alert__button">{"닫기"}</button>
+      </div>
     </Modal>
   );
 };
