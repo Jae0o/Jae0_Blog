@@ -6,7 +6,7 @@ const PASSWORD_REG = /^(?=.*[[\]{}()<>\\])/;
 
 const EMAIL_REG = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-export const validation = {
+export const loginValidation = {
   email: (value: string) => {
     const trimValue = value.trim();
 

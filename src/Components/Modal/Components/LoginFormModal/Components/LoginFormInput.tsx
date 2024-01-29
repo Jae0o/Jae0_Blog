@@ -1,11 +1,12 @@
 import "./LoginFormInput.Styles.css";
-import { validation } from "../Function/validation";
+import { loginValidation } from "../Function/loginValidation";
+import { LoginInputType } from "../LoginFormModal";
 
 interface LoginFormInputProps {
   title: string;
-  type: "email" | "password";
+  type: LoginInputType;
   value: string;
-  onChange: (param: { type: "email" | "password"; value: string }) => void;
+  onChange: (param: { type: LoginInputType; value: string }) => void;
 }
 
 export const LoginFormInput = ({
@@ -17,11 +18,11 @@ export const LoginFormInput = ({
   let message = "";
 
   if (type === "email") {
-    message = validation.email(value);
+    message = loginValidation.email(value);
   }
 
   if (type === "password") {
-    message = validation.password(value);
+    message = loginValidation.password(value);
   }
 
   return (

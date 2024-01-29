@@ -6,7 +6,7 @@ import { ContextAuthUser } from "../../../../Context/ContextAuthUser";
 import { firebaseLogin } from "../../../../API/FirebaseAuth";
 import AlertModal from "../AlertModal/AlertModal";
 import useModal from "../../Hooks/useModal";
-import { validation } from "./Function/validation";
+import { loginValidation } from "./Function/loginValidation";
 import { LOGIN_VALIDATION } from "../../../../constants/AlertMessage";
 
 interface LoginFormModalProps {
@@ -14,6 +14,8 @@ interface LoginFormModalProps {
   onClose: () => void;
   onSuccess: () => void;
 }
+
+export type LoginInputType = "email" | "password";
 
 const LoginFormModal = ({
   isShow,
@@ -29,7 +31,7 @@ const LoginFormModal = ({
     type,
     value,
   }: {
-    type: "email" | "password";
+    type: LoginInputType;
     value: string;
   }) => {
     setLoginInfo(state => ({ ...state, [type]: value }));
@@ -38,13 +40,13 @@ const LoginFormModal = ({
   const handleSubmitLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (validation.email(loginInfo.email)) {
+    if (loginValidation.email(loginInfo.email)) {
       setAlertModal(LOGIN_VALIDATION.SUBMIT_CHECK_EMAIL);
       openModal();
       return;
     }
 
-    if (validation.password(loginInfo.password)) {
+    if (loginValidation.password(loginInfo.password)) {
       setAlertModal(LOGIN_VALIDATION.SUBMIT_CHECK_PASSWORD);
       openModal();
       return;
