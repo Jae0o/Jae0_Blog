@@ -19,3 +19,17 @@ export const ERROR_MESSAGE: ErrorMessage = {
   GET_POST: "Post를 불러오는 중 ERROR 발생.",
   UPLOAD_STORAGE_IMAGE: "Storage에 이미지를 넣는 과정에 ERROR 발생",
 };
+
+export const LOGIN_VALIDATION = {
+  SUBMIT_CHECK_EMAIL: "올바른 이메일을 입력해 주세요. 🚨",
+  SUBMIT_CHECK_PASSWORD: "올바른 비밀번호를 입력해 주세요. 🚨",
+  SUBMIT_FAIL: "로그인에 실패했어요.. 회원가입은 하신 건가요? 🙋‍♂️",
+
+  CHECK_EMAIL_LENGTH_ZERO: "이메일을 입력해 주세요. 🙌",
+  CHECK_EMAIL_REG: "이메일이 아닌걸요?.. 🤷‍♂️",
+
+  CHECK_PASSWORD_LENGTH_ZERO: "비밀번호를 입력해 주세요. 🙋‍♂️",
+  CHECK_PASSWORD_MIN_LENGTH: "최소 4글자 이상 입력해주세요. ❌",
+  CHECK_PASSWORD_MAX_LENGTH: "최대 12글자까지만 입력할 수 있어요. ❌",
+  CHECK_PASSWORD_REG: "사용하실 수 없는 특수문자를 사용하셨군요? ❌",
+};
