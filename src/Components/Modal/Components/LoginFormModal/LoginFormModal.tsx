@@ -80,6 +80,7 @@ const LoginFormModal = ({
       <AlertModal
         isShow={isShowModal}
         onClose={closeModal}
+        message={"로그인"}
       />
     </>
   );

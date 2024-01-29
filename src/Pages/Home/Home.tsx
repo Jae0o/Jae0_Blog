@@ -8,6 +8,7 @@ const Home = (): React.ReactNode => {
       <AlertModal
         isShow={true}
         onClose={() => {}}
+        message="뭐 하셨나요? 루언루 ㄹㅇㄴㄹ ㄴㅇ ㄹㄴㅇ ㄹ ㄴㅇㅎ ㅇㄴ ㅎㄴㅇㅎㄴㅇ ㅎㄴ ㅇㅎ ㅇㄴㅎ ㄴㅇ ㅎㅇㄴ ㅎ ㄴㅇㅎ ㅇㄴ ㅎㄴ ㅇㅎ ㄴㅇㅎ  "
       />
     </section>
   );
