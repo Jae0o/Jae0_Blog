@@ -32,6 +32,7 @@ export const LoginFormInput = ({
         value={value}
         onChange={({ target }) => onChange({ type, value: target.value })}
         type={type}
+        autoComplete={"current-password"}
       />
       <p className="loginForm__input-message">{message}</p>
     </div>
