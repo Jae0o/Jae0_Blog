@@ -1,6 +1,19 @@
 import { createContext, useState } from "react";
-import { ContextProps, AuthUserContext, LoginInfo } from "./Context.Types";
+import { ContextProps } from "./Context.Types";
 import { firebaseLogin } from "../API/FirebaseAuth";
+import { auth } from "../API/Firebase";
+import { UserCredential } from "firebase/auth";
+
+interface AuthUserContext {
+  isLoggedIn: boolean;
+  authUserId: string;
+  login: (data: LoginInfo) => Promise<UserCredential>;
+}
+
+interface LoginInfo {
+  email: string;
+  password: string;
+}
 
 export const ContextAuthUser = createContext<AuthUserContext>({
   authUserId: "",
@@ -12,21 +25,22 @@ export const ContextAuthUserProvider = ({ children }: ContextProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authUserId, setAuthUserId] = useState<string>("");
 
-  const login = ({ email, password }: LoginInfo) => {
+  const login = async ({ email, password }: LoginInfo) => {
     if (isLoggedIn) {
       return;
     }
 
-    firebaseLogin(email, password)
+    return firebaseLogin(email, password)
       .then(res => {
         setIsLoggedIn(true);
         setAuthUserId(res.user.uid);
       })
       .catch(error => {
-        console.log(error);
         setIsLoggedIn(false);
+        throw Error(error);
       });
   };
+  console.log(auth);
 
   return (
     <ContextAuthUser.Provider value={{ isLoggedIn, login, authUserId }}>
