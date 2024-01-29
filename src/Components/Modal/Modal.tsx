@@ -1,7 +1,7 @@
 import React from "react";
 import "./Modal.Styles.css";
 import ModalPortal from "./Components/ModalPortal";
-import { IoMdClose } from "react-icons/io";
+import { IoCloseSharp } from "react-icons/io5";
 
 interface ModalProps {
   isShow: boolean;
@@ -58,7 +58,7 @@ const Modal = ({
               <button
                 className="modal__button-close"
                 onClick={onClose}>
-                <IoMdClose />
+                <IoCloseSharp />
               </button>
             </div>
             <div
