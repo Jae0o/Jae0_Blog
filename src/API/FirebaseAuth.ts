@@ -10,5 +10,11 @@ export const firebaseSignUp: SignUp = async (email, password) => {
 };
 
 export const firebaseLogin: Login = async (email, password) => {
-  return await signInWithEmailAndPassword(auth, email, password);
+  return await signInWithEmailAndPassword(auth, email, password)
+    .then(res => {
+      return res;
+    })
+    .catch(error => {
+      throw Error(error);
+    });
 };
