@@ -1,0 +1,47 @@
+.loginForm__input {
+  width: 100%;
+  height: 10rem;
+  padding: 0rem 6rem;
+
+  user-select: none;
+}
+
+.loginForm__input-title {
+  width: 100%;
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--fontsize-semi-small);
+  font-weight: var(--fontweight-bold);
+  color: var(--color-semi-white);
+}
+
+.loginForm__input-element {
+  width: 100%;
+  height: 3rem;
+  padding: 0rem 0.6rem;
+  background-color: var(--color-sub);
+
+  outline: none;
+  border: none;
+  border-radius: var(--radius-medium);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+
+  font-size: var(--fontsize-semi-small);
+  letter-spacing: 1px;
+  color: var(--color-semi-white);
+}
+
+.loginForm__input-message {
+  width: 100%;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+
+  font-size: var(--fontsize-semi-small);
+  font-weight: var(--fontweight-bold);
+  color: var(--color-point-alt);
+}

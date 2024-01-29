@@ -1,31 +1,74 @@
 import React from "react";
 import "./Modal.Styles.css";
 import ModalPortal from "./Components/ModalPortal";
+import { IoCloseSharp } from "react-icons/io5";
 
 interface ModalProps {
   isShow: boolean;
   children: React.ReactNode;
   width: number;
   height: number;
+  clickAwayEnable?: boolean;
+  closeButtonEnable?: boolean;
+  onClose: () => void;
 }
 
-const Modal = ({ children, isShow, width, height }: ModalProps) => {
+const Modal = ({
+  children,
+  isShow,
+  width,
+  height,
+  onClose,
+  clickAwayEnable,
+  closeButtonEnable,
+}: ModalProps) => {
+  const handleClickAway = ({
+    target,
+    currentTarget,
+  }: React.MouseEvent<HTMLElement>) => {
+    if (!clickAwayEnable) {
+      return;
+    }
+
+    if (target === currentTarget) {
+      onClose();
+    }
+  };
+
   return (
     <ModalPortal isShow={isShow}>
-      <section className="modal__background">
+      <section
+        className="modal__background"
+        onClick={handleClickAway}>
         <article
           className="modal__layout-outline"
           style={{
             width: `${width + 4}rem`,
-            height: `${height + 4}rem`,
+            height: closeButtonEnable ? `${height + 7}rem` : `${height + 4}rem`,
           }}>
           <div
             className="modal__layout"
             style={{
               width: `${width}rem`,
-              height: `${height}rem`,
+              height: closeButtonEnable ? `${height + 3}rem` : `${height}rem`,
             }}>
-            {children}
+            <div
+              className="modal__actions"
+              style={{ display: closeButtonEnable ? "flex" : "none" }}>
+              <button
+                className="modal__button-close"
+                onClick={onClose}>
+                <IoCloseSharp />
+              </button>
+            </div>
+            <div
+              className="modal__content"
+              style={{
+                width: `${width}rem`,
+                height: `${height}rem`,
+              }}>
+              {children}
+            </div>
           </div>
         </article>
       </section>

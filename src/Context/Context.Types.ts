@@ -31,14 +31,3 @@ export interface PostsContext {
   posts: Posts;
   updatePosts: UpdateContext;
 }
-
-export interface AuthUserContext {
-  isLoggedIn: boolean;
-  authUserId: string;
-  login: (data: LoginInfo) => void;
-}
-
-export interface LoginInfo {
-  email: string;
-  password: string;
-}
