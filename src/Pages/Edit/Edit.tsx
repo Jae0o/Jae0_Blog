@@ -12,6 +12,7 @@ import { ContextCategoryList } from "../../Context/ContextCategory";
 import { ContextTagList } from "../../Context/ContextTagList";
 import { ContextIsLoading } from "../../Context/ContextIsLoading";
 import { ContextPosts } from "../../Context/ContextPosts";
+import CheckAdminProvider from "../../Components/CheckAdminProvider/CheckAdminProvider";
 
 const Edit = (): React.ReactNode => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
@@ -52,14 +53,18 @@ const Edit = (): React.ReactNode => {
 
   return (
     <section className="outlet__edit">
-      <EditPage
-        category={category}
-        id={pathId}
-        categoryList={categoryList}
-        tagList={tagList}
-        onSubmit={onUploadPost}
-      />
-      <EditSubPage onUpdate={onUpdateOption} />
+      <CheckAdminProvider>
+        <>
+          <EditPage
+            category={category}
+            id={pathId}
+            categoryList={categoryList}
+            tagList={tagList}
+            onSubmit={onUploadPost}
+          />
+          <EditSubPage onUpdate={onUpdateOption} />
+        </>
+      </CheckAdminProvider>
     </section>
   );
 };
