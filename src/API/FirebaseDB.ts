@@ -1,19 +1,11 @@
 import { database } from "./Firebase";
 import { get, set, ref } from "firebase/database";
-import {
-  SetPost,
-  GetOptions,
-  SetOptions,
-  GetPost,
-  GetPostsList,
-  GetAllPostsList,
-  PostData,
-  ResponsePostsList,
-} from "./Firebase.Types";
-
+import { PostData } from "./Firebase.Types";
 import { ERROR_MESSAGE } from "../constants/AlertMessage";
 
 /* ============== Lists ============== */
+
+type SetOptions = (optionsType: string, value: string) => Promise<void>;
 
 export const setOptions: SetOptions = async (optionsType, value) => {
   try {
@@ -22,6 +14,8 @@ export const setOptions: SetOptions = async (optionsType, value) => {
     throw Error(`${optionsType}${ERROR_MESSAGE.SET_OPTION_LIST}`);
   }
 };
+
+type GetOptions = (optionsType: string) => Promise<string[] | false>;
 
 export const getOptions: GetOptions = async optionsType => {
   return await get(ref(database, optionsType))
@@ -40,6 +34,8 @@ export const getOptions: GetOptions = async optionsType => {
 
 /* =============== POST =============== */
 
+type SetPost = (post: PostData) => Promise<void>;
+
 export const setPost: SetPost = async post => {
   const time = JSON.stringify(new Date());
 
@@ -51,6 +47,8 @@ export const setPost: SetPost = async post => {
 
   await set(ref(database, `Posts/${post.category}/${post.id}`), post);
 };
+
+type GetPostsList = (category: string) => Promise<PostData[] | false>;
 
 export const getPostsList: GetPostsList = async category => {
   return await get(ref(database, `Posts/${category}`))
@@ -66,6 +64,11 @@ export const getPostsList: GetPostsList = async category => {
       return false;
     });
 };
+
+type GetAllPostsList = () => Promise<PostData[] | false>;
+interface ResponsePostsList {
+  [key: string]: { [key: string]: PostData };
+}
 
 export const getAllPostsList: GetAllPostsList = async () => {
   const fetchedPostList: ResponsePostsList | false = await get(
@@ -96,6 +99,8 @@ export const getAllPostsList: GetAllPostsList = async () => {
 
   return postsList;
 };
+
+type GetPost = (category: string, postId: string) => Promise<PostData | false>;
 
 export const getPost: GetPost = async (category, postId) => {
   return await get(ref(database, `Posts/${category}/${postId}`))

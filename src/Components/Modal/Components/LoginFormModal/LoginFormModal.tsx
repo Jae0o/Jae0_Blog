@@ -52,7 +52,7 @@ const LoginFormModal = ({
       return;
     }
 
-    firebaseLogin(loginInfo.email, loginInfo.password)
+    firebaseLogin(loginInfo)
       .then(({ user }) => {
         setLoginUser(user);
         onSuccess();
