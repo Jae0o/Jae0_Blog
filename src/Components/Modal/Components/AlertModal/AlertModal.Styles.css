@@ -9,6 +9,7 @@
 
   font-size: var(--fontsize-semi-large);
   text-align: center;
+  word-break: keep-all;
 }
 
 .alert__action {
