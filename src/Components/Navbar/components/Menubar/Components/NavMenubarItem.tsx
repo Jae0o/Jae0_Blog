@@ -1,8 +1,15 @@
 import React from "react";
 import "./NavMenubarItem.Style.css";
-import { NavMenubarItemProps } from "../NavMenubar.Types";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import useHover from "../../../../../Hooks/useHover";
+import { IconType } from "react-icons";
+
+export interface NavMenubarItemProps {
+  icon: IconType;
+  title: string;
+  category: string;
+  postCount: number;
+}
 
 const NavMenubarItem = ({
   icon: ICON,

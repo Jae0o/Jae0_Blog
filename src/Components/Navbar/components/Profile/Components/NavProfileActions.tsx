@@ -1,8 +1,13 @@
 import React from "react";
 import "./NavProfileActions.Style.css";
-import { NavProfileActionsProps } from "../../../Navbar.Types";
 import { useNavigate, NavigateFunction } from "react-router-dom";
 import { OnClickEvent } from "../../../../../Types/Event.Types";
+
+interface NavProfileActionsProps {
+  action: "home" | "search" | "write";
+  icon: string;
+  path: string;
+}
 
 const NavProfileActions = ({
   action,
