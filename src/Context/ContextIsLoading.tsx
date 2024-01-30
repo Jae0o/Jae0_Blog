@@ -1,9 +1,10 @@
 import React, { createContext, useState } from "react";
-import {
-  IsLoadingContext,
-  ContextProps,
-  UpdateIsLoading,
-} from "./Context.Types";
+import { ContextProps } from "./Context.Types";
+
+interface IsLoadingContext {
+  isLoading: boolean;
+  updateIsLoading: (state: boolean) => void;
+}
 
 export const ContextIsLoading = createContext<IsLoadingContext>({
   isLoading: false,
@@ -15,7 +16,7 @@ export const ContextIsLoadingProvider = ({
 }: ContextProps): React.ReactNode => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const updateIsLoading: UpdateIsLoading = state => {
+  const updateIsLoading = (state: boolean) => {
     setIsLoading(state);
   };
 

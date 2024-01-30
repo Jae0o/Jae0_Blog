@@ -1,6 +1,16 @@
 import React, { createContext, useEffect, useState } from "react";
 import { getAllPostsList } from "../API/FirebaseDB";
-import { ContextProps, Posts, PostsContext } from "./Context.Types";
+import { ContextProps } from "./Context.Types";
+import { PostData } from "../API/Firebase.Types";
+
+interface Posts {
+  [key: string]: PostData[];
+}
+
+interface PostsContext {
+  posts: Posts;
+  updatePosts: () => void;
+}
 
 export const ContextPosts = createContext<PostsContext>({
   posts: {},
@@ -11,6 +21,7 @@ export const ContextPostsProvider = ({
   children,
 }: ContextProps): React.ReactNode => {
   const [posts, setPosts] = useState<Posts>({});
+
   const updatePosts = async () => {
     const posts = await getAllPostsList();
 
