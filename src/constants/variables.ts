@@ -1,6 +1,6 @@
 import { PostData } from "../API/Firebase.Types";
 
-interface Advice {
+export interface Advice {
   advice: string;
   author: string;
 }
