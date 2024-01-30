@@ -33,3 +33,8 @@ export const LOGIN_VALIDATION = {
   CHECK_PASSWORD_MAX_LENGTH: "최대 12글자까지만 입력할 수 있어요. ❌",
   CHECK_PASSWORD_REG: "사용하실 수 없는 특수문자를 사용하셨군요? ❌",
 };
+
+export const CHECK_ADMIN = {
+  CLOSE_LOGIN_FORM_MODAL_ALERT_MODAL:
+    "로그인을 하신 후 이용하실 수 있습니다 🚨",
+};
