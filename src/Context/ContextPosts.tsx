@@ -4,6 +4,7 @@ import { ContextProps } from "./Context.Types";
 import { PostData } from "../API/Firebase.Types";
 import useModal from "../Components/Modal/Hooks/useModal";
 import AlertModal from "../Components/Modal/Components/AlertModal/AlertModal";
+import { CONTEXT_ERROR } from "../constants/AlertMessage";
 
 interface Posts {
   [key: string]: PostData[];
@@ -56,7 +57,7 @@ export const ContextPostsProvider = ({
       <AlertModal
         isShow={isShowModal}
         onClose={handleCloseAlertModal}
-        message="dsf"
+        message={CONTEXT_ERROR.POSTS_UPDATE_LIST}
       />
       {children}
     </ContextPosts.Provider>

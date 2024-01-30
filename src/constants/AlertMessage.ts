@@ -42,6 +42,8 @@ export const CONTEXT_ERROR = {
     "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( CATEGORY LIST )",
   TAG_UPDATE_LIST:
     "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( TAG LIST )",
+  POSTS_UPDATE_LIST:
+    "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( POSTS LIST )",
 };
 
 export const GET_POST_LIST_ERROR = "게시물 목록을 불러오는데 실패했어요.. 🤦";
