@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./PostDetail.Style.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPost } from "../../../../API/FirebaseDB";
 import { PostData } from "../../../../API/Firebase.Types";
 import { FetchPostFunc } from "../PostPageType";
-import { OnClickEvent } from "../../../../Types/Event.Types";
 import PostBanner from "../../../../Components/PostBanner/PostBanner";
 import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
 import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
@@ -14,12 +13,15 @@ import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
 import useModal from "../../../../Components/Modal/Hooks/useModal";
 import AlertModal from "../../../../Components/Modal/Components/AlertModal/AlertModal";
 import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "../../../../constants/AlertMessage";
+import PostAuthAction from "./Components/PostAuthAction/PostAuthAction";
+import { ContextAuthUser } from "../../../../Context/ContextAuthUser";
 
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
   const { category = "", id = "" } = useParams();
-  const navigation = useNavigate();
   const { isShowModal, openModal, closeModal } = useModal();
+  const { isAuthUser } = useContext(ContextAuthUser);
+  const navigate = useNavigate();
 
   useEffect(
     function initialPost() {
@@ -37,14 +39,8 @@ const PostDetail = (): React.ReactNode => {
 
       fetchPost(category, id);
     },
-    [category, id, navigation, openModal],
+    [category, id, openModal],
   );
-
-  const navigate = useNavigate();
-
-  const toEditPage: OnClickEvent = () => {
-    navigate(`/editor/${category}/${id}`);
-  };
 
   const handleCloseAlertModal = () => {
     closeModal();
@@ -86,12 +82,16 @@ const PostDetail = (): React.ReactNode => {
 
                 <PostDetailTags tags={post.tag} />
               </div>
-
+              <span className="ptdetail__content-divider" />
+              <PostDetailViewer content={post.main} />
               <span className="ptdetail__content-divider" />
 
-              <PostDetailViewer content={post.main} />
-
-              <button onClick={toEditPage}>수정 하기</button>
+              {isAuthUser && (
+                <>
+                  <PostAuthAction />
+                  <span className="ptdetail__content-divider" />
+                </>
+              )}
             </div>
           </div>
         </section>

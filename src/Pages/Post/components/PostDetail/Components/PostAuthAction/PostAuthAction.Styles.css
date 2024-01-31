@@ -1,0 +1,8 @@
+.ptdetail__auth-layout {
+  width: 100%;
+  height: 6rem;
+
+  display: flex;
+
+  border: 1px solid red;
+}
