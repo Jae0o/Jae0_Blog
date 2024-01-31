@@ -69,7 +69,10 @@ const PostDetail = (): React.ReactNode => {
 
               {isAuthUser && (
                 <>
-                  <PostAuthAction />
+                  <PostAuthAction
+                    postCategory={category}
+                    postId={id}
+                  />
                   <span className="ptdetail__content-divider" />
                 </>
               )}
