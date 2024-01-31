@@ -36,7 +36,6 @@ const PostList = (): React.ReactNode => {
       const resPostsList = await getPostsList(category);
 
       if (!resPostsList) {
-        // 실패 모달 예정
         openModal();
         return;
       }
