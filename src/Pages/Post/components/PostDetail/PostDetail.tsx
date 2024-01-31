@@ -1,21 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./PostDetail.Style.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPost } from "../../../../API/FirebaseDB";
 import { PostData } from "../../../../API/Firebase.Types";
 import { FetchPostFunc } from "../PostPageType";
-import { OnClickEvent } from "../../../../Types/Event.Types";
 import PostBanner from "../../../../Components/PostBanner/PostBanner";
-import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
-import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
-import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
 import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
+import useModal from "../../../../Components/Modal/Hooks/useModal";
+import AlertModal from "../../../../Components/Modal/Components/AlertModal/AlertModal";
+import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "../../../../constants/AlertMessage";
+import PostAuthAction from "./Components/PostAuthAction/PostAuthAction";
+import { ContextAuthUser } from "../../../../Context/ContextAuthUser";
+import PostDetailInfo from "./Components/PostDetailInfo/PostDetailContent";
 
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
   const { category = "", id = "" } = useParams();
-  const navigation = useNavigate();
+  const { isShowModal, openModal, closeModal } = useModal();
+  const { isAuthUser } = useContext(ContextAuthUser);
+  const navigate = useNavigate();
 
   useEffect(
     function initialPost() {
@@ -23,8 +27,8 @@ const PostDetail = (): React.ReactNode => {
         const resPost = await getPost(category, pathId);
 
         if (!resPost) {
-          // 이후 실패 알림 모달
-          navigation("/");
+          openModal();
+
           return;
         }
 
@@ -33,61 +37,56 @@ const PostDetail = (): React.ReactNode => {
 
       fetchPost(category, id);
     },
-    [category, id, navigation],
+    [category, id, openModal],
   );
 
-  const navigate = useNavigate();
-
-  const toEditPage: OnClickEvent = () => {
-    navigate(`/editor/${category}/${id}`);
+  const handleCloseAlertModal = () => {
+    closeModal();
+    navigate("/");
   };
 
-  if (!post) {
-    // Todo - 로딩에대한 처리를 추가해야함
-    return;
-  }
-
   return (
-    <section className="ptdetail__layout">
-      <PostBannerDecoration />
-      <div className="ptdetail__container">
-        <PostBanner
-          thumbnail={post.thumbnail}
-          mainText={post.title}
-        />
-        <div
-          className="ptdetail__content"
-          data-color-mode="light">
-          <div className="ptdetail__info">
-            <PostDetailTime
-              title={"생성 일시"}
-              time={post.createAt}
+    <>
+      {post && (
+        <section className="ptdetail__layout">
+          <PostBannerDecoration />
+          <div className="ptdetail__container">
+            <PostBanner
+              thumbnail={post.thumbnail}
+              mainText={post.title}
+              height={40}
             />
+            <div
+              className="ptdetail__content"
+              data-color-mode="light">
+              <PostDetailInfo post={post} />
 
-            <span className="ptdetail__info-divider" />
+              <span className="ptdetail__content-divider" />
 
-            <PostDetailTime
-              title={"변경 일시"}
-              time={post.updateAt}
-            />
+              <PostDetailViewer content={post.main} />
 
-            <span className="ptdetail__info-divider" />
+              <span className="ptdetail__content-divider" />
 
-            <PostDetailCategory category={post.category} />
-
-            <span className="ptdetail__info-divider" />
-
-            <PostDetailTags tags={post.tag} />
+              {isAuthUser && (
+                <>
+                  <PostAuthAction
+                    postCategory={category}
+                    postId={id}
+                  />
+                  <span className="ptdetail__content-divider" />
+                </>
+              )}
+            </div>
           </div>
+        </section>
+      )}
 
-          <span className="ptdetail__content-divider" />
-
-          <PostDetailViewer content={post.main} />
-
-          <button onClick={toEditPage}>수정 하기</button>
-        </div>
-      </div>
-    </section>
+      <AlertModal
+        isShow={isShowModal}
+        onClose={handleCloseAlertModal}
+        message={GET_POST_DETAIL_PAGE_POST_FETCH_ERROR}
+      />
+    </>
   );
 };
 

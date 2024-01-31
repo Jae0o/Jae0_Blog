@@ -1,5 +1,5 @@
 import "./PostDetailCategory.Style.css";
-import { PostDetailCategoryProps } from "../../PostDetail.Types";
+import { PostDetailCategoryProps } from "../../../../PostDetail.Types";
 import React from "react";
 
 const PostDetailCategory = ({

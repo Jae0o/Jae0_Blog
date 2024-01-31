@@ -10,16 +10,19 @@ import { BannerInfo } from "../PostPageType";
 import { POST_BANNER_THUMBNAILS } from "../../../../constants/URL";
 import PostBanner from "../../../../Components/PostBanner/PostBanner";
 import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
+import useModal from "../../../../Components/Modal/Hooks/useModal";
+import AlertModal from "../../../../Components/Modal/Components/AlertModal/AlertModal";
+import { GET_POST_LIST_ERROR } from "../../../../constants/AlertMessage";
 
 const PostList = (): React.ReactNode => {
   const [postsList, setPostsList] = useState<PostData[]>([]);
+  const { isShowModal, openModal, closeModal } = useModal();
+  const { category = "ALL" } = useParams();
+  const navigation = useNavigate();
   const [bannerInfo, setBannerInfo] = useState<BannerInfo>({
     advice: ADVICE_DEFAULT,
     thumbnail: "",
   });
-
-  const { category = "ALL" } = useParams();
-  const navigation = useNavigate();
 
   useEffect(() => {
     const fetchPostsList: FetchPostsList = async () => {
@@ -33,14 +36,13 @@ const PostList = (): React.ReactNode => {
       const resPostsList = await getPostsList(category);
 
       if (!resPostsList) {
-        // 실패 모달 예정
-        navigation("/");
+        openModal();
         return;
       }
       setPostsList(resPostsList);
     };
     fetchPostsList();
-  }, [category, navigation]);
+  }, [category, navigation, openModal]);
 
   useEffect(
     function makeRandomBanner() {
@@ -55,27 +57,35 @@ const PostList = (): React.ReactNode => {
   );
 
   return (
-    <div className="outlet__ptlist">
-      <div className="ptlist__banner">
-        <PostBannerDecoration />
-        <PostBanner
-          thumbnail={bannerInfo.thumbnail}
-          mainText={bannerInfo.advice.advice}
-          subText={`- ${bannerInfo.advice.author}`}
-        />
+    <>
+      <div className="outlet__ptlist">
+        <div className="ptlist__banner">
+          <PostBannerDecoration />
+          <PostBanner
+            thumbnail={bannerInfo.thumbnail}
+            mainText={bannerInfo.advice.advice}
+            subText={`- ${bannerInfo.advice.author}`}
+          />
+        </div>
+        <div className="ptlist__content">
+          <ul className="ptlist__list-container">
+            {postsList &&
+              postsList.map(post => (
+                <PostListItem
+                  post={post}
+                  key={post.id}
+                />
+              ))}
+          </ul>
+        </div>
       </div>
-      <div className="ptlist__content">
-        <ul className="ptlist__list-container">
-          {postsList &&
-            postsList.map(post => (
-              <PostListItem
-                post={post}
-                key={post.id}
-              />
-            ))}
-        </ul>
-      </div>
-    </div>
+
+      <AlertModal
+        isShow={isShowModal}
+        onClose={closeModal}
+        message={GET_POST_LIST_ERROR}
+      />
+    </>
   );
 };
 

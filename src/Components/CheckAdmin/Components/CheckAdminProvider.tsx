@@ -10,8 +10,7 @@ const CheckAdminProvider = ({
   children,
   openLoginModal,
 }: CheckAdminProviderProps) => {
-  const { isLoggedIn, authUserId } = useContext(ContextAuthUser);
-  const { VITE_FIREBASE_ADMIN_USER_ID } = import.meta.env;
+  const { isLoggedIn, isAuthUser } = useContext(ContextAuthUser);
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -19,7 +18,7 @@ const CheckAdminProvider = ({
     }
   }, [isLoggedIn, openLoginModal]);
 
-  if (VITE_FIREBASE_ADMIN_USER_ID !== authUserId) {
+  if (!isAuthUser) {
     return null;
   }
 

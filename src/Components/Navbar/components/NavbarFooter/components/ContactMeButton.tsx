@@ -1,6 +1,10 @@
 import React from "react";
-import { ContactMeButtonProps } from "./ContactMeButton.Types";
 import "./ContactMeButton.Styles.css";
+
+interface ContactMeButtonProps {
+  url: string;
+  Icon: React.ReactNode;
+}
 
 const ContactMeButton = ({
   url,

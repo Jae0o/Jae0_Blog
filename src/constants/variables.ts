@@ -1,5 +1,11 @@
 import { PostData } from "../API/Firebase.Types";
-import { AdviceList, Advice } from "./VariablesType";
+
+export interface Advice {
+  advice: string;
+  author: string;
+}
+
+type AdviceList = Advice[];
 
 export const NEW_POST: PostData = {
   id: "newPost",

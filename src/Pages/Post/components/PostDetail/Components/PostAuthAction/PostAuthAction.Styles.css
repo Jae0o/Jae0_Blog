@@ -1,0 +1,26 @@
+.ptdetail__auth-layout {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4rem;
+}
+
+.ptdetail__auth-button {
+  width: 10rem;
+  height: 3.2rem;
+
+  background-color: var(--color-point);
+  border-radius: 20rem;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+
+  font-size: var(--fontsize-semi-large);
+  font-weight: var(--fontweight-bold);
+
+  transition: opacity 0.3s;
+}
+
+.ptdetail__auth-button:hover {
+  opacity: 0.5;
+}

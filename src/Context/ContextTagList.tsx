@@ -1,6 +1,14 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, useCallback } from "react";
 import { getOptions } from "../API/FirebaseDB";
-import { ContextProps, TagListContext, UpdateContext } from "./Context.Types";
+import { ContextProps } from "./Context.Types";
+import useModal from "../Components/Modal/Hooks/useModal";
+import AlertModal from "../Components/Modal/Components/AlertModal/AlertModal";
+import { CONTEXT_ERROR } from "../constants/AlertMessage";
+
+interface TagListContext {
+  tagList: string[];
+  updateTagList: () => void;
+}
 
 export const ContextTagList = createContext<TagListContext>({
   tagList: [],
@@ -11,24 +19,35 @@ export const ContextTagListProvider = ({
   children,
 }: ContextProps): React.ReactNode => {
   const [tagList, setTagList] = useState<string[]>([]);
+  const { isShowModal, openModal, closeModal } = useModal();
 
-  const updateTagList: UpdateContext = async () => {
+  const updateTagList = useCallback(async () => {
     const newOptions = await getOptions("tag");
 
     if (!newOptions) {
-      // 실패에 대한 알림
+      openModal();
       return;
     }
 
     setTagList(newOptions);
-  };
+  }, [openModal]);
 
   useEffect(() => {
     updateTagList();
-  }, []);
+  }, [updateTagList]);
+
+  const handleCloseAlertModal = () => {
+    closeModal();
+    updateTagList();
+  };
 
   return (
     <ContextTagList.Provider value={{ tagList, updateTagList }}>
+      <AlertModal
+        isShow={isShowModal}
+        onClose={handleCloseAlertModal}
+        message={CONTEXT_ERROR.CATEGORY_UPDATE_LIST}
+      />
       {children}
     </ContextTagList.Provider>
   );

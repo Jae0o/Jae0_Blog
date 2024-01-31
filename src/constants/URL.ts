@@ -1,11 +1,9 @@
-import { ProfileConstants } from "./URL.Types";
-
-export const PROFILE: ProfileConstants = {
+export const PROFILE = {
   THUMBNAIL:
     "https://res.cloudinary.com/dalxgxu2o/image/upload/c_scale,h_120,q_100,w_120/v1699980818/IMG_0508_mke9kp.gif",
 };
 
-export const POST_BANNER_THUMBNAILS: string[] = [
+export const POST_BANNER_THUMBNAILS = [
   "/Thumbnail/banner-thumbnail-1.jpeg",
   "/Thumbnail/banner-thumbnail-2.jpeg",
   "/Thumbnail/banner-thumbnail-3.jpeg",

@@ -1,6 +1,6 @@
 import "./PostDetailTime.Style.css";
-import { convertDateFormat } from "../../../../../../Util/UtilFunctions";
-import { PostDetailTimeProps } from "../../PostDetail.Types";
+import { convertDateFormat } from "../../../../../../../../Util/UtilFunctions";
+import { PostDetailTimeProps } from "../../../../PostDetail.Types";
 import React from "react";
 
 const PostDetailTime = ({

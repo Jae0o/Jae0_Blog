@@ -1,10 +1,14 @@
-import { useState, createContext, useEffect } from "react";
+import { useState, createContext, useEffect, useCallback } from "react";
 import { getOptions } from "../API/FirebaseDB";
-import {
-  ContextProps,
-  CategoryListContext,
-  UpdateContext,
-} from "./Context.Types";
+import { ContextProps } from "./Context.Types";
+import AlertModal from "../Components/Modal/Components/AlertModal/AlertModal";
+import useModal from "../Components/Modal/Hooks/useModal";
+import { CONTEXT_ERROR } from "../constants/AlertMessage";
+
+interface CategoryListContext {
+  categoryList: string[];
+  updateCategoryList: () => void;
+}
 
 export const ContextCategoryList = createContext<CategoryListContext>({
   categoryList: [],
@@ -15,23 +19,34 @@ export const ContextCategoryListProvider = ({
   children,
 }: ContextProps): React.ReactNode => {
   const [categoryList, setCategoryList] = useState<string[]>([]);
+  const { isShowModal, openModal, closeModal } = useModal();
 
-  const updateCategoryList: UpdateContext = async () => {
+  const updateCategoryList = useCallback(async () => {
     const newOptions = await getOptions("category");
 
     if (!newOptions) {
-      // 옵션 실패에 대한 알림
+      openModal();
       return;
     }
     setCategoryList(newOptions);
-  };
+  }, [openModal]);
 
   useEffect(() => {
     updateCategoryList();
-  }, []);
+  }, [updateCategoryList]);
+
+  const handleCloseAlertModal = () => {
+    closeModal();
+    updateCategoryList();
+  };
 
   return (
     <ContextCategoryList.Provider value={{ categoryList, updateCategoryList }}>
+      <AlertModal
+        isShow={isShowModal}
+        onClose={handleCloseAlertModal}
+        message={CONTEXT_ERROR.CATEGORY_UPDATE_LIST}
+      />
       {children}
     </ContextCategoryList.Provider>
   );
