@@ -5,9 +5,6 @@ import { getPost } from "../../../../API/FirebaseDB";
 import { PostData } from "../../../../API/Firebase.Types";
 import { FetchPostFunc } from "../PostPageType";
 import PostBanner from "../../../../Components/PostBanner/PostBanner";
-import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
-import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
-import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
 import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
 import useModal from "../../../../Components/Modal/Hooks/useModal";
@@ -15,6 +12,7 @@ import AlertModal from "../../../../Components/Modal/Components/AlertModal/Alert
 import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "../../../../constants/AlertMessage";
 import PostAuthAction from "./Components/PostAuthAction/PostAuthAction";
 import { ContextAuthUser } from "../../../../Context/ContextAuthUser";
+import PostDetailInfo from "./Components/PostDetailInfo/PostDetailContent";
 
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
@@ -61,29 +59,12 @@ const PostDetail = (): React.ReactNode => {
             <div
               className="ptdetail__content"
               data-color-mode="light">
-              <div className="ptdetail__info">
-                <PostDetailTime
-                  title={"생성 일시"}
-                  time={post.createAt}
-                />
+              <PostDetailInfo post={post} />
 
-                <span className="ptdetail__info-divider" />
-
-                <PostDetailTime
-                  title={"변경 일시"}
-                  time={post.updateAt}
-                />
-
-                <span className="ptdetail__info-divider" />
-
-                <PostDetailCategory category={post.category} />
-
-                <span className="ptdetail__info-divider" />
-
-                <PostDetailTags tags={post.tag} />
-              </div>
               <span className="ptdetail__content-divider" />
+
               <PostDetailViewer content={post.main} />
+
               <span className="ptdetail__content-divider" />
 
               {isAuthUser && (
