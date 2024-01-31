@@ -114,3 +114,11 @@ export const getPost: GetPost = async (category, postId) => {
       return false;
     });
 };
+
+interface DeletePost {
+  postCategory: string;
+  postId: string;
+}
+export const deletePost = async ({ postCategory, postId }: DeletePost) => {
+  await set(ref(database, `Posts/${postCategory}/${postId}`), null);
+};
