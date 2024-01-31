@@ -47,3 +47,6 @@ export const CONTEXT_ERROR = {
 };
 
 export const GET_POST_LIST_ERROR = "게시물 목록을 불러오는데 실패했어요.. 🤦";
+
+export const GET_POST_DETAIL_PAGE_POST_FETCH_ERROR =
+  "게시물을 찾는데 실패했어요..🤦";

@@ -11,11 +11,15 @@ import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCatego
 import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
 import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
+import useModal from "../../../../Components/Modal/Hooks/useModal";
+import AlertModal from "../../../../Components/Modal/Components/AlertModal/AlertModal";
+import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "../../../../constants/AlertMessage";
 
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
   const { category = "", id = "" } = useParams();
   const navigation = useNavigate();
+  const { isShowModal, openModal, closeModal } = useModal();
 
   useEffect(
     function initialPost() {
@@ -23,8 +27,8 @@ const PostDetail = (): React.ReactNode => {
         const resPost = await getPost(category, pathId);
 
         if (!resPost) {
-          // 이후 실패 알림 모달
-          navigation("/");
+          openModal();
+
           return;
         }
 
@@ -33,7 +37,7 @@ const PostDetail = (): React.ReactNode => {
 
       fetchPost(category, id);
     },
-    [category, id, navigation],
+    [category, id, navigation, openModal],
   );
 
   const navigate = useNavigate();
@@ -42,53 +46,63 @@ const PostDetail = (): React.ReactNode => {
     navigate(`/editor/${category}/${id}`);
   };
 
-  if (!post) {
-    // Todo - 로딩에대한 처리를 추가해야함
-    return;
-  }
+  const handleCloseAlertModal = () => {
+    closeModal();
+    navigate("/");
+  };
 
   return (
-    <section className="ptdetail__layout">
-      <PostBannerDecoration />
-      <div className="ptdetail__container">
-        <PostBanner
-          thumbnail={post.thumbnail}
-          mainText={post.title}
-          height={40}
-        />
-        <div
-          className="ptdetail__content"
-          data-color-mode="light">
-          <div className="ptdetail__info">
-            <PostDetailTime
-              title={"생성 일시"}
-              time={post.createAt}
+    <>
+      {post && (
+        <section className="ptdetail__layout">
+          <PostBannerDecoration />
+          <div className="ptdetail__container">
+            <PostBanner
+              thumbnail={post.thumbnail}
+              mainText={post.title}
+              height={40}
             />
+            <div
+              className="ptdetail__content"
+              data-color-mode="light">
+              <div className="ptdetail__info">
+                <PostDetailTime
+                  title={"생성 일시"}
+                  time={post.createAt}
+                />
 
-            <span className="ptdetail__info-divider" />
+                <span className="ptdetail__info-divider" />
 
-            <PostDetailTime
-              title={"변경 일시"}
-              time={post.updateAt}
-            />
+                <PostDetailTime
+                  title={"변경 일시"}
+                  time={post.updateAt}
+                />
 
-            <span className="ptdetail__info-divider" />
+                <span className="ptdetail__info-divider" />
 
-            <PostDetailCategory category={post.category} />
+                <PostDetailCategory category={post.category} />
 
-            <span className="ptdetail__info-divider" />
+                <span className="ptdetail__info-divider" />
 
-            <PostDetailTags tags={post.tag} />
+                <PostDetailTags tags={post.tag} />
+              </div>
+
+              <span className="ptdetail__content-divider" />
+
+              <PostDetailViewer content={post.main} />
+
+              <button onClick={toEditPage}>수정 하기</button>
+            </div>
           </div>
+        </section>
+      )}
 
-          <span className="ptdetail__content-divider" />
-
-          <PostDetailViewer content={post.main} />
-
-          <button onClick={toEditPage}>수정 하기</button>
-        </div>
-      </div>
-    </section>
+      <AlertModal
+        isShow={isShowModal}
+        onClose={handleCloseAlertModal}
+        message={GET_POST_DETAIL_PAGE_POST_FETCH_ERROR}
+      />
+    </>
   );
 };
 
