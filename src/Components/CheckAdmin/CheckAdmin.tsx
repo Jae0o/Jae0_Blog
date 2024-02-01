@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import CheckAdminProvider from "./Components/CheckAdminProvider";
 import LoginFormModal from "../Modal/Components/LoginFormModal/LoginFormModal";
 import useModal from "../Modal/Hooks/useModal";
 import { useNavigate } from "react-router-dom";
 import AlertModal from "../Modal/Components/AlertModal/AlertModal";
 import { CHECK_ADMIN } from "../../constants/AlertMessage";
+import { ContextAuthUser } from "../../Context/ContextAuthUser";
 
 interface CheckAdminProps {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ interface CheckAdminProps {
 
 const CheckAdmin = ({ children }: CheckAdminProps) => {
   const navigate = useNavigate();
+  const { isLoggedIn } = useContext(ContextAuthUser);
   const {
     isShowModal: isShowLoginModal,
     openModal: openLoginModal,
@@ -41,7 +43,7 @@ const CheckAdmin = ({ children }: CheckAdminProps) => {
   return (
     <>
       <LoginFormModal
-        isShow={isShowLoginModal}
+        isShow={!isLoggedIn && isShowLoginModal}
         onClose={handleCloseLoginModal}
         onSuccess={handleSuccessLogin}
       />
