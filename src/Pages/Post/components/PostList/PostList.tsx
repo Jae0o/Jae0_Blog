@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import "./PostList.Style.css";
 import { useNavigate, useParams } from "react-router-dom";
-import PostListItem from "./Components/PostListItem";
-import { getAllPostsList, getPostsList } from "../../../../API/FirebaseDB";
-import { FetchPostsList } from "./PostList.Types";
-import { PostData } from "../../../../API/Firebase.Types";
-import { ADVICE_DEFAULT, ADVICE_LIST } from "../../../../constants/variables";
+import { PostData } from "@/API/Firebase.Types";
+import { getAllPostsList, getPostsList } from "@/API/FirebaseDB";
+import AlertModal from "@/Components/Modal/Components/AlertModal/AlertModal";
+import useModal from "@/Components/Modal/Hooks/useModal";
+import PostBanner from "@/Components/PostBanner/PostBanner";
+import PostBannerDecoration from "@/Components/PostBannerDecoration/PostBannerDecoration";
+import { GET_POST_LIST_ERROR } from "@/constants/AlertMessage";
+import { POST_BANNER_THUMBNAILS } from "@/constants/URL";
+import { ADVICE_DEFAULT, ADVICE_LIST } from "@/constants/variables";
 import { BannerInfo } from "../PostPageType";
-import { POST_BANNER_THUMBNAILS } from "../../../../constants/URL";
-import PostBanner from "../../../../Components/PostBanner/PostBanner";
-import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
-import useModal from "../../../../Components/Modal/Hooks/useModal";
-import AlertModal from "../../../../Components/Modal/Components/AlertModal/AlertModal";
-import { GET_POST_LIST_ERROR } from "../../../../constants/AlertMessage";
+import PostListItem from "./Components/PostListItem";
+import "./PostList.Style.css";
+import { FetchPostsList } from "./PostList.Types";
 
 const PostList = (): React.ReactNode => {
   const [postsList, setPostsList] = useState<PostData[]>([]);
