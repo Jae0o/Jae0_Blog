@@ -28,7 +28,7 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
       </div>
 
       <div className="ptitem__info-container">
-        <h3 className="ptitem__title"> {post.title}</h3>
+        <h4 className="ptitem__title"> {post.title}</h4>
         <div className="ptitem__category">{post.category}</div>
         <ul className="ptitem__tags">
           {post.tag &&

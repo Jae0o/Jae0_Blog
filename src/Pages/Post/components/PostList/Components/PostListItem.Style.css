@@ -1,5 +1,6 @@
 .ptlist__ptitem {
   width: 90%;
+  height: 14rem;
   padding: 1rem 2rem;
 
   display: flex;
@@ -11,6 +12,8 @@
   user-select: none;
   cursor: pointer;
   transition: all 0.3s;
+
+  overflow: hidden;
 }
 
 .ptlist__ptitem:hover {
@@ -19,6 +22,8 @@
 }
 
 .ptitem__thumbnail-container {
+  width: 16rem;
+  height: 12rem;
   margin-right: 1rem;
 
   position: relative;
@@ -60,22 +65,23 @@
   flex-grow: 1;
   height: 100%;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   overflow: hidden;
 }
 
 .ptitem__title {
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 2rem;
 
   font-size: var(--fontsize-large);
-  color: white;
+  color: var(--color-white);
 
   overflow: hidden;
-  word-break: break-all;
   text-overflow: ellipsis;
   white-space: nowrap;
-
-  border: 1px solid red;
 }
 
 .ptitem__category {
