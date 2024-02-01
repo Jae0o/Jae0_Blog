@@ -1,8 +1,8 @@
-import { PostData } from "../../../../../../API/Firebase.Types";
+import "./PostDetailInfo.css";
+import { PostData } from "@/API/Firebase.Types";
 import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
 import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";
-import "./PostDetailInfo.css";
 
 interface PostDetailInfoProps {
   post: PostData;

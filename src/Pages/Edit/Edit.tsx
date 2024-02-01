@@ -1,18 +1,17 @@
-import React, { useContext } from "react";
 import "./Edit.Style.css";
+import React, { useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { PostData } from "@/API/Firebase.Types";
+import { setPost } from "@/API/FirebaseDB";
+import CheckAdmin from "@/Components/CheckAdmin/CheckAdmin";
+import UploadPage from "@/Components/UploadPage";
+import { ContextCategoryList } from "@/Context/ContextCategory";
+import { ContextIsLoading } from "@/Context/ContextIsLoading";
+import { ContextPosts } from "@/Context/ContextPosts";
+import { ContextTagList } from "@/Context/ContextTagList";
+import { ALERT_EDIT } from "@/constants/AlertMessage";
 import EditPage from "./components/Editor/Editor";
 import EditSubPage from "./components/EditorSub/EditorSub";
-import { UploadPost } from "./components/Editor/Editor.Types";
-import { setPost } from "../../API/FirebaseDB";
-import { OnUpdateOption } from "./components/EditorSub/EditorSub.Types";
-import { useNavigate, useParams } from "react-router-dom";
-import UploadPage from "../../Components/UploadPage";
-import { ALERT_EDIT } from "../../constants/AlertMessage";
-import { ContextCategoryList } from "../../Context/ContextCategory";
-import { ContextTagList } from "../../Context/ContextTagList";
-import { ContextIsLoading } from "../../Context/ContextIsLoading";
-import { ContextPosts } from "../../Context/ContextPosts";
-import CheckAdmin from "../../Components/CheckAdmin/CheckAdmin";
 
 const Edit = (): React.ReactNode => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
@@ -23,7 +22,7 @@ const Edit = (): React.ReactNode => {
   const navigate = useNavigate();
   const { category = "", id: pathId = "" } = useParams();
 
-  const onUpdateOption: OnUpdateOption = name => {
+  const onUpdateOption = (name: string) => {
     if (name === "category") {
       updateCategoryList();
       return;
@@ -34,7 +33,7 @@ const Edit = (): React.ReactNode => {
     }
   };
 
-  const onUploadPost: UploadPost = async post => {
+  const onUploadPost = async (post: PostData) => {
     updateIsLoading(true);
 
     await setPost(post)

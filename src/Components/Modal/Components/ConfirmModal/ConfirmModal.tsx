@@ -1,5 +1,5 @@
-import Modal from "../../Modal";
 import "./ConfirmModal.Styles.css";
+import Modal from "../../Modal";
 
 interface ConfirmModalProps {
   isShow: boolean;

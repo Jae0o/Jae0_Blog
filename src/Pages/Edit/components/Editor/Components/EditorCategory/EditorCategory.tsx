@@ -1,7 +1,13 @@
-import React from "react";
 import "./EditorCategory.Style.css";
-import { EditorCategoryProps } from "../../Editor.Types";
-import { OnChangeEvent } from "../../../../../../Types/Event.Types";
+import React from "react";
+import { OnChangeEvent } from "@/Types/Event.Types";
+import { EditValue } from "../../Editor.Types";
+
+interface EditorCategoryProps {
+  categoryList: string[];
+  state: string;
+  onSelecting: (key: EditValue, state: string) => void;
+}
 
 const EditorCategory = ({
   categoryList,

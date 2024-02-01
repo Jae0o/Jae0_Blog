@@ -1,4 +1,4 @@
-import { PostData } from "../API/Firebase.Types";
+import { PostData } from "@/API/Firebase.Types";
 
 export interface Advice {
   advice: string;

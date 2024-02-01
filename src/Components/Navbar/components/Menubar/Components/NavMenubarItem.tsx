@@ -1,8 +1,8 @@
-import React from "react";
 import "./NavMenubarItem.Style.css";
-import { NavigateFunction, useNavigate } from "react-router-dom";
-import useHover from "../../../../../Hooks/useHover";
+import React from "react";
 import { IconType } from "react-icons";
+import { NavigateFunction, useNavigate } from "react-router-dom";
+import useHover from "@/Hooks/useHover";
 
 export interface NavMenubarItemProps {
   icon: IconType;

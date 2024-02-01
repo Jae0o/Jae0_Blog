@@ -1,10 +1,10 @@
 import React, { createContext, useCallback, useEffect, useState } from "react";
-import { getAllPostsList } from "../API/FirebaseDB";
+import { PostData } from "@/API/Firebase.Types";
+import { getAllPostsList } from "@/API/FirebaseDB";
+import AlertModal from "@/Components/Modal/Components/AlertModal/AlertModal";
+import useModal from "@/Components/Modal/Hooks/useModal";
+import { CONTEXT_ERROR } from "@/constants/AlertMessage";
 import { ContextProps } from "./Context.Types";
-import { PostData } from "../API/Firebase.Types";
-import useModal from "../Components/Modal/Hooks/useModal";
-import AlertModal from "../Components/Modal/Components/AlertModal/AlertModal";
-import { CONTEXT_ERROR } from "../constants/AlertMessage";
 
 interface Posts {
   [key: string]: PostData[];

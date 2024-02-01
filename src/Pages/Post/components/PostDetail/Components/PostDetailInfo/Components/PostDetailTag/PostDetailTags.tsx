@@ -1,6 +1,9 @@
-import React from "react";
-import { PostDetailTagsProps } from "../../../../PostDetail.Types";
 import "./PostDetailTags.Style.css";
+import React from "react";
+
+interface PostDetailTagsProps {
+  tags: string[];
+}
 
 const PostDetailTags = ({ tags }: PostDetailTagsProps): React.ReactNode => {
   return (

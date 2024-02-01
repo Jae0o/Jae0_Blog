@@ -1,11 +1,16 @@
-import React, { useMemo, useRef } from "react";
-import "./EditorMD.Style.css";
-import { EditorMDProps, OnChangeEditorMD } from "../../Editor.Types";
-import ReactQuill, { Quill } from "react-quill";
-import "react-quill/dist/quill.snow.css";
 import { ImageResize } from "quill-image-resize-module-ts";
-import InputImage from "../../../../../../Components/InputImage/InputImage";
+import "./EditorMD.Style.css";
+import "react-quill/dist/quill.snow.css";
+import React, { useMemo, useRef } from "react";
+import ReactQuill, { Quill } from "react-quill";
+import InputImage from "@/Components/InputImage/InputImage";
+import { OnTypingEditor } from "../../Editor.Types";
 import { editor_formats } from "./EditorMD.Constants";
+
+interface EditorMDProps {
+  onTyping: OnTypingEditor;
+  state: string;
+}
 
 // 리사이징을 위한 등록
 Quill.register("modules/imageResize", ImageResize);
@@ -13,7 +18,8 @@ Quill.register("modules/imageResize", ImageResize);
 const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
   const quillRef = useRef<ReactQuill>(null);
   const imageInputRef = useRef<HTMLInputElement>(null);
-  const onChangeMD: OnChangeEditorMD = newValue => {
+
+  const onChangeMD = (newValue: string) => {
     onTyping("main", newValue);
   };
 

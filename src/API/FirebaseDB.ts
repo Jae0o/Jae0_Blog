@@ -1,7 +1,7 @@
+import { get, ref, set } from "firebase/database";
+import { ERROR_MESSAGE } from "@/constants/AlertMessage";
 import { database } from "./Firebase";
-import { get, set, ref } from "firebase/database";
 import { PostData } from "./Firebase.Types";
-import { ERROR_MESSAGE } from "../constants/AlertMessage";
 
 /* ============== Lists ============== */
 

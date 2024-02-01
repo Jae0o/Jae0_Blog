@@ -1,8 +1,8 @@
 import "./NavbarFooter.css";
-import ContactMeButton from "./components/ContactMeButton";
-import { FiGithub } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
+import ContactMeButton from "./components/ContactMeButton";
 
 const NavbarFooter = () => {
   return (

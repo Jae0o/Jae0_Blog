@@ -12,5 +12,9 @@
   "bracketSpacing": true,
   "bracketSameLine": true,
   "jsxBracketSameLine": true,
-  "arrowParens": "avoid"
+  "arrowParens": "avoid",
+
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [".css$", "^react", "^@", "^[../]", "^[./]"],
+  "importOrderSortSpecifiers": true
 }

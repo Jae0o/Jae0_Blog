@@ -1,7 +1,13 @@
-import React from "react";
 import "./EditorTags.Style.css";
-import { EditorTagsProps } from "../../Editor.Types";
-import { OnChangeEvent } from "../../../../../../Types/Event.Types";
+import React from "react";
+import { OnChangeEvent } from "@/Types/Event.Types";
+import { EditValue } from "../../Editor.Types";
+
+interface EditorTagsProps {
+  tags: string[];
+  state: string[];
+  onSelecting: (key: EditValue, tag: string[]) => void;
+}
 
 const EditorTags = ({
   tags,

@@ -1,20 +1,33 @@
-import React, { useEffect, useState } from "react";
-import "./Editor.Style.css";
-import { EditorProps, SetEditorPost } from "./Editor.Types";
-import { PostData } from "../../../../API/Firebase.Types";
-import EditorPublicToggle from "./Components/EditorPublic/EditorPublic";
-import EditorTextInput from "./Components/EditorTextInput/EditorTextInput";
-import EditorMDInput from "./Components/EditorMD/EditorMD";
-import EditorCategory from "./Components/EditorCategory/EditorCategory";
-import EditorTags from "./Components/EditorTags/EditorTags";
-import { postUploadValidate } from "../../../../Util/Validate";
-import { NEW_POST } from "../../../../constants/variables";
-import { FetchPostFunc } from "../../../Post/components/PostPageType";
-import { getPost } from "../../../../API/FirebaseDB";
-import { OnClickEvent } from "../../../../Types/Event.Types";
-import EditorThumbnail from "./Components/EditorThumbnail/EditorThumbnail";
 import { v4 } from "uuid";
+import "./Editor.Style.css";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { PostData } from "@/API/Firebase.Types";
+import { getPost } from "@/API/FirebaseDB";
+import { FetchPostFunc } from "@/Pages/Post/components/PostPageType";
+import { OnClickEvent } from "@/Types/Event.Types";
+import { postUploadValidate } from "@/Util/Validate";
+import { NEW_POST } from "@/constants/variables";
+import EditorCategory from "./Components/EditorCategory/EditorCategory";
+import EditorMDInput from "./Components/EditorMD/EditorMD";
+import EditorPublicToggle from "./Components/EditorPublic/EditorPublic";
+import EditorTags from "./Components/EditorTags/EditorTags";
+import EditorTextInput from "./Components/EditorTextInput/EditorTextInput";
+import EditorThumbnail from "./Components/EditorThumbnail/EditorThumbnail";
+import { EditValue } from "./Editor.Types";
+
+type SetEditorPost = (
+  key: EditValue,
+  value: string | boolean | string[],
+) => void;
+
+interface EditorProps {
+  category: string;
+  id: string;
+  categoryList: string[];
+  tagList: string[];
+  onSubmit: (post: PostData) => void;
+}
 
 const Editor = ({
   id,

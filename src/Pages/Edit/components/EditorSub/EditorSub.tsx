@@ -1,8 +1,11 @@
-import React, { useState } from "react";
 import "./EditorSub.Style.css";
+import React, { useState } from "react";
+import { OnClickEvent } from "@/Types/Event.Types";
 import InsertOptionButton from "./Components/InsertOptionButton";
-import { EditorSubPageProps } from "./EditorSub.Types";
-import { OnClickEvent } from "../../../../Types/Event.Types";
+
+interface EditorSubPageProps {
+  onUpdate: (name: string) => void;
+}
 
 const EditSubPage = ({ onUpdate }: EditorSubPageProps): React.ReactNode => {
   const [toggled, setToggled] = useState<boolean>(false);

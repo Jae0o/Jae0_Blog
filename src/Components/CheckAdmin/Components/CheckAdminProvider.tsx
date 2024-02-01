@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import { ContextAuthUser } from "../../../Context/ContextAuthUser";
+import { ContextAuthUser } from "@/Context/ContextAuthUser";
 
 interface CheckAdminProviderProps {
   children: React.ReactNode;
