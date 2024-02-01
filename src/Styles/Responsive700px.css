@@ -3,7 +3,5 @@
 @media (max-width: 700px) {
   .outlet__post {
     padding: 0;
-
-    border: 1px solid red;
   }
 }
