@@ -58,7 +58,7 @@ const PostList = (): React.ReactNode => {
 
   return (
     <>
-      <div className="outlet__ptlist">
+      <article className="outlet__ptlist">
         <div className="ptlist__banner">
           <PostBannerDecoration />
           <PostBanner
@@ -67,18 +67,17 @@ const PostList = (): React.ReactNode => {
             subText={`- ${bannerInfo.advice.author}`}
           />
         </div>
-        <div className="ptlist__content">
-          <ul className="ptlist__list-container">
-            {postsList &&
-              postsList.map(post => (
-                <PostListItem
-                  post={post}
-                  key={post.id}
-                />
-              ))}
-          </ul>
-        </div>
-      </div>
+
+        <ul className="ptlist__list-container">
+          {postsList &&
+            postsList.map(post => (
+              <PostListItem
+                post={post}
+                key={post.id}
+              />
+            ))}
+        </ul>
+      </article>
 
       <AlertModal
         isShow={isShowModal}

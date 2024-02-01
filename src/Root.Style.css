@@ -11,3 +11,10 @@
 
   position: relative;
 }
+
+.outlet__layout {
+  flex-grow: 1;
+  height: 100%;
+
+  overflow: hidden;
+}

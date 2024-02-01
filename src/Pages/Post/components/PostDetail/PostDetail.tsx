@@ -12,7 +12,7 @@ import AlertModal from "../../../../Components/Modal/Components/AlertModal/Alert
 import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "../../../../constants/AlertMessage";
 import PostAuthAction from "./Components/PostAuthAction/PostAuthAction";
 import { ContextAuthUser } from "../../../../Context/ContextAuthUser";
-import PostDetailInfo from "./Components/PostDetailInfo/PostDetailContent";
+import PostDetailInfo from "./Components/PostDetailInfo/PostDetailInfo";
 
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
