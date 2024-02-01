@@ -1,7 +1,7 @@
-import React from "react";
 import "./NavProfileActions.Style.css";
-import { useNavigate, NavigateFunction } from "react-router-dom";
-import { OnClickEvent } from "../../../../../Types/Event.Types";
+import React from "react";
+import { NavigateFunction, useNavigate } from "react-router-dom";
+import { OnClickEvent } from "@/Types/Event.Types";
 
 interface NavProfileActionsProps {
   action: "home" | "search" | "write";

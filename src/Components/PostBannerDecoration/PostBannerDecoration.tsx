@@ -1,5 +1,5 @@
-import React, { useCallback } from "react";
 import "./PostBannerDecoration.Style.css";
+import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const PostBannerDecoration = (): React.ReactNode => {

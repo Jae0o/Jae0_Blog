@@ -1,5 +1,5 @@
-import Modal from "../../Modal";
 import "./AlertModal.Styles.css";
+import Modal from "../../Modal";
 
 interface AlertModalProps {
   isShow: boolean;

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { ContextAuthUser } from "../../Context/ContextAuthUser";
-import { CHECK_ADMIN } from "../../constants/AlertMessage";
+import { ContextAuthUser } from "@/Context/ContextAuthUser";
+import { CHECK_ADMIN } from "@/constants/AlertMessage";
 import AlertModal from "../Modal/Components/AlertModal/AlertModal";
 import LoginFormModal from "../Modal/Components/LoginFormModal/LoginFormModal";
 import useModal from "../Modal/Hooks/useModal";

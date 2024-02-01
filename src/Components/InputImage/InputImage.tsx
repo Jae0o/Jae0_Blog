@@ -1,6 +1,6 @@
-import React from "react";
 import "./InputImage.Styles.css";
-import { setImageStorage } from "../../API/FirebaseStore";
+import React from "react";
+import { setImageStorage } from "@/API/FirebaseStore";
 
 interface InputImageProps {
   inputRef: React.RefObject<HTMLInputElement>;
