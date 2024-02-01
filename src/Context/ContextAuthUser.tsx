@@ -1,7 +1,7 @@
-import { createContext, useState } from "react";
-import { ContextProps } from "./Context.Types";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../API/Firebase";
+import { createContext, useState } from "react";
+import { auth } from "@/API/Firebase";
+import { ContextProps } from "./Context.Types";
 
 interface AuthUserContext {
   isLoggedIn: boolean;
