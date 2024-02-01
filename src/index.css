@@ -116,4 +116,8 @@ section {
 
   /* z-index */
   --z-index-modal: 20;
+
+  /* component layout size */
+
+  --layout-width-navbar: 24rem;
 }
