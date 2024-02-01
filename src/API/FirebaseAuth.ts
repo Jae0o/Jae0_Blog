@@ -1,6 +1,8 @@
 import {
   UserCredential,
+  browserSessionPersistence,
   createUserWithEmailAndPassword,
+  setPersistence,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "./Firebase";
@@ -17,9 +19,15 @@ export const firebaseSignUp: SignUp = async ({ email, password }) => {
 };
 
 export const firebaseLogin: Login = async ({ email, password }) => {
-  return await signInWithEmailAndPassword(auth, email, password)
-    .then(res => {
-      return res;
+  return await setPersistence(auth, browserSessionPersistence)
+    .then(async () => {
+      return await signInWithEmailAndPassword(auth, email, password)
+        .then(res => {
+          return res;
+        })
+        .catch(error => {
+          throw Error(error);
+        });
     })
     .catch(error => {
       throw Error(error);

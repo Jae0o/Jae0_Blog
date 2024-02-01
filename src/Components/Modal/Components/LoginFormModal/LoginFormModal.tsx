@@ -1,8 +1,7 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import Modal from "../../Modal";
 import { LoginFormInput } from "./Components/LoginFormInput";
 import "./LoginFormModal.Styles.css";
-import { ContextAuthUser } from "../../../../Context/ContextAuthUser";
 import { firebaseLogin } from "../../../../API/FirebaseAuth";
 import AlertModal from "../AlertModal/AlertModal";
 import useModal from "../../Hooks/useModal";
@@ -23,7 +22,6 @@ const LoginFormModal = ({
   onSuccess,
 }: LoginFormModalProps) => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
-  const { setLoginUser } = useContext(ContextAuthUser);
   const { isShowModal, openModal, closeModal } = useModal();
   const [alertModal, setAlertModal] = useState("");
 
@@ -53,14 +51,12 @@ const LoginFormModal = ({
     }
 
     firebaseLogin(loginInfo)
-      .then(({ user }) => {
-        setLoginUser(user);
+      .then(() => {
         onSuccess();
       })
       .catch(() => {
         setAlertModal(LOGIN_VALIDATION.SUBMIT_FAIL);
         openModal();
-        console.log();
       });
   };
 
