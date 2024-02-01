@@ -1,7 +1,13 @@
-import React from "react";
 import "./EditorTextInput.Style.css";
-import { EditorTextInputProps } from "../../Editor.Types";
-import { OnChangeEvent } from "../../../../../../Types/Event.Types";
+import React from "react";
+import { OnChangeEvent } from "@/Types/Event.Types";
+import { EditValue, OnTypingEditor } from "../../Editor.Types";
+
+interface EditorTextInputProps {
+  typeName: EditValue;
+  onTyping: OnTypingEditor;
+  state: string;
+}
 
 const EditorTextInput = ({
   typeName,

@@ -1,7 +1,12 @@
-import React, { useCallback } from "react";
 import "./EditorPublic.Style.css";
-import { EditPublicProps, ChangePublicText } from "../../Editor.Types";
-import { OnChangeEvent } from "../../../../../../Types/Event.Types";
+import React, { useCallback } from "react";
+import { OnChangeEvent } from "@/Types/Event.Types";
+import { EditValue } from "../../Editor.Types";
+
+interface EditPublicProps {
+  state: boolean;
+  onToggle: (key: EditValue, state: boolean) => void;
+}
 
 const EditorPublic = ({
   state,
@@ -11,7 +16,7 @@ const EditorPublic = ({
     onToggle("isPublic", !state);
   };
 
-  const changePublicText = useCallback<ChangePublicText>(isPublic => {
+  const changePublicText = useCallback((isPublic: boolean) => {
     if (isPublic) {
       return "공개 상태";
     }
