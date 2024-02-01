@@ -15,6 +15,6 @@
   "arrowParens": "avoid",
 
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
-  "importOrder": ["^react", "^@", "^[../]", "^[./]"],
+  "importOrder": [".css$", "^react", "^@", "^[../]", "^[./]"],
   "importOrderSortSpecifiers": true
 }
