@@ -1,16 +1,16 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from "./Root";
-import Home from "./Pages/Home/Home";
+import React from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
+import { ContextCategoryListProvider } from "./Context/ContextCategory";
+import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
+import { ContextPostsProvider } from "./Context/ContextPosts";
+import { ContextTagListProvider } from "./Context/ContextTagList";
 import Edit from "./Pages/Edit/Edit";
+import Home from "./Pages/Home/Home";
 import Post from "./Pages/Post/Post";
 import PostDetail from "./Pages/Post/components/PostDetail/PostDetail";
 import PostList from "./Pages/Post/components/PostList/PostList";
-import { ContextCategoryListProvider } from "./Context/ContextCategory";
-import { ContextTagListProvider } from "./Context/ContextTagList";
-import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
-import { ContextPostsProvider } from "./Context/ContextPosts";
-import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
-import React from "react";
+import Root from "./Root";
 
 const router = createBrowserRouter([
   {

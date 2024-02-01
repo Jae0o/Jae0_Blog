@@ -1,8 +1,11 @@
 import DOMPurify from "isomorphic-dompurify";
-import { PostDetailViewerProps } from "../../PostDetail.Types";
 import "./PostDetailViewer.Styles.css";
+import "@/Styles/Quill.Styles.css";
 import "react-quill/dist/quill.snow.css";
-import "../../../../../../Styles/Quill.Styles.css";
+
+interface PostDetailViewerProps {
+  content: string;
+}
 
 const PostDetailViewer = ({ content }: PostDetailViewerProps) => {
   const checkXSS = DOMPurify.sanitize(content);

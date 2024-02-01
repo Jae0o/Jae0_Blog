@@ -1,3 +1,4 @@
+import "./PostList.Style.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostData } from "@/API/Firebase.Types";
@@ -11,8 +12,8 @@ import { POST_BANNER_THUMBNAILS } from "@/constants/URL";
 import { ADVICE_DEFAULT, ADVICE_LIST } from "@/constants/variables";
 import { BannerInfo } from "../PostPageType";
 import PostListItem from "./Components/PostListItem";
-import "./PostList.Style.css";
-import { FetchPostsList } from "./PostList.Types";
+
+type FetchPostsList = () => Promise<void>;
 
 const PostList = (): React.ReactNode => {
   const [postsList, setPostsList] = useState<PostData[]>([]);

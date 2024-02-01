@@ -1,9 +1,13 @@
-import React from "react";
 import "./PostListItem.Style.css";
-import { PostListItemProps } from "../PostList.Types";
-import { convertDateFormat } from "../../../../../Util/UtilFunctions";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { OnClickEvent } from "../../../../../Types/Event.Types";
+import { PostData } from "@/API/Firebase.Types";
+import { OnClickEvent } from "@/Types/Event.Types";
+import { convertDateFormat } from "@/Util/UtilFunctions";
+
+interface PostListItemProps {
+  post: PostData;
+}
 
 const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
   const formattedDate: string = convertDateFormat(JSON.parse(post.createAt));

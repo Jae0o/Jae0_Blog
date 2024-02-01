@@ -1,8 +1,8 @@
+import "./Root.Style.css";
+import "./Styles/Quill.Styles.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar";
-import "./Root.Style.css";
-import "./Styles/Quill.Styles.css";
 
 const Root = (): React.ReactNode => {
   return (

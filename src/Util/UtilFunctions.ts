@@ -1,5 +1,4 @@
-import { ConvertDateFormat } from "./UtilFunctions.Types";
-
+type ConvertDateFormat = (date: string) => string;
 export const convertDateFormat: ConvertDateFormat = date => {
   const dateType = new Date(date);
 

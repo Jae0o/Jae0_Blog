@@ -1,18 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
 import "./PostDetail.Style.css";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getPost } from "../../../../API/FirebaseDB";
-import { PostData } from "../../../../API/Firebase.Types";
+import { PostData } from "@/API/Firebase.Types";
+import { getPost } from "@/API/FirebaseDB";
+import AlertModal from "@/Components/Modal/Components/AlertModal/AlertModal";
+import useModal from "@/Components/Modal/Hooks/useModal";
+import PostBanner from "@/Components/PostBanner/PostBanner";
+import PostBannerDecoration from "@/Components/PostBannerDecoration/PostBannerDecoration";
+import { ContextAuthUser } from "@/Context/ContextAuthUser";
+import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "@/constants/AlertMessage";
 import { FetchPostFunc } from "../PostPageType";
-import PostBanner from "../../../../Components/PostBanner/PostBanner";
-import PostBannerDecoration from "../../../../Components/PostBannerDecoration/PostBannerDecoration";
-import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
-import useModal from "../../../../Components/Modal/Hooks/useModal";
-import AlertModal from "../../../../Components/Modal/Components/AlertModal/AlertModal";
-import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "../../../../constants/AlertMessage";
 import PostAuthAction from "./Components/PostAuthAction/PostAuthAction";
-import { ContextAuthUser } from "../../../../Context/ContextAuthUser";
 import PostDetailInfo from "./Components/PostDetailInfo/PostDetailInfo";
+import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
 
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
