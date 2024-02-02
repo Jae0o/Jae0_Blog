@@ -1,5 +1,6 @@
 import "./Navbar.Styles.css";
 import { useState } from "react";
+import NavMenubar from "./Components/NavMenubar/NavMenubar";
 import NavToggleButton from "./Components/NavToggleButton/NavToggleButton";
 
 const Navbar = () => {
@@ -17,6 +18,8 @@ const Navbar = () => {
           isToggle={isToggle}
           onToggle={handleToggle}
         />
+
+        <NavMenubar isToggle={isToggle} />
       </nav>
     </section>
   );

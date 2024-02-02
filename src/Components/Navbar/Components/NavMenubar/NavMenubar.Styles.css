@@ -1,0 +1,51 @@
+.nav__menubar {
+  width: 20rem;
+  padding: 1rem;
+
+  display: flex;
+
+  position: absolute;
+  top: 8rem;
+  right: 0;
+
+  background-color: var(--color-main);
+  border-radius: var(--radius-semi-large);
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+
+  z-index: var(--z-index-nav-menubar);
+}
+
+.Active__NavMenu {
+  animation-name: ActiveMenubar;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.unActive__NavMenu {
+  animation-name: unActiveMenubar;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes unActiveMenubar {
+  from {
+    transform: translateX(0rem);
+  }
+
+  to {
+    transform: translateX(24rem);
+    display: none;
+  }
+}
+
+@keyframes ActiveMenubar {
+  from {
+    transform: translateX(24rem);
+  }
+
+  to {
+    transform: translateX(0rem);
+  }
+}

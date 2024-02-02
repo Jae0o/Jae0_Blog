@@ -116,6 +116,8 @@ section {
   --fontweight-medium: 400;
 
   /* z-index */
+
+  --z-index-nav-menubar: 3;
   --z-index-modal: 20;
 
   /* component layout size */

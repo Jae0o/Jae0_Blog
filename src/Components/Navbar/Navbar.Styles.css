@@ -3,6 +3,8 @@
   height: 10rem;
 
   position: relative;
+
+  overflow: hidden;
 }
 
 .nav {
@@ -11,7 +13,9 @@
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+
+  position: relative;
 
   background-color: var(--color-main);
   box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
