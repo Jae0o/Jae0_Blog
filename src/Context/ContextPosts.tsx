@@ -34,15 +34,35 @@ export const ContextPostsProvider = ({
       return;
     }
 
-    const WORK_posts = posts.filter(item => item.category === "WORK");
-    const DIARY_posts = posts.filter(item => item.category === "DIARY");
-    const BLOG_WORK_posts = posts.filter(item => item.category === "BLOG_WORK");
-    setPosts({
+    const newPosts: Posts = {
       allPosts: posts,
-      WORK: WORK_posts,
-      DIARY: DIARY_posts,
-      BLOG_WORK: BLOG_WORK_posts,
+      WORK: [],
+      DIARY: [],
+      BLOG: [],
+      Frontend: [],
+    };
+
+    posts.forEach(post => {
+      const { category } = post;
+
+      if (category === "WORK") {
+        newPosts.WORK.push(post);
+      }
+
+      if (category === "DIARY") {
+        newPosts.DIARY.push(post);
+      }
+
+      if (category === "BLOG") {
+        newPosts.BLOG.push(post);
+      }
+
+      if (category === "Frontend") {
+        newPosts.Frontend.push(post);
+      }
     });
+
+    setPosts(newPosts);
   }, [openModal]);
 
   useEffect(() => {
