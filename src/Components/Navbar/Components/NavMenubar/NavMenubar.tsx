@@ -1,5 +1,5 @@
-import "./AsideMenubar.Style.css";
-import React, { useContext } from "react";
+import "./NavMenubar.Styles.css";
+import { useContext, useEffect, useRef } from "react";
 import { FaTools } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
 import { FaRegCalendarCheck } from "react-icons/fa6";
@@ -7,11 +7,45 @@ import { RiReactjsLine } from "react-icons/ri";
 import MenubarItem from "@/Components/MenubarItem/MenubarItem";
 import { ContextPosts } from "@/Context/ContextPosts";
 
-const AsideMenubar = (): React.ReactNode => {
+interface NavMenubarProps {
+  isToggle: boolean;
+  onToggle: () => void;
+}
+const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
   const { posts } = useContext(ContextPosts);
+  const menubarRef = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    const handleAwayClick = ({ currentTarget, target }: MouseEvent) => {
+      const { current } = menubarRef;
+
+      if (!current || !isToggle || currentTarget === current) {
+        return;
+      }
+
+      if (
+        target instanceof HTMLElement &&
+        target.className === "navbar_dropdown_checkbox"
+      ) {
+        return;
+      }
+
+      onToggle();
+    };
+
+    document.addEventListener("mouseup", handleAwayClick);
+
+    return () => {
+      document.removeEventListener("mouseup", handleAwayClick);
+    };
+  }, [isToggle, onToggle]);
 
   return (
-    <ul className="aside__menubar">
+    <ul
+      className={`nav__menubar ${
+        isToggle ? "Active__NavMenu" : "unActive__NavMenu"
+      }`}
+      ref={menubarRef}>
       <MenubarItem
         icon={FaTools}
         title={"Blog 작업 기록"}
@@ -43,4 +77,4 @@ const AsideMenubar = (): React.ReactNode => {
   );
 };
 
-export default AsideMenubar;
+export default NavMenubar;

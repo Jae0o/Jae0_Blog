@@ -1,0 +1,125 @@
+.navbar_dropdown-button {
+  width: 8rem;
+}
+
+.navbar_dropdown_checkbox {
+  --x-width: calc(30px * 1.41421356237px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+
+  cursor: pointer;
+}
+
+.navbar_dropdown_checkbox::after,
+.navbar_dropdown_checkbox_input,
+.navbar_dropdown_checkbox::before {
+  content: "";
+  width: 30px;
+  height: 0.4rem;
+
+  display: block;
+
+  position: relative;
+
+  border-radius: 10rem;
+  background-color: var(--color-point);
+}
+
+.navbar_dropdown_checkbox_input {
+  opacity: 1;
+  appearance: none;
+
+  pointer-events: none;
+  transition: all 0.6s ease-in-out;
+}
+
+.navbar_dropdown_checkbox_input:checked {
+  width: 0;
+  opacity: 0;
+}
+
+.navbar_dropdown_checkbox::before {
+  animation: toggleTopOut 0.6s forwards;
+}
+
+.navbar_dropdown_checkbox:has(input:checked)::before {
+  animation: toggleTopIn 0.6s forwards;
+}
+
+.navbar_dropdown_checkbox::after {
+  animation: toggleBottomOut 0.6s forwards;
+}
+
+.navbar_dropdown_checkbox:has(input:checked)::after {
+  animation: toggleBottomIn 0.6s forwards;
+}
+
+@keyframes toggleTopIn {
+  from {
+    width: 30px;
+
+    left: 0;
+
+    rotate: 0deg;
+    transform: translateY(0px);
+  }
+
+  to {
+    left: 10px;
+    rotate: 45deg;
+    transform: translateY(14px);
+    width: 28px;
+  }
+}
+
+@keyframes toggleTopOut {
+  from {
+    left: 10px;
+    rotate: 45deg;
+    transform: translateY(14px);
+    width: 28px;
+  }
+
+  to {
+    left: 0;
+    rotate: 0deg;
+    transform: translateY(0px);
+    width: 30px;
+  }
+}
+
+@keyframes toggleBottomIn {
+  from {
+    width: 30px;
+    rotate: 0deg;
+    transform: translateY(0px);
+    left: 0px;
+  }
+
+  to {
+    width: 28px;
+    rotate: -45deg;
+    transform: translateY(-15px);
+    left: 10px;
+  }
+}
+
+@keyframes toggleBottomOut {
+  from {
+    width: 28px;
+    rotate: -45deg;
+    transform: translateY(-15px);
+    left: 10px;
+  }
+
+  to {
+    width: 30px;
+    rotate: 0deg;
+    transform: translateY(0px);
+    left: 0px;
+  }
+}

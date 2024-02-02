@@ -1,6 +1,6 @@
 .ptlist__ptitem {
   width: 90%;
-  height: 14rem;
+  min-height: 14rem;
   padding: 1rem 2rem;
 
   display: flex;

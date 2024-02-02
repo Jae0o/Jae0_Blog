@@ -1,0 +1,34 @@
+.nav__title-layout {
+  margin-left: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+
+  cursor: pointer;
+  user-select: none;
+}
+.nav__title-text {
+  font-size: var(--fontsize-big);
+  font-weight: var(--fontweight-border);
+  color: var(--color-point);
+}
+
+.nav__title-decoration {
+  width: 0;
+  height: 2px;
+
+  background-color: var(--color-point);
+  border-radius: 10px;
+
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.nav__title-layout:hover .nav__title-decoration {
+  width: 100%;
+
+  opacity: 1;
+}
