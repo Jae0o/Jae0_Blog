@@ -8,8 +8,8 @@
     animation-fill-mode: forwards;
   }
 
-  .nav {
-    animation-name: outNavbarAnimation;
+  .aside {
+    animation-name: outAsideBarAnimation;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
@@ -20,7 +20,7 @@
   0% {
     position: absolute;
     top: 0px;
-    left: var(--layout-width-navbar);
+    left: var(--layout-width-AsideBar);
     right: 0px;
     bottom: 0px;
   }
@@ -38,7 +38,7 @@
   }
 }
 
-@keyframes outNavbarAnimation {
+@keyframes outAsideBarAnimation {
   0% {
     left: 0px;
   }
@@ -64,15 +64,15 @@
     animation-fill-mode: forwards;
   }
 
-  .nav {
-    animation-name: inNavbarAnimation;
+  .aside {
+    animation-name: inAsideBarAnimation;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 }
 
-@keyframes inNavbarAnimation {
+@keyframes inAsideBarAnimation {
   0% {
     left: -300px;
   }
@@ -93,7 +93,7 @@
 
   99% {
     top: 0px;
-    left: var(--layout-width-navbar);
+    left: var(--layout-width-AsideBar);
     right: 0px;
     bottom: 0px;
     position: absolute;

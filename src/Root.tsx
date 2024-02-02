@@ -5,12 +5,12 @@ import "./Styles/Responsive700px.css";
 import "./Styles/Responsive1000px.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar";
+import AsideBar from "./Components/AsideBar/AsideBar";
 
 const Root = (): React.ReactNode => {
   return (
     <main className="Root">
-      <Navbar />
+      <AsideBar />
       <section className="outlet__layout">
         <Outlet />
       </section>

@@ -1,19 +1,19 @@
-import "./Navbar.Style.css";
+import "./AsideBar.Styles.css";
 import React from "react";
 import NavMenubar from "./components/Menubar/NavMenubar";
 import NavbarFooter from "./components/NavbarFooter/NavbarFooter";
 import NavProfile from "./components/Profile/NavProfile";
 
-const Navbar = (): React.ReactNode => {
+const AsideBar = (): React.ReactNode => {
   return (
-    <nav className="nav">
-      <div className="nav_layout">
+    <aside className="aside">
+      <div className="aside_layout">
         <NavProfile />
         <NavMenubar />
       </div>
       <NavbarFooter />
-    </nav>
+    </aside>
   );
 };
 
-export default Navbar;
+export default AsideBar;
