@@ -1,10 +1,12 @@
 .nav__menubar {
-  width: 20rem;
-  padding: 1rem;
+  min-height: fit-content;
+  padding: 1.4rem;
 
   display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 
-  position: absolute;
+  position: fixed;
   top: 8rem;
   right: 0;
 
@@ -35,14 +37,14 @@
   }
 
   to {
-    transform: translateX(24rem);
+    transform: translateX(100%);
     display: none;
   }
 }
 
 @keyframes ActiveMenubar {
   from {
-    transform: translateX(24rem);
+    transform: translateX(100%);
   }
 
   to {

@@ -36,10 +36,12 @@ export const ContextPostsProvider = ({
 
     const WORK_posts = posts.filter(item => item.category === "WORK");
     const DIARY_posts = posts.filter(item => item.category === "DIARY");
+    const BLOG_WORK_posts = posts.filter(item => item.category === "BLOG_WORK");
     setPosts({
       allPosts: posts,
       WORK: WORK_posts,
       DIARY: DIARY_posts,
+      BLOG_WORK: BLOG_WORK_posts,
     });
   }, [openModal]);
 
