@@ -1,4 +1,4 @@
-.navbar__footer-link {
+.aside__footer-link {
   width: 5rem;
   height: 5rem;
 
@@ -13,11 +13,11 @@
   transition: opacity 0.3s;
 }
 
-.navbar__footer-link:hover {
+.aside__footer-link:hover {
   opacity: 0.5;
 }
 
-.navbar__footer-link svg {
+.aside__footer-link svg {
   font-size: 3.2rem;
   color: var(--color-point);
 }

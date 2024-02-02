@@ -15,7 +15,7 @@ const ContactMeButton = ({
       href={url}
       target="_blank"
       rel="noreferrer noopener"
-      className="navbar__footer-link">
+      className="aside__footer-link">
       {Icon}
     </a>
   );

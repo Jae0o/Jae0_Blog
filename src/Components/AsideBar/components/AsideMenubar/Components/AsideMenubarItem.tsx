@@ -1,22 +1,22 @@
-import "./NavMenubarItem.Style.css";
+import "./AsideMenubarItem.Style.css";
 import React from "react";
 import { IconType } from "react-icons";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import useHover from "@/Hooks/useHover";
 
-export interface NavMenubarItemProps {
+export interface AsideMenubarItemProps {
   icon: IconType;
   title: string;
   category: string;
   postCount: number;
 }
 
-const NavMenubarItem = ({
+const AsideMenubarItem = ({
   icon: ICON,
   title,
   category,
   postCount = 0,
-}: NavMenubarItemProps): React.ReactNode => {
+}: AsideMenubarItemProps): React.ReactNode => {
   const navigate: NavigateFunction = useNavigate();
   const { isHover, hoverRef } = useHover();
 
@@ -49,4 +49,4 @@ const NavMenubarItem = ({
   );
 };
 
-export default NavMenubarItem;
+export default AsideMenubarItem;

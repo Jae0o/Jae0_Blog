@@ -1,12 +1,12 @@
-import "./NavbarFooter.css";
+import "./AsideFooter.Styles.css";
 import { FaInstagram } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import ContactMeButton from "./components/ContactMeButton";
 
-const NavbarFooter = () => {
+const AsideFooter = () => {
   return (
-    <footer className="navbar__footer">
+    <footer className="aside__footer">
       <ContactMeButton
         url="https://github.com/Jae0o"
         Icon={<FiGithub />}
@@ -23,4 +23,4 @@ const NavbarFooter = () => {
   );
 };
 
-export default NavbarFooter;
+export default AsideFooter;

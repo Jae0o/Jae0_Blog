@@ -1,18 +1,18 @@
-import "./NavProfile.Style.css";
+import "./AsideProfile.Styles.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { OnClickEvent } from "@/Types/Event.Types";
 import { PROFILE } from "@/constants/URL";
-import NavProfileActions from "./Components/NavProfileActions";
+import AsideProfileActions from "./Components/AsideProfileActions";
 
-const NavProfile = (): React.ReactNode => {
+const AsideProfile = (): React.ReactNode => {
   const navigate = useNavigate();
 
   const onClickHandler: OnClickEvent = () => {
     navigate("/");
   };
   return (
-    <div className="nav__profile">
+    <div className="aside__profile">
       <div className="profile__header">
         <div className="profile__thumbnail-container">
           <img
@@ -22,17 +22,17 @@ const NavProfile = (): React.ReactNode => {
           />
         </div>
         <div className="profile__actions">
-          <NavProfileActions
+          <AsideProfileActions
             action="search"
             icon="pageview"
             path="/"
           />
-          <NavProfileActions
+          <AsideProfileActions
             action="write"
             icon="lock"
             path="/editor/newPost/newPost"
           />
-          <NavProfileActions
+          <AsideProfileActions
             action="home"
             icon="Cottage"
             path="/"
@@ -48,4 +48,4 @@ const NavProfile = (): React.ReactNode => {
   );
 };
 
-export default NavProfile;
+export default AsideProfile;
