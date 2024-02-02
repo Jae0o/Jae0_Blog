@@ -1,6 +1,7 @@
 import "./Navbar.Styles.css";
 import { useState } from "react";
 import NavMenubar from "./Components/NavMenubar/NavMenubar";
+import NavTitle from "./Components/NavTitle/NavTitle";
 import NavToggleButton from "./Components/NavToggleButton/NavToggleButton";
 
 const Navbar = () => {
@@ -14,6 +15,7 @@ const Navbar = () => {
   return (
     <section className="nav__background">
       <nav className="nav">
+        <NavTitle />
         <NavToggleButton
           isToggle={isToggle}
           onToggle={handleToggle}
