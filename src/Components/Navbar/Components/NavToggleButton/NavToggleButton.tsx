@@ -1,14 +1,11 @@
-import "./NavbarToggleButton.Styles.css";
+import "./NavToggleButton.Styles.css";
 
-interface NavbarToggleButtonProps {
+interface NavToggleButtonProps {
   isToggle: boolean;
   onToggle: () => void;
 }
 
-const NavbarToggleButton = ({
-  isToggle,
-  onToggle,
-}: NavbarToggleButtonProps) => {
+const NavToggleButton = ({ isToggle, onToggle }: NavToggleButtonProps) => {
   return (
     <div className="navbar_dropdown-button">
       <label className="navbar_dropdown_checkbox">
@@ -25,4 +22,4 @@ const NavbarToggleButton = ({
   );
 };
 
-export default NavbarToggleButton;
+export default NavToggleButton;
