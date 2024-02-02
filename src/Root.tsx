@@ -6,11 +6,13 @@ import "./Styles/Responsive1000px.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import AsideBar from "./Components/AsideBar/AsideBar";
+import Navbar from "./Components/Navbar/Navbar";
 
 const Root = (): React.ReactNode => {
   return (
     <main className="Root">
       <AsideBar />
+      <Navbar />
       <section className="outlet__layout">
         <Outlet />
       </section>
