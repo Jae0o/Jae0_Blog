@@ -7,14 +7,21 @@
 
   .outlet__layout {
     animation-name: outletLayout1000px__below;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 
   .aside {
     animation-name: outAsideBarAnimation;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .nav__background {
+    animation-name: inNavbarAnimation;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
@@ -24,19 +31,19 @@
   0% {
     height: 100%;
 
+    position: absolute;
     left: var(--layout-width-AsideBar);
     right: 0px;
     bottom: 0px;
-    position: absolute;
   }
 
   100% {
+    height: calc(100% - 10rem);
+
+    position: absolute;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    position: absolute;
-
-    height: calc(100% - 10rem);
   }
 }
 
@@ -45,14 +52,21 @@
     left: 0px;
   }
 
-  90% {
-    left: -300px;
-  }
-
   100% {
     left: -300px;
     display: none;
     position: absolute;
+  }
+}
+
+@keyframes inNavbarAnimation {
+  0% {
+    top: -100px;
+    position: absolute;
+  }
+
+  100% {
+    top: 0px;
   }
 }
 
@@ -61,20 +75,23 @@
 @media (min-width: 1000px) {
   .outlet__layout {
     animation-name: outletLayout1000px__more;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 
   .aside {
     animation-name: inAsideBarAnimation;
-    animation-duration: 2s;
+    animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 
   .nav__background {
-    display: none;
+    animation-name: outNavbarAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
   }
 }
 
@@ -103,5 +120,22 @@
     left: var(--layout-width-AsideBar);
     right: 0px;
     bottom: 0px;
+  }
+}
+
+@keyframes outNavbarAnimation {
+  0% {
+    top: 0px;
+    position: absolute;
+  }
+
+  50% {
+    top: -100px;
+    display: none;
+  }
+
+  100% {
+    top: -100px;
+    display: none;
   }
 }
