@@ -1,16 +1,20 @@
 /* below - 1000px */
 
 @media (max-width: 1000px) {
+  .Root {
+    flex-direction: column;
+  }
+
   .outlet__layout {
     animation-name: outletLayout1000px__below;
-    animation-duration: 0.5s;
+    animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 
   .aside {
     animation-name: outAsideBarAnimation;
-    animation-duration: 0.5s;
+    animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
@@ -18,23 +22,21 @@
 
 @keyframes outletLayout1000px__below {
   0% {
-    position: absolute;
-    top: 0px;
-    left: var(--layout-width-AsideBar);
-    right: 0px;
-    bottom: 0px;
-  }
+    height: 100%;
 
-  90% {
-    top: 0px;
-    left: 0px;
+    left: var(--layout-width-AsideBar);
     right: 0px;
     bottom: 0px;
     position: absolute;
   }
 
   100% {
-    position: none;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+
+    height: calc(100% - 10rem);
   }
 }
 
@@ -59,16 +61,20 @@
 @media (min-width: 1000px) {
   .outlet__layout {
     animation-name: outletLayout1000px__more;
-    animation-duration: 0.5s;
+    animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
 
   .aside {
     animation-name: inAsideBarAnimation;
-    animation-duration: 0.5s;
+    animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
+  }
+
+  .nav__background {
+    display: none;
   }
 }
 
@@ -84,22 +90,18 @@
 
 @keyframes outletLayout1000px__more {
   0% {
+    height: calc(100% - 10rem);
+
     position: absolute;
-    top: 0px;
     left: 0px;
     right: 0px;
     bottom: 0px;
   }
 
-  99% {
-    top: 0px;
+  100% {
+    position: absolute;
     left: var(--layout-width-AsideBar);
     right: 0px;
     bottom: 0px;
-    position: absolute;
-  }
-
-  100% {
-    position: none;
   }
 }
