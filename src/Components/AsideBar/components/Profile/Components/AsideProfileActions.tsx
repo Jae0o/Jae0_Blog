@@ -1,19 +1,19 @@
-import "./NavProfileActions.Style.css";
+import "./AsideProfileActions.Style.css";
 import React from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { OnClickEvent } from "@/Types/Event.Types";
 
-interface NavProfileActionsProps {
+interface AsideProfileActionsProps {
   action: "home" | "search" | "write";
   icon: string;
   path: string;
 }
 
-const NavProfileActions = ({
+const AsideProfileActions = ({
   action,
   path,
   icon,
-}: NavProfileActionsProps): React.ReactNode => {
+}: AsideProfileActionsProps): React.ReactNode => {
   const navigate: NavigateFunction = useNavigate();
 
   const onClickHandle: OnClickEvent = e => {
@@ -33,4 +33,4 @@ const NavProfileActions = ({
   );
 };
 
-export default NavProfileActions;
+export default AsideProfileActions;
