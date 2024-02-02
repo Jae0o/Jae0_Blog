@@ -1,5 +1,5 @@
 import "./NavMenubar.Styles.css";
-import { useContext, useEffect, useRef } from "react";
+import { useContext, useRef } from "react";
 import { FaTools } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
 import { FaRegCalendarCheck } from "react-icons/fa6";
@@ -11,7 +11,7 @@ interface NavMenubarProps {
   isToggle: boolean;
   onToggle: () => void;
 }
-const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
+const NavMenubar = ({ isToggle /* onToggle */ }: NavMenubarProps) => {
   const { posts } = useContext(ContextPosts);
   const menubarRef = useRef<HTMLUListElement>(null);
 
