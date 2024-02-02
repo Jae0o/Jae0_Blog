@@ -15,30 +15,30 @@ const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
   const { posts } = useContext(ContextPosts);
   const menubarRef = useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    const handleAwayClick = ({ currentTarget, target }: MouseEvent) => {
-      const { current } = menubarRef;
+  // useEffect(() => {
+  //   const handleAwayClick = ({ currentTarget, target }: MouseEvent) => {
+  //     const { current } = menubarRef;
 
-      if (!current || !isToggle || currentTarget === current) {
-        return;
-      }
+  //     if (!current || !isToggle || currentTarget === current) {
+  //       return;
+  //     }
 
-      if (
-        target instanceof HTMLElement &&
-        target.className === "navbar_dropdown_checkbox"
-      ) {
-        return;
-      }
+  //     if (
+  //       target instanceof HTMLElement &&
+  //       target.className === "navbar_dropdown_checkbox"
+  //     ) {
+  //       return;
+  //     }
 
-      onToggle();
-    };
+  //     onToggle();
+  //   };
 
-    document.addEventListener("mouseup", handleAwayClick);
+  //   document.addEventListener("mouseup", handleAwayClick);
 
-    return () => {
-      document.removeEventListener("mouseup", handleAwayClick);
-    };
-  }, [isToggle, onToggle]);
+  //   return () => {
+  //     document.removeEventListener("mouseup", handleAwayClick);
+  //   };
+  // }, [isToggle, onToggle]);
 
   return (
     <ul
