@@ -11,7 +11,6 @@ const Navbar = () => {
     setIsToggle(isToggle => !isToggle);
   };
 
-  console.log(isToggle);
   return (
     <section className="nav__background">
       <nav className="nav">
@@ -21,7 +20,10 @@ const Navbar = () => {
           onToggle={handleToggle}
         />
 
-        <NavMenubar isToggle={isToggle} />
+        <NavMenubar
+          isToggle={isToggle}
+          onToggle={handleToggle}
+        />
       </nav>
     </section>
   );
