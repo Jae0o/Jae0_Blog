@@ -16,10 +16,17 @@ const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
   const menubarRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    const handleAwayClick = ({ currentTarget }: MouseEvent) => {
+    const handleAwayClick = ({ currentTarget, target }: MouseEvent) => {
       const { current } = menubarRef;
 
       if (!current || !isToggle || currentTarget === current) {
+        return;
+      }
+
+      if (
+        target instanceof HTMLElement &&
+        target.className === "navbar_dropdown_checkbox"
+      ) {
         return;
       }
 
