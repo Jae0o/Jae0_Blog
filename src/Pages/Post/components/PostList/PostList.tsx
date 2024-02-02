@@ -57,6 +57,14 @@ const PostList = (): React.ReactNode => {
     [category],
   );
 
+  // 추후 정렬 기능 추가시 해당 부분 개선
+  const sortedList = postsList.sort((prevPost, nextPost) => {
+    const prevPostDate = new Date(JSON.parse(prevPost.createAt)).getTime();
+    const nextPostDate = new Date(JSON.parse(nextPost.createAt)).getTime();
+
+    return nextPostDate - prevPostDate;
+  });
+
   return (
     <>
       <article className="outlet__ptlist">
@@ -70,8 +78,8 @@ const PostList = (): React.ReactNode => {
         </div>
 
         <ul className="ptlist__list-container">
-          {postsList &&
-            postsList.map(post => (
+          {sortedList &&
+            sortedList.map(post => (
               <PostListItem
                 post={post}
                 key={post.id}
