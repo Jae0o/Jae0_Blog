@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { OnClickEvent } from "@/Types/Event.Types";
 import { PROFILE } from "@/constants/URL";
-import NavProfileActions from "./Components/NavProfileActions";
+import AsideProfileActions from "./Components/AsideProfileActions";
 
 const AsideProfile = (): React.ReactNode => {
   const navigate = useNavigate();
@@ -22,17 +22,17 @@ const AsideProfile = (): React.ReactNode => {
           />
         </div>
         <div className="profile__actions">
-          <NavProfileActions
+          <AsideProfileActions
             action="search"
             icon="pageview"
             path="/"
           />
-          <NavProfileActions
+          <AsideProfileActions
             action="write"
             icon="lock"
             path="/editor/newPost/newPost"
           />
-          <NavProfileActions
+          <AsideProfileActions
             action="home"
             icon="Cottage"
             path="/"

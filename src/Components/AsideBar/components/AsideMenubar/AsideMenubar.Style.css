@@ -1,4 +1,4 @@
-.nav__menubar {
+.aside__menubar {
   width: 22rem;
   flex-grow: 1;
 
@@ -15,6 +15,6 @@
   scrollbar-width: none;
 }
 
-.nav__menubar::-webkit-scrollbar {
+.aside__menubar::-webkit-scrollbar {
   display: none;
 }

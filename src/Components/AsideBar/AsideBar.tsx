@@ -1,7 +1,7 @@
 import "./AsideBar.Styles.css";
 import React from "react";
-import NavMenubar from "./components/Menubar/NavMenubar";
-import NavbarFooter from "./components/NavbarFooter/NavbarFooter";
+import AsideFooter from "./components/AsideFooter/AsideFooter";
+import AsideMenubar from "./components/AsideMenubar/AsideMenubar";
 import AsideProfile from "./components/Profile/AsideProfile";
 
 const AsideBar = (): React.ReactNode => {
@@ -9,9 +9,9 @@ const AsideBar = (): React.ReactNode => {
     <aside className="aside">
       <div className="aside_layout">
         <AsideProfile />
-        <NavMenubar />
+        <AsideMenubar />
       </div>
-      <NavbarFooter />
+      <AsideFooter />
     </aside>
   );
 };

@@ -1,4 +1,4 @@
-.navbar__footer {
+.aside__footer {
   width: 24rem;
   height: 8rem;
 
@@ -9,11 +9,11 @@
 }
 
 @media (max-height: 650px) {
-  .navbar__footer {
+  .aside__footer {
     display: none;
   }
 
-  .nav_layout {
+  .aside_layout {
     height: 100%;
   }
 }
