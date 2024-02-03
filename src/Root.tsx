@@ -13,7 +13,7 @@ const Root = (): React.ReactNode => {
   return (
     <main className="Root">
       <AsideBar />
-      <Navbar />
+      {/* <Navbar /> */}
       <section className="outlet__layout">
         <Outlet />
       </section>
