@@ -6,8 +6,8 @@ const resizeFile: ResizeFile = async file =>
   await new Promise(resolve => {
     FileResizer.imageFileResizer(
       file,
-      600,
-      600,
+      1200,
+      1200,
       "WEBP",
       100,
       0,
