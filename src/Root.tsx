@@ -7,7 +7,6 @@ import "./Root.Style.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import AsideBar from "./Components/AsideBar/AsideBar";
-import Navbar from "./Components/Navbar/Navbar";
 
 const Root = (): React.ReactNode => {
   return (
