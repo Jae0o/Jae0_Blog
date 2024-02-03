@@ -8,6 +8,7 @@
   justify-content: center;
 
   transition: all 0.3s;
+  z-index: var(--z-index-outlet-post);
 }
 
 .post__container {

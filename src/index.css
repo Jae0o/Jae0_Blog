@@ -117,8 +117,8 @@ section {
   --fontweight-medium: 400;
 
   /* z-index */
-
-  --z-index-nav-menubar: 3;
+  --z-index-outlet-post: 1;
+  --z-index-nav-menubar: 10;
   --z-index-modal: 20;
 
   /* component layout size */
