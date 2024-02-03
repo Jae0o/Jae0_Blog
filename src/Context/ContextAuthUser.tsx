@@ -21,6 +21,8 @@ export const ContextAuthUserProvider = ({ children }: ContextProps) => {
   const [authUserId, setAuthUserId] = useState<string>("");
   const { VITE_FIREBASE_ADMIN_USER_ID } = import.meta.env;
 
+  console.log(isLoggedIn);
+
   onAuthStateChanged(auth, user => {
     if (!user) {
       setIsAuthUser(false);
