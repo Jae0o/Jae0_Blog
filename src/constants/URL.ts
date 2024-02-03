@@ -1,6 +1,6 @@
 export const PROFILE = {
   THUMBNAIL:
-    "https://res.cloudinary.com/dalxgxu2o/image/upload/v1706977914/Blog%20Assets/320__profile_efs7m6.png",
+    "https://res.cloudinary.com/dalxgxu2o/image/upload/t_profile/v1706977914/Blog%20Assets/320__profile_efs7m6.png",
 };
 
 export const POST_BANNER_THUMBNAILS = [
