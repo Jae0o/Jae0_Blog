@@ -1,3 +1,4 @@
+import "./Font/pretendard-subset.css";
 import "./Root.Style.css";
 import "./Styles/Quill.Styles.css";
 import "./Styles/Responsive400px.css";

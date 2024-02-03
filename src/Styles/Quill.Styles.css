@@ -73,3 +73,10 @@
 .ql-editor blockquote a {
   color: var(--color-dark-green) !important;
 }
+
+.ql-editor img {
+  width: 100%;
+  height: fit-content;
+
+  object-fit: cover;
+}
