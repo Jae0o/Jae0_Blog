@@ -6,6 +6,7 @@ import { FaRegCalendarCheck } from "react-icons/fa6";
 import { RiReactjsLine } from "react-icons/ri";
 import MenubarItem from "@/Components/MenubarItem/MenubarItem";
 import { ContextPosts } from "@/Context/ContextPosts";
+import NavMenubarFooter from "./Components/NavMenubarFooter";
 
 interface NavMenubarProps {
   isToggle: boolean;
@@ -74,6 +75,7 @@ const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
         category={"DIARY"}
         postCount={posts.DIARY && posts.DIARY.length}
       />
+      <NavMenubarFooter />
     </ul>
   );
 };
