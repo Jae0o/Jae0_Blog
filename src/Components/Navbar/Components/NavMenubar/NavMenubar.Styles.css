@@ -29,26 +29,46 @@
   animation-fill-mode: forwards;
 }
 
+.nav__footer {
+  width: 100%;
+  padding: 1rem 0;
+
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
 @keyframes unActiveMenubar {
-  from {
-    transform: translateX(0rem);
+  0% {
+    display: flex;
+  }
+
+  1% {
     opacity: 1;
   }
 
-  to {
-    transform: translateX(100%);
+  99% {
     opacity: 0;
+  }
+
+  100% {
+    display: none;
   }
 }
 
 @keyframes ActiveMenubar {
-  from {
-    transform: translateX(100%);
+  0% {
+    display: none;
+  }
+
+  1% {
     opacity: 0;
   }
 
-  to {
-    transform: translateX(0rem);
+  99% {
     opacity: 1;
+  }
+
+  100% {
+    display: flex;
   }
 }
