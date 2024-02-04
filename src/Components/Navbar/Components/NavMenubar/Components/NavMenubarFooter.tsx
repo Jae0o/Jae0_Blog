@@ -1,13 +1,12 @@
-import "./AsideFooter.Styles.css";
 import { FaInstagram } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
 import ContactMeButton from "@/Components/ContactMeButton/ContactMeButton";
 import { CONTACT_ME } from "@/constants/URL";
 
-const AsideFooter = () => {
+const NavMenubarFooter = () => {
   return (
-    <footer className="aside__footer">
+    <li className="nav__footer">
       <ContactMeButton
         url={CONTACT_ME.GIT_HUB}
         Icon={<FiGithub />}
@@ -20,8 +19,8 @@ const AsideFooter = () => {
         url={CONTACT_ME.EMAIL}
         Icon={<MdOutlineEmail />}
       />
-    </footer>
+    </li>
   );
 };
 
-export default AsideFooter;
+export default NavMenubarFooter;
