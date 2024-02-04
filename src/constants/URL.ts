@@ -15,3 +15,9 @@ export const POST_BANNER_THUMBNAILS = [
   "/Thumbnail/banner-thumbnail-9.jpg",
   "/Thumbnail/banner-thumbnail-10.jpg",
 ];
+
+export const CONTACT_ME = {
+  GIT_HUB: "https://github.com/Jae0o",
+  INSTAGRAM: "https://www.instagram.com/jae_0o_/",
+  EMAIL: "mailto:leey153@naver.com",
+};
