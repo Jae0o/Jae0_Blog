@@ -5,4 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  animation-name: fadeIn;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
