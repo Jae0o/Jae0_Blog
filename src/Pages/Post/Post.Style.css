@@ -22,4 +22,6 @@
   background-color: var(--color-semi-white);
   border-radius: var(--radius-semi-large);
   box-shadow: 0 0 6px 4px rgba(0, 0, 0, 0.5);
+
+  z-index: var(--z-index-post__container);
 }

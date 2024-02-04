@@ -118,6 +118,7 @@ section {
 
   /* z-index */
   --z-index-outlet-post: 1;
+  --z-index-post__container: 2;
   --z-index-nav-menubar: 10;
   --z-index-modal: 20;
 
