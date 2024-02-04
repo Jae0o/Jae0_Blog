@@ -6,20 +6,13 @@
   flex-direction: column;
   gap: 0.6rem;
 
-  position: fixed;
+  position: absolute;
   top: 8rem;
   right: 0;
 
   background-color: var(--color-main);
   border-radius: var(--radius-semi-large);
   box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
-
-  z-index: var(--z-index-nav-menubar);
-
-  /* Iphone 버그 개선 */
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateZ(0);
-  -webkit-transform: translate3d(0, 0, 0);
 }
 
 .Active__NavMenu {

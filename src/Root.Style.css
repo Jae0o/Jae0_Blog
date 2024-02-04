@@ -19,5 +19,5 @@
   position: relative;
 
   overflow: hidden;
-  z-index: 0;
+  z-index: var(--z-index-outlet__layout);
 }
