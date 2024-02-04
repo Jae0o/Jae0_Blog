@@ -54,7 +54,8 @@ const PostDetail = (): React.ReactNode => {
             <PostBanner
               thumbnail={post.thumbnail}
               mainText={post.title}
-              height={40}
+              height={50}
+              objectFit={"contain"}
             />
             <div
               className="ptdetail__content"
