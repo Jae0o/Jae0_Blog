@@ -2,7 +2,7 @@
   min-height: fit-content;
   padding: 1.4rem;
 
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 0.6rem;
 
@@ -37,6 +37,7 @@
   justify-content: center;
   gap: 2rem;
 }
+
 @keyframes unActiveMenubar {
   0% {
     display: flex;

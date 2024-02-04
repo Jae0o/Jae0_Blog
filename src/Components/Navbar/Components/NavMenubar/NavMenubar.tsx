@@ -47,7 +47,8 @@ const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
       className={`nav__menubar ${
         isToggle ? "Active__NavMenu" : "unActive__NavMenu"
       }`}
-      ref={menubarRef}>
+      ref={menubarRef}
+      style={{ display: `${isToggle ? "flex" : "none"}` }}>
       <MenubarItem
         icon={FaTools}
         title={"Blog 작업 기록"}
