@@ -5,6 +5,7 @@ interface PostBannerProps {
   mainText: string;
   subText?: string;
   height?: number;
+  objectFit?: "contain" | "cover";
 }
 
 const PostBanner = ({
@@ -12,6 +13,7 @@ const PostBanner = ({
   mainText,
   subText,
   height,
+  objectFit = "cover",
 }: PostBannerProps): React.ReactNode => {
   return (
     <div className="post__banner">
@@ -20,6 +22,7 @@ const PostBanner = ({
         style={{
           backgroundImage: `url(${thumbnail})`,
           height: height ? `${height}rem` : "",
+          backgroundSize: `${objectFit}`,
         }}>
         <div className="ptbanner__advice-container">
           <h4 className="ptbanner__advice">{mainText}</h4>
