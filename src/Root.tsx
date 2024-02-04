@@ -1,5 +1,6 @@
 import "./Font/pretendard-subset.css";
 import "./Root.Style.css";
+import "./Styles/Animation.css";
 import "./Styles/Quill.Styles.css";
 import "./Styles/Responsive400px.css";
 import "./Styles/Responsive700px.css";
