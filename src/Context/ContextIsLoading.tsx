@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import { ContextProps } from "./Context.Types";
 
 interface IsLoadingContext {
@@ -16,9 +16,9 @@ export const ContextIsLoadingProvider = ({
 }: ContextProps): React.ReactNode => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const updateIsLoading = (state: boolean) => {
+  const updateIsLoading = useCallback((state: boolean) => {
     setIsLoading(state);
-  };
+  }, []);
 
   return (
     <ContextIsLoading.Provider value={{ isLoading, updateIsLoading }}>

@@ -44,22 +44,7 @@ export const ContextPostsProvider = ({
 
     posts.forEach(post => {
       const { category } = post;
-
-      if (category === "WORK") {
-        newPosts.WORK.push(post);
-      }
-
-      if (category === "DIARY") {
-        newPosts.DIARY.push(post);
-      }
-
-      if (category === "BLOG") {
-        newPosts.BLOG.push(post);
-      }
-
-      if (category === "Frontend") {
-        newPosts.Frontend.push(post);
-      }
+      newPosts[category].push(post);
     });
 
     setPosts(newPosts);
@@ -69,10 +54,10 @@ export const ContextPostsProvider = ({
     updatePosts();
   }, [updatePosts]);
 
-  const handleCloseAlertModal = () => {
+  const handleCloseAlertModal = useCallback(() => {
     closeModal();
     updatePosts();
-  };
+  }, [closeModal, updatePosts]);
 
   return (
     <ContextPosts.Provider value={{ posts, updatePosts }}>
