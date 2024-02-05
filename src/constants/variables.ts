@@ -1,4 +1,8 @@
+import { FaInstagram } from "react-icons/fa";
+import { FiGithub } from "react-icons/fi";
+import { MdOutlineEmail } from "react-icons/md";
 import { PostData } from "@/API/Firebase.Types";
+import { CONTACT_ME_URL } from "./URL";
 
 export interface Advice {
   advice: string;
@@ -68,4 +72,10 @@ export const ADVICE_LIST: AdviceList = [
       "There are only two hard things in computer science: cache invalidation and naming things.",
     author: "Phil Karlton",
   },
+];
+
+export const CONTACT_ME_DATA = [
+  { url: CONTACT_ME_URL.GIT_HUB, Icon: FiGithub },
+  { url: CONTACT_ME_URL.INSTAGRAM, Icon: FaInstagram },
+  { url: CONTACT_ME_URL.EMAIL, Icon: MdOutlineEmail },
 ];
