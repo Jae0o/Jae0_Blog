@@ -35,10 +35,10 @@ export const ContextCategoryListProvider = ({
     updateCategoryList();
   }, [updateCategoryList]);
 
-  const handleCloseAlertModal = () => {
+  const handleCloseAlertModal = useCallback(() => {
     closeModal();
     updateCategoryList();
-  };
+  }, [closeModal, updateCategoryList]);
 
   return (
     <ContextCategoryList.Provider value={{ categoryList, updateCategoryList }}>

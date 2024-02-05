@@ -36,10 +36,10 @@ export const ContextTagListProvider = ({
     updateTagList();
   }, [updateTagList]);
 
-  const handleCloseAlertModal = () => {
+  const handleCloseAlertModal = useCallback(() => {
     closeModal();
     updateTagList();
-  };
+  }, [closeModal, updateTagList]);
 
   return (
     <ContextTagList.Provider value={{ tagList, updateTagList }}>

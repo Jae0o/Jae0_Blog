@@ -69,10 +69,10 @@ export const ContextPostsProvider = ({
     updatePosts();
   }, [updatePosts]);
 
-  const handleCloseAlertModal = () => {
+  const handleCloseAlertModal = useCallback(() => {
     closeModal();
     updatePosts();
-  };
+  }, [closeModal, updatePosts]);
 
   return (
     <ContextPosts.Provider value={{ posts, updatePosts }}>
