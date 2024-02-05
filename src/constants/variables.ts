@@ -1,6 +1,10 @@
 import { FaInstagram } from "react-icons/fa";
+import { FaTools } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
+import { FaRegCalendarCheck } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { MdOutlineEmail } from "react-icons/md";
+import { RiReactjsLine } from "react-icons/ri";
 import { PostData } from "@/API/Firebase.Types";
 import { CONTACT_ME_URL } from "./URL";
 
@@ -78,4 +82,11 @@ export const CONTACT_ME_DATA = [
   { url: CONTACT_ME_URL.GIT_HUB, Icon: FiGithub },
   { url: CONTACT_ME_URL.INSTAGRAM, Icon: FaInstagram },
   { url: CONTACT_ME_URL.EMAIL, Icon: MdOutlineEmail },
+];
+
+export const MENUBAR_LIST = [
+  { title: "Blog 작업 기록", category: "BLOG", icon: FaTools },
+  { title: "회고 기록", category: "WORK", icon: FaBook },
+  { title: "Frontend", category: "Frontend", icon: RiReactjsLine },
+  { title: "I Learn", category: "DIARY", icon: FaRegCalendarCheck },
 ];
