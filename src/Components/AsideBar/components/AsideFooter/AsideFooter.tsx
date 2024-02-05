@@ -1,25 +1,17 @@
 import "./AsideFooter.Styles.css";
-import { FaInstagram } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
 import ContactMeButton from "@/Components/ContactMeButton/ContactMeButton";
-import { CONTACT_ME } from "@/constants/URL";
+import { CONTACT_ME_DATA } from "@/constants/variables";
 
 const AsideFooter = () => {
   return (
     <footer className="aside__footer">
-      <ContactMeButton
-        url={CONTACT_ME.GIT_HUB}
-        Icon={<FiGithub />}
-      />
-      <ContactMeButton
-        url={CONTACT_ME.INSTAGRAM}
-        Icon={<FaInstagram />}
-      />
-      <ContactMeButton
-        url={CONTACT_ME.EMAIL}
-        Icon={<MdOutlineEmail />}
-      />
+      {CONTACT_ME_DATA.map(({ url, Icon }) => (
+        <ContactMeButton
+          key={url}
+          url={url}
+          icon={<Icon />}
+        />
+      ))}
     </footer>
   );
 };

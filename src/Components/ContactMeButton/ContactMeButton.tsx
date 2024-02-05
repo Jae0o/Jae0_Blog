@@ -3,12 +3,12 @@ import React from "react";
 
 interface ContactMeButtonProps {
   url: string;
-  Icon: React.ReactNode;
+  icon: React.ReactNode;
 }
 
 const ContactMeButton = ({
   url,
-  Icon,
+  icon,
 }: ContactMeButtonProps): React.ReactNode => {
   return (
     <a
@@ -16,7 +16,7 @@ const ContactMeButton = ({
       target="_blank"
       rel="noreferrer noopener"
       className="aside__footer-link">
-      {Icon}
+      {icon}
     </a>
   );
 };
