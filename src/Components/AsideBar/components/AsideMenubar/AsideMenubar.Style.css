@@ -1,6 +1,7 @@
 .aside__menubar {
   width: 22rem;
   flex-grow: 1;
+  padding: 1rem;
 
   margin: 4rem 0rem;
 
