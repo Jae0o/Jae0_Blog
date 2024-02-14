@@ -4,4 +4,16 @@
   .outlet__post {
     padding: 0;
   }
+
+  .ptbanner__container {
+    height: 20rem;
+  }
+
+  .ptbanner__advice {
+    font-size: var(--fontsize-medium);
+  }
+
+  .ptbanner__decoration {
+    border-radius: 0;
+  }
 }

@@ -56,4 +56,8 @@
   .ptitem__tags {
     display: none;
   }
+
+  .ptbanner__advice-container {
+    border-radius: 0;
+  }
 }

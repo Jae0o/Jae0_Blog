@@ -6,27 +6,33 @@ html {
 li {
   list-style: none;
 }
+
 input[type="text"] {
   outline: none;
   border: none;
 }
+
 button {
   border: none;
   background-color: transparent;
 
   cursor: pointer;
 }
+
 a {
   outline: none;
   text-decoration: none;
 }
+
 a:link {
   text-decoration: none;
 }
+
 a:visited {
   border: none;
   color: var(--color-text);
 }
+
 a:active {
   color: var(--color-text);
 }
