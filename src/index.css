@@ -1,6 +1,6 @@
 html {
   font-size: 62.5%;
-  background-color: var(--color-sub);
+  background-color: var(--color-white);
 }
 
 li {
@@ -25,10 +25,10 @@ a:link {
 }
 a:visited {
   border: none;
-  color: black;
+  color: var(--color-text);
 }
 a:active {
-  color: black;
+  color: var(--color-text);
 }
 
 html,
@@ -90,6 +90,8 @@ section {
 
   --color-semi-grey: #ccd1d9;
   --color-dark-grey: #656d78;
+
+  --color-text: #323133;
 
   /* shadow */
   --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
