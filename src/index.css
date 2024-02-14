@@ -76,22 +76,20 @@ section {
   /* color */
   --color-black: #323133;
   --color-semi-black: #434a54;
+
   --color-red: #da4453;
   --color-light-red: #ed5565;
+
   --color-yellow: #ffce54;
+
   --color-green: #a0d468;
   --color-dark-green: #8cc152;
+
+  --color-white: #fafafa;
   --color-semi-white: #e6e9ed;
-  --color-white: #fff;
+
   --color-semi-grey: #ccd1d9;
   --color-dark-grey: #656d78;
-
-  --color-main: #2d3250;
-  --color-sub: #424769;
-  --color-sub-alt: #676f9d;
-
-  --color-point: #f9b17a;
-  --color-point-alt: #ff7f50;
 
   /* shadow */
   --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
