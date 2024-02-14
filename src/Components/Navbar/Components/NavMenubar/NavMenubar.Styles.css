@@ -10,9 +10,9 @@
   top: 8rem;
   right: 0;
 
-  background-color: var(--color-main);
+  background-color: var(--color-yellow);
   border-radius: var(--radius-semi-large);
-  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-basic);
 }
 
 .Active__NavMenu {

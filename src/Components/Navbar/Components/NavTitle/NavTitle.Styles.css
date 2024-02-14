@@ -10,17 +10,17 @@
   cursor: pointer;
   user-select: none;
 }
+
 .nav__title-text {
   font-size: var(--fontsize-big);
   font-weight: var(--fontweight-border);
-  color: var(--color-point);
 }
 
 .nav__title-decoration {
   width: 0;
   height: 2px;
 
-  background-color: var(--color-point);
+  background-color: var(--color-text);
   border-radius: 10px;
 
   opacity: 0;

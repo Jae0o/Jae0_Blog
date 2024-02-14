@@ -26,7 +26,7 @@
   position: relative;
 
   border-radius: 10rem;
-  background-color: var(--color-point);
+  background-color: var(--color-black);
 }
 
 .navbar_dropdown_checkbox_input {
