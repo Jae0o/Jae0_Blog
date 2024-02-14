@@ -41,9 +41,9 @@
   font-size: var(--fontsize-big);
   font-weight: 800;
   white-space: nowrap;
-  color: var(--color-semi-white);
+  color: var(--color-white);
 
-  opacity: 0.5;
+  opacity: var(--opacity-medium);
 
   animation-name: moveRight;
   animation-duration: 6s;
@@ -73,7 +73,7 @@
   font-size: 6rem;
   text-align: center;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  color: var(--color-point);
+  color: var(--color-yellow);
 }
 
 .temporary__ptlist {

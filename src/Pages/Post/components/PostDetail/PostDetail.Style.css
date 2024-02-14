@@ -42,14 +42,13 @@
 
 .ptdetail__info-divider {
   height: 60%;
-
   margin: 0 2rem;
 
-  border: 1px solid var(--color-semi-grey);
+  border: 1px solid var(--color-black);
 }
 
 .ptdetail__content-divider {
   margin: 4rem 0rem;
 
-  border: 1px solid var(--color-semi-grey);
+  border: 1px solid var(--color-black);
 }

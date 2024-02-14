@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
 
-  background-color: var(--color-white);
+  background-color: var(--color-semi-white);
   border-top-right-radius: var(--radius-semi-large);
   border-top-left-radius: var(--radius-semi-large);
 }
