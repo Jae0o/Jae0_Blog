@@ -20,9 +20,9 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--color-sub);
+  background-color: var(--color-semi-grey);
   border-radius: var(--radius-medium);
-  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-basic);
 }
 
 .modal__layout {
@@ -31,9 +31,9 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--color-sub-alt);
+  background-color: var(--color-white);
   border-radius: var(--radius-medium);
-  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-basic);
 }
 
 .modal__actions {
@@ -60,7 +60,7 @@
 
 .modal__actions:hover .modal__button-close {
   transform: scale(1.2);
-  opacity: 0.5;
+  opacity: var(--opacity-medium);
 }
 
 .modal__content {

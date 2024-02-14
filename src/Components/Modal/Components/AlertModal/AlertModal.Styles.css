@@ -25,8 +25,8 @@
   width: 10rem;
   height: 3.2rem;
 
-  background-color: var(--color-point);
-  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+  background-color: var(--color-yellow);
+  box-shadow: var(--shadow-small);
   border-radius: var(--radius-medium);
 
   font-size: var(--fontsize-semi-large);
@@ -37,5 +37,5 @@
 }
 
 .alert__button:hover {
-  opacity: 0.5;
+  opacity: var(--opacity-medium);
 }
