@@ -94,13 +94,14 @@ section {
   --color-dark-grey: #656d78;
 
   --color-text: #323133;
+  --color-text-point: #ffce54;
 
   /* opacity */
   --opacity-medium: 0.6;
 
   /* shadow */
-  --shadow-basic: 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
-  --shadow-all: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  --shadow-basic: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  --shadow-small: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
 
   /* radius */
   --radius-semi-large: 12px;
