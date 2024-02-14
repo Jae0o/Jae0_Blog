@@ -3,7 +3,6 @@
   height: 100%;
   margin: 0rem 1rem;
 
-  border-radius: var(--radius-semi-large);
   overflow-y: scroll;
 }
 
@@ -15,7 +14,6 @@
   flex-direction: column;
 
   background-color: var(--color-semi-white);
-  border-radius: var(--radius-semi-large);
 }
 
 .ql-toolbar {
@@ -29,8 +27,6 @@
 
   display: flex;
   justify-content: center;
-
-  border-radius: var(--radius-semi-large);
 
   overflow-y: hidden;
 }

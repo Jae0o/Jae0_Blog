@@ -13,16 +13,18 @@
 
 .sub__actions,
 .sub__actions-toggle {
+  padding: 1rem;
   margin-bottom: 1rem;
 
   display: none;
 
   background-color: var(--color-semi-grey);
   border-radius: var(--radius-medium);
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-basic);
 
   user-select: none;
 }
+
 .sub__button {
   width: 8rem;
   height: 6rem;
@@ -34,16 +36,17 @@
 
   border-radius: var(--radius-medium);
   background-color: var(--color-light-red);
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-basic);
 
   font-size: var(--fontsize-medium);
   font-weight: var(--fontweight-semi-bold);
   cursor: pointer;
-  transition: all 0.3s;
+
+  transition: opacity 0.3s;
 }
 
 .sub__button:hover {
-  transform: scale(1.1);
+  opacity: var(--opacity-medium);
 }
 
 .sub__actions-toggle {

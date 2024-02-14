@@ -10,7 +10,7 @@
   margin-bottom: 1rem;
 
   font-size: var(--fontsize-semi-large);
-  font-weight: var(--fontweight-semi-bold);
+  font-weight: var(--fontweight-bold);
 }
 
 .insert__button {
@@ -18,15 +18,16 @@
 
   background-color: var(--color-yellow);
   border-radius: var(--radius-medium);
-  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-basic);
 
   font-size: var(--fontsize-medium);
-  transition: all 0.3s;
-  will-change: transform;
+  font-weight: var(--fontweight-semi-bold);
+
+  transition: opacity 0.3s;
+  will-change: opacity;
   cursor: pointer;
 }
 
 .insert__button:hover {
-  background-color: var(--color-green);
-  transform: scale(1.1);
+  opacity: var(--opacity-medium);
 }

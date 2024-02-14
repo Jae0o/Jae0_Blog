@@ -3,7 +3,7 @@
   max-width: 80rem;
   padding: 4em 0em !important;
 
-  background-color: var(--color-semi-white);
+  background-color: var(--color-white);
   word-break: keep-all;
 
   font-size: 16px !important;
@@ -76,7 +76,6 @@
 
 .ql-editor img {
   width: 100%;
-  height: fit-content;
 
   object-fit: contain;
 }

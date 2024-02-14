@@ -14,20 +14,20 @@
   padding: 0.6rem 1rem;
   margin: 0rem 1rem;
 
-  background-color: var(--color-point);
+  background-color: var(--color-green);
   border-radius: var(--radius-medium);
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-small);
 
   font-size: var(--fontsize-semi-large);
   font-weight: var(--fontweight-semi-bold);
   white-space: nowrap;
 
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: opacity 0.3s;
 }
 
 .thumbnail__title:hover {
-  transform: scale(1.1);
+  opacity: var(--opacity-medium);
 }
 
 .thumbnail__info {
@@ -38,13 +38,12 @@
   display: flex;
   align-items: center;
 
-  background-color: var(--color-sub-alt);
+  background-color: var(--color-semi-white);
   border-radius: var(--radius-medium);
-  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-small);
 
   font-size: var(--fontsize-semi-large);
   font-weight: var(--fontweight-semi-bold);
-  color: var(--color-white);
 
   overflow: hidden;
   text-overflow: ellipsis;
