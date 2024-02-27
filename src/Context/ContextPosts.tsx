@@ -40,6 +40,7 @@ export const ContextPostsProvider = ({
       DIARY: [],
       BLOG: [],
       Frontend: [],
+      MASILGASIL: [],
     };
 
     posts.forEach(post => {

@@ -13,6 +13,7 @@
   cursor: pointer;
   user-select: none;
 }
+
 .menubar__item-layout:hover .menubar__item-container {
   opacity: var(--opacity-medium);
 }
