@@ -2,7 +2,7 @@
 
 <p align="center">
   <br>
-  <img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1707144471/Blog%20Assets/BLOG%20README/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-02-05_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.46.30_pw9fco.png">
+  <img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461950/Blog%20Assets/BLOG%20README%20V2/Home_lc0apu.png">
   <br>
 </p>
 
@@ -31,9 +31,6 @@
 
 </p>
 
-<br>
-
-- 다양한 문제를 마주치고 해결해 나가는 경험을 하기 위해, 필수적이라고 생각되어지는 라이브러리만을 사용하고 대부분의 기능을 직접 구현하며 개발하였습니다.
 
 <br>
 
@@ -41,21 +38,39 @@
 
 <br>
 
-### 포스트 작성
+### 홈 ( 임시 페이지 ... )
 
-  <img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1707144580/Blog%20Assets/BLOG%20README/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-02-05_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.49.28_oac4lc.png">
+<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461950/Blog%20Assets/BLOG%20README%20V2/Home_lc0apu.png">
+
+<br>
+
+### 카테고리 페이지
+
+<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461948/Blog%20Assets/BLOG%20README%20V2/PostList_dimnzn.png">
 
 <br>
 
 ### 포스트 페이지
 
-  <img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1707145257/Blog%20Assets/BLOG%20README/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-02-05_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.58.20_lpon2s.png">
-  <br>
+<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461949/Blog%20Assets/BLOG%20README%20V2/Post_uvg7j3.png">
+
+<br>
+
+### 게시물 작성 페이지
+
+<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461947/Blog%20Assets/BLOG%20README%20V2/PostEdit_hfch8k.png">
+
+<br>
 
 ### 반응형
 
-  <img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1707146325/Blog%20Assets/BLOG%20README/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-02-06_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_12.07.44_nwpnkx.png">
-  <br>
-    <br>
+
+https://github.com/Jae0o/Jae0_Blog/assets/127748428/3e9280e9-35fb-496a-add1-7439fe9cd998
+
+### ... 🫶
+
+<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709462732/Blog%20Assets/BLOG%20README%20V2/Modal_nrzojw.png">
+  
+<br>
 
 <br>
