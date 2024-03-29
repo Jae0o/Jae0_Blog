@@ -30,7 +30,7 @@ const Home = (): React.ReactNode => {
     <section className="outlet__home">
       <nav className="temporary_alert">
         <p className="temporary_alert-text">
-          현재 Home에 대한 디자인을 고민중 입니다!
+          현재 Next 마이그레이션 공사로 인한 임시 홈페이지입니다!
         </p>
       </nav>
       <article className="home__title-layout">
