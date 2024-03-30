@@ -3,15 +3,54 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-white_500: #fafafa;
+  --color-white_700: #e6e9ed;
+
+  --color-grey_500: #ccd1d9;
+  --color-grey_700: #656d78;
+
+  --color-black_300: #434a54;
+  --color-black_500: #323133;
+
+  --color-red_300: #ed5565;
+  --color-red_500: #da4453;
+
+  --color-yellow_500: #ffce54;
+
+  --color-green_500: #a0d468;
+  --color-green_700: "#8cc152";
+
+  --color-text_main: #323133;
+  --color-text_sub: #ffce54;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-white_500: #fafafa;
+    --color-white_700: #e6e9ed;
+
+    --color-grey_500: #ccd1d9;
+    --color-grey_700: #656d78;
+
+    --color-black_300: #434a54;
+    --color-black_500: #323133;
+
+    --color-red_300: #ed5565;
+    --color-red_500: #da4453;
+
+    --color-yellow_500: #ffce54;
+
+    --color-green_500: #a0d468;
+    --color-green_700: "#8cc152";
+
+    --color-text_main: #323133;
+    --color-text_sub: #ffce54;
+  }
+}
+
+@layer base {
+  body {
+    width: 100dvw;
+    height: 100dvh;
   }
 }
