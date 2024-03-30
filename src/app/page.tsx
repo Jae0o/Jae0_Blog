@@ -1,3 +1,3 @@
 export default function Home() {
-  return <main className=" bg-[--red]">ffds</main>;
+  return <main className="w-full"></main>;
 }
