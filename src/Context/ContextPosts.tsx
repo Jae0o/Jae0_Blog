@@ -37,7 +37,7 @@ export const ContextPostsProvider = ({
     const newPosts: Posts = {
       allPosts: posts,
       WORK: [],
-      DIARY: [],
+      YAP: [],
       BLOG: [],
       Frontend: [],
       MASILGASIL: [],
