@@ -18,6 +18,7 @@
 
   "importOrder": [
     ".css$",
+    ".Styles",
     "^react",
     "^@",
     "^[../]",
