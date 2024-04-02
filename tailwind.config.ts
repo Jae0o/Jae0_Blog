@@ -37,6 +37,10 @@ const config: Config = {
       text_sub: "#ffce54",
     },
   },
-  plugins: [require("tailwind-scrollbar-hide"), require("daisyui")],
+  plugins: [
+    require("tailwind-scrollbar-hide"),
+    require("daisyui"),
+    require("tailwindcss-animated"),
+  ],
 };
 export default config;
