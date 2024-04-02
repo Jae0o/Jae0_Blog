@@ -18,13 +18,19 @@
 
   "importOrder": [
     ".css$",
-    ".Styles",
+    ".styles",
+
     "^react",
+
     "^@",
+
     "^[../]",
+
     "^[./]",
+
     "<THIRD_PARTY_MODULES>"
   ],
+
   "importOrderSortSpecifiers": true,
   "importOrderSeparation": true
 }
