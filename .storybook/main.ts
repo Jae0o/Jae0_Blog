@@ -1,4 +1,4 @@
-import type { StorybookConfig } from "@storybook/nextjs";
+import { StorybookConfig } from "@storybook/nextjs";
 
 import path from "path";
 
@@ -22,15 +22,21 @@ const config: StorybookConfig = {
   },
 
   staticDirs: ["../public"],
-  webpackFinal: async config => {
-    if (config.resolve) {
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        "@": path.resolve(__dirname, "../src"),
-      };
+  webpackFinal: async prevConfig => {
+    if (!prevConfig.resolve) {
+      return prevConfig;
     }
 
-    return config;
+    return {
+      ...prevConfig,
+      resolve: {
+        ...prevConfig.resolve,
+        alias: {
+          ...prevConfig.resolve.alias,
+          "@": path.resolve(__dirname, "../src"),
+        },
+      },
+    };
   },
 };
 export default config;

@@ -14,10 +14,10 @@ interface HeaderProps {
 }
 
 export const Header = ({
-  user,
-  onLogin,
-  onLogout,
-  onCreateAccount,
+  user = { name: "dd" },
+  onLogin = () => {},
+  onLogout = () => {},
+  onCreateAccount = () => {},
 }: HeaderProps) => (
   <header>
     <div className="storybook-header">
@@ -54,7 +54,17 @@ export const Header = ({
             </span>
           </>
         ) : (
-          <></>
+          <>
+            <button
+              type="button"
+              onClick={() => {
+                onLogin();
+                onLogout();
+                onCreateAccount();
+              }}>
+              dsds
+            </button>
+          </>
         )}
       </div>
     </div>
