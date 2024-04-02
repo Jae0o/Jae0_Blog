@@ -21,6 +21,7 @@
     ".styles",
 
     "^react",
+    "next",
 
     "^@storybook",
 
