@@ -23,7 +23,9 @@ const meta = {
       return (
         <FormProvider {...form}>
           <Story />
-          <p>{JSON.stringify(getValues())}</p>
+          <p style={{ margin: "1rem 0rem", color: "black" }}>
+            {JSON.stringify(getValues())}
+          </p>
         </FormProvider>
       );
     },
