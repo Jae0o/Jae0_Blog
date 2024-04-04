@@ -1,7 +1,5 @@
-export default function Home() {
-  return (
-    <main className="w-full">
-      <button>dsd</button>
-    </main>
-  );
-}
+const Home = () => {
+  return <main className="w-full">Home Page</main>;
+};
+
+export default Home;
