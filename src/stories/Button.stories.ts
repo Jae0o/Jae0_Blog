@@ -10,14 +10,35 @@ const meta = {
     layout: "centered",
   },
   tags: ["autodocs"],
-  args: { onClick: fn() },
+  args: {
+    onClick: fn(),
+    children: "Button",
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const Medium: Story = {
   args: {
-    label: "Button",
+    size: "md",
+  },
+};
+
+export const Large: Story = {
+  args: {
+    size: "lg",
+  },
+};
+
+export const Small: Story = {
+  args: {
+    size: "sm",
+  },
+};
+
+export const Tiny: Story = {
+  args: {
+    size: "xs",
   },
 };
