@@ -1,4 +1,6 @@
-import { UseFormRegisterReturn } from "react-hook-form";
+"use client";
+
+import { RegisterOptions, useFormContext } from "react-hook-form";
 
 const pickInputSize = (size: "lg" | "md" | "sm" | "xs") => {
   switch (size) {
@@ -39,8 +41,9 @@ const pickInputColor = (color: "green" | "yellow" | "red" | "naked") => {
 };
 
 interface TextInputProps {
-  register: UseFormRegisterReturn;
+  name: string;
   placeholder?: string;
+  validate?: RegisterOptions;
 
   className?: string;
   size?: "lg" | "md" | "sm" | "xs";
@@ -48,18 +51,21 @@ interface TextInputProps {
 }
 
 const TextInput = ({
-  register,
-  size = "md",
-  color = "green",
+  name,
+  validate,
   placeholder = "",
   className = "",
+  size = "md",
+  color = "green",
 }: TextInputProps) => {
+  const { register } = useFormContext();
+
   return (
     <input
       type="text"
       className={`input ${pickInputSize(size)} ${pickInputColor(color)} w-full ${className}`}
       placeholder={placeholder}
-      {...register}
+      {...register(name, validate)}
     />
   );
 };
