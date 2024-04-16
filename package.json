@@ -41,6 +41,7 @@
     "@typescript-eslint/eslint-plugin": "^7.4.0",
     "@typescript-eslint/parser": "^7.4.0",
     "autoprefixer": "^10.0.1",
+    "chromatic": "^11.3.0",
     "daisyui": "^4.9.0",
     "eslint": "^8",
     "eslint-config-airbnb": "^19.0.4",
