@@ -1,5 +1,6 @@
 import "./LoginFormInput.Styles.css";
 import { LoginInputType } from "../../LoginFormModal";
+import { loginValidation } from "../../utils";
 
 interface LoginFormInputProps {
   title: string;
