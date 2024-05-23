@@ -31,6 +31,22 @@
 
 </p>
 
+<br>
+
+<br>
+
+## 업데이트 & 개선 사항
+
+- **1.0.1**<br>
+
+  - Code Spliting을 위한 `lazy import` & `suspense` 적용
+  - library import에 `lazy import` 적용을 통한 초기 렌더링 개선
+
+  초기 렌더링 ( FCP ) **2.2s** 에서 **0.6s**로 개선
+
+<br>
+
+<br>
 
 <br>
 
@@ -63,7 +79,6 @@
 <br>
 
 ### 반응형
-
 
 https://github.com/Jae0o/Jae0_Blog/assets/127748428/3e9280e9-35fb-496a-add1-7439fe9cd998
 
