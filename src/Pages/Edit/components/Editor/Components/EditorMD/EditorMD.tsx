@@ -3,7 +3,7 @@ import "./EditorMD.Style.css";
 import "react-quill/dist/quill.snow.css";
 import React, { useMemo, useRef } from "react";
 import ReactQuill, { Quill } from "react-quill";
-import InputImage from "@/Components/InputImage/InputImage";
+import { InputImage } from "@/components";
 import { OnTypingEditor } from "../../Editor.Types";
 import { editor_formats } from "./EditorMD.Constants";
 

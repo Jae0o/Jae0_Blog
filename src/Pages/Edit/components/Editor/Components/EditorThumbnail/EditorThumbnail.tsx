@@ -1,6 +1,6 @@
 import "./EditorThumbnail.Styles.css";
 import React, { useRef } from "react";
-import InputImage from "@/Components/InputImage/InputImage";
+import { InputImage } from "@/components";
 import { EditValue } from "../../Editor.Types";
 
 interface EditorThumbnailProps {

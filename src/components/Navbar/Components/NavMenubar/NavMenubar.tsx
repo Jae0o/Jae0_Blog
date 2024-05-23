@@ -1,7 +1,7 @@
 import "./NavMenubar.Styles.css";
 import { useContext, useEffect, useRef } from "react";
-import MenubarItem from "@/Components/MenubarItem/MenubarItem";
 import { ContextPosts } from "@/Context/ContextPosts";
+import { MenubarItem } from "@/components";
 import { MENUBAR_LIST } from "@/constants/variables";
 import NavMenubarFooter from "./Components/NavMenubarFooter";
 
