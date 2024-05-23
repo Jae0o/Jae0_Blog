@@ -3,12 +3,11 @@ import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostData } from "@/API/Firebase.Types";
 import { setPost } from "@/API/FirebaseDB";
-import CheckAdmin from "@/Components/CheckAdmin/CheckAdmin";
-import UploadPage from "@/Components/UploadPage";
 import { ContextCategoryList } from "@/Context/ContextCategory";
 import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
 import { ContextTagList } from "@/Context/ContextTagList";
+import { CheckAdmin, LoadingSpinner } from "@/components";
 import { ALERT_EDIT } from "@/constants/AlertMessage";
 import EditPage from "./components/Editor/Editor";
 import EditSubPage from "./components/EditorSub/EditorSub";
@@ -48,21 +47,20 @@ const Edit = (): React.ReactNode => {
       .finally(() => updateIsLoading(false));
   };
 
-  if (isLoading) return <UploadPage />;
+  if (isLoading) return <LoadingSpinner />;
 
   return (
     <section className="outlet__edit">
       <CheckAdmin>
-        <>
-          <EditPage
-            category={category}
-            id={pathId}
-            categoryList={categoryList}
-            tagList={tagList}
-            onSubmit={onUploadPost}
-          />
-          <EditSubPage onUpdate={onUpdateOption} />
-        </>
+        <EditPage
+          category={category}
+          id={pathId}
+          categoryList={categoryList}
+          tagList={tagList}
+          onSubmit={onUploadPost}
+        />
+
+        <EditSubPage onUpdate={onUpdateOption} />
       </CheckAdmin>
     </section>
   );

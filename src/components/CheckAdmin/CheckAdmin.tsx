@@ -5,7 +5,7 @@ import { CHECK_ADMIN } from "@/constants/AlertMessage";
 import AlertModal from "../Modal/Components/AlertModal/AlertModal";
 import LoginFormModal from "../Modal/Components/LoginFormModal/LoginFormModal";
 import useModal from "../Modal/Hooks/useModal";
-import CheckAdminProvider from "./Components/CheckAdminProvider";
+import { CheckAdminProvider } from "./components";
 
 interface CheckAdminProps {
   children: React.ReactNode;
