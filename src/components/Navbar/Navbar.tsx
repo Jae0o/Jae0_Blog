@@ -1,8 +1,6 @@
 import "./Navbar.Styles.css";
 import { useState } from "react";
-import NavMenubar from "./Components/NavMenubar/NavMenubar";
-import NavTitle from "./Components/NavTitle/NavTitle";
-import NavToggleButton from "./Components/NavToggleButton/NavToggleButton";
+import { NavMenubar, NavTitle, NavToggleButton } from "./components";
 
 const Navbar = () => {
   const [isToggle, setIsToggle] = useState(false);

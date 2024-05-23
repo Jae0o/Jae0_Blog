@@ -3,7 +3,7 @@ import { useContext, useEffect, useRef } from "react";
 import { ContextPosts } from "@/Context/ContextPosts";
 import { MenubarItem } from "@/components";
 import { MENUBAR_LIST } from "@/constants/variables";
-import NavMenubarFooter from "./Components/NavMenubarFooter";
+import { NavMenubarFooter } from "./components";
 
 interface NavMenubarProps {
   isToggle: boolean;
