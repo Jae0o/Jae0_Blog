@@ -2,7 +2,7 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { uploadBytes } from "firebase/storage";
 import { ERROR_MESSAGE } from "@/constants/AlertMessage";
 import { imageResizer } from "@/util";
-import { firebaseStorage } from "./Firebase";
+import { firebaseStorage } from "./firebase";
 
 type SetImageStorage = (params: {
   file: File;

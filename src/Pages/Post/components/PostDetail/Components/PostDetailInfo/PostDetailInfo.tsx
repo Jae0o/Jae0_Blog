@@ -1,5 +1,5 @@
 import "./PostDetailInfo.css";
-import { PostData } from "@/API/Firebase.Types";
+import { PostData } from "@/api";
 import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
 import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";

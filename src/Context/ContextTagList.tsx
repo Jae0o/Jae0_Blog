@@ -1,5 +1,5 @@
 import { createContext, useCallback, useEffect, useState } from "react";
-import { getOptions } from "@/API/FirebaseDB";
+import { getOptions } from "@/api";
 import { AlertModal } from "@/components";
 import { CONTEXT_ERROR } from "@/constants/AlertMessage";
 import { useModal } from "@/hooks";

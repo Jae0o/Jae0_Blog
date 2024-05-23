@@ -1,8 +1,8 @@
 import "./PostAuthAction.Styles.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { deletePost } from "@/API/FirebaseDB";
 import { ContextPosts } from "@/Context/ContextPosts";
+import { deletePost } from "@/api";
 import { ConfirmModal } from "@/components";
 import { useModal } from "@/hooks";
 

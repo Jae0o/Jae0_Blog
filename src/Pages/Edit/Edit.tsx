@@ -1,12 +1,11 @@
 import "./Edit.Style.css";
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { PostData } from "@/API/Firebase.Types";
-import { setPost } from "@/API/FirebaseDB";
 import { ContextCategoryList } from "@/Context/ContextCategory";
 import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
 import { ContextTagList } from "@/Context/ContextTagList";
+import { PostData, setPost } from "@/api";
 import { CheckAdmin, LoadingSpinner } from "@/components";
 import { ALERT_EDIT } from "@/constants/AlertMessage";
 import EditPage from "./components/Editor/Editor";

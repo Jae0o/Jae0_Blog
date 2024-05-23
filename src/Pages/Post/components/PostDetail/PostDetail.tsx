@@ -1,9 +1,8 @@
 import "./PostDetail.Style.css";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { PostData } from "@/API/Firebase.Types";
-import { getPost } from "@/API/FirebaseDB";
 import { ContextAuthUser } from "@/Context/ContextAuthUser";
+import { PostData, getPost } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "@/constants/AlertMessage";
 import { useModal } from "@/hooks";

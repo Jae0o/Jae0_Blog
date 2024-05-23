@@ -1,7 +1,7 @@
 import "./InsertOptionButton.css";
 import React from "react";
-import { setOptions } from "@/API/FirebaseDB";
 import { OnClickEvent } from "@/Types/Event.Types";
+import { setOptions } from "@/api";
 
 interface InsertOptionButtonProps {
   onUpdate: (name: string) => void;

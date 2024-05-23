@@ -1,8 +1,7 @@
 import "./PostList.Style.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { PostData } from "@/API/Firebase.Types";
-import { getAllPostsList, getPostsList } from "@/API/FirebaseDB";
+import { PostData, getAllPostsList, getPostsList } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import { GET_POST_LIST_ERROR } from "@/constants/AlertMessage";
 import { POST_BANNER_THUMBNAILS } from "@/constants/URL";

@@ -1,22 +1,21 @@
 import {
   UserCredential,
-  browserSessionPersistence,
-  createUserWithEmailAndPassword,
+  browserSessionPersistence, // createUserWithEmailAndPassword,
   setPersistence,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { auth } from "./Firebase";
+import { auth } from "./firebase";
 
 interface LoginInfo {
   email: string;
   password: string;
 }
-type SignUp = (params: LoginInfo) => void;
+// type SignUp = (params: LoginInfo) => void;
 type Login = (params: LoginInfo) => Promise<UserCredential>;
 
-export const firebaseSignUp: SignUp = async ({ email, password }) => {
-  await createUserWithEmailAndPassword(auth, email, password);
-};
+// export const firebaseSignUp: SignUp = async ({ email, password }) => {
+//   await createUserWithEmailAndPassword(auth, email, password);
+// };
 
 export const firebaseLogin: Login = async ({ email, password }) => {
   return await setPersistence(auth, browserSessionPersistence)

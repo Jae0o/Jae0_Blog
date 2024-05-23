@@ -1,8 +1,7 @@
 import "./Home.Style.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { PostData } from "@/API/Firebase.Types";
-import { getAllPostsList } from "@/API/FirebaseDB";
+import { PostData, getAllPostsList } from "@/api";
 import PostListItem from "../Post/components/PostList/Components/PostListItem";
 
 type FetchPostsList = () => Promise<void>;
