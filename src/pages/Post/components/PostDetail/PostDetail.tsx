@@ -7,10 +7,7 @@ import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { PostData } from "@/types/original";
-import { FetchPostFunc } from "../PostPageType";
-import PostAuthAction from "./Components/PostAuthAction/PostAuthAction";
-import PostDetailInfo from "./Components/PostDetailInfo/PostDetailInfo";
-import PostDetailViewer from "./Components/PostDetailViewer/PostDetailViewer";
+import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
 
 const PostDetail = (): React.ReactNode => {
   const [post, setPost] = useState<PostData>();
@@ -21,7 +18,7 @@ const PostDetail = (): React.ReactNode => {
 
   useEffect(
     function initialPost() {
-      const fetchPost: FetchPostFunc = async (category, pathId) => {
+      const fetchPost = async (category: string, pathId: string) => {
         const resPost = await getPost(category, pathId);
 
         if (!resPost) {

@@ -11,8 +11,8 @@ import {
 } from "@/constants";
 import { useModal } from "@/hooks";
 import { PostData } from "@/types/original";
-import { BannerInfo } from "../PostPageType";
-import PostListItem from "./Components/PostListItem";
+import { BannerInfo } from "./PostList.type";
+import { PostListItem } from "./components";
 
 type FetchPostsList = () => Promise<void>;
 
