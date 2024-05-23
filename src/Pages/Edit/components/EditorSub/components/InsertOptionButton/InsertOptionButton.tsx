@@ -12,14 +12,14 @@ const InsertOptionButton = ({
   listType,
 }: InsertOptionButtonProps): React.ReactNode => {
   const addListHandler = () => {
-    const value: string | null = prompt(
-      `새로 추가할 ${listType}의 이름을 넣어주세요`,
-    );
+    const value = prompt(`새로 추가할 ${listType}의 이름을 넣어주세요`);
+
     if (!value) return;
 
-    const isAgree: boolean = window.confirm(
+    const isAgree = window.confirm(
       `${listType}에 ${value} 라는 새로운 값을 추가하실건가요?`,
     );
+
     if (!isAgree) return;
 
     setOptions(listType, value);

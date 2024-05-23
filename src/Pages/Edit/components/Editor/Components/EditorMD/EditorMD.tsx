@@ -5,7 +5,7 @@ import React, { useMemo, useRef } from "react";
 import ReactQuill, { Quill } from "react-quill";
 import { InputImage } from "@/components";
 import { OnTypingEditor } from "../../Editor.Types";
-import { editor_formats } from "./EditorMD.Constants";
+import { EDITOR_FORMATS } from "./constants";
 
 interface EditorMDProps {
   onTyping: OnTypingEditor;
@@ -77,7 +77,7 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
         <ReactQuill
           className="editor__quill"
           ref={quillRef}
-          formats={editor_formats}
+          formats={EDITOR_FORMATS}
           theme="snow"
           value={state}
           onChange={onChangeMD}

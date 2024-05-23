@@ -1,5 +1,5 @@
 import { ContactMeButton } from "@/components";
-import { CONTACT_ME_DATA } from "@/constants/variables";
+import { CONTACT_ME_DATA } from "@/constants";
 
 const NavMenubarFooter = () => {
   return (

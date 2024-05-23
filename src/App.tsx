@@ -6,14 +6,14 @@ import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 
-const Edit = React.lazy(() => import("./Pages/Edit/Edit"));
-const Home = React.lazy(() => import("./Pages/Home/Home"));
-const Post = React.lazy(() => import("./Pages/Post/Post"));
+const Edit = React.lazy(() => import("./pages/Edit/Edit"));
+const Home = React.lazy(() => import("./pages/Home/Home"));
+const Post = React.lazy(() => import("./pages/Post/Post"));
 const PostDetail = React.lazy(
-  () => import("./Pages/Post/components/PostDetail/PostDetail"),
+  () => import("./pages/Post/components/PostDetail/PostDetail"),
 );
 const PostList = React.lazy(
-  () => import("./Pages/Post/components/PostList/PostList"),
+  () => import("./pages/Post/components/PostList/PostList"),
 );
 const Root = React.lazy(() => import("./Root"));
 

@@ -1,6 +1,6 @@
 import "./EditorSub.Style.css";
 import React, { MouseEvent, useState } from "react";
-import InsertOptionButton from "./Components/InsertOptionButton";
+import { InsertOptionButton } from "./components";
 
 interface EditorSubPageProps {
   onUpdate: (name: string) => void;

@@ -6,13 +6,15 @@ import { FetchPostFunc } from "@/Pages/Post/components/PostPageType";
 import { getPost } from "@/api";
 import { NEW_POST } from "@/constants";
 import { PostData } from "@/types/original";
-import EditorCategory from "./Components/EditorCategory/EditorCategory";
-import EditorMDInput from "./Components/EditorMD/EditorMD";
-import EditorPublicToggle from "./Components/EditorPublic/EditorPublic";
-import EditorTags from "./Components/EditorTags/EditorTags";
-import EditorTextInput from "./Components/EditorTextInput/EditorTextInput";
-import EditorThumbnail from "./Components/EditorThumbnail/EditorThumbnail";
 import { EditValue } from "./Editor.Types";
+import {
+  EditorCategory,
+  EditorMD,
+  EditorPublic,
+  EditorTags,
+  EditorTextInput,
+  EditorThumbnail,
+} from "./components";
 import { postUploadValidate } from "./utils";
 
 type SetEditorPost = (
@@ -81,7 +83,7 @@ const Editor = ({
   return (
     <article className="editor">
       <div className="editor__header">
-        <EditorPublicToggle
+        <EditorPublic
           state={postData.isPublic}
           onToggle={setPostHandler}
         />
@@ -116,7 +118,7 @@ const Editor = ({
         postId={postData.id}
       />
 
-      <EditorMDInput
+      <EditorMD
         onTyping={setPostHandler}
         state={postData.main}
       />

@@ -1,4 +1,4 @@
-export const editor_formats = [
+export const EDITOR_FORMATS = [
   "background",
   "bold",
   "color",
