@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
@@ -42,18 +42,32 @@ const router = createBrowserRouter([
 
 const App = (): React.ReactNode => {
   return (
-    <ContextAuthUserProvider>
-      <ContextIsLoadingProvider>
-        <ContextPostsProvider>
-          <ContextTagListProvider>
-            <ContextCategoryListProvider>
-              <RouterProvider router={router} />
-              <div id="modal" />
-            </ContextCategoryListProvider>
-          </ContextTagListProvider>
-        </ContextPostsProvider>
-      </ContextIsLoadingProvider>
-    </ContextAuthUserProvider>
+    <Suspense
+      fallback={
+        <section
+          style={{
+            width: "100dvw",
+            height: "100dvh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+          loading
+        </section>
+      }>
+      <ContextAuthUserProvider>
+        <ContextIsLoadingProvider>
+          <ContextPostsProvider>
+            <ContextTagListProvider>
+              <ContextCategoryListProvider>
+                <RouterProvider router={router} />
+                <div id="modal" />
+              </ContextCategoryListProvider>
+            </ContextTagListProvider>
+          </ContextPostsProvider>
+        </ContextIsLoadingProvider>
+      </ContextAuthUserProvider>
+    </Suspense>
   );
 };
 
