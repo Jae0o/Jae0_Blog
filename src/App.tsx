@@ -5,12 +5,17 @@ import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
 import { ContextTagListProvider } from "./Context/ContextTagList";
-import Edit from "./Pages/Edit/Edit";
-import Home from "./Pages/Home/Home";
-import Post from "./Pages/Post/Post";
-import PostDetail from "./Pages/Post/components/PostDetail/PostDetail";
-import PostList from "./Pages/Post/components/PostList/PostList";
-import Root from "./Root";
+
+const Edit = React.lazy(() => import("./Pages/Edit/Edit"));
+const Home = React.lazy(() => import("./Pages/Home/Home"));
+const Post = React.lazy(() => import("./Pages/Post/Post"));
+const PostDetail = React.lazy(
+  () => import("./Pages/Post/components/PostDetail/PostDetail"),
+);
+const PostList = React.lazy(
+  () => import("./Pages/Post/components/PostList/PostList"),
+);
+const Root = React.lazy(() => import("./Root"));
 
 const router = createBrowserRouter([
   {
