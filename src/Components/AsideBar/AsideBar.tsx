@@ -1,8 +1,5 @@
 import "./AsideBar.Styles.css";
-import React from "react";
-import AsideFooter from "./components/AsideFooter/AsideFooter";
-import AsideMenubar from "./components/AsideMenubar/AsideMenubar";
-import AsideProfile from "./components/Profile/AsideProfile";
+import { AsideFooter, AsideMenubar, AsideProfile } from "./components";
 
 const AsideBar = (): React.ReactNode => {
   return (

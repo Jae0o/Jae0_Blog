@@ -7,8 +7,8 @@ import "./Styles/Responsive700px.css";
 import "./Styles/Responsive1000px.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
-import AsideBar from "./Components/AsideBar/AsideBar";
 import Navbar from "./Components/Navbar/Navbar";
+import { AsideBar } from "./components";
 
 const Root = (): React.ReactNode => {
   return (
