@@ -3,7 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { PostData } from "@/API/Firebase.Types";
 import { OnClickEvent } from "@/Types/Event.Types";
-import { convertDateFormat } from "@/Util/UtilFunctions";
+import { convertDateFormat } from "@/util";
 
 interface PostListItemProps {
   post: PostData;

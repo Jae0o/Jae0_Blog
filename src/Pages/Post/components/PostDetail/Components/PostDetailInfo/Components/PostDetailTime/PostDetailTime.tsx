@@ -1,6 +1,6 @@
 import "./PostDetailTime.Style.css";
 import React from "react";
-import { convertDateFormat } from "@/Util/UtilFunctions";
+import { convertDateFormat } from "@/util";
 
 interface PostDetailTimeProps {
   title: string;

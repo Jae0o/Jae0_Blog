@@ -1,5 +1,6 @@
 type ConvertDateFormat = (date: string) => string;
-export const convertDateFormat: ConvertDateFormat = date => {
+
+const convertDateFormat: ConvertDateFormat = date => {
   const dateType = new Date(date);
 
   const year: number = dateType.getUTCFullYear();
@@ -10,3 +11,5 @@ export const convertDateFormat: ConvertDateFormat = date => {
 
   return `${year}.${month}.${day}`;
 };
+
+export default convertDateFormat;

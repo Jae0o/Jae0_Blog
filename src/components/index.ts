@@ -3,6 +3,8 @@ export { default as CheckAdmin } from "./CheckAdmin/CheckAdmin";
 export { default as ContactMeButton } from "./ContactMeButton/ContactMeButton";
 export { default as MenubarItem } from "./MenubarItem/MenubarItem";
 export { default as Navbar } from "./Navbar/Navbar";
+export { default as PostBanner } from "./PostBanner/PostBanner";
+export { default as PostBannerDecoration } from "./PostBannerDecoration/PostBannerDecoration";
 
 export { default as InputImage } from "./InputImage/InputImage";
 

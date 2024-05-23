@@ -6,7 +6,6 @@ import { PostData } from "@/API/Firebase.Types";
 import { getPost } from "@/API/FirebaseDB";
 import { FetchPostFunc } from "@/Pages/Post/components/PostPageType";
 import { OnClickEvent } from "@/Types/Event.Types";
-import { postUploadValidate } from "@/Util/Validate";
 import { NEW_POST } from "@/constants/variables";
 import EditorCategory from "./Components/EditorCategory/EditorCategory";
 import EditorMDInput from "./Components/EditorMD/EditorMD";
@@ -15,6 +14,7 @@ import EditorTags from "./Components/EditorTags/EditorTags";
 import EditorTextInput from "./Components/EditorTextInput/EditorTextInput";
 import EditorThumbnail from "./Components/EditorThumbnail/EditorThumbnail";
 import { EditValue } from "./Editor.Types";
+import { postUploadValidate } from "./utils";
 
 type SetEditorPost = (
   key: EditValue,

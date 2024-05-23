@@ -1,8 +1,8 @@
 import { getDownloadURL, ref } from "firebase/storage";
 import { uploadBytes } from "firebase/storage";
 import { ERROR_MESSAGE } from "@/constants/AlertMessage";
+import { imageResizer } from "@/util";
 import { firebaseStorage } from "./Firebase";
-import resizeFile from "./Util/imageResizer";
 
 type SetImageStorage = (params: {
   file: File;
@@ -13,7 +13,7 @@ export const setImageStorage: SetImageStorage = async ({ file, path }) => {
   let resizedImage: File | Blob = file;
 
   if (file.type !== "image/gif") {
-    resizedImage = await resizeFile(file);
+    resizedImage = await imageResizer(file);
   }
 
   const storageRef = ref(firebaseStorage, `image/${path}`);

@@ -2,7 +2,7 @@ import FileResizer from "react-image-file-resizer";
 
 type ResizeFile = (file: File) => Promise<Blob>;
 
-const resizeFile: ResizeFile = async file =>
+const imageResizer: ResizeFile = async file =>
   await new Promise(resolve => {
     FileResizer.imageFileResizer(
       file,
@@ -20,4 +20,4 @@ const resizeFile: ResizeFile = async file =>
     );
   });
 
-export default resizeFile;
+export default imageResizer;
