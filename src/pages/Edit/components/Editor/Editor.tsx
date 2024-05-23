@@ -2,7 +2,6 @@ import { v4 } from "uuid";
 import "./Editor.Style.css";
 import React, { MouseEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FetchPostFunc } from "@/Pages/Post/components/PostPageType";
 import { getPost } from "@/api";
 import { NEW_POST } from "@/constants";
 import { PostData } from "@/types/original";
@@ -50,7 +49,7 @@ const Editor = ({
       return;
     }
 
-    const fetchPost: FetchPostFunc = async (category, pathId) => {
+    const fetchPost = async (category: string, pathId: string) => {
       const resPost = await getPost(category, pathId);
 
       if (!resPost) {
