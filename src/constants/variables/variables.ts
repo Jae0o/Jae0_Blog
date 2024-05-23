@@ -9,15 +9,8 @@ import { PiReadCvLogoFill } from "react-icons/pi";
 // import { PiReadCvLogoLight } from "react-icons/pi";
 // import { PiReadCvLogoDuotone } from "react-icons/pi";
 import { RiReactjsLine } from "react-icons/ri";
-import { PostData } from "@/types/original";
-import { CONTACT_ME_URL } from "./URL";
-
-export interface Advice {
-  advice: string;
-  author: string;
-}
-
-type AdviceList = Advice[];
+import { Advice, PostData } from "@/types/original";
+import { CONTACT_ME_URL } from "../url/url";
 
 export const NEW_POST: PostData = {
   id: "newPost",
@@ -36,7 +29,7 @@ export const ADVICE_DEFAULT: Advice = {
   author: "Boyle's Law of Software Evolution",
 };
 
-export const ADVICE_LIST: AdviceList = [
+export const ADVICE_LIST: Advice[] = [
   {
     advice: "Hello, World!",
     author: "Brian Kernighan",

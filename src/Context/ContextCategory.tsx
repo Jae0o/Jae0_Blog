@@ -1,7 +1,7 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { getOptions } from "@/api";
 import { AlertModal } from "@/components";
-import { CONTEXT_ERROR } from "@/constants/AlertMessage";
+import { CONTEXT_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { ContextProps } from "./Context.Types";
 

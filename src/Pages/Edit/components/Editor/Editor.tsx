@@ -4,7 +4,7 @@ import React, { MouseEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FetchPostFunc } from "@/Pages/Post/components/PostPageType";
 import { getPost } from "@/api";
-import { NEW_POST } from "@/constants/variables";
+import { NEW_POST } from "@/constants";
 import { PostData } from "@/types/original";
 import EditorCategory from "./Components/EditorCategory/EditorCategory";
 import EditorMDInput from "./Components/EditorMD/EditorMD";

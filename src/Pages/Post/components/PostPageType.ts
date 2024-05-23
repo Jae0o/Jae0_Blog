@@ -1,4 +1,4 @@
-import { Advice } from "../../../constants/variables";
+import { Advice } from "@/types/original";
 
 export interface PostBanner {
   id?: string;

@@ -2,7 +2,7 @@ import "./AsideMenubar.Style.css";
 import React, { useContext } from "react";
 import { ContextPosts } from "@/Context/ContextPosts";
 import { MenubarItem } from "@/components";
-import { MENUBAR_LIST } from "@/constants/variables";
+import { MENUBAR_LIST } from "@/constants";
 
 const AsideMenubar = (): React.ReactNode => {
   const { posts } = useContext(ContextPosts);

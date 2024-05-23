@@ -3,9 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getAllPostsList, getPostsList } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
-import { GET_POST_LIST_ERROR } from "@/constants/AlertMessage";
-import { POST_BANNER_THUMBNAILS } from "@/constants/URL";
-import { ADVICE_DEFAULT, ADVICE_LIST } from "@/constants/variables";
+import {
+  ADVICE_DEFAULT,
+  ADVICE_LIST,
+  GET_POST_LIST_ERROR,
+  POST_BANNER_THUMBNAILS,
+} from "@/constants";
 import { useModal } from "@/hooks";
 import { PostData } from "@/types/original";
 import { BannerInfo } from "../PostPageType";

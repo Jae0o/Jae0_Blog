@@ -7,7 +7,7 @@ import { ContextPosts } from "@/Context/ContextPosts";
 import { ContextTagList } from "@/Context/ContextTagList";
 import { setPost } from "@/api";
 import { CheckAdmin, LoadingSpinner } from "@/components";
-import { ALERT_EDIT } from "@/constants/AlertMessage";
+import { ALERT_EDIT } from "@/constants";
 import { PostData } from "@/types/original";
 import EditPage from "./components/Editor/Editor";
 import EditSubPage from "./components/EditorSub/EditorSub";

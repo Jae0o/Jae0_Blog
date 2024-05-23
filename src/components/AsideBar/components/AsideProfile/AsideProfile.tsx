@@ -1,7 +1,7 @@
 import "./AsideProfile.Styles.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { PROFILE } from "@/constants/URL";
+import { PROFILE } from "@/constants";
 import AsideProfileActions from "./components/AsideProfileAction/AsideProfileActions";
 
 const AsideProfile = (): React.ReactNode => {
