@@ -1,8 +1,8 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { getOptions } from "@/API/FirebaseDB";
-import AlertModal from "@/Components/Modal/Components/AlertModal/AlertModal";
-import useModal from "@/Components/Modal/Hooks/useModal";
+import { AlertModal } from "@/components";
 import { CONTEXT_ERROR } from "@/constants/AlertMessage";
+import { useModal } from "@/hooks";
 import { ContextProps } from "./Context.Types";
 
 interface CategoryListContext {

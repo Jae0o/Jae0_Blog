@@ -1,7 +1,7 @@
 import "./Modal.Styles.css";
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import ModalPortal from "./Components/ModalPortal";
+import { ModalPortal } from "./components";
 
 interface ModalProps {
   isShow: boolean;

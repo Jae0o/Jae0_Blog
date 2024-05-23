@@ -1,6 +1,5 @@
 import "./LoginFormInput.Styles.css";
-import { loginValidation } from "../Function/loginValidation";
-import { LoginInputType } from "../LoginFormModal";
+import { LoginInputType } from "../../LoginFormModal";
 
 interface LoginFormInputProps {
   title: string;
@@ -9,7 +8,7 @@ interface LoginFormInputProps {
   onChange: (param: { type: LoginInputType; value: string }) => void;
 }
 
-export const LoginFormInput = ({
+const LoginFormInput = ({
   title,
   type,
   value,
@@ -40,3 +39,5 @@ export const LoginFormInput = ({
     </div>
   );
 };
+
+export default LoginFormInput;

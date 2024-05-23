@@ -1,12 +1,11 @@
 import "./LoginFormModal.Styles.css";
 import { useState } from "react";
 import { firebaseLogin } from "@/API/FirebaseAuth";
+import { AlertModal, Modal } from "@/components";
 import { LOGIN_VALIDATION } from "@/constants/AlertMessage";
-import useModal from "../../Hooks/useModal";
-import Modal from "../../Modal";
-import AlertModal from "../AlertModal/AlertModal";
-import { LoginFormInput } from "./Components/LoginFormInput";
-import { loginValidation } from "./Function/loginValidation";
+import { useModal } from "@/hooks";
+import { LoginFormInput } from "./components";
+import { loginValidation } from "./utils";
 
 interface LoginFormModalProps {
   isShow: boolean;

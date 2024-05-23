@@ -2,9 +2,9 @@ import "./PostAuthAction.Styles.css";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { deletePost } from "@/API/FirebaseDB";
-import ConfirmModal from "@/Components/Modal/Components/ConfirmModal/ConfirmModal";
-import useModal from "@/Components/Modal/Hooks/useModal";
 import { ContextPosts } from "@/Context/ContextPosts";
+import { ConfirmModal } from "@/components";
+import { useModal } from "@/hooks";
 
 interface PostAuthActionProps {
   postCategory: string;

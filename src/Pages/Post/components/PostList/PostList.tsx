@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { PostData } from "@/API/Firebase.Types";
 import { getAllPostsList, getPostsList } from "@/API/FirebaseDB";
-import AlertModal from "@/Components/Modal/Components/AlertModal/AlertModal";
-import useModal from "@/Components/Modal/Hooks/useModal";
 import PostBanner from "@/Components/PostBanner/PostBanner";
 import PostBannerDecoration from "@/Components/PostBannerDecoration/PostBannerDecoration";
+import { AlertModal } from "@/components";
 import { GET_POST_LIST_ERROR } from "@/constants/AlertMessage";
 import { POST_BANNER_THUMBNAILS } from "@/constants/URL";
 import { ADVICE_DEFAULT, ADVICE_LIST } from "@/constants/variables";
+import { useModal } from "@/hooks";
 import { BannerInfo } from "../PostPageType";
 import PostListItem from "./Components/PostListItem";
 
