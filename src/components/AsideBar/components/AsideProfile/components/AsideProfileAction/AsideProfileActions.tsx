@@ -1,4 +1,5 @@
-import "./AsideProfileActions.Style.css";
+import "./AsideProfileActions.style.css";
+
 import React, { MouseEvent } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 

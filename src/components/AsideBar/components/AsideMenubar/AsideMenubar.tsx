@@ -1,5 +1,7 @@
-import "./AsideMenubar.Style.css";
+import "./AsideMenubar.style.css";
+
 import React, { useContext } from "react";
+
 import { ContextPosts } from "@/Context/ContextPosts";
 import { MenubarItem } from "@/components";
 import { MENUBAR_LIST } from "@/constants";

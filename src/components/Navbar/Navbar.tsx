@@ -1,5 +1,7 @@
-import "./Navbar.Styles.css";
+import "./Navbar.style.css";
+
 import { useState } from "react";
+
 import { NavMenubar, NavTitle, NavToggleButton } from "./components";
 
 const Navbar = () => {

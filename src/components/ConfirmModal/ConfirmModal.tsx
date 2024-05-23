@@ -1,4 +1,5 @@
-import "./ConfirmModal.Styles.css";
+import "./ConfirmModal.style.css";
+
 import { Modal } from "@/components";
 
 interface ConfirmModalProps {

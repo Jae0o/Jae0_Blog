@@ -1,9 +1,12 @@
-import "./LoginFormModal.Styles.css";
+import "./LoginFormModal.style.css";
+
 import { useState } from "react";
+
 import { firebaseLogin } from "@/api";
 import { AlertModal, Modal } from "@/components";
 import { LOGIN_VALIDATION } from "@/constants";
 import { useModal } from "@/hooks";
+
 import { LoginFormInput } from "./components";
 import { loginValidation } from "./utils";
 

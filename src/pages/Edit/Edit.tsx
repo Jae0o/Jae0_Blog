@@ -1,6 +1,8 @@
-import "./Edit.Style.css";
+import "./Edit.style.css";
+
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import { ContextCategoryList } from "@/Context/ContextCategory";
 import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
@@ -9,6 +11,7 @@ import { setPost } from "@/api";
 import { CheckAdmin, LoadingSpinner } from "@/components";
 import { ALERT_EDIT } from "@/constants";
 import { PostData } from "@/types/original";
+
 import EditPage from "./components/Editor/Editor";
 import EditSubPage from "./components/EditorSub/EditorSub";
 

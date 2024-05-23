@@ -1,6 +1,8 @@
-import "./PostAuthAction.Styles.css";
+import "./PostAuthAction.style.css";
+
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { ContextPosts } from "@/Context/ContextPosts";
 import { deletePost } from "@/api";
 import { ConfirmModal } from "@/components";

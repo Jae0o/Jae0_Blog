@@ -1,6 +1,8 @@
-import "./PostList.Style.css";
+import "./PostList.style.css";
+
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import { getAllPostsList, getPostsList } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import {
@@ -11,6 +13,7 @@ import {
 } from "@/constants";
 import { useModal } from "@/hooks";
 import { PostData } from "@/types/original";
+
 import { BannerInfo } from "./PostList.type";
 import { PostListItem } from "./components";
 

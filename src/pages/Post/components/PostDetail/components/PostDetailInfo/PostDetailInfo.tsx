@@ -1,5 +1,7 @@
-import "./PostDetailInfo.css";
+import "./PostDetailInfo.style.css";
+
 import { PostData } from "@/types/original";
+
 import {
   PostDetailCategory,
   PostDetailTags,

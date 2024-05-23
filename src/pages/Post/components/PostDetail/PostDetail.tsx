@@ -1,12 +1,15 @@
-import "./PostDetail.Style.css";
+import "./PostDetail.style.css";
+
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+
 import { ContextAuthUser } from "@/Context/ContextAuthUser";
 import { getPost } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { PostData } from "@/types/original";
+
 import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
 
 const PostDetail = (): React.ReactNode => {

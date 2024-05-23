@@ -1,4 +1,5 @@
-import "./ContactMeButton.Styles.css";
+import "./ContactMeButton.style.css";
+
 import React from "react";
 
 interface ContactMeButtonProps {

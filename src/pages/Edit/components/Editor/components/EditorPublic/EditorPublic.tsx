@@ -1,6 +1,8 @@
-import "./EditorPublic.Style.css";
+import "./EditorPublic.style.css";
+
 import React, { useCallback } from "react";
-import { EditValue } from "../../Editor.Types";
+
+import { EditValue } from "../../Editor.type";
 
 interface EditPublicProps {
   state: boolean;

@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+
 import { ContextAuthUser } from "@/Context/ContextAuthUser";
 
 interface CheckAdminProviderProps {

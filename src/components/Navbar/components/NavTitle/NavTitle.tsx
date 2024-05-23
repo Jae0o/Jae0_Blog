@@ -1,4 +1,5 @@
-import "./NavTitle.Styles.css";
+import "./NavTitle.style.css";
+
 import { useNavigate } from "react-router-dom";
 
 const NavTitle = () => {

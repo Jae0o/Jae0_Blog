@@ -1,6 +1,8 @@
 import { get, ref, set } from "firebase/database";
+
 import { ERROR_MESSAGE } from "@/constants";
 import { PostData } from "@/types/original";
+
 import { database } from "./firebase";
 
 /* ============== Lists ============== */

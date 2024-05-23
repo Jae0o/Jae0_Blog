@@ -1,6 +1,8 @@
-import "./EditorCategory.Style.css";
+import "./EditorCategory.style.css";
+
 import React, { ChangeEvent } from "react";
-import { EditValue } from "../../Editor.Types";
+
+import { EditValue } from "../../Editor.type";
 
 interface EditorCategoryProps {
   categoryList: string[];

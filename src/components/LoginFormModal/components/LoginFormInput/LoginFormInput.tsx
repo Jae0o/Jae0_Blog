@@ -1,4 +1,5 @@
-import "./LoginFormInput.Styles.css";
+import "./LoginFormInput.style.css";
+
 import { LoginInputType } from "../../LoginFormModal";
 import { loginValidation } from "../../utils";
 

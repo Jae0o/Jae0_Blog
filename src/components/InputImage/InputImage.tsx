@@ -1,5 +1,7 @@
-import "./InputImage.Styles.css";
+import "./InputImage.style.css";
+
 import React from "react";
+
 import { setImageStorage } from "@/api";
 
 interface InputImageProps {

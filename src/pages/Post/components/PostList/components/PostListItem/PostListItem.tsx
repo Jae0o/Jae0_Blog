@@ -1,6 +1,8 @@
-import "./PostListItem.Style.css";
+import "./PostListItem.style.css";
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 import { PostData } from "@/types/original";
 import { convertDateFormat } from "@/util";
 

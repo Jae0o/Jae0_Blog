@@ -1,5 +1,7 @@
-import "./PostDetailTime.Style.css";
+import "./PostDetailTime.style.css";
+
 import React from "react";
+
 import { convertDateFormat } from "@/util";
 
 interface PostDetailTimeProps {

@@ -1,4 +1,5 @@
-import "./PostDetailCategory.Style.css";
+import "./PostDetailCategory.style.css";
+
 import React from "react";
 
 interface PostDetailCategoryProps {

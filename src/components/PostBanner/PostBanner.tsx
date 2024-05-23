@@ -1,4 +1,4 @@
-import "./PostBanner.Style.css";
+import "./PostBanner.style.css";
 
 interface PostBannerProps {
   thumbnail: string;

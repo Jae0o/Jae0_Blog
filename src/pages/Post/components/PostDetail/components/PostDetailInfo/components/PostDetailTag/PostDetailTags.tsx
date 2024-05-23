@@ -1,4 +1,5 @@
-import "./PostDetailTags.Style.css";
+import "./PostDetailTags.style.css";
+
 import React from "react";
 
 interface PostDetailTagsProps {

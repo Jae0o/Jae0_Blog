@@ -1,4 +1,5 @@
-import "./AlertModal.Styles.css";
+import "./AlertModal.style.css";
+
 import { Modal } from "@/components";
 
 interface AlertModalProps {

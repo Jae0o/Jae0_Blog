@@ -1,5 +1,7 @@
-import "./EditorSub.Style.css";
+import "./EditorSub.style.css";
+
 import React, { MouseEvent, useState } from "react";
+
 import { InsertOptionButton } from "./components";
 
 interface EditorSubPageProps {

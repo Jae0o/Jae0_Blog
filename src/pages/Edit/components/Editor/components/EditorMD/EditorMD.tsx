@@ -1,10 +1,14 @@
 import { ImageResize } from "quill-image-resize-module-ts";
-import "./EditorMD.Style.css";
+
+import "./EditorMD.style.css";
 import "react-quill/dist/quill.snow.css";
+
 import React, { useMemo, useRef } from "react";
 import ReactQuill, { Quill } from "react-quill";
+
 import { InputImage } from "@/components";
-import { OnTypingEditor } from "../../Editor.Types";
+
+import { OnTypingEditor } from "../../Editor.type";
 import { EDITOR_FORMATS } from "./constants";
 
 interface EditorMDProps {

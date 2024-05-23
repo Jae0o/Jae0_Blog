@@ -1,8 +1,11 @@
-import "./Home.Style.css";
+import "./Home.style.css";
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { getAllPostsList } from "@/api";
 import { PostData } from "@/types/original";
+
 import { PostListItem } from "../Post/components/PostList/components";
 
 type FetchPostsList = () => Promise<void>;

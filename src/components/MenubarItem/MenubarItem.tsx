@@ -1,7 +1,9 @@
-import "./MenubarItem.Style.css";
+import "./MenubarItem.style.css";
+
 import React from "react";
 import { IconType } from "react-icons";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+
 import { useHover } from "@/hooks";
 
 export interface MenubarItemProps {

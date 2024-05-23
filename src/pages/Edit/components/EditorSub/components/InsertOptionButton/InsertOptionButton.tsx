@@ -1,5 +1,7 @@
-import "./InsertOptionButton.css";
+import "./InsertOptionButton.style.css";
+
 import React from "react";
+
 import { setOptions } from "@/api";
 
 interface InsertOptionButtonProps {

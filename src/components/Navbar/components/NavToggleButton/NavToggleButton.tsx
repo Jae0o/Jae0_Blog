@@ -1,4 +1,4 @@
-import "./NavToggleButton.Styles.css";
+import "./NavToggleButton.style.css";
 
 interface NavToggleButtonProps {
   isToggle: boolean;

@@ -1,6 +1,9 @@
 import { onAuthStateChanged } from "firebase/auth";
+
 import { createContext, useState } from "react";
+
 import { auth } from "@/api";
+
 import { ContextProps } from "./Context.Types";
 
 interface AuthUserContext {

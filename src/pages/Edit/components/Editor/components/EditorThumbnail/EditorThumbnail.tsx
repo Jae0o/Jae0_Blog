@@ -1,7 +1,10 @@
-import "./EditorThumbnail.Styles.css";
+import "./EditorThumbnail.style.css";
+
 import React, { useRef } from "react";
+
 import { InputImage } from "@/components";
-import { EditValue } from "../../Editor.Types";
+
+import { EditValue } from "../../Editor.type";
 
 interface EditorThumbnailProps {
   onSelect: (key: EditValue, value: string) => void;

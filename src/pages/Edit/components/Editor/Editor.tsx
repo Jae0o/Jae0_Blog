@@ -1,11 +1,15 @@
 import { v4 } from "uuid";
-import "./Editor.Style.css";
+
+import "./Editor.style.css";
+
 import React, { MouseEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { getPost } from "@/api";
 import { NEW_POST } from "@/constants";
 import { PostData } from "@/types/original";
-import { EditValue } from "./Editor.Types";
+
+import { EditValue } from "./Editor.type";
 import {
   EditorCategory,
   EditorMD,

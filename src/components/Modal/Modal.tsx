@@ -1,6 +1,8 @@
-import "./Modal.Styles.css";
+import "./Modal.style.css";
+
 import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
+
 import { ModalPortal } from "./components";
 
 interface ModalProps {

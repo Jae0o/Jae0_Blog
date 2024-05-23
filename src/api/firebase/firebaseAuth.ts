@@ -4,6 +4,7 @@ import {
   setPersistence,
   signInWithEmailAndPassword,
 } from "firebase/auth";
+
 import { auth } from "./firebase";
 
 interface LoginInfo {

@@ -1,4 +1,5 @@
-import "./AsideFooter.Styles.css";
+import "./AsideFooter.style.css";
+
 import { ContactMeButton } from "@/components";
 import { CONTACT_ME_DATA } from "@/constants";
 
