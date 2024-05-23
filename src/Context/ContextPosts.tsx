@@ -1,8 +1,9 @@
 import React, { createContext, useCallback, useEffect, useState } from "react";
-import { PostData, getAllPostsList } from "@/api";
+import { getAllPostsList } from "@/api";
 import { AlertModal } from "@/components";
 import { CONTEXT_ERROR } from "@/constants/AlertMessage";
 import { useModal } from "@/hooks";
+import { PostData } from "@/types/original";
 import { ContextProps } from "./Context.Types";
 
 interface Posts {

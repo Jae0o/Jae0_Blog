@@ -1,8 +1,7 @@
 import "./PostListItem.Style.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { OnClickEvent } from "@/Types/Event.Types";
-import { PostData } from "@/api";
+import { PostData } from "@/types/original";
 import { convertDateFormat } from "@/util";
 
 interface PostListItemProps {
@@ -14,7 +13,7 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
 
   const navigate = useNavigate();
 
-  const onNavigate: OnClickEvent = () => {
+  const onNavigate = () => {
     navigate(`/post/detail/${post.category}/${post.id}`);
   };
 

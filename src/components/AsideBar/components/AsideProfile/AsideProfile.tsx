@@ -1,14 +1,13 @@
 import "./AsideProfile.Styles.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { OnClickEvent } from "@/Types/Event.Types";
 import { PROFILE } from "@/constants/URL";
 import AsideProfileActions from "./components/AsideProfileAction/AsideProfileActions";
 
 const AsideProfile = (): React.ReactNode => {
   const navigate = useNavigate();
 
-  const onClickHandler: OnClickEvent = () => {
+  const onClickHandler = () => {
     navigate("/");
   };
   return (

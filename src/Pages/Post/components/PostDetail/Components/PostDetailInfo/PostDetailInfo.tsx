@@ -1,5 +1,5 @@
 import "./PostDetailInfo.css";
-import { PostData } from "@/api";
+import { PostData } from "@/types/original";
 import PostDetailCategory from "./Components/PostDetailCategory/PostDetailCategory";
 import PostDetailTags from "./Components/PostDetailTag/PostDetailTags";
 import PostDetailTime from "./Components/PostDetailTime/PostDetailTime";

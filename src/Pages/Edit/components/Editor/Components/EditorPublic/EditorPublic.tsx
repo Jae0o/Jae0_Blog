@@ -1,6 +1,5 @@
 import "./EditorPublic.Style.css";
 import React, { useCallback } from "react";
-import { OnChangeEvent } from "@/Types/Event.Types";
 import { EditValue } from "../../Editor.Types";
 
 interface EditPublicProps {
@@ -12,7 +11,7 @@ const EditorPublic = ({
   state,
   onToggle,
 }: EditPublicProps): React.ReactNode => {
-  const onChangeToggle: OnChangeEvent = () => {
+  const onChangeToggle = () => {
     onToggle("isPublic", !state);
   };
 

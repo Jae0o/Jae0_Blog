@@ -5,9 +5,10 @@ import { ContextCategoryList } from "@/Context/ContextCategory";
 import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
 import { ContextTagList } from "@/Context/ContextTagList";
-import { PostData, setPost } from "@/api";
+import { setPost } from "@/api";
 import { CheckAdmin, LoadingSpinner } from "@/components";
 import { ALERT_EDIT } from "@/constants/AlertMessage";
+import { PostData } from "@/types/original";
 import EditPage from "./components/Editor/Editor";
 import EditSubPage from "./components/EditorSub/EditorSub";
 

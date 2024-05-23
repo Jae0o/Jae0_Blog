@@ -1,11 +1,11 @@
 import { v4 } from "uuid";
 import "./Editor.Style.css";
-import React, { useEffect, useState } from "react";
+import React, { MouseEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FetchPostFunc } from "@/Pages/Post/components/PostPageType";
-import { OnClickEvent } from "@/Types/Event.Types";
-import { PostData, getPost } from "@/api";
+import { getPost } from "@/api";
 import { NEW_POST } from "@/constants/variables";
+import { PostData } from "@/types/original";
 import EditorCategory from "./Components/EditorCategory/EditorCategory";
 import EditorMDInput from "./Components/EditorMD/EditorMD";
 import EditorPublicToggle from "./Components/EditorPublic/EditorPublic";
@@ -70,7 +70,7 @@ const Editor = ({
     }));
   };
 
-  const onSubmitPost: OnClickEvent = e => {
+  const onSubmitPost = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     if (postUploadValidate(postData)) {

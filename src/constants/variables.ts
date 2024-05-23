@@ -9,7 +9,7 @@ import { PiReadCvLogoFill } from "react-icons/pi";
 // import { PiReadCvLogoLight } from "react-icons/pi";
 // import { PiReadCvLogoDuotone } from "react-icons/pi";
 import { RiReactjsLine } from "react-icons/ri";
-import { PostData } from "@/api";
+import { PostData } from "@/types/original";
 import { CONTACT_ME_URL } from "./URL";
 
 export interface Advice {

@@ -1,6 +1,5 @@
 import "./InsertOptionButton.css";
 import React from "react";
-import { OnClickEvent } from "@/Types/Event.Types";
 import { setOptions } from "@/api";
 
 interface InsertOptionButtonProps {
@@ -12,7 +11,7 @@ const InsertOptionButton = ({
   onUpdate,
   listType,
 }: InsertOptionButtonProps): React.ReactNode => {
-  const addListHandler: OnClickEvent = () => {
+  const addListHandler = () => {
     const value: string | null = prompt(
       `새로 추가할 ${listType}의 이름을 넣어주세요`,
     );

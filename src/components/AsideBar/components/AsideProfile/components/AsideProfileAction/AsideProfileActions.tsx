@@ -1,7 +1,6 @@
 import "./AsideProfileActions.Style.css";
-import React from "react";
+import React, { MouseEvent } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
-import { OnClickEvent } from "@/Types/Event.Types";
 
 interface AsideProfileActionsProps {
   action: "home" | "search" | "write";
@@ -16,7 +15,7 @@ const AsideProfileActions = ({
 }: AsideProfileActionsProps): React.ReactNode => {
   const navigate: NavigateFunction = useNavigate();
 
-  const onClickHandle: OnClickEvent = e => {
+  const onClickHandle = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     navigate(path);
   };

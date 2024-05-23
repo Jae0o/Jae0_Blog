@@ -1,4 +1,4 @@
-import { PostData } from "@/api";
+import { PostData } from "@/types/original";
 
 type PostUploadValidate = (post: PostData) => boolean;
 

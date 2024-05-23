@@ -1,6 +1,5 @@
 import "./EditorSub.Style.css";
-import React, { useState } from "react";
-import { OnClickEvent } from "@/Types/Event.Types";
+import React, { MouseEvent, useState } from "react";
 import InsertOptionButton from "./Components/InsertOptionButton";
 
 interface EditorSubPageProps {
@@ -10,7 +9,7 @@ interface EditorSubPageProps {
 const EditSubPage = ({ onUpdate }: EditorSubPageProps): React.ReactNode => {
   const [toggled, setToggled] = useState<boolean>(false);
 
-  const toggleHandler: OnClickEvent = e => {
+  const toggleHandler = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setToggled(!toggled);
   };

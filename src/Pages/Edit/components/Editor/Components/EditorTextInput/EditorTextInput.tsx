@@ -1,6 +1,5 @@
 import "./EditorTextInput.Style.css";
-import React from "react";
-import { OnChangeEvent } from "@/Types/Event.Types";
+import React, { ChangeEvent } from "react";
 import { EditValue, OnTypingEditor } from "../../Editor.Types";
 
 interface EditorTextInputProps {
@@ -14,14 +13,10 @@ const EditorTextInput = ({
   onTyping,
   state,
 }: EditorTextInputProps): React.ReactNode => {
-  const onChangeData: OnChangeEvent = e => {
+  const onChangeData = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
 
-    if (e.currentTarget instanceof HTMLInputElement) {
-      const target: HTMLInputElement = e.currentTarget;
-
-      onTyping(typeName, target.value);
-    }
+    onTyping(typeName, e.currentTarget.value);
   };
 
   return (

@@ -1,6 +1,5 @@
 import "./EditorCategory.Style.css";
-import React from "react";
-import { OnChangeEvent } from "@/Types/Event.Types";
+import React, { ChangeEvent } from "react";
 import { EditValue } from "../../Editor.Types";
 
 interface EditorCategoryProps {
@@ -14,8 +13,7 @@ const EditorCategory = ({
   onSelecting,
   state,
 }: EditorCategoryProps): React.ReactNode => {
-  const selectedHandler: OnChangeEvent = e => {
-    if (!(e.currentTarget instanceof HTMLInputElement)) return;
+  const selectedHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const target = e.currentTarget;
     onSelecting("category", target.value);
   };

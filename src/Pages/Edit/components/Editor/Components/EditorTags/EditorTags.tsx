@@ -1,6 +1,5 @@
 import "./EditorTags.Style.css";
-import React from "react";
-import { OnChangeEvent } from "@/Types/Event.Types";
+import React, { ChangeEvent } from "react";
 import { EditValue } from "../../Editor.Types";
 
 interface EditorTagsProps {
@@ -14,11 +13,12 @@ const EditorTags = ({
   state,
   onSelecting,
 }: EditorTagsProps): React.ReactNode => {
-  const toggleTagHandler: OnChangeEvent = e => {
-    const element: HTMLInputElement = e.currentTarget as HTMLInputElement;
-    const target: string = element.value;
+  const toggleTagHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const element = e.currentTarget;
+    const target = element.value;
 
     let newSelected: string[];
+
     if (state.includes(target)) {
       newSelected = state.filter(item => item !== target);
     } else {

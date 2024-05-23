@@ -1,12 +1,13 @@
 import "./PostList.Style.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { PostData, getAllPostsList, getPostsList } from "@/api";
+import { getAllPostsList, getPostsList } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import { GET_POST_LIST_ERROR } from "@/constants/AlertMessage";
 import { POST_BANNER_THUMBNAILS } from "@/constants/URL";
 import { ADVICE_DEFAULT, ADVICE_LIST } from "@/constants/variables";
 import { useModal } from "@/hooks";
+import { PostData } from "@/types/original";
 import { BannerInfo } from "../PostPageType";
 import PostListItem from "./Components/PostListItem";
 
