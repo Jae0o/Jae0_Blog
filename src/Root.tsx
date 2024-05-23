@@ -1,10 +1,10 @@
-import "./Font/pretendard-subset.css";
 import "./Root.Style.css";
-import "./Styles/Animation.css";
-import "./Styles/Quill.Styles.css";
-import "./Styles/Responsive400px.css";
-import "./Styles/Responsive700px.css";
-import "./Styles/Responsive1000px.css";
+import "./font/pretendard-subset.css";
+import "./styles/Animation.css";
+import "./styles/Quill.Styles.css";
+import "./styles/Responsive400px.css";
+import "./styles/Responsive700px.css";
+import "./styles/Responsive1000px.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { AsideBar, Navbar } from "./components";
