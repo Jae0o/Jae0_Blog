@@ -8,12 +8,12 @@ import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
 import { ContextTagList } from "@/Context/ContextTagList";
 import { setPost } from "@/api";
-import { CheckAdmin, LoadingSpinner } from "@/components";
+import { CheckAdmin } from "@/components";
 import { ALERT_EDIT } from "@/constants";
 import { PostData } from "@/types/original";
 
-import EditPage from "./components/Editor/Editor";
-import EditSubPage from "./components/EditorSub/EditorSub";
+import LoadingPage from "../Loading/Loading";
+import { Editor, EditorSub } from "./components";
 
 const Edit = (): React.ReactNode => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
@@ -50,12 +50,12 @@ const Edit = (): React.ReactNode => {
       .finally(() => updateIsLoading(false));
   };
 
-  if (isLoading) return <LoadingSpinner />;
+  if (isLoading) return <LoadingPage />;
 
   return (
     <section className="outlet__edit">
       <CheckAdmin>
-        <EditPage
+        <Editor
           category={category}
           id={pathId}
           categoryList={categoryList}
@@ -63,7 +63,7 @@ const Edit = (): React.ReactNode => {
           onSubmit={onUploadPost}
         />
 
-        <EditSubPage onUpdate={onUpdateOption} />
+        <EditorSub onUpdate={onUpdateOption} />
       </CheckAdmin>
     </section>
   );

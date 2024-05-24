@@ -7,6 +7,7 @@ import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
 import { ContextTagListProvider } from "./Context/ContextTagList";
 
+const LoadingPage = React.lazy(() => import("./pages/Loading/Loading"));
 const Edit = React.lazy(() => import("./pages/Edit/Edit"));
 const Home = React.lazy(() => import("./pages/Home/Home"));
 const Post = React.lazy(() => import("./pages/Post/Post"));
@@ -43,19 +44,7 @@ const router = createBrowserRouter([
 
 const App = (): React.ReactNode => {
   return (
-    <Suspense
-      fallback={
-        <section
-          style={{
-            width: "100dvw",
-            height: "100dvh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}>
-          loading
-        </section>
-      }>
+    <Suspense fallback={<LoadingPage />}>
       <ContextAuthUserProvider>
         <ContextIsLoadingProvider>
           <ContextPostsProvider>

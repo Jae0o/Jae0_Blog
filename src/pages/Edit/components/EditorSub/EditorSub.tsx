@@ -4,11 +4,11 @@ import React, { MouseEvent, useState } from "react";
 
 import { InsertOptionButton } from "./components";
 
-interface EditorSubPageProps {
+interface EditorSubProps {
   onUpdate: (name: string) => void;
 }
 
-const EditSubPage = ({ onUpdate }: EditorSubPageProps): React.ReactNode => {
+const EditorSub = ({ onUpdate }: EditorSubProps): React.ReactNode => {
   const [toggled, setToggled] = useState<boolean>(false);
 
   const toggleHandler = (e: MouseEvent<HTMLButtonElement>) => {
@@ -39,4 +39,4 @@ const EditSubPage = ({ onUpdate }: EditorSubPageProps): React.ReactNode => {
   );
 };
 
-export default EditSubPage;
+export default EditorSub;
