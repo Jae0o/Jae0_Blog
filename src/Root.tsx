@@ -9,7 +9,8 @@ import "./styles/Responsive1000px.css";
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import { AsideBar, Navbar } from "./components";
+const AsideBar = React.lazy(() => import("./components/AsideBar/AsideBar"));
+const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 
 const Root = (): React.ReactNode => {
   return (
