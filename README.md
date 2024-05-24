@@ -39,7 +39,7 @@
 
 - **1.0.1**<br>
 
-  - Code Spliting을 위한 `lazy import` & `suspense` 적용
+  - Code Splitting을 위한 `lazy import` & `suspense` 적용
   - library import에 `lazy import` 적용을 통한 초기 렌더링 개선
 
   초기 렌더링 ( FCP ) **2.2s** 에서 **0.6s**로 개선
