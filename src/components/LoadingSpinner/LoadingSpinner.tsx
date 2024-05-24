@@ -1,6 +1,6 @@
 import Lottie from "react-lottie-player";
 
-import LOADING_ANIMATION from "@/assets/loading_animation.json";
+import LOADING_ANIMATION from "@/assets/animation/loading_animation.json";
 
 interface LoadingSpinnerProps {
   size?: string;
