@@ -37,17 +37,40 @@
 
 ## 업데이트 & 개선 사항
 
-- **1.0.1**<br>
+**1.0.1**<br>
 
-  - Code Splitting을 위한 `lazy import` & `suspense` 적용
-  - library import에 `lazy import` 적용을 통한 초기 렌더링 개선
+- Code Splitting을 위한 `lazy import` & `suspense` 적용
+- library import에 `lazy import` 적용을 통한 초기 렌더링 개선
 
-  초기 렌더링 ( FCP ) **2.2s** 에서 **0.6s**로 개선
+|                     | 미적용   | React.lazy | + Library 스플리팅 | + Suspense |
+| ------------------- | -------- | ---------- | ------------------ | ---------- |
+| index 파일 크기     | 961.34KB | 581.90KB   | 12.00KB            | 12.65KB    |
+| FCP ( 초기 렌더링 ) | 2.4s     | 1.7s       | 2.3s               | 0.8s       |
+| LCP                 | 2.4s     | 1.7s       | 2.4s               | 1.0s       |
+| Lighthouse 성능     | 66점     | 72점       | 62점               | 83점       |
 
-- **1.0.2**<br>
+<br>
 
-  - 폴더 구조 변경 ( index.ts 적용, 규칙적인 폴더 네이밍 )
-  - type 파일 정리 및 불필요한 type정의 제거
+**1.0.2**<br>
+
+- 폴더 구조 변경 ( index.ts 적용, 규칙적인 폴더 네이밍 )
+- type 파일 정리 및 불필요한 type정의 제거
+
+<br>
+
+**1.0.3**<br>
+
+- Variable Font, Subset Font 적용
+
+|                     | 개선 전 ( 코드 스플리팅 ) | 가변 폰트 적용 후 | 서브셋 적용 후 |
+| ------------------- | ------------------------- | ----------------- | -------------- |
+| Font 파일 크기      | 대략 2405KB               | 2057.69KB         | 218.68KB       |
+| FCP ( 초기 렌더링 ) | 0.8s                      | 2.9s              | 0.6s           |
+| LCP                 | 1.0s                      | 2.9s              | 0.7s           |
+| Speed Index         | 1.7s                      | 2.9s              | 0.8s           |
+| Lighthouse 성능     | 83점                      | 56점              | 87점           |
+
+<br>
 
 <br>
 
