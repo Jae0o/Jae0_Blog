@@ -1,4 +1,4 @@
-import { visualizer } from "rollup-plugin-visualizer";
+// import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
@@ -9,11 +9,11 @@ export default defineConfig({
   plugins: [
     react(),
     tsconfigPaths(),
-    visualizer({
-      filename: "./dist/report.html",
-      open: true,
-      brotliSize: true,
-    }),
+    // visualizer({
+    //   filename: "./dist/report.html",
+    //   open: true,
+    //   brotliSize: true,
+    // }),
   ],
   build: {
     rollupOptions: {
