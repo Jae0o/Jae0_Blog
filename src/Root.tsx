@@ -1,5 +1,5 @@
 import "./Root.style.css";
-import "./font/pretendard-subset.css";
+import "./font/pretendard.css";
 import "./styles/Animation.css";
 import "./styles/Quill.style.css";
 import "./styles/Responsive400px.css";
