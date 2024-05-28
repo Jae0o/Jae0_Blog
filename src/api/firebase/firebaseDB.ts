@@ -17,20 +17,21 @@ export const setOptions: SetOptions = async (optionsType, value) => {
   }
 };
 
-type GetOptions = (optionsType: string) => Promise<string[] | false>;
+type GetOptions = (optionsType: string) => Promise<string[]>;
 
 export const getOptions: GetOptions = async optionsType => {
   return await get(ref(database, optionsType))
     .then(res => {
       if (res.exists()) {
+        console.log(" 패칭됨 ", optionsType);
         const fetchedOptions: string[] = Object.values(res.val());
         return fetchedOptions;
       }
-      return false;
+
+      throw new Error("getOption Error");
     })
     .catch(() => {
-      console.error(`${optionsType}${ERROR_MESSAGE.GET_OPTION_LIST}`);
-      return false;
+      throw new Error("getOption Error");
     });
 };
 
