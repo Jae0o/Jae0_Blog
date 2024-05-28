@@ -7,3 +7,4 @@ export { default as ExtendContentIcon } from "./ExtendContentIcon/ExtendContentI
 export { default as RedBookIcon } from "./RedBookIcon/RedBookIcon";
 export { default as BlueBookIcon } from "./BlueBookIcon/BlueBookIcon";
 export { default as OrangeBookIcon } from "./OrangeBookIcon/OrangeBookIcon";
+export { default as GreenBookIcon } from "./GreenBookIcon/GreenBookIcon";
