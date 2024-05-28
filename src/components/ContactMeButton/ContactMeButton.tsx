@@ -4,12 +4,12 @@ import React from "react";
 
 interface ContactMeButtonProps {
   url: string;
-  icon: React.ReactNode;
+  IconComponent: React.ReactNode;
 }
 
 const ContactMeButton = ({
   url,
-  icon,
+  IconComponent,
 }: ContactMeButtonProps): React.ReactNode => {
   return (
     <a
@@ -18,7 +18,7 @@ const ContactMeButton = ({
       rel="noreferrer noopener"
       className="aside__footer-link"
     >
-      {icon}
+      {IconComponent}
     </a>
   );
 };

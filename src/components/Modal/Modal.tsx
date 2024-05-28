@@ -1,8 +1,8 @@
 import "./Modal.style.css";
 
 import React from "react";
-import { IoCloseSharp } from "react-icons/io5";
 
+import { CloseIcon } from "../Icons";
 import { ModalPortal } from "./components";
 
 interface ModalProps {
@@ -65,7 +65,7 @@ const Modal = ({
                 className="modal__button-close"
                 onClick={onClose}
               >
-                <IoCloseSharp />
+                <CloseIcon size="2rem" />
               </button>
             </div>
             <div

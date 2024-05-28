@@ -4,11 +4,11 @@ import { CONTACT_ME_DATA } from "@/constants";
 const NavMenubarFooter = () => {
   return (
     <li className="nav__footer">
-      {CONTACT_ME_DATA.map(({ url, Icon }) => (
+      {CONTACT_ME_DATA.map(({ url, IconComponent }) => (
         <ContactMeButton
           key={url}
           url={url}
-          icon={<Icon />}
+          IconComponent={IconComponent}
         />
       ))}
     </li>

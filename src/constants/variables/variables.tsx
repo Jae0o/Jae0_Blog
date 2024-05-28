@@ -1,12 +1,11 @@
-import { FaInstagram } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
-import { MdOutlineEmail } from "react-icons/md";
-
 import {
   BlueBookIcon,
   BrownBookIcon,
   DisplayIcon,
+  EmailIcon,
+  GithubLogoIcon,
   GreenBookIcon,
+  InstagramLogoIcon,
   OrangeBookIcon,
 } from "@/components";
 import { Advice, PostData } from "@/types/original";
@@ -77,9 +76,9 @@ export const ADVICE_LIST: Advice[] = [
 ];
 
 export const CONTACT_ME_DATA = [
-  { url: CONTACT_ME_URL.GIT_HUB, Icon: FiGithub },
-  { url: CONTACT_ME_URL.INSTAGRAM, Icon: FaInstagram },
-  { url: CONTACT_ME_URL.EMAIL, Icon: MdOutlineEmail },
+  { url: CONTACT_ME_URL.GIT_HUB, IconComponent: <GithubLogoIcon /> },
+  { url: CONTACT_ME_URL.INSTAGRAM, IconComponent: <InstagramLogoIcon /> },
+  { url: CONTACT_ME_URL.EMAIL, IconComponent: <EmailIcon /> },
 ];
 
 export const MENUBAR_LIST = [
