@@ -10,7 +10,7 @@ const WriteIcon = ({ size = "3.2rem", ...rest }: IconGlobalProps) => {
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <g clipPathUnits="url(#clip0_31_1192)">
+      <g clipPath="url(#clip0_31_1192)">
         <mask
           id="mask0_31_1192"
           maskUnits="userSpaceOnUse"
