@@ -3,7 +3,6 @@ import "./Edit.style.css";
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
 import { MUTATION_OPTIONS, useGetCategoryList, useGetTagList } from "@/api";
 import { CheckAdmin } from "@/components";
@@ -19,7 +18,6 @@ const Edit = (): React.ReactNode => {
     useGetCategoryList();
   const { tagList, updateTagList, TagListAlertModal } = useGetTagList();
 
-  const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
   const { updatePosts } = useContext(ContextPosts);
 
   const { mutate, isPending } = useMutation(MUTATION_OPTIONS.SET_POST());
@@ -39,8 +37,6 @@ const Edit = (): React.ReactNode => {
   };
 
   const onUploadPost = async (post: PostData) => {
-    updateIsLoading(true);
-
     mutate(post, {
       onSuccess: () => {
         navigate("/");
