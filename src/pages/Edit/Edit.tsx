@@ -3,10 +3,9 @@ import "./Edit.style.css";
 import React, { useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { ContextCategoryList } from "@/Context/ContextCategory";
 import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
-import { setPost, useGetTagList } from "@/api";
+import { setPost, useGetCategoryList, useGetTagList } from "@/api";
 import { CheckAdmin } from "@/components";
 import { ALERT_EDIT } from "@/constants";
 import { PostData } from "@/types/original";
@@ -15,7 +14,8 @@ import LoadingPage from "../Loading/Loading";
 import { Editor, EditorSub } from "./components";
 
 const Edit = (): React.ReactNode => {
-  const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
+  const { categoryList, updateCategoryList, CategoryListAlertModal } =
+    useGetCategoryList();
 
   const { tagList, updateTagList, TagListAlertModal } = useGetTagList();
 
@@ -68,6 +68,7 @@ const Edit = (): React.ReactNode => {
       </CheckAdmin>
 
       {TagListAlertModal}
+      {CategoryListAlertModal}
     </section>
   );
 };
