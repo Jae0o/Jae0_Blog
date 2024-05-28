@@ -26,7 +26,8 @@ const AsideProfileActions = ({
       <a
         className={`profile__action ${action}-profile-btn`}
         href={path}
-        onClick={onClickHandle}>
+        onClick={onClickHandle}
+      >
         <span className={"material-symbols-outlined"}>{icon}</span>
       </a>
     </div>
