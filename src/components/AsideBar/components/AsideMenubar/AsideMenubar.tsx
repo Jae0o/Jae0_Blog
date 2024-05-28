@@ -11,11 +11,11 @@ const AsideMenubar = (): React.ReactNode => {
 
   return (
     <ul className="aside__menubar">
-      {MENUBAR_LIST.map(({ category, icon, title }) => (
+      {MENUBAR_LIST.map(({ category, IconComponent, title }) => (
         <MenubarItem
           key={category}
           title={title}
-          icon={icon}
+          IconComponent={IconComponent}
           category={category}
           postCount={posts[category] && posts[category].length}
         />

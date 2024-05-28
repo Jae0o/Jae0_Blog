@@ -1,20 +1,19 @@
 import "./MenubarItem.style.css";
 
 import React from "react";
-import { IconType } from "react-icons";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
 import { useHover } from "@/hooks";
 
 export interface MenubarItemProps {
-  icon: IconType;
+  IconComponent: React.ReactNode;
   title: string;
   category: string;
   postCount: number;
 }
 
 const MenubarItem = ({
-  icon: ICON,
+  IconComponent,
   title,
   category,
   postCount = 0,
@@ -37,7 +36,8 @@ const MenubarItem = ({
         ref={hoverRef}
       >
         <div className="menubar__icon-container">
-          <ICON className="menubar__icon" />
+          {IconComponent}
+          {/* className="menubar__icon" /> */}
           <p className="menubar__listCount">{postCount}</p>
         </div>
 
