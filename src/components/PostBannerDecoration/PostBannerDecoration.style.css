@@ -24,13 +24,12 @@
   cursor: pointer;
 }
 
-.ptdecoration__button .material-symbols-outlined {
+.ptdecoration__button .ptdecoration__icon {
   opacity: 0;
-  font-size: 1rem;
   transition: opacity 0.3s;
 }
 
-.ptbanner__decoration:hover .material-symbols-outlined {
+.ptbanner__decoration:hover .ptdecoration__icon {
   opacity: 1;
 }
 

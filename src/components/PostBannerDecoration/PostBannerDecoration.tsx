@@ -3,6 +3,8 @@ import "./PostBannerDecoration.style.css";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { CloseIcon, ExtendContentIcon, HorizontalRuleIcon } from "../Icons";
+
 const PostBannerDecoration = (): React.ReactNode => {
   const navigate = useNavigate();
 
@@ -16,13 +18,25 @@ const PostBannerDecoration = (): React.ReactNode => {
         className="ptdecoration__button pt-close"
         onClick={toPrevPageHandler}
       >
-        <span className="material-symbols-outlined">close</span>
+        <CloseIcon
+          size="1.2rem"
+          className="ptdecoration__icon"
+          fill="#5f6368"
+        />
       </button>
       <button className="ptdecoration__button pt-minimize">
-        <span className="material-symbols-outlined">horizontal_rule</span>
+        <HorizontalRuleIcon
+          size="1.2rem"
+          className="ptdecoration__icon"
+          fill="#5f6368"
+        />
       </button>
       <button className="ptdecoration__button pt-maximize">
-        <span className="material-symbols-outlined">expand_content</span>
+        <ExtendContentIcon
+          size="1.2rem"
+          className="ptdecoration__icon"
+          fill="#5f6368"
+        />
       </button>
     </div>
   );
