@@ -1,6 +1,6 @@
 import { onAuthStateChanged } from "firebase/auth";
 
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 import { auth } from "@/api";
 
@@ -24,21 +24,23 @@ export const ContextAuthUserProvider = ({ children }: ContextProps) => {
   const [authUserId, setAuthUserId] = useState<string>("");
   const { VITE_FIREBASE_ADMIN_USER_ID } = import.meta.env;
 
-  onAuthStateChanged(auth, user => {
-    if (!user) {
-      setIsAuthUser(false);
-      setIsLoggedIn(false);
-      setAuthUserId("");
-      return;
-    }
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      if (!user) {
+        setIsAuthUser(false);
+        setIsLoggedIn(false);
+        setAuthUserId("");
+        return;
+      }
 
-    setIsLoggedIn(true);
-    setAuthUserId(user.uid);
+      setIsLoggedIn(true);
+      setAuthUserId(user.uid);
 
-    if (VITE_FIREBASE_ADMIN_USER_ID === user.uid) {
-      setIsAuthUser(true);
-    }
-  });
+      if (VITE_FIREBASE_ADMIN_USER_ID === user.uid) {
+        setIsAuthUser(true);
+      }
+    });
+  }, [VITE_FIREBASE_ADMIN_USER_ID]);
 
   return (
     <ContextAuthUser.Provider value={{ isLoggedIn, authUserId, isAuthUser }}>
