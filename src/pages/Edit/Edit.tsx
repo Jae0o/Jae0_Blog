@@ -6,8 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ContextCategoryList } from "@/Context/ContextCategory";
 import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
-import { ContextTagList } from "@/Context/ContextTagList";
-import { setPost } from "@/api";
+import { setPost, useGetTagList } from "@/api";
 import { CheckAdmin } from "@/components";
 import { ALERT_EDIT } from "@/constants";
 import { PostData } from "@/types/original";
@@ -17,7 +16,9 @@ import { Editor, EditorSub } from "./components";
 
 const Edit = (): React.ReactNode => {
   const { categoryList, updateCategoryList } = useContext(ContextCategoryList);
-  const { tagList, updateTagList } = useContext(ContextTagList);
+
+  const { tagList, updateTagList, TagListAlertModal } = useGetTagList();
+
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
   const { updatePosts } = useContext(ContextPosts);
 
@@ -65,6 +66,8 @@ const Edit = (): React.ReactNode => {
 
         <EditorSub onUpdate={onUpdateOption} />
       </CheckAdmin>
+
+      {TagListAlertModal}
     </section>
   );
 };
