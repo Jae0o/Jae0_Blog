@@ -12,3 +12,4 @@ export { default as BrownBookIcon } from "./BrownBookIcon/BrownBookIcon";
 export { default as DisplayIcon } from "./DisplayIcon/DisplayIcon";
 export { default as GithubLogoIcon } from "./GithubLogoIcon/GithubLogoIcon";
 export { default as InstagramLogoIcon } from "./InstagramLogoIcon/InstagramLogoIcon";
+export { default as EmailIcon } from "./EmailIcon/EmailIcon";
