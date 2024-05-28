@@ -5,10 +5,11 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import { ContextIsLoading } from "@/Context/ContextIsLoading";
 import { ContextPosts } from "@/Context/ContextPosts";
-import { setPost, useGetCategoryList, useGetTagList } from "@/api";
+import { MUTATION_OPTIONS, useGetCategoryList, useGetTagList } from "@/api";
 import { CheckAdmin } from "@/components";
 import { ALERT_EDIT } from "@/constants";
 import { PostData } from "@/types/original";
+import { useMutation } from "@tanstack/react-query";
 
 import LoadingPage from "../Loading/Loading";
 import { Editor, EditorSub } from "./components";
@@ -16,11 +17,12 @@ import { Editor, EditorSub } from "./components";
 const Edit = (): React.ReactNode => {
   const { categoryList, updateCategoryList, CategoryListAlertModal } =
     useGetCategoryList();
-
   const { tagList, updateTagList, TagListAlertModal } = useGetTagList();
 
   const { isLoading, updateIsLoading } = useContext(ContextIsLoading);
   const { updatePosts } = useContext(ContextPosts);
+
+  const { mutate, isPending } = useMutation(MUTATION_OPTIONS.SET_POST());
 
   const navigate = useNavigate();
   const { category = "", id: pathId = "" } = useParams();
@@ -39,19 +41,21 @@ const Edit = (): React.ReactNode => {
   const onUploadPost = async (post: PostData) => {
     updateIsLoading(true);
 
-    await setPost(post)
-      .then(() => {
-        alert(ALERT_EDIT.UPLOAD_SUCCESS);
-        updatePosts();
+    mutate(post, {
+      onSuccess: () => {
         navigate("/");
-      })
-      .catch(() => {
-        alert(ALERT_EDIT.UPLOAD_FAIL);
-      })
-      .finally(() => updateIsLoading(false));
+        /*
+        TODO 
+
+        추후 해당 부분 개선하기
+         */
+        updatePosts();
+      },
+      onError: () => alert(ALERT_EDIT.UPLOAD_FAIL),
+    });
   };
 
-  if (isLoading) return <LoadingPage />;
+  if (isPending) return <LoadingPage />;
 
   return (
     <section className="outlet__edit">
