@@ -1,2 +1,2 @@
-export { default as QueryProvider } from "./QueryProvider";
+export * from "./components";
 export * from "./queryOptions";
