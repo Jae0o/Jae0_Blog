@@ -7,7 +7,6 @@ import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
 import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
-import { ContextTagListProvider } from "./Context/ContextTagList";
 
 const LoadingPage = React.lazy(() => import("./pages/Loading/Loading"));
 const Edit = React.lazy(() => import("./pages/Edit/Edit"));
@@ -51,12 +50,10 @@ const App = (): React.ReactNode => {
         <ContextAuthUserProvider>
           <ContextIsLoadingProvider>
             <ContextPostsProvider>
-              <ContextTagListProvider>
-                <ContextCategoryListProvider>
-                  <RouterProvider router={router} />
-                  <div id="modal" />
-                </ContextCategoryListProvider>
-              </ContextTagListProvider>
+              <ContextCategoryListProvider>
+                <RouterProvider router={router} />
+                <div id="modal" />
+              </ContextCategoryListProvider>
             </ContextPostsProvider>
           </ContextIsLoadingProvider>
         </ContextAuthUserProvider>

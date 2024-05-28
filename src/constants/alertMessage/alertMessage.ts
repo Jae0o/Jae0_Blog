@@ -10,7 +10,6 @@ export const ALERT_EDIT = {
 
 export const ERROR_MESSAGE = {
   SET_OPTION_LIST: "을 추가하는 과정에서 ERROR 발생.",
-  GET_OPTION_LIST: "을 불러오는 과정에서 ERROR 발생.",
   SET_POST: "Post를 업로드하는 중 ERROR 발생.",
   GET_POSTS_LIST: "Posts를 불러오는 중 ERROR 발생.",
   GET_ALL_POSTS_LIST: "모든 Posts를 불러오는 중 ERROR 발생.",
