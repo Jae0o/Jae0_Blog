@@ -92,7 +92,8 @@ const Editor = ({
         />
         <button
           className="editor__button"
-          onClick={onSubmitPost}>
+          onClick={onSubmitPost}
+        >
           Upload
         </button>
       </div>

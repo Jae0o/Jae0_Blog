@@ -40,17 +40,20 @@ const EditorTags = ({
           return (
             <li
               key={item}
-              className={`tags__item${isChecked ? "-checked" : ""}`}>
+              className={`tags__item${isChecked ? "-checked" : ""}`}
+            >
               <input
                 id={`tagsCheckbox-${idx}`}
                 className="tags__input"
                 type="checkbox"
                 value={item}
                 checked={isChecked}
-                onChange={toggleTagHandler}></input>
+                onChange={toggleTagHandler}
+              ></input>
               <label
                 className="tags__label"
-                htmlFor={`tagsCheckbox-${idx}`}>
+                htmlFor={`tagsCheckbox-${idx}`}
+              >
                 {item}
               </label>
             </li>

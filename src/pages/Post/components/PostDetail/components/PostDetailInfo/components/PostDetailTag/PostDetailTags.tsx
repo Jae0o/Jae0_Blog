@@ -15,7 +15,8 @@ const PostDetailTags = ({ tags }: PostDetailTagsProps): React.ReactNode => {
           tags.map(tag => (
             <li
               key={tag}
-              className="ptdetail__tag">
+              className="ptdetail__tag"
+            >
               {tag}
             </li>
           ))}

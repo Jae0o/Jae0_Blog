@@ -34,7 +34,8 @@ const InsertOptionButton = ({
       <h6 className="insert__title">{listType} 추가</h6>
       <button
         onClick={addListHandler}
-        className="insert__button">
+        className="insert__button"
+      >
         {listType} 추가
       </button>
     </div>

@@ -70,11 +70,13 @@ const LoginFormModal = ({
         height={35}
         onClose={onClose}
         clickAwayEnable={true}
-        closeButtonEnable={true}>
+        closeButtonEnable={true}
+      >
         <h4 className="login__title">{"LOG IN !"}</h4>
         <form
           className="login__form"
-          onSubmit={handleSubmitLogin}>
+          onSubmit={handleSubmitLogin}
+        >
           <LoginFormInput
             title="EMAIL"
             type="email"

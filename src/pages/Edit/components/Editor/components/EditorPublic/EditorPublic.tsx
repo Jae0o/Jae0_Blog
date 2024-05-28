@@ -37,12 +37,14 @@ const EditorPublic = ({
       />
       <label
         htmlFor="publicToggleBox"
-        className={`public__slider${onToggleClassName}`}>
+        className={`public__slider${onToggleClassName}`}
+      >
         <div className={`public__slider-item${onToggleClassName}`}></div>
       </label>
       <label
         htmlFor="publicToggleBox"
-        className="public__text">
+        className="public__text"
+      >
         {changePublicText(state)}
       </label>
     </div>

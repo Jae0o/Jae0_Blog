@@ -35,7 +35,8 @@ const EditorThumbnail = ({
       <label
         className="thumbnail__title"
         htmlFor="thumbnail__input-id"
-        onClick={changeImageInput}>
+        onClick={changeImageInput}
+      >
         {"썸네일 추가"}
       </label>
 

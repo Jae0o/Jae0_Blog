@@ -14,7 +14,8 @@ const PostBannerDecoration = (): React.ReactNode => {
     <div className="ptbanner__decoration">
       <button
         className="ptdecoration__button pt-close"
-        onClick={toPrevPageHandler}>
+        onClick={toPrevPageHandler}
+      >
         <span className="material-symbols-outlined">close</span>
       </button>
       <button className="ptdecoration__button pt-minimize">

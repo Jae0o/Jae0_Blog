@@ -41,12 +41,14 @@ const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
       <aside className="ptdetail__auth-layout">
         <button
           className="ptdetail__auth-button"
-          onClick={toEditPage}>
+          onClick={toEditPage}
+        >
           수정 하기
         </button>
         <button
           className="ptdetail__auth-button"
-          onClick={openModal}>
+          onClick={openModal}
+        >
           삭제 하기
         </button>
       </aside>

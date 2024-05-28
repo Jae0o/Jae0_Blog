@@ -16,12 +16,14 @@ const AlertModal = ({ isShow, message, onClose }: AlertModalProps) => {
       isShow={isShow}
       onClose={onClose}
       clickAwayEnable={true}
-      closeButtonEnable={true}>
+      closeButtonEnable={true}
+    >
       <h4 className="alert__message">{message}</h4>
       <div className="alert__action">
         <button
           className="alert__button"
-          onClick={onClose}>
+          onClick={onClose}
+        >
           {"닫기"}
         </button>
       </div>

@@ -57,7 +57,8 @@ const PostDetail = (): React.ReactNode => {
             />
             <div
               className="ptdetail__content"
-              data-color-mode="light">
+              data-color-mode="light"
+            >
               <PostDetailInfo post={post} />
 
               <span className="ptdetail__content-divider" />

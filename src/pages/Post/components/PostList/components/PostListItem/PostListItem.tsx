@@ -22,7 +22,8 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
   return (
     <li
       className="ptlist__ptitem"
-      onClick={onNavigate}>
+      onClick={onNavigate}
+    >
       <div className="ptitem__thumbnail-container">
         <img
           className="ptitem__thumbnail"
@@ -40,7 +41,8 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
             post.tag.map(tag => (
               <li
                 key={tag}
-                className="ptitem__tag-item">
+                className="ptitem__tag-item"
+              >
                 {tag}
               </li>
             ))}

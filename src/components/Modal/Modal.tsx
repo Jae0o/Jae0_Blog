@@ -41,25 +41,30 @@ const Modal = ({
     <ModalPortal isShow={isShow}>
       <section
         className="modal__background"
-        onClick={handleClickAway}>
+        onClick={handleClickAway}
+      >
         <article
           className="modal__layout-outline"
           style={{
             width: `${width + 4}rem`,
             height: closeButtonEnable ? `${height + 7}rem` : `${height + 4}rem`,
-          }}>
+          }}
+        >
           <div
             className="modal__layout"
             style={{
               width: `${width}rem`,
               height: closeButtonEnable ? `${height + 3}rem` : `${height}rem`,
-            }}>
+            }}
+          >
             <div
               className="modal__actions"
-              style={{ display: closeButtonEnable ? "flex" : "none" }}>
+              style={{ display: closeButtonEnable ? "flex" : "none" }}
+            >
               <button
                 className="modal__button-close"
-                onClick={onClose}>
+                onClick={onClose}
+              >
                 <IoCloseSharp />
               </button>
             </div>
@@ -68,7 +73,8 @@ const Modal = ({
               style={{
                 width: `${width}rem`,
                 height: `${height}rem`,
-              }}>
+              }}
+            >
               {children}
             </div>
           </div>

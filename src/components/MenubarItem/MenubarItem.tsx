@@ -30,10 +30,12 @@ const MenubarItem = ({
     <li
       className="menubar__item-layout"
       value={category}
-      onClick={onNavigate}>
+      onClick={onNavigate}
+    >
       <div
         className="menubar__item-container"
-        ref={hoverRef}>
+        ref={hoverRef}
+      >
         <div className="menubar__icon-container">
           <ICON className="menubar__icon" />
           <p className="menubar__listCount">{postCount}</p>

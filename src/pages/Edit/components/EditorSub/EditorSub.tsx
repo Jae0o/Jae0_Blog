@@ -31,7 +31,8 @@ const EditorSub = ({ onUpdate }: EditorSubProps): React.ReactNode => {
       </div>
       <button
         className="sub__button"
-        onClick={toggleHandler}>
+        onClick={toggleHandler}
+      >
         <span>Option's</span>
         <span>Toggle</span>
       </button>

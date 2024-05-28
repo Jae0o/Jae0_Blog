@@ -31,7 +31,8 @@ const EditorCategory = ({
             return (
               <li
                 key={item}
-                className={`category__item${isSelected ? "-checked" : ""}`}>
+                className={`category__item${isSelected ? "-checked" : ""}`}
+              >
                 <input
                   className="category__radio"
                   id={`categoryList-${idx}`}
@@ -43,7 +44,8 @@ const EditorCategory = ({
                 />
                 <label
                   className="category__label"
-                  htmlFor={`categoryList-${idx}`}>
+                  htmlFor={`categoryList-${idx}`}
+                >
                   {item}
                 </label>
               </li>

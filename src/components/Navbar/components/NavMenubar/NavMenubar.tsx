@@ -48,7 +48,8 @@ const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
         isToggle ? "Active__NavMenu" : "unActive__NavMenu"
       }`}
       ref={menubarRef}
-      style={{ display: `${isToggle ? "flex" : "none"}` }}>
+      style={{ display: `${isToggle ? "flex" : "none"}` }}
+    >
       {MENUBAR_LIST.map(({ category, icon, title }) => (
         <MenubarItem
           key={category}

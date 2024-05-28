@@ -23,7 +23,8 @@ const PostBanner = ({
           backgroundImage: `url(${thumbnail})`,
           height: height ? `${height}rem` : "",
           backgroundSize: `${objectFit}`,
-        }}>
+        }}
+      >
         <div className="ptbanner__advice-container">
           <h4 className="ptbanner__advice">{mainText}</h4>
           {subText && <h6 className="ptbanner__author">{subText}</h6>}

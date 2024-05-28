@@ -31,17 +31,20 @@ const ConfirmModal = ({
       width={36}
       height={20}
       clickAwayEnable={true}
-      closeButtonEnable={true}>
+      closeButtonEnable={true}
+    >
       <h4 className="confirm__message">{message}</h4>
       <div className="confirm__actions">
         <button
           className="confirm__button"
-          onClick={handleCloseAcceptFalse}>
+          onClick={handleCloseAcceptFalse}
+        >
           {falseButtonText}
         </button>
         <button
           className="confirm__button"
-          onClick={handleCloseAcceptTrue}>
+          onClick={handleCloseAcceptTrue}
+        >
           {trueButtonText}
         </button>
       </div>

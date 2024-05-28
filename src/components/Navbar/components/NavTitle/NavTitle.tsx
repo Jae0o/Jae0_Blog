@@ -8,7 +8,8 @@ const NavTitle = () => {
   return (
     <div
       className="nav__title-layout"
-      onClick={() => navigate("/")}>
+      onClick={() => navigate("/")}
+    >
       <h1 className="nav__title-text">{"Jae0"}</h1>
       <div className="nav__title-decoration"></div>
     </div>
