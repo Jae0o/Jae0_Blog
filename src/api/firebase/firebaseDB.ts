@@ -23,7 +23,6 @@ export const getOptions: GetOptions = async optionsType => {
   return await get(ref(database, optionsType))
     .then(res => {
       if (res.exists()) {
-        console.log(" 패칭됨 ", optionsType);
         const fetchedOptions: string[] = Object.values(res.val());
         return fetchedOptions;
       }
