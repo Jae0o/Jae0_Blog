@@ -6,3 +6,4 @@ export { default as HorizontalRuleIcon } from "./HorizontalRuleIcon/HorizontalRu
 export { default as ExtendContentIcon } from "./ExtendContentIcon/ExtendContentIcon";
 export { default as RedBookIcon } from "./RedBookIcon/RedBookIcon";
 export { default as BlueBookIcon } from "./BlueBookIcon/BlueBookIcon";
+export { default as OrangeBookIcon } from "./OrangeBookIcon/OrangeBookIcon";
