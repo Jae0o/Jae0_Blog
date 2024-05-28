@@ -1,6 +1,6 @@
 import { IconGlobalProps } from "../IconGlobal.type";
 
-export const WriteIcon = ({ size = "3.2rem", ...rest }: IconGlobalProps) => {
+const WriteIcon = ({ size = "3.2rem", ...rest }: IconGlobalProps) => {
   return (
     <svg
       width={size}
@@ -75,3 +75,5 @@ export const WriteIcon = ({ size = "3.2rem", ...rest }: IconGlobalProps) => {
     </svg>
   );
 };
+
+export default WriteIcon;
