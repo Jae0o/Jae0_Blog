@@ -14,7 +14,7 @@ const ExtendContentIcon = ({
       fill={fill}
       {...rest}
     >
-      <path d="M194.5-194.5v-251h91v160h160v91h-251Zm480-320v-160h-160v-91h251v251h-91Z" />
+      <path d="M177-177v-286h126v160h160v126H177Zm480-320v-160H497v-126h286v286H657Z" />
     </svg>
   );
 };
