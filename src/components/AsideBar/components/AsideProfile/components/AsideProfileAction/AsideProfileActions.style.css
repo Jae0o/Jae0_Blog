@@ -26,15 +26,6 @@
   border-radius: var(--radius-medium);
 }
 
-.profile__action .material-symbols-outlined {
-  font-size: 2.4rem;
-  font-weight: 900;
-
-  color: var(--color-black);
-
-  border: none;
-}
-
 .search-action {
   background-color: var(--color-yellow);
 }
@@ -45,8 +36,4 @@
 
 .home-action {
   background-color: var(--color-green);
-}
-
-.home-profile-btn {
-  padding-top: 4px;
 }

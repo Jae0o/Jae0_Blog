@@ -5,14 +5,14 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 
 interface AsideProfileActionsProps {
   action: "home" | "search" | "write";
-  icon: string;
+  IconComponent: React.ReactNode;
   path: string;
 }
 
 const AsideProfileActions = ({
   action,
   path,
-  icon,
+  IconComponent,
 }: AsideProfileActionsProps): React.ReactNode => {
   const navigate: NavigateFunction = useNavigate();
 
@@ -28,7 +28,7 @@ const AsideProfileActions = ({
         href={path}
         onClick={onClickHandle}
       >
-        <span className={"material-symbols-outlined"}>{icon}</span>
+        {IconComponent}
       </a>
     </div>
   );

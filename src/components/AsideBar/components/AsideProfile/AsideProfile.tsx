@@ -3,6 +3,7 @@ import "./AsideProfile.style.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import { HomeIcon, SearchIcon, WriteIcon } from "@/components/Icons";
 import { PROFILE } from "@/constants";
 
 import AsideProfileActions from "./components/AsideProfileAction/AsideProfileActions";
@@ -26,17 +27,17 @@ const AsideProfile = (): React.ReactNode => {
         <div className="profile__actions">
           <AsideProfileActions
             action="search"
-            icon="pageview"
+            IconComponent={<SearchIcon size="2.4rem" />}
             path="/"
           />
           <AsideProfileActions
             action="write"
-            icon="lock"
+            IconComponent={<WriteIcon size="2.4rem" />}
             path="/editor/newPost/newPost"
           />
           <AsideProfileActions
             action="home"
-            icon="Cottage"
+            IconComponent={<HomeIcon size="2.4rem" />}
             path="/"
           />
         </div>
