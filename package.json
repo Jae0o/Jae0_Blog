@@ -11,6 +11,7 @@
     "vercel": "vercel dev"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.40.0",
     "@types/uuid": "^9.0.7",
     "firebase": "^10.7.0",
     "isomorphic-dompurify": "^2.3.0",
@@ -25,6 +26,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@tanstack/react-query-devtools": "^5.40.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
