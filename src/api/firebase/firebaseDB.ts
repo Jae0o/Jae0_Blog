@@ -47,7 +47,11 @@ export const setPost: SetPost = async post => {
 
   post.updateAt = time;
 
-  await set(ref(database, `Posts/${post.category}/${post.id}`), post);
+  await set(ref(database, `Posts/${post.category}/${post.id}`), post).catch(
+    () => {
+      throw new Error("set post Error");
+    },
+  );
 };
 
 type GetPostsList = (category: string) => Promise<PostData[] | false>;
