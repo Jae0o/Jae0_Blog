@@ -4,7 +4,6 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryProvider } from "@/api";
 
 import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
-import { ContextCategoryListProvider } from "./Context/ContextCategory";
 import { ContextIsLoadingProvider } from "./Context/ContextIsLoading";
 import { ContextPostsProvider } from "./Context/ContextPosts";
 
@@ -50,10 +49,8 @@ const App = (): React.ReactNode => {
         <ContextAuthUserProvider>
           <ContextIsLoadingProvider>
             <ContextPostsProvider>
-              <ContextCategoryListProvider>
-                <RouterProvider router={router} />
-                <div id="modal" />
-              </ContextCategoryListProvider>
+              <RouterProvider router={router} />
+              <div id="modal" />
             </ContextPostsProvider>
           </ContextIsLoadingProvider>
         </ContextAuthUserProvider>
