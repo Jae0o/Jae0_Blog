@@ -3,7 +3,7 @@ import "./AsideProfile.style.css";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { HomeIcon, SearchIcon, WriteIcon } from "@/components/Icons";
+import { HomeIcon, SearchIcon, WriteIcon } from "@/components";
 import { PROFILE } from "@/constants";
 
 import AsideProfileActions from "./components/AsideProfileAction/AsideProfileActions";

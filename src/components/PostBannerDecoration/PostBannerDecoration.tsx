@@ -3,7 +3,7 @@ import "./PostBannerDecoration.style.css";
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { CloseIcon, ExtendContentIcon, HorizontalRuleIcon } from "../Icons";
+import { CloseIcon, ExtendContentIcon, HorizontalRuleIcon } from "@/components";
 
 const PostBannerDecoration = (): React.ReactNode => {
   const navigate = useNavigate();

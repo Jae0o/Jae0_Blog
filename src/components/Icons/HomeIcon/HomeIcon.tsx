@@ -10,7 +10,7 @@ const HomeIcon = ({ size = "3.2rem", ...rest }: IconGlobalProps) => {
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <g clip-path="url(#clip0_31_1206)">
+      <g clipPathUnits="url(#clip0_31_1206)">
         <path
           d="M42.5 21.25H5V43.75H42.5V21.25Z"
           fill="#58595B"

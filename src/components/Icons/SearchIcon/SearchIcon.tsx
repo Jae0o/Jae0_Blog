@@ -10,7 +10,7 @@ const SearchIcon = ({ size = "3.2rem", ...rest }: IconGlobalProps) => {
       xmlns="http://www.w3.org/2000/svg"
       {...rest}
     >
-      <g clip-path="url(#clip0_31_1152)">
+      <g clipPathUnits="url(#clip0_31_1152)">
         <mask
           id="mask0_31_1152"
           maskUnits="userSpaceOnUse"
