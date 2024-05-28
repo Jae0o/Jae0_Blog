@@ -4,3 +4,4 @@ export { default as SearchIcon } from "./SearchIcon/SearchIcon";
 export { default as CloseIcon } from "./CloseIcon/CloseIcon";
 export { default as HorizontalRuleIcon } from "./HorizontalRuleIcon/HorizontalRuleIcon";
 export { default as ExtendContentIcon } from "./ExtendContentIcon/ExtendContentIcon";
+export { default as RedBookIcon } from "./RedBookIcon/RedBookIcon";
