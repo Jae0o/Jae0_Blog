@@ -9,3 +9,4 @@ export { default as BlueBookIcon } from "./BlueBookIcon/BlueBookIcon";
 export { default as OrangeBookIcon } from "./OrangeBookIcon/OrangeBookIcon";
 export { default as GreenBookIcon } from "./GreenBookIcon/GreenBookIcon";
 export { default as BrownBookIcon } from "./BrownBookIcon/BrownBookIcon";
+export { default as DisplayIcon } from "./DisplayIcon/DisplayIcon";
