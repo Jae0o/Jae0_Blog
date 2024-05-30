@@ -1,18 +1,47 @@
 import "./PostList.style.css";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { useQueryPostList } from "@/api";
-import { PostBanner, PostBannerDecoration } from "@/components";
-import { useBanner } from "@/hooks";
+import { QUERY_OPTIONS } from "@/api";
+import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
+import { QUERY_ERROR } from "@/constants";
+import { useBanner, useModal } from "@/hooks";
+import LoadingPage from "@/pages/Loading/Loading";
+import { useQuery } from "@tanstack/react-query";
 
 import { PostListItem } from "./components";
 
 const PostList = (): React.ReactNode => {
   const { category = "ALL" } = useParams();
-  const { postList, PostListAlertModal } = useQueryPostList({ category });
   const { bannerAdvice, bannerThumbnail } = useBanner({ changeKey: category });
+  const { isShowModal, openModal, closeModal } = useModal();
+  const {
+    data: postList,
+    isError,
+    isLoading,
+    refetch,
+  } = useQuery(QUERY_OPTIONS.GET_POST_LIST(category));
+
+  useEffect(() => {
+    if (isError) {
+      refetch();
+      openModal();
+    }
+  }, [isError, openModal, refetch]);
+
+  if (isError || isLoading || !postList) {
+    return (
+      <>
+        <LoadingPage />
+        <AlertModal
+          isShow={isShowModal}
+          onClose={closeModal}
+          message={QUERY_ERROR.GET_POSTS_LIST}
+        />
+      </>
+    );
+  }
 
   return (
     <article className="outlet__ptlist">
@@ -34,8 +63,6 @@ const PostList = (): React.ReactNode => {
             />
           ))}
       </ul>
-
-      {PostListAlertModal}
     </article>
   );
 };
