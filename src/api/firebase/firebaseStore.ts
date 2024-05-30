@@ -1,7 +1,7 @@
 import { getDownloadURL, ref } from "firebase/storage";
 import { uploadBytes } from "firebase/storage";
 
-import { ERROR_MESSAGE } from "@/constants";
+import { QUERY_ERROR } from "@/constants";
 import { imageResizer } from "@/util";
 
 import { firebaseStorage } from "./firebase";
@@ -22,7 +22,7 @@ export const setImageStorage: SetImageStorage = async ({ file, path }) => {
 
   const newImage = await uploadBytes(storageRef, resizedImage)
     .then(res => res)
-    .catch(() => console.log(ERROR_MESSAGE.UPLOAD_STORAGE_IMAGE));
+    .catch(() => console.log(QUERY_ERROR.UPLOAD_STORAGE_IMAGE));
 
   if (!newImage) {
     return;

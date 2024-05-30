@@ -1,6 +1,5 @@
 import { get, ref, set } from "firebase/database";
 
-import { ERROR_MESSAGE } from "@/constants";
 import { PostData } from "@/types/original";
 
 import { database } from "./firebase";
@@ -13,7 +12,7 @@ export const setOptions: SetOptions = async (optionsType, value) => {
   try {
     await set(ref(database, `${optionsType}/${value}`), value);
   } catch (e) {
-    throw Error(`${optionsType}${ERROR_MESSAGE.SET_OPTION_LIST}`);
+    throw Error(`set options ${optionsType} Error`);
   }
 };
 

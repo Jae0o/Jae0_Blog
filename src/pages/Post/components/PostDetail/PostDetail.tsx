@@ -6,7 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ContextAuthUser } from "@/Context/ContextAuthUser";
 import { QUERY_OPTIONS } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
-import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "@/constants";
+import { QUERY_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { useQuery } from "@tanstack/react-query";
 
@@ -69,7 +69,7 @@ const PostDetail = (): React.ReactNode => {
           closeModal();
           navigate("/");
         }}
-        message={GET_POST_DETAIL_PAGE_POST_FETCH_ERROR}
+        message={QUERY_ERROR.GET_POST}
       />
     </>
   );

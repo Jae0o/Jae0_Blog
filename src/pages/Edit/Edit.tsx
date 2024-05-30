@@ -10,7 +10,7 @@ import {
   useQueryTagList,
 } from "@/api";
 import { CheckAdmin } from "@/components";
-import { ALERT_EDIT } from "@/constants";
+import { QUERY_ERROR } from "@/constants";
 import { PostData } from "@/types/original";
 import { useMutation } from "@tanstack/react-query";
 
@@ -46,7 +46,7 @@ const Edit = (): React.ReactNode => {
         navigate("/");
         updatePosts();
       },
-      onError: () => alert(ALERT_EDIT.UPLOAD_FAIL),
+      onError: () => alert(QUERY_ERROR.SET_POST),
     });
   };
 

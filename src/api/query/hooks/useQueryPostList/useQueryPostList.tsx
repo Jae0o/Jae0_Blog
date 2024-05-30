@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 
 import { AlertModal } from "@/components";
-import { GET_POST_LIST_ERROR } from "@/constants";
+import { QUERY_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { useQuery } from "@tanstack/react-query";
 
@@ -29,7 +29,7 @@ const useQueryPostList = ({ category }: useQueryPostListProps) => {
       <AlertModal
         isShow={isShowModal}
         onClose={closeModal}
-        message={GET_POST_LIST_ERROR}
+        message={QUERY_ERROR.GET_POSTS_LIST}
       />
     ),
     [closeModal, isShowModal],

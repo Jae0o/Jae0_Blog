@@ -1,22 +1,3 @@
-export const ALERT_CONTEXT = {
-  TAG: "Tag List 불러오기 과정중 문제가 발생했습니다. 🥹",
-  CATEGORY: "Category List 불러오기 과정중 문제가 발생했습니다. 🥹",
-};
-
-export const ALERT_EDIT = {
-  UPLOAD_SUCCESS: "업로드에 성공하였습니다! 👍",
-  UPLOAD_FAIL: "업로드에 실패했습니다! 🖐️",
-};
-
-export const ERROR_MESSAGE = {
-  SET_OPTION_LIST: "을 추가하는 과정에서 ERROR 발생.",
-  SET_POST: "Post를 업로드하는 중 ERROR 발생.",
-  GET_POSTS_LIST: "Posts를 불러오는 중 ERROR 발생.",
-  GET_ALL_POSTS_LIST: "모든 Posts를 불러오는 중 ERROR 발생.",
-  GET_POST: "Post를 불러오는 중 ERROR 발생.",
-  UPLOAD_STORAGE_IMAGE: "Storage에 이미지를 넣는 과정에 ERROR 발생",
-};
-
 export const LOGIN_VALIDATION = {
   SUBMIT_CHECK_EMAIL: "올바른 이메일을 입력해 주세요. 🚨",
   SUBMIT_CHECK_PASSWORD: "올바른 비밀번호를 입력해 주세요. 🚨",
@@ -37,6 +18,15 @@ export const CHECK_ADMIN = {
 };
 
 export const QUERY_ERROR = {
+  SET_POST: "게시물 업로드 중 문제가 발생했습니다.",
+  GET_POST: "게시물을 불러오는 중 문제가 발생했습니다.",
+  GET_POSTS_LIST: "게시물 목록을 불러오는 중 문제가 발생했습니다.",
+  GET_ALL_POSTS_LIST: "게시물 목록을 불러오는 중 문제가 발생했습니다.",
+
+  SET_OPTION_LIST: "게시물 옵션을 추가하던 중 문제가 발생했습니다.",
+
+  UPLOAD_STORAGE_IMAGE: "이미지를 업로드 하는 과정 중 문제가 발생했습니다.",
+
   CATEGORY_UPDATE_LIST:
     "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( CATEGORY LIST )",
   TAG_UPDATE_LIST:
@@ -44,8 +34,3 @@ export const QUERY_ERROR = {
   POSTS_UPDATE_LIST:
     "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( POSTS LIST )",
 };
-
-export const GET_POST_LIST_ERROR = "게시물 목록을 불러오는데 실패했어요.. 🤦";
-
-export const GET_POST_DETAIL_PAGE_POST_FETCH_ERROR =
-  "게시물을 찾는데 실패했어요..🤦";
