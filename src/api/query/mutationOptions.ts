@@ -1,11 +1,19 @@
 import { SetOptions } from "@/api";
 import { PostData } from "@/types/original";
 
-import { DeletePost, deletePost, setOptions, setPost } from "../firebase";
+import {
+  DeletePost,
+  SetImageStorage,
+  deletePost,
+  setImageStorage,
+  setOptions,
+  setPost,
+} from "../firebase";
 
 export const MUTATION_KEY = {
   SET_POST: () => ["post", "set"],
   SET_OPTIONS: (optionType: string) => ["options", "set", optionType],
+  SET_IMAGE: () => ["image", "set"],
 
   DELETE_POST: () => ["delete", "post"],
 };
@@ -19,6 +27,11 @@ export const MUTATION_OPTIONS = {
   SET_OPTION: (optionType: string) => ({
     mutationKey: MUTATION_KEY.SET_OPTIONS(optionType),
     mutationFn: (newOption: SetOptions) => setOptions(newOption),
+  }),
+
+  SET_IMAGE: () => ({
+    mutationKey: MUTATION_KEY.SET_IMAGE(),
+    mutationFn: (imageInfo: SetImageStorage) => setImageStorage(imageInfo),
   }),
 
   DELETE_POST: () => ({

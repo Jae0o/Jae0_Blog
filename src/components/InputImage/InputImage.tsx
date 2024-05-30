@@ -2,7 +2,8 @@ import "./InputImage.style.css";
 
 import React from "react";
 
-import { setImageStorage } from "@/api";
+import { MUTATION_OPTIONS } from "@/api";
+import { useMutation } from "@tanstack/react-query";
 
 interface InputImageProps {
   inputRef: React.RefObject<HTMLInputElement>;
@@ -11,24 +12,23 @@ interface InputImageProps {
 }
 
 const InputImage = ({ inputRef, storagePath, onSuccess }: InputImageProps) => {
-  const changeImage = async ({
-    target,
-  }: React.ChangeEvent<HTMLInputElement>) => {
+  const { mutate } = useMutation(MUTATION_OPTIONS.SET_IMAGE());
+  const changeImage = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
     if (!target.files) return;
 
     const file = target.files[0];
 
-    const newImageUrl = await setImageStorage({
-      file,
-      path: storagePath,
-    });
-
-    if (!newImageUrl) {
-      // 실패에 대한 경고
-      return;
-    }
-
-    onSuccess(newImageUrl);
+    mutate(
+      { file, path: storagePath },
+      {
+        onSuccess: newImageUrl => {
+          onSuccess(newImageUrl);
+        },
+        onError: () => {
+          // 실패에 대한 경고
+        },
+      },
+    );
   };
 
   return (
