@@ -3,11 +3,14 @@ import { v4 } from "uuid";
 import "./Editor.style.css";
 
 import React, { MouseEvent, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-import { getPost } from "@/api";
+import { QUERY_OPTIONS } from "@/api";
+import { AlertModal } from "@/components";
 import { NEW_POST } from "@/constants";
+import { useModal } from "@/hooks";
+import LoadingPage from "@/pages/Loading/Loading";
 import { PostData } from "@/types/original";
+import { useQuery } from "@tanstack/react-query";
 
 import { EditValue } from "./Editor.type";
 import {
@@ -40,33 +43,24 @@ const Editor = ({
   tagList,
   onSubmit,
 }: EditorProps): React.ReactNode => {
-  const [postData, setPostData] = useState<PostData>(NEW_POST);
-  const navigation = useNavigate();
+  const { isShowModal, openModal, closeModal } = useModal();
+  const [postData, setPostData] = useState<PostData>({ ...NEW_POST, id: v4() });
+  const { data, isError, isLoading } = useQuery({
+    ...QUERY_OPTIONS.GET_POST({ category, id }),
+    enabled: id !== "newPost",
+  });
 
   useEffect(() => {
-    if (id === "newPost") {
-      setPostData(state => ({
-        ...state,
-        id: v4(),
-      }));
-
-      return;
+    if (!isError && !isLoading && data) {
+      setPostData(data);
     }
+  }, [data, isError, isLoading]);
 
-    const fetchPost = async (category: string, pathId: string) => {
-      const resPost = await getPost(category, pathId);
-
-      if (!resPost) {
-        // 이후 실패 알림 모달
-        navigation("/");
-        return;
-      }
-
-      setPostData(resPost);
-    };
-
-    fetchPost(category, id);
-  }, [id, category, navigation]);
+  useEffect(() => {
+    if (isError) {
+      openModal();
+    }
+  }, [isError, openModal]);
 
   const setPostHandler: SetEditorPost = (key, value) => {
     setPostData(prevPostData => ({
@@ -82,6 +76,10 @@ const Editor = ({
       onSubmit(postData);
     }
   };
+
+  if (isError || isLoading) {
+    return <LoadingPage />;
+  }
 
   return (
     <article className="editor">
@@ -125,6 +123,12 @@ const Editor = ({
       <EditorMD
         onTyping={setPostHandler}
         state={postData.main}
+      />
+
+      <AlertModal
+        isShow={isShowModal}
+        onClose={closeModal}
+        message=""
       />
     </article>
   );

@@ -1,57 +1,39 @@
 import "./PostDetail.style.css";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { ContextAuthUser } from "@/Context/ContextAuthUser";
-import { getPost } from "@/api";
+import { QUERY_OPTIONS } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import { GET_POST_DETAIL_PAGE_POST_FETCH_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
-import { PostData } from "@/types/original";
+import { useQuery } from "@tanstack/react-query";
 
 import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
 
 const PostDetail = (): React.ReactNode => {
-  const [post, setPost] = useState<PostData>();
-  const { category = "", id = "" } = useParams();
   const { isShowModal, openModal, closeModal } = useModal();
+  const { category = "", id = "" } = useParams();
+  const { data, isError } = useQuery(QUERY_OPTIONS.GET_POST({ category, id }));
   const { isAuthUser } = useContext(ContextAuthUser);
   const navigate = useNavigate();
 
-  useEffect(
-    function initialPost() {
-      const fetchPost = async (category: string, pathId: string) => {
-        const resPost = await getPost(category, pathId);
-
-        if (!resPost) {
-          openModal();
-
-          return;
-        }
-
-        setPost(resPost);
-      };
-
-      fetchPost(category, id);
-    },
-    [category, id, openModal],
-  );
-
-  const handleCloseAlertModal = () => {
-    closeModal();
-    navigate("/");
-  };
+  useEffect(() => {
+    if (isError) {
+      openModal();
+    }
+  }, [isError, openModal]);
 
   return (
     <>
-      {post && (
+      {data && (
         <section className="ptdetail__layout">
           <PostBannerDecoration />
           <div className="ptdetail__container">
             <PostBanner
-              thumbnail={post.thumbnail}
-              mainText={post.title}
+              thumbnail={data.thumbnail}
+              mainText={data.title}
               height={50}
               objectFit={"contain"}
             />
@@ -59,11 +41,11 @@ const PostDetail = (): React.ReactNode => {
               className="ptdetail__content"
               data-color-mode="light"
             >
-              <PostDetailInfo post={post} />
+              <PostDetailInfo post={data} />
 
               <span className="ptdetail__content-divider" />
 
-              <PostDetailViewer content={post.main} />
+              <PostDetailViewer content={data.main} />
 
               <span className="ptdetail__content-divider" />
 
@@ -83,7 +65,10 @@ const PostDetail = (): React.ReactNode => {
 
       <AlertModal
         isShow={isShowModal}
-        onClose={handleCloseAlertModal}
+        onClose={() => {
+          closeModal();
+          navigate("/");
+        }}
         message={GET_POST_DETAIL_PAGE_POST_FETCH_ERROR}
       />
     </>
