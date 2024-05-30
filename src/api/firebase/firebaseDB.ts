@@ -71,39 +71,23 @@ export const getPostsList: GetPostsList = async category => {
     });
 };
 
-type GetAllPostsList = () => Promise<PostData[] | false>;
-interface ResponsePostsList {
+export interface ResponsePostsList {
   [key: string]: { [key: string]: PostData };
 }
+type GetAllPostsList = () => Promise<ResponsePostsList>;
 
 export const getAllPostsList: GetAllPostsList = async () => {
-  const fetchedPostList: ResponsePostsList | false = await get(
-    ref(database, `Posts/`),
-  )
+  return await get(ref(database, `Posts/`))
     .then(res => {
       if (res.exists()) {
         const fetchedList: ResponsePostsList = res.val();
         return fetchedList;
       }
-      return false;
+      throw Error("get all post Error");
     })
     .catch(() => {
-      console.error(ERROR_MESSAGE.GET_ALL_POSTS_LIST);
-      return false;
+      throw Error("get all post Error");
     });
-
-  if (!fetchedPostList) {
-    return false;
-  }
-
-  const postsList: PostData[] = [];
-
-  for (const key in fetchedPostList) {
-    const convertedList: PostData[] = Object.values(fetchedPostList[key]);
-    postsList.push(...convertedList);
-  }
-
-  return postsList;
 };
 
 type GetPost = (category: string, postId: string) => Promise<PostData | false>;
