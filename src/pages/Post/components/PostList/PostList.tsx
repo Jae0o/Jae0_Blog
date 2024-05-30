@@ -1,53 +1,27 @@
 import "./PostList.style.css";
 
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-import { getAllPostsList, getPostsList } from "@/api";
-import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
+import { useQueryPostList } from "@/api";
+import { PostBanner, PostBannerDecoration } from "@/components";
 import {
   ADVICE_DEFAULT,
   ADVICE_LIST,
-  GET_POST_LIST_ERROR,
   POST_BANNER_THUMBNAILS,
 } from "@/constants";
-import { useModal } from "@/hooks";
-import { PostData } from "@/types/original";
 
 import { BannerInfo } from "./PostList.type";
 import { PostListItem } from "./components";
 
-type FetchPostsList = () => Promise<void>;
-
 const PostList = (): React.ReactNode => {
-  const [postsList, setPostsList] = useState<PostData[]>([]);
-  const { isShowModal, openModal, closeModal } = useModal();
   const { category = "ALL" } = useParams();
-  const navigation = useNavigate();
+  const { postList, PostListAlertModal } = useQueryPostList({ category });
+
   const [bannerInfo, setBannerInfo] = useState<BannerInfo>({
     advice: ADVICE_DEFAULT,
     thumbnail: "",
   });
-
-  useEffect(() => {
-    const fetchPostsList: FetchPostsList = async () => {
-      if (category === "ALL") {
-        const resAllPostsList = await getAllPostsList();
-
-        resAllPostsList ? setPostsList(resAllPostsList) : navigation("/");
-        return;
-      }
-
-      const resPostsList = await getPostsList(category);
-
-      if (!resPostsList) {
-        openModal();
-        return;
-      }
-      setPostsList(resPostsList);
-    };
-    fetchPostsList();
-  }, [category, navigation, openModal]);
 
   useEffect(
     function makeRandomBanner() {
@@ -61,43 +35,29 @@ const PostList = (): React.ReactNode => {
     [category],
   );
 
-  // 추후 정렬 기능 추가시 해당 부분 개선
-  const sortedList = postsList.sort((prevPost, nextPost) => {
-    const prevPostDate = new Date(JSON.parse(prevPost.createAt)).getTime();
-    const nextPostDate = new Date(JSON.parse(nextPost.createAt)).getTime();
-
-    return nextPostDate - prevPostDate;
-  });
-
   return (
-    <>
-      <article className="outlet__ptlist">
-        <div className="ptlist__banner">
-          <PostBannerDecoration />
-          <PostBanner
-            thumbnail={bannerInfo.thumbnail}
-            mainText={bannerInfo.advice.advice}
-            subText={`- ${bannerInfo.advice.author}`}
-          />
-        </div>
+    <article className="outlet__ptlist">
+      <div className="ptlist__banner">
+        <PostBannerDecoration />
+        <PostBanner
+          thumbnail={bannerInfo.thumbnail}
+          mainText={bannerInfo.advice.advice}
+          subText={`- ${bannerInfo.advice.author}`}
+        />
+      </div>
 
-        <ul className="ptlist__list-container">
-          {sortedList &&
-            sortedList.map(post => (
-              <PostListItem
-                post={post}
-                key={post.id}
-              />
-            ))}
-        </ul>
-      </article>
+      <ul className="ptlist__list-container">
+        {postList &&
+          postList.map(post => (
+            <PostListItem
+              post={post}
+              key={post.id}
+            />
+          ))}
+      </ul>
 
-      <AlertModal
-        isShow={isShowModal}
-        onClose={closeModal}
-        message={GET_POST_LIST_ERROR}
-      />
-    </>
+      {PostListAlertModal}
+    </article>
   );
 };
 
