@@ -2,10 +2,10 @@ import "./PostAuthAction.style.css";
 
 import { useNavigate } from "react-router-dom";
 
-import { deletePost } from "@/api";
+import { MUTATION_OPTIONS } from "@/api";
 import { ConfirmModal } from "@/components";
 import { useModal } from "@/hooks";
-import { useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface PostAuthActionProps {
   postCategory: string;
@@ -16,6 +16,7 @@ const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { isShowModal, openModal, closeModal } = useModal();
+  const { mutate } = useMutation(MUTATION_OPTIONS.DELETE_POST());
 
   const toEditPage = () => {
     navigate(`/editor/${postCategory}/${postId}`);
@@ -27,12 +28,15 @@ const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
       return;
     }
 
-    deletePost({
-      postCategory,
-      postId,
-    });
-    queryClient.refetchQueries();
-    navigate("/");
+    mutate(
+      { postCategory, postId },
+      {
+        onSuccess: () => {
+          queryClient.refetchQueries();
+          navigate("/");
+        },
+      },
+    );
   };
 
   return (

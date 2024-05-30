@@ -2,41 +2,50 @@ import "./InsertOptionButton.style.css";
 
 import React from "react";
 
-import { QUERY_KEY, setOptions } from "@/api";
-import { useQueryClient } from "@tanstack/react-query";
+import { MUTATION_OPTIONS, QUERY_KEY } from "@/api";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface InsertOptionButtonProps {
-  listType: string;
+  optionName: string;
 }
 
 const InsertOptionButton = ({
-  listType,
+  optionName,
 }: InsertOptionButtonProps): React.ReactNode => {
   const queryClient = useQueryClient();
+  const { mutate } = useMutation(MUTATION_OPTIONS.SET_OPTION(optionName));
   const addListHandler = () => {
-    const value = prompt(`새로 추가할 ${listType}의 이름을 넣어주세요`);
+    const value = prompt(`새로 추가할 ${optionName}의 이름을 넣어주세요`);
 
     if (!value) return;
 
     const isAgree = window.confirm(
-      `${listType}에 ${value} 라는 새로운 값을 추가하실건가요?`,
+      `${optionName}에 ${value} 라는 새로운 값을 추가하실건가요?`,
     );
 
     if (!isAgree) return;
 
-    setOptions(listType, value);
-    queryClient.refetchQueries({ queryKey: QUERY_KEY.GET_OPTIONS(listType) });
+    mutate(
+      { option: optionName, value },
+      {
+        onSuccess: () => {
+          queryClient.refetchQueries({
+            queryKey: QUERY_KEY.GET_OPTIONS(optionName),
+          });
+        },
+      },
+    );
     return;
   };
 
   return (
     <div className="sub__insert">
-      <h6 className="insert__title">{listType} 추가</h6>
+      <h6 className="insert__title">{optionName} 추가</h6>
       <button
         onClick={addListHandler}
         className="insert__button"
       >
-        {listType} 추가
+        {optionName} 추가
       </button>
     </div>
   );

@@ -16,8 +16,8 @@ const EditorSub = () => {
   return (
     <aside className="edit__sub">
       <div className={`sub__actions${isToggled}`}>
-        <InsertOptionButton listType="category" />
-        <InsertOptionButton listType="tag" />
+        <InsertOptionButton optionName="category" />
+        <InsertOptionButton optionName="tag" />
       </div>
       <button
         className="sub__button"

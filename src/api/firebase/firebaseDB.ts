@@ -4,16 +4,15 @@ import { PostData } from "@/types/original";
 
 import { database } from "./firebase";
 
-/* ============== Lists ============== */
-
-type SetOptions = (optionsType: string, value: string) => Promise<void>;
-
-export const setOptions: SetOptions = async (optionsType, value) => {
-  try {
-    await set(ref(database, `${optionsType}/${value}`), value);
-  } catch (e) {
-    throw Error(`set options ${optionsType} Error`);
-  }
+/* ============== Options ============== */
+export interface SetOptions {
+  option: string;
+  value: string;
+}
+export const setOptions = async ({ option, value }: SetOptions) => {
+  await set(ref(database, `${option}/${value}`), value).catch(() => {
+    throw Error(`set options ${option} Error`);
+  });
 };
 
 type GetOptions = (optionsType: string) => Promise<string[]>;
@@ -103,10 +102,14 @@ export const getPost: GetPost = async (category, postId) => {
     });
 };
 
-interface DeletePost {
+export interface DeletePost {
   postCategory: string;
   postId: string;
 }
 export const deletePost = async ({ postCategory, postId }: DeletePost) => {
-  await set(ref(database, `Posts/${postCategory}/${postId}`), null);
+  await set(ref(database, `Posts/${postCategory}/${postId}`), null).catch(
+    () => {
+      throw new Error("delete post Error");
+    },
+  );
 };
