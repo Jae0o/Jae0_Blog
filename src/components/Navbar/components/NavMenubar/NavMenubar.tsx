@@ -1,8 +1,7 @@
 import "./NavMenubar.style.css";
 
-import { useContext, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
-import { ContextPosts } from "@/Context/ContextPosts";
 import { MenubarItem } from "@/components";
 import { MENUBAR_LIST } from "@/constants";
 
@@ -14,7 +13,6 @@ interface NavMenubarProps {
 }
 
 const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
-  const { posts } = useContext(ContextPosts);
   const menubarRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
@@ -56,7 +54,6 @@ const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
           title={title}
           IconComponent={IconComponent}
           category={category}
-          postCount={posts[category] && posts[category].length}
         />
       ))}
 
