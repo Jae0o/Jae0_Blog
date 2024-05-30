@@ -2,12 +2,12 @@ import "./Home.style.css";
 
 import React from "react";
 
-import { useGetAllPostList } from "@/api";
+import { useQueryAllPostList } from "@/api";
 
 import { PostListItem } from "../Post/components/PostList/components";
 
 const Home = (): React.ReactNode => {
-  const { posts, AllPostListAlertModal } = useGetAllPostList();
+  const { posts, AllPostListAlertModal } = useQueryAllPostList();
 
   return (
     <section className="outlet__home">

@@ -7,9 +7,11 @@ import { useQuery } from "@tanstack/react-query";
 
 import { QUERY_OPTIONS } from "../../queryOptions";
 
-const useGetTagList = () => {
+const useQueryCategoryList = () => {
   const { isShowModal, openModal, closeModal } = useModal();
-  const { data, refetch, isError } = useQuery(QUERY_OPTIONS.GET_OPTIONS("tag"));
+  const { data, refetch, isError } = useQuery(
+    QUERY_OPTIONS.GET_OPTIONS("category"),
+  );
 
   useEffect(() => {
     if (!isError) {
@@ -20,7 +22,7 @@ const useGetTagList = () => {
     refetch();
   }, [isError, openModal, refetch]);
 
-  const TagListAlertModal = useMemo(
+  const CategoryListAlertModal = useMemo(
     () => (
       <AlertModal
         isShow={isShowModal}
@@ -31,7 +33,11 @@ const useGetTagList = () => {
     [closeModal, isShowModal],
   );
 
-  return { tagList: data ?? [], updateTagList: refetch, TagListAlertModal };
+  return {
+    categoryList: data ?? [],
+    updateCategoryList: refetch,
+    CategoryListAlertModal,
+  };
 };
 
-export default useGetTagList;
+export default useQueryCategoryList;

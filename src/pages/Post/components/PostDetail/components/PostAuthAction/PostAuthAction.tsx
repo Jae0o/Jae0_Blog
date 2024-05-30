@@ -2,7 +2,7 @@ import "./PostAuthAction.style.css";
 
 import { useNavigate } from "react-router-dom";
 
-import { deletePost, useGetAllPostList } from "@/api";
+import { deletePost, useQueryAllPostList } from "@/api";
 import { ConfirmModal } from "@/components";
 import { useModal } from "@/hooks";
 
@@ -13,7 +13,7 @@ interface PostAuthActionProps {
 
 const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
   const navigate = useNavigate();
-  const { updatePosts } = useGetAllPostList();
+  const { updatePosts } = useQueryAllPostList();
   const { isShowModal, openModal, closeModal } = useModal();
 
   const toEditPage = () => {

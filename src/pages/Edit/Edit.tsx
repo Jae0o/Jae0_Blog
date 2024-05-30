@@ -5,9 +5,9 @@ import { useNavigate, useParams } from "react-router-dom";
 
 import {
   MUTATION_OPTIONS,
-  useGetAllPostList,
-  useGetCategoryList,
-  useGetTagList,
+  useQueryAllPostList,
+  useQueryCategoryList,
+  useQueryTagList,
 } from "@/api";
 import { CheckAdmin } from "@/components";
 import { ALERT_EDIT } from "@/constants";
@@ -19,10 +19,10 @@ import { Editor, EditorSub } from "./components";
 
 const Edit = (): React.ReactNode => {
   const { categoryList, updateCategoryList, CategoryListAlertModal } =
-    useGetCategoryList();
-  const { tagList, updateTagList, TagListAlertModal } = useGetTagList();
+    useQueryCategoryList();
+  const { tagList, updateTagList, TagListAlertModal } = useQueryTagList();
 
-  const { updatePosts } = useGetAllPostList();
+  const { updatePosts } = useQueryAllPostList();
 
   const { mutate, isPending } = useMutation(MUTATION_OPTIONS.SET_POST());
 

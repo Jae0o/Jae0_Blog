@@ -7,37 +7,36 @@ import { useQuery } from "@tanstack/react-query";
 
 import { QUERY_OPTIONS } from "../../queryOptions";
 
-const useGetCategoryList = () => {
+const useQueryAllPostList = () => {
   const { isShowModal, openModal, closeModal } = useModal();
-  const { data, refetch, isError } = useQuery(
-    QUERY_OPTIONS.GET_OPTIONS("category"),
+
+  const { data, isError, refetch } = useQuery(
+    QUERY_OPTIONS.GET_POST_LIST_ALL(),
   );
 
   useEffect(() => {
-    if (!isError) {
-      return;
+    if (isError) {
+      openModal();
+      refetch();
     }
-
-    openModal();
-    refetch();
   }, [isError, openModal, refetch]);
 
-  const CategoryListAlertModal = useMemo(
+  const AllPostListAlertModal = useMemo(
     () => (
       <AlertModal
         isShow={isShowModal}
         onClose={closeModal}
-        message={CONTEXT_ERROR.CATEGORY_UPDATE_LIST}
+        message={CONTEXT_ERROR.POSTS_UPDATE_LIST}
       />
     ),
     [closeModal, isShowModal],
   );
 
   return {
-    categoryList: data ?? [],
-    updateCategoryList: refetch,
-    CategoryListAlertModal,
+    posts: data ?? [],
+    updatePosts: refetch,
+    AllPostListAlertModal,
   };
 };
 
-export default useGetCategoryList;
+export default useQueryAllPostList;
