@@ -1,13 +1,45 @@
 import "./Home.style.css";
 
-import React from "react";
+import React, { useEffect } from "react";
 
-import { useQueryAllPostList } from "@/api";
+import { QUERY_OPTIONS } from "@/api";
+import { AlertModal } from "@/components";
+import { QUERY_ERROR } from "@/constants";
+import { useModal } from "@/hooks";
+import { useQuery } from "@tanstack/react-query";
 
+import LoadingPage from "../Loading/Loading";
 import { PostListItem } from "../Post/components/PostList/components";
 
 const Home = (): React.ReactNode => {
-  const { posts, AllPostListAlertModal } = useQueryAllPostList();
+  const { isShowModal, openModal, closeModal } = useModal();
+
+  const {
+    data: posts,
+    isError,
+    isLoading,
+    refetch,
+  } = useQuery(QUERY_OPTIONS.GET_POST_LIST_ALL());
+
+  useEffect(() => {
+    if (isError) {
+      openModal();
+      refetch();
+    }
+  }, [isError, openModal, refetch]);
+
+  if (isError || isLoading || !posts) {
+    return (
+      <>
+        <LoadingPage />
+        <AlertModal
+          isShow={isShowModal}
+          onClose={closeModal}
+          message={QUERY_ERROR.POSTS_UPDATE_LIST}
+        />
+      </>
+    );
+  }
 
   return (
     <section className="outlet__home">
@@ -23,8 +55,6 @@ const Home = (): React.ReactNode => {
           />
         ))}
       </ul>
-
-      {AllPostListAlertModal}
     </section>
   );
 };
