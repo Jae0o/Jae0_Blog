@@ -1,16 +1,33 @@
-import {
-  BlueBookIcon,
-  BrownBookIcon,
-  DisplayIcon,
-  EmailIcon,
-  GithubLogoIcon,
-  GreenBookIcon,
-  InstagramLogoIcon,
-  OrangeBookIcon,
-} from "@/components";
+import React from "react";
+
 import { Advice, PostData } from "@/types/original";
 
 import { CONTACT_ME_URL } from "../url/url";
+
+const GithubLogoIcon = React.lazy(
+  () => import("@/components/Icons/GithubLogoIcon/GithubLogoIcon"),
+);
+const BlueBookIcon = React.lazy(
+  () => import("@/components/Icons/BlueBookIcon/BlueBookIcon"),
+);
+const BrownBookIcon = React.lazy(
+  () => import("@/components/Icons/BrownBookIcon/BrownBookIcon"),
+);
+const DisplayIcon = React.lazy(
+  () => import("@/components/Icons/DisplayIcon/DisplayIcon"),
+);
+const EmailIcon = React.lazy(
+  () => import("@/components/Icons/EmailIcon/EmailIcon"),
+);
+const InstagramLogoIcon = React.lazy(
+  () => import("@/components/Icons/InstagramLogoIcon/InstagramLogoIcon"),
+);
+const OrangeBookIcon = React.lazy(
+  () => import("@/components/Icons/OrangeBookIcon/OrangeBookIcon"),
+);
+const GreenBookIcon = React.lazy(
+  () => import("@/components/Icons/GreenBookIcon/GreenBookIcon"),
+);
 
 export const NEW_POST: PostData = {
   id: "newPost",
