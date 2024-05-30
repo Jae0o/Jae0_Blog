@@ -1,10 +1,14 @@
 import "./Edit.style.css";
 
-import React, { useContext } from "react";
+import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { ContextPosts } from "@/Context/ContextPosts";
-import { MUTATION_OPTIONS, useGetCategoryList, useGetTagList } from "@/api";
+import {
+  MUTATION_OPTIONS,
+  useGetAllPostList,
+  useGetCategoryList,
+  useGetTagList,
+} from "@/api";
 import { CheckAdmin } from "@/components";
 import { ALERT_EDIT } from "@/constants";
 import { PostData } from "@/types/original";
@@ -18,7 +22,7 @@ const Edit = (): React.ReactNode => {
     useGetCategoryList();
   const { tagList, updateTagList, TagListAlertModal } = useGetTagList();
 
-  const { updatePosts } = useContext(ContextPosts);
+  const { updatePosts } = useGetAllPostList();
 
   const { mutate, isPending } = useMutation(MUTATION_OPTIONS.SET_POST());
 
@@ -40,11 +44,6 @@ const Edit = (): React.ReactNode => {
     mutate(post, {
       onSuccess: () => {
         navigate("/");
-        /*
-        TODO 
-
-        추후 해당 부분 개선하기
-         */
         updatePosts();
       },
       onError: () => alert(ALERT_EDIT.UPLOAD_FAIL),

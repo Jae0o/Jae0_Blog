@@ -1,33 +1,13 @@
 import "./Home.style.css";
 
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 
-import { getAllPostsList } from "@/api";
-import { PostData } from "@/types/original";
+import { useGetAllPostList } from "@/api";
 
 import { PostListItem } from "../Post/components/PostList/components";
 
-type FetchPostsList = () => Promise<void>;
-
 const Home = (): React.ReactNode => {
-  const [postsList, setPostsList] = useState<PostData[]>([]);
-  const navigation = useNavigate();
-
-  useEffect(() => {
-    const fetchPostsList: FetchPostsList = async () => {
-      const resAllPostsList = await getAllPostsList();
-
-      if (resAllPostsList) {
-        setPostsList(resAllPostsList);
-        return;
-      }
-
-      fetchPostsList();
-    };
-
-    fetchPostsList();
-  }, [navigation]);
+  const { posts, AllPostListAlertModal } = useGetAllPostList();
 
   return (
     <section className="outlet__home">
@@ -36,14 +16,15 @@ const Home = (): React.ReactNode => {
       </article>
 
       <ul className="temporary__ptlist">
-        {postsList &&
-          postsList.map(post => (
-            <PostListItem
-              key={post.id}
-              post={post}
-            />
-          ))}
+        {posts.map(post => (
+          <PostListItem
+            key={post.id}
+            post={post}
+          />
+        ))}
       </ul>
+
+      {AllPostListAlertModal}
     </section>
   );
 };

@@ -1,10 +1,8 @@
 import "./PostAuthAction.style.css";
 
-import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ContextPosts } from "@/Context/ContextPosts";
-import { deletePost } from "@/api";
+import { deletePost, useGetAllPostList } from "@/api";
 import { ConfirmModal } from "@/components";
 import { useModal } from "@/hooks";
 
@@ -15,7 +13,7 @@ interface PostAuthActionProps {
 
 const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
   const navigate = useNavigate();
-  const { updatePosts } = useContext(ContextPosts);
+  const { updatePosts } = useGetAllPostList();
   const { isShowModal, openModal, closeModal } = useModal();
 
   const toEditPage = () => {
