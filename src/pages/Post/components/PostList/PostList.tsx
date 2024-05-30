@@ -1,48 +1,27 @@
 import "./PostList.style.css";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 import { useQueryPostList } from "@/api";
 import { PostBanner, PostBannerDecoration } from "@/components";
-import {
-  ADVICE_DEFAULT,
-  ADVICE_LIST,
-  POST_BANNER_THUMBNAILS,
-} from "@/constants";
+import { useBanner } from "@/hooks";
 
-import { BannerInfo } from "./PostList.type";
 import { PostListItem } from "./components";
 
 const PostList = (): React.ReactNode => {
   const { category = "ALL" } = useParams();
   const { postList, PostListAlertModal } = useQueryPostList({ category });
-
-  const [bannerInfo, setBannerInfo] = useState<BannerInfo>({
-    advice: ADVICE_DEFAULT,
-    thumbnail: "",
-  });
-
-  useEffect(
-    function makeRandomBanner() {
-      const randomNum: number = Math.random() * 10;
-      const randomIndex: number = Math.floor(randomNum);
-      setBannerInfo({
-        advice: ADVICE_LIST[randomIndex],
-        thumbnail: POST_BANNER_THUMBNAILS[randomIndex],
-      });
-    },
-    [category],
-  );
+  const { bannerAdvice, bannerThumbnail } = useBanner({ changeKey: category });
 
   return (
     <article className="outlet__ptlist">
       <div className="ptlist__banner">
         <PostBannerDecoration />
         <PostBanner
-          thumbnail={bannerInfo.thumbnail}
-          mainText={bannerInfo.advice.advice}
-          subText={`- ${bannerInfo.advice.author}`}
+          thumbnail={bannerThumbnail}
+          mainText={bannerAdvice.advice}
+          subText={`- ${bannerAdvice.author}`}
         />
       </div>
 
