@@ -79,17 +79,16 @@ export const getAllPostsList: GetAllPostsList = async () => {
   return await get(ref(database, `Posts/`))
     .then(res => {
       if (res.exists()) {
-        const fetchedList: ResponsePostsList = res.val();
-        return fetchedList;
+        return res.val();
       }
-      throw new Error("get all post Error");
+      throw new Error("get all post list Error");
     })
     .catch(() => {
-      throw new Error("get all post Error");
+      throw new Error("get all post list Error");
     });
 };
 
-type GetPost = (category: string, postId: string) => Promise<PostData | false>;
+type GetPost = (category: string, postId: string) => Promise<PostData>;
 
 export const getPost: GetPost = async (category, postId) => {
   return await get(ref(database, `Posts/${category}/${postId}`))
@@ -97,10 +96,11 @@ export const getPost: GetPost = async (category, postId) => {
       if (res.exists()) {
         return res.val();
       }
-      return false;
+
+      throw new Error("get post Error");
     })
     .catch(() => {
-      return false;
+      throw new Error("get post Error");
     });
 };
 
