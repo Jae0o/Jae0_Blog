@@ -1,26 +1,61 @@
 import "./Edit.style.css";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import {
-  MUTATION_OPTIONS,
-  useQueryAllPostList,
-  useQueryCategoryList,
-  useQueryTagList,
-} from "@/api";
-import { CheckAdmin } from "@/components";
+import { MUTATION_OPTIONS, QUERY_OPTIONS, useQueryAllPostList } from "@/api";
+import { AlertModal, CheckAdmin } from "@/components";
 import { QUERY_ERROR } from "@/constants";
+import { useModal } from "@/hooks";
 import { PostData } from "@/types/original";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
 import LoadingPage from "../Loading/Loading";
 import { Editor, EditorSub } from "./components";
 
 const Edit = (): React.ReactNode => {
-  const { categoryList, updateCategoryList, CategoryListAlertModal } =
-    useQueryCategoryList();
-  const { tagList, updateTagList, TagListAlertModal } = useQueryTagList();
+  const {
+    isShowModal: isShowTagModal,
+    openModal: openTagModal,
+    closeModal: closeTagModal,
+  } = useModal();
+  const {
+    isShowModal: isShowCategoryModal,
+    openModal: openCategoryModal,
+    closeModal: closeCategoryModal,
+  } = useModal();
+
+  const {
+    data: tagList,
+    refetch: tagListRefetch,
+    isLoading: isTagListLoading,
+    isError: isTagListError,
+  } = useQuery(QUERY_OPTIONS.GET_OPTIONS("tag"));
+  const {
+    data: categoryList,
+    refetch: categoryListRefetch,
+    isLoading: isCategoryListLoading,
+    isError: isCategoryListError,
+  } = useQuery(QUERY_OPTIONS.GET_OPTIONS("category"));
+
+  useEffect(() => {
+    if (isTagListError) {
+      openTagModal();
+      tagListRefetch();
+    }
+
+    if (isCategoryListError) {
+      openCategoryModal();
+      categoryListRefetch();
+    }
+  }, [
+    categoryListRefetch,
+    isCategoryListError,
+    isTagListError,
+    openCategoryModal,
+    openTagModal,
+    tagListRefetch,
+  ]);
 
   const { updatePosts } = useQueryAllPostList();
 
@@ -31,11 +66,11 @@ const Edit = (): React.ReactNode => {
 
   const onUpdateOption = (name: string) => {
     if (name === "category") {
-      updateCategoryList();
+      categoryListRefetch();
       return;
     }
     if (name === "tag") {
-      updateTagList();
+      tagListRefetch();
       return;
     }
   };
@@ -50,7 +85,13 @@ const Edit = (): React.ReactNode => {
     });
   };
 
-  if (isPending) return <LoadingPage />;
+  if (isPending || isTagListError || isTagListLoading || !tagList) {
+    return <LoadingPage />;
+  }
+
+  if (isCategoryListError || isCategoryListLoading || !categoryList) {
+    return <LoadingPage />;
+  }
 
   return (
     <section className="outlet__edit">
@@ -66,8 +107,16 @@ const Edit = (): React.ReactNode => {
         <EditorSub onUpdate={onUpdateOption} />
       </CheckAdmin>
 
-      {TagListAlertModal}
-      {CategoryListAlertModal}
+      <AlertModal
+        isShow={isShowTagModal}
+        onClose={closeTagModal}
+        message={QUERY_ERROR.TAG_UPDATE_LIST}
+      />
+      <AlertModal
+        isShow={isShowCategoryModal}
+        onClose={closeCategoryModal}
+        message={QUERY_ERROR.CATEGORY_UPDATE_LIST}
+      />
     </section>
   );
 };
