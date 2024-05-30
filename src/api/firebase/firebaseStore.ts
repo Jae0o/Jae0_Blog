@@ -1,17 +1,16 @@
 import { getDownloadURL, ref } from "firebase/storage";
 import { uploadBytes } from "firebase/storage";
 
-import { QUERY_ERROR } from "@/constants";
 import { imageResizer } from "@/util";
 
 import { firebaseStorage } from "./firebase";
 
-type SetImageStorage = (params: {
+export interface SetImageStorage {
   file: File;
   path: string;
-}) => Promise<string | void>;
+}
 
-export const setImageStorage: SetImageStorage = async ({ file, path }) => {
+export const setImageStorage = async ({ file, path }: SetImageStorage) => {
   let resizedImage: File | Blob = file;
 
   if (file.type !== "image/gif") {
@@ -19,14 +18,11 @@ export const setImageStorage: SetImageStorage = async ({ file, path }) => {
   }
 
   const storageRef = ref(firebaseStorage, `image/${path}`);
-
   const newImage = await uploadBytes(storageRef, resizedImage)
     .then(res => res)
-    .catch(() => console.log(QUERY_ERROR.UPLOAD_STORAGE_IMAGE));
-
-  if (!newImage) {
-    return;
-  }
+    .catch(() => {
+      throw new Error("set image error");
+    });
 
   const newImageUrl = await getDownloadURL(newImage.ref);
 
