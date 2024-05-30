@@ -4,6 +4,7 @@ import {
   ResponsePostsList,
   getAllPostsList,
   getOptions,
+  getPost,
   getPostsList,
 } from "../firebase";
 
@@ -11,6 +12,12 @@ export const QUERY_KEY = {
   GET_OPTIONS: (optionName: string) => ["options", "get", optionName],
   GET_POST_LIST_ALL: (category: string) => ["post", "list", "get", category],
   GET_POST_LIST: (category: string) => ["post", "list", "get", category],
+  GET_POST: ({ category, id }: { category: string; id: string }) => [
+    "post",
+    "get",
+    category,
+    id,
+  ],
 };
 
 export const QUERY_OPTIONS = {
@@ -59,5 +66,12 @@ export const QUERY_OPTIONS = {
         return nextPostDate - prevPostDate;
       });
     },
+  }),
+
+  GET_POST: ({ category, id }: { category: string; id: string }) => ({
+    queryKey: ["post", "get", category, id],
+    queryFn: () => getPost(category, id),
+    staleTime: 1000 * 60 * 60 * 24,
+    gcTime: 1000 * 60 * 60 * 24,
   }),
 };
