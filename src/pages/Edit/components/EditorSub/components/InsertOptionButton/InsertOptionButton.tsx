@@ -2,17 +2,17 @@ import "./InsertOptionButton.style.css";
 
 import React from "react";
 
-import { setOptions } from "@/api";
+import { QUERY_KEY, setOptions } from "@/api";
+import { useQueryClient } from "@tanstack/react-query";
 
 interface InsertOptionButtonProps {
-  onUpdate: (name: string) => void;
   listType: string;
 }
 
 const InsertOptionButton = ({
-  onUpdate,
   listType,
 }: InsertOptionButtonProps): React.ReactNode => {
+  const queryClient = useQueryClient();
   const addListHandler = () => {
     const value = prompt(`새로 추가할 ${listType}의 이름을 넣어주세요`);
 
@@ -25,7 +25,7 @@ const InsertOptionButton = ({
     if (!isAgree) return;
 
     setOptions(listType, value);
-    onUpdate(listType);
+    queryClient.refetchQueries({ queryKey: QUERY_KEY.GET_OPTIONS(listType) });
     return;
   };
 

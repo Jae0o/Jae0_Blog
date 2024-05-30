@@ -1,19 +1,19 @@
 import "./Edit.style.css";
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import { MUTATION_OPTIONS, QUERY_OPTIONS, useQueryAllPostList } from "@/api";
+import { MUTATION_OPTIONS, QUERY_OPTIONS } from "@/api";
 import { AlertModal, CheckAdmin } from "@/components";
 import { QUERY_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { PostData } from "@/types/original";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
 import LoadingPage from "../Loading/Loading";
 import { Editor, EditorSub } from "./components";
 
-const Edit = (): React.ReactNode => {
+const Edit = () => {
   const {
     isShowModal: isShowTagModal,
     openModal: openTagModal,
@@ -56,30 +56,16 @@ const Edit = (): React.ReactNode => {
     openTagModal,
     tagListRefetch,
   ]);
-
-  const { updatePosts } = useQueryAllPostList();
-
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation(MUTATION_OPTIONS.SET_POST());
-
   const navigate = useNavigate();
   const { category = "", id: pathId = "" } = useParams();
-
-  const onUpdateOption = (name: string) => {
-    if (name === "category") {
-      categoryListRefetch();
-      return;
-    }
-    if (name === "tag") {
-      tagListRefetch();
-      return;
-    }
-  };
 
   const onUploadPost = async (post: PostData) => {
     mutate(post, {
       onSuccess: () => {
         navigate("/");
-        updatePosts();
+        queryClient.refetchQueries();
       },
       onError: () => alert(QUERY_ERROR.SET_POST),
     });
@@ -104,7 +90,7 @@ const Edit = (): React.ReactNode => {
           onSubmit={onUploadPost}
         />
 
-        <EditorSub onUpdate={onUpdateOption} />
+        <EditorSub />
       </CheckAdmin>
 
       <AlertModal

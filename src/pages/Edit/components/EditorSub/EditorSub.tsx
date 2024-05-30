@@ -1,14 +1,10 @@
 import "./EditorSub.style.css";
 
-import React, { MouseEvent, useState } from "react";
+import { MouseEvent, useState } from "react";
 
 import { InsertOptionButton } from "./components";
 
-interface EditorSubProps {
-  onUpdate: (name: string) => void;
-}
-
-const EditorSub = ({ onUpdate }: EditorSubProps): React.ReactNode => {
+const EditorSub = () => {
   const [toggled, setToggled] = useState<boolean>(false);
 
   const toggleHandler = (e: MouseEvent<HTMLButtonElement>) => {
@@ -20,14 +16,8 @@ const EditorSub = ({ onUpdate }: EditorSubProps): React.ReactNode => {
   return (
     <aside className="edit__sub">
       <div className={`sub__actions${isToggled}`}>
-        <InsertOptionButton
-          onUpdate={onUpdate}
-          listType="category"
-        />
-        <InsertOptionButton
-          onUpdate={onUpdate}
-          listType="tag"
-        />
+        <InsertOptionButton listType="category" />
+        <InsertOptionButton listType="tag" />
       </div>
       <button
         className="sub__button"
