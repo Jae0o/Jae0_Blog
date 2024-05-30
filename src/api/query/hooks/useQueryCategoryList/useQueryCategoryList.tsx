@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 
 import { AlertModal } from "@/components";
-import { CONTEXT_ERROR } from "@/constants";
+import { QUERY_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { useQuery } from "@tanstack/react-query";
 
@@ -27,7 +27,7 @@ const useQueryCategoryList = () => {
       <AlertModal
         isShow={isShowModal}
         onClose={closeModal}
-        message={CONTEXT_ERROR.CATEGORY_UPDATE_LIST}
+        message={QUERY_ERROR.CATEGORY_UPDATE_LIST}
       />
     ),
     [closeModal, isShowModal],

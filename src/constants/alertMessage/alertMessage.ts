@@ -36,7 +36,7 @@ export const CHECK_ADMIN = {
     "로그인을 하신 후 이용하실 수 있습니다 🚨",
 };
 
-export const CONTEXT_ERROR = {
+export const QUERY_ERROR = {
   CATEGORY_UPDATE_LIST:
     "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( CATEGORY LIST )",
   TAG_UPDATE_LIST:
