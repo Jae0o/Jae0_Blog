@@ -44,7 +44,7 @@ export const QUERY_OPTIONS = {
 
   GET_POST_LIST: (category: string) => ({
     queryKey: QUERY_KEY.GET_POST_LIST(category),
-    queryFn: () => getPostsList(category),
+    queryFn: () => getPostsList({ category }),
     gcTime: 1000 * 60 * 60,
     staleTime: 1000 * 60 * 60,
     select: (list: PostData[]) => {

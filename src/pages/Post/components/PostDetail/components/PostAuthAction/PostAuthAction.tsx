@@ -8,11 +8,10 @@ import { useModal } from "@/hooks";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 interface PostAuthActionProps {
-  postCategory: string;
   postId: string;
 }
 
-const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
+const PostAuthAction = ({ postId }: PostAuthActionProps) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { isShowModal, openModal, closeModal } = useModal();
@@ -29,7 +28,7 @@ const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
     }
 
     mutate(
-      { postCategory, postId },
+      { postId },
       {
         onSuccess: () => {
           queryClient.refetchQueries();

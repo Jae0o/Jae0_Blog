@@ -2,7 +2,6 @@ import { SetOptions } from "@/api";
 import { PostData } from "@/types/original";
 
 import {
-  DeletePost,
   SetImageStorage,
   deletePost,
   setImageStorage,
@@ -36,6 +35,6 @@ export const MUTATION_OPTIONS = {
 
   DELETE_POST: () => ({
     mutationKey: MUTATION_KEY.DELETE_POST(),
-    mutationFn: (deleteInfo: DeletePost) => deletePost(deleteInfo),
+    mutationFn: (deleteInfo: { postId: string }) => deletePost(deleteInfo),
   }),
 };

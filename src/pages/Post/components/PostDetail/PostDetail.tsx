@@ -14,7 +14,7 @@ import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
 
 const PostDetail = (): React.ReactNode => {
   const { isShowModal, openModal, closeModal } = useModal();
-  const { category = "", id = "" } = useParams();
+  const { id = "" } = useParams();
   const { data, isError } = useQuery(QUERY_OPTIONS.GET_POST({ postId: id }));
   const { isAuthUser } = useContext(ContextAuthUser);
   const navigate = useNavigate();
@@ -51,10 +51,7 @@ const PostDetail = (): React.ReactNode => {
 
               {isAuthUser && (
                 <>
-                  <PostAuthAction
-                    postCategory={category}
-                    postId={id}
-                  />
+                  <PostAuthAction postId={id} />
                   <span className="ptdetail__content-divider" />
                 </>
               )}

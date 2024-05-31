@@ -1,6 +1,7 @@
 import { get, ref, set } from "firebase/database";
 import {
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -59,7 +60,7 @@ export const setPost: SetPost = async post => {
   });
 };
 
-export const getPostsList = async (category: string) => {
+export const getPostsList = async ({ category }: { category: string }) => {
   const queryRef = query(
     collection(fireStore, "posts"),
     where("category", "==", category),
@@ -105,14 +106,6 @@ export const getPost = async ({ postId }: { postId: string }) => {
   throw new Error("get post Error");
 };
 
-export interface DeletePost {
-  postCategory: string;
-  postId: string;
-}
-export const deletePost = async ({ postCategory, postId }: DeletePost) => {
-  await set(ref(database, `Posts/${postCategory}/${postId}`), null).catch(
-    () => {
-      throw new Error("delete post Error");
-    },
-  );
+export const deletePost = async ({ postId }: { postId: string }) => {
+  await deleteDoc(doc(fireStore, "posts", postId));
 };
