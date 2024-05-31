@@ -54,13 +54,9 @@ export const setPost: SetPost = async post => {
 
   post.updateAt = time;
 
-  await set(ref(database, `Posts/${post.category}/${post.id}`), post).catch(
-    () => {
-      throw new Error("set post Error");
-    },
-  );
-
-  await setDoc(doc(fireStore, "posts", post.id), post);
+  await setDoc(doc(fireStore, "posts", post.id), post).catch(() => {
+    throw new Error("set post Error");
+  });
 };
 
 type GetPostsList = (category: string) => Promise<PostData[]>;
