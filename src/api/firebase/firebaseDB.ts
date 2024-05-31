@@ -1,8 +1,17 @@
 import { get, ref, set } from "firebase/database";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  setDoc,
+  where,
+} from "firebase/firestore";
 
 import { PostData } from "@/types/original";
 
-import { database } from "./firebase";
+import { database, fireStore } from "./firebase";
 
 /* ============== Options ============== */
 export interface SetOptions {
@@ -50,6 +59,8 @@ export const setPost: SetPost = async post => {
       throw new Error("set post Error");
     },
   );
+
+  await setDoc(doc(fireStore, "posts", post.id), post);
 };
 
 type GetPostsList = (category: string) => Promise<PostData[]>;
@@ -86,20 +97,15 @@ export const getAllPostsList: GetAllPostsList = async () => {
     });
 };
 
-type GetPost = (category: string, postId: string) => Promise<PostData>;
+export const getPost = async ({ postId }: { postId: string }) => {
+  const storeRef = doc(fireStore, "posts", postId);
+  const res = await getDoc(storeRef);
 
-export const getPost: GetPost = async (category, postId) => {
-  return await get(ref(database, `Posts/${category}/${postId}`))
-    .then(res => {
-      if (res.exists()) {
-        return res.val();
-      }
+  if (res.exists()) {
+    return res.data() as PostData;
+  }
 
-      throw new Error("get post Error");
-    })
-    .catch(() => {
-      throw new Error("get post Error");
-    });
+  throw new Error("get post Error");
 };
 
 export interface DeletePost {
@@ -112,4 +118,23 @@ export const deletePost = async ({ postCategory, postId }: DeletePost) => {
       throw new Error("delete post Error");
     },
   );
+};
+
+export const getGet = async () => {
+  /* 하나이ㅡ 문서 */
+  // await getDoc(
+  //   doc(fireStore, "posts", "053ed7a9-a634-458e-96fa-fa17fff1aab3"),
+  // ).then(res => {
+  //   if (res.exists()) console.log(res.data());
+  // });
+
+  await getDocs(
+    query(collection(fireStore, "posts"), where("category", "==", "BLOG")),
+  ).then(res => {
+    res.forEach(doc => {
+      if (doc.exists()) {
+        console.log(doc.data());
+      }
+    });
+  });
 };
