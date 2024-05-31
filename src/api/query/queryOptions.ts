@@ -1,15 +1,8 @@
-import { PostData } from "@/types/original";
-
-import {
-  getAllPostsList,
-  getOptions,
-  getPost,
-  getPostsList,
-} from "../firebase";
+import { getOptions, getPost, getPostsList } from "../firebase";
 
 export const QUERY_KEY = {
   GET_OPTIONS: (optionName: string) => ["options", "get", optionName],
-  GET_POST_LIST_ALL: (category: string) => ["post", "list", "get", category],
+  GET_POST_LIST_ALL: () => ["post", "list", "get", "all"],
   GET_POST_LIST: (category: string) => ["post", "list", "get", category],
   GET_POST: ({ category, id }: { category: string; id: string }) => [
     "post",
@@ -25,21 +18,6 @@ export const QUERY_OPTIONS = {
     queryFn: () => getOptions(optionName),
     gcTime: 1000 * 60 * 60 * 24,
     staleTime: 1000 * 60 * 60 * 18,
-  }),
-
-  GET_POST_LIST_ALL: () => ({
-    queryKey: QUERY_KEY.GET_POST_LIST_ALL("all"),
-    queryFn: () => getAllPostsList(),
-    gcTime: 1000 * 60 * 60,
-    staleTime: 1000 * 60 * 60,
-    select: (list: PostData[]) => {
-      return list.sort((prevPost, nextPost) => {
-        const prevPostDate = new Date(JSON.parse(prevPost.createAt)).getTime();
-        const nextPostDate = new Date(JSON.parse(nextPost.createAt)).getTime();
-
-        return nextPostDate - prevPostDate;
-      });
-    },
   }),
 
   GET_POST_LIST: (category: string) => ({

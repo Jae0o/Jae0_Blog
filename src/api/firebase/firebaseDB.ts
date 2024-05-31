@@ -5,9 +5,11 @@ import {
   doc,
   getDoc,
   getDocs,
+  limit,
   orderBy,
   query,
   setDoc,
+  startAfter,
   where,
 } from "firebase/firestore";
 
@@ -80,11 +82,24 @@ export const getPostsList = async ({ category }: { category: string }) => {
   return result;
 };
 
-export const getAllPostsList = async () => {
-  const queryRef = query(
-    collection(fireStore, "posts"),
-    orderBy("createAt", "desc"),
-  );
+export const getAllPostsList = async ({ cursorId }: { cursorId: string }) => {
+  let queryRef;
+
+  if (cursorId) {
+    queryRef = query(
+      collection(fireStore, "posts"),
+      orderBy("createAt", "desc"),
+      startAfter(cursorId),
+      limit(4),
+    );
+  } else {
+    queryRef = query(
+      collection(fireStore, "posts"),
+      orderBy("createAt", "desc"),
+      limit(4),
+    );
+  }
+
   const res = await getDocs(queryRef).catch(() => {
     throw new Error("get all post list Error");
   });
@@ -96,6 +111,8 @@ export const getAllPostsList = async () => {
       result.push(doc.data() as PostData);
     }
   });
+
+  console.log(result);
 
   return result;
 };
