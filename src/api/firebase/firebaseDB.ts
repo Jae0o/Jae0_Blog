@@ -6,6 +6,7 @@ import {
   getDocs,
   query,
   setDoc,
+  where,
 } from "firebase/firestore";
 
 import { PostData } from "@/types/original";
@@ -58,43 +59,38 @@ export const setPost: SetPost = async post => {
   });
 };
 
-type GetPostsList = (category: string) => Promise<PostData[]>;
+export const getPostsList = async (category: string) => {
+  const queryRef = query(
+    collection(fireStore, "posts"),
+    where("category", "==", category),
+  );
+  const res = await getDocs(queryRef);
 
-export const getPostsList: GetPostsList = async category => {
-  return await get(ref(database, `Posts/${category}`))
-    .then(res => {
-      if (res.exists()) {
-        const fetchedList: PostData[] = Object.values(res.val());
-        return fetchedList;
-      }
-      throw new Error("get posts list Error");
-    })
-    .catch(() => {
-      throw new Error("get posts list Error");
-    });
-};
-
-export const getAllPostsList = async () => {
-  // return await get(ref(database, `Posts/`))
-  //   .then(res => {
-  //     if (res.exists()) {
-  //       return res.val();
-  //     }
-  //     throw new Error("get all post list Error");
-  //   })
-  //   .catch(() => {
-  //     throw new Error("get all post list Error");
-  //   });
-  const queryRef = query(collection(fireStore, "posts"));
-  const res = await getDocs(queryRef).catch(() => {
-    throw new Error("get all post list Error");
-  });
   const result: PostData[] = [];
+
   res.forEach(doc => {
     if (doc.exists()) {
       result.push(doc.data() as PostData);
     }
   });
+
+  return result;
+};
+
+export const getAllPostsList = async () => {
+  const queryRef = query(collection(fireStore, "posts"));
+  const res = await getDocs(queryRef).catch(() => {
+    throw new Error("get all post list Error");
+  });
+
+  const result: PostData[] = [];
+
+  res.forEach(doc => {
+    if (doc.exists()) {
+      result.push(doc.data() as PostData);
+    }
+  });
+
   return result;
 };
 
@@ -119,16 +115,4 @@ export const deletePost = async ({ postCategory, postId }: DeletePost) => {
       throw new Error("delete post Error");
     },
   );
-};
-
-export const getGet = async () => {
-  // await getDocs(
-  //   query(collection(fireStore, "posts"), where("category", "==", "BLOG")),
-  // ).then(res => {
-  //   res.forEach(doc => {
-  //     if (doc.exists()) {
-  //       console.log(doc.data());
-  //     }
-  //   });
-  // });
 };
