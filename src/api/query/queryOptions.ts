@@ -68,9 +68,9 @@ export const QUERY_OPTIONS = {
     },
   }),
 
-  GET_POST: ({ category, id }: { category: string; id: string }) => ({
-    queryKey: ["post", "get", category, id],
-    queryFn: () => getPost(category, id),
+  GET_POST: ({ postId }: { postId: string }) => ({
+    queryKey: ["post", "get", postId],
+    queryFn: () => getPost({ postId }),
     staleTime: 1000 * 60 * 60 * 24,
     gcTime: 1000 * 60 * 60 * 24,
   }),

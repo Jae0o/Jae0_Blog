@@ -15,7 +15,7 @@ import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
 const PostDetail = (): React.ReactNode => {
   const { isShowModal, openModal, closeModal } = useModal();
   const { category = "", id = "" } = useParams();
-  const { data, isError } = useQuery(QUERY_OPTIONS.GET_POST({ category, id }));
+  const { data, isError } = useQuery(QUERY_OPTIONS.GET_POST({ postId: id }));
   const { isAuthUser } = useContext(ContextAuthUser);
   const navigate = useNavigate();
 

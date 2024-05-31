@@ -59,7 +59,7 @@ const Edit = () => {
   const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation(MUTATION_OPTIONS.SET_POST());
   const navigate = useNavigate();
-  const { category = "", id: pathId = "" } = useParams();
+  const { id: postId = "" } = useParams();
 
   const onUploadPost = async (post: PostData) => {
     mutate(post, {
@@ -83,8 +83,7 @@ const Edit = () => {
     <section className="outlet__edit">
       <CheckAdmin>
         <Editor
-          category={category}
-          id={pathId}
+          id={postId}
           categoryList={categoryList}
           tagList={tagList}
           onSubmit={onUploadPost}

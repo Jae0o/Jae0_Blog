@@ -19,7 +19,7 @@ const PostAuthAction = ({ postCategory, postId }: PostAuthActionProps) => {
   const { mutate } = useMutation(MUTATION_OPTIONS.DELETE_POST());
 
   const toEditPage = () => {
-    navigate(`/editor/${postCategory}/${postId}`);
+    navigate(`/editor/${postId}`);
   };
 
   const handleDeletePost = (accept: boolean) => {

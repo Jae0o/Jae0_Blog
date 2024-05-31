@@ -29,7 +29,6 @@ type SetEditorPost = (
 ) => void;
 
 interface EditorProps {
-  category: string;
   id: string;
   categoryList: string[];
   tagList: string[];
@@ -38,7 +37,6 @@ interface EditorProps {
 
 const Editor = ({
   id,
-  category,
   categoryList,
   tagList,
   onSubmit,
@@ -46,7 +44,7 @@ const Editor = ({
   const { isShowModal, openModal, closeModal } = useModal();
   const [postData, setPostData] = useState<PostData>({ ...NEW_POST, id: v4() });
   const { data, isError, isLoading } = useQuery({
-    ...QUERY_OPTIONS.GET_POST({ category, id }),
+    ...QUERY_OPTIONS.GET_POST({ postId: id }),
     enabled: id !== "newPost",
   });
 
