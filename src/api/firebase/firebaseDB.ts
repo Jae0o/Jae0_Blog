@@ -112,8 +112,6 @@ export const getAllPostsList = async ({ cursorId }: { cursorId: string }) => {
     }
   });
 
-  console.log(result);
-
   return result;
 };
 
