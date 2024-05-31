@@ -1,7 +1,6 @@
 import { PostData } from "@/types/original";
 
 import {
-  ResponsePostsList,
   getAllPostsList,
   getOptions,
   getPost,
@@ -33,24 +32,24 @@ export const QUERY_OPTIONS = {
     queryFn: () => getAllPostsList(),
     gcTime: 1000 * 60 * 60,
     staleTime: 1000 * 60 * 60,
-    select: (fetchedData: ResponsePostsList) => {
-      if (!fetchedData) {
-        return [];
-      }
-      const postsList: PostData[] = [];
+    // select: (fetchedData: ResponsePostsList) => {
+    //   if (!fetchedData) {
+    //     return [];
+    //   }
+    //   const postsList: PostData[] = [];
 
-      for (const key in fetchedData) {
-        const convertedList: PostData[] = Object.values(fetchedData[key]);
-        postsList.push(...convertedList);
-      }
+    //   for (const key in fetchedData) {
+    //     const convertedList: PostData[] = Object.values(fetchedData[key]);
+    //     postsList.push(...convertedList);
+    //   }
 
-      return postsList.sort((prevPost, nextPost) => {
-        const prevPostDate = new Date(JSON.parse(prevPost.createAt)).getTime();
-        const nextPostDate = new Date(JSON.parse(nextPost.createAt)).getTime();
+    //   return postsList.sort((prevPost, nextPost) => {
+    //     const prevPostDate = new Date(JSON.parse(prevPost.createAt)).getTime();
+    //     const nextPostDate = new Date(JSON.parse(nextPost.createAt)).getTime();
 
-        return nextPostDate - prevPostDate;
-      });
-    },
+    //     return nextPostDate - prevPostDate;
+    //   });
+    // },
   }),
 
   GET_POST_LIST: (category: string) => ({

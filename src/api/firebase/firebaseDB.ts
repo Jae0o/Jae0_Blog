@@ -6,7 +6,6 @@ import {
   getDocs,
   query,
   setDoc,
-  where,
 } from "firebase/firestore";
 
 import { PostData } from "@/types/original";
@@ -75,22 +74,28 @@ export const getPostsList: GetPostsList = async category => {
     });
 };
 
-export interface ResponsePostsList {
-  [key: string]: { [key: string]: PostData };
-}
-type GetAllPostsList = () => Promise<ResponsePostsList>;
-
-export const getAllPostsList: GetAllPostsList = async () => {
-  return await get(ref(database, `Posts/`))
-    .then(res => {
-      if (res.exists()) {
-        return res.val();
-      }
-      throw new Error("get all post list Error");
-    })
-    .catch(() => {
-      throw new Error("get all post list Error");
-    });
+export const getAllPostsList = async () => {
+  // return await get(ref(database, `Posts/`))
+  //   .then(res => {
+  //     if (res.exists()) {
+  //       return res.val();
+  //     }
+  //     throw new Error("get all post list Error");
+  //   })
+  //   .catch(() => {
+  //     throw new Error("get all post list Error");
+  //   });
+  const queryRef = query(collection(fireStore, "posts"));
+  const res = await getDocs(queryRef).catch(() => {
+    throw new Error("get all post list Error");
+  });
+  const result: PostData[] = [];
+  res.forEach(doc => {
+    if (doc.exists()) {
+      result.push(doc.data() as PostData);
+    }
+  });
+  return result;
 };
 
 export const getPost = async ({ postId }: { postId: string }) => {
@@ -117,20 +122,13 @@ export const deletePost = async ({ postCategory, postId }: DeletePost) => {
 };
 
 export const getGet = async () => {
-  /* 하나이ㅡ 문서 */
-  // await getDoc(
-  //   doc(fireStore, "posts", "053ed7a9-a634-458e-96fa-fa17fff1aab3"),
+  // await getDocs(
+  //   query(collection(fireStore, "posts"), where("category", "==", "BLOG")),
   // ).then(res => {
-  //   if (res.exists()) console.log(res.data());
+  //   res.forEach(doc => {
+  //     if (doc.exists()) {
+  //       console.log(doc.data());
+  //     }
+  //   });
   // });
-
-  await getDocs(
-    query(collection(fireStore, "posts"), where("category", "==", "BLOG")),
-  ).then(res => {
-    res.forEach(doc => {
-      if (doc.exists()) {
-        console.log(doc.data());
-      }
-    });
-  });
 };
