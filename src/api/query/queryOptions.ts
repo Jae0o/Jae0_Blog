@@ -47,14 +47,14 @@ export const QUERY_OPTIONS = {
     queryFn: () => getPostsList({ category }),
     gcTime: 1000 * 60 * 60,
     staleTime: 1000 * 60 * 60,
-    select: (list: PostData[]) => {
-      return list.sort((prevPost, nextPost) => {
-        const prevPostDate = new Date(JSON.parse(prevPost.createAt)).getTime();
-        const nextPostDate = new Date(JSON.parse(nextPost.createAt)).getTime();
+    // select: (list: PostData[]) => {
+    //   return list.sort((prevPost, nextPost) => {
+    //     const prevPostDate = new Date(JSON.parse(prevPost.createAt)).getTime();
+    //     const nextPostDate = new Date(JSON.parse(nextPost.createAt)).getTime();
 
-        return nextPostDate - prevPostDate;
-      });
-    },
+    //     return nextPostDate - prevPostDate;
+    //   });
+    // },
   }),
 
   GET_POST: ({ postId }: { postId: string }) => ({

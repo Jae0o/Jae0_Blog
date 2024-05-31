@@ -5,6 +5,7 @@ import {
   doc,
   getDoc,
   getDocs,
+  orderBy,
   query,
   setDoc,
   where,
@@ -65,6 +66,7 @@ export const getPostsList = async ({ category }: { category: string }) => {
     collection(fireStore, "posts"),
     where("category", "==", category),
   );
+
   const res = await getDocs(queryRef);
 
   const result: PostData[] = [];
@@ -79,7 +81,10 @@ export const getPostsList = async ({ category }: { category: string }) => {
 };
 
 export const getAllPostsList = async () => {
-  const queryRef = query(collection(fireStore, "posts"));
+  const queryRef = query(
+    collection(fireStore, "posts"),
+    orderBy("createAt", "desc"),
+  );
   const res = await getDocs(queryRef).catch(() => {
     throw new Error("get all post list Error");
   });
