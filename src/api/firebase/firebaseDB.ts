@@ -96,7 +96,7 @@ export const getAllPostsList = async ({ cursorId }: { cursorId: string }) => {
     queryRef = query(
       collection(fireStore, "posts"),
       orderBy("createAt", "desc"),
-      limit(6),
+      limit(4),
     );
   }
 
