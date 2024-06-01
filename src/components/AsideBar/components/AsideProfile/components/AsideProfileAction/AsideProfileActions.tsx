@@ -27,6 +27,7 @@ const AsideProfileActions = ({
         className={`profile__action ${action}-profile-btn`}
         href={path}
         onClick={onClickHandle}
+        aria-label={`link move ${action}`}
       >
         {IconComponent}
       </a>

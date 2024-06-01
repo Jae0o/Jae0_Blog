@@ -17,6 +17,7 @@ const ContactMeButton = ({
       target="_blank"
       rel="noreferrer noopener"
       className="aside__footer-link"
+      aria-label={`link move ${url}`}
     >
       {IconComponent}
     </a>
