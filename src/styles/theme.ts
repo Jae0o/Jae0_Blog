@@ -22,7 +22,7 @@ const colors = {
   text_point: "#ffce54",
 };
 
-const fontSizes = {
+const fontSize = {
   small: "1rem",
   semiSmall: "1.2rem",
   medium: "1.4rem",
@@ -42,10 +42,11 @@ const radius = {
 
 const fontWeight = {
   regular: 400,
-  semiBold: 500,
-  bold: 600,
-  semiBolder: 700,
-  bolder: 800,
+  medium: 500,
+  semiBold: 600,
+  bold: 700,
+  semiBolder: 800,
+  bolder: 900,
 };
 
 const zIndex = {
@@ -90,7 +91,7 @@ const fontFamily = {
 
 export type ColorsType = typeof colors;
 export type FontWeightType = typeof fontWeight;
-export type SizeType = typeof fontSizes;
+export type SizeType = typeof fontSize;
 export type Radius = typeof radius;
 export type ZIndex = typeof zIndex;
 export type ScrollBarNone = typeof scrollBarNone;
@@ -102,7 +103,7 @@ export type Shadow = typeof shadow;
 export const theme: DefaultTheme = {
   colors,
   fontWeight,
-  fontSizes,
+  fontSize,
   radius,
   zIndex,
   scrollBarNone,
