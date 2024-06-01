@@ -92,5 +92,6 @@
 .menubar__title {
   margin-left: 1.4rem;
 
+  font-size: var(--fontweight-medium);
   line-height: 1.2;
 }
