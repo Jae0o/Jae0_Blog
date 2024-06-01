@@ -72,7 +72,7 @@ const LoginFormModal = ({
         clickAwayEnable={true}
         closeButtonEnable={true}
       >
-        <h4 className="login__title">{"LOG IN !"}</h4>
+        <h4 className="login__title">LOG IN !</h4>
         <form
           className="login__form"
           onSubmit={handleSubmitLogin}

@@ -10,7 +10,7 @@ const NavTitle = () => {
       className="nav__title-layout"
       onClick={() => navigate("/")}
     >
-      <h1 className="nav__title-text">{"Jae0"}</h1>
+      <h1 className="nav__title-text">Jae0</h1>
       <div className="nav__title-decoration"></div>
     </div>
   );

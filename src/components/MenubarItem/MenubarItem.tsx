@@ -35,7 +35,7 @@ const MenubarItem = ({
         <div className="menubar__icon-container">{IconComponent}</div>
 
         <div className="menubar__title-container">
-          <h4 className="menubar__title">{title}</h4>
+          <h2 className="menubar__title">{title}</h2>
         </div>
       </div>
       <div

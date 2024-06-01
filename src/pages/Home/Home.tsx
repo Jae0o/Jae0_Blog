@@ -9,11 +9,7 @@ import LoadingPage from "../Loading/Loading";
 import { HomePostList } from "./components";
 
 const Home = (): React.ReactNode => {
-  const {
-    data: posts,
-    fetchNextPage,
-    hasNextPage,
-  } = useInfiniteQuery({
+  const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
     queryKey: QUERY_KEY.GET_POST_LIST_ALL(),
     queryFn: ({ pageParam }) => getAllPostsList({ cursorId: pageParam }),
 
@@ -31,11 +27,11 @@ const Home = (): React.ReactNode => {
       return prevId;
     },
 
-    staleTime: 1000,
-    gcTime: 10000,
+    staleTime: 1000 * 60 * 55,
+    gcTime: 1000 * 60 * 60,
   });
 
-  if (!posts || !posts.pages) {
+  if (!data || !data.pages) {
     return <LoadingPage />;
   }
 
@@ -46,7 +42,7 @@ const Home = (): React.ReactNode => {
       </article>
 
       <HomePostList
-        posts={posts.pages.flat()}
+        posts={data.pages.flat()}
         fetchNextPage={fetchNextPage}
         hasNextPage={hasNextPage}
       />

@@ -26,7 +26,7 @@ const PostBanner = ({
         }}
       >
         <div className="ptbanner__advice-container">
-          <h4 className="ptbanner__advice">{mainText}</h4>
+          <h5 className="ptbanner__advice">{mainText}</h5>
           {subText && <h6 className="ptbanner__author">{subText}</h6>}
         </div>
       </div>
