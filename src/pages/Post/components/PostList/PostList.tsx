@@ -30,19 +30,6 @@ const PostList = (): React.ReactNode => {
     }
   }, [isError, openModal, refetch]);
 
-  if (isError || isLoading || !postList) {
-    return (
-      <>
-        <LoadingPage />
-        <AlertModal
-          isShow={isShowModal}
-          onClose={closeModal}
-          message={QUERY_ERROR.GET_POSTS_LIST}
-        />
-      </>
-    );
-  }
-
   return (
     <article className="outlet__ptlist">
       <div className="ptlist__banner">
@@ -55,6 +42,8 @@ const PostList = (): React.ReactNode => {
       </div>
 
       <ul className="ptlist__list-container">
+        {(isError || isLoading || !postList) && <LoadingPage />}
+
         {postList &&
           postList.map(post => (
             <PostListItem
@@ -63,6 +52,12 @@ const PostList = (): React.ReactNode => {
             />
           ))}
       </ul>
+
+      <AlertModal
+        isShow={isShowModal}
+        onClose={closeModal}
+        message={QUERY_ERROR.GET_POSTS_LIST}
+      />
     </article>
   );
 };
