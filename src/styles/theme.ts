@@ -27,7 +27,8 @@ const fontSize = {
   semiSmall: "1.2rem",
   medium: "1.4rem",
   semiLarge: "1.6rem",
-  large: "2rem",
+  large: "1.8rem",
+  semiBig: "2rem",
   big: "2.4rem",
 };
 
