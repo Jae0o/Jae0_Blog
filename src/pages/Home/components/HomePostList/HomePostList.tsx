@@ -1,13 +1,32 @@
+import { useInView } from "framer-motion";
+
 import "./HomePostList.style.css";
+
+import { useEffect, useRef } from "react";
 
 import { PostListItem } from "@/pages/Post/components/PostList/components";
 import { PostData } from "@/types/original";
 
 interface HomePostListProps {
   posts: PostData[];
+  fetchNextPage: () => void;
+  hasNextPage: boolean;
 }
 
-const HomePostList = ({ posts }: HomePostListProps) => {
+const HomePostList = ({
+  posts,
+  fetchNextPage,
+  hasNextPage,
+}: HomePostListProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    if (isInView && hasNextPage) {
+      fetchNextPage();
+    }
+  }, [fetchNextPage, hasNextPage, isInView]);
+
   return (
     <ul className="Home__post_list">
       {posts.map(post => (
@@ -18,7 +37,8 @@ const HomePostList = ({ posts }: HomePostListProps) => {
       ))}
 
       <div
-        style={{ border: "1px solid red", width: "100%", height: "10rem" }}
+        ref={ref}
+        className="observe_box"
       />
     </ul>
   );

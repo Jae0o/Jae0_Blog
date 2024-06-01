@@ -11,8 +11,8 @@ import { HomePostList } from "./components";
 const Home = (): React.ReactNode => {
   const {
     data: posts,
-    // fetchNextPage,
-    // hasNextPage,
+    fetchNextPage,
+    hasNextPage,
   } = useInfiniteQuery({
     queryKey: QUERY_KEY.GET_POST_LIST_ALL(),
     queryFn: ({ pageParam }) => getAllPostsList({ cursorId: pageParam }),
@@ -45,7 +45,11 @@ const Home = (): React.ReactNode => {
         <h1 className="home__title">Jae0's Blog</h1>
       </article>
 
-      <HomePostList posts={posts.pages.flat()} />
+      <HomePostList
+        posts={posts.pages.flat()}
+        fetchNextPage={fetchNextPage}
+        hasNextPage={hasNextPage}
+      />
     </section>
   );
 };
