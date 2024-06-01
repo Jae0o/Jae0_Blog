@@ -1,3 +1,5 @@
+export { default as Button } from "./Button/Button";
+
 export { default as AsideBar } from "./AsideBar/AsideBar";
 export { default as CheckAdmin } from "./CheckAdmin/CheckAdmin";
 export { default as ContactMeButton } from "./ContactMeButton/ContactMeButton";
