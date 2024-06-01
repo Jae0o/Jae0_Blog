@@ -36,10 +36,12 @@ const HomePostList = ({
         />
       ))}
 
-      <div
-        ref={ref}
-        className="observe_box"
-      />
+      <li className="observe_container">
+        <div
+          ref={ref}
+          className="observe_item"
+        />
+      </li>
     </ul>
   );
 };
