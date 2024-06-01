@@ -43,6 +43,7 @@ const Editor = ({
 }: EditorProps): React.ReactNode => {
   const { isShowModal, openModal, closeModal } = useModal();
   const [postData, setPostData] = useState<PostData>({ ...NEW_POST, id: v4() });
+
   const { data, isError, isLoading } = useQuery({
     ...QUERY_OPTIONS.GET_POST({ postId: id }),
     enabled: id !== "newPost",

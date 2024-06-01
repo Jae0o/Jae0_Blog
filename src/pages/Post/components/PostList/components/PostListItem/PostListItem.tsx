@@ -16,7 +16,7 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
   const navigate = useNavigate();
 
   const onNavigate = () => {
-    navigate(`/post/detail/${post.category}/${post.id}`);
+    navigate(`/post/detail/${post.id}`);
   };
 
   return (

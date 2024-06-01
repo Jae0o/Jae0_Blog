@@ -33,7 +33,7 @@ const AsideProfile = (): React.ReactNode => {
           <AsideProfileActions
             action="write"
             IconComponent={<WriteIcon size="2.4rem" />}
-            path="/editor/newPost/newPost"
+            path="/editor/newPost"
           />
           <AsideProfileActions
             action="home"
