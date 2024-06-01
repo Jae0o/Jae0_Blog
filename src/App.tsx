@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 
 import { QueryProvider } from "@/api";
 
+import * as S from "./App.style";
 import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
 import { router } from "./router";
 import GlobalStyles from "./styles/GlobalStyles";
@@ -19,8 +20,8 @@ const App = (): React.ReactNode => {
         <ThemeProvider theme={theme}>
           <GlobalStyles />
           <ContextAuthUserProvider>
+            <S.ModalPlace id="modal" />
             <RouterProvider router={router} />
-            <div id="modal" />
           </ContextAuthUserProvider>
         </ThemeProvider>
       </QueryProvider>
