@@ -2,6 +2,8 @@ import "./AlertModal.style.css";
 
 import { Modal } from "@/components";
 
+import * as S from "./AlertModal.style";
+
 interface AlertModalProps {
   isShow: boolean;
   message: string;
@@ -9,6 +11,8 @@ interface AlertModalProps {
 }
 
 const AlertModal = ({ isShow, message, onClose }: AlertModalProps) => {
+  const replaceMessage = message.replace(/\\n | \n/g, "\n");
+
   return (
     <Modal
       width={32}
@@ -18,15 +22,15 @@ const AlertModal = ({ isShow, message, onClose }: AlertModalProps) => {
       clickAwayEnable={true}
       closeButtonEnable={true}
     >
-      <h4 className="alert__message">{message}</h4>
-      <div className="alert__action">
+      <S.ModalMessage>{replaceMessage}</S.ModalMessage>
+      <S.ModalActions>
         <button
           className="alert__button"
           onClick={onClose}
         >
-          {"닫기"}
+          닫기
         </button>
-      </div>
+      </S.ModalActions>
     </Modal>
   );
 };
