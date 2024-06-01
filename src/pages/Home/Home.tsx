@@ -6,7 +6,7 @@ import { QUERY_KEY, getAllPostsList } from "@/api";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import LoadingPage from "../Loading/Loading";
-import { PostListItem } from "../Post/components/PostList/components";
+import { HomePostList } from "./components";
 
 const Home = (): React.ReactNode => {
   const {
@@ -45,14 +45,7 @@ const Home = (): React.ReactNode => {
         <h1 className="home__title">Jae0's Blog</h1>
       </article>
 
-      <ul className="temporary__ptlist">
-        {posts.pages.flat().flatMap(post => (
-          <PostListItem
-            key={post.id}
-            post={post}
-          />
-        ))}
-      </ul>
+      <HomePostList posts={posts.pages.flat()} />
     </section>
   );
 };
