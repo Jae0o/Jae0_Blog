@@ -1,7 +1,7 @@
-import "./AsideProfileActions.style.css";
-
 import React, { MouseEvent } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+
+import * as S from "./AsideProfileActions.style";
 
 interface AsideProfileActionsProps {
   action: "home" | "search" | "write";
@@ -22,16 +22,20 @@ const AsideProfileActions = ({
   };
 
   return (
-    <div className={`profile__action-container ${action}-action`}>
-      <a
-        className={`profile__action ${action}-profile-btn`}
-        href={path}
-        onClick={onClickHandle}
-        aria-label={`link move ${action}`}
-      >
-        {IconComponent}
-      </a>
-    </div>
+    <S.AsideProfileAction
+      $type={action}
+      href={path}
+      onClick={onClickHandle}
+      aria-label={`link move ${action}`}
+      whileTap={{
+        scale: 0.85,
+      }}
+      whileHover={{
+        filter: "brightness(80%)",
+      }}
+    >
+      {IconComponent}
+    </S.AsideProfileAction>
   );
 };
 
