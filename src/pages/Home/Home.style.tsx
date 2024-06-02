@@ -15,8 +15,8 @@ export const HomeLayout = styled(motion.section)`
 
 export const HomeTitleContainer = styled.article`
   width: 100%;
-  height: 32rem;
-  min-height: 32rem;
+  height: 24rem;
+  min-height: 24rem;
 
   display: flex;
   align-items: center;
@@ -24,7 +24,7 @@ export const HomeTitleContainer = styled.article`
 `;
 
 export const HomeTitle = styled(motion.h1)`
-  font-size: 6rem;
+  font-size: 4.8rem;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   text-align: center;
 
