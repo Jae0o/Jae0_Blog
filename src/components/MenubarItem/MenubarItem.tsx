@@ -1,8 +1,8 @@
-import "./MenubarItem.style.css";
-
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
 import { useHover } from "@/hooks";
+
+import * as S from "./MenubarItem.style";
 
 export interface MenubarItemProps {
   IconComponent: React.ReactNode;
@@ -15,34 +15,40 @@ const MenubarItem = ({
   title,
   category,
 }: MenubarItemProps): React.ReactNode => {
-  const navigate: NavigateFunction = useNavigate();
   const { isHover, hoverRef } = useHover();
+  const navigate: NavigateFunction = useNavigate();
 
   const onNavigate = () => {
     navigate(`/post/list/${category}`);
   };
 
   return (
-    <li
-      className="menubar__item-layout"
+    <S.MenubarItemLayout
       value={category}
       onClick={onNavigate}
     >
-      <div
-        className="menubar__item-container"
+      <S.MenubarItemContent
         ref={hoverRef}
+        whileHover={{ filter: "brightness(80%)" }}
+        whileTap={{ scale: 0.9 }}
       >
-        <div className="menubar__icon-container">{IconComponent}</div>
+        <S.MenubarItemIconContainer>{IconComponent}</S.MenubarItemIconContainer>
 
-        <div className="menubar__title-container">
-          <h2 className="menubar__title">{title}</h2>
-        </div>
-      </div>
-      <div
-        className="menubar__decoration-line"
-        style={{ width: isHover ? "100%" : "0%" }}
-      />
-    </li>
+        <S.MenubarItemTitle>{title}</S.MenubarItemTitle>
+      </S.MenubarItemContent>
+
+      <S.MenubarItemDecoration>
+        <S.MenubarItemDecorationItem
+          initial={{
+            translateX: "-120%",
+          }}
+          animate={{ translateX: isHover ? "0%" : "-120%" }}
+          transition={{
+            duration: 0.3,
+          }}
+        />
+      </S.MenubarItemDecoration>
+    </S.MenubarItemLayout>
   );
 };
 
