@@ -1,4 +1,4 @@
-import "./NavToggleButton.style.css";
+import * as S from "./NavToggleButton.style";
 
 interface NavToggleButtonProps {
   isToggle: boolean;
@@ -7,18 +7,30 @@ interface NavToggleButtonProps {
 
 const NavToggleButton = ({ isToggle, onToggle }: NavToggleButtonProps) => {
   return (
-    <div className="navbar_dropdown-button">
-      <label className="navbar_dropdown_checkbox">
-        <input
-          id="toggle_checkbox"
-          className="navbar_dropdown_checkbox_input"
-          type="checkbox"
-          checked={isToggle}
-          onClick={onToggle}
-          readOnly
-        />
-      </label>
-    </div>
+    <S.HamburgerMenu
+      className="nav_toggle_box"
+      onClick={onToggle}
+    >
+      <S.HamburgerLineOne
+        animate={{
+          rotate: isToggle ? 45 : 0,
+          translateY: isToggle ? "12px" : 0,
+        }}
+      />
+
+      <S.HamburgerLineTwo
+        animate={{
+          opacity: isToggle ? 0 : 1,
+        }}
+      />
+
+      <S.HamburgerLineThree
+        animate={{
+          rotate: isToggle ? -45 : 0,
+          translateY: isToggle ? "-12px" : 0,
+        }}
+      />
+    </S.HamburgerMenu>
   );
 };
 
