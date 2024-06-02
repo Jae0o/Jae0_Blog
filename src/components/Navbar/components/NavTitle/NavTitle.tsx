@@ -1,18 +1,23 @@
-import "./NavTitle.style.css";
-
 import { useNavigate } from "react-router-dom";
+
+import * as S from "./NavTitle.style";
 
 const NavTitle = () => {
   const navigate = useNavigate();
 
   return (
-    <div
-      className="nav__title-layout"
+    <S.NavbarTitleLayout
       onClick={() => navigate("/")}
+      whileHover={{
+        scale: 1.1,
+        opacity: 0.6,
+      }}
+      whileTap={{
+        scale: 0.9,
+      }}
     >
-      <h1 className="nav__title-text">Jae0</h1>
-      <div className="nav__title-decoration"></div>
-    </div>
+      Jae0's
+    </S.NavbarTitleLayout>
   );
 };
 
