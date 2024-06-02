@@ -1,11 +1,11 @@
-import "./AsideMenubar.style.css";
-
 import { MenubarItem } from "@/components";
 import { MENUBAR_LIST } from "@/constants";
 
+import * as S from "./AsideMenubar.style";
+
 const AsideMenubar = (): React.ReactNode => {
   return (
-    <ul className="aside__menubar">
+    <S.AsideMenubar>
       {MENUBAR_LIST.map(({ category, IconComponent, title }) => (
         <MenubarItem
           key={category}
@@ -14,7 +14,7 @@ const AsideMenubar = (): React.ReactNode => {
           category={category}
         />
       ))}
-    </ul>
+    </S.AsideMenubar>
   );
 };
 
