@@ -5,7 +5,7 @@ interface UseMediaQueryProps {
 }
 
 const useMediaQuery = ({ media = "tablet" }: UseMediaQueryProps) => {
-  const size = useMemo(() => (media === "tablet" ? 1050 : 500), [media]);
+  const size = useMemo(() => (media === "tablet" ? 1050 : 480), [media]);
 
   const [isVisible, setIsVisible] = useState(() => {
     if (window.innerWidth < size) {
