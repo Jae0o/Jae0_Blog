@@ -1,16 +1,39 @@
-import "./AsideBar.style.css";
+import { AnimatePresence } from "framer-motion";
 
+import { useMediaQuery } from "@/hooks";
+
+import * as S from "./AsideBar.style";
 import { AsideFooter, AsideMenubar, AsideProfile } from "./components";
 
 const AsideBar = (): React.ReactNode => {
+  const isVisible = useMediaQuery({ media: "tablet" });
+
   return (
-    <aside className="aside">
-      <div className="aside_layout">
-        <AsideProfile />
-        <AsideMenubar />
-      </div>
-      <AsideFooter />
-    </aside>
+    <AnimatePresence>
+      {isVisible && (
+        <S.AsideBar
+          initial={{
+            translateX: "-100%",
+            opacity: 0,
+          }}
+          animate={{
+            translateX: 0,
+            opacity: 1,
+          }}
+          exit={{
+            translateX: "-100%",
+            opacity: 0,
+          }}
+          transition={{ type: "tween" }}
+        >
+          <S.AsideBarContainer>
+            <AsideProfile />
+            <AsideMenubar />
+          </S.AsideBarContainer>
+          <AsideFooter />
+        </S.AsideBar>
+      )}
+    </AnimatePresence>
   );
 };
 

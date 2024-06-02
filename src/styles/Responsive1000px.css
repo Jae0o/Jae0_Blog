@@ -12,13 +12,6 @@
     animation-fill-mode: forwards;
   }
 
-  .aside {
-    animation-name: outAsideBarAnimation;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-
   .nav__background {
     animation-name: inNavbarAnimation;
     animation-duration: 0.5s;
@@ -47,18 +40,6 @@
   }
 }
 
-@keyframes outAsideBarAnimation {
-  0% {
-    left: 0px;
-  }
-
-  100% {
-    left: -300px;
-    display: none;
-    position: absolute;
-  }
-}
-
 @keyframes inNavbarAnimation {
   0% {
     top: -100px;
@@ -80,28 +61,11 @@
     animation-fill-mode: forwards;
   }
 
-  .aside {
-    animation-name: inAsideBarAnimation;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-
   .nav__background {
     animation-name: outNavbarAnimation;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
-  }
-}
-
-@keyframes inAsideBarAnimation {
-  0% {
-    left: -300px;
-  }
-
-  100% {
-    left: 0px;
   }
 }
 
