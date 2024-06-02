@@ -1,6 +1,10 @@
-import "./ConfirmModal.style.css";
+import { useTheme } from "styled-components";
 
-import { Modal } from "@/components";
+import CONFIRM_ANIMATION from "@/assets/animation/confirm_animation.json";
+import { Button, Modal } from "@/components";
+import { Player } from "@lottiefiles/react-lottie-player";
+
+import * as S from "./ConfirmModal.style";
 
 interface ConfirmModalProps {
   isShow: boolean;
@@ -17,6 +21,9 @@ const ConfirmModal = ({
   trueButtonText = "확인",
   falseButtonText = "취소",
 }: ConfirmModalProps) => {
+  const replaceMessage = message.replace(/\\n | \n/g, "\n");
+  const theme = useTheme();
+
   const handleCloseAcceptFalse = () => {
     onClose(false);
   };
@@ -24,30 +31,52 @@ const ConfirmModal = ({
   const handleCloseAcceptTrue = () => {
     onClose(true);
   };
+
   return (
     <Modal
       isShow={isShow}
       onClose={handleCloseAcceptFalse}
-      width="36rem"
-      height="20rem"
+      width="32rem"
+      height="fit-content"
       clickAwayEnable={true}
       closeButtonEnable={true}
     >
-      <h4 className="confirm__message">{message}</h4>
-      <div className="confirm__actions">
-        <button
-          className="confirm__button"
-          onClick={handleCloseAcceptFalse}
-        >
-          {falseButtonText}
-        </button>
-        <button
-          className="confirm__button"
-          onClick={handleCloseAcceptTrue}
-        >
-          {trueButtonText}
-        </button>
-      </div>
+      <S.ConfirmModalLayout>
+        <Player
+          src={CONFIRM_ANIMATION}
+          style={{
+            width: "24rem",
+            height: "20rem",
+          }}
+          autoplay
+          keepLastFrame
+        />
+        <S.ModalMessage>{replaceMessage}</S.ModalMessage>
+        <S.ModalActions>
+          <Button
+            onClick={handleCloseAcceptFalse}
+            style={{
+              width: "10rem",
+              height: "4rem",
+              fontWeight: theme.fontWeight.bold,
+            }}
+            backgroundColor="red"
+          >
+            {falseButtonText}
+          </Button>
+          <Button
+            onClick={handleCloseAcceptTrue}
+            style={{
+              width: "10rem",
+              height: "4rem",
+              fontWeight: theme.fontWeight.bold,
+            }}
+            backgroundColor="yellow"
+          >
+            {trueButtonText}
+          </Button>
+        </S.ModalActions>
+      </S.ConfirmModalLayout>
     </Modal>
   );
 };
