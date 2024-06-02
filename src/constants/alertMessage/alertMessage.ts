@@ -1,7 +1,7 @@
 export const LOGIN_VALIDATION = {
-  SUBMIT_CHECK_EMAIL: "올바른 이메일을 입력해 주세요. 🚨",
-  SUBMIT_CHECK_PASSWORD: "올바른 비밀번호를 입력해 주세요. 🚨",
-  SUBMIT_FAIL: "로그인에 실패했어요.. 회원가입은 하신 건가요? 🙋‍♂️",
+  SUBMIT_CHECK_EMAIL: "올바른 이메일을 입력해 주세요.",
+  SUBMIT_CHECK_PASSWORD: "올바른 비밀번호를 입력해 주세요.",
+  SUBMIT_FAIL: "로그인에 실패했어요.. \n 회원가입은 하신 건가요? 🙋",
 
   CHECK_EMAIL_LENGTH_ZERO: "이메일을 입력해 주세요. 🙌",
   CHECK_EMAIL_REG: "이메일이 아닌걸요?.. 🤷‍♂️",
