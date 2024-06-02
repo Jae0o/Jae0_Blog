@@ -1,15 +1,11 @@
 import "./Navbar.style.css";
 
-import { useState } from "react";
+import { useToggle } from "@/hooks";
 
 import { NavMenubar, NavTitle, NavToggleButton } from "./components";
 
 const Navbar = () => {
-  const [isToggle, setIsToggle] = useState(false);
-
-  const handleToggle = () => {
-    setIsToggle(isToggle => !isToggle);
-  };
+  const { isToggle, handleOffToggle, handleToggle } = useToggle();
 
   return (
     <section className="nav__background">
@@ -22,7 +18,7 @@ const Navbar = () => {
 
         <NavMenubar
           isToggle={isToggle}
-          onToggle={handleToggle}
+          onClose={handleOffToggle}
         />
       </nav>
     </section>
