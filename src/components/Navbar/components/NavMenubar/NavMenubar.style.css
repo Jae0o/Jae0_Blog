@@ -29,15 +29,6 @@
   animation-fill-mode: forwards;
 }
 
-.nav__footer {
-  width: 100%;
-  padding: 1rem 0;
-
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
 @keyframes unActiveMenubar {
   0% {
     display: flex;

@@ -1,9 +1,11 @@
 import { ContactMeButton } from "@/components";
 import { CONTACT_ME_DATA } from "@/constants";
 
+import * as S from "./NavMenubarFooter.style";
+
 const NavMenubarFooter = () => {
   return (
-    <li className="nav__footer">
+    <S.NavbarFooter>
       {CONTACT_ME_DATA.map(({ url, IconComponent }) => (
         <ContactMeButton
           key={url}
@@ -11,7 +13,7 @@ const NavMenubarFooter = () => {
           IconComponent={IconComponent}
         />
       ))}
-    </li>
+    </S.NavbarFooter>
   );
 };
 
