@@ -22,8 +22,6 @@ export const OutletLayout = styled.section`
   overflow: hidden;
   z-index: ${({ theme }) => theme.zIndex.outlet};
 
-  border: 1px solid red;
-
   @media (${({ theme }) => theme.media.tablet}) {
     width: 100%;
     height: calc(100% - 10rem);
