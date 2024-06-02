@@ -29,8 +29,9 @@ export const MenubarItemDecorationItem = styled(motion.div)`
   width: 100%;
   height: 100%;
 
-  border-radius: 2px;
-  background-color: red;
+  border-radius: 4px;
+  background-color: ${({ theme }) => theme.colors.red};
+  filter: brightness(80%);
 `;
 
 export const MenubarItemContent = styled(motion.div)`
