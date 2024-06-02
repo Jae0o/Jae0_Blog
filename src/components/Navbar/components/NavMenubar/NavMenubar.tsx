@@ -1,13 +1,11 @@
 import { AnimatePresence } from "framer-motion";
 
-import { useEffect, useRef } from "react";
-import { useLocation } from "react-router-dom";
-
 import { MenubarItem } from "@/components";
 import { MENUBAR_LIST } from "@/constants";
 
 import * as S from "./NavMenubar.style";
 import { NavMenubarFooter } from "./components";
+import { useCloseNavMenu } from "./hooks";
 
 interface NavMenubarProps {
   isToggle: boolean;
@@ -15,36 +13,13 @@ interface NavMenubarProps {
 }
 
 const NavMenubar = ({ isToggle, onClose }: NavMenubarProps) => {
-  const menubarRef = useRef<HTMLUListElement>(null);
-  const path = useLocation();
-
-  useEffect(() => {
-    onClose();
-  }, [onClose, path]);
-
-  useEffect(() => {
-    const handleAwayClick = ({ currentTarget }: MouseEvent) => {
-      const { current } = menubarRef;
-
-      if (!current || !isToggle || currentTarget === current) {
-        return;
-      }
-
-      onClose();
-    };
-
-    document.addEventListener("mouseup", handleAwayClick);
-
-    return () => {
-      document.removeEventListener("mouseup", handleAwayClick);
-    };
-  }, [isToggle, onClose]);
+  const ref = useCloseNavMenu({ isToggle, onClose });
 
   return (
     <AnimatePresence>
       {isToggle && (
         <S.NavMenubar
-          ref={menubarRef}
+          ref={ref}
           initial={{
             translateX: "110%",
             opacity: 0,
