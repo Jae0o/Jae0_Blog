@@ -8,4 +8,10 @@ export const AsideFooter = styled.footer`
   display: flex;
   justify-content: center;
   gap: 1.6rem;
+
+  @media (${({ theme }) => theme.media.aside_max_height}) {
+    position: absolute;
+    top: 0.5rem;
+    left: 4rem;
+  }
 `;

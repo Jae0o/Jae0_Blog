@@ -95,6 +95,10 @@ const fontFamily = {
   "Segoe UI Emoji", "Segoe UI Symbol", sans-serif`,
 };
 
+const media = {
+  aside_max_height: "max-height : 700px",
+};
+
 export type ColorsType = typeof colors;
 export type FontWeightType = typeof fontWeight;
 export type SizeType = typeof fontSize;
@@ -105,6 +109,7 @@ export type Transition = typeof transition;
 export type Opacity = typeof opacity;
 export type FontFamily = typeof fontFamily;
 export type Shadow = typeof shadow;
+export type Media = typeof media;
 
 const theme: DefaultTheme = {
   colors,
@@ -117,6 +122,7 @@ const theme: DefaultTheme = {
   transition,
   fontFamily,
   shadow,
+  media,
 };
 
 export default theme;
