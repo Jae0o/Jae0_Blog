@@ -18,19 +18,19 @@ export const CHECK_ADMIN = {
 };
 
 export const QUERY_ERROR = {
-  SET_POST: "게시물 업로드 중 문제가 발생했습니다.",
-  GET_POST: "게시물을 불러오는 중 문제가 발생했습니다.",
-  GET_POSTS_LIST: "게시물 목록을 불러오는 중 문제가 발생했습니다.",
-  GET_ALL_POSTS_LIST: "게시물 목록을 불러오는 중 문제가 발생했습니다.",
+  SET_POST: "게시물 업로드 중 \n 문제가 발생했습니다.",
+  GET_POST: "게시물을 불러오는 중 \n 문제가 발생했습니다.",
+  GET_POSTS_LIST: "게시물 목록을 불러오는 중 \n 문제가 발생했습니다.",
+  GET_ALL_POSTS_LIST: "게시물 목록을 불러오는 중 \n 문제가 발생했습니다.",
 
-  SET_OPTION_LIST: "게시물 옵션을 추가하던 중 문제가 발생했습니다.",
+  SET_OPTION_LIST: "게시물 옵션을 추가하던 중 \n 문제가 발생했습니다.",
 
-  UPLOAD_STORAGE_IMAGE: "이미지를 업로드 하는 과정 중 문제가 발생했습니다.",
+  UPLOAD_STORAGE_IMAGE: "이미지를 업로드 하는 과정 중 \n 문제가 발생했습니다.",
 
   CATEGORY_UPDATE_LIST:
-    "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( CATEGORY LIST )",
+    "홈페이지 준비 과정에 \n 문제가 발생했습니다! \n 🤦 ( CATEGORY LIST )",
   TAG_UPDATE_LIST:
-    "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( TAG LIST )",
+    "홈페이지 준비 과정에 \n 문제가 발생했습니다! \n 🤦 ( TAG LIST )",
   POSTS_UPDATE_LIST:
-    "홈페이지 준비 과정에서 문제가 발생했습니다! 🤦 ( POSTS LIST )",
+    "홈페이지 준비 과정에 \n 문제가 발생했습니다! \n 🤦 ( POSTS LIST )",
 };
