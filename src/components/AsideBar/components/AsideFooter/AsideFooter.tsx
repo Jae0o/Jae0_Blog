@@ -1,11 +1,11 @@
-import "./AsideFooter.style.css";
-
 import { ContactMeButton } from "@/components";
 import { CONTACT_ME_DATA } from "@/constants";
 
+import * as S from "./AsideFooter.style";
+
 const AsideFooter = () => {
   return (
-    <footer className="aside__footer">
+    <S.AsideFooter>
       {CONTACT_ME_DATA.map(({ url, IconComponent }) => (
         <ContactMeButton
           key={url}
@@ -13,7 +13,7 @@ const AsideFooter = () => {
           IconComponent={IconComponent}
         />
       ))}
-    </footer>
+    </S.AsideFooter>
   );
 };
 
