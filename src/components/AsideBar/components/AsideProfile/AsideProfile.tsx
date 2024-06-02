@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { HomeIcon, SearchIcon, WriteIcon } from "@/components";
 import { PROFILE } from "@/constants";
 
+import * as S from "./AsideProfile.style";
 import AsideProfileActions from "./components/AsideProfileAction/AsideProfileActions";
 
 const AsideProfile = (): React.ReactNode => {
@@ -15,16 +16,16 @@ const AsideProfile = (): React.ReactNode => {
     navigate("/");
   };
   return (
-    <div className="aside__profile">
-      <div className="profile__header">
-        <div className="profile__thumbnail-container">
-          <img
-            className="profile__thumbnail"
+    <S.AsideProfile>
+      <S.AsideHeader>
+        <S.AsideThumbnailContainer>
+          <S.AsideThumbnail
             src={PROFILE.THUMBNAIL}
             alt="PROFILE-THUMBNAIL"
           />
-        </div>
-        <div className="profile__actions">
+        </S.AsideThumbnailContainer>
+
+        <S.AsideHeaderActions>
           <AsideProfileActions
             action="search"
             IconComponent={<SearchIcon size="2.4rem" />}
@@ -40,15 +41,23 @@ const AsideProfile = (): React.ReactNode => {
             IconComponent={<HomeIcon size="2.4rem" />}
             path="/"
           />
-        </div>
-      </div>
-      <div
-        className="profile__title-container"
-        onClick={onClickHandler}
-      >
-        <h1 className="profile__title">Jae0's Blog</h1>
-      </div>
-    </div>
+        </S.AsideHeaderActions>
+      </S.AsideHeader>
+
+      <S.AsideTitleLayout>
+        <S.AsideTitle
+          onClick={onClickHandler}
+          whileHover={{
+            scale: 1.1,
+          }}
+          whileTap={{
+            scale: 0.9,
+          }}
+        >
+          Jae0's Blog
+        </S.AsideTitle>
+      </S.AsideTitleLayout>
+    </S.AsideProfile>
   );
 };
 
