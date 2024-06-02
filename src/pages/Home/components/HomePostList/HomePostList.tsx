@@ -1,11 +1,11 @@
 import { useInView } from "framer-motion";
 
-import "./HomePostList.style.css";
-
 import { useEffect, useRef } from "react";
 
 import { PostListItem } from "@/pages/Post/components/PostList/components";
 import { PostData } from "@/types/original";
+
+import * as S from "./HomePostList.style";
 
 interface HomePostListProps {
   posts: PostData[];
@@ -28,7 +28,7 @@ const HomePostList = ({
   }, [fetchNextPage, hasNextPage, isInView]);
 
   return (
-    <ul className="Home__post_list">
+    <S.HomePostList>
       {posts.map(post => (
         <PostListItem
           key={post.id}
@@ -36,13 +36,10 @@ const HomePostList = ({
         />
       ))}
 
-      <li className="observe_container">
-        <div
-          ref={ref}
-          className="observe_item"
-        />
-      </li>
-    </ul>
+      <S.ObserveContainer>
+        <S.ObserveTarget ref={ref} />
+      </S.ObserveContainer>
+    </S.HomePostList>
   );
 };
 
