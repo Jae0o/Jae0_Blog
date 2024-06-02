@@ -9,6 +9,8 @@ const NavToggleButton = ({ isToggle, onToggle }: NavToggleButtonProps) => {
   return (
     <S.HamburgerMenu
       className="nav_toggle_box"
+      whileTap={{ scale: 0.9 }}
+      whileHover={{ scale: 1.1 }}
       onClick={onToggle}
     >
       <S.HamburgerLineOne

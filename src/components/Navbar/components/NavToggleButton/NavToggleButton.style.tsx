@@ -10,7 +10,7 @@ const HamburgerStick = css`
   pointer-events: none;
 `;
 
-export const HamburgerMenu = styled.div`
+export const HamburgerMenu = styled(motion.div)`
   width: 50px;
   height: 50px;
 
@@ -23,6 +23,8 @@ export const HamburgerMenu = styled.div`
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
+
+  cursor: pointer;
 `;
 
 export const HamburgerLineOne = styled(motion.div)`
