@@ -1,6 +1,5 @@
-import Lottie from "react-lottie-player";
-
 import LOADING_ANIMATION from "@/assets/animation/loading_animation.json";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 interface LoadingSpinnerProps {
   size?: string;
@@ -8,14 +7,14 @@ interface LoadingSpinnerProps {
 
 const LoadingSpinner = ({ size = "20rem" }: LoadingSpinnerProps) => {
   return (
-    <Lottie
-      animationData={LOADING_ANIMATION}
+    <Player
+      src={LOADING_ANIMATION}
       style={{
         width: size,
         height: size,
       }}
+      autoplay
       loop
-      play
     />
   );
 };
