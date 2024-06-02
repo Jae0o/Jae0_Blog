@@ -66,8 +66,8 @@ const LoginFormModal = ({
     <>
       <Modal
         isShow={isShow}
-        width={32}
-        height={35}
+        width="32rem"
+        height="35rem"
         onClose={onClose}
         clickAwayEnable={true}
         closeButtonEnable={true}

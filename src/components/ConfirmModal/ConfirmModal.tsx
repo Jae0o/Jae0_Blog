@@ -28,8 +28,8 @@ const ConfirmModal = ({
     <Modal
       isShow={isShow}
       onClose={handleCloseAcceptFalse}
-      width={36}
-      height={20}
+      width="36rem"
+      height="20rem"
       clickAwayEnable={true}
       closeButtonEnable={true}
     >
