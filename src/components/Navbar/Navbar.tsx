@@ -1,27 +1,47 @@
-import "./Navbar.style.css";
+import { AnimatePresence } from "framer-motion";
 
-import { useToggle } from "@/hooks";
+import { useMediaQuery, useToggle } from "@/hooks";
 
+import * as S from "./Navbar.style";
 import { NavMenubar, NavTitle, NavToggleButton } from "./components";
 
 const Navbar = () => {
   const { isToggle, handleOffToggle, handleToggle } = useToggle();
+  const isVisible = useMediaQuery({ media: "tablet" });
 
   return (
-    <section className="nav__background">
-      <nav className="nav">
-        <NavTitle />
-        <NavToggleButton
-          isToggle={isToggle}
-          onToggle={handleToggle}
-        />
+    <AnimatePresence>
+      {!isVisible && (
+        <S.NavbarBackground
+          initial={{
+            opacity: 0,
+            translateY: "-110%",
+          }}
+          animate={{
+            opacity: 1,
+            translateY: "0%",
+          }}
+          exit={{
+            opacity: 0,
+            translateY: "-110%",
+          }}
+          transition={{ type: "tween" }}
+        >
+          <S.Navbar>
+            <NavTitle />
+            <NavToggleButton
+              isToggle={isToggle}
+              onToggle={handleToggle}
+            />
 
-        <NavMenubar
-          isToggle={isToggle}
-          onClose={handleOffToggle}
-        />
-      </nav>
-    </section>
+            <NavMenubar
+              isToggle={isToggle}
+              onClose={handleOffToggle}
+            />
+          </S.Navbar>
+        </S.NavbarBackground>
+      )}
+    </AnimatePresence>
   );
 };
 

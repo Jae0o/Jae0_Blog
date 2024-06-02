@@ -11,13 +11,6 @@
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
   }
-
-  .nav__background {
-    animation-name: inNavbarAnimation;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
 }
 
 @keyframes outletLayout1000px__below {
@@ -40,29 +33,11 @@
   }
 }
 
-@keyframes inNavbarAnimation {
-  0% {
-    top: -100px;
-    position: absolute;
-  }
-
-  100% {
-    top: 0px;
-  }
-}
-
 /* more - 1000px */
 
 @media (min-width: 1000px) {
   .outlet__layout {
     animation-name: outletLayout1000px__more;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-
-  .nav__background {
-    animation-name: outNavbarAnimation;
     animation-duration: 0.5s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
@@ -84,22 +59,5 @@
     left: var(--layout-width-AsideBar);
     right: 0px;
     bottom: 0px;
-  }
-}
-
-@keyframes outNavbarAnimation {
-  0% {
-    top: 0px;
-    position: absolute;
-  }
-
-  50% {
-    top: -100px;
-    display: none;
-  }
-
-  100% {
-    top: -100px;
-    display: none;
   }
 }

@@ -18,4 +18,5 @@ export const NavMenubar = styled(motion.ul)`
   background-color: ${({ theme }) => theme.colors.yellow};
   border-radius: 1.2rem;
   box-shadow: ${({ theme }) => theme.shadow.medium};
+  z-index: ${({ theme }) => theme.zIndex.nav_menubar};
 `;

@@ -22,7 +22,6 @@ const useCloseNavMenu = ({ isToggle, onClose }: UseCloseNavMenu) => {
         return;
       }
 
-      console.log(target);
       if (
         target instanceof HTMLElement &&
         target.className.includes("nav_toggle_box")
