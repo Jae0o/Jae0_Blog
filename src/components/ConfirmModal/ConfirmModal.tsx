@@ -1,5 +1,3 @@
-import { useTheme } from "styled-components";
-
 import CONFIRM_ANIMATION from "@/assets/animation/confirm_animation.json";
 import { Button, Modal } from "@/components";
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -22,7 +20,6 @@ const ConfirmModal = ({
   falseButtonText = "취소",
 }: ConfirmModalProps) => {
   const replaceMessage = message.replace(/\\n | \n/g, "\n");
-  const theme = useTheme();
 
   const handleCloseAcceptFalse = () => {
     onClose(false);
@@ -58,7 +55,6 @@ const ConfirmModal = ({
             style={{
               width: "10rem",
               height: "4rem",
-              fontWeight: theme.fontWeight.bold,
             }}
             backgroundColor="red"
           >
@@ -69,7 +65,6 @@ const ConfirmModal = ({
             style={{
               width: "10rem",
               height: "4rem",
-              fontWeight: theme.fontWeight.bold,
             }}
             backgroundColor="yellow"
           >

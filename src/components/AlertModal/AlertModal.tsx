@@ -1,5 +1,3 @@
-import { useTheme } from "styled-components";
-
 import ALERT_ANIMATION from "@/assets/animation/alert_animation.json";
 import { Button, Modal } from "@/components";
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -13,7 +11,6 @@ interface AlertModalProps {
 }
 
 const AlertModal = ({ isShow, message, onClose }: AlertModalProps) => {
-  const theme = useTheme();
   const replaceMessage = message.replace(/\\n | \n/g, "\n");
 
   return (
@@ -43,7 +40,6 @@ const AlertModal = ({ isShow, message, onClose }: AlertModalProps) => {
             style={{
               width: "12rem",
               height: "4rem",
-              fontWeight: theme.fontWeight.bold,
             }}
           >
             닫기

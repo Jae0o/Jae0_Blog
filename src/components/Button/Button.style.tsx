@@ -19,6 +19,6 @@ export const ButtonStyle = styled(motion.button)<{
   opacity: ${({ theme, $disabled }) => ($disabled ? theme.opacity.normal : 1)};
 
   font-size: ${({ theme }) => theme.fontSize.large};
-  font-weight: ${({ theme }) => theme.fontWeight.medium};
+  font-weight: ${({ theme }) => theme.fontWeight.bold};
   color: ${({ theme }) => theme.colors.text};
 `;
