@@ -1,6 +1,8 @@
-import "./AlertModal.style.css";
+import { useTheme } from "styled-components";
 
-import { Modal } from "@/components";
+import ALERT_ANIMATION from "@/assets/animation/alert_animation.json";
+import { Button, Modal } from "@/components";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 import * as S from "./AlertModal.style";
 
@@ -11,26 +13,43 @@ interface AlertModalProps {
 }
 
 const AlertModal = ({ isShow, message, onClose }: AlertModalProps) => {
+  const theme = useTheme();
   const replaceMessage = message.replace(/\\n | \n/g, "\n");
 
   return (
     <Modal
-      width={32}
-      height={18}
+      width="32rem"
+      height="fit-content"
       isShow={isShow}
       onClose={onClose}
       clickAwayEnable={true}
       closeButtonEnable={true}
     >
-      <S.ModalMessage>{replaceMessage}</S.ModalMessage>
-      <S.ModalActions>
-        <button
-          className="alert__button"
-          onClick={onClose}
-        >
-          닫기
-        </button>
-      </S.ModalActions>
+      <S.AlertModalLayout>
+        <Player
+          src={ALERT_ANIMATION}
+          style={{
+            width: "24rem",
+            height: "20rem",
+          }}
+          autoplay
+          keepLastFrame
+        />
+        <S.ModalMessage>{replaceMessage}</S.ModalMessage>
+        <S.ModalActions>
+          <Button
+            onClick={onClose}
+            backgroundColor="yellow"
+            style={{
+              width: "12rem",
+              height: "4rem",
+              fontWeight: theme.fontWeight.bold,
+            }}
+          >
+            닫기
+          </Button>
+        </S.ModalActions>
+      </S.AlertModalLayout>
     </Modal>
   );
 };
