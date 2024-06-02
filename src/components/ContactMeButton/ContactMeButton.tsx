@@ -1,6 +1,6 @@
-import "./ContactMeButton.style.css";
-
 import React from "react";
+
+import * as S from "./ContactMeButton.style";
 
 interface ContactMeButtonProps {
   url: string;
@@ -12,15 +12,20 @@ const ContactMeButton = ({
   IconComponent,
 }: ContactMeButtonProps): React.ReactNode => {
   return (
-    <a
+    <S.ContactMeButton
       href={url}
       target="_blank"
       rel="noreferrer noopener"
-      className="aside__footer-link"
       aria-label={`link move ${url}`}
+      whileHover={{
+        filter: "brightness(80%)",
+      }}
+      whileTap={{
+        scale: 0.9,
+      }}
     >
       {IconComponent}
-    </a>
+    </S.ContactMeButton>
   );
 };
 
