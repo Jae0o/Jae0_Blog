@@ -1,10 +1,10 @@
-import "./PostListItem.style.css";
-
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { PostData } from "@/types/original";
 import { convertDateFormat } from "@/util";
+
+import * as S from "./PostListItem.style";
 
 interface PostListItemProps {
   post: PostData;
@@ -20,35 +20,30 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
   };
 
   return (
-    <li
-      className="ptlist__ptitem"
+    <S.PostItem
       onClick={onNavigate}
+      whileHover={{
+        boxShadow: "0px 0px 10px 1px rgba(0, 0, 0, 0.2)",
+        filter: "brightness(90%)",
+      }}
     >
-      <div className="ptitem__thumbnail-container">
-        <img
-          className="ptitem__thumbnail"
+      <S.PostItemThumbnailLayout>
+        <S.PostItemThumbnail
           src={post.thumbnail}
           alt="post-item-Thumbnail"
         />
-        <p className="ptitem__create">{formattedDate}</p>
-      </div>
+        <S.PostItemCreateAt>{formattedDate}</S.PostItemCreateAt>
+      </S.PostItemThumbnailLayout>
 
-      <div className="ptitem__info-container">
-        <h2 className="ptitem__title"> {post.title}</h2>
-        <div className="ptitem__category">{post.category}</div>
-        <ul className="ptitem__tags">
+      <S.PostItemInfoLayout>
+        <S.PostItemTitle> {post.title}</S.PostItemTitle>
+        <S.PostItemCategory>{post.category}</S.PostItemCategory>
+        <S.PostItemTagList>
           {post.tag &&
-            post.tag.map(tag => (
-              <li
-                key={tag}
-                className="ptitem__tag-item"
-              >
-                {tag}
-              </li>
-            ))}
-        </ul>
-      </div>
-    </li>
+            post.tag.map(tag => <S.PostItemTag key={tag}>{tag}</S.PostItemTag>)}
+        </S.PostItemTagList>
+      </S.PostItemInfoLayout>
+    </S.PostItem>
   );
 };
 
