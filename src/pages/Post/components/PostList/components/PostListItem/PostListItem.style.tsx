@@ -133,7 +133,7 @@ const CategoryTagItem = css`
 export const PostItemCategory = styled.p`
   ${CategoryTagItem}
 
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.yellow};
 `;
 
 export const PostItemTagList = styled.ul`

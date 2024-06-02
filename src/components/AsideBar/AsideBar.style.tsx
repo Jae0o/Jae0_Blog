@@ -15,6 +15,7 @@ export const AsideBar = styled(motion.aside)`
   box-shadow: ${({ theme }) => theme.shadow.medium};
 
   z-index: ${({ theme }) => theme.zIndex.aside};
+  opacity: 0;
 `;
 
 export const AsideBarContainer = styled.div`
