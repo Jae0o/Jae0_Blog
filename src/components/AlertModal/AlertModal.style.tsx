@@ -14,7 +14,6 @@ export const AlertModalLayout = styled.div`
 
 export const ModalMessage = styled.p`
   width: 100%;
-  /* height: 10rem; */
   padding: 0rem 2rem 2rem;
 
   display: flex;
@@ -23,7 +22,7 @@ export const ModalMessage = styled.p`
 
   font-size: ${({ theme }) => theme.fontSize.large};
   font-weight: ${({ theme }) => theme.fontWeight.medium};
-  line-height: 1.3;
+  line-height: 1.5;
   text-align: center;
   word-break: keep-all;
   white-space: pre-line;
