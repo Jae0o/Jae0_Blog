@@ -1,8 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
+import PROFILE_IMAGE from "@/assets/profile/profile.webp";
 import { HomeIcon, SearchIcon, WriteIcon } from "@/components";
-import { PROFILE } from "@/constants";
 
 import * as S from "./AsideProfile.style";
 import AsideProfileActions from "./components/AsideProfileAction/AsideProfileActions";
@@ -18,7 +18,7 @@ const AsideProfile = (): React.ReactNode => {
       <S.AsideHeader>
         <S.AsideThumbnailContainer>
           <S.AsideThumbnail
-            src={PROFILE.THUMBNAIL}
+            src={PROFILE_IMAGE}
             alt="PROFILE-THUMBNAIL"
           />
         </S.AsideThumbnailContainer>
