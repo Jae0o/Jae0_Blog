@@ -15,14 +15,17 @@ const AsideBar = (): React.ReactNode => {
           initial={{
             translateX: "-100%",
             opacity: 0,
+            position: "absolute",
           }}
           animate={{
             translateX: 0,
             opacity: 1,
+            position: "relative",
           }}
           exit={{
             translateX: "-100%",
             opacity: 0,
+            position: "absolute",
           }}
           transition={{ type: "tween" }}
         >

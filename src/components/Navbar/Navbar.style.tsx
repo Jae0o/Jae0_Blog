@@ -5,7 +5,8 @@ export const NavbarBackground = styled(motion.section)`
   width: 100%;
   height: 10rem;
 
-  position: absolute;
+  position: relative;
+  top: 0;
 
   z-index: ${({ theme }) => theme.zIndex.nav_background};
 `;

@@ -16,14 +16,17 @@ const Navbar = () => {
           initial={{
             opacity: 0,
             translateY: "-110%",
+            position: "absolute",
           }}
           animate={{
             opacity: 1,
             translateY: "0%",
+            position: "relative",
           }}
           exit={{
             opacity: 0,
             translateY: "-110%",
+            position: "absolute",
           }}
           transition={{ type: "tween" }}
         >

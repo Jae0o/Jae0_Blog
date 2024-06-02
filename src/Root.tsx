@@ -1,26 +1,26 @@
-import "./Root.style.css";
 import "./font/pretendard.css";
 import "./styles/Animation.css";
 import "./styles/Quill.style.css";
 import "./styles/Responsive400px.css";
 import "./styles/Responsive700px.css";
-import "./styles/Responsive1000px.css";
 
 import React from "react";
 import { Outlet } from "react-router-dom";
+
+import * as S from "./Root.style";
 
 const AsideBar = React.lazy(() => import("./components/AsideBar/AsideBar"));
 const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
 
 const Root = (): React.ReactNode => {
   return (
-    <main className="Root">
-      <AsideBar />
+    <S.Root>
       <Navbar />
-      <section className="outlet__layout">
+      <AsideBar />
+      <S.OutletLayout>
         <Outlet />
-      </section>
-    </main>
+      </S.OutletLayout>
+    </S.Root>
   );
 };
 
