@@ -46,6 +46,7 @@ const Home = (): React.ReactNode => {
         <S.HomeTitle
           whileHover={{
             color: theme.colors.yellow,
+            textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)",
           }}
         >
           Jae0's Blog

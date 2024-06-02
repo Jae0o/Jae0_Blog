@@ -27,7 +27,6 @@ export const HomeTitle = styled(motion.h1)`
   font-size: 6rem;
   font-weight: ${({ theme }) => theme.fontWeight.bold};
   text-align: center;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 
   cursor: default;
 `;
