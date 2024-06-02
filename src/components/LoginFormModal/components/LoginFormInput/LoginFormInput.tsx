@@ -27,9 +27,10 @@ const LoginFormInput = ({
 
   return (
     <S.LoginInputLayout>
-      <S.LoginInputTitle>{title}</S.LoginInputTitle>
+      <S.LoginInputTitle htmlFor={type}>{title}</S.LoginInputTitle>
       <S.LoginInput
         value={value}
+        id={type}
         onChange={({ target }) => onChange({ type, value: target.value })}
         type={type}
         autoComplete={"current-password"}

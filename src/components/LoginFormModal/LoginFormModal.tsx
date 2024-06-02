@@ -1,12 +1,11 @@
-import "./LoginFormModal.style.css";
-
 import { useState } from "react";
 
 import { firebaseLogin } from "@/api";
-import { AlertModal, Modal } from "@/components";
+import { AlertModal, Button, Modal } from "@/components";
 import { LOGIN_VALIDATION } from "@/constants";
 import { useModal } from "@/hooks";
 
+import * as S from "./LoginFormModal.style";
 import { LoginFormInput } from "./components";
 import { loginValidation } from "./utils";
 
@@ -67,16 +66,13 @@ const LoginFormModal = ({
       <Modal
         isShow={isShow}
         width="32rem"
-        height="35rem"
+        height="fit-content"
         onClose={onClose}
         clickAwayEnable={true}
         closeButtonEnable={true}
       >
-        <h4 className="login__title">LOG IN !</h4>
-        <form
-          className="login__form"
-          onSubmit={handleSubmitLogin}
-        >
+        <S.ModalTitle>LOG IN</S.ModalTitle>
+        <S.ModalForm onSubmit={handleSubmitLogin}>
           <LoginFormInput
             title="EMAIL"
             type="email"
@@ -89,10 +85,17 @@ const LoginFormModal = ({
             value={loginInfo.password}
             onChange={changeLoginInfo}
           />
-          <div className="login__action-container">
-            <button className="login__action-button">{"로그인"}</button>
-          </div>
-        </form>
+          <S.ModalActions>
+            <Button
+              style={{
+                width: "12rem",
+                height: "4rem",
+              }}
+            >
+              로그인
+            </Button>
+          </S.ModalActions>
+        </S.ModalForm>
       </Modal>
 
       <AlertModal
