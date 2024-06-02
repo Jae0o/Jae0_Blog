@@ -1,9 +1,9 @@
-import "./InputImage.style.css";
-
 import React from "react";
 
 import { MUTATION_OPTIONS } from "@/api";
 import { useMutation } from "@tanstack/react-query";
+
+import * as S from "./InputImage.style";
 
 interface InputImageProps {
   inputRef: React.RefObject<HTMLInputElement>;
@@ -32,7 +32,7 @@ const InputImage = ({ inputRef, storagePath, onSuccess }: InputImageProps) => {
   };
 
   return (
-    <input
+    <S.ImageInput
       className="input__image-hide"
       ref={inputRef}
       type="file"
