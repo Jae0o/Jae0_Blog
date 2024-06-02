@@ -20,6 +20,11 @@ const colors = {
 
   text: "#323133",
   text_point: "#ffce54",
+
+  transparent_10: "#23232310",
+  transparent_30: "#23232330",
+  transparent_50: "#23232350",
+  transparent_90: "#23232390",
 };
 
 const fontSize = {
@@ -101,7 +106,7 @@ export type Opacity = typeof opacity;
 export type FontFamily = typeof fontFamily;
 export type Shadow = typeof shadow;
 
-export const theme: DefaultTheme = {
+const theme: DefaultTheme = {
   colors,
   fontWeight,
   fontSize,
@@ -113,3 +118,5 @@ export const theme: DefaultTheme = {
   fontFamily,
   shadow,
 };
+
+export default theme;

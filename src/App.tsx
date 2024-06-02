@@ -9,7 +9,7 @@ import * as S from "./App.style";
 import { ContextAuthUserProvider } from "./Context/ContextAuthUser";
 import { router } from "./router";
 import GlobalStyles from "./styles/GlobalStyles";
-import { theme } from "./styles/theme";
+import theme from "./styles/theme";
 
 const LoadingPage = React.lazy(() => import("./pages/Loading/Loading"));
 
