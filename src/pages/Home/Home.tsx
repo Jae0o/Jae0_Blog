@@ -1,4 +1,4 @@
-import "./Home.style.css";
+import { useTheme } from "styled-components";
 
 import React from "react";
 
@@ -6,9 +6,11 @@ import { QUERY_KEY, getAllPostsList } from "@/api";
 import { useInfiniteQuery } from "@tanstack/react-query";
 
 import LoadingPage from "../Loading/Loading";
+import * as S from "./Home.style";
 import { HomePostList } from "./components";
 
 const Home = (): React.ReactNode => {
+  const theme = useTheme();
   const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
     queryKey: QUERY_KEY.GET_POST_LIST_ALL(),
     queryFn: ({ pageParam }) => getAllPostsList({ cursorId: pageParam }),
@@ -36,17 +38,26 @@ const Home = (): React.ReactNode => {
   }
 
   return (
-    <section className="outlet__home">
-      <article className="home__title-layout">
-        <h1 className="home__title">Jae0's Blog</h1>
-      </article>
+    <S.HomeLayout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <S.HomeTitleContainer>
+        <S.HomeTitle
+          whileHover={{
+            color: theme.colors.yellow,
+          }}
+        >
+          Jae0's Blog
+        </S.HomeTitle>
+      </S.HomeTitleContainer>
 
       <HomePostList
         posts={data.pages.flat()}
         fetchNextPage={fetchNextPage}
         hasNextPage={hasNextPage}
       />
-    </section>
+    </S.HomeLayout>
   );
 };
 
