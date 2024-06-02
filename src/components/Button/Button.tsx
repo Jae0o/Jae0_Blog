@@ -1,11 +1,11 @@
 import { HTMLMotionProps } from "framer-motion";
 
-import { MouseEvent } from "react";
+import React, { MouseEvent } from "react";
 
 import * as S from "./Button.style";
 
 interface ButtonProps extends HTMLMotionProps<"button"> {
-  text: string;
+  children: React.ReactNode;
   backgroundColor?: "green" | "red" | "yellow";
   shadow?: boolean;
   disabled?: boolean;
@@ -13,7 +13,7 @@ interface ButtonProps extends HTMLMotionProps<"button"> {
 }
 
 const Button = ({
-  text,
+  children,
   backgroundColor = "green",
   shadow = false,
   disabled = false,
@@ -41,7 +41,7 @@ const Button = ({
       whileHover={disabled ? {} : { filter: "brightness(85%)" }}
       {...rest}
     >
-      {text}
+      {children}
     </S.ButtonStyle>
   );
 };
