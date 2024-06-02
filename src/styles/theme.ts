@@ -98,7 +98,7 @@ const fontFamily = {
 const media = {
   aside_max_height: "max-height : 700px",
 
-  desktop: "max-width : 1050px",
+  tablet: "max-width : 1050px",
   mobile: "max-width : 480px",
 };
 

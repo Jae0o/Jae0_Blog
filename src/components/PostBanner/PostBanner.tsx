@@ -1,4 +1,4 @@
-import "./PostBanner.style.css";
+import * as S from "./PostBanner.style";
 
 interface PostBannerProps {
   thumbnail: string;
@@ -16,21 +16,18 @@ const PostBanner = ({
   objectFit = "cover",
 }: PostBannerProps): React.ReactNode => {
   return (
-    <div className="post__banner">
-      <div
-        className="ptbanner__container"
-        style={{
-          backgroundImage: `url(${thumbnail})`,
-          height: height ? `${height}rem` : "",
-          backgroundSize: `${objectFit}`,
-        }}
+    <S.PostBannerLayout>
+      <S.PostBanner
+        $height={height}
+        $backgroundSrc={thumbnail}
+        $objectFit={objectFit}
       >
-        <div className="ptbanner__advice-container">
-          <h5 className="ptbanner__advice">{mainText}</h5>
-          {subText && <h6 className="ptbanner__author">{subText}</h6>}
-        </div>
-      </div>
-    </div>
+        <S.BannerTextContainer>
+          <S.BannerMainTitle>{mainText}</S.BannerMainTitle>
+          {subText && <S.BannerSubTitle>{subText}</S.BannerSubTitle>}
+        </S.BannerTextContainer>
+      </S.PostBanner>
+    </S.PostBannerLayout>
   );
 };
 
