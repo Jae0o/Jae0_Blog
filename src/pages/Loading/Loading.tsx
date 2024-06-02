@@ -1,12 +1,12 @@
-import "./Loading.style.css";
-
 import { LoadingSpinner } from "@/components";
+
+import * as S from "./Loading.style";
 
 const LoadingPage = () => {
   return (
-    <section className="loading__background">
+    <S.LoadingBackground>
       <LoadingSpinner size="40rem" />
-    </section>
+    </S.LoadingBackground>
   );
 };
 

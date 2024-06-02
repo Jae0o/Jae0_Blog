@@ -11,11 +11,13 @@ import { router } from "./router";
 import GlobalStyles from "./styles/GlobalStyles";
 import theme from "./styles/theme";
 
-const LoadingPage = React.lazy(() => import("./pages/Loading/Loading"));
+const InitialLoading = React.lazy(
+  () => import("./pages/InitialLoading/InitialLoading"),
+);
 
 const App = (): React.ReactNode => {
   return (
-    <Suspense fallback={<LoadingPage />}>
+    <Suspense fallback={<InitialLoading />}>
       <QueryProvider>
         <ThemeProvider theme={theme}>
           <GlobalStyles />
