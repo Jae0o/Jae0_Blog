@@ -1,10 +1,11 @@
-import "./NavMenubar.style.css";
+import { AnimatePresence } from "framer-motion";
 
 import { useEffect, useRef } from "react";
 
 import { MenubarItem } from "@/components";
 import { MENUBAR_LIST } from "@/constants";
 
+import * as S from "./NavMenubar.style";
 import { NavMenubarFooter } from "./components";
 
 interface NavMenubarProps {
@@ -41,24 +42,36 @@ const NavMenubar = ({ isToggle, onToggle }: NavMenubarProps) => {
   }, [isToggle, onToggle]);
 
   return (
-    <ul
-      className={`nav__menubar ${
-        isToggle ? "Active__NavMenu" : "unActive__NavMenu"
-      }`}
-      ref={menubarRef}
-      style={{ display: `${isToggle ? "flex" : "none"}` }}
-    >
-      {MENUBAR_LIST.map(({ category, IconComponent, title }) => (
-        <MenubarItem
-          key={category}
-          title={title}
-          IconComponent={IconComponent}
-          category={category}
-        />
-      ))}
+    <AnimatePresence>
+      {isToggle && (
+        <S.NavMenubar
+          ref={menubarRef}
+          initial={{
+            translateX: "110%",
+            opacity: 0,
+          }}
+          animate={{
+            translateX: "0%",
+            opacity: 1,
+          }}
+          exit={{
+            translateX: "110%",
+            opacity: 0,
+          }}
+        >
+          {MENUBAR_LIST.map(({ category, IconComponent, title }) => (
+            <MenubarItem
+              key={category}
+              title={title}
+              IconComponent={IconComponent}
+              category={category}
+            />
+          ))}
 
-      <NavMenubarFooter />
-    </ul>
+          <NavMenubarFooter />
+        </S.NavMenubar>
+      )}
+    </AnimatePresence>
   );
 };
 
