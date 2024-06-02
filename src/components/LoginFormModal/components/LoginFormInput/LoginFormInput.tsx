@@ -1,7 +1,6 @@
-import "./LoginFormInput.style.css";
-
 import { LoginInputType } from "../../LoginFormModal";
 import { loginValidation } from "../../utils";
+import * as S from "./LoginFormInput.style";
 
 interface LoginFormInputProps {
   title: string;
@@ -27,18 +26,17 @@ const LoginFormInput = ({
   }
 
   return (
-    <div className="loginForm__input">
-      <p className="loginForm__input-title">{title}</p>
-      <input
-        className="loginForm__input-element"
+    <S.LoginInputLayout>
+      <S.LoginInputTitle>{title}</S.LoginInputTitle>
+      <S.LoginInput
         value={value}
         onChange={({ target }) => onChange({ type, value: target.value })}
         type={type}
         autoComplete={"current-password"}
         placeholder={title}
       />
-      <p className="loginForm__input-message">{message}</p>
-    </div>
+      <S.LoginInputMessage>{message}</S.LoginInputMessage>
+    </S.LoginInputLayout>
   );
 };
 
