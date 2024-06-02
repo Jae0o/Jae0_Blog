@@ -15,7 +15,7 @@ const colors = {
   white: "#fafafa",
   light_white: "#e6e9ed",
 
-  grey: "#ccd1d9",
+  gray: "#ccd1d9",
   dark_gray: "#656d78",
 
   text: "#323133",

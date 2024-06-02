@@ -19,6 +19,11 @@ const GlobalStyles = createGlobalStyle`
     border: none;
   }
 
+  input {
+    outline: none;
+    border: none;
+  }
+
   button {
     border: none;
     background-color: transparent;
@@ -39,7 +44,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+time, mark, audio, video, input {
     box-sizing: border-box;
 }
 `;
