@@ -1,15 +1,18 @@
-import "./Modal.style.css";
+import { AnimatePresence } from "framer-motion";
+import { useTheme } from "styled-components";
 
-import React from "react";
+import React, { MouseEvent } from "react";
 
 import { CloseIcon } from "../Icons";
+import * as S from "./Modal.style";
 import { ModalPortal } from "./components";
+import { useExitAnimation } from "./hooks";
 
 interface ModalProps {
   isShow: boolean;
   children: React.ReactNode;
-  width: number;
-  height: number;
+  width: string;
+  height: string;
   clickAwayEnable?: boolean;
   closeButtonEnable?: boolean;
   onClose: () => void;
@@ -22,12 +25,15 @@ const Modal = ({
   height,
   onClose,
   clickAwayEnable,
-  closeButtonEnable,
+  closeButtonEnable = true,
 }: ModalProps) => {
+  const { isExit, handleOffExit } = useExitAnimation({ isShow });
+  const theme = useTheme();
+
   const handleClickAway = ({
     target,
     currentTarget,
-  }: React.MouseEvent<HTMLElement>) => {
+  }: MouseEvent<HTMLElement>) => {
     if (!clickAwayEnable) {
       return;
     }
@@ -38,48 +44,37 @@ const Modal = ({
   };
 
   return (
-    <ModalPortal isShow={isShow}>
-      <section
-        className="modal__background"
-        onClick={handleClickAway}
-      >
-        <article
-          className="modal__layout-outline"
-          style={{
-            width: `${width + 4}rem`,
-            height: closeButtonEnable ? `${height + 7}rem` : `${height + 4}rem`,
-          }}
-        >
-          <div
-            className="modal__layout"
-            style={{
-              width: `${width}rem`,
-              height: closeButtonEnable ? `${height + 3}rem` : `${height}rem`,
-            }}
+    <ModalPortal isShow={!isExit}>
+      <AnimatePresence onExitComplete={handleOffExit}>
+        {isShow && (
+          <S.ModalBackground
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={handleClickAway}
           >
-            <div
-              className="modal__actions"
-              style={{ display: closeButtonEnable ? "flex" : "none" }}
+            <S.ModalLayoutOutline
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0 }}
+              $width={width}
+              $height={height}
             >
-              <button
-                className="modal__button-close"
-                onClick={onClose}
-              >
-                <CloseIcon size="2rem" />
-              </button>
-            </div>
-            <div
-              className="modal__content"
-              style={{
-                width: `${width}rem`,
-                height: `${height}rem`,
-              }}
-            >
-              {children}
-            </div>
-          </div>
-        </article>
-      </section>
+              <S.ModalLayout>
+                <S.ModalActions $isVisible={closeButtonEnable}>
+                  <S.ModalCloseButton
+                    whileHover={{ opacity: theme.opacity.normal }}
+                    onClick={onClose}
+                  >
+                    <CloseIcon size="2.8rem" />
+                  </S.ModalCloseButton>
+                </S.ModalActions>
+                <S.ModalContent>{children}</S.ModalContent>
+              </S.ModalLayout>
+            </S.ModalLayoutOutline>
+          </S.ModalBackground>
+        )}
+      </AnimatePresence>
     </ModalPortal>
   );
 };
