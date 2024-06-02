@@ -1,9 +1,9 @@
-import "./PostBannerDecoration.style.css";
-
 import React, { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { CloseIcon, ExtendContentIcon, HorizontalRuleIcon } from "@/components";
+
+import * as S from "./PostBannerDecoration.style";
 
 const PostBannerDecoration = (): React.ReactNode => {
   const navigate = useNavigate();
@@ -13,32 +13,53 @@ const PostBannerDecoration = (): React.ReactNode => {
   }, [navigate]);
 
   return (
-    <div className="ptbanner__decoration">
-      <button
-        className="ptdecoration__button pt-close"
+    <S.BannerDecoration>
+      <S.BannerDecorationButton
+        $backgroundColor="red"
         onClick={toPrevPageHandler}
       >
-        <CloseIcon
-          size="1.2rem"
-          className="ptdecoration__icon"
-          fill="#5f6368"
-        />
-      </button>
-      <button className="ptdecoration__button pt-minimize">
-        <HorizontalRuleIcon
-          size="1.2rem"
-          className="ptdecoration__icon"
-          fill="#5f6368"
-        />
-      </button>
-      <button className="ptdecoration__button pt-maximize">
-        <ExtendContentIcon
-          size="1.2rem"
-          className="ptdecoration__icon"
-          fill="#5f6368"
-        />
-      </button>
-    </div>
+        <S.BannerDecorationIconBox
+          whileHover={{
+            opacity: 1,
+            filter: "brightness(50%)",
+          }}
+        >
+          <CloseIcon
+            size="1.2rem"
+            fill="#5f6368"
+          />
+        </S.BannerDecorationIconBox>
+      </S.BannerDecorationButton>
+
+      <S.BannerDecorationButton $backgroundColor="yellow">
+        <S.BannerDecorationIconBox
+          whileHover={{
+            opacity: 1,
+            filter: "brightness(50%)",
+          }}
+        >
+          <HorizontalRuleIcon
+            size="1.2rem"
+            fill="#5f6368"
+          />
+        </S.BannerDecorationIconBox>
+      </S.BannerDecorationButton>
+
+      <S.BannerDecorationButton $backgroundColor="green">
+        <S.BannerDecorationIconBox
+          whileHover={{
+            opacity: 1,
+            filter: "brightness(50%)",
+            rotate: 90,
+          }}
+        >
+          <ExtendContentIcon
+            size="1.2rem"
+            fill="#5f6368"
+          />
+        </S.BannerDecorationIconBox>
+      </S.BannerDecorationButton>
+    </S.BannerDecoration>
   );
 };
 
