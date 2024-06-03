@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const HomePostList = styled.ul`
   width: 100%;
-  max-width: 120rem;
+  max-width: 90rem;
   padding: 5rem 5rem;
 
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
-  gap: 4rem;
+  justify-content: center;
+  gap: 6rem;
 
   @media (${({ theme }) => theme.media.mobile}) {
     padding: 5rem 0rem;

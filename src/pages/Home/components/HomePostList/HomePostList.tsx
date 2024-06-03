@@ -7,7 +7,7 @@ import { QUERY_KEY, getAllPostsList } from "@/api";
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 
 import * as S from "./HomePostList.style";
-import { HomePostListItem } from "./components";
+import { HomeListItem } from "./components";
 
 const HomePostList = () => {
   const ref = useRef(null);
@@ -45,7 +45,7 @@ const HomePostList = () => {
     <S.HomePostList>
       {data &&
         data.pages.flat().flatMap(post => (
-          <HomePostListItem
+          <HomeListItem
             key={post.id}
             post={post}
           />
