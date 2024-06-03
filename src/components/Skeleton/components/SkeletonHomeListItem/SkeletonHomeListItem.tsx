@@ -5,8 +5,8 @@ const SkeletonHomeListItem = () => {
     <S.SkeletonHomeListItemLayout>
       <S.SkeletonHomeListItemThumbnailContainer />
 
-      <S.SkeletonHomeListItemTitle />
       <S.SkeletonHomeListItemTagList />
+      <S.SkeletonHomeListItemTitle />
     </S.SkeletonHomeListItemLayout>
   );
 };

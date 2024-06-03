@@ -39,13 +39,13 @@ const HomeListItem = ({ post }: HomeListItemProps) => {
         <S.HomeListItemCategory>{post.category}</S.HomeListItemCategory>
       </S.HomeListItemThumbnailContainer>
 
-      <S.HomeListItemTitle>{post.title}</S.HomeListItemTitle>
-
       <S.HomeListItemTagList>
         {post.tag.map(tag => (
           <S.HomeListItemTag>{tag}</S.HomeListItemTag>
         ))}
       </S.HomeListItemTagList>
+
+      <S.HomeListItemTitle>{post.title}</S.HomeListItemTitle>
     </S.HomeListItemLayout>
   );
 };

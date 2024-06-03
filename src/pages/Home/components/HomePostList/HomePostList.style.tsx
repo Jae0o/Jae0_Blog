@@ -18,7 +18,7 @@ export const HomePostList = styled.ul`
 `;
 
 export const ObserveContainer = styled.li`
-  width: 100%;
+  width: 32rem;
   height: 12rem;
 `;
 

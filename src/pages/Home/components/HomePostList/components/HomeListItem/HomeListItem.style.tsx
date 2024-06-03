@@ -82,7 +82,7 @@ export const HomeListItemTitle = styled.h2`
 `;
 
 export const HomeListItemTagList = styled.ul`
-  padding: 0.6rem;
+  padding: 0.6rem 0.3rem;
   width: 100%;
   height: fit-content;
 

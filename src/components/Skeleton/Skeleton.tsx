@@ -1,4 +1,4 @@
-import { SkeletonHomeListItem } from "./components";
+import { SkeletonHomeList, SkeletonHomeListItem } from "./components";
 
 const Skeleton = () => {
   return null;
@@ -7,3 +7,4 @@ const Skeleton = () => {
 export default Skeleton;
 
 Skeleton.SkeletonHomeListItem = SkeletonHomeListItem;
+Skeleton.SkeletonHomeList = SkeletonHomeList;
