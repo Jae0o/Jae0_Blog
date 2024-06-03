@@ -36,9 +36,7 @@ const LoginFormModal = ({
     setLoginInfo(state => ({ ...state, [type]: value }));
   };
 
-  const handleSubmitLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleSubmitLogin = () => {
     if (loginValidation.email(loginInfo.email)) {
       setAlertModal(LOGIN_VALIDATION.SUBMIT_CHECK_EMAIL);
       openModal();
@@ -72,7 +70,7 @@ const LoginFormModal = ({
         closeButtonEnable={true}
       >
         <S.ModalTitle>LOG IN</S.ModalTitle>
-        <S.ModalForm onSubmit={handleSubmitLogin}>
+        <S.ModalForm>
           <LoginFormInput
             title="EMAIL"
             type="email"
@@ -87,6 +85,7 @@ const LoginFormModal = ({
           />
           <S.ModalActions>
             <Button
+              onClick={handleSubmitLogin}
               style={{
                 width: "12rem",
                 height: "4rem",

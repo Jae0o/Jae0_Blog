@@ -9,7 +9,7 @@ interface ButtonProps extends HTMLMotionProps<"button"> {
   backgroundColor?: "green" | "red" | "yellow";
   shadow?: boolean;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = ({
@@ -21,13 +21,11 @@ const Button = ({
   ...rest
 }: ButtonProps) => {
   const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
     if (!onClick || disabled) {
       return;
     }
 
-    onClick();
+    onClick(e);
   };
 
   return (
