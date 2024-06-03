@@ -34,7 +34,6 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
           sizes="(max-width: 480px) 20rem, (min-width: 1050px) 16rem"
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
         />
         <S.PostItemCreateAt>{formattedDate}</S.PostItemCreateAt>
       </S.PostItemThumbnailLayout>
