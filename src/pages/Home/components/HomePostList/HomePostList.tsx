@@ -3,7 +3,7 @@ import { useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 import { QUERY_KEY, getAllPostsList } from "@/api";
-// import { PostListItem } from "@/pages/Post/components/PostList/components";
+import { Skeleton } from "@/components";
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 
 import * as S from "./HomePostList.style";
@@ -13,33 +13,34 @@ const HomePostList = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
-  const { data, fetchNextPage, hasNextPage } = useSuspenseInfiniteQuery({
-    queryKey: QUERY_KEY.GET_POST_LIST_ALL(),
-    queryFn: ({ pageParam }) => getAllPostsList({ cursorId: pageParam }),
+  const { data, fetchNextPage, hasNextPage, isFetching } =
+    useSuspenseInfiniteQuery({
+      queryKey: QUERY_KEY.GET_POST_LIST_ALL(),
+      queryFn: ({ pageParam }) => getAllPostsList({ cursorId: pageParam }),
 
-    initialPageParam: "",
-    getNextPageParam: (prevList, _, prevParam) => {
-      if (!prevList) {
-        return null;
-      }
+      initialPageParam: "",
+      getNextPageParam: (prevList, _, prevParam) => {
+        if (!prevList) {
+          return null;
+        }
 
-      const prevId = prevList.at(-1)?.createAt;
-      if (prevParam === prevId) {
-        return null;
-      }
+        const prevId = prevList.at(-1)?.createAt;
+        if (prevParam === prevId) {
+          return null;
+        }
 
-      return prevId;
-    },
+        return prevId;
+      },
 
-    staleTime: 1000 * 60 * 55,
-    gcTime: 1000 * 60 * 60,
-  });
+      staleTime: 1000 * 60 * 55,
+      gcTime: 1000 * 60 * 60,
+    });
 
   useEffect(() => {
-    if (isInView && hasNextPage) {
+    if (isInView && hasNextPage && !isFetching) {
       fetchNextPage();
     }
-  }, [fetchNextPage, hasNextPage, isInView]);
+  }, [fetchNextPage, hasNextPage, isFetching, isInView]);
 
   return (
     <S.HomePostList>
@@ -50,6 +51,15 @@ const HomePostList = () => {
             post={post}
           />
         ))}
+
+      {isFetching && (
+        <>
+          <Skeleton.SkeletonHomeListItem />
+          <Skeleton.SkeletonHomeListItem />
+          <Skeleton.SkeletonHomeListItem />
+          <Skeleton.SkeletonHomeListItem />
+        </>
+      )}
 
       <S.ObserveContainer>
         <S.ObserveTarget ref={ref} />

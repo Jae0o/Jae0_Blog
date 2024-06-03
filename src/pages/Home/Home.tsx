@@ -2,6 +2,8 @@ import { useTheme } from "styled-components";
 
 import React, { Suspense } from "react";
 
+import { Skeleton } from "@/components";
+
 import * as S from "./Home.style";
 import { HomePostList } from "./components";
 
@@ -24,7 +26,7 @@ const Home = (): React.ReactNode => {
         </S.HomeTitle>
       </S.HomeTitleContainer>
 
-      <Suspense fallback={<div>dddd</div>}>
+      <Suspense fallback={<Skeleton.SkeletonHomeList />}>
         <HomePostList />
       </Suspense>
     </S.HomeLayout>
