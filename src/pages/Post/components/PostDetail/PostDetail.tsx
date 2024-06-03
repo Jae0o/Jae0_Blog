@@ -1,5 +1,3 @@
-import "./PostDetail.style.css";
-
 import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -10,6 +8,7 @@ import { QUERY_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { useQuery } from "@tanstack/react-query";
 
+import * as S from "./PostDetail.style";
 import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
 
 const PostDetail = (): React.ReactNode => {
@@ -28,36 +27,34 @@ const PostDetail = (): React.ReactNode => {
   return (
     <>
       {data && (
-        <section className="ptdetail__layout">
+        <S.PostDetailLayout>
           <PostBannerDecoration />
-          <div className="ptdetail__container">
+          <S.PostDetailContainer>
             <PostBanner
               thumbnail={data.thumbnail}
               mainText={data.title}
               height={50}
               objectFit={"contain"}
             />
-            <div
-              className="ptdetail__content"
-              data-color-mode="light"
-            >
+
+            <S.PostDetailContent data-color-mode="light">
               <PostDetailInfo post={data} />
 
-              <span className="ptdetail__content-divider" />
+              <S.PostDetailDivider />
 
               <PostDetailViewer content={data.main} />
 
-              <span className="ptdetail__content-divider" />
+              <S.PostDetailDivider />
 
               {isAuthUser && (
                 <>
                   <PostAuthAction postId={id} />
-                  <span className="ptdetail__content-divider" />
+                  <S.PostDetailDivider />
                 </>
               )}
-            </div>
-          </div>
-        </section>
+            </S.PostDetailContent>
+          </S.PostDetailContainer>
+        </S.PostDetailLayout>
       )}
 
       <AlertModal
