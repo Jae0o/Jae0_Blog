@@ -1,5 +1,3 @@
-import "./PostList.style.css";
-
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -10,6 +8,7 @@ import { useBanner, useModal } from "@/hooks";
 import LoadingPage from "@/pages/Loading/Loading";
 import { useQuery } from "@tanstack/react-query";
 
+import * as S from "./PostList.style";
 import { PostListItem } from "./components";
 
 const PostList = (): React.ReactNode => {
@@ -31,17 +30,17 @@ const PostList = (): React.ReactNode => {
   }, [isError, openModal, refetch]);
 
   return (
-    <article className="outlet__ptlist">
-      <div className="ptlist__banner">
+    <S.PostListLayout>
+      <S.PostListBannerContainer>
         <PostBannerDecoration />
         <PostBanner
           thumbnail={bannerThumbnail}
           mainText={bannerAdvice.advice}
           subText={`- ${bannerAdvice.author}`}
         />
-      </div>
+      </S.PostListBannerContainer>
 
-      <ul className="ptlist__list-container">
+      <S.PostListContainer>
         {(isError || isLoading || !postList) && <LoadingPage />}
 
         {postList &&
@@ -51,14 +50,14 @@ const PostList = (): React.ReactNode => {
               key={post.id}
             />
           ))}
-      </ul>
+      </S.PostListContainer>
 
       <AlertModal
         isShow={isShowModal}
         onClose={closeModal}
         message={QUERY_ERROR.GET_POSTS_LIST}
       />
-    </article>
+    </S.PostListLayout>
   );
 };
 
