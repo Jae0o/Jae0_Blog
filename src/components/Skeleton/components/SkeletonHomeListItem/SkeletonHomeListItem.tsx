@@ -1,5 +1,14 @@
+import * as S from "./SkeletonHomeListItem.style";
+
 const SkeletonHomeListItem = () => {
-  return <div>SkeletonHomeListItem</div>;
+  return (
+    <S.SkeletonHomeListItemLayout>
+      <S.SkeletonHomeListItemThumbnailContainer />
+
+      <S.SkeletonHomeListItemTitle />
+      <S.SkeletonHomeListItemTagList />
+    </S.SkeletonHomeListItemLayout>
+  );
 };
 
 export default SkeletonHomeListItem;
