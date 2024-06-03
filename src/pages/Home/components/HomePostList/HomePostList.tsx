@@ -2,24 +2,38 @@ import { useInView } from "framer-motion";
 
 import { useEffect, useRef } from "react";
 
-import { PostListItem } from "@/pages/Post/components/PostList/components";
-import { PostData } from "@/types/original";
+import { QUERY_KEY, getAllPostsList } from "@/api";
+// import { PostListItem } from "@/pages/Post/components/PostList/components";
+import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 
 import * as S from "./HomePostList.style";
+import { HomePostListItem } from "./components";
 
-interface HomePostListProps {
-  posts: PostData[];
-  fetchNextPage: () => void;
-  hasNextPage: boolean;
-}
-
-const HomePostList = ({
-  posts,
-  fetchNextPage,
-  hasNextPage,
-}: HomePostListProps) => {
+const HomePostList = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const { data, fetchNextPage, hasNextPage } = useSuspenseInfiniteQuery({
+    queryKey: QUERY_KEY.GET_POST_LIST_ALL(),
+    queryFn: ({ pageParam }) => getAllPostsList({ cursorId: pageParam }),
+
+    initialPageParam: "",
+    getNextPageParam: (prevList, _, prevParam) => {
+      if (!prevList) {
+        return null;
+      }
+
+      const prevId = prevList.at(-1)?.createAt;
+      if (prevParam === prevId) {
+        return null;
+      }
+
+      return prevId;
+    },
+
+    staleTime: 1000 * 60 * 55,
+    gcTime: 1000 * 60 * 60,
+  });
 
   useEffect(() => {
     if (isInView && hasNextPage) {
@@ -29,12 +43,13 @@ const HomePostList = ({
 
   return (
     <S.HomePostList>
-      {posts.map(post => (
-        <PostListItem
-          key={post.id}
-          post={post}
-        />
-      ))}
+      {data &&
+        data.pages.flat().flatMap(post => (
+          <HomePostListItem
+            key={post.id}
+            post={post}
+          />
+        ))}
 
       <S.ObserveContainer>
         <S.ObserveTarget ref={ref} />
