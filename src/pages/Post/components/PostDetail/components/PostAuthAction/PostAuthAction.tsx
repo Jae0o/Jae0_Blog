@@ -1,11 +1,11 @@
-import "./PostAuthAction.style.css";
-
 import { useNavigate } from "react-router-dom";
 
 import { MUTATION_OPTIONS } from "@/api";
-import { ConfirmModal } from "@/components";
+import { Button, ConfirmModal } from "@/components";
 import { useModal } from "@/hooks";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+
+import * as S from "./PostAuthAction.style";
 
 interface PostAuthActionProps {
   postId: string;
@@ -39,28 +39,35 @@ const PostAuthAction = ({ postId }: PostAuthActionProps) => {
   };
 
   return (
-    <>
-      <aside className="ptdetail__auth-layout">
-        <button
-          className="ptdetail__auth-button"
-          onClick={toEditPage}
-        >
-          수정 하기
-        </button>
-        <button
-          className="ptdetail__auth-button"
-          onClick={openModal}
-        >
-          삭제 하기
-        </button>
-      </aside>
+    <S.PostDetailAuthLayout>
+      <Button
+        backgroundColor="yellow"
+        style={{
+          width: "10rem",
+        }}
+        onClick={toEditPage}
+        shadow
+      >
+        수정 하기
+      </Button>
+
+      <Button
+        backgroundColor="red"
+        style={{
+          width: "10rem",
+        }}
+        onClick={openModal}
+        shadow
+      >
+        삭제 하기
+      </Button>
 
       <ConfirmModal
         isShow={isShowModal}
         onClose={handleDeletePost}
         message="게시물을 삭제하시겠나요? 🙋‍♂️"
       />
-    </>
+    </S.PostDetailAuthLayout>
   );
 };
 
