@@ -1,7 +1,6 @@
 import "./font/pretendard.css";
 import "./styles/Animation.css";
 import "./styles/Quill.style.css";
-import "./styles/Responsive700px.css";
 
 import React from "react";
 import { Outlet } from "react-router-dom";
