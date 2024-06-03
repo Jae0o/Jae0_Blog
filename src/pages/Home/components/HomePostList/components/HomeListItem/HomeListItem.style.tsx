@@ -82,20 +82,20 @@ export const HomeListItemTitle = styled.h2`
 `;
 
 export const HomeListItemTagList = styled.ul`
+  padding: 0.6rem;
   width: 100%;
   height: fit-content;
 
   display: flex;
   align-items: center;
   overflow: scroll;
+  gap: 0.6rem;
 
   ${({ theme }) => theme.scrollBarNone}
 `;
 
 export const HomeListItemTag = styled.li`
   ${OptionItem}
-
-  margin-right: 0.6rem;
 
   background-color: ${({ theme }) => theme.colors.green};
 `;
