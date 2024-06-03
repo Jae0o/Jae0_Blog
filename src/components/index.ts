@@ -17,4 +17,6 @@ export { default as AlertModal } from "./AlertModal/AlertModal";
 export { default as ConfirmModal } from "./ConfirmModal/ConfirmModal";
 export { default as LoginFormModal } from "./LoginFormModal/LoginFormModal";
 
+export { default as Skeleton } from "./Skeleton/Skeleton";
+
 export * from "./Icons";
