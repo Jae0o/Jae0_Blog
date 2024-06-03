@@ -1,8 +1,9 @@
-import "./PostDetailTime.style.css";
-
 import React from "react";
 
 import { convertDateFormat } from "@/util";
+
+import * as GS from "../../PostDetailInfo.style";
+import * as S from "./PostDetailTime.style";
 
 interface PostDetailTimeProps {
   title: string;
@@ -14,10 +15,12 @@ const PostDetailTime = ({
   time,
 }: PostDetailTimeProps): React.ReactNode => {
   return (
-    <div className="ptdetail__time-container">
-      <h6 className="ptdetail__time-title">{title}</h6>
-      <p className="ptdetail__time">{convertDateFormat(JSON.parse(time))}</p>
-    </div>
+    <S.DetailTimeContainer>
+      <GS.DetailInfoContentTitle>{title}</GS.DetailInfoContentTitle>
+      <S.DetailTimeContent>
+        {convertDateFormat(JSON.parse(time))}
+      </S.DetailTimeContent>
+    </S.DetailTimeContainer>
   );
 };
 

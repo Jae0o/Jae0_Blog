@@ -1,6 +1,7 @@
-import "./PostDetailTags.style.css";
-
 import React from "react";
+
+import * as GS from "../../PostDetailInfo.style";
+import * as S from "./PostDetailTags.style";
 
 interface PostDetailTagsProps {
   tags: string[];
@@ -8,20 +9,13 @@ interface PostDetailTagsProps {
 
 const PostDetailTags = ({ tags }: PostDetailTagsProps): React.ReactNode => {
   return (
-    <div className="ptdetail__tags-container">
-      <h6 className="ptdetail__tags-title">태그</h6>
-      <ul className="ptdetail__tags-list">
+    <S.DetailTagLayout>
+      <GS.DetailInfoContentTitle>태그</GS.DetailInfoContentTitle>
+      <S.DetailTagList>
         {tags &&
-          tags.map(tag => (
-            <li
-              key={tag}
-              className="ptdetail__tag"
-            >
-              {tag}
-            </li>
-          ))}
-      </ul>
-    </div>
+          tags.map(tag => <S.DetailTagItem key={tag}>{tag}</S.DetailTagItem>)}
+      </S.DetailTagList>
+    </S.DetailTagLayout>
   );
 };
 

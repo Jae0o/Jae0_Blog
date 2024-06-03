@@ -1,7 +1,6 @@
-import "./PostDetailInfo.style.css";
-
 import { PostData } from "@/types/original";
 
+import * as S from "./PostDetailInfo.style";
 import {
   PostDetailCategory,
   PostDetailTags,
@@ -14,7 +13,7 @@ interface PostDetailInfoProps {
 
 const PostDetailInfo = ({ post }: PostDetailInfoProps) => {
   return (
-    <div className="ptdetail__info">
+    <S.DetailInfo>
       <PostDetailTime
         title={"생성 일시"}
         time={post.createAt}
@@ -28,7 +27,7 @@ const PostDetailInfo = ({ post }: PostDetailInfoProps) => {
       <PostDetailCategory category={post.category} />
 
       <PostDetailTags tags={post.tag} />
-    </div>
+    </S.DetailInfo>
   );
 };
 
