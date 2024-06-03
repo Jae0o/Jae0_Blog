@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 
 const OptionItem = css`
@@ -13,7 +14,7 @@ const OptionItem = css`
   white-space: nowrap;
 `;
 
-export const HomeListItemLayout = styled.li`
+export const HomeListItemLayout = styled(motion.li)`
   width: 32rem;
   padding: 2rem;
 
@@ -21,7 +22,10 @@ export const HomeListItemLayout = styled.li`
   flex-direction: column;
   gap: 1rem;
 
-  border: 1px solid red;
+  border-radius: 1.2rem;
+
+  user-select: none;
+  cursor: pointer;
 `;
 
 export const HomeListItemThumbnailContainer = styled.div`

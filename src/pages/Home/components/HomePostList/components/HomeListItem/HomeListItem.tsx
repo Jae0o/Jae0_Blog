@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { PostData } from "@/types/original";
 import { convertDateFormat } from "@/util";
 
@@ -8,8 +10,19 @@ interface HomeListItemProps {
 }
 
 const HomeListItem = ({ post }: HomeListItemProps) => {
+  const navigate = useNavigate();
+
+  const onNavigate = () => {
+    navigate(`/post/detail/${post.id}`);
+  };
+
   return (
-    <S.HomeListItemLayout>
+    <S.HomeListItemLayout
+      onClick={onNavigate}
+      whileHover={{
+        scale: 1.1,
+      }}
+    >
       <S.HomeListItemThumbnailContainer>
         <S.HomeListItemThumbnail
           src={post.thumbnail}
