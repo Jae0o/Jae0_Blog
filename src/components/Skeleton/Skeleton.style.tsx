@@ -1,4 +1,4 @@
-import { css, keyframes } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const SkeletonKeyframe = keyframes`
       0% {
@@ -10,11 +10,21 @@ export const SkeletonKeyframe = keyframes`
     }  
 `;
 
-export const SkeletonBeforeStyle = css`
+export const SkeletonLayout = styled.div<{
+  $width: string | number;
+  $height: string | number;
+  $radius: string | number;
+}>`
+  width: ${({ $width }) =>
+    typeof $width === "number" ? `${$width}px` : $width};
+  height: ${({ $height }) =>
+    typeof $height === "number" ? `${$height}px` : $height};
+
   position: relative;
   overflow: hidden;
   background-color: #e6e6e6;
-  border-radius: 1.2rem;
+  border-radius: ${({ $radius }) =>
+    typeof $radius === "number" ? `${$radius}px` : $radius};
 
   &::before {
     content: "";

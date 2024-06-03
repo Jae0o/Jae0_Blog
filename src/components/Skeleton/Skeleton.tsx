@@ -1,7 +1,21 @@
+import * as S from "./Skeleton.style";
 import { SkeletonHomeList, SkeletonHomeListItem } from "./components";
 
-const Skeleton = () => {
-  return null;
+interface SkeletonProps {
+  width: string | number;
+  height: string | number;
+
+  radius?: string | number;
+}
+
+const Skeleton = ({ width, height, radius = "1.2rem" }: SkeletonProps) => {
+  return (
+    <S.SkeletonLayout
+      $width={width}
+      $height={height}
+      $radius={radius}
+    />
+  );
 };
 
 export default Skeleton;
