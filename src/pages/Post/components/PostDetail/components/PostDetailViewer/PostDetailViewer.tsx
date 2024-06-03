@@ -1,8 +1,9 @@
 import DOMPurify from "isomorphic-dompurify";
 
-import "./PostDetailViewer.style.css";
 import "@/styles/Quill.style.css";
 import "react-quill/dist/quill.snow.css";
+
+import * as S from "./PostDetailViewer.style";
 
 interface PostDetailViewerProps {
   content: string;
@@ -12,12 +13,12 @@ const PostDetailViewer = ({ content }: PostDetailViewerProps) => {
   const checkXSS = DOMPurify.sanitize(content);
 
   return (
-    <section className="ptdetail__viewer-layout">
+    <S.PostDetailMainLayout>
       <div
         className=" ql-editor"
         dangerouslySetInnerHTML={{ __html: checkXSS }}
       />
-    </section>
+    </S.PostDetailMainLayout>
   );
 };
 

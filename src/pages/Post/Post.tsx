@@ -1,15 +1,18 @@
-import "./Post.style.css";
-
 import React from "react";
 import { Outlet } from "react-router-dom";
 
+import * as S from "./Post.style";
+
 const Post = (): React.ReactNode => {
   return (
-    <section className="outlet__post">
-      <div className="post__container">
+    <S.PostLayout
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+    >
+      <S.PostContainer>
         <Outlet />
-      </div>
-    </section>
+      </S.PostContainer>
+    </S.PostLayout>
   );
 };
 
