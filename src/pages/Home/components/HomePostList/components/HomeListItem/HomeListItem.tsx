@@ -30,7 +30,6 @@ const HomeListItem = ({ post }: HomeListItemProps) => {
           sizes="28rem 21rem"
           loading="lazy"
           decoding="async"
-          fetchPriority="low"
         />
         <S.HomeListItemCreateAt>
           {convertDateFormat(JSON.parse(post.createAt))}
@@ -41,7 +40,7 @@ const HomeListItem = ({ post }: HomeListItemProps) => {
 
       <S.HomeListItemTagList>
         {post.tag.map(tag => (
-          <S.HomeListItemTag>{tag}</S.HomeListItemTag>
+          <S.HomeListItemTag key={tag}>{tag}</S.HomeListItemTag>
         ))}
       </S.HomeListItemTagList>
 
