@@ -1,16 +1,30 @@
 import FileResizer from "react-image-file-resizer";
 
-type ResizeFile = (file: File) => Promise<Blob>;
+interface ResizeFileProps {
+  file: File;
+  maxWidth: number;
+  maxHeight: number;
+  minWidth?: number;
+  minHeight?: number;
+}
 
-const imageResizer: ResizeFile = async file =>
+type ResizeFile = (props: ResizeFileProps) => Promise<Blob>;
+
+const imageResizer: ResizeFile = async ({
+  file,
+  maxWidth,
+  maxHeight,
+  minWidth = 0,
+  minHeight = 0,
+}) =>
   await new Promise(resolve => {
     FileResizer.imageFileResizer(
       file,
-      1200,
-      1200,
+      maxWidth,
+      maxHeight,
       "WEBP",
-      100,
-      0,
+      minWidth,
+      minHeight,
       uri => {
         if (uri instanceof Blob) {
           resolve(uri);
