@@ -28,6 +28,8 @@ const Home = (): React.ReactNode => {
 
       <HomeBanners />
 
+      <S.HomeSectionTitle>📝 게시물</S.HomeSectionTitle>
+
       <Suspense fallback={<Skeleton.SkeletonHomeList />}>
         <HomePostList />
       </Suspense>

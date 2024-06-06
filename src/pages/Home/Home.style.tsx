@@ -30,3 +30,16 @@ export const HomeTitle = styled(motion.h1)`
 
   cursor: default;
 `;
+
+export const HomeSectionTitle = styled.p`
+  width: 100%;
+  padding: 6rem;
+  margin-top: 12rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 3.2rem;
+  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
+`;
