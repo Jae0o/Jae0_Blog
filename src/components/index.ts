@@ -8,8 +8,6 @@ export { default as Navbar } from "./Navbar/Navbar";
 export { default as PostBanner } from "./PostBanner/PostBanner";
 export { default as PostBannerDecoration } from "./PostBannerDecoration/PostBannerDecoration";
 
-export { default as InputImage } from "./InputImage/InputImage";
-
 export { default as LoadingSpinner } from "./LoadingSpinner/LoadingSpinner";
 
 export { default as Modal } from "./Modal/Modal";
