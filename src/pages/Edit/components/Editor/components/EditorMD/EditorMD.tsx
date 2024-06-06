@@ -1,48 +1,25 @@
-import { ImageResize } from "quill-image-resize-module-ts";
-
 import "./EditorMD.style.css";
 import "react-quill/dist/quill.snow.css";
 
 import React, { useMemo, useRef } from "react";
-import ReactQuill, { Quill } from "react-quill";
-
-import { InputImage } from "@/components";
+import ReactQuill from "react-quill";
 
 import { OnTypingEditor } from "../../Editor.type";
+import * as S from "./EditorMD.style";
 import { EDITOR_FORMATS } from "./constants";
+import { useUploadPostImage } from "./hooks";
 
 interface EditorMDProps {
   onTyping: OnTypingEditor;
   state: string;
 }
 
-// 리사이징을 위한 등록
-Quill.register("modules/imageResize", ImageResize);
-
 const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
   const quillRef = useRef<ReactQuill>(null);
-  const imageInputRef = useRef<HTMLInputElement>(null);
+  const { imageInputRef, changeImage } = useUploadPostImage({ quillRef });
 
   const onChangeMD = (newValue: string) => {
     onTyping("main", newValue);
-  };
-
-  const clickImageLabel = () => {
-    const { current } = imageInputRef;
-    console.log(current);
-    if (!current) return;
-
-    current.click();
-  };
-
-  const successImageChange = (url: string) => {
-    const { current } = quillRef;
-    if (!current || !(current instanceof ReactQuill)) return;
-
-    const editor = current.getEditor();
-    const range = editor.getSelection(true);
-
-    editor.insertEmbed(range.index, "image", url);
   };
 
   const editorModules = useMemo(
@@ -61,23 +38,21 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
           [{ align: [] }, "link", "image", "code-block"],
         ],
         handlers: {
-          image: clickImageLabel,
+          image: () => {
+            const { current } = imageInputRef;
+            if (!current) return;
+
+            current.click();
+          },
         },
       },
-      // syntax: {
-      //   highlight: (text: string) => hljs.highlightAuto(text).value,
-      // },
-      imageResize: {
-        parchment: Quill.import("parchment"),
-        modules: ["Resize", "DisplaySize"],
-      },
     }),
-    [],
+    [imageInputRef],
   );
 
   return (
     <>
-      <div className="editor__layout">
+      <S.EditorLayout>
         <ReactQuill
           className="editor__quill"
           ref={quillRef}
@@ -88,12 +63,13 @@ const EditorMD = ({ onTyping, state }: EditorMDProps): React.ReactNode => {
           modules={editorModules}
         />
 
-        <InputImage
-          inputRef={imageInputRef}
-          onSuccess={successImageChange}
-          storagePath={`postImage/${Date.now()}`}
+        <S.EditorImageInput
+          ref={imageInputRef}
+          type="file"
+          accept="image/*"
+          onChange={changeImage}
         />
-      </div>
+      </S.EditorLayout>
     </>
   );
 };
