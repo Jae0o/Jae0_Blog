@@ -1,4 +1,4 @@
-import TEST from "@/assets/banner/Thumnail.png";
+import { BANNER_ITEM_LIST } from "@/constants";
 
 import * as S from "./HomeBanners.style";
 import { HomeBannerItem } from "./components";
@@ -6,27 +6,18 @@ import { HomeBannerItem } from "./components";
 const HomeBanners = () => {
   return (
     <S.HomeBannersLayout>
-      <HomeBannerItem
-        thumbnail={TEST}
-        title="블로그 제작 과정"
-        description="dsadas"
-        stacks={["React", "TypeScript", "Firebase", "Framer-motion"]}
-        isRight={false}
-      />
-      <HomeBannerItem
-        thumbnail={TEST}
-        title="블로그 제작 과정"
-        description="dsadas"
-        stacks={["React", "TypeScript", "Firebase", "Framer-motion"]}
-        isRight={true}
-      />
-      <HomeBannerItem
-        thumbnail={TEST}
-        title="블로그 제작 과정"
-        description="dsadas"
-        stacks={["React", "TypeScript", "Firebase", "Framer-motion"]}
-        isRight={false}
-      />
+      {BANNER_ITEM_LIST.map(
+        ({ thumbnail, title, description, isRight, stacks }) => (
+          <HomeBannerItem
+            key={title}
+            thumbnail={thumbnail}
+            title={title}
+            description={description}
+            stacks={stacks}
+            isRight={isRight}
+          />
+        ),
+      )}
     </S.HomeBannersLayout>
   );
 };

@@ -5,7 +5,7 @@ import React, { Suspense } from "react";
 import { Skeleton } from "@/components";
 
 import * as S from "./Home.style";
-import { HomePostList } from "./components";
+import { HomeBanners, HomePostList } from "./components";
 
 const Home = (): React.ReactNode => {
   const theme = useTheme();
@@ -25,6 +25,8 @@ const Home = (): React.ReactNode => {
           Jae0's Blog
         </S.HomeTitle>
       </S.HomeTitleContainer>
+
+      <HomeBanners />
 
       <Suspense fallback={<Skeleton.SkeletonHomeList />}>
         <HomePostList />
