@@ -8,4 +8,5 @@ export interface PostData {
   category: string;
   tag: string[];
   thumbnail: string;
+  miniThumbnail: string;
 }

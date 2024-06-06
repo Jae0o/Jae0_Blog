@@ -4,6 +4,7 @@ export type EditValue =
   | "isPublic"
   | "tag"
   | "title"
-  | "thumbnail";
+  | "thumbnail"
+  | "miniThumbnail";
 
 export type OnTypingEditor = (key: EditValue, text: string) => void;

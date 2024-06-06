@@ -38,6 +38,7 @@ export const NEW_POST: PostData = {
   category: "",
   tag: [],
   thumbnail: "",
+  miniThumbnail: "",
   main: "",
 };
 
