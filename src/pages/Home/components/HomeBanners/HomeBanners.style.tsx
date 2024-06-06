@@ -7,5 +7,5 @@ export const HomeBannersLayout = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rem;
+  gap: 12rem;
 `;

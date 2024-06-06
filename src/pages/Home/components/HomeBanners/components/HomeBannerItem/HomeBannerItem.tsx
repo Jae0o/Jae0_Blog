@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import * as S from "./HomeBannerItem.styles";
 
 interface HomeBannerItemProps {
@@ -6,6 +8,7 @@ interface HomeBannerItemProps {
   description: string;
   stacks: string[];
   isRight: boolean;
+  path: string;
 }
 
 const HomeBannerItem = ({
@@ -14,9 +17,12 @@ const HomeBannerItem = ({
   description,
   stacks,
   isRight,
+  path,
 }: HomeBannerItemProps) => {
+  const navigate = useNavigate();
   return (
     <S.HomeBannerLayout
+      onClick={() => navigate(path)}
       $isRight={isRight}
       whileHover={{
         scale: 1.06,

@@ -7,7 +7,7 @@ const HomeBanners = () => {
   return (
     <S.HomeBannersLayout>
       {BANNER_ITEM_LIST.map(
-        ({ thumbnail, title, description, isRight, stacks }) => (
+        ({ thumbnail, title, description, isRight, stacks, path }) => (
           <HomeBannerItem
             key={title}
             thumbnail={thumbnail}
@@ -15,6 +15,7 @@ const HomeBanners = () => {
             description={description}
             stacks={stacks}
             isRight={isRight}
+            path={path}
           />
         ),
       )}
