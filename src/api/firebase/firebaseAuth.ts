@@ -8,7 +8,7 @@ import {
 
 import { firebaseApp } from "./firebase";
 
-const auth = getAuth(firebaseApp);
+export const auth = getAuth(firebaseApp);
 
 interface LoginInfo {
   email: string;
