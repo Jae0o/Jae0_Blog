@@ -1,3 +1,6 @@
+import { useInView } from "framer-motion";
+
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as S from "./HomeBannerItem.styles";
@@ -20,6 +23,16 @@ const HomeBannerItem = ({
   path,
 }: HomeBannerItemProps) => {
   const navigate = useNavigate();
+  const [imageUrl, setImageUrl] = useState("");
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    if (isInView) {
+      setImageUrl(thumbnail);
+    }
+  }, [isInView, thumbnail]);
+
   return (
     <S.HomeBannerLayout
       onClick={() => navigate(path)}
@@ -29,7 +42,8 @@ const HomeBannerItem = ({
       }}
     >
       <S.HomeBannerItemImage
-        src={thumbnail}
+        ref={ref}
+        src={imageUrl}
         alt={`Project_Preview ${title}`}
         sizes="40rem 32rem"
       />

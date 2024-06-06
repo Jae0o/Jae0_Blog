@@ -144,14 +144,14 @@ const stackColors = {
   },
   text: {
     React: "#000000",
-    Next: "#000",
+    Next: "#fafafa",
     Firebase: "#000000",
     TypeScript: "#000",
     StyledComponent: "#000",
     Storybook: "#000",
     Tailwind: "#000",
     KakaoMap: "#000000",
-    FramerMotion: "#000",
+    FramerMotion: "#fafafa",
     ReactPlayer: "#000",
   },
 };
