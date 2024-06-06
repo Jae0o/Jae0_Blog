@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 export const HomeBannerLayout = styled(motion.li)<{ $isRight?: boolean }>`
   width: 100%;
+  max-width: 80rem;
+  padding: 0rem 2rem;
   height: 32rem;
 
   display: flex;
