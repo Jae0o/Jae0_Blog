@@ -102,59 +102,59 @@ const media = {
   mobile: "max-width : 480px",
 };
 
-// const stackColors = {
-//   main: {
-//     React: "#61dbfb",
-//     Next: "#000",
-//     Firebase: "#FFA611",
-//     TypeScript: "#3178c6",
-//     StyledComponent: "rgb(215,115,110)",
-//     Storybook: "rgb(225,57,123)",
-//     Tailwind: "rgb(59,176,243)",
-//     KakaoMap: "#fee500",
-//     FramerMotion: "rgb(132,0,250)",
-//     ReactPlayer: "rgb(225,118,77)",
-//   },
-//   text: {
-//     React: "#fafafa",
-//     Next: "#fafafa",
-//     Firebase: "#fafafa",
-//     TypeScript: "#fafafa",
-//     StyledComponent: "#fafafa",
-//     Storybook: "#fafafa",
-//     Tailwind: "#fafafa",
-//     KakaoMap: "#000",
-//     FramerMotion: "#fafafa",
-//     ReactPlayer: "#fafafa",
-//   },
-// };
-
 const stackColors = {
   main: {
     React: "#61dbfb",
-    Next: "#656d78",
+    Next: "#000",
     Firebase: "#FFA611",
     TypeScript: "#3178c6",
-    StyledComponent: "#d77368",
-    Storybook: "#e13977",
-    Tailwind: "#3bb0f3",
+    StyledComponent: "rgb(215,115,110)",
+    Storybook: "rgb(225,57,123)",
+    Tailwind: "rgb(59,176,243)",
     KakaoMap: "#fee500",
-    FramerMotion: "#8400fa",
-    ReactPlayer: "#e17653",
+    FramerMotion: "rgb(132,0,250)",
+    ReactPlayer: "rgb(225,118,77)",
   },
   text: {
-    React: "#000000",
+    React: "#fafafa",
     Next: "#fafafa",
-    Firebase: "#000000",
-    TypeScript: "#000",
-    StyledComponent: "#000",
-    Storybook: "#000",
-    Tailwind: "#000",
-    KakaoMap: "#000000",
+    Firebase: "#fafafa",
+    TypeScript: "#fafafa",
+    StyledComponent: "#fafafa",
+    Storybook: "#fafafa",
+    Tailwind: "#fafafa",
+    KakaoMap: "#000",
     FramerMotion: "#fafafa",
-    ReactPlayer: "#000",
+    ReactPlayer: "#fafafa",
   },
 };
+
+// const stackColors = {
+//   main: {
+//     React: "#61dbfb",
+//     Next: "#656d78",
+//     Firebase: "#FFA611",
+//     TypeScript: "#3178c6",
+//     StyledComponent: "#d77368",
+//     Storybook: "#e13977",
+//     Tailwind: "#3bb0f3",
+//     KakaoMap: "#fee500",
+//     FramerMotion: "#8400fa",
+//     ReactPlayer: "#e17653",
+//   },
+//   text: {
+//     React: "#000000",
+//     Next: "#fafafa",
+//     Firebase: "#000000",
+//     TypeScript: "#000",
+//     StyledComponent: "#000",
+//     Storybook: "#000",
+//     Tailwind: "#000",
+//     KakaoMap: "#000000",
+//     FramerMotion: "#fafafa",
+//     ReactPlayer: "#000",
+//   },
+// };
 
 export type ColorsType = typeof colors;
 export type FontWeightType = typeof fontWeight;
