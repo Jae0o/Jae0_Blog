@@ -1,10 +1,9 @@
-import "./EditorThumbnail.style.css";
-
 import React, { useRef } from "react";
 
-import { InputImage } from "@/components";
+import { Button } from "@/components";
 
 import { EditValue } from "../../Editor.type";
+import * as S from "./EditorThumbnail.style";
 
 interface EditorThumbnailProps {
   onSelect: (key: EditValue, value: string) => void;
@@ -31,25 +30,34 @@ const EditorThumbnail = ({
   };
 
   return (
-    <div className="Editor__thumbnail">
-      <label
-        className="thumbnail__title"
-        htmlFor="thumbnail__input-id"
+    <S.EditorThumbnailLayout>
+      <Button
+        style={{
+          width: "14rem",
+        }}
         onClick={changeImageInput}
       >
-        {"썸네일 추가"}
-      </label>
+        썸네일 추가
+      </Button>
 
-      <p className="thumbnail__info">
+      <S.EditorThumbnailContent>
         {thumbnail ? thumbnail : "썸네일을 넣어주세요!"}
-      </p>
+      </S.EditorThumbnailContent>
 
-      <InputImage
+      {/* <InputImage
         inputRef={inputRef}
         storagePath={`thumbnail/${postId}`}
         onSuccess={successChangeThumbnail}
+      /> */}
+
+      <S.EditorThumbnailImageInput
+        className="input__image-hide"
+        ref={inputRef}
+        type="file"
+        accept="image/*"
+        onChange={() => {}}
       />
-    </div>
+    </S.EditorThumbnailLayout>
   );
 };
 
