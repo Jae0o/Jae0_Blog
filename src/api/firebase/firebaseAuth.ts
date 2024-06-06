@@ -1,11 +1,14 @@
 import {
   UserCredential,
-  browserSessionPersistence, // createUserWithEmailAndPassword,
+  browserSessionPersistence,
+  getAuth, // createUserWithEmailAndPassword,
   setPersistence,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-import { auth } from "./firebase";
+import { firebaseApp } from "./firebase";
+
+const auth = getAuth(firebaseApp);
 
 interface LoginInfo {
   email: string;

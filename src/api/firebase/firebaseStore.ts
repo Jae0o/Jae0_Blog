@@ -1,9 +1,11 @@
-import { getDownloadURL, ref } from "firebase/storage";
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
 import { uploadBytes } from "firebase/storage";
 
 import { imageResizer } from "@/util";
 
-import { firebaseStorage } from "./firebase";
+import { firebaseApp } from "./firebase";
+
+export const firebaseStorage = getStorage(firebaseApp);
 
 export interface SetImageStorage {
   file: File;

@@ -1,10 +1,11 @@
-import { get, ref, set } from "firebase/database";
+import { get, getDatabase, ref, set } from "firebase/database";
 import {
   collection,
   deleteDoc,
   doc,
   getDoc,
   getDocs,
+  getFirestore,
   limit,
   orderBy,
   query,
@@ -15,7 +16,10 @@ import {
 
 import { PostData } from "@/types/original";
 
-import { database, fireStore } from "./firebase";
+import { firebaseApp } from "./firebase";
+
+const database = getDatabase(firebaseApp);
+const fireStore = getFirestore(firebaseApp);
 
 /* ============== Options ============== */
 export interface SetOptions {
