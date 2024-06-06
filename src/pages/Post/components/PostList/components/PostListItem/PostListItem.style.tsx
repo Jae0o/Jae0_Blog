@@ -15,7 +15,7 @@ export const PostItem = styled(motion.li)`
 
   @media (${({ theme }) => theme.media.mobile}) {
     height: fit-content;
-    min-height: 22rem;
+    min-height: 30rem;
 
     flex-direction: column;
     align-items: center;
@@ -111,8 +111,10 @@ export const PostItemTitle = styled.h2`
   font-size: ${({ theme }) => theme.fontSize.semiBig};
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
 
-  overflow: hidden;
+  overflow: scroll;
   text-overflow: ellipsis;
+  ${({ theme }) => theme.scrollBarNone}
+
   white-space: nowrap;
 `;
 
