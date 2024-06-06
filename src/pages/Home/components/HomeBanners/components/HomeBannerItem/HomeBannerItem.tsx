@@ -28,7 +28,11 @@ const HomeBannerItem = ({
         scale: 1.06,
       }}
     >
-      <S.HomeBannerItemImage src={thumbnail} />
+      <S.HomeBannerItemImage
+        src={thumbnail}
+        alt={`Project_Preview ${title}`}
+        sizes="40rem 32rem"
+      />
 
       <S.HomeBannerInfo>
         <S.HomeBannerTitle>{title}</S.HomeBannerTitle>
