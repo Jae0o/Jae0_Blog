@@ -42,8 +42,6 @@ const HomeListItem = ({ post }: HomeListItemProps) => {
           src={imageUrl}
           alt={`post thumbnail ${post.title}`}
           sizes="28rem 21rem"
-          loading="lazy"
-          decoding="async"
         />
         <S.HomeListItemCreateAt>
           {convertDateFormat(JSON.parse(post.createAt))}

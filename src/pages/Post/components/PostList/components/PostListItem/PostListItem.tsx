@@ -45,8 +45,6 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
           src={imageUrl}
           alt={`post thumbnail ${post.title}`}
           sizes="(max-width: 480px) 20rem, (min-width: 1050px) 16rem"
-          loading="lazy"
-          decoding="async"
         />
         <S.PostItemCreateAt>{formattedDate}</S.PostItemCreateAt>
       </S.PostItemThumbnailLayout>
