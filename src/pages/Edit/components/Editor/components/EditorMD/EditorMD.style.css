@@ -1,11 +1,3 @@
-.editor__layout {
-  flex-grow: 1;
-  height: 100%;
-  margin: 0rem 1rem;
-
-  overflow-y: scroll;
-}
-
 .editor__quill {
   width: 100%;
   height: 90%;
