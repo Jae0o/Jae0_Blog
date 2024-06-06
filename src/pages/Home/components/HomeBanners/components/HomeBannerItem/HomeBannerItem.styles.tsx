@@ -77,12 +77,15 @@ export const HomeBannerStackList = styled.ul`
   gap: 1.2rem;
 `;
 
-export const HomeBannerStackItem = styled.li`
-  padding: 0.8rem 1rem;
+export const HomeBannerStackItem = styled.li<{ $stack: string }>`
+  padding: 0.6rem 1rem;
 
   border-radius: 99rem;
-  background-color: ${({ theme }) => theme.colors.green};
+  background-color: ${({ theme, $stack }) =>
+    theme.stackColors.main[$stack] ?? theme.colors.green};
 
+  color: ${({ theme, $stack }) =>
+    theme.stackColors.text[$stack] ?? theme.colors.text};
   font-size: ${({ theme }) => theme.fontSize.semiLarge};
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   line-height: 1.4;

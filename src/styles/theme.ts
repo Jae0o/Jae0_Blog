@@ -102,6 +102,33 @@ const media = {
   mobile: "max-width : 480px",
 };
 
+const stackColors = {
+  main: {
+    React: "#61dbfb",
+    Next: "#000",
+    Firebase: "#FFA611",
+    TypeScript: "#3178c6",
+    StyledComponent: "rgb(215,115,110)",
+    Storybook: "rgb(225,57,123)",
+    Tailwind: "rgb(59,176,243)",
+    KakaoMap: "#fee500",
+    FramerMotion: "rgb(132,0,250)",
+    ReactPlayer: "rgb(225,118,77)",
+  },
+  text: {
+    React: "#fafafa",
+    Next: "#fafafa",
+    Firebase: "#fafafa",
+    TypeScript: "#fafafa",
+    StyledComponent: "#fafafa",
+    Storybook: "#fafafa",
+    Tailwind: "#fafafa",
+    KakaoMap: "#000",
+    FramerMotion: "#fafafa",
+    ReactPlayer: "#fafafa",
+  },
+};
+
 export type ColorsType = typeof colors;
 export type FontWeightType = typeof fontWeight;
 export type SizeType = typeof fontSize;
@@ -113,6 +140,7 @@ export type Opacity = typeof opacity;
 export type FontFamily = typeof fontFamily;
 export type Shadow = typeof shadow;
 export type Media = typeof media;
+export type StackColors = typeof stackColors;
 
 const theme: DefaultTheme = {
   colors,
@@ -126,6 +154,7 @@ const theme: DefaultTheme = {
   fontFamily,
   shadow,
   media,
+  stackColors,
 };
 
 export default theme;

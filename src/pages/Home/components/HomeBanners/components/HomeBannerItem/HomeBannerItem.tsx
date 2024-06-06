@@ -30,7 +30,9 @@ const HomeBannerItem = ({
 
         <S.HomeBannerStackList>
           {stacks.map(stack => (
-            <S.HomeBannerStackItem> {stack}</S.HomeBannerStackItem>
+            <S.HomeBannerStackItem $stack={stack}>
+              {stack}
+            </S.HomeBannerStackItem>
           ))}
         </S.HomeBannerStackList>
       </S.HomeBannerInfo>
