@@ -7,12 +7,14 @@ import {
   setImageStorage,
   setOptions,
   setPost,
+  setPostImageStorage,
 } from "../firebase";
 
 export const MUTATION_KEY = {
   SET_POST: () => ["post", "set"],
   SET_OPTIONS: (optionType: string) => ["options", "set", optionType],
   SET_IMAGE: () => ["image", "set"],
+  SET_POST_IMAGE: () => ["image", "post", "set"],
 
   DELETE_POST: () => ["delete", "post"],
 };
@@ -31,6 +33,11 @@ export const MUTATION_OPTIONS = {
   SET_IMAGE: () => ({
     mutationKey: MUTATION_KEY.SET_IMAGE(),
     mutationFn: (imageInfo: SetImageStorage) => setImageStorage(imageInfo),
+  }),
+
+  SET_POST_IMAGE: () => ({
+    mutationKey: MUTATION_KEY.SET_IMAGE(),
+    mutationFn: (imageInfo: SetImageStorage) => setPostImageStorage(imageInfo),
   }),
 
   DELETE_POST: () => ({

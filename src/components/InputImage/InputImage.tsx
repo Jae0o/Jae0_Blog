@@ -19,7 +19,7 @@ const InputImage = ({ inputRef, storagePath, onSuccess }: InputImageProps) => {
     const file = target.files[0];
 
     mutate(
-      { file, path: storagePath },
+      { file, id: storagePath },
       {
         onSuccess: newImageUrl => {
           onSuccess(newImageUrl);
