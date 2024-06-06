@@ -1,3 +1,6 @@
+import { useInView } from "framer-motion";
+
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { PostData } from "@/types/original";
@@ -11,10 +14,20 @@ interface HomeListItemProps {
 
 const HomeListItem = ({ post }: HomeListItemProps) => {
   const navigate = useNavigate();
+  const [imageUrl, setImageUrl] = useState("");
 
   const onNavigate = () => {
     navigate(`/post/detail/${post.id}`);
   };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    if (isInView) {
+      setImageUrl(post.thumbnail);
+    }
+  }, [isInView, post]);
 
   return (
     <S.HomeListItemLayout
@@ -25,7 +38,8 @@ const HomeListItem = ({ post }: HomeListItemProps) => {
     >
       <S.HomeListItemThumbnailContainer>
         <S.HomeListItemThumbnail
-          src={post.thumbnail}
+          ref={ref}
+          src={imageUrl}
           alt={`post thumbnail ${post.title}`}
           sizes="28rem 21rem"
           loading="lazy"

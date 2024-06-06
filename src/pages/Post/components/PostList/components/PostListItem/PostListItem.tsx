@@ -1,4 +1,6 @@
-import React from "react";
+import { useInView } from "framer-motion";
+
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { PostData } from "@/types/original";
@@ -14,6 +16,16 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
   const formattedDate: string = convertDateFormat(JSON.parse(post.createAt));
 
   const navigate = useNavigate();
+  const [imageUrl, setImageUrl] = useState("");
+
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+
+  useEffect(() => {
+    if (isInView) {
+      setImageUrl(post.thumbnail);
+    }
+  }, [isInView, post]);
 
   const onNavigate = () => {
     navigate(`/post/detail/${post.id}`);
@@ -29,7 +41,8 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
     >
       <S.PostItemThumbnailLayout>
         <S.PostItemThumbnail
-          src={post.thumbnail}
+          ref={ref}
+          src={imageUrl}
           alt={`post thumbnail ${post.title}`}
           sizes="(max-width: 480px) 20rem, (min-width: 1050px) 16rem"
           loading="lazy"
