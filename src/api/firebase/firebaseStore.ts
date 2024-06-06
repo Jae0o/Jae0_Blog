@@ -10,27 +10,57 @@ export interface SetImageStorage {
   id: string;
 }
 
-export const setImageStorage = async ({ file, id }: SetImageStorage) => {
-  let resizedImage: File | Blob = file;
+export const setThumbnailImageStorage = async ({
+  file,
+  id,
+}: SetImageStorage) => {
+  let thumbnailImage: File | Blob = file;
+
+  let miniThumbnailImage: File | Blob = file;
 
   if (file.type !== "image/gif") {
-    resizedImage = await imageResizer({
+    thumbnailImage = await imageResizer({
       file,
       maxWidth: 1200,
       maxHeight: 500,
+      minHeight: 500,
+    });
+
+    miniThumbnailImage = await imageResizer({
+      file,
+      maxWidth: 280,
+      maxHeight: 300,
     });
   }
 
-  const storageRef = ref(firebaseStorage, `image/${id}`);
-  const newImage = await uploadBytes(storageRef, resizedImage)
+  const mainStorageRef = ref(
+    firebaseStorage,
+    `image/thumbnail/${id}/main_image_${id}`,
+  );
+
+  const miniStorageRef = ref(
+    firebaseStorage,
+    `image/thumbnail/${id}/mini_${id}`,
+  );
+
+  const newMainImage = await uploadBytes(mainStorageRef, thumbnailImage)
+    .then(res => res)
+    .catch(() => {
+      throw new Error("set image error");
+    });
+  const newMiniImage = await uploadBytes(miniStorageRef, miniThumbnailImage)
     .then(res => res)
     .catch(() => {
       throw new Error("set image error");
     });
 
-  const newImageUrl = await getDownloadURL(newImage.ref);
+  const mainImage = await getDownloadURL(newMainImage.ref);
+  const miniImage = await getDownloadURL(newMiniImage.ref);
 
-  return newImageUrl;
+  return {
+    mainImage,
+    miniImage,
+  };
 };
 
 export const setPostImageStorage = async ({ file, id }: SetImageStorage) => {

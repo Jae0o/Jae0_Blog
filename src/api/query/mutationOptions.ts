@@ -4,10 +4,10 @@ import { PostData } from "@/types/original";
 import {
   SetImageStorage,
   deletePost,
-  setImageStorage,
   setOptions,
   setPost,
   setPostImageStorage,
+  setThumbnailImageStorage,
 } from "../firebase";
 
 export const MUTATION_KEY = {
@@ -32,7 +32,8 @@ export const MUTATION_OPTIONS = {
 
   SET_IMAGE: () => ({
     mutationKey: MUTATION_KEY.SET_IMAGE(),
-    mutationFn: (imageInfo: SetImageStorage) => setImageStorage(imageInfo),
+    mutationFn: (imageInfo: SetImageStorage) =>
+      setThumbnailImageStorage(imageInfo),
   }),
 
   SET_POST_IMAGE: () => ({
