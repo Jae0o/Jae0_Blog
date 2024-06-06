@@ -25,7 +25,7 @@ const HomeListItem = ({ post }: HomeListItemProps) => {
 
   useEffect(() => {
     if (isInView) {
-      setImageUrl(post.thumbnail);
+      setImageUrl(post.miniThumbnail);
     }
   }, [isInView, post]);
 

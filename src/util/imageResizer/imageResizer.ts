@@ -23,14 +23,16 @@ const imageResizer: ResizeFile = async ({
       maxWidth,
       maxHeight,
       "WEBP",
-      minWidth,
-      minHeight,
+      100,
+      0,
       uri => {
         if (uri instanceof Blob) {
           resolve(uri);
         }
       },
       "blob",
+      minWidth,
+      minHeight,
     );
   });
 

@@ -28,8 +28,8 @@ export const setThumbnailImageStorage = async ({
 
     miniThumbnailImage = await imageResizer({
       file,
-      maxWidth: 280,
-      maxHeight: 300,
+      maxWidth: 300,
+      maxHeight: 210,
     });
   }
 

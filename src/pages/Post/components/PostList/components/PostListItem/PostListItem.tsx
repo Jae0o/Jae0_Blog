@@ -23,7 +23,7 @@ const PostListItem = ({ post }: PostListItemProps): React.ReactNode => {
 
   useEffect(() => {
     if (isInView) {
-      setImageUrl(post.thumbnail);
+      setImageUrl(post.miniThumbnail);
     }
   }, [isInView, post]);
 
