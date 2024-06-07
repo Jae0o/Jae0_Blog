@@ -126,7 +126,7 @@ export const BANNER_ITEM_LIST = [
       "평소 구현하고 싶었던 기능을 마음껏 자유롭게 구현할 수 있는 나만의 도화지 같은 공간입니다.",
     stacks: ["React", "TypeScript", "Firebase", "FramerMotion"],
     isRight: false,
-    path: "/post/list/Blog",
+    path: "/post/list/BLOG",
   },
   {
     thumbnail: MASIL_THUMBNAIL,
