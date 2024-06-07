@@ -28,7 +28,7 @@ export const HomeBannerLayout = styled(motion.li)<{ $isRight?: boolean }>`
 
 export const HomeBannerItemImage = styled.img`
   width: 40rem;
-  height: 100%;
+  height: 32rem;
 
   border-radius: 1.6rem;
   box-shadow: ${({ theme }) => theme.shadow.small};
@@ -37,7 +37,7 @@ export const HomeBannerItemImage = styled.img`
 
   @media (${({ theme }) => theme.media.mobile}) {
     width: 30rem;
-    height: fit-content;
+    height: 24rem;
   }
 `;
 

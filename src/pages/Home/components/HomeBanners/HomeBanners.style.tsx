@@ -8,4 +8,9 @@ export const HomeBannersLayout = styled.ul`
   flex-direction: column;
   align-items: center;
   gap: 12rem;
+
+  @media (${({ theme }) => theme.media.mobile}) {
+    gap: 2rem;
+    padding: 2rem 2rem;
+  }
 `;

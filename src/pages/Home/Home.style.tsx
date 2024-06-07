@@ -42,4 +42,9 @@ export const HomeSectionTitle = styled.p`
 
   font-size: 3.2rem;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
+
+  @media (${({ theme }) => theme.media.mobile}) {
+    margin-top: 6rem;
+    padding: 2rem;
+  }
 `;
