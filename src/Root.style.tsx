@@ -26,4 +26,9 @@ export const OutletLayout = styled.section`
     width: 100%;
     height: calc(100% - 10rem);
   }
+
+  @media (${({ theme }) => theme.media.mobile}) {
+    width: 100%;
+    height: calc(100% - 10rem);
+  }
 `;
