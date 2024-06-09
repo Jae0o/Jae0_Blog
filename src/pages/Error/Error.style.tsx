@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const ErrorPageBackground = styled.div`
@@ -18,7 +19,7 @@ export const ErrorPageLayout = styled.section`
   background-color: ${({ theme }) => theme.colors.transparent_50};
 `;
 
-export const ErrorPageContainer = styled.article`
+export const ErrorPageContainer = styled(motion.article)`
   width: 40%;
   min-width: 30rem;
 
@@ -54,5 +55,5 @@ export const ErrorPageActions = styled.div`
 
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: 2rem;
 `;
