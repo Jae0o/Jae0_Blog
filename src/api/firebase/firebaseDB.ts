@@ -1,4 +1,4 @@
-import { get, getDatabase, ref, set } from "firebase/database";
+import { get, getDatabase, ref } from "firebase/database";
 import {
   collection,
   deleteDoc,
@@ -27,11 +27,12 @@ export interface SetOptions {
   value: string;
 }
 export const setOptions = async ({ option, value }: SetOptions) => {
-  await set(ref(database, `${option}/${value}`), value).catch(() => {
+  await setDoc(doc(fireStore, `options`, option), {
+    list: [value],
+  }).catch(() => {
     throw Error(`set options ${option} Error`);
   });
 };
-
 type GetOptions = (optionsType: string) => Promise<string[]>;
 
 export const getOptions: GetOptions = async optionsType => {
