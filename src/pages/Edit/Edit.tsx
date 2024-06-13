@@ -56,6 +56,7 @@ const Edit = () => {
     openTagModal,
     tagListRefetch,
   ]);
+
   const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation(MUTATION_OPTIONS.SET_POST());
   const navigate = useNavigate();

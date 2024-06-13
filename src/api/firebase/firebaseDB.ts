@@ -24,11 +24,11 @@ const fireStore = getFirestore(firebaseApp);
 /* ============== Options ============== */
 export interface SetOptions {
   option: string;
-  value: string;
+  value: string[];
 }
 export const setOptions = async ({ option, value }: SetOptions) => {
   await setDoc(doc(fireStore, `options`, option), {
-    list: [value],
+    list: value,
   }).catch(() => {
     throw Error(`set options ${option} Error`);
   });

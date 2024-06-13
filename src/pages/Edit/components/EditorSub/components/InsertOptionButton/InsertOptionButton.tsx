@@ -2,18 +2,22 @@ import "./InsertOptionButton.style.css";
 
 import React from "react";
 
-import { MUTATION_OPTIONS, QUERY_KEY } from "@/api";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { MUTATION_OPTIONS } from "@/api";
+import { useOptionsStore } from "@/stores";
+import { useMutation } from "@tanstack/react-query";
 
 interface InsertOptionButtonProps {
   optionName: string;
+  optionList: string[];
 }
 
 const InsertOptionButton = ({
   optionName,
+  optionList,
 }: InsertOptionButtonProps): React.ReactNode => {
-  const queryClient = useQueryClient();
   const { mutate } = useMutation(MUTATION_OPTIONS.SET_OPTION(optionName));
+  const { setOption } = useOptionsStore();
+
   const addListHandler = () => {
     const value = prompt(`새로 추가할 ${optionName}의 이름을 넣어주세요`);
 
@@ -26,16 +30,13 @@ const InsertOptionButton = ({
     if (!isAgree) return;
 
     mutate(
-      { option: optionName, value },
+      { option: optionName, value: [...optionList, value] },
       {
         onSuccess: () => {
-          queryClient.refetchQueries({
-            queryKey: QUERY_KEY.GET_OPTIONS(optionName),
-          });
+          setOption(optionName, [...optionList, value]);
         },
       },
     );
-    return;
   };
 
   return (
