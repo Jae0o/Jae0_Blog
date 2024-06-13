@@ -35,10 +35,6 @@ const Edit = () => {
     return <LoadingPage />;
   }
 
-  // if (isCategoryListError || isCategoryListLoading || !categoryList) {
-  //   return <LoadingPage />;
-  // }
-
   return (
     <section className="outlet__edit">
       <CheckAdmin>
