@@ -4,8 +4,7 @@ import { persist } from "zustand/middleware";
 interface UseOptionsStore {
   categories: string[];
   tags: string[];
-  setCategoryList: (newList: string[]) => void;
-  setTagList: (newList: string[]) => void;
+  setOption: (type: string, newList: string[]) => void;
 }
 
 const useOptionsStore = create<UseOptionsStore>()(
@@ -13,10 +12,16 @@ const useOptionsStore = create<UseOptionsStore>()(
     set => ({
       categories: [],
       tags: [],
-      setCategoryList: newList => set(() => ({ categories: newList })),
-      setTagList: newList => set(() => ({ tags: newList })),
+      setOption: (type, newList) =>
+        set(() => {
+          if (type === "category") {
+            return { categories: newList };
+          }
+
+          return { tags: newList };
+        }),
     }),
-    { name: "category_list" },
+    { name: "options" },
   ),
 );
 
