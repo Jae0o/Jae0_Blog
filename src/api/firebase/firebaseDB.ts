@@ -1,4 +1,3 @@
-import { get, getDatabase, ref } from "firebase/database";
 import {
   collection,
   deleteDoc,
@@ -18,7 +17,6 @@ import { PostData } from "@/types/original";
 
 import { firebaseApp } from "./firebase";
 
-const database = getDatabase(firebaseApp);
 const fireStore = getFirestore(firebaseApp);
 
 /* ============== Options ============== */
@@ -33,21 +31,19 @@ export const setOptions = async ({ option, value }: SetOptions) => {
     throw Error(`set options ${option} Error`);
   });
 };
+
 type GetOptions = (optionsType: string) => Promise<string[]>;
 
-export const getOptions: GetOptions = async optionsType => {
-  return await get(ref(database, optionsType))
-    .then(res => {
-      if (res.exists()) {
-        const fetchedOptions: string[] = Object.values(res.val());
-        return fetchedOptions;
-      }
+export const getOptions: GetOptions = async (optionsType: string) => {
+  const queryRef = doc(fireStore, "options", optionsType);
 
-      throw new Error("getOption Error");
-    })
-    .catch(() => {
-      throw new Error("getOption Error");
-    });
+  const res = await getDoc(queryRef);
+
+  if (res.exists()) {
+    return res.data().list;
+  }
+
+  throw new Error("get post Error");
 };
 
 /* =============== POST =============== */
