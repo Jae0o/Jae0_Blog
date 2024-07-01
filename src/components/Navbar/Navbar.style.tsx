@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const NavbarBackground = styled(motion.section)`
   width: 100%;
-  height: 10rem;
+  height: 8rem;
 
   position: relative;
   top: 0;

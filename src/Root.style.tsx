@@ -24,11 +24,11 @@ export const OutletLayout = styled.section`
 
   @media (${({ theme }) => theme.media.tablet}) {
     width: 100%;
-    height: calc(100% - 10rem);
+    height: calc(100% - 8rem);
   }
 
   @media (${({ theme }) => theme.media.mobile}) {
     width: 100%;
-    height: calc(100% - 10rem);
+    height: calc(100% - 8rem);
   }
 `;
