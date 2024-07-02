@@ -1,8 +1,9 @@
+import { useScroll } from "framer-motion";
 import { useTheme } from "styled-components";
 
-import React, { Suspense } from "react";
+import React, { Suspense, useRef } from "react";
 
-import { Skeleton } from "@/components";
+import { ProgressBar, Skeleton } from "@/components";
 
 import * as S from "./Home.style";
 import { HomeBanners, HomePostList } from "./components";
@@ -10,11 +11,17 @@ import { HomeBanners, HomePostList } from "./components";
 const Home = (): React.ReactNode => {
   const theme = useTheme();
 
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ container: ref });
+
   return (
     <S.HomeLayout
+      ref={ref}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <ProgressBar scrollYProgress={scrollYProgress} />
+
       <S.HomeTitleContainer>
         <S.HomeTitle
           whileHover={{
