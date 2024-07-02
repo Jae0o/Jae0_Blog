@@ -9,6 +9,8 @@ export const PostItem = styled(motion.li)`
   display: flex;
   align-items: center;
 
+  border-radius: 1.2rem;
+
   user-select: none;
   cursor: pointer;
   overflow: hidden;
