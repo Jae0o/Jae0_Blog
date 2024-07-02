@@ -1,9 +1,16 @@
-import React, { useContext, useEffect } from "react";
+import { useScroll } from "framer-motion";
+
+import React, { useContext, useEffect, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { ContextAuthUser } from "@/Context/ContextAuthUser";
 import { QUERY_OPTIONS } from "@/api";
-import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
+import {
+  AlertModal,
+  PostBanner,
+  PostBannerDecoration,
+  ProgressBar,
+} from "@/components";
 import { QUERY_ERROR } from "@/constants";
 import { useModal } from "@/hooks";
 import { useQuery } from "@tanstack/react-query";
@@ -18,6 +25,9 @@ const PostDetail = (): React.ReactNode => {
   const { isAuthUser } = useContext(ContextAuthUser);
   const navigate = useNavigate();
 
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ container: ref });
+
   useEffect(() => {
     if (isError) {
       openModal();
@@ -29,7 +39,8 @@ const PostDetail = (): React.ReactNode => {
       {data && (
         <S.PostDetailLayout>
           <PostBannerDecoration />
-          <S.PostDetailContainer>
+          <S.PostDetailContainer ref={ref}>
+            <ProgressBar scrollYProgress={scrollYProgress} />
             <PostBanner
               thumbnail={data.thumbnail}
               mainText={data.title}
