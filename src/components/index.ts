@@ -16,5 +16,6 @@ export { default as ConfirmModal } from "./ConfirmModal/ConfirmModal";
 export { default as LoginFormModal } from "./LoginFormModal/LoginFormModal";
 
 export { default as Skeleton } from "./Skeleton/Skeleton";
+export { default as ProgressBar } from "./ProgressBar/ProgressBar";
 
 export * from "./Icons";
