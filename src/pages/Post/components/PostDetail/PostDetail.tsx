@@ -32,7 +32,7 @@ const PostDetail = (): React.ReactNode => {
 
         {isLoading && (
           <S.PostDetailLoading>
-            <LoadingSpinner size="24rem" />
+            <LoadingSpinner size="32rem" />
           </S.PostDetailLoading>
         )}
 
