@@ -12,8 +12,9 @@ export const ProgressBar = styled(motion.div)`
   right: 0;
   z-index: 999;
 
-  background: ${({ theme }) => theme.colors.green};
+  background: ${({ theme }) => theme.colors.yellow};
   box-shadow: ${({ theme }) => theme.shadow.medium};
+  border-radius: 0.4rem;
 
   opacity: 0.7;
   transform-origin: 0%;
