@@ -6,9 +6,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 
 import * as S from "./Root.style";
-
-const AsideBar = React.lazy(() => import("./components/AsideBar/AsideBar"));
-const Navbar = React.lazy(() => import("./components/Navbar/Navbar"));
+import { AsideBar, Navbar } from "./components";
 
 const Root = (): React.ReactNode => {
   return (
