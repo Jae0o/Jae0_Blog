@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ContextAuthUser } from "@/Context/ContextAuthUser";
 import { AlertModal, LoginFormModal } from "@/components";
 import { CHECK_ADMIN } from "@/constants";
 import { useModal } from "@/hooks";
+import { useAuth } from "@/stores";
 
 import { CheckAdminProvider } from "./components";
 
@@ -14,7 +14,8 @@ interface CheckAdminProps {
 
 const CheckAdmin = ({ children }: CheckAdminProps) => {
   const navigate = useNavigate();
-  const { isLoggedIn } = useContext(ContextAuthUser);
+  const { isLoggedIn } = useAuth();
+
   const {
     isShowModal: isShowLoginModal,
     openModal: openLoginModal,
