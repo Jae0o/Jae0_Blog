@@ -10,7 +10,7 @@ interface UseAuthStore {
   setAuthUserId: (id: string) => void;
 }
 
-const useAuth = create<UseAuthStore>()(set => ({
+const useAuthStore = create<UseAuthStore>()(set => ({
   isAuthUser: false,
   isLoggedIn: false,
   authUserId: "",
@@ -20,4 +20,4 @@ const useAuth = create<UseAuthStore>()(set => ({
   setAuthUserId: id => set(() => ({ authUserId: id })),
 }));
 
-export default useAuth;
+export default useAuthStore;

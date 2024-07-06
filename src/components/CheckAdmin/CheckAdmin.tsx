@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { AlertModal, LoginFormModal } from "@/components";
 import { CHECK_ADMIN } from "@/constants";
 import { useModal } from "@/hooks";
-import { useAuth } from "@/stores";
+import { useAuthStore } from "@/stores";
 
 import { CheckAdminProvider } from "./components";
 
@@ -14,7 +14,7 @@ interface CheckAdminProps {
 
 const CheckAdmin = ({ children }: CheckAdminProps) => {
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuthStore();
 
   const {
     isShowModal: isShowLoginModal,

@@ -3,7 +3,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect } from "react";
 
 import { auth } from "@/api/firebase";
-import { useAuth } from "@/stores";
+import { useAuthStore } from "@/stores";
 
 interface AuthProviderProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ interface AuthProviderProps {
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const { VITE_FIREBASE_ADMIN_USER_ID } = import.meta.env;
 
-  const { setIsLoggedIn, setAuthUserId, setIsAuthUser } = useAuth();
+  const { setIsLoggedIn, setAuthUserId, setIsAuthUser } = useAuthStore();
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       if (!user) {

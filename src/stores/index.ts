@@ -1,2 +1,2 @@
 export { default as useOptionsStore } from "./useOptionsStore/useOptionsStore";
-export { default as useAuth } from "./useAuth/useAuth";
+export { default as useAuthStore } from "./useAuthStore/useAuthStore";
