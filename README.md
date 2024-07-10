@@ -150,13 +150,13 @@
 
 ### 카테고리 페이지
 
-<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461948/Blog%20Assets/BLOG%20README%20V2/PostList_dimnzn.png">
+<img src="https://res.cloudinary.com/dya70nmfp/image/upload/v1720707739/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-07-11_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.21.47_qzozpb.png">
 
 <br>
 
 ### 포스트 페이지
 
-<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461949/Blog%20Assets/BLOG%20README%20V2/Post_uvg7j3.png">
+<img src="https://res.cloudinary.com/dya70nmfp/image/upload/v1720707792/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-07-11_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.23.01_jsmzxq.png">
 
 <br>
 
