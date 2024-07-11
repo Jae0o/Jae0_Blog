@@ -162,7 +162,7 @@
 
 ### 게시물 작성 페이지
 
-<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709461947/Blog%20Assets/BLOG%20README%20V2/PostEdit_hfch8k.png">
+<img src="https://res.cloudinary.com/dya70nmfp/image/upload/v1720707907/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-07-11_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_11.25.01_nmnuf7.png">
 
 <br>
 
