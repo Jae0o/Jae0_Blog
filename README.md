@@ -130,6 +130,10 @@
 | Speed Index          | 2.7s            | 1.1s         |
 | Lighthouse 성능      | 66점            | 99점         |
 
+**1.1.1**<br>
+
+- Page Progress Bar 추가
+
 <br>
 
 <br>
