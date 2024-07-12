@@ -166,14 +166,6 @@
 
 <br>
 
-### 반응형
-
-https://github.com/Jae0o/Jae0_Blog/assets/127748428/3e9280e9-35fb-496a-add1-7439fe9cd998
-
-### ... 🫶
-
-<img src="https://res.cloudinary.com/dalxgxu2o/image/upload/v1709462732/Blog%20Assets/BLOG%20README%20V2/Modal_nrzojw.png">
-  
 <br>
 
 <br>
