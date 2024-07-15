@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 interface VisitorsCheckerProviderProps {
   children: React.ReactNode;
 }
@@ -5,6 +7,10 @@ interface VisitorsCheckerProviderProps {
 const VisitorsCheckerProvider = ({
   children,
 }: VisitorsCheckerProviderProps) => {
+  useEffect(() => {
+    console.log("dd");
+  }, []);
+
   return <>{children}</>;
 };
 
