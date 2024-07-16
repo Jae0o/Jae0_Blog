@@ -19,7 +19,9 @@ const MenubarItem = ({
   const navigate: NavigateFunction = useNavigate();
 
   const onNavigate = () => {
-    navigate(`/post/list/${category}`);
+    setTimeout(() => {
+      navigate(`/post/list/${category}`);
+    }, 300);
   };
 
   return (
@@ -31,6 +33,9 @@ const MenubarItem = ({
         ref={hoverRef}
         whileHover={{ filter: "brightness(80%)" }}
         whileTap={{ scale: 0.9 }}
+        transition={{
+          duration: 0.3,
+        }}
       >
         <S.MenubarItemIconContainer>{IconComponent}</S.MenubarItemIconContainer>
 
