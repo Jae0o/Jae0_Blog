@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 
+import { MUTATION_OPTIONS } from "@/api/query";
+import { useMutation } from "@tanstack/react-query";
+
 interface VisitorsCheckerProviderProps {
   children: React.ReactNode;
 }
@@ -7,9 +10,9 @@ interface VisitorsCheckerProviderProps {
 const VisitorsCheckerProvider = ({
   children,
 }: VisitorsCheckerProviderProps) => {
-  useEffect(() => {
-    console.log("dd");
-  }, []);
+  const { mutate } = useMutation(MUTATION_OPTIONS.INCREASE_VISIT_COUNT());
+
+  useEffect(() => {}, [mutate]);
 
   return <>{children}</>;
 };
