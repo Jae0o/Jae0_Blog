@@ -5,11 +5,13 @@ import {
   getDoc,
   getDocs,
   getFirestore,
+  increment,
   limit,
   orderBy,
   query,
   setDoc,
   startAfter,
+  updateDoc,
   where,
 } from "firebase/firestore";
 
@@ -129,4 +131,12 @@ export const getPost = async ({ postId }: { postId: string }) => {
 
 export const deletePost = async ({ postId }: { postId: string }) => {
   await deleteDoc(doc(fireStore, "posts", postId));
+};
+
+/* =============== View Count =============== */
+
+export const increaseVisitCount = async () => {
+  const visitCountRef = doc(fireStore, "visitor", "visitCount");
+
+  await updateDoc(visitCountRef, { count: increment(1) });
 };
