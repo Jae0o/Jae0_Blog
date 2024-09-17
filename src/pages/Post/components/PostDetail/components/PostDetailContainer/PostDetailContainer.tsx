@@ -1,13 +1,14 @@
-import { useScroll } from "framer-motion";
+import * as S from "./PostDetailContainer.style";
 
 import { useRef } from "react";
 
 import { PostBanner, ProgressBar } from "@/components";
-import { useAuthStore } from "@/stores";
+import { useStoreSelector } from "@/stores";
 import { PostData } from "@/types/original";
 
-import * as S from "./PostDetailContainer.style";
 import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
+
+import { useScroll } from "framer-motion";
 
 interface PostDetailContainerProps {
   id: string;
@@ -15,7 +16,7 @@ interface PostDetailContainerProps {
 }
 
 const PostDetailContainer = ({ id, postData }: PostDetailContainerProps) => {
-  const { isAuthUser } = useAuthStore();
+  const isAuthUser = useStoreSelector(state => state.auth.isAuthUser);
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ container: ref });
