@@ -10,27 +10,31 @@ import { RouterProvider } from "react-router-dom";
 
 import { AuthProvider, QueryProvider, VisitorsCheckerProvider } from "@/api";
 
+import InitialLoading from "./pages/InitialLoading/InitialLoading";
 import { router } from "./router";
-import { store } from "./stores";
+import { persistor, store } from "./stores";
 
-const InitialLoading = React.lazy(
-  () => import("./pages/InitialLoading/InitialLoading"),
-);
+import { PersistGate } from "redux-persist/integration/react";
 
 const App = (): React.ReactNode => {
   return (
     <Suspense fallback={<InitialLoading />}>
       <QueryProvider>
         <Provider store={store}>
-          <ThemeProvider theme={theme}>
-            <GlobalStyles />
-            <AuthProvider>
-              <VisitorsCheckerProvider>
-                <S.ModalPlace id="modal" />
-                <RouterProvider router={router} />
-              </VisitorsCheckerProvider>
-            </AuthProvider>
-          </ThemeProvider>
+          <PersistGate
+            loading={<InitialLoading />}
+            persistor={persistor}
+          >
+            <ThemeProvider theme={theme}>
+              <GlobalStyles />
+              <AuthProvider>
+                <VisitorsCheckerProvider>
+                  <S.ModalPlace id="modal" />
+                  <RouterProvider router={router} />
+                </VisitorsCheckerProvider>
+              </AuthProvider>
+            </ThemeProvider>
+          </PersistGate>
         </Provider>
       </QueryProvider>
     </Suspense>
