@@ -15,6 +15,10 @@ import {
   persistStore,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
+import createSagaMiddleware from "redux-saga";
+
+const sagaMiddleware = createSagaMiddleware();
+const middleware = [sagaMiddleware];
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -37,7 +41,7 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+    }).concat(middleware),
 });
 
 export type RootStore = ReturnType<typeof store.getState>;
