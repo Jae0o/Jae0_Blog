@@ -2,13 +2,13 @@ import "./EditorSub.style.css";
 
 import { MouseEvent, useState } from "react";
 
-import { useOptionsStore } from "@/stores";
+import { useStoreSelector } from "@/stores";
 
 import { InsertOptionButton } from "./components";
 
 const EditorSub = () => {
   const [toggled, setToggled] = useState<boolean>(false);
-  const { categories, tags } = useOptionsStore();
+  const { categories, tags } = useStoreSelector(state => state.options);
 
   const toggleHandler = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

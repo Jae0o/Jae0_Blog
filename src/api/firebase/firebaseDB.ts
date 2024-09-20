@@ -1,3 +1,7 @@
+import { PostData } from "@/types/original";
+
+import { firebaseApp } from "./firebase";
+
 import {
   collection,
   deleteDoc,
@@ -14,10 +18,6 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
-
-import { PostData } from "@/types/original";
-
-import { firebaseApp } from "./firebase";
 
 const fireStore = getFirestore(firebaseApp);
 

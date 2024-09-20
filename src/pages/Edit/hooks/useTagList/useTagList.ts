@@ -1,24 +1,20 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-import { getOptions } from "@/api";
-import { useOptionsStore } from "@/stores";
+import { useStoreSelector } from "@/stores";
+import { fetchOptionsAction } from "@/stores/reducer/options/options.saga";
 
 const useTagList = () => {
-  const { tags, setOption } = useOptionsStore();
-
-  const getTag = useCallback(async () => {
-    const newList = await getOptions("tag");
-
-    setOption("tag", newList);
-  }, [setOption]);
+  const dispatch = useDispatch();
+  const tags = useStoreSelector(state => state.options.tags);
 
   useEffect(() => {
     if (tags.length !== 0) {
       return;
     }
 
-    getTag();
-  }, [getTag, tags.length]);
+    dispatch(fetchOptionsAction("tag"));
+  }, [dispatch, tags.length]);
 
   return tags;
 };

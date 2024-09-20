@@ -3,6 +3,7 @@ import { TypedUseSelectorHook, useSelector } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import { authReducer, optionsReducer } from "../reducer";
+import watchOptionsSaga from "../reducer/options/options.saga";
 
 import {
   FLUSH,
@@ -43,6 +44,8 @@ export const store = configureStore({
       },
     }).concat(middleware),
 });
+
+sagaMiddleware.run(watchOptionsSaga);
 
 export type RootStore = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

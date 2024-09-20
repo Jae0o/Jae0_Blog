@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { OptionsType } from "@/types/original";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 interface InitialState {
   tags: string[];
@@ -13,7 +14,19 @@ const initialState: InitialState = {
 export const optionsSlice = createSlice({
   name: "options",
   initialState,
-  reducers: {},
+  reducers: {
+    changeOptions: (
+      state,
+      actions: PayloadAction<{ newList: string[]; option: OptionsType }>,
+    ) => {
+      if (actions.payload.option === "tag") {
+        state.tags = actions.payload.newList;
+        return;
+      }
+
+      state.categories = actions.payload.newList;
+    },
+  },
 });
 
 export const optionsAction = optionsSlice.actions;
