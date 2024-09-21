@@ -1,3 +1,5 @@
+import { firebaseApp } from "./firebase";
+
 import {
   UserCredential,
   browserSessionPersistence,
@@ -6,14 +8,13 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 
-import { firebaseApp } from "./firebase";
-
 export const auth = getAuth(firebaseApp);
 
 interface LoginInfo {
   email: string;
   password: string;
 }
+
 // type SignUp = (params: LoginInfo) => void;
 type Login = (params: LoginInfo) => Promise<UserCredential>;
 

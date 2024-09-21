@@ -48,12 +48,13 @@ export const setThumbnailImageStorage = async ({
   const newMainImage = await uploadBytes(mainStorageRef, thumbnailImage)
     .then(res => res)
     .catch(() => {
-      throw new Error("set image error");
+      throw new Error("set sub thumbnail image error");
     });
+
   const newMiniImage = await uploadBytes(miniStorageRef, miniThumbnailImage)
     .then(res => res)
     .catch(() => {
-      throw new Error("set image error");
+      throw new Error("set main thumbnail image error");
     });
 
   const mainImage = await getDownloadURL(newMainImage.ref);
