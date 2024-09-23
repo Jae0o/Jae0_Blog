@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 
 import { MUTATION_OPTIONS } from "@/api/query";
+import { LOCAL_STORAGE_KEY } from "@/constants";
 import { useLocalStorage } from "@/hooks";
 import { useMutation } from "@tanstack/react-query";
 
@@ -12,9 +13,10 @@ const VisitorsCheckerProvider = ({
   children,
 }: VisitorsCheckerProviderProps) => {
   const { data, setLocalStorage } = useLocalStorage({
-    key: "visitCheckTime",
+    key: LOCAL_STORAGE_KEY.VISIT_CHECK,
     initialData: "",
   });
+
   const { mutate } = useMutation(MUTATION_OPTIONS.INCREASE_VISIT_COUNT());
 
   useEffect(() => {
