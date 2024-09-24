@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { AlertModal, LoginFormModal } from "@/components";
 import { CHECK_ADMIN } from "@/constants";
-import { useModal } from "@/hooks";
+import { useToggle } from "@/hooks";
 import { RootStore } from "@/stores";
 
 import { CheckAdminProvider } from "./components";
@@ -19,16 +19,16 @@ const CheckAdmin = ({ children }: CheckAdminProps) => {
   const isLoggedIn = useSelector((state: RootStore) => state.auth.isLoggedIn);
 
   const {
-    isShowModal: isShowLoginModal,
-    openModal: openLoginModal,
-    closeModal: closeLoginModal,
-  } = useModal();
+    isToggle: isShowLoginModal,
+    handleOnToggle: openLoginModal,
+    handleOffToggle: closeLoginModal,
+  } = useToggle();
 
   const {
-    isShowModal: isShowAlertModal,
-    openModal: openAlertModal,
-    closeModal: closeAlertModal,
-  } = useModal();
+    isToggle: isShowAlertModal,
+    handleOnToggle: openAlertModal,
+    handleOffToggle: closeAlertModal,
+  } = useToggle();
 
   const handleCloseLoginModal = () => {
     openAlertModal();
