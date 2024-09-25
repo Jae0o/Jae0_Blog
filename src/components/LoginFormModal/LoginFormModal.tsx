@@ -1,11 +1,12 @@
+import * as S from "./LoginFormModal.style";
+
 import { useState } from "react";
 
 import { firebaseLogin } from "@/api";
 import { AlertModal, Button, Modal } from "@/components";
 import { LOGIN_VALIDATION } from "@/constants";
-import { useModal } from "@/hooks";
+import { useToggle } from "@/hooks";
 
-import * as S from "./LoginFormModal.style";
 import { LoginFormInput } from "./components";
 import { loginValidation } from "./utils";
 
@@ -23,7 +24,7 @@ const LoginFormModal = ({
   onSuccess,
 }: LoginFormModalProps) => {
   const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
-  const { isShowModal, openModal, closeModal } = useModal();
+  const { isToggle, handleOffToggle, handleOnToggle } = useToggle();
   const [alertModal, setAlertModal] = useState("");
 
   const changeLoginInfo = ({
@@ -39,13 +40,13 @@ const LoginFormModal = ({
   const handleSubmitLogin = () => {
     if (loginValidation.email(loginInfo.email)) {
       setAlertModal(LOGIN_VALIDATION.SUBMIT_CHECK_EMAIL);
-      openModal();
+      handleOnToggle();
       return;
     }
 
     if (loginValidation.password(loginInfo.password)) {
       setAlertModal(LOGIN_VALIDATION.SUBMIT_CHECK_PASSWORD);
-      openModal();
+      handleOnToggle();
       return;
     }
 
@@ -55,7 +56,7 @@ const LoginFormModal = ({
       })
       .catch(() => {
         setAlertModal(LOGIN_VALIDATION.SUBMIT_FAIL);
-        openModal();
+        handleOnToggle();
       });
   };
 
@@ -98,8 +99,8 @@ const LoginFormModal = ({
       </Modal>
 
       <AlertModal
-        isShow={isShowModal}
-        onClose={closeModal}
+        isShow={isToggle}
+        onClose={handleOffToggle}
         message={alertModal}
       />
     </>
