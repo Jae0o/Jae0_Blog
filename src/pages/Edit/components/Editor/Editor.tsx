@@ -1,5 +1,3 @@
-import { v4 } from "uuid";
-
 import "./Editor.style.css";
 
 import React, { MouseEvent, useEffect, useState } from "react";
@@ -7,7 +5,7 @@ import React, { MouseEvent, useEffect, useState } from "react";
 import { QUERY_OPTIONS } from "@/api";
 import { AlertModal } from "@/components";
 import { NEW_POST } from "@/constants";
-import { useModal } from "@/hooks";
+import { useToggle } from "@/hooks";
 import LoadingPage from "@/pages/Loading/Loading";
 import { PostData } from "@/types/original";
 import { useQuery } from "@tanstack/react-query";
@@ -22,6 +20,8 @@ import {
   EditorThumbnail,
 } from "./components";
 import { postUploadValidate } from "./utils";
+
+import { v4 } from "uuid";
 
 type SetEditorPost = (
   key: EditValue,
@@ -41,7 +41,7 @@ const Editor = ({
   tagList,
   onSubmit,
 }: EditorProps): React.ReactNode => {
-  const { isShowModal, openModal, closeModal } = useModal();
+  const { isToggle, handleOnToggle, handleOffToggle } = useToggle();
   const [postData, setPostData] = useState<PostData>({ ...NEW_POST, id: v4() });
 
   const { data, isError, isLoading } = useQuery({
@@ -57,9 +57,9 @@ const Editor = ({
 
   useEffect(() => {
     if (isError) {
-      openModal();
+      handleOnToggle();
     }
-  }, [isError, openModal]);
+  }, [isError, handleOnToggle]);
 
   const setPostHandler: SetEditorPost = (key, value) => {
     setPostData(prevPostData => ({
@@ -125,8 +125,8 @@ const Editor = ({
       />
 
       <AlertModal
-        isShow={isShowModal}
-        onClose={closeModal}
+        isShow={isToggle}
+        onClose={handleOffToggle}
         message=""
       />
     </article>
