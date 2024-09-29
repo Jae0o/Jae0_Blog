@@ -1,11 +1,11 @@
+import * as S from "./PostAuthAction.style";
+
 import { useNavigate } from "react-router-dom";
 
 import { MUTATION_OPTIONS } from "@/api";
 import { Button, ConfirmModal } from "@/components";
-import { useModal } from "@/hooks";
+import { useToggle } from "@/hooks";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-
-import * as S from "./PostAuthAction.style";
 
 interface PostAuthActionProps {
   postId: string;
@@ -14,7 +14,7 @@ interface PostAuthActionProps {
 const PostAuthAction = ({ postId }: PostAuthActionProps) => {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
-  const { isShowModal, openModal, closeModal } = useModal();
+  const { isToggle, handleOnToggle, handleOffToggle } = useToggle();
   const { mutate } = useMutation(MUTATION_OPTIONS.DELETE_POST());
 
   const toEditPage = () => {
@@ -23,7 +23,7 @@ const PostAuthAction = ({ postId }: PostAuthActionProps) => {
 
   const handleDeletePost = (accept: boolean) => {
     if (!accept) {
-      closeModal();
+      handleOffToggle();
       return;
     }
 
@@ -56,14 +56,14 @@ const PostAuthAction = ({ postId }: PostAuthActionProps) => {
         style={{
           width: "10rem",
         }}
-        onClick={openModal}
+        onClick={handleOnToggle}
         shadow
       >
         삭제 하기
       </Button>
 
       <ConfirmModal
-        isShow={isShowModal}
+        isShow={isToggle}
         onClose={handleDeletePost}
         message="게시물을 삭제하시겠나요? 🙋‍♂️"
       />
