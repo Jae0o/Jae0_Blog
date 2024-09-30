@@ -1,20 +1,21 @@
+import * as S from "./PostList.style";
+
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import { QUERY_OPTIONS } from "@/api";
 import { AlertModal, PostBanner, PostBannerDecoration } from "@/components";
 import { QUERY_ERROR } from "@/constants";
-import { useBanner, useModal } from "@/hooks";
+import { useBanner, useToggle } from "@/hooks";
 import LoadingPage from "@/pages/Loading/Loading";
 import { useQuery } from "@tanstack/react-query";
 
-import * as S from "./PostList.style";
 import { PostListItem } from "./components";
 
 const PostList = (): React.ReactNode => {
   const { category = "ALL" } = useParams();
   const { bannerAdvice, bannerThumbnail } = useBanner({ changeKey: category });
-  const { isShowModal, openModal, closeModal } = useModal();
+  const { isToggle, handleOnToggle, handleOffToggle } = useToggle();
   const {
     data: postList,
     isError,
@@ -25,9 +26,9 @@ const PostList = (): React.ReactNode => {
   useEffect(() => {
     if (isError) {
       refetch();
-      openModal();
+      handleOnToggle();
     }
-  }, [isError, openModal, refetch]);
+  }, [isError, handleOnToggle, refetch]);
 
   return (
     <S.PostListLayout>
@@ -53,8 +54,8 @@ const PostList = (): React.ReactNode => {
       </S.PostListContainer>
 
       <AlertModal
-        isShow={isShowModal}
-        onClose={closeModal}
+        isShow={isToggle}
+        onClose={handleOffToggle}
         message={QUERY_ERROR.GET_POSTS_LIST}
       />
     </S.PostListLayout>
