@@ -1,9 +1,10 @@
+import * as S from "./EditorThumbnail.style";
+
 import React, { useRef } from "react";
 
 import { Button } from "@/components";
 
 import { EditValue } from "../../Editor.type";
-import * as S from "./EditorThumbnail.style";
 import { useUploadThumbnail } from "./hooks";
 
 interface EditorThumbnailProps {

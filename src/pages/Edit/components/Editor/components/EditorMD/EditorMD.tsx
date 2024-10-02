@@ -1,11 +1,12 @@
 import "./EditorMD.style.css";
 import "react-quill/dist/quill.snow.css";
 
+import * as S from "./EditorMD.style";
+
 import React, { useMemo, useRef } from "react";
 import ReactQuill from "react-quill";
 
 import { OnTypingEditor } from "../../Editor.type";
-import * as S from "./EditorMD.style";
 import { EDITOR_FORMATS } from "./constants";
 import { useUploadPostImage } from "./hooks";
 
