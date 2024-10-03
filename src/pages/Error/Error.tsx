@@ -1,10 +1,10 @@
+import * as S from "./Error.style";
+
 import { useNavigate } from "react-router-dom";
 
 import ERROR_ANIMATION from "@/assets/animation/404_animation.json";
 import { Button } from "@/components";
 import { Player } from "@lottiefiles/react-lottie-player";
-
-import * as S from "./Error.style";
 
 const ErrorPage = () => {
   const navigate = useNavigate();
