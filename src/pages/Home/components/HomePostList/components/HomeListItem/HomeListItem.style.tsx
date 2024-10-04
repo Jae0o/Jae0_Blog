@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
+
+import { motion } from "framer-motion";
 
 const OptionItem = css`
   padding: 0.4rem 1.2rem;

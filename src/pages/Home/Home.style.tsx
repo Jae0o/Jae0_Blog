@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
+
+import { motion } from "framer-motion";
 
 export const HomeLayout = styled(motion.section)`
   width: 100%;

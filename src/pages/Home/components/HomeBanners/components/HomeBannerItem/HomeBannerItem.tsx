@@ -1,9 +1,9 @@
-import { useInView } from "framer-motion";
+import * as S from "./HomeBannerItem.styles";
 
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import * as S from "./HomeBannerItem.styles";
+import { useInView } from "framer-motion";
 
 interface HomeBannerItemProps {
   thumbnail: string;

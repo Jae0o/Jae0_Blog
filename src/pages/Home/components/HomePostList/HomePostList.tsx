@@ -1,4 +1,4 @@
-import { useInView } from "framer-motion";
+import * as S from "./HomePostList.style";
 
 import { useEffect, useRef } from "react";
 
@@ -6,8 +6,9 @@ import { QUERY_KEY, getAllPostsList } from "@/api";
 import { Skeleton } from "@/components";
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 
-import * as S from "./HomePostList.style";
 import { HomeListItem } from "./components";
+
+import { useInView } from "framer-motion";
 
 const HomePostList = () => {
   const ref = useRef(null);

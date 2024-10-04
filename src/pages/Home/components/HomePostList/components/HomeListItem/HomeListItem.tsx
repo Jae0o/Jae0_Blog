@@ -1,4 +1,4 @@
-import { useInView } from "framer-motion";
+import * as S from "./HomeListItem.style";
 
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { PostData } from "@/types/original";
 import { convertDateFormat } from "@/util";
 
-import * as S from "./HomeListItem.style";
+import { useInView } from "framer-motion";
 
 interface HomeListItemProps {
   post: PostData;

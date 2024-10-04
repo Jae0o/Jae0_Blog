@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import styled from "styled-components";
+
+import { motion } from "framer-motion";
 
 export const HomeBannerLayout = styled(motion.li)<{ $isRight?: boolean }>`
   width: 100%;

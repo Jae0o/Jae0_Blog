@@ -1,6 +1,7 @@
+import * as S from "./HomeBanners.style";
+
 import { BANNER_ITEM_LIST } from "@/constants";
 
-import * as S from "./HomeBanners.style";
 import { HomeBannerItem } from "./components";
 
 const HomeBanners = () => {

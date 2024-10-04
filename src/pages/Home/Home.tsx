@@ -1,12 +1,13 @@
-import { useScroll } from "framer-motion";
+import * as S from "./Home.style";
 import { useTheme } from "styled-components";
 
 import React, { Suspense, useRef } from "react";
 
 import { ProgressBar, Skeleton } from "@/components";
 
-import * as S from "./Home.style";
 import { HomeBanners, HomePostList } from "./components";
+
+import { useScroll } from "framer-motion";
 
 const Home = (): React.ReactNode => {
   const theme = useTheme();
