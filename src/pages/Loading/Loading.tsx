@@ -1,6 +1,6 @@
-import { LoadingSpinner } from "@/components";
-
 import * as S from "./Loading.style";
+
+import { LoadingSpinner } from "@/components";
 
 const LoadingPage = () => {
   return (
