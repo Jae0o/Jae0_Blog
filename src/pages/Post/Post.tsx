@@ -1,7 +1,7 @@
+import * as S from "./Post.style";
+
 import React from "react";
 import { Outlet } from "react-router-dom";
-
-import * as S from "./Post.style";
 
 const Post = (): React.ReactNode => {
   return (

@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
+
+import { motion } from "framer-motion";
 
 export const PostItem = styled(motion.li)`
   width: 90%;

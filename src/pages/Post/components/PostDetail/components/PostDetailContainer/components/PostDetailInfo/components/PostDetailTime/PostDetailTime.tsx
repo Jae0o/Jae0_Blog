@@ -1,9 +1,9 @@
+import * as GS from "../../PostDetailInfo.style";
+import * as S from "./PostDetailTime.style";
+
 import React from "react";
 
 import { convertDateFormat } from "@/util";
-
-import * as GS from "../../PostDetailInfo.style";
-import * as S from "./PostDetailTime.style";
 
 interface PostDetailTimeProps {
   title: string;

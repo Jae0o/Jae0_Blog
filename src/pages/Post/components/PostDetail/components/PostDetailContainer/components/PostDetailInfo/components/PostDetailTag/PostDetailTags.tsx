@@ -1,7 +1,7 @@
-import React from "react";
-
 import * as GS from "../../PostDetailInfo.style";
 import * as S from "./PostDetailTags.style";
+
+import React from "react";
 
 interface PostDetailTagsProps {
   tags: string[];

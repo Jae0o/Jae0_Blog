@@ -1,9 +1,9 @@
-import DOMPurify from "isomorphic-dompurify";
-
 import "@/styles/Quill.style.css";
 import "react-quill/dist/quill.snow.css";
 
 import * as S from "./PostDetailViewer.style";
+
+import DOMPurify from "isomorphic-dompurify";
 
 interface PostDetailViewerProps {
   content: string;

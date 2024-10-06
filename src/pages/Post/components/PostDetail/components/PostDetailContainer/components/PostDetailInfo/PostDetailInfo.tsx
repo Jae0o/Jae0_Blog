@@ -1,6 +1,7 @@
+import * as S from "./PostDetailInfo.style";
+
 import { PostData } from "@/types/original";
 
-import * as S from "./PostDetailInfo.style";
 import {
   PostDetailCategory,
   PostDetailTags,
