@@ -1,20 +1,24 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useCallback, useEffect } from "react";
 
-import { useStoreSelector } from "@/stores";
-import { fetchOptionsAction } from "@/stores/reducer/options/options.saga";
+import { getOptions } from "@/api";
+import { useOptionsStore } from "@/stores";
 
 const useCategoryList = () => {
-  const dispatch = useDispatch();
-  const categories = useStoreSelector(state => state.options.categories);
+  const { categories, setOption } = useOptionsStore();
+
+  const getCategory = useCallback(async () => {
+    const newList = await getOptions("category");
+
+    setOption("category", newList);
+  }, [setOption]);
 
   useEffect(() => {
     if (categories.length !== 0) {
       return;
     }
 
-    dispatch(fetchOptionsAction("category"));
-  }, [categories.length, dispatch]);
+    getCategory();
+  }, [categories.length, getCategory]);
 
   return categories;
 };

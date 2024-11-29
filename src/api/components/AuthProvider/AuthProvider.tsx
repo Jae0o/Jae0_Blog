@@ -1,8 +1,7 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
 
 import { auth } from "@/api/firebase";
-import { authAction } from "@/stores/reducer";
+import { useAuthStore } from "@/stores";
 
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -12,22 +11,31 @@ interface AuthProviderProps {
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
   const { VITE_FIREBASE_ADMIN_USER_ID } = import.meta.env;
-  const dispatch = useDispatch();
+
+  const { setIsLoggedIn, setAuthUserId, setIsAuthUser } = useAuthStore();
 
   useEffect(() => {
     onAuthStateChanged(auth, user => {
       if (!user) {
-        dispatch(authAction.logout());
+        setIsAuthUser(false);
+        setIsLoggedIn(false);
+        setAuthUserId("");
         return;
       }
 
-      dispatch(authAction.login(user.uid));
+      setIsLoggedIn(true);
+      setAuthUserId(user.uid);
 
       if (VITE_FIREBASE_ADMIN_USER_ID === user.uid) {
-        dispatch(authAction.changeAdmin());
+        setIsAuthUser(true);
       }
     });
-  }, [VITE_FIREBASE_ADMIN_USER_ID, dispatch]);
+  }, [
+    VITE_FIREBASE_ADMIN_USER_ID,
+    setAuthUserId,
+    setIsAuthUser,
+    setIsLoggedIn,
+  ]);
 
   return <>{children}</>;
 };

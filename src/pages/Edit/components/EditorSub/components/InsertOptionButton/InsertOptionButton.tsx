@@ -1,10 +1,9 @@
 import "./InsertOptionButton.style.css";
 
 import React from "react";
-import { useDispatch } from "react-redux";
 
 import { MUTATION_OPTIONS } from "@/api";
-import { fetchOptionsAction } from "@/stores/reducer/options/options.saga";
+import { useOptionsStore } from "@/stores";
 import { OptionsType } from "@/types/original";
 import { useMutation } from "@tanstack/react-query";
 
@@ -18,7 +17,7 @@ const InsertOptionButton = ({
   optionList,
 }: InsertOptionButtonProps): React.ReactNode => {
   const { mutate } = useMutation(MUTATION_OPTIONS.SET_OPTION(optionName));
-  const dispatch = useDispatch();
+  const { setOption } = useOptionsStore();
 
   const addListHandler = () => {
     const value = prompt(`새로 추가할 ${optionName}의 이름을 넣어주세요`);
@@ -35,7 +34,7 @@ const InsertOptionButton = ({
       { option: optionName, value: [...optionList, value] },
       {
         onSuccess: () => {
-          dispatch(fetchOptionsAction(optionName));
+          setOption(optionName, [...optionList, value]);
         },
       },
     );

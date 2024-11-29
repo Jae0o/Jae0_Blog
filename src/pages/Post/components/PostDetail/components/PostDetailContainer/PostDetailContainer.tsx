@@ -3,7 +3,7 @@ import * as S from "./PostDetailContainer.style";
 import { useRef } from "react";
 
 import { PostBanner, ProgressBar } from "@/components";
-import { useStoreSelector } from "@/stores";
+import { useAuthStore } from "@/stores";
 import { PostData } from "@/types/original";
 
 import { PostAuthAction, PostDetailInfo, PostDetailViewer } from "./components";
@@ -16,7 +16,7 @@ interface PostDetailContainerProps {
 }
 
 const PostDetailContainer = ({ id, postData }: PostDetailContainerProps) => {
-  const isAuthUser = useStoreSelector(state => state.auth.isAuthUser);
+  const { isAuthUser } = useAuthStore();
 
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({ container: ref });

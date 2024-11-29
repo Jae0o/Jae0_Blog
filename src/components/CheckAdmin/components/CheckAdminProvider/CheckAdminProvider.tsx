@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useStoreSelector } from "@/stores";
+import { useAuthStore } from "@/stores";
 
 interface CheckAdminProviderProps {
   children: React.ReactNode;
@@ -11,8 +11,7 @@ const CheckAdminProvider = ({
   children,
   openLoginModal,
 }: CheckAdminProviderProps) => {
-  const isLoggedIn = useStoreSelector(state => state.auth.isLoggedIn);
-  const isAuthUser = useStoreSelector(state => state.auth.isAuthUser);
+  const { isLoggedIn, isAuthUser } = useAuthStore();
 
   useEffect(() => {
     if (!isLoggedIn) {

@@ -1,11 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 import { AlertModal, LoginFormModal } from "@/components";
 import { CHECK_ADMIN } from "@/constants";
 import { useToggle } from "@/hooks";
-import { RootStore } from "@/stores";
+import { useAuthStore } from "@/stores";
 
 import { CheckAdminProvider } from "./components";
 
@@ -16,7 +15,7 @@ interface CheckAdminProps {
 const CheckAdmin = ({ children }: CheckAdminProps) => {
   const navigate = useNavigate();
 
-  const isLoggedIn = useSelector((state: RootStore) => state.auth.isLoggedIn);
+  const { isLoggedIn } = useAuthStore();
 
   const {
     isToggle: isShowLoginModal,
