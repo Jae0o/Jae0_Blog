@@ -17,5 +17,6 @@ export { default as LoginFormModal } from "./LoginFormModal/LoginFormModal";
 
 export { default as Skeleton } from "./Skeleton/Skeleton";
 export { default as ProgressBar } from "./ProgressBar/ProgressBar";
+export { default as Meta } from "./Meta/Meta";
 
 export * from "./Icons";
