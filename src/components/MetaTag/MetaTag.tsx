@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-interface MetaProps {
+interface MetaTagProps {
   title: string;
   description: string;
   keywords: string[];
@@ -9,7 +9,13 @@ interface MetaProps {
   url?: string;
 }
 
-const Meta = ({ title, description, keywords, image, url }: MetaProps) => {
+const MetaTag = ({
+  title,
+  description,
+  keywords,
+  image,
+  url,
+}: MetaTagProps) => {
   const currentUrl = url || window.location.href;
   const keyword = keywords.join(", ");
 
@@ -87,4 +93,4 @@ const Meta = ({ title, description, keywords, image, url }: MetaProps) => {
   );
 };
 
-export default Meta;
+export default MetaTag;
