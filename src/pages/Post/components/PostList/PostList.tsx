@@ -37,8 +37,6 @@ const PostList = (): React.ReactNode => {
     }
   }, [isError, handleOnToggle, refetch]);
 
-  console.log(category);
-
   return (
     <S.PostListLayout>
       {META && (
