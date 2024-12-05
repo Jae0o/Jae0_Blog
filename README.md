@@ -142,6 +142,20 @@
 
 - Redux , Redux-saga 적용
 
+**1.1.4**<br>
+
+- Redux , Redux-saga 제거
+  - 현재 Project에서는 Redux를 적용하기에 부담스럽고, 무의미 하다고 판단하여 좀 더 가벼운 Zustand로 롤백
+
+**1.1.5**<br>
+
+- React-Helmet-Async , 각종 Meta 적용
+- SEO 개선 진행
+
+|                 | 개선 전 | 개선 후 |
+| --------------- | ------- | ------- |
+| LightHouse 점수 | 82점    | 99점    |
+
 <br>
 
 <br>
