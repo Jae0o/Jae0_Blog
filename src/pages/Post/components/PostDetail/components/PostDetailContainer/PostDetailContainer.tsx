@@ -2,7 +2,7 @@ import * as S from "./PostDetailContainer.style";
 
 import { useRef } from "react";
 
-import { PostBanner, ProgressBar } from "@/components";
+import { MetaTag, PostBanner, ProgressBar } from "@/components";
 import { useAuthStore } from "@/stores";
 import { PostData } from "@/types/original";
 
@@ -24,6 +24,12 @@ const PostDetailContainer = ({ id, postData }: PostDetailContainerProps) => {
   return (
     <S.PostDetailContainer ref={ref}>
       <ProgressBar scrollYProgress={scrollYProgress} />
+      <MetaTag
+        title={`${postData.title} - Jae0's Blog`}
+        description="블로그 게시물"
+        keywords={postData.tag}
+        image={postData.thumbnail}
+      />
 
       <PostBanner
         thumbnail={postData.thumbnail}
