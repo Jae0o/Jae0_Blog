@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
+import { META_SITE_NAME } from "@/constants";
+
 interface MetaTagProps {
   title: string;
   description: string;
@@ -43,7 +45,7 @@ const MetaTag = ({
       />
       <meta
         property="og:site_name"
-        content="Jae0's Blog"
+        content={META_SITE_NAME}
       />
       <meta
         property="og:description"

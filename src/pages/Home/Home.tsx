@@ -3,7 +3,8 @@ import { useTheme } from "styled-components";
 
 import React, { Suspense, useRef } from "react";
 
-import { ProgressBar, Skeleton } from "@/components";
+import { MetaTag, ProgressBar, Skeleton } from "@/components";
+import { META_DATA } from "@/constants";
 
 import { HomeBanners, HomePostList } from "./components";
 
@@ -21,6 +22,13 @@ const Home = (): React.ReactNode => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <MetaTag
+        title={META_DATA.HOME.title}
+        description={META_DATA.HOME.description}
+        keywords={META_DATA.HOME.keywords}
+        image={META_DATA.HOME.image}
+      />
+
       <ProgressBar scrollYProgress={scrollYProgress} />
 
       <S.HomeTitleContainer>
