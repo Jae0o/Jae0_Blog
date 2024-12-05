@@ -36,7 +36,8 @@ const META_COMMON_KEYWORDS = [
 export const META_DATA = {
   HOME: {
     title: META_SITE_NAME,
-    description: "FrontEnd 개발자의 나만의 도화지 Blog!",
+    description:
+      "FrontEnd 개발자의 나만의 도화지 Blog! 프론트엔드 개발자 이재영",
     keywords: META_COMMON_KEYWORDS,
     image: META_COMMON_IMAGE,
   },
