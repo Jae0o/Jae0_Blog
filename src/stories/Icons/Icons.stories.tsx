@@ -1,4 +1,4 @@
-import { BlueBookIcon, BrownBookIcon } from "@/lib/components";
+import { BlueBookIcon, BrownBookIcon, CloseIcon } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
 
@@ -54,5 +54,11 @@ export const BlueBook: Story = {
 export const BrownBook: Story = {
   args: {
     children: <BrownBookIcon />,
+  },
+};
+
+export const Close: Story = {
+  args: {
+    children: <CloseIcon />,
   },
 };
