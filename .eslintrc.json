@@ -1,3 +1,20 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "airbnb",
+    "airbnb-typescript",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+
+  "parser": "@typescript-eslint/parser",
+
+  "plugins": ["@typescript-eslint/eslint-plugin"],
+
+  "rules": {
+    "react/react-in-jsx-scope": "off" // JSX에서 React import 요구를 비활성화
+  }
 }
