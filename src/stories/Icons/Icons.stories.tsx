@@ -3,6 +3,7 @@ import {
   BrownBookIcon,
   CloseIcon,
   DisplayIcon,
+  EmailIcon,
 } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
@@ -71,5 +72,11 @@ export const Close: Story = {
 export const Display: Story = {
   args: {
     children: <DisplayIcon />,
+  },
+};
+
+export const Email: Story = {
+  args: {
+    children: <EmailIcon />,
   },
 };
