@@ -7,6 +7,8 @@ import {
   ExtendContentIcon,
   GithubLogoIcon,
   GreenBookIcon,
+  HomeIcon,
+  HorizontalRuleIcon,
 } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
@@ -99,5 +101,17 @@ export const ExtendContent: Story = {
 export const GithubLogo: Story = {
   args: {
     children: <GithubLogoIcon />,
+  },
+};
+
+export const Home: Story = {
+  args: {
+    children: <HomeIcon />,
+  },
+};
+
+export const HorizontalRule: Story = {
+  args: {
+    children: <HorizontalRuleIcon />,
   },
 };

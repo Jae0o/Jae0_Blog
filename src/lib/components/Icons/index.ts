@@ -6,3 +6,5 @@ export { default as DisplayIcon } from "./DisplayIcon/DisplayIcon";
 export { default as EmailIcon } from "./EmailIcon/EmailIcon";
 export { default as ExtendContentIcon } from "./ExtendContentIcon/ExtendContentIcon";
 export { default as GithubLogoIcon } from "./GithubLogoIcon/GithubLogoIcon";
+export { default as HomeIcon } from "./HomeIcon/HomeIcon";
+export { default as HorizontalRuleIcon } from "./HorizontalRuleIcon/HorizontalRuleIcon";
