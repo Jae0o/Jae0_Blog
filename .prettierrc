@@ -11,7 +11,6 @@
   "trailingComma": "all",
   "bracketSpacing": true,
   "bracketSameLine": false,
-  "jsxBracketSameLine": false,
   "arrowParens": "avoid",
 
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
@@ -19,6 +18,7 @@
     ".css$",
     ".Styles",
     "style",
+    "next",
     "^react",
     "^@",
     "^[../]",
