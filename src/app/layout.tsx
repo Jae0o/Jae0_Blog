@@ -1,4 +1,4 @@
-import "./globals.css";
+import "@/lib/css/globals.css";
 
 import type { Metadata } from "next";
 
