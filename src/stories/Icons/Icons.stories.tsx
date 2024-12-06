@@ -13,6 +13,7 @@ import {
   OrangeBookIcon,
   RedBookIcon,
   SearchIcon,
+  WriteIcon,
 } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
@@ -141,5 +142,11 @@ export const InstagramLogo: Story = {
 export const Search: Story = {
   args: {
     children: <SearchIcon />,
+  },
+};
+
+export const Write: Story = {
+  args: {
+    children: <WriteIcon />,
   },
 };

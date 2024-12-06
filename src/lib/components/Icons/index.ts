@@ -11,6 +11,7 @@ export { default as ExtendContentIcon } from "./ExtendContentIcon/ExtendContentI
 export { default as HomeIcon } from "./HomeIcon/HomeIcon";
 export { default as HorizontalRuleIcon } from "./HorizontalRuleIcon/HorizontalRuleIcon";
 export { default as SearchIcon } from "./SearchIcon/SearchIcon";
+export { default as WriteIcon } from "./WriteIcon/WriteIcon";
 
 export { default as GithubLogoIcon } from "./GithubLogoIcon/GithubLogoIcon";
 export { default as InstagramLogoIcon } from "./InstagramLogoIcon/InstagramLogoIcon";
