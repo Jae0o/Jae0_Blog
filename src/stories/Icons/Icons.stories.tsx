@@ -4,6 +4,7 @@ import {
   CloseIcon,
   DisplayIcon,
   EmailIcon,
+  ExtendContentIcon,
 } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
@@ -78,5 +79,11 @@ export const Display: Story = {
 export const Email: Story = {
   args: {
     children: <EmailIcon />,
+  },
+};
+
+export const ExtendContent: Story = {
+  args: {
+    children: <ExtendContentIcon />,
   },
 };
