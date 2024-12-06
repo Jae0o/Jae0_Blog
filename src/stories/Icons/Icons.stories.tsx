@@ -9,8 +9,10 @@ import {
   GreenBookIcon,
   HomeIcon,
   HorizontalRuleIcon,
+  InstagramLogoIcon,
   OrangeBookIcon,
   RedBookIcon,
+  SearchIcon,
 } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
@@ -112,12 +114,6 @@ export const ExtendContent: Story = {
   },
 };
 
-export const GithubLogo: Story = {
-  args: {
-    children: <GithubLogoIcon />,
-  },
-};
-
 export const Home: Story = {
   args: {
     children: <HomeIcon />,
@@ -127,5 +123,23 @@ export const Home: Story = {
 export const HorizontalRule: Story = {
   args: {
     children: <HorizontalRuleIcon />,
+  },
+};
+
+export const GithubLogo: Story = {
+  args: {
+    children: <GithubLogoIcon />,
+  },
+};
+
+export const InstagramLogo: Story = {
+  args: {
+    children: <InstagramLogoIcon />,
+  },
+};
+
+export const Search: Story = {
+  args: {
+    children: <SearchIcon />,
   },
 };
