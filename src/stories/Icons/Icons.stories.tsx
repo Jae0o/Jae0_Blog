@@ -9,6 +9,8 @@ import {
   GreenBookIcon,
   HomeIcon,
   HorizontalRuleIcon,
+  OrangeBookIcon,
+  RedBookIcon,
 } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
@@ -71,6 +73,18 @@ export const BrownBook: Story = {
 export const GreenBook: Story = {
   args: {
     children: <GreenBookIcon />,
+  },
+};
+
+export const OrangeBook: Story = {
+  args: {
+    children: <OrangeBookIcon />,
+  },
+};
+
+export const RedBook: Story = {
+  args: {
+    children: <RedBookIcon />,
   },
 };
 
