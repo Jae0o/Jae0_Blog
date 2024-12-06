@@ -5,6 +5,8 @@ import {
   DisplayIcon,
   EmailIcon,
   ExtendContentIcon,
+  GithubLogoIcon,
+  GreenBookIcon,
 } from "@/lib/components";
 
 import { IconStoryBox } from "./components";
@@ -64,6 +66,12 @@ export const BrownBook: Story = {
   },
 };
 
+export const GreenBook: Story = {
+  args: {
+    children: <GreenBookIcon />,
+  },
+};
+
 export const Close: Story = {
   args: {
     children: <CloseIcon />,
@@ -85,5 +93,11 @@ export const Email: Story = {
 export const ExtendContent: Story = {
   args: {
     children: <ExtendContentIcon />,
+  },
+};
+
+export const GithubLogo: Story = {
+  args: {
+    children: <GithubLogoIcon />,
   },
 };
