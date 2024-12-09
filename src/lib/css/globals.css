@@ -101,3 +101,7 @@
     --transparent_90: #23232390;
   }
 }
+
+html {
+  font-size: 62.5%;
+}
