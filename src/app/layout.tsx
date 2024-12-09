@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <html
       lang="ko"
-      className={`${PretendardFont.className} text-[62.5%]`}
+      className={`${PretendardFont.className}`}
     >
       <body>{children}</body>
     </html>
