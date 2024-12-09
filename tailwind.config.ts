@@ -92,6 +92,22 @@ export default {
         medium: "var(--shadow-medium)",
         small: "var(--shadow-small)",
       },
+
+      backgroundImage: {
+        skeleton:
+          "linear-gradient(120deg, #e6e6e6, #e6e6e6, #f0f0f0, #e6e6e6, #e6e6e6)",
+      },
+
+      keyframes: {
+        skeleton: {
+          "0%": { transform: "translateX(-100%)" },
+          "50%, 100%": { transform: "translateX(100%)" },
+        },
+      },
+
+      animation: {
+        skeleton: "skeleton 2s infinite linear",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
