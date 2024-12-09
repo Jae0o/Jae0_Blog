@@ -3,13 +3,57 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --black: #323133;
+  --light_black: #434a54;
+
+  --red: #da4453;
+  --light_red: #ed5565;
+
+  --yellow: #ffce54;
+
+  --green: #a0d468;
+  --dark_green: #8cc152;
+
+  --white: #fafafa;
+  --light_white: #e6e9ed;
+
+  --gray: #ccd1d9;
+  --dark_gray: #656d78;
+
+  --text: #323133;
+  --text_point: #ffce54;
+
+  --transparent_10: #23232310;
+  --transparent_30: #23232330;
+  --transparent_50: #23232350;
+  --transparent_90: #23232390;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --black: #323133;
+    --light_black: #434a54;
+
+    --red: #da4453;
+    --light_red: #ed5565;
+
+    --yellow: #ffce54;
+
+    --green: #a0d468;
+    --dark_green: #8cc152;
+
+    --white: #fafafa;
+    --light_white: #e6e9ed;
+
+    --gray: #ccd1d9;
+    --dark_gray: #656d78;
+
+    --text: #323133;
+    --text_point: #ffce54;
+
+    --transparent_10: #23232310;
+    --transparent_30: #23232330;
+    --transparent_50: #23232350;
+    --transparent_90: #23232390;
   }
 }
