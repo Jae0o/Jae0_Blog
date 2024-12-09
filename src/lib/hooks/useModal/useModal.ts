@@ -4,7 +4,9 @@ import { useCallback, useState } from "react";
 
 import { UseModalProps, UseModalReturn } from "./useModal.type";
 
-const useModal = ({ defaultValue = false }: UseModalProps): UseModalReturn => {
+const useModal = ({
+  defaultValue = false,
+}: UseModalProps = {}): UseModalReturn => {
   const [isShow, setIsShow] = useState(defaultValue);
 
   const showModal = useCallback(() => setIsShow(true), []);
