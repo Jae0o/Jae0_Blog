@@ -1,5 +1,5 @@
 import { getStorage } from "@firebase/storage";
 
-import { firebaseApp } from "./firebase";
+import { firebaseApp } from "../";
 
 export const fireStorage = getStorage(firebaseApp);

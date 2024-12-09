@@ -1,5 +1,5 @@
 import { getAuth } from "@firebase/auth";
 
-import { firebaseApp } from "./firebase";
+import { firebaseApp } from "../";
 
 export const auth = getAuth(firebaseApp);
