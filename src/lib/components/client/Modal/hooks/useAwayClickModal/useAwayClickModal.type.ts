@@ -1,0 +1,1 @@
+export type UseAwayClickModalProps = () => void;
