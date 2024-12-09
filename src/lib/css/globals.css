@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  /* colors */
   --black: #323133;
   --light_black: #434a54;
 
@@ -27,6 +28,49 @@
   --transparent_30: #23232330;
   --transparent_50: #23232350;
   --transparent_90: #23232390;
+  /* font sizes */
+  --font-size-small: 1rem;
+  --font-size-semi-small: 1.2rem;
+  --font-size-medium: 1.4rem;
+  --font-size-semi-large: 1.6rem;
+  --font-size-large: 1.8rem;
+  --font-size-semi-big: 2rem;
+  --font-size-big: 2.4rem;
+
+  /* radius */
+  --radius-4: 0.4rem;
+  --radius-8: 0.8rem;
+  --radius-12: 1.2rem;
+  --radius-16: 1.6rem;
+  --radius-20: 2rem;
+  --radius-circle: 50%;
+
+  /* font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-semi-bolder: 800;
+  --font-weight-bolder: 900;
+
+  /* z-index */
+  --z-index-outlet: 0;
+  --z-index-aside: 10;
+  --z-index-nav-background: 10;
+  --z-index-nav-menubar: 11;
+  --z-index-modal: 500;
+
+  /* transition */
+  --transition-normal: 0.3s;
+
+  /* opacity */
+  --opacity-low: 0.3;
+  --opacity-normal: 0.5;
+  --opacity-high: 0.7;
+
+  /* shadow */
+  --shadow-medium: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  --shadow-small: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 @media (prefers-color-scheme: dark) {
