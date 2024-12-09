@@ -19,8 +19,9 @@ import type { Meta, StoryObj } from "@storybook/react";
  *
  * return (
  *  <Skeleton
-      className="w-[10rem] h-[10rem] rounded-[1.2rem]"
+ *    className="w-[10rem] h-[10rem] rounded-[1.2rem]"
  *  />
+ * )
  * ```
  *
  * ### Props
