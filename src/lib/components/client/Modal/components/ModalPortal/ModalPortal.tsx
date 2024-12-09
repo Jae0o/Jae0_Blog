@@ -6,9 +6,15 @@ import { createPortal } from "react-dom";
 import { ModalPortalProps } from "./ModalPortal.type";
 
 const ModalPortal = ({ isShow, children }: ModalPortalProps) => {
-  const [ModalBaseElement] = useState<HTMLElement>(document.body);
+  const [ModalBaseElement, setModalBaseElement] = useState<HTMLElement | null>(
+    null,
+  );
 
   useEffect(() => {
+    setModalBaseElement(document.body);
+
+    if (!ModalBaseElement) return;
+
     if (isShow) {
       const originalStyle = window.getComputedStyle(ModalBaseElement).overflow;
       document.body.style.overflow = "hidden";
@@ -19,7 +25,7 @@ const ModalPortal = ({ isShow, children }: ModalPortalProps) => {
     }
   }, [isShow, ModalBaseElement]);
 
-  if (!isShow) {
+  if (!isShow || !ModalBaseElement) {
     return null;
   }
 
