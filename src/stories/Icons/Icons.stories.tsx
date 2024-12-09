@@ -14,7 +14,7 @@ import {
   RedBookIcon,
   SearchIcon,
   WriteIcon,
-} from "@/lib/components";
+} from "@/lib/components/server";
 
 import { IconStoryBox } from "./components";
 
