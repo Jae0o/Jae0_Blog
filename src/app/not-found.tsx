@@ -18,7 +18,7 @@ const NotFoundPage = () => {
         </h1>
 
         <p className="w-full text-gray_500 text-large font-semibold text-center">
-          이게바로.. 404 ..?
+          이게바로 404!
         </p>
 
         <Lottie
