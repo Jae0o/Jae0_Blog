@@ -22,7 +22,8 @@
     "react-dom": "^19.0.0",
     "react-lottie-player": "^2.1.0",
     "tailwind-merge": "^2.5.5",
-    "tailwind-scrollbar-hide": "^1.1.7"
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
