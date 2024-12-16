@@ -117,8 +117,8 @@ export default {
           "100%": { transform: "translateX(0rem)", opacity: "1" },
         },
         main_frame_aside_in: {
-          "0%": { width: "100%" },
-          "100%": { with: "calc(100%-24rem)" },
+          "0%": { width: "100%", height: "calc(100% - 6rem)" },
+          "100%": { width: "calc(100% - 24rem)", height: "100%" },
         },
         aside_out: {
           "0%": { transform: "translateX(0rem)", opacity: "1" },
@@ -126,8 +126,18 @@ export default {
           "100%": { transform: "translateX(-24rem)", opacity: "0" },
         },
         main_frame_aside_out: {
-          "0%": { with: "calc(100%-24rem)" },
-          "100%": { width: "100%" },
+          "0%": { width: "calc(100% - 24rem)", height: "100%" },
+          "100%": { width: "100%", height: "calc(100% - 6rem)" },
+        },
+        nav_in: {
+          "0%": { transform: "translateY(6rem)", opacity: "0" },
+          "40%": { opacity: "0" },
+          "100%": { transform: "translateY(0rem)", opacity: "1" },
+        },
+        nav_out: {
+          "0%": { transform: "translateY(0rem)", opacity: "1" },
+          "40%": { opacity: "1" },
+          "100%": { transform: "translateY(6rem)", opacity: "0" },
         },
       },
 
@@ -138,6 +148,8 @@ export default {
         main_frame_aside_in: "main_frame_aside_in 0.6s linear forwards",
         aside_out: "aside_out 0.6s linear forwards",
         main_frame_aside_out: "main_frame_aside_out 0.6s linear forwards",
+        nav_in: "nav_in 0.6s linear forwards",
+        nav_out: "nav_out 0.6s linear forwards",
       },
     },
   },
