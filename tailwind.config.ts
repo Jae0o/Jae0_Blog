@@ -98,15 +98,46 @@ export default {
           "linear-gradient(120deg, #e6e6e6, #e6e6e6, #f0f0f0, #e6e6e6, #e6e6e6)",
       },
 
+      screens: {
+        aside_max_height: { max: "700px" },
+
+        mobile: { max: "480px" },
+        tablet: { max: "1050px" },
+      },
+
       keyframes: {
         skeleton: {
           "0%": { transform: "translateX(-100%)" },
           "50%, 100%": { transform: "translateX(100%)" },
         },
+
+        aside_in: {
+          "0%": { transform: "translateX(-24rem)", opacity: "0" },
+          "40%": { opacity: "0" },
+          "100%": { transform: "translateX(0rem)", opacity: "1" },
+        },
+        main_frame_aside_in: {
+          "0%": { width: "100%" },
+          "100%": { with: "calc(100%-24rem)" },
+        },
+        aside_out: {
+          "0%": { transform: "translateX(0rem)", opacity: "1" },
+          "40%": { opacity: "1" },
+          "100%": { transform: "translateX(-24rem)", opacity: "0" },
+        },
+        main_frame_aside_out: {
+          "0%": { with: "calc(100%-24rem)" },
+          "100%": { width: "100%" },
+        },
       },
 
       animation: {
         skeleton: "skeleton 2s infinite linear",
+
+        aside_in: "aside_in 0.6s linear forwards",
+        main_frame_aside_in: "main_frame_aside_in 0.6s linear forwards",
+        aside_out: "aside_out 0.6s linear forwards",
+        main_frame_aside_out: "main_frame_aside_out 0.6s linear forwards",
       },
     },
   },
