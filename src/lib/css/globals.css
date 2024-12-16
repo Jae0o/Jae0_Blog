@@ -161,5 +161,7 @@ body {
 
   display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: flex-start;
+
+  overflow: hidden;
 }
