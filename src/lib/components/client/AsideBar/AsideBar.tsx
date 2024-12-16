@@ -6,8 +6,8 @@ const AsideBar = () => {
   return (
     <aside
       className={twMerge(
-        "w-[24rem] h-full absolute left-0 top-0 bottom-0 bg-red-600 opacity-0 animate-aside_in",
-        "tablet:animate-aside_out",
+        "w-[24rem] h-full absolute left-0 top-0 bottom-0 bg-red-600 border-[1rem] border-yellow-400 opacity-0 animate-aside_in translate-x-[-24rem]",
+        "tablet:animate-aside_out translate-x-[0rem]",
       )}
     >
       AsideBar
