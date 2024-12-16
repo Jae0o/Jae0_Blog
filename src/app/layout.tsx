@@ -1,5 +1,7 @@
 import "@/lib/css/globals.css";
 
+import { AsideBar } from "@/lib/components/client";
+import { MainFrame } from "@/lib/components/server";
 import { PretendardFont, getStaticMeta } from "@/lib/utils";
 
 import { TanstackProvider } from "./_components";
@@ -17,7 +19,10 @@ export default function RootLayout({
       className={`${PretendardFont.className}`}
     >
       <body>
-        <TanstackProvider>{children}</TanstackProvider>
+        <TanstackProvider>
+          <AsideBar />
+          <MainFrame>{children}</MainFrame>
+        </TanstackProvider>
       </body>
     </html>
   );
