@@ -143,12 +143,14 @@
     /* shadow */
     --shadow-medium: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
     --shadow-small: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+
+    --aside-bar-width: 24rem;
   }
 }
 
 html {
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
 
   font-size: 62.5%;
 }
@@ -156,4 +158,8 @@ html {
 body {
   width: 100%;
   height: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
