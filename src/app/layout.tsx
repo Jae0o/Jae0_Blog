@@ -1,6 +1,6 @@
 import "@/lib/css/globals.css";
 
-import { AsideBar } from "@/lib/components/client";
+import { AsideBar, NavBar } from "@/lib/components/client";
 import { MainFrame } from "@/lib/components/server";
 import { PretendardFont, getStaticMeta } from "@/lib/utils";
 
@@ -21,6 +21,7 @@ export default function RootLayout({
       <body>
         <TanstackProvider>
           <AsideBar />
+          <NavBar />
           <MainFrame>{children}</MainFrame>
         </TanstackProvider>
       </body>
