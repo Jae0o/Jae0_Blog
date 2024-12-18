@@ -4,7 +4,7 @@ import { HomeIcon, SearchIcon, WriteIcon } from "@/lib/components/server";
 
 import { ROUTE_PATH } from "@/lib/constants";
 
-import { AsideProfileActionType } from "../../components/AsideProfileButton/AsideProfileButton.type";
+import { AsideProfileActionType } from "../../components/AsideProfile/components/AsideProfileButton/AsideProfileButton.type";
 
 export const ASIDE_ACTIONS: {
   action: AsideProfileActionType;
