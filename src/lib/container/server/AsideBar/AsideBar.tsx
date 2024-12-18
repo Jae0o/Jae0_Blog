@@ -1,5 +1,7 @@
 "use client";
 
+import { MenuList } from "@/lib/components/server";
+
 import { AsideFooter, AsideProfile } from "./components";
 
 import { twMerge } from "tailwind-merge";
@@ -12,8 +14,9 @@ const AsideBar = () => {
         "tablet:animate-aside_out translate-x-[0rem]",
       )}
     >
-      <div className="w-[22rem] h-[calc(100%-8rem)] flex flex-col absolute left-[4rem] top-0  border-2 border-blue-500">
+      <div className="w-[22rem] h-[calc(100%-8rem)] flex flex-col absolute left-[4rem] top-0">
         <AsideProfile />
+        <MenuList />
       </div>
 
       <AsideFooter />
