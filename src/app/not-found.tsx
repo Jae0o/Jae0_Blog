@@ -4,8 +4,9 @@ import { useRouter } from "next/navigation";
 
 import Lottie from "react-lottie-player";
 
-import { LOTTIE_ANIMATION_404 } from "@/lib/assets";
 import { Button } from "@/lib/components/client";
+
+import { LOTTIE_ANIMATION_404 } from "@/lib/assets";
 
 const NotFoundPage = () => {
   const router = useRouter();

@@ -1,6 +1,4 @@
-import { ContactMeButton } from "@/lib/components/client";
-import { AsideFooter } from "@/lib/components/client/AsideBar/components";
-import { GithubLogoIcon } from "@/lib/components/server";
+import { AsideFooter } from "@/lib/container/server/AsideBar/components";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

@@ -1,8 +1,6 @@
-"use client";
+import { ContactMeButton } from "@/lib/components/client";
 
 import { CONTACT_DATA } from "@/lib/constants";
-
-import ContactMeButton from "../../../ContactMeButton/ContactMeButton";
 
 const AsideFooter = () => {
   return (

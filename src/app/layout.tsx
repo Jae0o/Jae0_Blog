@@ -1,7 +1,9 @@
 import "@/lib/css/globals.css";
 
-import { AsideBar, NavBar } from "@/lib/components/client";
 import { MainFrame } from "@/lib/components/server";
+
+import { AsideBar, NavBar } from "@/lib/container/server";
+
 import { PretendardFont, getStaticMeta } from "@/lib/utils";
 
 import { TanstackProvider } from "./_components";
