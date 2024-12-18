@@ -25,6 +25,11 @@ const config: StorybookConfig = {
       newConfig.resolve.alias = {
         ...newConfig.resolve.alias,
         "@": path.resolve(__dirname, "../src"),
+        // useRoute에 대한 mocking
+        "next/navigation": path.resolve(
+          __dirname,
+          "./mocks/nextNavigationMock.ts",
+        ),
       };
     }
 
