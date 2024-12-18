@@ -1,4 +1,5 @@
 import "../src/lib/css/globals.css";
+import "./storybookGlobal.css";
 
 import { withThemeByClassName } from "@storybook/addon-themes";
 
