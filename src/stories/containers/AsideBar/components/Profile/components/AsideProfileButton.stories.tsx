@@ -38,7 +38,7 @@ import type { Meta, StoryObj } from "@storybook/react";
  *   Button 내부 Icon을 전달 받습니다.
  * */
 const meta = {
-  title: "Components/AsideBar/Profile/Button",
+  title: "Containers/AsideBar/components/Profile/components/Button",
   component: AsideProfileButton,
   parameters: {
     layout: "centered",

@@ -18,7 +18,7 @@ import type { Meta, StoryObj } from "@storybook/react";
  * ```
  * */
 const meta = {
-  title: "Components/AsideBar/Profile/Title",
+  title: "Containers/AsideBar/components/Profile/components/Title",
   component: AsideProfileTitle,
   parameters: {
     layout: "centered",

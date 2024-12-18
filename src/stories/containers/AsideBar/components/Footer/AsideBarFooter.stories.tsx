@@ -22,7 +22,7 @@ import type { Meta, StoryObj } from "@storybook/react";
  * ```
  * */
 const meta = {
-  title: "Components/AsideBar/Footer",
+  title: "Containers/AsideBar/components/Footer",
   component: AsideFooter,
   parameters: {
     layout: "centered",
