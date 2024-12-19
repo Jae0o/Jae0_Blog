@@ -1,8 +1,6 @@
 import "@/lib/css/globals.css";
 
-import { MainFrame } from "@/lib/components/server";
-
-import { AsideBar, NavBar } from "@/lib/container/server";
+import { AsideBar, MainFrame, NavBar } from "@/lib/container/server";
 
 import { PretendardFont, getStaticMeta } from "@/lib/utils";
 
