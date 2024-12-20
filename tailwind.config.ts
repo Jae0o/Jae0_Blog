@@ -38,6 +38,28 @@ export default {
         transparent_30: "var(--transparent_30)",
         transparent_50: "var(--transparent_50)",
         transparent_90: "var(--transparent_90)",
+
+        React: "var(--color-React)",
+        Next: "var(--color-Next)",
+        Firebase: "var(--color-Firebase)",
+        Typescript: "var(--color-Typescript)",
+        StyledComponent: "var(--color-StyledComponent)",
+        Storybook: "var(--color-Storybook)",
+        Tailwind: "var(--color-Tailwind)",
+        KakaoMap: "var(--color-KakaoMap)",
+        FramerMotion: "var(--color-FramerMotion)",
+        ReactPlayer: "var(--color-ReactPlayer)",
+
+        "text-React": "var(--text-color-React)",
+        "text-Next": "var(--text-color-Next)",
+        "text-Firebase": "var(--text-color-Firebase)",
+        "text-Typescript": "var(--text-color-Typescript)",
+        "text-StyledComponent": "var(--text-color-StyledComponent)",
+        "text-Storybook": "var(--text-color-Storybook)",
+        "text-Tailwind": "var(--text-color-Tailwind)",
+        "text-KakaoMap": "var(--text-color-KakaoMap)",
+        "text-FramerMotion": "var(--text-color-FramerMotion)",
+        "text-ReactPlayer": "var(--text-color-ReactPlayer)",
       },
       fontSize: {
         small: "var(--font-size-small)",
@@ -103,6 +125,8 @@ export default {
 
         mobile: { max: "480px" },
         tablet: { max: "1050px" },
+
+        home_banner: { max: "800px" },
       },
 
       keyframes: {
