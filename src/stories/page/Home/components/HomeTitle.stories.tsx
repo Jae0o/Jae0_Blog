@@ -1,5 +1,3 @@
-import { AsideBar } from "@/lib/container/server";
-
 import { HomeTitle } from "@/app/(Home)/_components";
 
 import type { Meta, StoryObj } from "@storybook/react";
