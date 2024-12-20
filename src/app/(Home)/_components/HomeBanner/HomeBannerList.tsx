@@ -12,7 +12,7 @@ const HomeBannerList = () => {
       )}
     >
       {HOME_BANNER_LIST.map(
-        ({ thumbnail, title, description, isRight, stacks, path }, index) => (
+        ({ thumbnail, title, description, isRight, stacks, path }) => (
           <HomeBanner
             key={title}
             thumbnail={thumbnail}
