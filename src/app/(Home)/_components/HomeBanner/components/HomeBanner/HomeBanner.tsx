@@ -1,11 +1,14 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 
 import React from "react";
 
 import { getStackColors } from "@/app/(Home)/_utils";
+import { ROUTE_PATH } from "@/lib/constants";
 
+import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
 
 interface HomeBannerProps {
@@ -23,9 +26,12 @@ const HomeBanner = ({
   thumbnail,
   description,
   stacks,
+  path,
 }: HomeBannerProps) => {
+  const router = useRouter();
+
   return (
-    <li
+    <motion.li
       className={twMerge(
         "w-full max-w-[80rem] h-[32rem] py-0 px-[2rem] flex items-center justify-center gap-[6rem] cursor-pointer",
         isRight ? "flex-row-reverse" : "flex-row",
@@ -33,6 +39,8 @@ const HomeBanner = ({
         "home_banner:flex-row",
         "mobile:justify-center",
       )}
+      whileHover={{ scale: 1.04 }}
+      onClick={() => router.push(path)}
     >
       <Image
         className={twMerge(
@@ -73,7 +81,7 @@ const HomeBanner = ({
           })}
         </ul>
       </span>
-    </li>
+    </motion.li>
   );
 };
 
