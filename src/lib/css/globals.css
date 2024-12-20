@@ -71,6 +71,30 @@
   /* shadow */
   --shadow-medium: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
   --shadow-small: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+
+  /* stack color */
+  --color-React: #61dbfb;
+  --color-Next: #000;
+  --color-Firebase: #ffa611;
+  --color-Typescript: #3178c6;
+  --color-StyledComponent: rgb(215, 115, 110);
+  --color-Storybook: rgb(225, 57, 123);
+  --color-Tailwind: rgb(59, 176, 243);
+  --color-KakaoMap: #fee500;
+  --color-FramerMotion: rgb(132, 0, 250);
+  --color-ReactPlayer: rgb(225, 118, 77);
+
+  /* stack text color */
+  --text-color-React: #fafafa;
+  --text-color-Next: #fafafa;
+  --text-color-Firebase: #fafafa;
+  --text-color-Typescript: #fafafa;
+  --text-color-StyledComponent: #fafafa;
+  --text-color-Storybook: #fafafa;
+  --text-color-Tailwind: #fafafa;
+  --text-color-KakaoMap: #000;
+  --text-color-FramerMotion: #fafafa;
+  --text-color-ReactPlayer: #fafafa;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -144,7 +168,29 @@
     --shadow-medium: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
     --shadow-small: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
 
-    --aside-bar-width: 24rem;
+    /* stack color */
+    --color-React: #61dbfb;
+    --color-Next: #000;
+    --color-Firebase: #ffa611;
+    --color-Typescript: #3178c6;
+    --color-StyledComponent: rgb(215, 115, 110);
+    --color-Storybook: rgb(225, 57, 123);
+    --color-Tailwind: rgb(59, 176, 243);
+    --color-KakaoMap: #fee500;
+    --color-FramerMotion: rgb(132, 0, 250);
+    --color-ReactPlayer: rgb(225, 118, 77);
+
+    /* stack text color */
+    --text-color-React: #fafafa;
+    --text-color-Next: #fafafa;
+    --text-color-Firebase: #fafafa;
+    --text-color-Typescript: #fafafa;
+    --text-color-StyledComponent: #fafafa;
+    --text-color-Storybook: #fafafa;
+    --text-color-Tailwind: #fafafa;
+    --text-color-KakaoMap: #000;
+    --text-color-FramerMotion: #fafafa;
+    --text-color-ReactPlayer: #fafafa;
   }
 }
 
