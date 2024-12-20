@@ -57,7 +57,6 @@ const HomeBanner = ({
         <ul className="w-full flex flex-wrap gap-[1.2rem]">
           {stacks.map(stack => {
             const { backgroundColor, textColor } = getStackColors({ stack });
-            console.log(textColor);
 
             return (
               <li
