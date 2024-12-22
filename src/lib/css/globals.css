@@ -58,6 +58,7 @@
   --z-index-aside: 10;
   --z-index-nav-background: 10;
   --z-index-nav-menubar: 11;
+  --z-index-progress: 50;
   --z-index-modal: 500;
 
   /* transition */

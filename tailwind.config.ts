@@ -97,6 +97,7 @@ export default {
         aside: "var(--z-index-aside)",
         navBackground: "var(--z-index-nav-background)",
         navMenubar: "var(--z-index-nav-menubar)",
+        progress: "var(--z-index-progress)",
         modal: "var(--z-index-modal)",
       },
 
