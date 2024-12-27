@@ -3,3 +3,5 @@ export const useRouter = () => ({
   replace: () => {},
   prefetch: async () => {},
 });
+
+export const usePathname = () => "/";
