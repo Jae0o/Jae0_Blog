@@ -20,7 +20,6 @@ const ScrollProgress = ({ baseElement }: ScrollProgressProps) => {
 
   useEffect(() => {
     setProgress(scrollYProgress.get());
-    console.log(path);
 
     const unsubscribe = scrollYProgress.on("change", latestProgress =>
       setProgress(latestProgress),
@@ -31,7 +30,7 @@ const ScrollProgress = ({ baseElement }: ScrollProgressProps) => {
 
   return (
     <motion.div
-      className="w-full h-[1rem] sticky top-0 left-0 right-0 opacity-[0.6] bg-yellow_500 origin-[0%] z-progress"
+      className="w-full min-h-[1rem] sticky top-0 left-0 right-0 opacity-[0.6] bg-yellow_500 origin-[0%] z-progress"
       style={{ scaleX: progress }}
     />
   );
