@@ -1,2 +1,2 @@
-export * from "./query/query";
+export * from "./query";
 export * from "./mutation/mutation";

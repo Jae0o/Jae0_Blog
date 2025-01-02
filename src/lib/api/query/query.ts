@@ -15,5 +15,3 @@ export const QUERY_KEY = {
     DETAIL: (id: string) => [...QUERY_KEY.POST.DETAIL_ALL(), id],
   },
 };
-
-export const QUERY_OPTIONS = {};
