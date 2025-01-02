@@ -1,4 +1,6 @@
-import { HomeBannerList, HomeTitle } from "./_components";
+import { Suspense } from "react";
+
+import { HomeBannerList, HomePostList, HomeTitle } from "./_components";
 
 const MainHome = () => {
   return (
@@ -6,6 +8,10 @@ const MainHome = () => {
       <HomeTitle />
 
       <HomeBannerList />
+
+      <Suspense fallback={<div>Loading...</div>}>
+        <HomePostList />
+      </Suspense>
     </section>
   );
 };
