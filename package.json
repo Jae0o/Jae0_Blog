@@ -17,6 +17,7 @@
     "@firebase/firestore": "^4.7.5",
     "@firebase/storage": "^0.13.4",
     "@tanstack/react-query": "^5.62.3",
+    "@xyflow/react": "^12.3.6",
     "motion": "^12.0.0-alpha.2",
     "next": "15.0.4",
     "react": "^19.0.0",
