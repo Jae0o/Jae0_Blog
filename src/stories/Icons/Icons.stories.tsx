@@ -14,6 +14,7 @@ import {
   OrangeBookIcon,
   RedBookIcon,
   SearchIcon,
+  TailwindIcon,
   WriteIcon,
 } from "@/lib/components/server";
 
@@ -155,5 +156,11 @@ export const Write: Story = {
 export const NextJS: Story = {
   args: {
     children: <NextJSIcon />,
+  },
+};
+
+export const Tailwind: Story = {
+  args: {
+    children: <TailwindIcon />,
   },
 };
