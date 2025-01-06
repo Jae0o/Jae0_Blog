@@ -8,6 +8,7 @@ const getNodeColor = (node: Node) => {
   switch (node.type) {
     case "stack":
       return theme.colors.yellow_500;
+
     default:
       return theme.colors.yellow_500;
   }
