@@ -15,3 +15,5 @@ export { default as WriteIcon } from "./WriteIcon/WriteIcon";
 
 export { default as GithubLogoIcon } from "./GithubLogoIcon/GithubLogoIcon";
 export { default as InstagramLogoIcon } from "./InstagramLogoIcon/InstagramLogoIcon";
+
+export * from "./stacks";

@@ -10,6 +10,7 @@ import {
   HomeIcon,
   HorizontalRuleIcon,
   InstagramLogoIcon,
+  NextJSIcon,
   OrangeBookIcon,
   RedBookIcon,
   SearchIcon,
@@ -148,5 +149,11 @@ export const Search: Story = {
 export const Write: Story = {
   args: {
     children: <WriteIcon />,
+  },
+};
+
+export const NextJS: Story = {
+  args: {
+    children: <NextJSIcon />,
   },
 };
