@@ -15,6 +15,7 @@ import {
   RedBookIcon,
   SearchIcon,
   TailwindIcon,
+  TanstackIcon,
   WriteIcon,
 } from "@/lib/components/server";
 
@@ -162,5 +163,11 @@ export const NextJS: Story = {
 export const Tailwind: Story = {
   args: {
     children: <TailwindIcon />,
+  },
+};
+
+export const TanstackQuery: Story = {
+  args: {
+    children: <TanstackIcon />,
   },
 };
