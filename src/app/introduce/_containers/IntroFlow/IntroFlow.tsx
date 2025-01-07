@@ -4,8 +4,6 @@ import "@xyflow/react/dist/style.css";
 
 import { useCallback, useMemo, useState } from "react";
 
-import { FlowNodes } from "@/lib/components/client";
-
 import {
   Edge,
   MiniMap,
@@ -20,6 +18,7 @@ import {
   applyNodeChanges,
 } from "@xyflow/react";
 
+import { FlowNodes } from "./components";
 import { STACK_FLOW_EDGES, STACK_FLOW_NODES } from "./constants";
 import { getNodeColor } from "./utils";
 
