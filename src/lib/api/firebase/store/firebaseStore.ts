@@ -19,7 +19,7 @@ export const getAllPostList = async ({ cursor }: { cursor: string }) => {
   if (cursor) {
     queryRef = query(
       collection(fireStore, "posts"),
-      orderBy("createdAt", "desc"),
+      orderBy("createAt", "desc"),
       startAfter(cursor),
       limit(4),
     );
