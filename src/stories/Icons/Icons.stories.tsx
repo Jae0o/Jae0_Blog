@@ -1,6 +1,7 @@
 import {
   BlueBookIcon,
   BrownBookIcon,
+  ChromaticIcon,
   CloseIcon,
   DisplayIcon,
   EmailIcon,
@@ -197,5 +198,11 @@ export const FramerMotion: Story = {
 export const Vercel: Story = {
   args: {
     children: <VercelIcon />,
+  },
+};
+
+export const Chromatic: Story = {
+  args: {
+    children: <ChromaticIcon />,
   },
 };
