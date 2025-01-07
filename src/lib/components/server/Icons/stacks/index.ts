@@ -4,3 +4,4 @@ export { default as TanstackIcon } from "./TanstackIcon/TanstackIcon";
 export { default as FirebaseIcon } from "./FirebaseIcon/FirebaseIcon";
 export { default as ZustandIcon } from "./ZustandIcon/ZustandIcon";
 export { default as FramerIcon } from "./FramerIcon/FramerIcon";
+export { default as VercelIcon } from "./VercelIcon/VercelIcon";

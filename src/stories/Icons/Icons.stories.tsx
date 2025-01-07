@@ -18,6 +18,7 @@ import {
   SearchIcon,
   TailwindIcon,
   TanstackIcon,
+  VercelIcon,
   WriteIcon,
   ZustandIcon,
 } from "@/lib/components/server";
@@ -190,5 +191,11 @@ export const Zustand: Story = {
 export const FramerMotion: Story = {
   args: {
     children: <FramerIcon />,
+  },
+};
+
+export const Vercel: Story = {
+  args: {
+    children: <VercelIcon />,
   },
 };
