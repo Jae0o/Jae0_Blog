@@ -40,7 +40,7 @@
 
 ## 📕Storybook 배포
 
-[🔗 블로그 개발 Storybook 둘러보기](https://676273b497c05b1d177d3f48-kxififogqo.chromatic.com/)
+[🔗 블로그 개발 Storybook 둘러보기](https://676273b497c05b1d177d3f48-kzvcpijxis.chromatic.com/)
 
 <br>
 
