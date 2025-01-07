@@ -30,6 +30,7 @@ const IntroFlow = () => {
   const nodeTypes = useMemo(
     () => ({
       stack: FlowNodes.StackNode,
+      title: FlowNodes.TitleNode,
     }),
     [],
   );
