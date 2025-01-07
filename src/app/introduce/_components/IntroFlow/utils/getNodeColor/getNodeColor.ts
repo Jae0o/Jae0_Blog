@@ -9,6 +9,9 @@ const getNodeColor = (node: Node) => {
     case "stack":
       return theme.colors.yellow_500;
 
+    case "title":
+      return theme.colors.red_500;
+
     default:
       return theme.colors.yellow_500;
   }
