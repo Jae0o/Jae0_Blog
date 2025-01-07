@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { HomeBannerList, HomePostList, HomeTitle } from "./_components";
+import { HomeBannerList, HomePostList, HomeTitle } from "./_containers";
 
 const MainHome = () => {
   return (
