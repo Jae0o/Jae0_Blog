@@ -14,34 +14,34 @@ export const STACK_FLOW_NODES = [
   // Front -----------------------------------------
   {
     id: "front",
-    type: "title",
+    type: "front_title",
     data: { title: "Front" },
     position: { x: 0, y: 0 },
   },
   {
     id: "next",
-    type: "stack",
+    type: "front_stack",
     data: { title: "Next.js", icon: <NextJSIcon size="100%" /> },
     position: { x: 0, y: 80 },
   },
 
   {
     id: "tailwind",
-    type: "stack",
+    type: "front_stack",
     data: { title: "Tailwind", icon: <TailwindIcon size="100%" /> },
     position: { x: 0, y: 160 },
   },
 
   {
     id: "zustand",
-    type: "stack",
+    type: "front_stack",
     data: { title: "Zustand", icon: <ZustandIcon size="100%" /> },
     position: { x: -150, y: 160 },
   },
 
   {
     id: "framer",
-    type: "stack",
+    type: "front_stack",
     data: { title: "Framer-Motion", icon: <FramerIcon size="100%" /> },
     position: { x: 150, y: 160 },
   },
@@ -49,14 +49,14 @@ export const STACK_FLOW_NODES = [
   // BACKEND -----------------------------------------
   {
     id: "back",
-    type: "title",
+    type: "back_title",
     data: { title: "Back" },
     position: { x: 700, y: 0 },
   },
 
   {
     id: "firebase",
-    type: "stack",
+    type: "back_stack",
     data: { title: "Firebase", icon: <FirebaseIcon size="100%" /> },
     position: { x: 700, y: 80 },
   },
@@ -64,7 +64,7 @@ export const STACK_FLOW_NODES = [
   // Bridge -----------------------------------------
   {
     id: "tanstack",
-    type: "stack",
+    type: "front_stack",
     data: { title: "Tanstack Query", icon: <TanstackIcon size="100%" /> },
     position: { x: 200, y: 80 },
   },
@@ -72,28 +72,28 @@ export const STACK_FLOW_NODES = [
   // Deploy -----------------------------------------
   {
     id: "deploy",
-    type: "title",
+    type: "deploy_title",
     data: { title: "Deploy" },
     position: { x: 200, y: -320 },
   },
 
   {
     id: "chromatic",
-    type: "stack",
+    type: "deploy_stack",
     data: { title: "Chromatic", icon: <ChromaticIcon size="100%" /> },
     position: { x: 350, y: -240 },
   },
 
   {
     id: "vercel",
-    type: "stack",
+    type: "deploy_stack",
     data: { title: "Vercel", icon: <VercelIcon size="100%" /> },
     position: { x: 200, y: -240 },
   },
 
   {
     id: "storybook",
-    type: "stack",
+    type: "deploy_stack",
     data: { title: "Storybook", icon: <StorybookIcon size="100%" /> },
     position: { x: 350, y: -160 },
   },

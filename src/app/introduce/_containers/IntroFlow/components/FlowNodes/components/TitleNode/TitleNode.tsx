@@ -1,7 +1,9 @@
 import { Handle, Node } from "@xyflow/react";
 import { NodeProps, Position } from "@xyflow/system";
 
-type TitleNodeProps = Node<{ title: string }, "stack">;
+import { NodeType } from "../../../../types";
+
+type TitleNodeProps = Node<{ title: string; type: NodeType }, "stack">;
 
 const TitleNode = ({ data }: NodeProps<TitleNodeProps>) => {
   return (

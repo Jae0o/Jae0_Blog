@@ -1,1 +1,1 @@
-export { default as getNodeColor } from "./getNodeColor/getNodeColor";
+export { default as getMiniMapColor } from "./getMiniMapColor/getMiniMapColor";
