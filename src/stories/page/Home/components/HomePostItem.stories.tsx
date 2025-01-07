@@ -1,4 +1,7 @@
-import { HomePostItem } from "@/app/(Home)/_containers/HomePostList/components";
+import {
+  HomePostItem,
+  HomePostItemSkeleton,
+} from "@/app/(Home)/_containers/HomePostList/components";
 import { POST_EXAMPLE } from "@/stories/constants";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -53,4 +56,16 @@ export const Default: Story = {
   args: {
     post: POST_EXAMPLE,
   },
+};
+
+export const Skeleton: Story = {
+  args: {
+    post: POST_EXAMPLE,
+  },
+
+  decorators: [
+    () => {
+      return <HomePostItemSkeleton />;
+    },
+  ],
 };

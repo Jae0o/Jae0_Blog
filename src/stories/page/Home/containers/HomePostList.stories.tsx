@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 
-import { HomePostList } from "@/app/(Home)/_containers";
+import { HomePostList, HomePostListSkeleton } from "@/app/(Home)/_containers";
 import { TanstackProvider } from "@/app/_components";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -33,7 +33,7 @@ const meta = {
     Storybook => {
       return (
         <TanstackProvider>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<HomePostListSkeleton />}>
             <Storybook />
           </Suspense>
         </TanstackProvider>
@@ -48,3 +48,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const Skeleton: Story = {
+  decorators: [
+    () => {
+      return <HomePostListSkeleton />;
+    },
+  ],
+};

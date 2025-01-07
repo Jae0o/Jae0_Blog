@@ -1,5 +1,8 @@
 import { Skeleton } from "@/lib/components/server";
 
+import { HomePostListSkeleton } from "@/app/(Home)/_containers";
+import { HomePostItemSkeleton } from "@/app/(Home)/_containers/HomePostList/components";
+
 import type { Meta, StoryObj } from "@storybook/react";
 
 /**
@@ -51,3 +54,11 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
+
+export const HomePostItem: Story = {
+  decorators: [() => <HomePostItemSkeleton />],
+};
+
+export const HomePostList: Story = {
+  decorators: [() => <HomePostListSkeleton />],
+};

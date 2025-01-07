@@ -1,6 +1,11 @@
 import { Suspense } from "react";
 
-import { HomeBannerList, HomePostList, HomeTitle } from "./_containers";
+import {
+  HomeBannerList,
+  HomePostList,
+  HomePostListSkeleton,
+  HomeTitle,
+} from "./_containers";
 
 const MainHome = () => {
   return (
@@ -9,7 +14,7 @@ const MainHome = () => {
 
       <HomeBannerList />
 
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<HomePostListSkeleton />}>
         <HomePostList />
       </Suspense>
     </section>
