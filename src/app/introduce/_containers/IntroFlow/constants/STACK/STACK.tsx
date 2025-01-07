@@ -15,34 +15,46 @@ export const STACK_FLOW_NODES = [
   {
     id: "front",
     type: "front_title",
-    data: { title: "Front" },
+    data: { title: "Front", type: "front" },
     position: { x: 0, y: 0 },
   },
   {
     id: "next",
     type: "front_stack",
-    data: { title: "Next.js", icon: <NextJSIcon size="100%" /> },
+    data: { title: "Next.js", icon: <NextJSIcon size="100%" />, type: "front" },
     position: { x: 0, y: 80 },
   },
 
   {
     id: "tailwind",
     type: "front_stack",
-    data: { title: "Tailwind", icon: <TailwindIcon size="100%" /> },
+    data: {
+      title: "Tailwind",
+      icon: <TailwindIcon size="100%" />,
+      type: "front",
+    },
     position: { x: 0, y: 160 },
   },
 
   {
     id: "zustand",
     type: "front_stack",
-    data: { title: "Zustand", icon: <ZustandIcon size="100%" /> },
+    data: {
+      title: "Zustand",
+      icon: <ZustandIcon size="100%" />,
+      type: "front",
+    },
     position: { x: -150, y: 160 },
   },
 
   {
     id: "framer",
     type: "front_stack",
-    data: { title: "Framer-Motion", icon: <FramerIcon size="100%" /> },
+    data: {
+      title: "Framer-Motion",
+      icon: <FramerIcon size="100%" />,
+      type: "front",
+    },
     position: { x: 150, y: 160 },
   },
 
@@ -50,14 +62,18 @@ export const STACK_FLOW_NODES = [
   {
     id: "back",
     type: "back_title",
-    data: { title: "Back" },
+    data: { title: "Back", type: "back" },
     position: { x: 700, y: 0 },
   },
 
   {
     id: "firebase",
     type: "back_stack",
-    data: { title: "Firebase", icon: <FirebaseIcon size="100%" /> },
+    data: {
+      title: "Firebase",
+      icon: <FirebaseIcon size="100%" />,
+      type: "back",
+    },
     position: { x: 700, y: 80 },
   },
 
@@ -65,7 +81,11 @@ export const STACK_FLOW_NODES = [
   {
     id: "tanstack",
     type: "front_stack",
-    data: { title: "Tanstack Query", icon: <TanstackIcon size="100%" /> },
+    data: {
+      title: "Tanstack Query",
+      icon: <TanstackIcon size="100%" />,
+      type: "front",
+    },
     position: { x: 200, y: 80 },
   },
 
@@ -73,28 +93,36 @@ export const STACK_FLOW_NODES = [
   {
     id: "deploy",
     type: "deploy_title",
-    data: { title: "Deploy" },
+    data: { title: "Deploy", type: "deploy" },
     position: { x: 200, y: -320 },
   },
 
   {
     id: "chromatic",
     type: "deploy_stack",
-    data: { title: "Chromatic", icon: <ChromaticIcon size="100%" /> },
+    data: {
+      title: "Chromatic",
+      icon: <ChromaticIcon size="100%" />,
+      type: "deploy",
+    },
     position: { x: 350, y: -240 },
   },
 
   {
     id: "vercel",
     type: "deploy_stack",
-    data: { title: "Vercel", icon: <VercelIcon size="100%" /> },
+    data: { title: "Vercel", icon: <VercelIcon size="100%" />, type: "deploy" },
     position: { x: 200, y: -240 },
   },
 
   {
     id: "storybook",
     type: "deploy_stack",
-    data: { title: "Storybook", icon: <StorybookIcon size="100%" /> },
+    data: {
+      title: "Storybook",
+      icon: <StorybookIcon size="100%" />,
+      type: "deploy",
+    },
     position: { x: 350, y: -160 },
   },
 ];

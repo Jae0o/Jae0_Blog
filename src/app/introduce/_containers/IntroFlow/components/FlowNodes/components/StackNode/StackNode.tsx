@@ -1,6 +1,12 @@
 import { Handle, Node, NodeProps, Position } from "@xyflow/react";
 
-type StackNodeProps = Node<{ title: string; icon: React.ReactNode }, "stack">;
+import { NodeType } from "../../../../types";
+import { getNodeColor } from "../../../../utils";
+
+type StackNodeProps = Node<
+  { title: string; icon: React.ReactNode; type: NodeType },
+  "stack"
+>;
 
 const StackNode = ({ data }: NodeProps<StackNodeProps>) => {
   return (
@@ -12,8 +18,8 @@ const StackNode = ({ data }: NodeProps<StackNodeProps>) => {
       />
 
       <div
-        className="w-[12rem] p-[0.4rem] flex items-center gap-[0.8rem] rounded-[0.8rem] border-[0.2rem] border-yellow_500 bg-white_500"
-        onClick={() => console.log("clicked")}
+        className="w-[12rem] p-[0.4rem] flex items-center gap-[0.8rem] rounded-[0.8rem] border-[0.2rem] bg-white_500"
+        style={{ borderColor: getNodeColor(data.type) }}
       >
         <span className="w-[2rem] h-[2rem]">{data.icon}</span>
         <p>{data.title}</p>
