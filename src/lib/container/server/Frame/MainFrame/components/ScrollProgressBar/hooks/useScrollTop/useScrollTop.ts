@@ -12,7 +12,6 @@ const useScrollTop = ({ baseElement }: UseScrollTopParams) => {
   useEffect(() => {
     const checkScrollTop = throttle(() => {
       const scrollTop = baseElement.scrollTop;
-      console.log("ddd");
 
       setIsTop(scrollTop < 10);
     }, 200);
