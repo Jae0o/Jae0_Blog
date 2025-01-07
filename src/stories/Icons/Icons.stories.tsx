@@ -5,6 +5,7 @@ import {
   DisplayIcon,
   EmailIcon,
   ExtendContentIcon,
+  FirebaseIcon,
   GithubLogoIcon,
   GreenBookIcon,
   HomeIcon,
@@ -169,5 +170,11 @@ export const Tailwind: Story = {
 export const TanstackQuery: Story = {
   args: {
     children: <TanstackIcon />,
+  },
+};
+
+export const Firebase: Story = {
+  args: {
+    children: <FirebaseIcon />,
   },
 };
