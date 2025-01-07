@@ -1,4 +1,4 @@
-import { IntroFlow } from "./_components";
+import { IntroFlow } from "./_containers";
 
 const IntroducePage = () => {
   return (
