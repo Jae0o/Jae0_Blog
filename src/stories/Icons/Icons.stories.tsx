@@ -6,6 +6,7 @@ import {
   EmailIcon,
   ExtendContentIcon,
   FirebaseIcon,
+  FramerIcon,
   GithubLogoIcon,
   GreenBookIcon,
   HomeIcon,
@@ -18,6 +19,7 @@ import {
   TailwindIcon,
   TanstackIcon,
   WriteIcon,
+  ZustandIcon,
 } from "@/lib/components/server";
 
 import { IconStoryBox } from "./components";
@@ -176,5 +178,17 @@ export const TanstackQuery: Story = {
 export const Firebase: Story = {
   args: {
     children: <FirebaseIcon />,
+  },
+};
+
+export const Zustand: Story = {
+  args: {
+    children: <ZustandIcon />,
+  },
+};
+
+export const FramerMotion: Story = {
+  args: {
+    children: <FramerIcon />,
   },
 };
