@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 
 import { useEffect, useRef, useState } from "react";
 
+import { useScrollTop } from "../../hooks";
+
 import { motion, useScroll } from "motion/react";
 
 interface ScrollProgressProps {
@@ -13,6 +15,8 @@ interface ScrollProgressProps {
 const ScrollProgress = ({ baseElement }: ScrollProgressProps) => {
   const ref = useRef(baseElement);
   const path = usePathname();
+
+  const isTop = useScrollTop({ baseElement });
 
   const [progress, setProgress] = useState(0);
 
@@ -27,6 +31,8 @@ const ScrollProgress = ({ baseElement }: ScrollProgressProps) => {
 
     return () => unsubscribe();
   }, [path]);
+
+  if (isTop) return null;
 
   return (
     <motion.div
