@@ -2,20 +2,16 @@
 
 import "@xyflow/react/dist/style.css";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo } from "react";
 
 import {
-  Edge,
   MiniMap,
-  Node,
   OnConnect,
-  OnEdgesChange,
-  OnNodesChange,
   Panel,
   ReactFlow,
   addEdge,
-  applyEdgeChanges,
-  applyNodeChanges,
+  useEdgesState,
+  useNodesState,
 } from "@xyflow/react";
 
 import { FlowNodes } from "./components";
@@ -23,8 +19,13 @@ import { STACK_FLOW_EDGES, STACK_FLOW_NODES } from "./constants";
 import { getNodeColor } from "./utils";
 
 const IntroFlow = () => {
-  const [nodes, setNodes] = useState<Node[]>(STACK_FLOW_NODES);
-  const [edges, setEdges] = useState<Edge[]>(STACK_FLOW_EDGES);
+  const [nodes, setNodes, onNodesChange] = useNodesState(STACK_FLOW_NODES);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(STACK_FLOW_EDGES);
+
+  const onConnect: OnConnect = useCallback(
+    connection => setEdges(eds => addEdge(connection, eds)),
+    [setEdges],
+  );
 
   const nodeTypes = useMemo(
     () => ({
@@ -34,21 +35,6 @@ const IntroFlow = () => {
     [],
   );
 
-  const onNodesChange: OnNodesChange = useCallback(
-    changes => setNodes(nds => applyNodeChanges(changes, nds)),
-    [setNodes],
-  );
-
-  const onEdgesChange: OnEdgesChange = useCallback(
-    changes => setEdges(eds => applyEdgeChanges(changes, eds)),
-    [setEdges],
-  );
-
-  const onConnect: OnConnect = useCallback(
-    connection => setEdges(eds => addEdge(connection, eds)),
-    [setEdges],
-  );
-
   return (
     <article className="w-full h-[80rem] border-[0.4rem] border-green_500 rounded-[2rem] select-none">
       <ReactFlow
@@ -56,8 +42,8 @@ const IntroFlow = () => {
         edges={edges}
         nodeTypes={nodeTypes}
         onNodesChange={onNodesChange}
-        onConnect={onConnect}
         onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
         fitView
       >
         <MiniMap nodeColor={getNodeColor} />

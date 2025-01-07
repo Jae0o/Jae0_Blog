@@ -12,7 +12,7 @@ const StackNode = ({ data }: NodeProps<StackNodeProps>) => {
       />
 
       <div
-        className="w-[12rem] p-[0.4rem] flex items-center gap-[0.8rem] rounded-[0.8rem] border-[0.2rem] border-yellow_500"
+        className="w-[12rem] p-[0.4rem] flex items-center gap-[0.8rem] rounded-[0.8rem] border-[0.2rem] border-yellow_500 bg-white_500"
         onClick={() => console.log("clicked")}
       >
         <span className="w-[2rem] h-[2rem]">{data.icon}</span>
