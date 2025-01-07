@@ -17,6 +17,7 @@ import {
   OrangeBookIcon,
   RedBookIcon,
   SearchIcon,
+  StorybookIcon,
   TailwindIcon,
   TanstackIcon,
   VercelIcon,
@@ -204,5 +205,11 @@ export const Vercel: Story = {
 export const Chromatic: Story = {
   args: {
     children: <ChromaticIcon />,
+  },
+};
+
+export const Storybook: Story = {
+  args: {
+    children: <StorybookIcon />,
   },
 };
