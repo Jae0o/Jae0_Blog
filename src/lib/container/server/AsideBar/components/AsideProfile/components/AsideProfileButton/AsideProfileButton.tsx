@@ -21,7 +21,7 @@ const AsideProfileButton = ({
       e.preventDefault();
       router.push(path);
     },
-    [path],
+    [path, router],
   );
 
   return (

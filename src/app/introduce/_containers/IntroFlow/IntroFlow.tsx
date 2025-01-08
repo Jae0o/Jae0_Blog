@@ -19,7 +19,7 @@ import { STACK_FLOW_EDGES, STACK_FLOW_NODES } from "./constants";
 import { getMiniMapColor } from "./utils";
 
 const IntroFlow = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(STACK_FLOW_NODES);
+  const [nodes, , onNodesChange] = useNodesState(STACK_FLOW_NODES);
   const [edges, setEdges, onEdgesChange] = useEdgesState(STACK_FLOW_EDGES);
 
   const onConnect: OnConnect = useCallback(

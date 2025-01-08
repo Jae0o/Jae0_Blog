@@ -16,7 +16,7 @@ const HomeTitle = () => {
           textShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)",
         }}
       >
-        Jae0's Blog
+        Jae0&apos;s Blog
       </motion.h1>
     </span>
   );

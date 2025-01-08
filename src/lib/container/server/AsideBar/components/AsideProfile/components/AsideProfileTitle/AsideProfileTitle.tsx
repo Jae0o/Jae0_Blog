@@ -21,7 +21,7 @@ const AsideProfileTitle = () => {
           scale: 0.9,
         }}
       >
-        Jae0's Blog
+        Jae0&apos;s Blog
       </motion.h1>
     </span>
   );

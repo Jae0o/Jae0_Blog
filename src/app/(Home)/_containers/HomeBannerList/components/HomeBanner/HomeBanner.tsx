@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 import { getStackColors } from "@/app/(Home)/_utils";
-import { ROUTE_PATH } from "@/lib/constants";
 
 import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";

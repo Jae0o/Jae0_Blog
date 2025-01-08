@@ -10,6 +10,7 @@ const StorybookIcon = ({ size = "3.2rem", ...rest }: IconGlobalProps) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       preserveAspectRatio="xMidYMid"
+      {...rest}
     >
       <defs>
         <path

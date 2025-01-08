@@ -30,7 +30,7 @@ const ScrollProgress = ({ baseElement }: ScrollProgressProps) => {
     );
 
     return () => unsubscribe();
-  }, [path]);
+  }, [path, scrollYProgress]);
 
   if (isTop) return null;
 
