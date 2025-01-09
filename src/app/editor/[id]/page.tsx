@@ -1,5 +1,13 @@
+"use client";
+
+import { Editor } from "./_components";
+
 const EditorPage = () => {
-  return <main>Editor Page</main>;
+  return (
+    <section className="p-[3rem] w-full h-full">
+      <Editor />
+    </section>
+  );
 };
 
 export default EditorPage;
