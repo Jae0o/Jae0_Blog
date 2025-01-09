@@ -17,6 +17,10 @@
     "@firebase/firestore": "^4.7.5",
     "@firebase/storage": "^0.13.4",
     "@tanstack/react-query": "^5.62.3",
+    "@tiptap/extension-link": "^2.11.0",
+    "@tiptap/pm": "^2.11.0",
+    "@tiptap/react": "^2.11.0",
+    "@tiptap/starter-kit": "^2.11.0",
     "@xyflow/react": "^12.3.6",
     "lodash": "^4.17.21",
     "motion": "^12.0.0-alpha.2",
@@ -26,6 +30,7 @@
     "react-lottie-player": "^2.1.0",
     "tailwind-merge": "^2.5.5",
     "tailwind-scrollbar-hide": "^1.1.7",
+    "tiptap-markdown": "^0.8.10",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
