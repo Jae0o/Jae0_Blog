@@ -1,10 +1,12 @@
 import "@/lib/css/tiptap.css";
+import "highlight.js/styles/atom-one-dark.css";
 
 import Link from "@tiptap/extension-link";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
 import { EditorToolbar } from "./components";
+import { customCodeBlock } from "./utils";
 
 import { Markdown } from "tiptap-markdown";
 
@@ -17,6 +19,7 @@ const Editor = () => {
         openOnClick: false,
       }),
       Markdown,
+      customCodeBlock,
     ],
     immediatelyRender: false,
   });
