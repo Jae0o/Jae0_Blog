@@ -14,20 +14,20 @@ export const STACK_FLOW_NODES = [
   // Front -----------------------------------------
   {
     id: "front",
-    type: "front_title",
+    type: "title",
     data: { title: "Front", type: "front" },
     position: { x: 0, y: 0 },
   },
   {
     id: "next",
-    type: "front_stack",
+    type: "stack",
     data: { title: "Next.js", icon: <NextJSIcon size="100%" />, type: "front" },
     position: { x: 0, y: 80 },
   },
 
   {
     id: "tailwind",
-    type: "front_stack",
+    type: "stack",
     data: {
       title: "Tailwind",
       icon: <TailwindIcon size="100%" />,
@@ -38,7 +38,7 @@ export const STACK_FLOW_NODES = [
 
   {
     id: "zustand",
-    type: "front_stack",
+    type: "stack",
     data: {
       title: "Zustand",
       icon: <ZustandIcon size="100%" />,
@@ -49,7 +49,7 @@ export const STACK_FLOW_NODES = [
 
   {
     id: "framer",
-    type: "front_stack",
+    type: "stack",
     data: {
       title: "Framer-Motion",
       icon: <FramerIcon size="100%" />,
@@ -61,14 +61,14 @@ export const STACK_FLOW_NODES = [
   // BACKEND -----------------------------------------
   {
     id: "back",
-    type: "back_title",
+    type: "title",
     data: { title: "Back", type: "back" },
     position: { x: 700, y: 0 },
   },
 
   {
     id: "firebase",
-    type: "back_stack",
+    type: "stack",
     data: {
       title: "Firebase",
       icon: <FirebaseIcon size="100%" />,
@@ -80,7 +80,7 @@ export const STACK_FLOW_NODES = [
   // Bridge -----------------------------------------
   {
     id: "tanstack",
-    type: "front_stack",
+    type: "stack",
     data: {
       title: "Tanstack Query",
       icon: <TanstackIcon size="100%" />,
@@ -92,14 +92,14 @@ export const STACK_FLOW_NODES = [
   // Deploy -----------------------------------------
   {
     id: "deploy",
-    type: "deploy_title",
+    type: "title",
     data: { title: "Deploy", type: "deploy" },
     position: { x: 200, y: -320 },
   },
 
   {
     id: "chromatic",
-    type: "deploy_stack",
+    type: "stack",
     data: {
       title: "Chromatic",
       icon: <ChromaticIcon size="100%" />,
@@ -110,14 +110,14 @@ export const STACK_FLOW_NODES = [
 
   {
     id: "vercel",
-    type: "deploy_stack",
+    type: "stack",
     data: { title: "Vercel", icon: <VercelIcon size="100%" />, type: "deploy" },
     position: { x: 200, y: -240 },
   },
 
   {
     id: "storybook",
-    type: "deploy_stack",
+    type: "stack",
     data: {
       title: "Storybook",
       icon: <StorybookIcon size="100%" />,

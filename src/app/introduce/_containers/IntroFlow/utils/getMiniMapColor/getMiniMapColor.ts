@@ -6,23 +6,14 @@ import resolveConfig from "tailwindcss/resolveConfig";
 const getMiniMapColor = (node: Node) => {
   const { theme } = resolveConfig(tailwindConfig);
 
-  switch (node.type) {
-    case "front_title":
+  switch (node.data.type) {
+    case "front":
       return theme.colors.yellow_500;
 
-    case "front_stack":
-      return theme.colors.yellow_500;
-
-    case "deploy_title":
+    case "deploy":
       return theme.colors.red_500;
 
-    case "deploy_stack":
-      return theme.colors.red_500;
-
-    case "back_title":
-      return theme.colors.green_500;
-
-    case "back_stack":
+    case "back":
       return theme.colors.green_500;
 
     default:

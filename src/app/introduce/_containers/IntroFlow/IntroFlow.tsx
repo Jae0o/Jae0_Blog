@@ -29,12 +29,8 @@ const IntroFlow = () => {
 
   const nodeTypes = useMemo(
     () => ({
-      front_title: FlowNodes.TitleNode,
-      front_stack: FlowNodes.StackNode,
-      back_title: FlowNodes.TitleNode,
-      back_stack: FlowNodes.StackNode,
-      deploy_title: FlowNodes.TitleNode,
-      deploy_stack: FlowNodes.StackNode,
+      title: FlowNodes.TitleNode,
+      stack: FlowNodes.StackNode,
     }),
     [],
   );
