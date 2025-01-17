@@ -1,5 +1,4 @@
-import { getAllPostList } from "@/lib/api/firebase";
-
+import { getAllPosts } from "@/lib/services";
 import { useSuspenseInfiniteQuery } from "@tanstack/react-query";
 
 import { QUERY_KEY } from "../../query";
@@ -7,7 +6,7 @@ import { QUERY_KEY } from "../../query";
 const useGetAllPostList = () => {
   return useSuspenseInfiniteQuery({
     queryKey: QUERY_KEY.POST.LIST_ALL(),
-    queryFn: ({ pageParam }) => getAllPostList({ cursor: pageParam }),
+    queryFn: ({ pageParam }) => getAllPosts({ cursor: pageParam }),
 
     initialPageParam: "",
     getNextPageParam: (prevList, _, prevParam) => {
