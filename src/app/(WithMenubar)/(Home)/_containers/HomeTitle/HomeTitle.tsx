@@ -1,6 +1,6 @@
 "use client";
 
-import tailwindConfig from "../../../../../tailwind.config";
+import tailwindConfig from "../../../../../../tailwind.config";
 
 import { motion } from "motion/react";
 import resolveConfig from "tailwindcss/resolveConfig";
