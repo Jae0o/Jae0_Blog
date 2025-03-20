@@ -1,5 +1,5 @@
-import { HOME_BANNER_LIST } from "@/app/(Home)/_constants";
-import { HomeBanner } from "@/app/(Home)/_containers/HomeBannerList/components";
+import { HOME_BANNER_LIST } from "@/app/(WithMenubar)/(Home)/_constants";
+import { HomeBanner } from "@/app/(WithMenubar)/(Home)/_containers/HomeBannerList/components";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

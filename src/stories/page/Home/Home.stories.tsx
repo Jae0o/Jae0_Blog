@@ -1,4 +1,4 @@
-import HomePage from "@/app/(Home)/page";
+import HomePage from "@/app/(WithMenubar)/(Home)/page";
 import { TanstackProvider } from "@/app/_components";
 
 import type { Meta, StoryObj } from "@storybook/react";

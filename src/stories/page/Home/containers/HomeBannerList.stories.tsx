@@ -1,4 +1,4 @@
-import { HomeBannerList } from "@/app/(Home)/_containers";
+import { HomeBannerList } from "@/app/(WithMenubar)/(Home)/_containers";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

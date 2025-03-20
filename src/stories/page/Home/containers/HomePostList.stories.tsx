@@ -1,6 +1,9 @@
 import { Suspense } from "react";
 
-import { HomePostList, HomePostListSkeleton } from "@/app/(Home)/_containers";
+import {
+  HomePostList,
+  HomePostListSkeleton,
+} from "@/app/(WithMenubar)/(Home)/_containers";
 import { TanstackProvider } from "@/app/_components";
 
 import type { Meta, StoryObj } from "@storybook/react";

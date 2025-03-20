@@ -1,7 +1,7 @@
 import { Skeleton } from "@/lib/components/server";
 
-import { HomePostListSkeleton } from "@/app/(Home)/_containers";
-import { HomePostItemSkeleton } from "@/app/(Home)/_containers/HomePostList/components";
+import { HomePostListSkeleton } from "@/app/(WithMenubar)/(Home)/_containers";
+import { HomePostItemSkeleton } from "@/app/(WithMenubar)/(Home)/_containers/HomePostList/components";
 
 import type { Meta, StoryObj } from "@storybook/react";
 

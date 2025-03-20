@@ -1,7 +1,7 @@
 import {
   HomePostItem,
   HomePostItemSkeleton,
-} from "@/app/(Home)/_containers/HomePostList/components";
+} from "@/app/(WithMenubar)/(Home)/_containers/HomePostList/components";
 import { POST_EXAMPLE } from "@/stories/constants";
 
 import type { Meta, StoryObj } from "@storybook/react";

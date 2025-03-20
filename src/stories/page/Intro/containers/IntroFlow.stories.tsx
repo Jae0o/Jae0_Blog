@@ -1,4 +1,4 @@
-import { IntroFlow } from "@/app/introduce/_containers";
+import { IntroFlow } from "@/app/(WithMenubar)/introduce/_containers";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
