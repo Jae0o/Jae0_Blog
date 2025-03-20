@@ -2,8 +2,6 @@ import "@/lib/css/globals.css";
 
 import { Inter } from "next/font/google";
 
-import { AsideBar, MainFrame, NavBar } from "@/lib/container/server";
-
 import { PretendardFont, getStaticMeta } from "@/lib/utils";
 
 import { TanstackProvider } from "./_components";
@@ -23,11 +21,7 @@ const RootLayout = ({
       className={`${PretendardFont.className}`}
     >
       <body className={inter.className}>
-        <TanstackProvider>
-          <AsideBar />
-          <NavBar />
-          <MainFrame>{children}</MainFrame>
-        </TanstackProvider>
+        <TanstackProvider>{children}</TanstackProvider>
       </body>
     </html>
   );
