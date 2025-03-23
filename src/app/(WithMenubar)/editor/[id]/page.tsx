@@ -1,11 +1,9 @@
-"use client";
-
-import { Editor } from "./_components";
+import { TipTap } from "@/lib/container/client";
 
 const EditorPage = () => {
   return (
     <section className="p-[3rem] w-full h-full">
-      <Editor />
+      <TipTap />
     </section>
   );
 };
