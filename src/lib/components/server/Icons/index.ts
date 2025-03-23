@@ -16,4 +16,8 @@ export { default as WriteIcon } from "./WriteIcon/WriteIcon";
 export { default as GithubLogoIcon } from "./GithubLogoIcon/GithubLogoIcon";
 export { default as InstagramLogoIcon } from "./InstagramLogoIcon/InstagramLogoIcon";
 
+export { default as TipTap_H1Icon } from "./TipTap_H1Icon/TipTap_H1Icon";
+export { default as TipTap_H2Icon } from "./TipTap_H2Icon/TipTap_H2Icon";
+export { default as TipTap_H3Icon } from "./TipTap_H3Icon/TipTap_H3Icon";
+
 export * from "./stacks";
