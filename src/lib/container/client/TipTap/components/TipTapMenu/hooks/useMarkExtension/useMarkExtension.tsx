@@ -1,4 +1,4 @@
-import { TipTap_BoldIcon } from "@/lib/components/server";
+import { TipTap_BoldIcon, TipTap_CodeIcon } from "@/lib/components/server";
 
 import { TipTapExtensionParams } from "../../../../TipTap.type";
 import useToolbarHandler from "../useToolbarHandler/useToolbarHandler";
@@ -13,7 +13,14 @@ const useMarkExtension = ({ editor }: TipTapExtensionParams) => {
     isActive: editor.isActive("bold"),
   };
 
-  return [bold] as const;
+  const code = {
+    key: "code",
+    Icon: TipTap_CodeIcon,
+    run: () => handleToolbar().toggleCode().run(),
+    isActive: editor.isActive("code"),
+  };
+
+  return [bold, code] as const;
 };
 
 export default useMarkExtension;
