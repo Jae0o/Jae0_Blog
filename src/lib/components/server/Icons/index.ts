@@ -21,5 +21,6 @@ export { default as TipTap_H2Icon } from "./TipTap_H2Icon/TipTap_H2Icon";
 export { default as TipTap_H3Icon } from "./TipTap_H3Icon/TipTap_H3Icon";
 
 export { default as TipTap_BoldIcon } from "./TipTap_BoldIcon/TipTap_BoldIcon";
+export { default as TipTap_CodeIcon } from "./TipTap_CodeIcon/TipTap_CodeIcon";
 
 export * from "./stacks";
