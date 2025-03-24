@@ -21,6 +21,7 @@ import {
   TailwindIcon,
   TanstackIcon,
   TipTap_BoldIcon,
+  TipTap_CodeIcon,
   TipTap_H1Icon,
   TipTap_H2Icon,
   TipTap_H3Icon,
@@ -239,5 +240,11 @@ export const TipTap_H3: Story = {
 export const TipTap_Bold: Story = {
   args: {
     children: <TipTap_BoldIcon />,
+  },
+};
+
+export const TipTap_Code: Story = {
+  args: {
+    children: <TipTap_CodeIcon />,
   },
 };
