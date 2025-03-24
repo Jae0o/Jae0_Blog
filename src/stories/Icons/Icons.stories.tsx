@@ -20,6 +20,10 @@ import {
   StorybookIcon,
   TailwindIcon,
   TanstackIcon,
+  TipTap_BoldIcon,
+  TipTap_H1Icon,
+  TipTap_H2Icon,
+  TipTap_H3Icon,
   VercelIcon,
   WriteIcon,
   ZustandIcon,
@@ -211,5 +215,29 @@ export const Chromatic: Story = {
 export const Storybook: Story = {
   args: {
     children: <StorybookIcon />,
+  },
+};
+
+export const TipTap_H1: Story = {
+  args: {
+    children: <TipTap_H1Icon />,
+  },
+};
+
+export const TipTap_H2: Story = {
+  args: {
+    children: <TipTap_H2Icon />,
+  },
+};
+
+export const TipTap_H3: Story = {
+  args: {
+    children: <TipTap_H3Icon />,
+  },
+};
+
+export const TipTap_Bold: Story = {
+  args: {
+    children: <TipTap_BoldIcon />,
   },
 };
