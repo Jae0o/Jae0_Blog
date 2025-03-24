@@ -1,7 +1,5 @@
 "use client";
 
-import { useCallback } from "react";
-
 import {
   TipTap_H1Icon,
   TipTap_H2Icon,
@@ -9,28 +7,29 @@ import {
 } from "@/lib/components/server";
 
 import { TipTapExtensionParams } from "../../../../TipTap.type";
+import useToolbarHandler from "../useToolbarHandler/useToolbarHandler";
 
 const useHeadingExtension = ({ editor }: TipTapExtensionParams) => {
-  const handleToolbar = useCallback(() => editor.chain().focus(), [editor]);
+  const { handleToolbar } = useToolbarHandler({ editor });
 
   const heading1 = {
     isActive: editor.isActive("heading", { level: 1 }),
     run: () => handleToolbar().toggleHeading({ level: 1 }).run(),
-    icon: <TipTap_H1Icon size="2.4rem" />,
+    Icon: TipTap_H1Icon,
     key: "tiptap_heading_1",
   };
 
   const heading2 = {
     isActive: editor.isActive("heading", { level: 2 }),
     run: () => handleToolbar().toggleHeading({ level: 2 }).run(),
-    icon: <TipTap_H2Icon size="2.4rem" />,
+    Icon: TipTap_H2Icon,
     key: "tiptap_heading_2",
   };
 
   const heading3 = {
     isActive: editor.isActive("heading", { level: 3 }),
     run: () => handleToolbar().toggleHeading({ level: 3 }).run(),
-    icon: <TipTap_H3Icon size="2.4rem" />,
+    Icon: TipTap_H3Icon,
     key: "tiptap_heading_3",
   };
 
