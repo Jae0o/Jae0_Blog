@@ -2,6 +2,7 @@
 
 import "@/lib/css/tiptap.css";
 
+import Link from "@tiptap/extension-link";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 
@@ -12,7 +13,7 @@ const TipTap = () => {
   const editor = useEditor({
     content: "",
     immediatelyRender: false,
-    extensions: [StarterKit],
+    extensions: [StarterKit, Link.configure()],
   });
 
   if (!editor) return <TipTapSkeleton />;

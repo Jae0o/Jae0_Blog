@@ -9,7 +9,7 @@ import { twMerge } from "tailwind-merge";
 
 const TipTapMenu = ({ editor }: TipTapMenuProps) => {
   const headings = useHeadingExtension({ editor });
-  const marks = useMarkExtension({ editor });
+  const { marks, MarksComponents } = useMarkExtension({ editor });
 
   return (
     <ul className="w-full p-[1rem] flex items-center gap-[1.2rem] flex-wrap bg-gray_500 rounded-[1.2rem]">
@@ -42,6 +42,8 @@ const TipTapMenu = ({ editor }: TipTapMenuProps) => {
           </Button>
         ))}
       </li>
+
+      {MarksComponents}
     </ul>
   );
 };

@@ -1,10 +1,19 @@
-import { TipTap_BoldIcon, TipTap_CodeIcon } from "@/lib/components/server";
+import {
+  TipTap_BoldIcon,
+  TipTap_CodeIcon,
+  TipTap_LinkIcon,
+} from "@/lib/components/server";
+
+import { useModal } from "@/lib/hooks";
 
 import { TipTapExtensionParams } from "../../../../TipTap.type";
+import LinkModal from "../../../LinkModal/LinkModal";
 import useToolbarHandler from "../useToolbarHandler/useToolbarHandler";
 
 const useMarkExtension = ({ editor }: TipTapExtensionParams) => {
   const { handleToolbar } = useToolbarHandler({ editor });
+
+  const [isLinkOpen, openLink, closeLink] = useModal();
 
   const bold = {
     key: "bold",
@@ -20,7 +29,29 @@ const useMarkExtension = ({ editor }: TipTapExtensionParams) => {
     isActive: editor.isActive("code"),
   };
 
-  return [bold, code] as const;
+  const link = {
+    key: "link",
+    Icon: TipTap_LinkIcon,
+    run: editor.isActive("link") ? editor.commands.unsetLink : openLink,
+    isActive: editor.isActive("link"),
+  };
+
+  const marks = [bold, code, link] as const;
+
+  const MarksComponents = (
+    <>
+      {isLinkOpen && (
+        <LinkModal
+          isShow={isLinkOpen}
+          onClose={closeLink}
+          hideCloseIcon
+          onConfirm={url => handleToolbar().toggleLink({ href: url }).run()}
+        />
+      )}
+    </>
+  );
+
+  return { marks, MarksComponents };
 };
 
 export default useMarkExtension;
