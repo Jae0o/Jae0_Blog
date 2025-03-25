@@ -9,7 +9,7 @@ const TextInput = ({ className, ...rest }: TextInputProps) => {
     <input
       type="text"
       className={twMerge(
-        "py-[0.4rem] px-[0.6rem] border-2 border-yellow_500 rounded-[0.4rem] text-[1.4rem]",
+        "py-[0.8rem] px-[0.6rem] border-2 border-yellow_500 rounded-[0.4rem] text-[1.4rem]",
         "focus:border-red_500 active:border-red_500 focus:outline-none",
         className,
       )}
