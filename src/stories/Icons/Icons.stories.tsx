@@ -25,6 +25,7 @@ import {
   TipTap_H1Icon,
   TipTap_H2Icon,
   TipTap_H3Icon,
+  TipTap_LinkIcon,
   VercelIcon,
   WriteIcon,
   ZustandIcon,
@@ -246,5 +247,11 @@ export const TipTap_Bold: Story = {
 export const TipTap_Code: Story = {
   args: {
     children: <TipTap_CodeIcon />,
+  },
+};
+
+export const TipTap_Link: Story = {
+  args: {
+    children: <TipTap_LinkIcon />,
   },
 };
