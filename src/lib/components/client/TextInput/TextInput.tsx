@@ -1,3 +1,5 @@
+"use client";
+
 import { TextInputProps } from "./TextInput.type";
 
 import { twMerge } from "tailwind-merge";
