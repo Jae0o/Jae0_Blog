@@ -39,6 +39,14 @@ code {
   color: red;
 }
 
+a {
+  color: #8cc152;
+  /* font-weight: 600; */
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
 .tiptap :first-child {
   margin-top: 0;
 }
